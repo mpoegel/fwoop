@@ -7,7 +7,7 @@
 TEST(FileReaderTest, Constructor)
 {
     // GIVEN
-    const std::string filename("test.txt");
+    const std::string filename("../../basis/testdata/test.txt");
     fwoop::FileReader reader(filename);
 
     // WHEN

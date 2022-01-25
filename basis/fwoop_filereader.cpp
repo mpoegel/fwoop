@@ -45,6 +45,7 @@ void FileReader::Iterator::operator++()
         std::getline(d_reader.d_file, d_currLine);
     }
     else {
+        d_currLine.clear();
         d_isEnd = true;
     }
 }

@@ -17,5 +17,6 @@ add_executable(fwoopbasis_test
     fwoop_filereader.g.cpp
     fwoop_tokenizer.g.cpp
 )
-target_link_libraries(fwoopbasis_test gtest gtest_main pthread)
+target_include_directories(fwoopbasis_test PUBLIC .)
+target_link_libraries(fwoopbasis_test fwoopbasis gtest gtest_main pthread)
 gtest_add_tests(TARGET fwoopbasis_test)
