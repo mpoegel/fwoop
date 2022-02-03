@@ -1,6 +1,7 @@
 #include <fwoop_httpserver.h>
 #include <fwoop_tokenizer.h>
 #include <fwoop_httpframe.h>
+#include <fwoop_httpsettingsframe.h>
 
 #include <cstring>
 #include <iostream>
@@ -30,7 +31,7 @@ int HttpServer::serve()
 {
     d_serverFd = socket(AF_INET, SOCK_STREAM, 0);
     if (d_serverFd < 0) {
-        std::cerr << "failed to create socket, errno" << errno << '\n';
+        std::cerr << "failed to create socket, errno=" << errno << '\n';
         return -1;
     }
 
@@ -76,14 +77,19 @@ int HttpServer::serve()
 
     std::string resp = "HTTP/1.1 101 Switching Protocols\r\nConnection: Upgrade\r\nUpgrade: h2c\r\n\r\n";
     std::cout << "> " << resp;
-    int bytesWritten = 0;
-    while (bytesWritten < resp.length()) {
-        rc = write(clientFd, resp.c_str(), resp.length());
-        if (rc < 0) {
-            std::cerr << "write failed, errno=" << errno << '\n';
-            return -1;
-        }
-        bytesWritten += rc;
+    // int bytesWritten = 0;
+    // while (bytesWritten < resp.length()) {
+    //     rc = write(clientFd, resp.c_str(), resp.length());
+    //     if (rc < 0) {
+    //         std::cerr << "write failed, errno=" << errno << '\n';
+    //         return -1;
+    //     }
+    //     bytesWritten += rc;
+    // }
+    rc = write(clientFd, (uint8_t*)resp.c_str(), resp.length());
+    if (0 != rc) {
+        close(clientFd);
+        return -1;
     }
 
     rc = read(clientFd, buffer, bufferSize, bytesRead);
@@ -102,12 +108,51 @@ int HttpServer::serve()
     if (0 != read(clientFd, buffer + offset, bufferSize - offset, bytesRead)) {
         close(clientFd);
     }
+
+    // std::string bufStr(buffer, buffer+bytesRead);
+    // std::cout << bufStr << '\n';
+
+    // for (unsigned int i=0; i<bytesRead; ++i) {
+    //     std::cout << (int)buffer[i] << " ";
+    // }
+    // std::cout << '\n';
+
     auto frame = HttpFrame::parse(buffer, bytesRead + offset, bytesParsed);
     if (frame) {
-        std::cout << "frame: len=" << frame->length() << ", type=" << HttpFrame::typeToString(frame->type()) << '\n';
+        // std::cout << "frame: len=" << frame->length() << ", type=" << HttpFrame::typeToString(frame->type()) << '\n';
+        frame->printHex();
     } else {
         std::cerr << "no frame\n";
     }
+
+    auto settingsFrameResp = HttpSettingsFrame();
+    settingsFrameResp.setAck();
+    uint8_t *settingsFrame = settingsFrameResp.encode();
+    std::cout << "> ";
+    for (unsigned int i=0; i<settingsFrameResp.encodingLength(); ++i) std::cout << (int)settingsFrame[i] << " ";
+    std::cout << '\n';
+    rc = write(clientFd, settingsFrame, settingsFrameResp.encodingLength());
+    delete settingsFrame;
+    if (0 != rc) {
+        close(clientFd);
+        return -1;
+    }
+
+    rc = read(clientFd, buffer, bufferSize, bytesRead);
+    if (0 != rc) {
+        close(clientFd);
+        return -1;
+    }
+    frame = HttpFrame::parse(buffer, bytesRead, bytesParsed);
+    if (frame) {
+        frame->printHex();
+    } else {
+        std::cerr << "no frame 2\n";
+    }
+    // for (unsigned int i=0; i<bytesRead; ++i) {
+    //     std::cout << (int)buffer[i] << " ";
+    // }
+    // std::cout << '\n';
 
     close(clientFd);
 
@@ -145,6 +190,21 @@ int HttpServer::read(int fd, uint8_t *buffer, unsigned int bufferSize, unsigned 
         }
     }
 
+    return 0;
+}
+
+int HttpServer::write(int fd, uint8_t *out, unsigned int outLen)
+{
+    int rc = 0;
+    int bytesWritten = 0;
+    while (bytesWritten < outLen) {
+        rc = ::write(fd, out + bytesWritten, outLen - bytesWritten);
+        if (rc < 0) {
+            std::cerr << "write failed, errno=" << errno << '\n';
+            return -1;
+        }
+        bytesWritten += rc;
+    }
     return 0;
 }
 
