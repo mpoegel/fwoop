@@ -18,6 +18,8 @@ class HttpSettingsFrame : public HttpFrame {
         MaxHeaderListSize    = 7,
     };
 
+    static const unsigned int PARAMETER_SIZE = 6;
+
     std::optional<uint32_t> d_headerTableSize;
     std::optional<bool>     d_enablePush;
     std::optional<uint32_t> d_maxConcurrentStreams;
@@ -33,6 +35,12 @@ class HttpSettingsFrame : public HttpFrame {
     ~HttpSettingsFrame();
 
     void setAck();
+    void setHeaderTableSize(uint32_t headerTableSize);
+    void setEnablePush(bool enablePush);
+    void setMaxConcurrentStreams(uint32_t maxConcurrentStreams);
+    void setInitialWindowSize(uint32_t initialWindowSize);
+    void setMaxFrameSize(uint32_t maxFrameSize);
+    void setMaxHeaderListSize(uint32_t maxHeaderListSize);
 
     std::optional<uint32_t> headerTableSize() const;
     bool enablePush() const;
@@ -41,7 +49,6 @@ class HttpSettingsFrame : public HttpFrame {
     std::optional<uint32_t> maxFrameSize() const;
     std::optional<uint32_t> maxHeaderListSize() const;
 
-    unsigned int encodingLength() const override;
     uint8_t *encode() const override;
 };
 
@@ -57,9 +64,58 @@ void HttpSettingsFrame::setAck()
 }
 
 inline
-unsigned int HttpSettingsFrame::encodingLength() const
+void HttpSettingsFrame::setHeaderTableSize(uint32_t headerTableSize)
 {
-    return HEADER_LENGTH + d_length;
+    if (!d_headerTableSize.has_value()) {
+        d_length += 6;
+    }
+    d_headerTableSize.emplace(headerTableSize);
 }
+
+inline
+void HttpSettingsFrame::setMaxFrameSize(uint32_t maxFrameSize)
+{
+    if (!d_maxFrameSize.has_value()) {
+        d_length += 6;
+    }
+    d_maxFrameSize.emplace(maxFrameSize);
+}
+
+inline
+std::optional<uint32_t> HttpSettingsFrame::headerTableSize() const
+{
+    return d_headerTableSize;
+}
+
+inline
+bool HttpSettingsFrame::enablePush() const
+{
+    return d_enablePush.has_value() ? d_enablePush.value() : true;
+}
+
+inline
+std::optional<uint32_t> HttpSettingsFrame::maxConcurrentStreams() const
+{
+    return d_maxConcurrentStreams;
+}
+
+inline
+std::optional<uint32_t> HttpSettingsFrame::initialWindowSize() const
+{
+    return d_initialWindowSize;
+}
+
+inline
+std::optional<uint32_t> HttpSettingsFrame::maxFrameSize() const
+{
+    return d_maxFrameSize;
+}
+
+inline
+std::optional<uint32_t> HttpSettingsFrame::maxHeaderListSize() const
+{
+    return d_maxHeaderListSize;
+}
+
 
 }
