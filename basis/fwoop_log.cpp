@@ -1,6 +1,7 @@
 #include <fwoop_log.h>
 
 #include <chrono>
+#include <cstring>
 #include <ctime>
 #include <iostream>
 
@@ -41,35 +42,6 @@ void Log::getCurrentTime(char *outBuf, unsigned int bufSize) const
     sprintf(outBuf, "%s.%03d", outBuf, millis);
 }
 
-std::string Log::formatMsg(Level level, const char *fmt, const char *args...) const
-{
-    std::string result;
-    char msgBuf[2048];
-    int msgLen = sprintf(msgBuf, fmt, args);
-
-    unsigned int i = 0;
-    while (i < d_formatStr.length()) {
-        if (d_formatStr[i] == '%' && i < d_formatStr.length() - 1) {
-            char c = d_formatStr[i + 1];
-            if (c == 't') {
-                char timeBuf[13];
-                getCurrentTime(timeBuf, sizeof(timeBuf));
-                result.append(timeBuf, sizeof(timeBuf));
-            } else if (c == 'l') {
-                result.append(levelToString(level));
-            } else if (c == 'm') {
-                result.append(msgBuf, msgLen);
-            }
-            i += 2;
-        } else {
-            result.push_back(d_formatStr[i]);
-            ++i;
-        }
-    }
-
-    return result;
-}
-
 Log::Log()
 : d_formatStr(DEFAULT_FORMAT_STR)
 {
@@ -81,44 +53,24 @@ void Log::setFormat(const std::string& formatStr)
     d_formatStr = formatStr;
 }
 
-void Log::debug(const char *fmt, const char *args...)
-{
-    std::cout << formatMsg(Level::e_Debug, fmt, args) << '\n';
-}
-
-void Log::info(const char *fmt, const char *args...)
-{
-    std::cout << formatMsg(Level::e_Info, fmt, args) << '\n';
-}
-
-void Log::warn(const char *fmt, const char *args...)
-{
-    std::cerr << formatMsg(Level::e_Warn, fmt, args) << '\n';
-}
-
-void Log::error(const char *fmt, const char *args...)
-{
-    std::cerr << formatMsg(Level::e_Error, fmt, args) << '\n';
-}
-
 void Log::debug(const std::string& msg)
 {
-    std::cout << formatMsg(Level::e_Debug, msg.c_str(), nullptr) << '\n';
+    std::cout << formatMsg(Level::e_Debug, "%s", msg) << '\n';
 }
 
 void Log::info(const std::string& msg)
 {
-    std::cout << formatMsg(Level::e_Info, msg.c_str(), nullptr) << '\n';
+    std::cout << formatMsg(Level::e_Info, "%s", msg) << '\n';
 }
 
 void Log::warn(const std::string& msg)
 {
-    std::cerr << formatMsg(Level::e_Warn, msg.c_str(), nullptr) << '\n';
+    std::cerr << formatMsg(Level::e_Warn, "%s", msg) << '\n';
 }
 
 void Log::error(const std::string& msg)
 {
-    std::cerr << formatMsg(Level::e_Error, msg.c_str(), nullptr) << '\n';
+    std::cerr << formatMsg(Level::e_Error, "%s", msg) << '\n';
 }
 
 }
