@@ -5,7 +5,8 @@
 TEST(HttpHeadersFrame, headerBlocks)
 {
     // GIVEN
-    fwoop::HttpHeadersFrame frame;
+    auto packer = std::make_shared<fwoop::HttpHPacker>();
+    fwoop::HttpHeadersFrame frame(packer);
 
     // WHEN
     frame.addHeaderBlock(fwoop::HttpHeader::Status, "200");

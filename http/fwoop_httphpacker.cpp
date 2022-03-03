@@ -107,22 +107,22 @@ uint32_t HttpHPacker::getEncodedLength(DynamicTable_t& dynamicTable, HttpHeaderV
     return 1 + 1 + headerStr.length() + 1 + headerValue.length();
 }
 
-uint32_t HttpHPacker::encodeLength(const std::shared_ptr<HttpHeadersFrame>& frame)
+uint32_t HttpHPacker::encodeLength(const std::vector<HttpHeaderField_t>& headerFields)
 {
     uint32_t len = 0;
 
-    for (auto itr = frame->beginHeaderList(); itr != frame->endHeaderList(); itr++) {
+    for (auto itr = headerFields.cbegin(); itr != headerFields.cend(); itr++) {
         len += getEncodedLength(d_dynamicTable, itr->first, itr->second);
     }
     return len;
 }
 
-uint32_t HttpHPacker::getEncodedLength(const std::shared_ptr<HttpHeadersFrame>& frame) const
+uint32_t HttpHPacker::getEncodedLength(const std::vector<HttpHeaderField_t>& headerFields) const
 {
     uint32_t len = 0;
     DynamicTable_t dynamicTable = d_dynamicTable;
 
-    for (auto itr = frame->beginHeaderList(); itr != frame->endHeaderList(); itr++) {
+    for (auto itr = headerFields.cbegin(); itr != headerFields.cend(); itr++) {
         len += getEncodedLength(dynamicTable, itr->first, itr->second);
     }
     return len;
@@ -187,13 +187,13 @@ uint32_t HttpHPacker::encode(uint8_t *out, HttpHeaderVariant_t header, const std
     return 1 + 1 + headerStr.length() + 1 + headerValue.length();
 }
 
-u_int8_t *HttpHPacker::encodeHeaderFrame(const std::shared_ptr<HttpHeadersFrame>& frame)
+u_int8_t *HttpHPacker::encode(const std::vector<HttpHeaderField_t>& headerFields)
 {
-    uint32_t totalLen = getEncodedLength(frame);
+    uint32_t totalLen = getEncodedLength(headerFields);
     uint8_t *encoding = new u_int8_t[totalLen];
 
     uint32_t offset = 0;
-    for (auto itr = frame->beginHeaderList(); itr != frame->endHeaderList(); itr++) {
+    for (auto itr = headerFields.cbegin(); itr != headerFields.cend(); itr++) {
         uint32_t len = encode(encoding + offset, itr->first, itr->second);
         offset += len;
     }

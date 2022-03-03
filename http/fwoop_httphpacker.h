@@ -1,12 +1,14 @@
 #pragma once
 
-#include <fwoop_httpheadersframe.h>
+#include <fwoop_httpheader.h>
 
 #include <cstdint>
+#include <cstring>
 #include <list>
 #include <memory>
 #include <string>
 #include <unordered_map>
+#include <vector>
 
 namespace fwoop {
 
@@ -30,11 +32,10 @@ class HttpHPacker {
   public:
     HttpHPacker();
 
-    uint32_t getEncodedLength(const std::shared_ptr<HttpHeadersFrame>& frame) const;
+    uint32_t getEncodedLength(const std::vector<HttpHeaderField_t>& headerFields) const;
 
-    uint32_t encodeLength(const std::shared_ptr<HttpHeadersFrame>& frame);
-    uint8_t *encodeHeaderFrame(const std::shared_ptr<HttpHeadersFrame>& frame);
-
+    uint32_t encodeLength(const std::vector<HttpHeaderField_t>& headerFields);
+    uint8_t *encode(const std::vector<HttpHeaderField_t>& headerFields);
 };
 
 }
