@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include <memory>
+#include <ostream>
+#include <sstream>
 #include <string>
 
 namespace fwoop {
@@ -21,26 +23,24 @@ class Log {
     std::string d_formatStr;
 
     std::string levelToString(Level level) const;
-
     template<typename... Ts>
-    std::string formatMsg(Level level, const char *fmt, Ts... args) const;
-
+    std::string formatMsg(Level level, Ts... args) const;
     void getCurrentTime(char *outBuf, unsigned int bufSize) const;
 
   public:
     static std::shared_ptr<Log> getDefault();
 
     template<typename... Ts>
-    static void Debug(const char *fmt, Ts... args);
+    static void Debug(Ts&&... args);
 
     template<typename... Ts>
-    static void Info(const char *fmt, Ts... args);
+    static void Info(Ts&&... args);
 
     template<typename... Ts>
-    static void Warn(const char *fmt, Ts... args);
+    static void Warn(Ts&&... args);
 
     template<typename... Ts>
-    static void Error(const char *fmt, Ts... args);
+    static void Error(Ts&&... args);
 
     static void Debug(const std::string &msg);
     static void Info(const std::string &msg);
@@ -52,16 +52,16 @@ class Log {
     void setFormat(const std::string& formatStr);
 
     template<typename... Ts>
-    void debug(const char *fmt, Ts... args);
+    void debug(Ts&&... args);
 
     template<typename... Ts>
-    void info(const char *fmt, Ts... args);
+    void info(Ts&&... args);
 
     template<typename... Ts>
-    void warn(const char *fmt, Ts... args);
+    void warn(Ts&&... args);
 
     template<typename... Ts>
-    void error(const char *fmt, Ts... args);
+    void error(Ts&&... args);
 
     void debug(const std::string &msg);
     void info(const std::string &msg);
@@ -77,30 +77,30 @@ std::shared_ptr<Log> Log::getDefault()
 
 template<typename... Ts>
 inline
-void Log::Debug(const char *fmt, Ts... args)
+void Log::Debug(Ts&&... args)
 {
-    s_log->debug(fmt, args...);
+    s_log->debug(args...);
 }
 
 template<typename... Ts>
 inline
-void Log::Info(const char *fmt, Ts... args)
+void Log::Info(Ts&&... args)
 {
-    s_log->info(fmt, args...);
+    s_log->info(args...);
 }
 
 template<typename... Ts>
 inline
-void Log::Warn(const char *fmt, Ts... args)
+void Log::Warn(Ts&&... args)
 {
-    s_log->warn(fmt, args...);
+    s_log->warn(args...);
 }
 
 template<typename... Ts>
 inline
-void Log::Error(const char *fmt, Ts... args)
+void Log::Error(Ts&&... args)
 {
-    s_log->error(fmt, args...);
+    s_log->error(args...);
 }
 
 inline
@@ -128,35 +128,33 @@ void Log::Error(const std::string &msg)
 }
 
 template<typename... Ts>
-void Log::debug(const char *fmt, Ts... args)
+void Log::debug(Ts&&... args)
 {
-    std::cout << formatMsg(Level::e_Debug, fmt, args...) << '\n';
+    std::cout << formatMsg(Level::e_Debug, args...) << '\n';
 }
 
 template<typename... Ts>
-void Log::info(const char *fmt, Ts... args)
+void Log::info(Ts&&... args)
 {
-    std::cout << formatMsg(Level::e_Info, fmt, args...) << '\n';
+    std::cout << formatMsg(Level::e_Info, args...) << '\n';
 }
 
 template<typename... Ts>
-void Log::warn(const char *fmt, Ts... args)
+void Log::warn(Ts&&... args)
 {
-    std::cerr << formatMsg(Level::e_Warn, fmt, args...) << '\n';
+    std::cerr << formatMsg(Level::e_Warn, args...) << '\n';
 }
 
 template<typename... Ts>
-void Log::error(const char *fmt, Ts... args)
+void Log::error(Ts&&... args)
 {
-    std::cerr << formatMsg(Level::e_Error, fmt, args...) << '\n';
+    std::cerr << formatMsg(Level::e_Error, args...) << '\n';
 }
 
 template<typename... Ts>
-std::string Log::formatMsg(Level level, const char *fmt, Ts... args) const
+std::string Log::formatMsg(Level level, Ts... args) const
 {
-    std::string result;
-    char msgBuf[2048];
-    int msgLen = sprintf(msgBuf, fmt, args...);
+    std::ostringstream oss;
 
     unsigned int i = 0;
     while (i < d_formatStr.length()) {
@@ -165,20 +163,20 @@ std::string Log::formatMsg(Level level, const char *fmt, Ts... args) const
             if (c == 't') {
                 char timeBuf[13];
                 getCurrentTime(timeBuf, sizeof(timeBuf));
-                result.append(timeBuf, sizeof(timeBuf));
+                oss << timeBuf;
             } else if (c == 'l') {
-                result.append(levelToString(level));
+                oss << levelToString(level);
             } else if (c == 'm') {
-                result.append(msgBuf, msgLen);
+                (oss << ... << args);
             }
             i += 2;
         } else {
-            result.push_back(d_formatStr[i]);
+            oss << d_formatStr[i];
             ++i;
         }
     }
 
-    return result;
+    return oss.str();
 }
 
 }

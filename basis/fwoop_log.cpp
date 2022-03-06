@@ -55,22 +55,22 @@ void Log::setFormat(const std::string& formatStr)
 
 void Log::debug(const std::string& msg)
 {
-    std::cout << formatMsg(Level::e_Debug, "%s", msg) << '\n';
+    std::cout << formatMsg(Level::e_Debug, msg) << '\n';
 }
 
 void Log::info(const std::string& msg)
 {
-    std::cout << formatMsg(Level::e_Info, "%s", msg) << '\n';
+    std::cout << formatMsg(Level::e_Info, msg) << '\n';
 }
 
 void Log::warn(const std::string& msg)
 {
-    std::cerr << formatMsg(Level::e_Warn, "%s", msg) << '\n';
+    std::cerr << formatMsg(Level::e_Warn, msg) << '\n';
 }
 
 void Log::error(const std::string& msg)
 {
-    std::cerr << formatMsg(Level::e_Error, "%s", msg) << '\n';
+    std::cerr << formatMsg(Level::e_Error, msg) << '\n';
 }
 
 }
