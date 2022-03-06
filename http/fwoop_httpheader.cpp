@@ -62,4 +62,14 @@ std::string httpHeaderToString(HttpHeader header)
     return "unknown";
 }
 
+std::ostream& operator<<(std::ostream& os, const HttpHeaderVariant_t& header)
+{
+    if (std::holds_alternative<HttpHeader>(header)) {
+        os << httpHeaderToString(std::get<HttpHeader>(header));
+    } else if (std::holds_alternative<HttpCustomHeader>(header)) {
+        os << std::get<HttpCustomHeader>(header);
+    }
+    return os;
+}
+
 }

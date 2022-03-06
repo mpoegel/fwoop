@@ -8,6 +8,7 @@
 #include <fwoop_httpdataframe.h>
 #include <fwoop_httpgoawayframe.h>
 #include <fwoop_httphpacker.h>
+#include <fwoop_httprequest.h>
 
 #include <cstring>
 #include <system_error>
@@ -86,7 +87,19 @@ int HttpServer::handleConnection(int clientFd) const
     }
     unsigned int bytesParsed = 0;
     int rc;
-    rc = parsePayloadBody(buffer, bytesRead, bytesParsed);
+    std::shared_ptr<HttpRequest> request = HttpRequest::parse(buffer, bytesRead, bytesParsed);
+    if (!request) {
+        Log::Error("did not receive full http request");
+    }
+
+    Log::Debug("Received request: ", *request);
+    if (!request->canUpgrade()) {
+        std::string resp = "HTTP/1.1 426 Upgrade Required\r\nUpgrade: HTTP/2.0\r\n\r\n";
+        std::cout << "> " << resp;
+        SocketIO::write(clientFd, (uint8_t*)resp.c_str(), resp.length());
+        close(clientFd);
+        return -1;
+    }
 
     std::string resp = "HTTP/1.1 101 Switching Protocols\r\nConnection: Upgrade\r\nUpgrade: h2c\r\n\r\n";
     std::cout << "> " << resp;
@@ -161,32 +174,6 @@ int HttpServer::handleConnection(int clientFd) const
         }
     }
 
-    // std::cout << "2 read buffer: ";
-    // char buf[3];
-    // for (unsigned int i = bytesParsed; i < bytesRead; ++i) {
-    //     sprintf(buf, "%x", buffer[i]);
-    //     std::cout << buf << " ";
-    // }
-    // std::cout << '\n';
-
-    // close(clientFd);
-    // return 0;
-
-    // auto frame = HttpFrame::parse(buffer, bytesRead + offset, bytesParsed);
-    // if (frame) {
-    //     std::cout << "< ";
-    //     frame->printHex();
-    // } else {
-    //     std::cerr << "no frame\n";
-    // }
-    // std::cout << "parsed " << bytesParsed << " of " << bytesRead + offset << " bytes read\n";
-    // std::cout << "read buffer: ";
-    // for (unsigned int i = bytesParsed; i < bytesRead + offset; ++i) {
-    //     sprintf(buf, "%x", buffer[i]);
-    //     std::cout << buf << " ";
-    // }
-    // std::cout << '\n';
-
     auto settingsFrameResp = HttpSettingsFrame();
     settingsFrameResp.setAck();
     uint8_t *settingsFrameEnc = settingsFrame->encode();
@@ -212,19 +199,6 @@ int HttpServer::handleConnection(int clientFd) const
     } else {
         std::cerr << "no frame 2\n";
     }
-
-    // auto settingsFrameAck = HttpSettingsFrame();
-    // settingsFrameAck.setAck();
-    // std::cout << "> ";
-    // settingsFrameAck.printHex();
-    // uint8_t *settingsFrameAckEnc = settingsFrameAck.encode();
-    // rc = SocketIO::write(clientFd, settingsFrameAckEnc, settingsFrameAck.encodingLength());
-    // delete settingsFrameAckEnc;
-    // if (0 != rc) {
-    //     close(clientFd);
-    //     return -1;
-    // }
-    // ::sleep(2);
 
     auto packer = std::make_shared<HttpHPacker>();
     auto headersFrame = std::make_shared<HttpHeadersFrame>(packer);

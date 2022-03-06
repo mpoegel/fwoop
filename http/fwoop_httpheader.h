@@ -1,5 +1,6 @@
 #pragma once
 
+#include <ostream>
 #include <string>
 #include <variant>
 
@@ -65,5 +66,7 @@ std::string httpHeaderToString(HttpHeader header);
 typedef std::string HttpCustomHeader;
 typedef std::variant<HttpHeader, HttpCustomHeader> HttpHeaderVariant_t;
 typedef std::pair<HttpHeaderVariant_t, std::string> HttpHeaderField_t;
+
+std::ostream& operator<<(std::ostream& os, const HttpHeaderVariant_t& header);
 
 }

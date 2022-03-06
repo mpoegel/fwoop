@@ -1,11 +1,12 @@
 add_library(fwoophttp STATIC
     fwoop_httpdataframe.cpp
-    fwoop_httpserver.cpp
     fwoop_httpframe.cpp
     fwoop_httpgoawayframe.cpp
     fwoop_httpheader.cpp
     fwoop_httpheadersframe.cpp
     fwoop_httphpacker.cpp
+    fwoop_httprequest.cpp
+    fwoop_httpserver.cpp
     fwoop_httpsettingsframe.cpp
     fwoop_httpstream.cpp
     fwoop_httpwindowupdateframe.cpp
@@ -16,12 +17,13 @@ target_link_libraries(fwoophttp fwoopbasis)
 install(TARGETS fwoophttp DESTINATION lib)
 install(FILES
     fwoop_httpdataframe.h
-    fwoop_httpserver.h
     fwoop_httpframe.h
     fwoop_httpgoawayframe.h
     fwoop_httpheader.h
     fwoop_httpheadersframe.h
     fwoop_httphpacker.h
+    fwoop_httprequest.h
+    fwoop_httpserver.h
     fwoop_httpsettingsframe.h
     fwoop_httpstream.h
     fwoop_httpwindowupdateframe.h
