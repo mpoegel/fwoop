@@ -1,5 +1,7 @@
 #include <fwoop_httpsettingsframe.h>
 
+#include <fwoop_log.h>
+
 #include <iostream>
 
 namespace fwoop {
@@ -9,6 +11,8 @@ HttpSettingsFrame::HttpSettingsFrame(unsigned int length, uint8_t flags, uint8_t
 {
     if (d_length % 6 != 0) {
         std::cerr << "payload length is not a multiple of 6, length=" << d_length << '\n';
+    } else if (d_length == 0) {
+        return;
     }
 
     for (unsigned int i = 0; i <= d_length - PARAMETER_SIZE; i += PARAMETER_SIZE) {

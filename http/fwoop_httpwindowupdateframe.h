@@ -11,6 +11,7 @@ class HttpWindowUpdateFrame : public HttpFrame {
     HttpWindowUpdateFrame(unsigned int length, uint8_t flags, uint8_t *streamID, uint8_t *payload);
     ~HttpWindowUpdateFrame();
 
+    uint8_t *encode() const override;
 };
 
 inline

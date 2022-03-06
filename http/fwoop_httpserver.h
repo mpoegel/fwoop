@@ -9,10 +9,8 @@ class HttpServer {
     int d_port;
     int d_serverFd;
 
-    int read(int fd, uint8_t *buffer, unsigned int bufferSize, unsigned int& bytesRead);
-    int write(int fd, uint8_t *out, unsigned int outLen);
-
     int parsePayloadBody(uint8_t *buffer, unsigned bufferSize, unsigned int& bytesParsed) const;
+    int handleConnection(int clientFd) const;
 
   public:
     explicit HttpServer(int port);

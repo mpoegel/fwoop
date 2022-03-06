@@ -7,4 +7,12 @@ HttpWindowUpdateFrame::HttpWindowUpdateFrame(unsigned int length, uint8_t flags,
 {
 }
 
+uint8_t *HttpWindowUpdateFrame::encode() const
+{
+    uint8_t *encoding = new uint8_t[encodingLength()];
+    encodeHeader(encoding);
+    // TODO encode window params
+    return encoding;
+}
+
 }

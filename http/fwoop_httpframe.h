@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstring>
 #include <memory>
 #include <string>
 
@@ -11,9 +12,16 @@ class HttpFrame {
   public:
     enum class Type {
         Unknown      = 255,
+        Data         =   0,
+        Header       =   1,
+        Priority     =   2,
+        ResetStream  =   3,
         Settings     =   4,
+        PushPromise  =   5,
+        Ping         =   6,
         GoAway       =   7,
         WindowUpdate =   8,
+        Continuation =   9,
     };
     static constexpr unsigned int HEADER_LENGTH = 9;
 
@@ -36,12 +44,17 @@ class HttpFrame {
     HttpFrame(unsigned int length, Type type, uint8_t flags, uint8_t *streamID, uint8_t *payload);
     virtual ~HttpFrame();
 
+    void setStreamID(uint32_t id);
+    void setLength(unsigned int length);
+
     unsigned int length() const;
     Type type() const;
     uint8_t *payload() const;
     void printHex() const;
-    virtual unsigned int encodingLength() const;
+    void printHeader() const;
+    unsigned int encodingLength() const;
     virtual uint8_t *encode() const;
+    uint32_t getStreamID() const;
 };
 
 inline
@@ -71,13 +84,38 @@ uint8_t *HttpFrame::payload() const
 inline
 unsigned int HttpFrame::encodingLength() const
 {
-    return 0;
+    return HEADER_LENGTH + d_length;
 }
 
 inline
 uint8_t *HttpFrame::encode() const
 {
-    return nullptr;
+    uint8_t *encoding = new uint8_t[encodingLength()];
+    memset(encoding, 0, encodingLength());
+    encodeHeader(encoding);
+    return encoding;
+}
+
+inline
+void HttpFrame::setStreamID(uint32_t id)
+{
+    d_streamID[0] = (id << 24);
+    d_streamID[1] = (id << 16);
+    d_streamID[2] = (id << 8);
+    d_streamID[3] = id;
+}
+
+inline
+uint32_t HttpFrame::getStreamID() const
+{
+    uint32_t result = d_streamID[3] + (d_streamID[2] << 8) + (d_streamID[1] << 16) +(d_streamID[0] << 24);
+    return result;
+}
+
+inline
+void HttpFrame::setLength(unsigned int length)
+{
+    d_length = length;
 }
 
 }

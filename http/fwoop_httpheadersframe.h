@@ -21,6 +21,8 @@ class HttpHeadersFrame : public HttpFrame {
     std::vector<HttpHeaderField_t> d_headerList;
     std::shared_ptr<HttpHPacker>   d_packer;
 
+    uint8_t countExtraBits() const;
+
   public:
     enum Flag {
         EndStream  = 1,
