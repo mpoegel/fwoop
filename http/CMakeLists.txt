@@ -6,6 +6,7 @@ add_library(fwoophttp STATIC
     fwoop_httpheadersframe.cpp
     fwoop_httphpacker.cpp
     fwoop_httprequest.cpp
+    fwoop_httpresponse.cpp
     fwoop_httpserver.cpp
     fwoop_httpsettingsframe.cpp
     fwoop_httpstream.cpp
@@ -23,6 +24,7 @@ install(FILES
     fwoop_httpheadersframe.h
     fwoop_httphpacker.h
     fwoop_httprequest.h
+    fwoop_httpresponse.h
     fwoop_httpserver.h
     fwoop_httpsettingsframe.h
     fwoop_httpstream.h
@@ -32,8 +34,9 @@ install(FILES
 include(GoogleTest)
 add_executable(fwoophttp_test
     fwoop_httpheadersframe.g.cpp
-    fwoop_httpserver.g.cpp
     fwoop_httphpacker.g.cpp
+    fwoop_httpresponse.g.cpp
+    fwoop_httpserver.g.cpp
     fwoop_httpsettingsframe.g.cpp
 )
 target_include_directories(fwoophttp_test PUBLIC .)
