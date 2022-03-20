@@ -7,5 +7,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 enable_testing()
 add_subdirectory(basis)
+add_subdirectory(crypto)
 add_subdirectory(http)
 add_subdirectory(examples)
