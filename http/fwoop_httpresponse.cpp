@@ -38,8 +38,9 @@ uint8_t *HttpResponse::encode(uint32_t& length) const
             memcpy(encoding + offset, name.data(), name.length());
             offset += name.length();
         } else if (std::holds_alternative<HttpCustomHeader>(header.first)) {
-            memcpy(encoding + offset, header.second.data(), header.second.length());
-            offset += header.second.length();
+            const std::string name = std::get<HttpCustomHeader>(header.first);
+            memcpy(encoding + offset, name.data(), name.length());
+            offset += name.length();
         }
         encoding[offset++] = ':';
         encoding[offset++] = ' ';
@@ -52,6 +53,12 @@ uint8_t *HttpResponse::encode(uint32_t& length) const
     encoding[offset++] = '\n';
 
     return encoding;
+}
+
+std::ostream& operator<<(std::ostream& os, const HttpResponse& response)
+{
+    os << "[ status=" << response.getStatus() << " ]";
+    return os;
 }
 
 }

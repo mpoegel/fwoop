@@ -9,6 +9,7 @@
 #include <fwoop_httpgoawayframe.h>
 #include <fwoop_httphpacker.h>
 #include <fwoop_httprequest.h>
+#include <fwoop_httpresponse.h>
 
 #include <cstring>
 #include <system_error>
@@ -22,9 +23,10 @@
 
 namespace fwoop {
 
-HttpServer::HttpServer(int port)
+HttpServer::HttpServer(int port, HttpVersion version)
 : d_port(port)
 , d_serverFd(-1)
+, d_version(version)
 {}
 
 HttpServer::~HttpServer()
@@ -72,11 +74,17 @@ int HttpServer::serve()
         return -1;
     }
 
-    return handleConnection(clientFd);
+    switch (d_version) {
+        case HttpVersion::HTTP11: return handleHttp1Connection(clientFd);
+        case HttpVersion::HTTP2: return handleHttp2Connection(clientFd);
+        default:
+            std::cerr << "unsupported HTTP version: " << d_version;
+            return -1;
+    }
 }
 
 
-int HttpServer::handleConnection(int clientFd) const
+int HttpServer::handleHttp2Connection(int clientFd) const
 {
     constexpr unsigned int bufferSize = 1024;
     uint8_t buffer[bufferSize];
@@ -94,17 +102,28 @@ int HttpServer::handleConnection(int clientFd) const
 
     Log::Debug("Received request: ", *request);
     if (!request->canUpgrade()) {
-        std::string resp = "HTTP/1.1 426 Upgrade Required\r\nUpgrade: HTTP/2.0\r\n\r\n";
-        std::cout << "> " << resp;
-        SocketIO::write(clientFd, (uint8_t*)resp.c_str(), resp.length());
+        HttpResponse response = HttpResponse();
+        response.setStatus("426 Upgrade Required");
+        response.addHeader("Upgrade", "HTTP/2.0");
+        uint32_t length;
+        uint8_t *encResp = response.encode(length);
+        SocketIO::write(clientFd, encResp, length);
         close(clientFd);
+        delete[] encResp;
         return -1;
     }
 
-    std::string resp = "HTTP/1.1 101 Switching Protocols\r\nConnection: Upgrade\r\nUpgrade: h2c\r\n\r\n";
-    std::cout << "> " << resp;
+    HttpResponse response = HttpResponse();
+    response.setStatus("101 Switching Protocols");
+    response.addHeader("Connection", "Upgrade");
+    response.addHeader("Upgrade", "h2c");
+    // std::string resp = "HTTP/1.1 101 Switching Protocols\r\nConnection: Upgrade\r\nUpgrade: h2c\r\n\r\n";
+    // std::cout << "> " << resp;
 
-    rc = SocketIO::write(clientFd, (uint8_t*)resp.c_str(), resp.length());
+    uint32_t length;
+    uint8_t *encResp = response.encode(length);
+    rc = SocketIO::write(clientFd, encResp, length);
+    delete[] encResp;
     if (0 != rc) {
         close(clientFd);
         return -1;
@@ -119,7 +138,7 @@ int HttpServer::handleConnection(int clientFd) const
     rc = parsePayloadBody(buffer, bytesRead, bytesParsed);
 
     std::cout << "parsed " << bytesParsed << " of " << bytesRead << " bytes read\n";
-    
+
     if (bytesParsed == bytesRead) {
         ec = SocketIO::read(clientFd, buffer, bufferSize, bytesRead);
         if (ec && ec.value() != ETIMEDOUT) {
@@ -270,6 +289,58 @@ int HttpServer::parsePayloadBody(uint8_t *buffer, unsigned int bufferSize, unsig
         std::cout << "< " << *itr << '\n';
     }
 
+    return 0;
+}
+
+void HttpServer::addRoute(const std::string& route, HttpHandlerFunc_t func)
+{
+    d_routeMap[route] = func;
+}
+
+int HttpServer::handleHttp1Connection(int clientFd) const
+{
+    constexpr unsigned int bufferSize = 2048;
+    uint8_t buffer[bufferSize];
+    unsigned int bytesRead;
+    std::error_code ec = SocketIO::read(clientFd, buffer, bufferSize, bytesRead);
+    if (ec) {
+        Log::Error("socket read failed", ec);
+        return -1;
+        close(clientFd);
+    }
+
+    unsigned int bytesParsed = 0;
+    int rc;
+    std::shared_ptr<HttpRequest> request = HttpRequest::parse(buffer, bytesRead, bytesParsed);
+    if (!request) {
+        Log::Error("did not receive full http request");
+        return -1;
+    }
+
+    Log::Debug("Recieved request: ", *request);
+
+    auto routeFunc = d_routeMap.find(request->getPath());
+    HttpResponse response;
+    if (routeFunc != d_routeMap.end()) {
+        routeFunc->second(*request, response);
+    } else {
+        response.setStatus("404 Not Found");
+    }
+
+    Log::Debug("Sending response: ", response);
+    uint32_t length;
+    uint8_t *encResp = response.encode(length);
+    rc = SocketIO::write(clientFd, encResp, length);
+    delete []encResp;
+    if (0 != rc) {
+        Log::Error("socket write failed, ec=", ec);
+        close(clientFd);
+        return -1;
+    }
+
+    Log::Debug("done");
+
+    close(clientFd);
     return 0;
 }
 

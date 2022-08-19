@@ -2,6 +2,7 @@
 
 #include <fwoop_httpheader.h>
 
+#include <ostream>
 #include <string>
 #include <vector>
 
@@ -20,7 +21,10 @@ class HttpResponse {
     void addHeader(const HttpCustomHeader& name, const std::string& value);
 
     uint8_t *encode(uint32_t& length) const;
+    const std::string& getStatus() const;
 };
+
+std::ostream& operator<<(std::ostream& os, const HttpResponse& response);
 
 inline
 void HttpResponse::setStatus(const std::string& status)
@@ -38,6 +42,12 @@ inline
 void HttpResponse::addHeader(const HttpCustomHeader& name, const std::string& value)
 {
     d_headers.push_back({name, value});
+}
+
+inline
+const std::string& HttpResponse::getStatus() const
+{
+    return d_status;
 }
 
 }
