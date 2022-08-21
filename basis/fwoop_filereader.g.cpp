@@ -18,3 +18,20 @@ TEST(FileReaderTest, Constructor)
         std::cout << *itr << '\n';
     }
 }
+
+TEST(FileReaderTest, loadFile)
+{
+    // GIVEN
+    const std::string filename("../../basis/testdata/test.txt");
+    fwoop::FileReader reader(filename);
+    uint32_t length = 0;
+    std::string expected = "hello\nworld";
+
+    // WHEN
+    EXPECT_EQ(0, reader.open());
+    uint8_t *contents = reader.loadFile(length);
+
+    // THEN
+    EXPECT_EQ(11, length);
+    EXPECT_STREQ(expected.data(), (char*)contents);
+}

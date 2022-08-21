@@ -3,6 +3,7 @@
 #include <fwoop_httprequest.h>
 #include <fwoop_httpresponse.h>
 #include <fwoop_httpserver.h>
+#include <fwoop_httpheader.h>
 
 int main(int argc, char* argv[])
 {
@@ -25,10 +26,15 @@ int main(int argc, char* argv[])
 
     fwoop::HttpHandlerFunc_t handler = [](const fwoop::HttpRequest& request, fwoop::HttpResponse& response) {
         response.setStatus("200 OK");
+        response.addHeader(fwoop::HttpHeader::ContentType, "text/plain");
+
+        const std::string content = "welcome, world!";
+        response.setBody(content);
     };
 
     fwoop::HttpServer server(port, version);
     server.addRoute("/foo", handler);
+    server.addStaticRoute("/bar", "../basis/testdata/test.txt");
 
     if (0 != server.serve()) {
         return 1;

@@ -35,6 +35,7 @@ class HttpServer {
     int serve();
 
     void addRoute(const std::string& route, HttpHandlerFunc_t func);
+    void addStaticRoute(const std::string& route, const std::string& fileName);
 };
 
 }

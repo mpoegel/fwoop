@@ -20,6 +20,8 @@ class FileReader {
     int open();
     void close();
 
+    uint8_t *loadFile(uint32_t& length);
+
     Iterator begin();
     Iterator end();
 };

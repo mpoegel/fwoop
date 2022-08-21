@@ -297,6 +297,15 @@ void HttpServer::addRoute(const std::string& route, HttpHandlerFunc_t func)
     d_routeMap[route] = func;
 }
 
+void HttpServer::addStaticRoute(const std::string& route, const std::string& fileName)
+{
+    d_routeMap[route] = [fileName](const fwoop::HttpRequest& request, fwoop::HttpResponse& response) {
+        response.setStatus("200 OK");
+        response.addHeader(fwoop::HttpHeader::ContentType, "text/plain");
+        response.streamFile(fileName);
+    };
+}
+
 int HttpServer::handleHttp1Connection(int clientFd) const
 {
     constexpr unsigned int bufferSize = 2048;

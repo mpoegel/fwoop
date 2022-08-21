@@ -1,5 +1,8 @@
 #include <fwoop_filereader.h>
 
+#include <cstring>
+#include <limits>
+
 namespace fwoop {
 
 FileReader::FileReader(const std::string& filename)
@@ -19,6 +22,20 @@ int FileReader::open()
 void FileReader::close()
 {
     d_file.close();
+}
+
+uint8_t *FileReader::loadFile(uint32_t& length)
+{
+    d_file.ignore(std::numeric_limits<std::streamsize>::max());
+    length = d_file.gcount();
+    d_file.clear();
+    d_file.seekg(0, std::ios_base::beg);
+
+    uint8_t *contents = new uint8_t[length];
+    memset(contents, 0, length);
+    // d_file.get((char*)contents, length);
+    d_file.read((char*)contents, length);
+    return contents;
 }
 
 FileReader::Iterator FileReader::begin()
