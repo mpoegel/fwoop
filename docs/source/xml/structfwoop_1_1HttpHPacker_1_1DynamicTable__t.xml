@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="structfwoop_1_1HttpHPacker_1_1DynamicTable__t" kind="struct" language="C++" prot="private">
+    <compoundname>fwoop::HttpHPacker::DynamicTable_t</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structfwoop_1_1HttpHPacker_1_1DynamicTable__t_1afb2205d85e99fdbd62fd2a794b7f62bf" prot="public" static="no" mutable="no">
+        <type>std::list&lt; std::string &gt;</type>
+        <definition>std::list&lt;std::string&gt; fwoop::HttpHPacker::DynamicTable_t::queue</definition>
+        <argsstring></argsstring>
+        <name>queue</name>
+        <qualifiedname>fwoop::HttpHPacker::DynamicTable_t::queue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httphpacker.h" line="21" column="19" bodyfile="http/fwoop_httphpacker.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfwoop_1_1HttpHPacker_1_1DynamicTable__t_1a863c5c9408da3297ef0c7703d154db81" prot="public" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, uint32_t &gt;</type>
+        <definition>std::unordered_map&lt;std::string, uint32_t&gt; fwoop::HttpHPacker::DynamicTable_t::indexLookup</definition>
+        <argsstring></argsstring>
+        <name>indexLookup</name>
+        <qualifiedname>fwoop::HttpHPacker::DynamicTable_t::indexLookup</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httphpacker.h" line="22" column="28" bodyfile="http/fwoop_httphpacker.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfwoop_1_1HttpHPacker_1_1DynamicTable__t_1a6d0d0dcca881964ecbe08e17f8a4648c" prot="public" static="no" mutable="no">
+        <type>u_int32_t</type>
+        <definition>u_int32_t fwoop::HttpHPacker::DynamicTable_t::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <qualifiedname>fwoop::HttpHPacker::DynamicTable_t::size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httphpacker.h" line="23" column="19" bodyfile="http/fwoop_httphpacker.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="http/fwoop_httphpacker.h" line="20" column="5" bodyfile="http/fwoop_httphpacker.h" bodystart="20" bodyend="24"/>
+    <listofallmembers>
+      <member refid="structfwoop_1_1HttpHPacker_1_1DynamicTable__t_1a863c5c9408da3297ef0c7703d154db81" prot="public" virt="non-virtual"><scope>fwoop::HttpHPacker::DynamicTable_t</scope><name>indexLookup</name></member>
+      <member refid="structfwoop_1_1HttpHPacker_1_1DynamicTable__t_1afb2205d85e99fdbd62fd2a794b7f62bf" prot="public" virt="non-virtual"><scope>fwoop::HttpHPacker::DynamicTable_t</scope><name>queue</name></member>
+      <member refid="structfwoop_1_1HttpHPacker_1_1DynamicTable__t_1a6d0d0dcca881964ecbe08e17f8a4648c" prot="public" virt="non-virtual"><scope>fwoop::HttpHPacker::DynamicTable_t</scope><name>size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

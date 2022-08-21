@@ -1,0 +1,336 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1HttpRequest" kind="class" language="C++" prot="public">
+    <compoundname>fwoop::HttpRequest</compoundname>
+    <includes refid="fwoop__httprequest_8h" local="no">fwoop_httprequest.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Method</name>
+        <qualifiedname>fwoop::HttpRequest::Method</qualifiedname>
+        <enumvalue id="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89aec0fc0100c4fc1ce4eea230c3dc10360" prot="public">
+          <name>Undefined</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89ac55582518cba2c464f29f5bae1c68def" prot="public">
+          <name>Get</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89a03d947a2158373c3b9d74325850cb8b9" prot="public">
+          <name>Post</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89ad0bf1810982e9728fcf3ac444a015373" prot="public">
+          <name>Put</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89af2a6c498fb90ee345d997f888fce3b18" prot="public">
+          <name>Delete</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httprequest.h" line="14" column="5" bodyfile="http/fwoop_httprequest.h" bodystart="14" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="enum" id="classfwoop_1_1HttpRequest_1af9bcaea658b2bce3ede4db760dd9285a" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Version</name>
+        <qualifiedname>fwoop::HttpRequest::Version</qualifiedname>
+        <enumvalue id="classfwoop_1_1HttpRequest_1af9bcaea658b2bce3ede4db760dd9285aaec0fc0100c4fc1ce4eea230c3dc10360" prot="public">
+          <name>Undefined</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpRequest_1af9bcaea658b2bce3ede4db760dd9285aaa820a7cca3410e94af1e51058023680a" prot="public">
+          <name>Http1_0</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpRequest_1af9bcaea658b2bce3ede4db760dd9285aa2c494112f4c9bef921aacd3650fd34ea" prot="public">
+          <name>Http1_1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httprequest.h" line="21" column="5" bodyfile="http/fwoop_httprequest.h" bodystart="21" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1HttpRequest_1a5539721235b9001e1910b80b14eba3b0" prot="private" static="no" mutable="no">
+        <type><ref refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89" kindref="member">Method</ref></type>
+        <definition>Method fwoop::HttpRequest::d_method</definition>
+        <argsstring></argsstring>
+        <name>d_method</name>
+        <qualifiedname>fwoop::HttpRequest::d_method</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httprequest.h" line="28" column="36" bodyfile="http/fwoop_httprequest.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpRequest_1ab484ce60518269c421c0a1072faa7d1b" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string fwoop::HttpRequest::d_path</definition>
+        <argsstring></argsstring>
+        <name>d_path</name>
+        <qualifiedname>fwoop::HttpRequest::d_path</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httprequest.h" line="29" column="36" bodyfile="http/fwoop_httprequest.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpRequest_1a113765fdd065be5afb079f6972ca5adc" prot="private" static="no" mutable="no">
+        <type><ref refid="classfwoop_1_1HttpRequest_1af9bcaea658b2bce3ede4db760dd9285a" kindref="member">Version</ref></type>
+        <definition>Version fwoop::HttpRequest::d_version</definition>
+        <argsstring></argsstring>
+        <name>d_version</name>
+        <qualifiedname>fwoop::HttpRequest::d_version</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httprequest.h" line="30" column="36" bodyfile="http/fwoop_httprequest.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpRequest_1aab674dd887ff33fe2423d61308ae9d46" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespacefwoop_1a8f8f27ac925f849da3190dea9dcdcbf9" kindref="member">HttpHeaderField_t</ref> &gt;</type>
+        <definition>std::vector&lt;HttpHeaderField_t&gt; fwoop::HttpRequest::d_headers</definition>
+        <argsstring></argsstring>
+        <name>d_headers</name>
+        <qualifiedname>fwoop::HttpRequest::d_headers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httprequest.h" line="31" column="17" bodyfile="http/fwoop_httprequest.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpRequest_1a76b725a7f8bec05f1a57d7634cb498b7" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool fwoop::HttpRequest::d_canUpgrade</definition>
+        <argsstring></argsstring>
+        <name>d_canUpgrade</name>
+        <qualifiedname>fwoop::HttpRequest::d_canUpgrade</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httprequest.h" line="32" column="36" bodyfile="http/fwoop_httprequest.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classfwoop_1_1HttpRequest_1a43eccc1641f5dcb4ad41cd9ffd44076e" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89" kindref="member">Method</ref></type>
+        <definition>HttpRequest::Method fwoop::HttpRequest::stringToMethod</definition>
+        <argsstring>(const std::string &amp;methodStr)</argsstring>
+        <name>stringToMethod</name>
+        <qualifiedname>fwoop::HttpRequest::stringToMethod</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>methodStr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httprequest.h" line="34" column="19" bodyfile="http/fwoop_httprequest.cpp" bodystart="53" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpRequest_1a1679189de848c744bbad286ea65751d4" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfwoop_1_1HttpRequest_1af9bcaea658b2bce3ede4db760dd9285a" kindref="member">Version</ref></type>
+        <definition>HttpRequest::Version fwoop::HttpRequest::stringToVersion</definition>
+        <argsstring>(const std::string &amp;versionStr)</argsstring>
+        <name>stringToVersion</name>
+        <qualifiedname>fwoop::HttpRequest::stringToVersion</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>versionStr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httprequest.h" line="35" column="20" bodyfile="http/fwoop_httprequest.cpp" bodystart="62" bodyend="67"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classfwoop_1_1HttpRequest_1a950c4bdae87dde4f90da2d011fbf545e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classfwoop_1_1HttpRequest" kindref="compound">HttpRequest</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; HttpRequest &gt; fwoop::HttpRequest::parse</definition>
+        <argsstring>(uint8_t *buffer, uint32_t bufferSize, uint32_t &amp;bytesParsed)</argsstring>
+        <name>parse</name>
+        <qualifiedname>fwoop::HttpRequest::parse</qualifiedname>
+        <param>
+          <type>uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>bufferSize</declname>
+        </param>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>bytesParsed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httprequest.h" line="38" column="28" bodyfile="http/fwoop_httprequest.cpp" bodystart="69" bodyend="112"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfwoop_1_1HttpRequest_1a0e137f16406ce40f132fd7c235e64412" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::HttpRequest::HttpRequest</definition>
+        <argsstring>()</argsstring>
+        <name>HttpRequest</name>
+        <qualifiedname>fwoop::HttpRequest::HttpRequest</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httprequest.h" line="40" column="14" bodyfile="http/fwoop_httprequest.cpp" bodystart="45" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpRequest_1aa3c327f807839f9414a5e93d06dcf9dd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89" kindref="member">Method</ref></type>
+        <definition>HttpRequest::Method fwoop::HttpRequest::getMethod</definition>
+        <argsstring>() const</argsstring>
+        <name>getMethod</name>
+        <qualifiedname>fwoop::HttpRequest::getMethod</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httprequest.h" line="42" column="12" bodyfile="http/fwoop_httprequest.h" bodystart="54" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpRequest_1a4a6dae6c801bc2acca03727f8b4b98f7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; fwoop::HttpRequest::getPath</definition>
+        <argsstring>() const</argsstring>
+        <name>getPath</name>
+        <qualifiedname>fwoop::HttpRequest::getPath</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httprequest.h" line="43" column="23" bodyfile="http/fwoop_httprequest.h" bodystart="60" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpRequest_1a108b07a79fbdd6f5e7872c5c44c3f354" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classfwoop_1_1HttpRequest_1af9bcaea658b2bce3ede4db760dd9285a" kindref="member">Version</ref></type>
+        <definition>HttpRequest::Version fwoop::HttpRequest::getVersion</definition>
+        <argsstring>() const</argsstring>
+        <name>getVersion</name>
+        <qualifiedname>fwoop::HttpRequest::getVersion</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httprequest.h" line="44" column="13" bodyfile="http/fwoop_httprequest.h" bodystart="66" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpRequest_1a9c809a90c746462a9c515280302df2b0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::vector&lt; <ref refid="namespacefwoop_1a8f8f27ac925f849da3190dea9dcdcbf9" kindref="member">HttpHeaderField_t</ref> &gt; &amp;</type>
+        <definition>const std::vector&lt; HttpHeaderField_t &gt; &amp; fwoop::HttpRequest::getHeaders</definition>
+        <argsstring>() const</argsstring>
+        <name>getHeaders</name>
+        <qualifiedname>fwoop::HttpRequest::getHeaders</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httprequest.h" line="45" column="23" bodyfile="http/fwoop_httprequest.h" bodystart="72" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpRequest_1a5fd5a4cbf0909952e49e6237c6aa9826" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fwoop::HttpRequest::canUpgrade</definition>
+        <argsstring>() const</argsstring>
+        <name>canUpgrade</name>
+        <qualifiedname>fwoop::HttpRequest::canUpgrade</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httprequest.h" line="46" column="10" bodyfile="http/fwoop_httprequest.h" bodystart="78" bodyend="81"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="http/fwoop_httprequest.h" line="12" column="1" bodyfile="http/fwoop_httprequest.h" bodystart="12" bodyend="47"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1HttpRequest_1a5fd5a4cbf0909952e49e6237c6aa9826" prot="public" virt="non-virtual"><scope>fwoop::HttpRequest</scope><name>canUpgrade</name></member>
+      <member refid="classfwoop_1_1HttpRequest_1a76b725a7f8bec05f1a57d7634cb498b7" prot="private" virt="non-virtual"><scope>fwoop::HttpRequest</scope><name>d_canUpgrade</name></member>
+      <member refid="classfwoop_1_1HttpRequest_1aab674dd887ff33fe2423d61308ae9d46" prot="private" virt="non-virtual"><scope>fwoop::HttpRequest</scope><name>d_headers</name></member>
+      <member refid="classfwoop_1_1HttpRequest_1a5539721235b9001e1910b80b14eba3b0" prot="private" virt="non-virtual"><scope>fwoop::HttpRequest</scope><name>d_method</name></member>
+      <member refid="classfwoop_1_1HttpRequest_1ab484ce60518269c421c0a1072faa7d1b" prot="private" virt="non-virtual"><scope>fwoop::HttpRequest</scope><name>d_path</name></member>
+      <member refid="classfwoop_1_1HttpRequest_1a113765fdd065be5afb079f6972ca5adc" prot="private" virt="non-virtual"><scope>fwoop::HttpRequest</scope><name>d_version</name></member>
+      <member refid="classfwoop_1_1HttpRequest_1a9c809a90c746462a9c515280302df2b0" prot="public" virt="non-virtual"><scope>fwoop::HttpRequest</scope><name>getHeaders</name></member>
+      <member refid="classfwoop_1_1HttpRequest_1aa3c327f807839f9414a5e93d06dcf9dd" prot="public" virt="non-virtual"><scope>fwoop::HttpRequest</scope><name>getMethod</name></member>
+      <member refid="classfwoop_1_1HttpRequest_1a4a6dae6c801bc2acca03727f8b4b98f7" prot="public" virt="non-virtual"><scope>fwoop::HttpRequest</scope><name>getPath</name></member>
+      <member refid="classfwoop_1_1HttpRequest_1a108b07a79fbdd6f5e7872c5c44c3f354" prot="public" virt="non-virtual"><scope>fwoop::HttpRequest</scope><name>getVersion</name></member>
+      <member refid="classfwoop_1_1HttpRequest_1a0e137f16406ce40f132fd7c235e64412" prot="public" virt="non-virtual"><scope>fwoop::HttpRequest</scope><name>HttpRequest</name></member>
+      <member refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89" prot="public" virt="non-virtual"><scope>fwoop::HttpRequest</scope><name>Method</name></member>
+      <member refid="classfwoop_1_1HttpRequest_1a950c4bdae87dde4f90da2d011fbf545e" prot="public" virt="non-virtual"><scope>fwoop::HttpRequest</scope><name>parse</name></member>
+      <member refid="classfwoop_1_1HttpRequest_1a43eccc1641f5dcb4ad41cd9ffd44076e" prot="private" virt="non-virtual"><scope>fwoop::HttpRequest</scope><name>stringToMethod</name></member>
+      <member refid="classfwoop_1_1HttpRequest_1a1679189de848c744bbad286ea65751d4" prot="private" virt="non-virtual"><scope>fwoop::HttpRequest</scope><name>stringToVersion</name></member>
+      <member refid="classfwoop_1_1HttpRequest_1af9bcaea658b2bce3ede4db760dd9285a" prot="public" virt="non-virtual"><scope>fwoop::HttpRequest</scope><name>Version</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

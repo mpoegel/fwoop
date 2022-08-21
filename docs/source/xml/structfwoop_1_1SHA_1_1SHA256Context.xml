@@ -1,0 +1,297 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="structfwoop_1_1SHA_1_1SHA256Context" kind="struct" language="C++" prot="private">
+    <compoundname>fwoop::SHA::SHA256Context</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structfwoop_1_1SHA_1_1SHA256Context_1a03bb469c34024d2a3dd801c4cb6ab7af" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t fwoop::SHA::SHA256Context::IntermediateHash[SHA256HashSize/4]</definition>
+        <argsstring>[SHA256HashSize/4]</argsstring>
+        <name>IntermediateHash</name>
+        <qualifiedname>fwoop::SHA::SHA256Context::IntermediateHash</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.h" line="17" column="18" bodyfile="crypto/fwoop_sha.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfwoop_1_1SHA_1_1SHA256Context_1a280389002ed77123d2f8ec5e6e133a60" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t fwoop::SHA::SHA256Context::LengthHigh</definition>
+        <argsstring></argsstring>
+        <name>LengthHigh</name>
+        <qualifiedname>fwoop::SHA::SHA256Context::LengthHigh</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.h" line="19" column="18" bodyfile="crypto/fwoop_sha.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfwoop_1_1SHA_1_1SHA256Context_1a8d7e1255a9f291058569a5ba57e395c9" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t fwoop::SHA::SHA256Context::LengthLow</definition>
+        <argsstring></argsstring>
+        <name>LengthLow</name>
+        <qualifiedname>fwoop::SHA::SHA256Context::LengthLow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.h" line="20" column="18" bodyfile="crypto/fwoop_sha.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfwoop_1_1SHA_1_1SHA256Context_1ab4760d0057a1f0ddbbe754fceb73f73c" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t fwoop::SHA::SHA256Context::MessageBlockIndex</definition>
+        <argsstring></argsstring>
+        <name>MessageBlockIndex</name>
+        <qualifiedname>fwoop::SHA::SHA256Context::MessageBlockIndex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.h" line="22" column="17" bodyfile="crypto/fwoop_sha.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfwoop_1_1SHA_1_1SHA256Context_1ae3bb0dd39c064b9c95a9f85f024daa34" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t fwoop::SHA::SHA256Context::MessageBlock[SHA256MessageBlockSize]</definition>
+        <argsstring>[SHA256MessageBlockSize]</argsstring>
+        <name>MessageBlock</name>
+        <qualifiedname>fwoop::SHA::SHA256Context::MessageBlock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.h" line="24" column="17" bodyfile="crypto/fwoop_sha.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfwoop_1_1SHA_1_1SHA256Context_1ae3635e01ef46c0fdad0a996d07d75937" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int fwoop::SHA::SHA256Context::Computed</definition>
+        <argsstring></argsstring>
+        <name>Computed</name>
+        <qualifiedname>fwoop::SHA::SHA256Context::Computed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.h" line="26" column="13" bodyfile="crypto/fwoop_sha.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfwoop_1_1SHA_1_1SHA256Context_1a994c65261a07179accd0acb07a001f32" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int fwoop::SHA::SHA256Context::Corrupted</definition>
+        <argsstring></argsstring>
+        <name>Corrupted</name>
+        <qualifiedname>fwoop::SHA::SHA256Context::Corrupted</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.h" line="27" column="13" bodyfile="crypto/fwoop_sha.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structfwoop_1_1SHA_1_1SHA256Context_1a1062f9548d164ff25f003ef174b6ed8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int fwoop::SHA::SHA256Context::SHA256Reset</definition>
+        <argsstring>()</argsstring>
+        <name>SHA256Reset</name>
+        <qualifiedname>fwoop::SHA::SHA256Context::SHA256Reset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.h" line="29" column="13" bodyfile="crypto/fwoop_sha.cpp" bodystart="44" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="structfwoop_1_1SHA_1_1SHA256Context_1a606348396e0cc7a48cc071b645683b60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int fwoop::SHA::SHA256Context::SHA256Input</definition>
+        <argsstring>(const uint8_t *bytes, uint32_t length)</argsstring>
+        <name>SHA256Input</name>
+        <qualifiedname>fwoop::SHA::SHA256Context::SHA256Input</qualifiedname>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>bytes</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.h" line="30" column="13" bodyfile="crypto/fwoop_sha.cpp" bodystart="69" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="structfwoop_1_1SHA_1_1SHA256Context_1a6a09bee446d7e144cb4fcd15474009c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int fwoop::SHA::SHA256Context::SHA256FinalBits</definition>
+        <argsstring>(uint8_t bits, uint32_t length)</argsstring>
+        <name>SHA256FinalBits</name>
+        <qualifiedname>fwoop::SHA::SHA256Context::SHA256FinalBits</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>bits</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.h" line="31" column="13" bodyfile="crypto/fwoop_sha.cpp" bodystart="88" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="structfwoop_1_1SHA_1_1SHA256Context_1a58748482de5e3bf5d87c7d735633255e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int fwoop::SHA::SHA256Context::SHA256Result</definition>
+        <argsstring>(uint8_t *digest)</argsstring>
+        <name>SHA256Result</name>
+        <qualifiedname>fwoop::SHA::SHA256Context::SHA256Result</qualifiedname>
+        <param>
+          <type>uint8_t *</type>
+          <declname>digest</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.h" line="32" column="13" bodyfile="crypto/fwoop_sha.cpp" bodystart="156" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="structfwoop_1_1SHA_1_1SHA256Context_1a96123c0df0a0c3cda7795d70b28e5b6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::SHA::SHA256Context::SHA256Finalize</definition>
+        <argsstring>(uint8_t padByte)</argsstring>
+        <name>SHA256Finalize</name>
+        <qualifiedname>fwoop::SHA::SHA256Context::SHA256Finalize</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>padByte</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.h" line="33" column="14" bodyfile="crypto/fwoop_sha.cpp" bodystart="117" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="structfwoop_1_1SHA_1_1SHA256Context_1acb804d2361fd6bb3e437524a7f00c42e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::SHA::SHA256Context::SHA256PadMessage</definition>
+        <argsstring>(uint8_t padByte)</argsstring>
+        <name>SHA256PadMessage</name>
+        <qualifiedname>fwoop::SHA::SHA256Context::SHA256PadMessage</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>padByte</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.h" line="35" column="14" bodyfile="crypto/fwoop_sha.cpp" bodystart="128" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="structfwoop_1_1SHA_1_1SHA256Context_1a5a579ae17c3a8626d4e142c8a2cb3591" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int fwoop::SHA::SHA256Context::SHA256AddLength</definition>
+        <argsstring>(uint32_t length)</argsstring>
+        <name>SHA256AddLength</name>
+        <qualifiedname>fwoop::SHA::SHA256Context::SHA256AddLength</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.h" line="36" column="13" bodyfile="crypto/fwoop_sha.cpp" bodystart="175" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="structfwoop_1_1SHA_1_1SHA256Context_1a5b0ec11dc3ef92b31d2a8b05c3dc6603" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int fwoop::SHA::SHA256Context::SHA256ProcessMessageBlock</definition>
+        <argsstring>()</argsstring>
+        <name>SHA256ProcessMessageBlock</name>
+        <qualifiedname>fwoop::SHA::SHA256Context::SHA256ProcessMessageBlock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.h" line="37" column="13" bodyfile="crypto/fwoop_sha.cpp" bodystart="184" bodyend="251"/>
+      </memberdef>
+      <memberdef kind="function" id="structfwoop_1_1SHA_1_1SHA256Context_1a0e5eca8fb01d5a46109faf56476db8b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int fwoop::SHA::SHA256Context::SHA256ResultN</definition>
+        <argsstring>(uint8_t *digest, uint32_t hashSize)</argsstring>
+        <name>SHA256ResultN</name>
+        <qualifiedname>fwoop::SHA::SHA256Context::SHA256ResultN</qualifiedname>
+        <param>
+          <type>uint8_t *</type>
+          <declname>digest</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>hashSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.h" line="38" column="13" bodyfile="crypto/fwoop_sha.cpp" bodystart="161" bodyend="172"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="crypto/fwoop_sha.h" line="16" column="5" bodyfile="crypto/fwoop_sha.h" bodystart="16" bodyend="39"/>
+    <listofallmembers>
+      <member refid="structfwoop_1_1SHA_1_1SHA256Context_1ae3635e01ef46c0fdad0a996d07d75937" prot="public" virt="non-virtual"><scope>fwoop::SHA::SHA256Context</scope><name>Computed</name></member>
+      <member refid="structfwoop_1_1SHA_1_1SHA256Context_1a994c65261a07179accd0acb07a001f32" prot="public" virt="non-virtual"><scope>fwoop::SHA::SHA256Context</scope><name>Corrupted</name></member>
+      <member refid="structfwoop_1_1SHA_1_1SHA256Context_1a03bb469c34024d2a3dd801c4cb6ab7af" prot="public" virt="non-virtual"><scope>fwoop::SHA::SHA256Context</scope><name>IntermediateHash</name></member>
+      <member refid="structfwoop_1_1SHA_1_1SHA256Context_1a280389002ed77123d2f8ec5e6e133a60" prot="public" virt="non-virtual"><scope>fwoop::SHA::SHA256Context</scope><name>LengthHigh</name></member>
+      <member refid="structfwoop_1_1SHA_1_1SHA256Context_1a8d7e1255a9f291058569a5ba57e395c9" prot="public" virt="non-virtual"><scope>fwoop::SHA::SHA256Context</scope><name>LengthLow</name></member>
+      <member refid="structfwoop_1_1SHA_1_1SHA256Context_1ae3bb0dd39c064b9c95a9f85f024daa34" prot="public" virt="non-virtual"><scope>fwoop::SHA::SHA256Context</scope><name>MessageBlock</name></member>
+      <member refid="structfwoop_1_1SHA_1_1SHA256Context_1ab4760d0057a1f0ddbbe754fceb73f73c" prot="public" virt="non-virtual"><scope>fwoop::SHA::SHA256Context</scope><name>MessageBlockIndex</name></member>
+      <member refid="structfwoop_1_1SHA_1_1SHA256Context_1a5a579ae17c3a8626d4e142c8a2cb3591" prot="public" virt="non-virtual"><scope>fwoop::SHA::SHA256Context</scope><name>SHA256AddLength</name></member>
+      <member refid="structfwoop_1_1SHA_1_1SHA256Context_1a6a09bee446d7e144cb4fcd15474009c8" prot="public" virt="non-virtual"><scope>fwoop::SHA::SHA256Context</scope><name>SHA256FinalBits</name></member>
+      <member refid="structfwoop_1_1SHA_1_1SHA256Context_1a96123c0df0a0c3cda7795d70b28e5b6c" prot="public" virt="non-virtual"><scope>fwoop::SHA::SHA256Context</scope><name>SHA256Finalize</name></member>
+      <member refid="structfwoop_1_1SHA_1_1SHA256Context_1a606348396e0cc7a48cc071b645683b60" prot="public" virt="non-virtual"><scope>fwoop::SHA::SHA256Context</scope><name>SHA256Input</name></member>
+      <member refid="structfwoop_1_1SHA_1_1SHA256Context_1acb804d2361fd6bb3e437524a7f00c42e" prot="public" virt="non-virtual"><scope>fwoop::SHA::SHA256Context</scope><name>SHA256PadMessage</name></member>
+      <member refid="structfwoop_1_1SHA_1_1SHA256Context_1a5b0ec11dc3ef92b31d2a8b05c3dc6603" prot="public" virt="non-virtual"><scope>fwoop::SHA::SHA256Context</scope><name>SHA256ProcessMessageBlock</name></member>
+      <member refid="structfwoop_1_1SHA_1_1SHA256Context_1a1062f9548d164ff25f003ef174b6ed8b" prot="public" virt="non-virtual"><scope>fwoop::SHA::SHA256Context</scope><name>SHA256Reset</name></member>
+      <member refid="structfwoop_1_1SHA_1_1SHA256Context_1a58748482de5e3bf5d87c7d735633255e" prot="public" virt="non-virtual"><scope>fwoop::SHA::SHA256Context</scope><name>SHA256Result</name></member>
+      <member refid="structfwoop_1_1SHA_1_1SHA256Context_1a0e5eca8fb01d5a46109faf56476db8b3" prot="public" virt="non-virtual"><scope>fwoop::SHA::SHA256Context</scope><name>SHA256ResultN</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

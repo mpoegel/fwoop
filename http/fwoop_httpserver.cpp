@@ -27,6 +27,7 @@ HttpServer::HttpServer(int port, HttpVersion version)
 : d_port(port)
 , d_serverFd(-1)
 , d_version(version)
+, d_isActive(false)
 {}
 
 HttpServer::~HttpServer()
@@ -68,19 +69,28 @@ int HttpServer::serve()
 
     struct sockaddr_in clientAddr;
     socklen_t addrLen;
-    int clientFd = accept4(d_serverFd, (struct sockaddr*)&clientAddr, (socklen_t*)&addrLen, SOCK_NONBLOCK);
-    if (clientFd < 0) {
-        std::cerr << "failed to accept, errno" << errno << '\n';
-        return -1;
-    }
-
-    switch (d_version) {
-        case HttpVersion::HTTP11: return handleHttp1Connection(clientFd);
-        case HttpVersion::HTTP2: return handleHttp2Connection(clientFd);
-        default:
-            std::cerr << "unsupported HTTP version: " << d_version;
+    d_isActive = true;
+    while (d_isActive) {
+        int clientFd = accept4(d_serverFd, (struct sockaddr*)&clientAddr, (socklen_t*)&addrLen, SOCK_NONBLOCK);
+        if (clientFd < 0) {
+            std::cerr << "failed to accept, errno" << errno << '\n';
             return -1;
+        }
+
+        switch (d_version) {
+            case HttpVersion::HTTP11:
+                handleHttp1Connection(clientFd);
+                break;
+            case HttpVersion::HTTP2:
+                handleHttp2Connection(clientFd);
+                break;
+            default:
+                std::cerr << "unsupported HTTP version: " << d_version;
+                return -1;
+        }
+        Log::Info("processed request");
     }
+    return 0;
 }
 
 

@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1FileReader" kind="class" language="C++" prot="public">
+    <compoundname>fwoop::FileReader</compoundname>
+    <includes refid="fwoop__filereader_8h" local="no">fwoop_filereader.h</includes>
+    <innerclass refid="classfwoop_1_1FileReader_1_1Iterator" prot="public">fwoop::FileReader::Iterator</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1FileReader_1aaa0580f04cc7e3f7b3407f0b9b8f4d61" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string fwoop::FileReader::d_filename</definition>
+        <argsstring></argsstring>
+        <name>d_filename</name>
+        <qualifiedname>fwoop::FileReader::d_filename</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_filereader.h" line="12" column="19" bodyfile="basis/fwoop_filereader.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1FileReader_1a2d35b7eca24b84349efb63e2d6361fc4" prot="private" static="no" mutable="no">
+        <type>std::ifstream</type>
+        <definition>std::ifstream fwoop::FileReader::d_file</definition>
+        <argsstring></argsstring>
+        <name>d_file</name>
+        <qualifiedname>fwoop::FileReader::d_file</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_filereader.h" line="13" column="19" bodyfile="basis/fwoop_filereader.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfwoop_1_1FileReader_1a279807aef5422f917358f68b596f0412" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::FileReader::FileReader</definition>
+        <argsstring>(const std::string &amp;filename)</argsstring>
+        <name>FileReader</name>
+        <qualifiedname>fwoop::FileReader::FileReader</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_filereader.h" line="18" column="14" bodyfile="basis/fwoop_filereader.cpp" bodystart="8" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1FileReader_1a75192e1847e2e0e080c8be9215e52622" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::FileReader::~FileReader</definition>
+        <argsstring>()</argsstring>
+        <name>~FileReader</name>
+        <qualifiedname>fwoop::FileReader::~FileReader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_filereader.h" line="19" column="5" bodyfile="basis/fwoop_filereader.h" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1FileReader_1a2a0e54c43809fa51cbf619f3748d6ae1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int fwoop::FileReader::open</definition>
+        <argsstring>()</argsstring>
+        <name>open</name>
+        <qualifiedname>fwoop::FileReader::open</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_filereader.h" line="21" column="9" bodyfile="basis/fwoop_filereader.cpp" bodystart="13" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1FileReader_1afcab282d88374a0abd86e76a99a1f80b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::FileReader::close</definition>
+        <argsstring>()</argsstring>
+        <name>close</name>
+        <qualifiedname>fwoop::FileReader::close</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_filereader.h" line="22" column="10" bodyfile="basis/fwoop_filereader.cpp" bodystart="22" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1FileReader_1a27ef656284e148a8971338595c8eab77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t *</type>
+        <definition>uint8_t * fwoop::FileReader::loadFile</definition>
+        <argsstring>(uint32_t &amp;length)</argsstring>
+        <name>loadFile</name>
+        <qualifiedname>fwoop::FileReader::loadFile</qualifiedname>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_filereader.h" line="24" column="13" bodyfile="basis/fwoop_filereader.cpp" bodystart="27" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1FileReader_1ab4cafab4adf37680c6dde63223aee418" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfwoop_1_1FileReader_1_1Iterator" kindref="compound">Iterator</ref></type>
+        <definition>FileReader::Iterator fwoop::FileReader::begin</definition>
+        <argsstring>()</argsstring>
+        <name>begin</name>
+        <qualifiedname>fwoop::FileReader::begin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_filereader.h" line="26" column="14" bodyfile="basis/fwoop_filereader.cpp" bodystart="41" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1FileReader_1af920fc8271e34d4c63a7b0bd29ef6b4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfwoop_1_1FileReader_1_1Iterator" kindref="compound">Iterator</ref></type>
+        <definition>FileReader::Iterator fwoop::FileReader::end</definition>
+        <argsstring>()</argsstring>
+        <name>end</name>
+        <qualifiedname>fwoop::FileReader::end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_filereader.h" line="27" column="14" bodyfile="basis/fwoop_filereader.cpp" bodystart="47" bodyend="51"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This is used to read files. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="basis/fwoop_filereader.h" line="10" column="1" bodyfile="basis/fwoop_filereader.h" bodystart="10" bodyend="28"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1FileReader_1ab4cafab4adf37680c6dde63223aee418" prot="public" virt="non-virtual"><scope>fwoop::FileReader</scope><name>begin</name></member>
+      <member refid="classfwoop_1_1FileReader_1afcab282d88374a0abd86e76a99a1f80b" prot="public" virt="non-virtual"><scope>fwoop::FileReader</scope><name>close</name></member>
+      <member refid="classfwoop_1_1FileReader_1a2d35b7eca24b84349efb63e2d6361fc4" prot="private" virt="non-virtual"><scope>fwoop::FileReader</scope><name>d_file</name></member>
+      <member refid="classfwoop_1_1FileReader_1aaa0580f04cc7e3f7b3407f0b9b8f4d61" prot="private" virt="non-virtual"><scope>fwoop::FileReader</scope><name>d_filename</name></member>
+      <member refid="classfwoop_1_1FileReader_1af920fc8271e34d4c63a7b0bd29ef6b4d" prot="public" virt="non-virtual"><scope>fwoop::FileReader</scope><name>end</name></member>
+      <member refid="classfwoop_1_1FileReader_1a279807aef5422f917358f68b596f0412" prot="public" virt="non-virtual"><scope>fwoop::FileReader</scope><name>FileReader</name></member>
+      <member refid="classfwoop_1_1FileReader_1a27ef656284e148a8971338595c8eab77" prot="public" virt="non-virtual"><scope>fwoop::FileReader</scope><name>loadFile</name></member>
+      <member refid="classfwoop_1_1FileReader_1a2a0e54c43809fa51cbf619f3748d6ae1" prot="public" virt="non-virtual"><scope>fwoop::FileReader</scope><name>open</name></member>
+      <member refid="classfwoop_1_1FileReader_1a75192e1847e2e0e080c8be9215e52622" prot="public" virt="non-virtual"><scope>fwoop::FileReader</scope><name>~FileReader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1HttpDataFrame" kind="class" language="C++" prot="public">
+    <compoundname>fwoop::HttpDataFrame</compoundname>
+    <basecompoundref refid="classfwoop_1_1HttpFrame" prot="public" virt="non-virtual">fwoop::HttpFrame</basecompoundref>
+    <includes refid="fwoop__httpdataframe_8h" local="no">fwoop_httpdataframe.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classfwoop_1_1HttpDataFrame_1a9d3a9fbfef9fad501b96cd93e9c89992" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Flag</name>
+        <qualifiedname>fwoop::HttpDataFrame::Flag</qualifiedname>
+        <enumvalue id="classfwoop_1_1HttpDataFrame_1a9d3a9fbfef9fad501b96cd93e9c89992a9cfb4fe5153e29502bd13dbb101ec573" prot="public">
+          <name>EndStream</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpDataFrame_1a9d3a9fbfef9fad501b96cd93e9c89992af6628955c0334395561e6982c41f5f97" prot="public">
+          <name>Padded</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpdataframe.h" line="12" column="5" bodyfile="http/fwoop_httpdataframe.h" bodystart="12" bodyend="15"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1HttpDataFrame_1a2f63aec8540ee511e15509f771c7259a" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t fwoop::HttpDataFrame::d_padLength</definition>
+        <argsstring></argsstring>
+        <name>d_padLength</name>
+        <qualifiedname>fwoop::HttpDataFrame::d_padLength</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpdataframe.h" line="9" column="13" bodyfile="http/fwoop_httpdataframe.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfwoop_1_1HttpDataFrame_1a41161a3ad122d3c206bd4c7f5c37a0b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::HttpDataFrame::HttpDataFrame</definition>
+        <argsstring>(unsigned int length, uint8_t flags, uint8_t *streamID, uint8_t *payload)</argsstring>
+        <name>HttpDataFrame</name>
+        <qualifiedname>fwoop::HttpDataFrame::HttpDataFrame</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>streamID</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>payload</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpdataframe.h" line="17" column="5" bodyfile="http/fwoop_httpdataframe.cpp" bodystart="7" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpDataFrame_1a5327cea18f8d86adb3a6c82b9725975a" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::HttpDataFrame::HttpDataFrame</definition>
+        <argsstring>()</argsstring>
+        <name>HttpDataFrame</name>
+        <qualifiedname>fwoop::HttpDataFrame::HttpDataFrame</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpdataframe.h" line="18" column="14" bodyfile="http/fwoop_httpdataframe.cpp" bodystart="13" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpDataFrame_1a6c9eb20d3c39ea75e891808361275e74" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::HttpDataFrame::~HttpDataFrame</definition>
+        <argsstring>()</argsstring>
+        <name>~HttpDataFrame</name>
+        <qualifiedname>fwoop::HttpDataFrame::~HttpDataFrame</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpdataframe.h" line="20" column="5" bodyfile="http/fwoop_httpdataframe.h" bodystart="29" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpDataFrame_1ac18b944415833c1b94ea6b4f9516fd73" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>uint8_t *</type>
+        <definition>uint8_t * fwoop::HttpDataFrame::encode</definition>
+        <argsstring>() const override</argsstring>
+        <name>encode</name>
+        <qualifiedname>fwoop::HttpDataFrame::encode</qualifiedname>
+        <reimplements refid="classfwoop_1_1HttpFrame_1a2a316cf5e601ae7e60316f7632d7a26f">encode</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpdataframe.h" line="22" column="13" bodyfile="http/fwoop_httpdataframe.cpp" bodystart="19" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpDataFrame_1a55c83ac304f0797c6b3f727acd6dff52" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::HttpDataFrame::addFlag</definition>
+        <argsstring>(Flag flag)</argsstring>
+        <name>addFlag</name>
+        <qualifiedname>fwoop::HttpDataFrame::addFlag</qualifiedname>
+        <param>
+          <type><ref refid="classfwoop_1_1HttpDataFrame_1a9d3a9fbfef9fad501b96cd93e9c89992" kindref="member">Flag</ref></type>
+          <declname>flag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpdataframe.h" line="24" column="10" bodyfile="http/fwoop_httpdataframe.h" bodystart="34" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpDataFrame_1abb7ff3781f31371191a70653d5ba73f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::HttpDataFrame::setData</definition>
+        <argsstring>(uint8_t *data, uint32_t dataLen)</argsstring>
+        <name>setData</name>
+        <qualifiedname>fwoop::HttpDataFrame::setData</qualifiedname>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>dataLen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpdataframe.h" line="25" column="10" bodyfile="http/fwoop_httpdataframe.cpp" bodystart="30" bodyend="38"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>fwoop::HttpDataFrame</label>
+        <link refid="classfwoop_1_1HttpDataFrame"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>fwoop::HttpFrame</label>
+        <link refid="classfwoop_1_1HttpFrame"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>fwoop::HttpDataFrame</label>
+        <link refid="classfwoop_1_1HttpDataFrame"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>fwoop::HttpFrame</label>
+        <link refid="classfwoop_1_1HttpFrame"/>
+      </node>
+    </collaborationgraph>
+    <location file="http/fwoop_httpdataframe.h" line="7" column="1" bodyfile="http/fwoop_httpdataframe.h" bodystart="7" bodyend="26"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1HttpDataFrame_1a55c83ac304f0797c6b3f727acd6dff52" prot="public" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>addFlag</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1ade1fb3cab89f2a3c95312cb2378abb6e" prot="public" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>byteToType</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1af4ab160bcedcb2562d6001c6570548e2" prot="protected" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>d_flags</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1af9fb5740d57aee90e97cb7de45f3e321" prot="protected" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>d_length</name></member>
+      <member refid="classfwoop_1_1HttpDataFrame_1a2f63aec8540ee511e15509f771c7259a" prot="private" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>d_padLength</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a1b7c3e3c81c64d953c13a96cf9cb31d3" prot="protected" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>d_payload</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" prot="protected" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>d_streamID</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a2c1b3db021c82daa3485ed8bcd547404" prot="protected" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>d_type</name></member>
+      <member refid="classfwoop_1_1HttpDataFrame_1ac18b944415833c1b94ea6b4f9516fd73" prot="public" virt="virtual"><scope>fwoop::HttpDataFrame</scope><name>encode</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a2d15a02a0cb21cfaa2643a87e8830426" prot="protected" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>encodeHeader</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a79aa423e31eefead7f0fd3e8f5a028ae" prot="public" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>encodingLength</name></member>
+      <member refid="classfwoop_1_1HttpDataFrame_1a9d3a9fbfef9fad501b96cd93e9c89992a9cfb4fe5153e29502bd13dbb101ec573" prot="public" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>EndStream</name></member>
+      <member refid="classfwoop_1_1HttpDataFrame_1a9d3a9fbfef9fad501b96cd93e9c89992" prot="public" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>Flag</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1af91ef9220c742b6fe0e398fd0e8bc4da" prot="public" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>getStreamID</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1af748ad7f28c669c6616d60fe5965bd7e" prot="public" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>HEADER_LENGTH</name></member>
+      <member refid="classfwoop_1_1HttpDataFrame_1a41161a3ad122d3c206bd4c7f5c37a0b3" prot="public" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>HttpDataFrame</name></member>
+      <member refid="classfwoop_1_1HttpDataFrame_1a5327cea18f8d86adb3a6c82b9725975a" prot="public" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>HttpDataFrame</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a7ab4cf22d8e4df08b9e2c112d3a3579f" prot="protected" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>HttpFrame</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a2a596317d262444416399415bf005498" prot="public" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>HttpFrame</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1aa418c5a29a857d21bd83835836230696" prot="public" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>length</name></member>
+      <member refid="classfwoop_1_1HttpDataFrame_1a9d3a9fbfef9fad501b96cd93e9c89992af6628955c0334395561e6982c41f5f97" prot="public" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>Padded</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1ac9e387d889689561660aa094aff1fd85" prot="public" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>parse</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a7f1a53af685d8dc955a31f2fcd70fade" prot="public" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>payload</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a5bb16b36fec77fb383402306e7b30b3c" prot="public" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>printHeader</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1ac0b88de07f70e2a7c6dc4e6b4010cd80" prot="public" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>printHex</name></member>
+      <member refid="classfwoop_1_1HttpDataFrame_1abb7ff3781f31371191a70653d5ba73f6" prot="public" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>setData</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a83cdc5c45cb979d43a2b00043dc606b9" prot="public" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>setLength</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a9e0344f5dbb95f054009cd43cdb485b4" prot="public" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>setStreamID</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9c" prot="public" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>Type</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1ab535fb5b35df53538e2892639cce9f6f" prot="public" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>type</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a84a587cc6c2ec20b5b28e9612d6f4327" prot="public" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>typeToString</name></member>
+      <member refid="classfwoop_1_1HttpDataFrame_1a6c9eb20d3c39ea75e891808361275e74" prot="public" virt="non-virtual"><scope>fwoop::HttpDataFrame</scope><name>~HttpDataFrame</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a0196e1520a2c49fdac7ff32886a36c1d" prot="public" virt="virtual"><scope>fwoop::HttpDataFrame</scope><name>~HttpFrame</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

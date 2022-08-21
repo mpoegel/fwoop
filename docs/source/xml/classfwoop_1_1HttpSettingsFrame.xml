@@ -1,0 +1,563 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1HttpSettingsFrame" kind="class" language="C++" prot="public">
+    <compoundname>fwoop::HttpSettingsFrame</compoundname>
+    <basecompoundref refid="classfwoop_1_1HttpFrame" prot="public" virt="non-virtual">fwoop::HttpFrame</basecompoundref>
+    <includes refid="fwoop__httpsettingsframe_8h" local="no">fwoop_httpsettingsframe.h</includes>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079" prot="private" static="no" strong="no">
+        <type></type>
+        <name>Parameter</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::Parameter</qualifiedname>
+        <enumvalue id="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079a5e9a4d9d06bf6342ae61ff566e6835fd" prot="private">
+          <name>HeaderTableSize</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079a5ae829f0924d1e3874df02bb7e7fb8a0" prot="private">
+          <name>EnablePush</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079aba81d51b0c652bd2d7e72a4021dd6a75" prot="private">
+          <name>MaxConcurrentStreams</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079a8ec78aef71bf44c2a56831bc7d4117db" prot="private">
+          <name>InitialWindowSize</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079a825637742fbffae7a11410ebb2520db3" prot="private">
+          <name>MaxWindowSize</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079a6488d4b12f9c0697204a2c6016ab41df" prot="private">
+          <name>MaxFrameSize</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079af61c1405be6d1487ce53b9ec6b076cc9" prot="private">
+          <name>MaxHeaderListSize</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="11" column="5" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="11" bodyend="19"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1HttpSettingsFrame_1a86eb50dcf188f383875662200a7db8dc" prot="private" static="yes" mutable="no">
+        <type>const unsigned int</type>
+        <definition>const unsigned int fwoop::HttpSettingsFrame::PARAMETER_SIZE</definition>
+        <argsstring></argsstring>
+        <name>PARAMETER_SIZE</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::PARAMETER_SIZE</qualifiedname>
+        <initializer>= 6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="21" column="31" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1HttpSettingsFrame_1a82b008f88a51b10bdaf39945b1f5a597" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; uint32_t &gt;</type>
+        <definition>std::optional&lt;uint32_t&gt; fwoop::HttpSettingsFrame::d_headerTableSize</definition>
+        <argsstring></argsstring>
+        <name>d_headerTableSize</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::d_headerTableSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="23" column="19" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpSettingsFrame_1afd0525e32ba23eb344a8c3df2b29db3f" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; bool &gt;</type>
+        <definition>std::optional&lt;bool&gt; fwoop::HttpSettingsFrame::d_enablePush</definition>
+        <argsstring></argsstring>
+        <name>d_enablePush</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::d_enablePush</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="24" column="23" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpSettingsFrame_1a25c948c54ca76c351f01da3202aa0cdf" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; uint32_t &gt;</type>
+        <definition>std::optional&lt;uint32_t&gt; fwoop::HttpSettingsFrame::d_maxConcurrentStreams</definition>
+        <argsstring></argsstring>
+        <name>d_maxConcurrentStreams</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::d_maxConcurrentStreams</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="25" column="19" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpSettingsFrame_1a03b1981c4ce1e76046f91d55a36de110" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; uint32_t &gt;</type>
+        <definition>std::optional&lt;uint32_t&gt; fwoop::HttpSettingsFrame::d_initialWindowSize</definition>
+        <argsstring></argsstring>
+        <name>d_initialWindowSize</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::d_initialWindowSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="26" column="19" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpSettingsFrame_1a69213664902ee1a6a12e1ece44c60263" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; uint32_t &gt;</type>
+        <definition>std::optional&lt;uint32_t&gt; fwoop::HttpSettingsFrame::d_maxWindowSize</definition>
+        <argsstring></argsstring>
+        <name>d_maxWindowSize</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::d_maxWindowSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="27" column="19" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpSettingsFrame_1a97d51038a77bf1bfd9674469b26dd47a" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; uint32_t &gt;</type>
+        <definition>std::optional&lt;uint32_t&gt; fwoop::HttpSettingsFrame::d_maxFrameSize</definition>
+        <argsstring></argsstring>
+        <name>d_maxFrameSize</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::d_maxFrameSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="28" column="19" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpSettingsFrame_1aea2c3bc64411f5d6195980eee120d2b6" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; uint32_t &gt;</type>
+        <definition>std::optional&lt;uint32_t&gt; fwoop::HttpSettingsFrame::d_maxHeaderListSize</definition>
+        <argsstring></argsstring>
+        <name>d_maxHeaderListSize</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::d_maxHeaderListSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="29" column="19" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1a605d76845fc76defa76e8add2b8e18b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::HttpSettingsFrame::HttpSettingsFrame</definition>
+        <argsstring>(unsigned int length, uint8_t flags, uint8_t *streamID, uint8_t *payload)</argsstring>
+        <name>HttpSettingsFrame</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::HttpSettingsFrame</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>streamID</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>payload</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="32" column="5" bodyfile="http/fwoop_httpsettingsframe.cpp" bodystart="9" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1ae69a811d9682d71c4c0bb9e414572a21" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::HttpSettingsFrame::HttpSettingsFrame</definition>
+        <argsstring>()</argsstring>
+        <name>HttpSettingsFrame</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::HttpSettingsFrame</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="33" column="14" bodyfile="http/fwoop_httpsettingsframe.cpp" bodystart="52" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1a0ad009645c53c4070ca387b53900d496" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::HttpSettingsFrame::~HttpSettingsFrame</definition>
+        <argsstring>()</argsstring>
+        <name>~HttpSettingsFrame</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::~HttpSettingsFrame</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="35" column="5" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="56" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1af4251246f071e4c86e87f077a16aa436" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::HttpSettingsFrame::setAck</definition>
+        <argsstring>()</argsstring>
+        <name>setAck</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::setAck</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="37" column="10" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="61" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1ab3080cde048169f484902f941f443fa6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::HttpSettingsFrame::setHeaderTableSize</definition>
+        <argsstring>(uint32_t headerTableSize)</argsstring>
+        <name>setHeaderTableSize</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::setHeaderTableSize</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>headerTableSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="38" column="10" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="67" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1a82cadaffeb044d7155f8b7357a7dab6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::HttpSettingsFrame::setEnablePush</definition>
+        <argsstring>(bool enablePush)</argsstring>
+        <name>setEnablePush</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::setEnablePush</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enablePush</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="39" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1a22042dd0fd6a2462aa9960f45042c2d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::HttpSettingsFrame::setMaxConcurrentStreams</definition>
+        <argsstring>(uint32_t maxConcurrentStreams)</argsstring>
+        <name>setMaxConcurrentStreams</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::setMaxConcurrentStreams</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>maxConcurrentStreams</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="40" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1aeeb464fb6c6620589489204d009b875e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::HttpSettingsFrame::setInitialWindowSize</definition>
+        <argsstring>(uint32_t initialWindowSize)</argsstring>
+        <name>setInitialWindowSize</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::setInitialWindowSize</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>initialWindowSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="41" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1aab2daed10fbf2d58729f5950bb6504e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::HttpSettingsFrame::setMaxFrameSize</definition>
+        <argsstring>(uint32_t maxFrameSize)</argsstring>
+        <name>setMaxFrameSize</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::setMaxFrameSize</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>maxFrameSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="42" column="10" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="76" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1a7118296805eab77b61f4f5cc7e46f917" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::HttpSettingsFrame::setMaxHeaderListSize</definition>
+        <argsstring>(uint32_t maxHeaderListSize)</argsstring>
+        <name>setMaxHeaderListSize</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::setMaxHeaderListSize</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>maxHeaderListSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="43" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1ae949b87607204f28fb685dac26217415" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; uint32_t &gt;</type>
+        <definition>std::optional&lt; uint32_t &gt; fwoop::HttpSettingsFrame::headerTableSize</definition>
+        <argsstring>() const</argsstring>
+        <name>headerTableSize</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::headerTableSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="45" column="19" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="85" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1af254ae74966f42fee7f6de3d5bdb2ce3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fwoop::HttpSettingsFrame::enablePush</definition>
+        <argsstring>() const</argsstring>
+        <name>enablePush</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::enablePush</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="46" column="10" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="91" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1a6badc5d858ef9a0c2c08fcbfc8874701" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; uint32_t &gt;</type>
+        <definition>std::optional&lt; uint32_t &gt; fwoop::HttpSettingsFrame::maxConcurrentStreams</definition>
+        <argsstring>() const</argsstring>
+        <name>maxConcurrentStreams</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::maxConcurrentStreams</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="47" column="19" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="97" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1a4e725b07bfb7159b1044320b514493e0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; uint32_t &gt;</type>
+        <definition>std::optional&lt; uint32_t &gt; fwoop::HttpSettingsFrame::initialWindowSize</definition>
+        <argsstring>() const</argsstring>
+        <name>initialWindowSize</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::initialWindowSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="48" column="19" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="103" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1ad45301e4095f82edb3f7721c6c00c953" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; uint32_t &gt;</type>
+        <definition>std::optional&lt; uint32_t &gt; fwoop::HttpSettingsFrame::maxFrameSize</definition>
+        <argsstring>() const</argsstring>
+        <name>maxFrameSize</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::maxFrameSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="49" column="19" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="109" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1a89eaaf80c48441313a91525141840043" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; uint32_t &gt;</type>
+        <definition>std::optional&lt; uint32_t &gt; fwoop::HttpSettingsFrame::maxHeaderListSize</definition>
+        <argsstring>() const</argsstring>
+        <name>maxHeaderListSize</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::maxHeaderListSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="50" column="19" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="115" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1a9343e7b63a3e0f20fd02ff883ee1c7fd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>uint8_t *</type>
+        <definition>uint8_t * fwoop::HttpSettingsFrame::encode</definition>
+        <argsstring>() const override</argsstring>
+        <name>encode</name>
+        <qualifiedname>fwoop::HttpSettingsFrame::encode</qualifiedname>
+        <reimplements refid="classfwoop_1_1HttpFrame_1a2a316cf5e601ae7e60316f7632d7a26f">encode</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpsettingsframe.h" line="52" column="13" bodyfile="http/fwoop_httpsettingsframe.cpp" bodystart="57" bodyend="128"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>fwoop::HttpFrame</label>
+        <link refid="classfwoop_1_1HttpFrame"/>
+      </node>
+      <node id="1">
+        <label>fwoop::HttpSettingsFrame</label>
+        <link refid="classfwoop_1_1HttpSettingsFrame"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>fwoop::HttpFrame</label>
+        <link refid="classfwoop_1_1HttpFrame"/>
+      </node>
+      <node id="1">
+        <label>fwoop::HttpSettingsFrame</label>
+        <link refid="classfwoop_1_1HttpSettingsFrame"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="http/fwoop_httpsettingsframe.h" line="9" column="1" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="9" bodyend="53"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1HttpFrame_1ade1fb3cab89f2a3c95312cb2378abb6e" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>byteToType</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1afd0525e32ba23eb344a8c3df2b29db3f" prot="private" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>d_enablePush</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1af4ab160bcedcb2562d6001c6570548e2" prot="protected" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>d_flags</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1a82b008f88a51b10bdaf39945b1f5a597" prot="private" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>d_headerTableSize</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1a03b1981c4ce1e76046f91d55a36de110" prot="private" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>d_initialWindowSize</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1af9fb5740d57aee90e97cb7de45f3e321" prot="protected" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>d_length</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1a25c948c54ca76c351f01da3202aa0cdf" prot="private" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>d_maxConcurrentStreams</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1a97d51038a77bf1bfd9674469b26dd47a" prot="private" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>d_maxFrameSize</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1aea2c3bc64411f5d6195980eee120d2b6" prot="private" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>d_maxHeaderListSize</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1a69213664902ee1a6a12e1ece44c60263" prot="private" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>d_maxWindowSize</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a1b7c3e3c81c64d953c13a96cf9cb31d3" prot="protected" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>d_payload</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" prot="protected" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>d_streamID</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a2c1b3db021c82daa3485ed8bcd547404" prot="protected" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>d_type</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1af254ae74966f42fee7f6de3d5bdb2ce3" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>enablePush</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079a5ae829f0924d1e3874df02bb7e7fb8a0" prot="private" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>EnablePush</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1a9343e7b63a3e0f20fd02ff883ee1c7fd" prot="public" virt="virtual"><scope>fwoop::HttpSettingsFrame</scope><name>encode</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a2d15a02a0cb21cfaa2643a87e8830426" prot="protected" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>encodeHeader</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a79aa423e31eefead7f0fd3e8f5a028ae" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>encodingLength</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1af91ef9220c742b6fe0e398fd0e8bc4da" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>getStreamID</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1af748ad7f28c669c6616d60fe5965bd7e" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>HEADER_LENGTH</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079a5e9a4d9d06bf6342ae61ff566e6835fd" prot="private" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>HeaderTableSize</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1ae949b87607204f28fb685dac26217415" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>headerTableSize</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a7ab4cf22d8e4df08b9e2c112d3a3579f" prot="protected" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>HttpFrame</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a2a596317d262444416399415bf005498" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>HttpFrame</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1a605d76845fc76defa76e8add2b8e18b9" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>HttpSettingsFrame</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1ae69a811d9682d71c4c0bb9e414572a21" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>HttpSettingsFrame</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079a8ec78aef71bf44c2a56831bc7d4117db" prot="private" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>InitialWindowSize</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1a4e725b07bfb7159b1044320b514493e0" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>initialWindowSize</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1aa418c5a29a857d21bd83835836230696" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>length</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1a6badc5d858ef9a0c2c08fcbfc8874701" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>maxConcurrentStreams</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079aba81d51b0c652bd2d7e72a4021dd6a75" prot="private" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>MaxConcurrentStreams</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1ad45301e4095f82edb3f7721c6c00c953" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>maxFrameSize</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079a6488d4b12f9c0697204a2c6016ab41df" prot="private" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>MaxFrameSize</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1a89eaaf80c48441313a91525141840043" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>maxHeaderListSize</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079af61c1405be6d1487ce53b9ec6b076cc9" prot="private" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>MaxHeaderListSize</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079a825637742fbffae7a11410ebb2520db3" prot="private" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>MaxWindowSize</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079" prot="private" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>Parameter</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1a86eb50dcf188f383875662200a7db8dc" prot="private" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>PARAMETER_SIZE</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1ac9e387d889689561660aa094aff1fd85" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>parse</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a7f1a53af685d8dc955a31f2fcd70fade" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>payload</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a5bb16b36fec77fb383402306e7b30b3c" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>printHeader</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1ac0b88de07f70e2a7c6dc4e6b4010cd80" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>printHex</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1af4251246f071e4c86e87f077a16aa436" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>setAck</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1a82cadaffeb044d7155f8b7357a7dab6f" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>setEnablePush</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1ab3080cde048169f484902f941f443fa6" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>setHeaderTableSize</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1aeeb464fb6c6620589489204d009b875e" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>setInitialWindowSize</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a83cdc5c45cb979d43a2b00043dc606b9" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>setLength</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1a22042dd0fd6a2462aa9960f45042c2d3" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>setMaxConcurrentStreams</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1aab2daed10fbf2d58729f5950bb6504e2" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>setMaxFrameSize</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1a7118296805eab77b61f4f5cc7e46f917" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>setMaxHeaderListSize</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a9e0344f5dbb95f054009cd43cdb485b4" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>setStreamID</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1ab535fb5b35df53538e2892639cce9f6f" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>type</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9c" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>Type</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a84a587cc6c2ec20b5b28e9612d6f4327" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>typeToString</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a0196e1520a2c49fdac7ff32886a36c1d" prot="public" virt="virtual"><scope>fwoop::HttpSettingsFrame</scope><name>~HttpFrame</name></member>
+      <member refid="classfwoop_1_1HttpSettingsFrame_1a0ad009645c53c4070ca387b53900d496" prot="public" virt="non-virtual"><scope>fwoop::HttpSettingsFrame</scope><name>~HttpSettingsFrame</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

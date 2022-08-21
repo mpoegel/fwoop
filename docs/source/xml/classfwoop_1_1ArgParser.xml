@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1ArgParser" kind="class" language="C++" prot="public">
+    <compoundname>fwoop::ArgParser</compoundname>
+    <includes refid="fwoop__argparser_8h" local="no">fwoop_argparser.h</includes>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="basis/fwoop_argparser.h" line="5" column="1" bodyfile="basis/fwoop_argparser.h" bodystart="5" bodyend="7"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

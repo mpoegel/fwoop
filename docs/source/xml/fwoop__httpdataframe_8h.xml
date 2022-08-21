@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="fwoop__httpdataframe_8h" kind="file" language="C++">
+    <compoundname>fwoop_httpdataframe.h</compoundname>
+    <includes refid="fwoop__httpframe_8h" local="no">fwoop_httpframe.h</includes>
+    <includedby refid="fwoop__httpdataframe_8cpp" local="no">http/fwoop_httpdataframe.cpp</includedby>
+    <includedby refid="fwoop__httpserver_8cpp" local="no">http/fwoop_httpserver.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>http/fwoop_httpdataframe.h</label>
+        <link refid="fwoop__httpdataframe_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>fwoop_httpframe.h</label>
+        <link refid="fwoop__httpframe_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>cstring</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>http/fwoop_httpdataframe.cpp</label>
+        <link refid="fwoop__httpdataframe_8cpp"/>
+      </node>
+      <node id="1">
+        <label>http/fwoop_httpdataframe.h</label>
+        <link refid="fwoop__httpdataframe_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>http/fwoop_httpserver.cpp</label>
+        <link refid="fwoop__httpserver_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classfwoop_1_1HttpDataFrame" prot="public">fwoop::HttpDataFrame</innerclass>
+    <innernamespace refid="namespacefwoop">fwoop</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="fwoop__httpframe_8h" kindref="compound">fwoop_httpframe.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefwoop" kindref="compound">fwoop</ref><sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="classfwoop_1_1HttpDataFrame" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfwoop_1_1HttpDataFrame" kindref="compound">HttpDataFrame</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame" kindref="compound">HttpFrame</ref><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>d_padLength;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="12" refid="classfwoop_1_1HttpDataFrame_1a9d3a9fbfef9fad501b96cd93e9c89992" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpDataFrame_1a9d3a9fbfef9fad501b96cd93e9c89992" kindref="member">Flag</ref><sp/>{</highlight></codeline>
+<codeline lineno="13" refid="classfwoop_1_1HttpDataFrame_1a9d3a9fbfef9fad501b96cd93e9c89992a9cfb4fe5153e29502bd13dbb101ec573" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpDataFrame_1a9d3a9fbfef9fad501b96cd93e9c89992a9cfb4fe5153e29502bd13dbb101ec573" kindref="member">EndStream</ref><sp/><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="14" refid="classfwoop_1_1HttpDataFrame_1a9d3a9fbfef9fad501b96cd93e9c89992af6628955c0334395561e6982c41f5f97" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpDataFrame_1a9d3a9fbfef9fad501b96cd93e9c89992af6628955c0334395561e6982c41f5f97" kindref="member">Padded</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>8,</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpDataFrame_1a5327cea18f8d86adb3a6c82b9725975a" kindref="member">HttpDataFrame</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1aa418c5a29a857d21bd83835836230696" kindref="member">length</ref>,<sp/>uint8_t<sp/>flags,<sp/>uint8_t<sp/>*streamID,<sp/>uint8_t<sp/>*<ref refid="classfwoop_1_1HttpFrame_1a7f1a53af685d8dc955a31f2fcd70fade" kindref="member">payload</ref>);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpDataFrame_1a5327cea18f8d86adb3a6c82b9725975a" kindref="member">HttpDataFrame</ref>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpDataFrame_1a6c9eb20d3c39ea75e891808361275e74" kindref="member">~HttpDataFrame</ref>();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*<ref refid="classfwoop_1_1HttpDataFrame_1ac18b944415833c1b94ea6b4f9516fd73" kindref="member">encode</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpDataFrame_1a55c83ac304f0797c6b3f727acd6dff52" kindref="member">addFlag</ref>(<ref refid="classfwoop_1_1HttpDataFrame_1a9d3a9fbfef9fad501b96cd93e9c89992" kindref="member">Flag</ref><sp/>flag);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpDataFrame_1abb7ff3781f31371191a70653d5ba73f6" kindref="member">setData</ref>(uint8_t<sp/>*data,<sp/>uint32_t<sp/>dataLen);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="classfwoop_1_1HttpDataFrame_1a6c9eb20d3c39ea75e891808361275e74" refkind="member"><highlight class="normal"><ref refid="classfwoop_1_1HttpDataFrame_1a6c9eb20d3c39ea75e891808361275e74" kindref="member">HttpDataFrame::~HttpDataFrame</ref>()</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classfwoop_1_1HttpDataFrame_1a55c83ac304f0797c6b3f727acd6dff52" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpDataFrame_1a55c83ac304f0797c6b3f727acd6dff52" kindref="member">HttpDataFrame::addFlag</ref>(<ref refid="classfwoop_1_1HttpDataFrame_1a9d3a9fbfef9fad501b96cd93e9c89992" kindref="member">Flag</ref><sp/>flag)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1af4ab160bcedcb2562d6001c6570548e2" kindref="member">d_flags</ref><sp/>|=<sp/>flag;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="http/fwoop_httpdataframe.h"/>
+  </compounddef>
+</doxygen>

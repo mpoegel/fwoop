@@ -1,0 +1,587 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1Log" kind="class" language="C++" prot="public">
+    <compoundname>fwoop::Log</compoundname>
+    <includes refid="fwoop__log_8h" local="no">fwoop_log.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classfwoop_1_1Log_1aa24f3693a464622163f7472943ead7ae" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Level</name>
+        <qualifiedname>fwoop::Log::Level</qualifiedname>
+        <enumvalue id="classfwoop_1_1Log_1aa24f3693a464622163f7472943ead7aea01d36b78e689675825bbe9e0bfc8e78a" prot="public">
+          <name>e_Debug</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1Log_1aa24f3693a464622163f7472943ead7aeab5677570037cc5e0bd0ac9fc30b8c0b8" prot="public">
+          <name>e_Info</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1Log_1aa24f3693a464622163f7472943ead7aea7f276e04deba103c53d35f32a46f07e3" prot="public">
+          <name>e_Warn</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1Log_1aa24f3693a464622163f7472943ead7aea08f28a1f040d7fa6023fc269f8945642" prot="public">
+          <name>e_Error</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="13" column="5" bodyfile="basis/fwoop_log.h" bodystart="13" bodyend="18"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1Log_1ad14f37da2cc9103c6d5cb870f3bdb45e" prot="private" static="yes" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classfwoop_1_1Log" kindref="compound">Log</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Log &gt; fwoop::Log::s_log</definition>
+        <argsstring></argsstring>
+        <name>s_log</name>
+        <qualifiedname>fwoop::Log::s_log</qualifiedname>
+        <initializer>= std::make_shared&lt;<ref refid="classfwoop_1_1Log" kindref="compound">Log</ref>&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="21" column="28" bodyfile="basis/fwoop_log.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1Log_1a91f55851297a8ba6c54a5b68dec51995" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string fwoop::Log::d_formatStr</definition>
+        <argsstring></argsstring>
+        <name>d_formatStr</name>
+        <qualifiedname>fwoop::Log::d_formatStr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="23" column="17" bodyfile="basis/fwoop_log.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classfwoop_1_1Log_1a8856a3a99033ced367efb486bf532deb" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string fwoop::Log::levelToString</definition>
+        <argsstring>(Level level) const</argsstring>
+        <name>levelToString</name>
+        <qualifiedname>fwoop::Log::levelToString</qualifiedname>
+        <param>
+          <type><ref refid="classfwoop_1_1Log_1aa24f3693a464622163f7472943ead7ae" kindref="member">Level</ref></type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="25" column="17" bodyfile="basis/fwoop_log.cpp" bodystart="18" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Log_1a6d65152c5d3de16bfddaf35db7a619d6" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>std::string</type>
+        <definition>std::string fwoop::Log::formatMsg</definition>
+        <argsstring>(Level level, Ts... args) const</argsstring>
+        <name>formatMsg</name>
+        <qualifiedname>fwoop::Log::formatMsg</qualifiedname>
+        <param>
+          <type><ref refid="classfwoop_1_1Log_1aa24f3693a464622163f7472943ead7ae" kindref="member">Level</ref></type>
+          <declname>level</declname>
+        </param>
+        <param>
+          <type>Ts...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="27" column="17" bodyfile="basis/fwoop_log.h" bodystart="155" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Log_1aed4d668ce59436a35b55bf414d6b4673" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::Log::getCurrentTime</definition>
+        <argsstring>(char *outBuf, unsigned int bufSize) const</argsstring>
+        <name>getCurrentTime</name>
+        <qualifiedname>fwoop::Log::getCurrentTime</qualifiedname>
+        <param>
+          <type>char *</type>
+          <declname>outBuf</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>bufSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="28" column="10" bodyfile="basis/fwoop_log.cpp" bodystart="35" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classfwoop_1_1Log_1a57b6243fcb36d4f7bacac5ec1c05cb90" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classfwoop_1_1Log" kindref="compound">Log</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Log &gt; fwoop::Log::getDefault</definition>
+        <argsstring>()</argsstring>
+        <name>getDefault</name>
+        <qualifiedname>fwoop::Log::getDefault</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="31" column="28" bodyfile="basis/fwoop_log.h" bodystart="73" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Log_1a05826844e33fb0f96c88a65fe6d63a94" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void fwoop::Log::Debug</definition>
+        <argsstring>(Ts &amp;&amp;... args)</argsstring>
+        <name>Debug</name>
+        <qualifiedname>fwoop::Log::Debug</qualifiedname>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="34" column="17" bodyfile="basis/fwoop_log.h" bodystart="80" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Log_1a6e412954295a899c03914856a3d3f538" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void fwoop::Log::Info</definition>
+        <argsstring>(Ts &amp;&amp;... args)</argsstring>
+        <name>Info</name>
+        <qualifiedname>fwoop::Log::Info</qualifiedname>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="37" column="17" bodyfile="basis/fwoop_log.h" bodystart="87" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Log_1a685b743897c2a9638f8bd775b2999f8d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void fwoop::Log::Warn</definition>
+        <argsstring>(Ts &amp;&amp;... args)</argsstring>
+        <name>Warn</name>
+        <qualifiedname>fwoop::Log::Warn</qualifiedname>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="40" column="17" bodyfile="basis/fwoop_log.h" bodystart="94" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Log_1aa43c2bc1be7be6e0c338a256d22a864c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void fwoop::Log::Error</definition>
+        <argsstring>(Ts &amp;&amp;... args)</argsstring>
+        <name>Error</name>
+        <qualifiedname>fwoop::Log::Error</qualifiedname>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="43" column="17" bodyfile="basis/fwoop_log.h" bodystart="101" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Log_1a8625934dec079806490552b945ca4eb5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::Log::Debug</definition>
+        <argsstring>(const std::string &amp;msg)</argsstring>
+        <name>Debug</name>
+        <qualifiedname>fwoop::Log::Debug</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="45" column="17" bodyfile="basis/fwoop_log.h" bodystart="107" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Log_1ab35405d0574be21ca043f7423aae04bb" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::Log::Info</definition>
+        <argsstring>(const std::string &amp;msg)</argsstring>
+        <name>Info</name>
+        <qualifiedname>fwoop::Log::Info</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="46" column="17" bodyfile="basis/fwoop_log.h" bodystart="113" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Log_1a92021b1a38f8b3439973a478c55a55fb" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::Log::Warn</definition>
+        <argsstring>(const std::string &amp;msg)</argsstring>
+        <name>Warn</name>
+        <qualifiedname>fwoop::Log::Warn</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="47" column="17" bodyfile="basis/fwoop_log.h" bodystart="119" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Log_1abc1992dbb1fccd417e4183fad1954f2f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::Log::Error</definition>
+        <argsstring>(const std::string &amp;msg)</argsstring>
+        <name>Error</name>
+        <qualifiedname>fwoop::Log::Error</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="48" column="17" bodyfile="basis/fwoop_log.h" bodystart="125" bodyend="128"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfwoop_1_1Log_1a3eb92585ec1d3edc72956230a00066d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::Log::Log</definition>
+        <argsstring>()</argsstring>
+        <name>Log</name>
+        <qualifiedname>fwoop::Log::Log</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="50" column="5" bodyfile="basis/fwoop_log.cpp" bodystart="45" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Log_1ae6bd69a5cc9c26a4938226e2cd6d2998" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::Log::setFormat</definition>
+        <argsstring>(const std::string &amp;formatStr)</argsstring>
+        <name>setFormat</name>
+        <qualifiedname>fwoop::Log::setFormat</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>formatStr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="52" column="10" bodyfile="basis/fwoop_log.cpp" bodystart="50" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Log_1a597a3c99e6190b70074df30224037676" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void fwoop::Log::debug</definition>
+        <argsstring>(Ts &amp;&amp;... args)</argsstring>
+        <name>debug</name>
+        <qualifiedname>fwoop::Log::debug</qualifiedname>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="55" column="10" bodyfile="basis/fwoop_log.h" bodystart="131" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Log_1a742c8cd46acd590fad33bb5a75363be8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void fwoop::Log::info</definition>
+        <argsstring>(Ts &amp;&amp;... args)</argsstring>
+        <name>info</name>
+        <qualifiedname>fwoop::Log::info</qualifiedname>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="58" column="10" bodyfile="basis/fwoop_log.h" bodystart="137" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Log_1a820c2c010899fe2239dbc188b4975901" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void fwoop::Log::warn</definition>
+        <argsstring>(Ts &amp;&amp;... args)</argsstring>
+        <name>warn</name>
+        <qualifiedname>fwoop::Log::warn</qualifiedname>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="61" column="10" bodyfile="basis/fwoop_log.h" bodystart="143" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Log_1a3fa87367dc6ff547bca2c7a1ad8fb73d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void fwoop::Log::error</definition>
+        <argsstring>(Ts &amp;&amp;... args)</argsstring>
+        <name>error</name>
+        <qualifiedname>fwoop::Log::error</qualifiedname>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="64" column="10" bodyfile="basis/fwoop_log.h" bodystart="149" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Log_1a745dc5dfbb363aee93bacd6bd90389be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::Log::debug</definition>
+        <argsstring>(const std::string &amp;msg)</argsstring>
+        <name>debug</name>
+        <qualifiedname>fwoop::Log::debug</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="66" column="10" bodyfile="basis/fwoop_log.cpp" bodystart="56" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Log_1a964ebdfa8574bdb6ec5281ff4d4a9d1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::Log::info</definition>
+        <argsstring>(const std::string &amp;msg)</argsstring>
+        <name>info</name>
+        <qualifiedname>fwoop::Log::info</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="67" column="10" bodyfile="basis/fwoop_log.cpp" bodystart="61" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Log_1a82cce83ca6fd745613ec906337f992e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::Log::warn</definition>
+        <argsstring>(const std::string &amp;msg)</argsstring>
+        <name>warn</name>
+        <qualifiedname>fwoop::Log::warn</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="68" column="10" bodyfile="basis/fwoop_log.cpp" bodystart="66" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Log_1af54088f71a1436e9f104ffc59f6d7602" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::Log::error</definition>
+        <argsstring>(const std::string &amp;msg)</argsstring>
+        <name>error</name>
+        <qualifiedname>fwoop::Log::error</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.h" line="69" column="10" bodyfile="basis/fwoop_log.cpp" bodystart="71" bodyend="74"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="basis/fwoop_log.h" line="11" column="1" bodyfile="basis/fwoop_log.h" bodystart="11" bodyend="70"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1Log_1a91f55851297a8ba6c54a5b68dec51995" prot="private" virt="non-virtual"><scope>fwoop::Log</scope><name>d_formatStr</name></member>
+      <member refid="classfwoop_1_1Log_1a597a3c99e6190b70074df30224037676" prot="public" virt="non-virtual"><scope>fwoop::Log</scope><name>debug</name></member>
+      <member refid="classfwoop_1_1Log_1a745dc5dfbb363aee93bacd6bd90389be" prot="public" virt="non-virtual"><scope>fwoop::Log</scope><name>debug</name></member>
+      <member refid="classfwoop_1_1Log_1a05826844e33fb0f96c88a65fe6d63a94" prot="public" virt="non-virtual"><scope>fwoop::Log</scope><name>Debug</name></member>
+      <member refid="classfwoop_1_1Log_1a8625934dec079806490552b945ca4eb5" prot="public" virt="non-virtual"><scope>fwoop::Log</scope><name>Debug</name></member>
+      <member refid="classfwoop_1_1Log_1aa24f3693a464622163f7472943ead7aea01d36b78e689675825bbe9e0bfc8e78a" prot="public" virt="non-virtual"><scope>fwoop::Log</scope><name>e_Debug</name></member>
+      <member refid="classfwoop_1_1Log_1aa24f3693a464622163f7472943ead7aea08f28a1f040d7fa6023fc269f8945642" prot="public" virt="non-virtual"><scope>fwoop::Log</scope><name>e_Error</name></member>
+      <member refid="classfwoop_1_1Log_1aa24f3693a464622163f7472943ead7aeab5677570037cc5e0bd0ac9fc30b8c0b8" prot="public" virt="non-virtual"><scope>fwoop::Log</scope><name>e_Info</name></member>
+      <member refid="classfwoop_1_1Log_1aa24f3693a464622163f7472943ead7aea7f276e04deba103c53d35f32a46f07e3" prot="public" virt="non-virtual"><scope>fwoop::Log</scope><name>e_Warn</name></member>
+      <member refid="classfwoop_1_1Log_1a3fa87367dc6ff547bca2c7a1ad8fb73d" prot="public" virt="non-virtual"><scope>fwoop::Log</scope><name>error</name></member>
+      <member refid="classfwoop_1_1Log_1af54088f71a1436e9f104ffc59f6d7602" prot="public" virt="non-virtual"><scope>fwoop::Log</scope><name>error</name></member>
+      <member refid="classfwoop_1_1Log_1aa43c2bc1be7be6e0c338a256d22a864c" prot="public" virt="non-virtual"><scope>fwoop::Log</scope><name>Error</name></member>
+      <member refid="classfwoop_1_1Log_1abc1992dbb1fccd417e4183fad1954f2f" prot="public" virt="non-virtual"><scope>fwoop::Log</scope><name>Error</name></member>
+      <member refid="classfwoop_1_1Log_1a6d65152c5d3de16bfddaf35db7a619d6" prot="private" virt="non-virtual"><scope>fwoop::Log</scope><name>formatMsg</name></member>
+      <member refid="classfwoop_1_1Log_1aed4d668ce59436a35b55bf414d6b4673" prot="private" virt="non-virtual"><scope>fwoop::Log</scope><name>getCurrentTime</name></member>
+      <member refid="classfwoop_1_1Log_1a57b6243fcb36d4f7bacac5ec1c05cb90" prot="public" virt="non-virtual"><scope>fwoop::Log</scope><name>getDefault</name></member>
+      <member refid="classfwoop_1_1Log_1a6e412954295a899c03914856a3d3f538" prot="public" virt="non-virtual"><scope>fwoop::Log</scope><name>Info</name></member>
+      <member refid="classfwoop_1_1Log_1ab35405d0574be21ca043f7423aae04bb" prot="public" virt="non-virtual"><scope>fwoop::Log</scope><name>Info</name></member>
+      <member refid="classfwoop_1_1Log_1a742c8cd46acd590fad33bb5a75363be8" prot="public" virt="non-virtual"><scope>fwoop::Log</scope><name>info</name></member>
+      <member refid="classfwoop_1_1Log_1a964ebdfa8574bdb6ec5281ff4d4a9d1c" prot="public" virt="non-virtual"><scope>fwoop::Log</scope><name>info</name></member>
+      <member refid="classfwoop_1_1Log_1aa24f3693a464622163f7472943ead7ae" prot="public" virt="non-virtual"><scope>fwoop::Log</scope><name>Level</name></member>
+      <member refid="classfwoop_1_1Log_1a8856a3a99033ced367efb486bf532deb" prot="private" virt="non-virtual"><scope>fwoop::Log</scope><name>levelToString</name></member>
+      <member refid="classfwoop_1_1Log_1a3eb92585ec1d3edc72956230a00066d9" prot="public" virt="non-virtual"><scope>fwoop::Log</scope><name>Log</name></member>
+      <member refid="classfwoop_1_1Log_1ad14f37da2cc9103c6d5cb870f3bdb45e" prot="private" virt="non-virtual"><scope>fwoop::Log</scope><name>s_log</name></member>
+      <member refid="classfwoop_1_1Log_1ae6bd69a5cc9c26a4938226e2cd6d2998" prot="public" virt="non-virtual"><scope>fwoop::Log</scope><name>setFormat</name></member>
+      <member refid="classfwoop_1_1Log_1a685b743897c2a9638f8bd775b2999f8d" prot="public" virt="non-virtual"><scope>fwoop::Log</scope><name>Warn</name></member>
+      <member refid="classfwoop_1_1Log_1a92021b1a38f8b3439973a478c55a55fb" prot="public" virt="non-virtual"><scope>fwoop::Log</scope><name>Warn</name></member>
+      <member refid="classfwoop_1_1Log_1a820c2c010899fe2239dbc188b4975901" prot="public" virt="non-virtual"><scope>fwoop::Log</scope><name>warn</name></member>
+      <member refid="classfwoop_1_1Log_1a82cce83ca6fd745613ec906337f992e2" prot="public" virt="non-virtual"><scope>fwoop::Log</scope><name>warn</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

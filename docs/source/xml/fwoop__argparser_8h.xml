@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="fwoop__argparser_8h" kind="file" language="C++">
+    <compoundname>fwoop_argparser.h</compoundname>
+    <includedby refid="fwoop__argparser_8cpp" local="no">basis/fwoop_argparser.cpp</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>basis/fwoop_argparser.cpp</label>
+        <link refid="fwoop__argparser_8cpp"/>
+      </node>
+      <node id="1">
+        <label>basis/fwoop_argparser.h</label>
+        <link refid="fwoop__argparser_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classfwoop_1_1ArgParser" prot="public">fwoop::ArgParser</innerclass>
+    <innernamespace refid="namespacefwoop">fwoop</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="namespacefwoop" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefwoop" kindref="compound">fwoop</ref><sp/>{</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="classfwoop_1_1ArgParser" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfwoop_1_1ArgParser" kindref="compound">ArgParser</ref><sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="basis/fwoop_argparser.h"/>
+  </compounddef>
+</doxygen>

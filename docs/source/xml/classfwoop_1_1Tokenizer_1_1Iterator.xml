@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1Tokenizer_1_1Iterator" kind="class" language="C++" prot="public">
+    <compoundname>fwoop::Tokenizer::Iterator</compoundname>
+    <includes refid="fwoop__tokenizer_8h" local="no">fwoop_tokenizer.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1Tokenizer_1_1Iterator_1a17d707fd49a8b498e6056d1215b7a4e6" prot="private" static="no" mutable="no">
+        <type><ref refid="classfwoop_1_1Tokenizer" kindref="compound">Tokenizer</ref> &amp;</type>
+        <definition>Tokenizer&amp; fwoop::Tokenizer::Iterator::d_tokenizer</definition>
+        <argsstring></argsstring>
+        <name>d_tokenizer</name>
+        <qualifiedname>fwoop::Tokenizer::Iterator::d_tokenizer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_tokenizer.h" line="26" column="15" bodyfile="basis/fwoop_tokenizer.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1Tokenizer_1_1Iterator_1a5b0d3f58d88cab5b7dbce73cc82ab005" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool fwoop::Tokenizer::Iterator::d_isEnd</definition>
+        <argsstring></argsstring>
+        <name>d_isEnd</name>
+        <qualifiedname>fwoop::Tokenizer::Iterator::d_isEnd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_tokenizer.h" line="27" column="10" bodyfile="basis/fwoop_tokenizer.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1Tokenizer_1_1Iterator_1a8fbb12dcdd127961ce750e5aa003b3cb" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t fwoop::Tokenizer::Iterator::d_lastLoc</definition>
+        <argsstring></argsstring>
+        <name>d_lastLoc</name>
+        <qualifiedname>fwoop::Tokenizer::Iterator::d_lastLoc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_tokenizer.h" line="28" column="17" bodyfile="basis/fwoop_tokenizer.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1Tokenizer_1_1Iterator_1a69141ea3331c772cfb23c49655aa9cb6" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t fwoop::Tokenizer::Iterator::d_loc</definition>
+        <argsstring></argsstring>
+        <name>d_loc</name>
+        <qualifiedname>fwoop::Tokenizer::Iterator::d_loc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_tokenizer.h" line="29" column="17" bodyfile="basis/fwoop_tokenizer.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfwoop_1_1Tokenizer_1_1Iterator_1a08dcc38329b19b9d92181f6f396d7b09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::Tokenizer::Iterator::Iterator</definition>
+        <argsstring>(Tokenizer &amp;tokenizer, bool isEnd)</argsstring>
+        <name>Iterator</name>
+        <qualifiedname>fwoop::Tokenizer::Iterator::Iterator</qualifiedname>
+        <param>
+          <type><ref refid="classfwoop_1_1Tokenizer" kindref="compound">Tokenizer</ref> &amp;</type>
+          <declname>tokenizer</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isEnd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_tokenizer.h" line="32" column="5" bodyfile="basis/fwoop_tokenizer.cpp" bodystart="26" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Tokenizer_1_1Iterator_1a732d48dac1c1e59a2766d7b3e86e5d5d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::Tokenizer::Iterator::~Iterator</definition>
+        <argsstring>()</argsstring>
+        <name>~Iterator</name>
+        <qualifiedname>fwoop::Tokenizer::Iterator::~Iterator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_tokenizer.h" line="33" column="5" bodyfile="basis/fwoop_tokenizer.h" bodystart="48" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Tokenizer_1_1Iterator_1ac5a5b852e9ca24887cc5497d5383a774" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::Tokenizer::Iterator::operator++</definition>
+        <argsstring>()</argsstring>
+        <name>operator++</name>
+        <qualifiedname>fwoop::Tokenizer::Iterator::operator++</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_tokenizer.h" line="35" column="10" bodyfile="basis/fwoop_tokenizer.cpp" bodystart="39" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Tokenizer_1_1Iterator_1ad2e0a4cb7140924a9145445fbb48233b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string fwoop::Tokenizer::Iterator::operator*</definition>
+        <argsstring>() const</argsstring>
+        <name>operator*</name>
+        <qualifiedname>fwoop::Tokenizer::Iterator::operator*</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_tokenizer.h" line="36" column="17" bodyfile="basis/fwoop_tokenizer.cpp" bodystart="49" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Tokenizer_1_1Iterator_1ad95f2e8282ad99a484420f8570ebddd0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fwoop::Tokenizer::Iterator::operator==</definition>
+        <argsstring>(const Iterator &amp;rhs) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>fwoop::Tokenizer::Iterator::operator==</qualifiedname>
+        <param>
+          <type>const <ref refid="classfwoop_1_1Tokenizer_1_1Iterator" kindref="compound">Iterator</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_tokenizer.h" line="38" column="10" bodyfile="basis/fwoop_tokenizer.cpp" bodystart="54" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Tokenizer_1_1Iterator_1aae191c4cdfc4a0d27ac375b5adb5f4ab" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fwoop::Tokenizer::Iterator::operator!=</definition>
+        <argsstring>(const Iterator &amp;rhs) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>fwoop::Tokenizer::Iterator::operator!=</qualifiedname>
+        <param>
+          <type>const <ref refid="classfwoop_1_1Tokenizer_1_1Iterator" kindref="compound">Iterator</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_tokenizer.h" line="39" column="10" bodyfile="basis/fwoop_tokenizer.h" bodystart="53" bodyend="56"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="basis/fwoop_tokenizer.h" line="24" column="1" bodyfile="basis/fwoop_tokenizer.h" bodystart="24" bodyend="40"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1Tokenizer_1_1Iterator_1a5b0d3f58d88cab5b7dbce73cc82ab005" prot="private" virt="non-virtual"><scope>fwoop::Tokenizer::Iterator</scope><name>d_isEnd</name></member>
+      <member refid="classfwoop_1_1Tokenizer_1_1Iterator_1a8fbb12dcdd127961ce750e5aa003b3cb" prot="private" virt="non-virtual"><scope>fwoop::Tokenizer::Iterator</scope><name>d_lastLoc</name></member>
+      <member refid="classfwoop_1_1Tokenizer_1_1Iterator_1a69141ea3331c772cfb23c49655aa9cb6" prot="private" virt="non-virtual"><scope>fwoop::Tokenizer::Iterator</scope><name>d_loc</name></member>
+      <member refid="classfwoop_1_1Tokenizer_1_1Iterator_1a17d707fd49a8b498e6056d1215b7a4e6" prot="private" virt="non-virtual"><scope>fwoop::Tokenizer::Iterator</scope><name>d_tokenizer</name></member>
+      <member refid="classfwoop_1_1Tokenizer_1_1Iterator_1a08dcc38329b19b9d92181f6f396d7b09" prot="public" virt="non-virtual"><scope>fwoop::Tokenizer::Iterator</scope><name>Iterator</name></member>
+      <member refid="classfwoop_1_1Tokenizer_1_1Iterator_1aae191c4cdfc4a0d27ac375b5adb5f4ab" prot="public" virt="non-virtual"><scope>fwoop::Tokenizer::Iterator</scope><name>operator!=</name></member>
+      <member refid="classfwoop_1_1Tokenizer_1_1Iterator_1ad2e0a4cb7140924a9145445fbb48233b" prot="public" virt="non-virtual"><scope>fwoop::Tokenizer::Iterator</scope><name>operator*</name></member>
+      <member refid="classfwoop_1_1Tokenizer_1_1Iterator_1ac5a5b852e9ca24887cc5497d5383a774" prot="public" virt="non-virtual"><scope>fwoop::Tokenizer::Iterator</scope><name>operator++</name></member>
+      <member refid="classfwoop_1_1Tokenizer_1_1Iterator_1ad95f2e8282ad99a484420f8570ebddd0" prot="public" virt="non-virtual"><scope>fwoop::Tokenizer::Iterator</scope><name>operator==</name></member>
+      <member refid="classfwoop_1_1Tokenizer_1_1Iterator_1a732d48dac1c1e59a2766d7b3e86e5d5d" prot="public" virt="non-virtual"><scope>fwoop::Tokenizer::Iterator</scope><name>~Iterator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

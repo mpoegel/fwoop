@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="dir_de5b03c9e251d763a573c2ccd217de59" kind="dir">
+    <compoundname>http</compoundname>
+    <innerfile refid="fwoop__httpdataframe_8cpp">fwoop_httpdataframe.cpp</innerfile>
+    <innerfile refid="fwoop__httpdataframe_8h">fwoop_httpdataframe.h</innerfile>
+    <innerfile refid="fwoop__httpframe_8cpp">fwoop_httpframe.cpp</innerfile>
+    <innerfile refid="fwoop__httpframe_8h">fwoop_httpframe.h</innerfile>
+    <innerfile refid="fwoop__httpgoawayframe_8cpp">fwoop_httpgoawayframe.cpp</innerfile>
+    <innerfile refid="fwoop__httpgoawayframe_8h">fwoop_httpgoawayframe.h</innerfile>
+    <innerfile refid="fwoop__httpheader_8cpp">fwoop_httpheader.cpp</innerfile>
+    <innerfile refid="fwoop__httpheader_8h">fwoop_httpheader.h</innerfile>
+    <innerfile refid="fwoop__httpheadersframe_8cpp">fwoop_httpheadersframe.cpp</innerfile>
+    <innerfile refid="fwoop__httpheadersframe_8h">fwoop_httpheadersframe.h</innerfile>
+    <innerfile refid="fwoop__httphpacker_8cpp">fwoop_httphpacker.cpp</innerfile>
+    <innerfile refid="fwoop__httphpacker_8h">fwoop_httphpacker.h</innerfile>
+    <innerfile refid="fwoop__httprequest_8cpp">fwoop_httprequest.cpp</innerfile>
+    <innerfile refid="fwoop__httprequest_8h">fwoop_httprequest.h</innerfile>
+    <innerfile refid="fwoop__httpresponse_8cpp">fwoop_httpresponse.cpp</innerfile>
+    <innerfile refid="fwoop__httpresponse_8h">fwoop_httpresponse.h</innerfile>
+    <innerfile refid="fwoop__httpserver_8cpp">fwoop_httpserver.cpp</innerfile>
+    <innerfile refid="fwoop__httpserver_8h">fwoop_httpserver.h</innerfile>
+    <innerfile refid="fwoop__httpsettingsframe_8cpp">fwoop_httpsettingsframe.cpp</innerfile>
+    <innerfile refid="fwoop__httpsettingsframe_8h">fwoop_httpsettingsframe.h</innerfile>
+    <innerfile refid="fwoop__httpstream_8cpp">fwoop_httpstream.cpp</innerfile>
+    <innerfile refid="fwoop__httpstream_8h">fwoop_httpstream.h</innerfile>
+    <innerfile refid="fwoop__httpwindowupdateframe_8cpp">fwoop_httpwindowupdateframe.cpp</innerfile>
+    <innerfile refid="fwoop__httpwindowupdateframe_8h">fwoop_httpwindowupdateframe.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="http/"/>
+  </compounddef>
+</doxygen>

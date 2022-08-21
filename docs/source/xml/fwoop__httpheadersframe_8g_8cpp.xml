@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="fwoop__httpheadersframe_8g_8cpp" kind="file" language="C++">
+    <compoundname>fwoop_httpheadersframe.g.cpp</compoundname>
+    <includes refid="fwoop__httpheadersframe_8h" local="no">fwoop_httpheadersframe.h</includes>
+    <includes refid="fwoop__log_8h" local="no">fwoop_log.h</includes>
+    <includes local="no">gtest/gtest.h</includes>
+    <incdepgraph>
+      <node id="16">
+        <label>fwoop_log.h</label>
+        <link refid="fwoop__log_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>fwoop_httpframe.h</label>
+        <link refid="fwoop__httpframe_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>fwoop_httpheader.h</label>
+        <link refid="fwoop__httpheader_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>http/fwoop_httpheadersframe.g.cpp</label>
+        <link refid="fwoop__httpheadersframe_8g_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>fwoop_httpheadersframe.h</label>
+        <link refid="fwoop__httpheadersframe_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>fwoop_httphpacker.h</label>
+        <link refid="fwoop__httphpacker_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>cstdint</label>
+      </node>
+      <node id="4">
+        <label>cstring</label>
+      </node>
+      <node id="19">
+        <label>gtest/gtest.h</label>
+      </node>
+      <node id="17">
+        <label>iostream</label>
+      </node>
+      <node id="13">
+        <label>list</label>
+      </node>
+      <node id="5">
+        <label>memory</label>
+      </node>
+      <node id="9">
+        <label>ostream</label>
+      </node>
+      <node id="18">
+        <label>sstream</label>
+      </node>
+      <node id="7">
+        <label>stdint.h</label>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="14">
+        <label>unordered_map</label>
+      </node>
+      <node id="10">
+        <label>variant</label>
+      </node>
+      <node id="15">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="fwoop__httpheadersframe_8g_8cpp_1a62df41264e75356ea8e8e427799721d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(HttpHeadersFrame, headerBlocks)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>HttpHeadersFrame</type>
+        </param>
+        <param>
+          <type>headerBlocks</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpheadersframe.g.cpp" line="5" column="1" bodyfile="http/fwoop_httpheadersframe.g.cpp" bodystart="5" bodyend="27"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;<ref refid="fwoop__httpheadersframe_8h" kindref="compound">fwoop_httpheadersframe.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="fwoop__log_8h" kindref="compound">fwoop_log.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;gtest/gtest.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><ref refid="fwoop__httpheadersframe_8g_8cpp_1a62df41264e75356ea8e8e427799721d0" kindref="member">TEST</ref>(HttpHeadersFrame,<sp/>headerBlocks)</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GIVEN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>packer<sp/>=<sp/>std::make_shared&lt;fwoop::HttpHPacker&gt;();</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpHeadersFrame" kindref="compound">fwoop::HttpHeadersFrame</ref><sp/>frame(packer);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>WHEN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>frame.addHeaderBlock(<ref refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929ab26b089d31cf7474274b8514d48f4f24" kindref="member">fwoop::HttpHeader::Status</ref>,<sp/></highlight><highlight class="stringliteral">&quot;200&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>frame.addHeaderBlock(</highlight><highlight class="stringliteral">&quot;custom-header&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;custom-value&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>THEN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>itr<sp/>=<sp/>frame.beginHeaderList();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>ASSERT_TRUE(std::holds_alternative&lt;fwoop::HttpHeader&gt;(itr-&gt;first));</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(<ref refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929ab26b089d31cf7474274b8514d48f4f24" kindref="member">fwoop::HttpHeader::Status</ref>,<sp/>std::get&lt;fwoop::HttpHeader&gt;(itr-&gt;first));</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(</highlight><highlight class="stringliteral">&quot;200&quot;</highlight><highlight class="normal">,<sp/>itr-&gt;second);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>itr++;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>ASSERT_TRUE(itr<sp/>!=<sp/>frame.endHeaderList());</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>ASSERT_TRUE(std::holds_alternative&lt;std::string&gt;(itr-&gt;first));</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(</highlight><highlight class="stringliteral">&quot;custom-header&quot;</highlight><highlight class="normal">,<sp/>std::get&lt;std::string&gt;(itr-&gt;first));</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(</highlight><highlight class="stringliteral">&quot;custom-value&quot;</highlight><highlight class="normal">,<sp/>itr-&gt;second);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>itr++;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_TRUE(itr<sp/>==<sp/>frame.endHeaderList());</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="http/fwoop_httpheadersframe.g.cpp"/>
+  </compounddef>
+</doxygen>

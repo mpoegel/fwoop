@@ -6,6 +6,7 @@
 
 namespace fwoop {
 
+//! This is used to read files.
 class FileReader {
   private:
     std::string   d_filename;

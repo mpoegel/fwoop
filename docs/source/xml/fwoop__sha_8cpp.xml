@@ -1,0 +1,413 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="fwoop__sha_8cpp" kind="file" language="C++">
+    <compoundname>fwoop_sha.cpp</compoundname>
+    <includes refid="fwoop__sha_8h" local="no">fwoop_sha.h</includes>
+    <includes local="no">iostream</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>crypto/fwoop_sha.cpp</label>
+        <link refid="fwoop__sha_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>fwoop_sha.h</label>
+        <link refid="fwoop__sha_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>iostream</label>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacefwoop">fwoop</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="fwoop__sha_8cpp_1a1d6104caf8e45aec83adbffcbae9b082" prot="public" static="no">
+        <name>SHA256_SHR</name>
+        <param><defname>bits</defname></param>
+        <param><defname>word</defname></param>
+        <initializer>((word) &gt;&gt; (bits))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.cpp" line="7" column="9" bodyfile="crypto/fwoop_sha.cpp" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fwoop__sha_8cpp_1a1dfdab376818cbd49c7be34fe6192eee" prot="public" static="no">
+        <name>SHA256_ROTL</name>
+        <param><defname>bits</defname></param>
+        <param><defname>word</defname></param>
+        <initializer>(((word) &lt;&lt; (bits)) | ((word) &gt;&gt; (32-(bits))))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.cpp" line="8" column="9" bodyfile="crypto/fwoop_sha.cpp" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fwoop__sha_8cpp_1a900015f109da4f4f10222e989bb9d914" prot="public" static="no">
+        <name>SHA256_ROTR</name>
+        <param><defname>bits</defname></param>
+        <param><defname>word</defname></param>
+        <initializer>(((word) &gt;&gt; (bits)) | ((word) &lt;&lt; (32-(bits))))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.cpp" line="9" column="9" bodyfile="crypto/fwoop_sha.cpp" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fwoop__sha_8cpp_1a411a32a10e1c9a837fcaca699996b69d" prot="public" static="no">
+        <name>SHA256_SIGMA0</name>
+        <param><defname>word</defname></param>
+        <initializer>(<ref refid="fwoop__sha_8cpp_1a900015f109da4f4f10222e989bb9d914" kindref="member">SHA256_ROTR</ref>(2,  word) ^ <ref refid="fwoop__sha_8cpp_1a900015f109da4f4f10222e989bb9d914" kindref="member">SHA256_ROTR</ref>(13, word) ^ <ref refid="fwoop__sha_8cpp_1a900015f109da4f4f10222e989bb9d914" kindref="member">SHA256_ROTR</ref>(22, word))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.cpp" line="11" column="9" bodyfile="crypto/fwoop_sha.cpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fwoop__sha_8cpp_1a98d55970a7f59d26dadd54504c47ab34" prot="public" static="no">
+        <name>SHA256_SIGMA1</name>
+        <param><defname>word</defname></param>
+        <initializer>(<ref refid="fwoop__sha_8cpp_1a900015f109da4f4f10222e989bb9d914" kindref="member">SHA256_ROTR</ref>(6,  word) ^ <ref refid="fwoop__sha_8cpp_1a900015f109da4f4f10222e989bb9d914" kindref="member">SHA256_ROTR</ref>(11, word) ^ <ref refid="fwoop__sha_8cpp_1a900015f109da4f4f10222e989bb9d914" kindref="member">SHA256_ROTR</ref>(25, word))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.cpp" line="12" column="9" bodyfile="crypto/fwoop_sha.cpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fwoop__sha_8cpp_1a38a77702d02d1459a0d5321afd893cc9" prot="public" static="no">
+        <name>SHA256_sigma0</name>
+        <param><defname>word</defname></param>
+        <initializer>(<ref refid="fwoop__sha_8cpp_1a900015f109da4f4f10222e989bb9d914" kindref="member">SHA256_ROTR</ref>(7,  word) ^ <ref refid="fwoop__sha_8cpp_1a900015f109da4f4f10222e989bb9d914" kindref="member">SHA256_ROTR</ref>(18, word) ^ <ref refid="fwoop__sha_8cpp_1a1d6104caf8e45aec83adbffcbae9b082" kindref="member">SHA256_SHR</ref>(3,  word))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.cpp" line="13" column="9" bodyfile="crypto/fwoop_sha.cpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fwoop__sha_8cpp_1a7de598c936af8cf0a77713f7276fae29" prot="public" static="no">
+        <name>SHA256_sigma1</name>
+        <param><defname>word</defname></param>
+        <initializer>(<ref refid="fwoop__sha_8cpp_1a900015f109da4f4f10222e989bb9d914" kindref="member">SHA256_ROTR</ref>(17, word) ^ <ref refid="fwoop__sha_8cpp_1a900015f109da4f4f10222e989bb9d914" kindref="member">SHA256_ROTR</ref>(19, word) ^ <ref refid="fwoop__sha_8cpp_1a1d6104caf8e45aec83adbffcbae9b082" kindref="member">SHA256_SHR</ref>(10, word))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.cpp" line="14" column="9" bodyfile="crypto/fwoop_sha.cpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fwoop__sha_8cpp_1a6aad1464e4cf4e57f0e2551558f0d783" prot="public" static="no">
+        <name>SHA_Ch</name>
+        <param><defname>x</defname></param>
+        <param><defname>y</defname></param>
+        <param><defname>z</defname></param>
+        <initializer>(((x) &amp; (y)) ^ (~(x) &amp; (z)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.cpp" line="16" column="9" bodyfile="crypto/fwoop_sha.cpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fwoop__sha_8cpp_1a34c488411532e284913ae6c4ac5c1e75" prot="public" static="no">
+        <name>SHA_Maj</name>
+        <param><defname>x</defname></param>
+        <param><defname>y</defname></param>
+        <param><defname>z</defname></param>
+        <initializer>(((x) &amp; (y)) ^ ((x) &amp; (z)) ^ ((y) &amp; (z)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.cpp" line="17" column="9" bodyfile="crypto/fwoop_sha.cpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;<ref refid="fwoop__sha_8h" kindref="compound">fwoop_sha.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefwoop" kindref="compound">fwoop</ref><sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SHA256_SHR(bits,<sp/>word)<sp/>((word)<sp/>&gt;&gt;<sp/>(bits))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SHA256_ROTL(bits,<sp/>word)<sp/>(((word)<sp/>&lt;&lt;<sp/>(bits))<sp/>|<sp/>((word)<sp/>&gt;&gt;<sp/>(32-(bits))))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SHA256_ROTR(bits,<sp/>word)<sp/>(((word)<sp/>&gt;&gt;<sp/>(bits))<sp/>|<sp/>((word)<sp/>&lt;&lt;<sp/>(32-(bits))))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SHA256_SIGMA0(word)<sp/>(SHA256_ROTR(2,<sp/><sp/>word)<sp/>^<sp/>SHA256_ROTR(13,<sp/>word)<sp/>^<sp/>SHA256_ROTR(22,<sp/>word))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SHA256_SIGMA1(word)<sp/>(SHA256_ROTR(6,<sp/><sp/>word)<sp/>^<sp/>SHA256_ROTR(11,<sp/>word)<sp/>^<sp/>SHA256_ROTR(25,<sp/>word))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SHA256_sigma0(word)<sp/>(SHA256_ROTR(7,<sp/><sp/>word)<sp/>^<sp/>SHA256_ROTR(18,<sp/>word)<sp/>^<sp/>SHA256_SHR(3,<sp/><sp/>word))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SHA256_sigma1(word)<sp/>(SHA256_ROTR(17,<sp/>word)<sp/>^<sp/>SHA256_ROTR(19,<sp/>word)<sp/>^<sp/>SHA256_SHR(10,<sp/>word))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SHA_Ch(x,<sp/>y,<sp/>z)<sp/>(((x)<sp/>&amp;<sp/>(y))<sp/>^<sp/>(~(x)<sp/>&amp;<sp/>(z)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SHA_Maj(x,<sp/>y,<sp/>z)<sp/>(((x)<sp/>&amp;<sp/>(y))<sp/>^<sp/>((x)<sp/>&amp;<sp/>(z))<sp/>^<sp/>((y)<sp/>&amp;<sp/>(z)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>SHA::SHA256_H0[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>0x6A09E667,<sp/>0xBB67AE85,<sp/>0x3C6EF372,<sp/>0xA54FF53A,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>0x510E527F,<sp/>0x9B05688C,<sp/>0x1F83D9AB,<sp/>0x5BE0CD19</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1SHA_1a1009e812bd0acc16ae0dbdd0503e838c" kindref="member">SHA::h256</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*msg,<sp/>uint32_t<sp/>length,<sp/>uint8_t<sp/>*digest)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>SHA256Context<sp/>context;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>context.SHA256Reset();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(0<sp/>!=<sp/>context.SHA256Input(msg,<sp/>length))<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(0<sp/>!=<sp/>context.SHA256Result(digest))<sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1SHA_1a1009e812bd0acc16ae0dbdd0503e838c" kindref="member">SHA::h256</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>msg,<sp/>uint8_t<sp/>*digest)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1SHA_1a1009e812bd0acc16ae0dbdd0503e838c" kindref="member">h256</ref>((uint8_t*)msg.data(),<sp/>msg.length(),<sp/>digest);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SHA::SHA256Context::SHA256Reset()</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>LengthHigh<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>LengthLow<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>MessageBlockIndex<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>IntermediateHash[0]<sp/>=<sp/>SHA256_H0[0];</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>IntermediateHash[1]<sp/>=<sp/>SHA256_H0[1];</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>IntermediateHash[2]<sp/>=<sp/>SHA256_H0[2];</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>IntermediateHash[3]<sp/>=<sp/>SHA256_H0[3];</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>IntermediateHash[4]<sp/>=<sp/>SHA256_H0[4];</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>IntermediateHash[5]<sp/>=<sp/>SHA256_H0[5];</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>IntermediateHash[6]<sp/>=<sp/>SHA256_H0[6];</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>IntermediateHash[7]<sp/>=<sp/>SHA256_H0[7];</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(uint8_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>SHA256MessageBlockSize;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MessageBlock[i]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>Computed<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>Corrupted<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SHA::SHA256Context::SHA256Input(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*bytes,<sp/>uint32_t<sp/>length)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(length<sp/>==<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bytes<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Computed)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-2;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Corrupted)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-2;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(length--<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MessageBlock[MessageBlockIndex++]<sp/>=<sp/>*bytes;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(SHA256AddLength(8)<sp/>==<sp/>0<sp/>&amp;&amp;<sp/>MessageBlockIndex<sp/>==<sp/>SHA256MessageBlockSize)<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SHA256ProcessMessageBlock();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bytes++;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Corrupted;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SHA::SHA256Context::SHA256FinalBits(uint8_t<sp/>bits,<sp/>uint32_t<sp/>length)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint8_t<sp/>masks[8]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>0<sp/>0b00000000<sp/>*/</highlight><highlight class="normal"><sp/>0x00,<sp/></highlight><highlight class="comment">/*<sp/>1<sp/>0b10000000<sp/>*/</highlight><highlight class="normal"><sp/>0x80,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>2<sp/>0b11000000<sp/>*/</highlight><highlight class="normal"><sp/>0xC0,<sp/></highlight><highlight class="comment">/*<sp/>3<sp/>0b11100000<sp/>*/</highlight><highlight class="normal"><sp/>0xE0,</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>4<sp/>0b11110000<sp/>*/</highlight><highlight class="normal"><sp/>0xF0,<sp/></highlight><highlight class="comment">/*<sp/>5<sp/>0b11111000<sp/>*/</highlight><highlight class="normal"><sp/>0xF8,</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>6<sp/>0b11111100<sp/>*/</highlight><highlight class="normal"><sp/>0xFC,<sp/></highlight><highlight class="comment">/*<sp/>7<sp/>0b11111110<sp/>*/</highlight><highlight class="normal"><sp/>0xFE</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint8_t<sp/>markbit[8]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>0<sp/>0b10000000<sp/>*/</highlight><highlight class="normal"><sp/>0x80,<sp/></highlight><highlight class="comment">/*<sp/>1<sp/>0b01000000<sp/>*/</highlight><highlight class="normal"><sp/>0x40,</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>2<sp/>0b00100000<sp/>*/</highlight><highlight class="normal"><sp/>0x20,<sp/></highlight><highlight class="comment">/*<sp/>3<sp/>0b00010000<sp/>*/</highlight><highlight class="normal"><sp/>0x10,</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>4<sp/>0b00001000<sp/>*/</highlight><highlight class="normal"><sp/>0x08,<sp/></highlight><highlight class="comment">/*<sp/>5<sp/>0b00000100<sp/>*/</highlight><highlight class="normal"><sp/>0x04,</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>6<sp/>0b00000010<sp/>*/</highlight><highlight class="normal"><sp/>0x02,<sp/></highlight><highlight class="comment">/*<sp/>7<sp/>0b00000001<sp/>*/</highlight><highlight class="normal"><sp/>0x01</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(length<sp/>==<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Corrupted)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-2;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Computed)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-2;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(length<sp/>&gt;=<sp/>8)<sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Corrupted<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>SHA256AddLength(length);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>SHA256Finalize((uint8_t)((bits<sp/>&amp;<sp/>masks[length])<sp/>|<sp/>markbit[length]));</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Corrupted;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SHA::SHA256Context::SHA256Finalize(uint8_t<sp/>padByte)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>SHA256PadMessage(padByte);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(uint32_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>SHA256MessageBlockSize;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MessageBlock[i]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>LengthHigh<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>LengthLow<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>Computed<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SHA::SHA256Context::SHA256PadMessage(uint8_t<sp/>padByte)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(MessageBlockIndex<sp/>&gt;=<sp/>SHA256MessageBlockSize<sp/>-<sp/>8)<sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MessageBlock[MessageBlockIndex++]<sp/>=<sp/>padByte;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(MessageBlockIndex<sp/>&lt;<sp/>SHA256MessageBlockSize)<sp/>{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MessageBlock[MessageBlockIndex++]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SHA256ProcessMessageBlock();</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MessageBlock[MessageBlockIndex++]<sp/>=<sp/>padByte;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(MessageBlockIndex<sp/>&lt;<sp/>SHA256MessageBlockSize<sp/>-<sp/>8)<sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MessageBlock[MessageBlockIndex++]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>MessageBlock[56]<sp/>=<sp/>(uint8_t)(LengthHigh<sp/>&gt;&gt;<sp/>24);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>MessageBlock[57]<sp/>=<sp/>(uint8_t)(LengthHigh<sp/>&gt;&gt;<sp/>16);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>MessageBlock[58]<sp/>=<sp/>(uint8_t)(LengthHigh<sp/>&gt;&gt;<sp/>8);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>MessageBlock[59]<sp/>=<sp/>(uint8_t)(LengthHigh);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>MessageBlock[60]<sp/>=<sp/>(uint8_t)(LengthLow<sp/>&gt;&gt;<sp/>24);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>MessageBlock[61]<sp/>=<sp/>(uint8_t)(LengthLow<sp/>&gt;&gt;<sp/>16);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>MessageBlock[62]<sp/>=<sp/>(uint8_t)(LengthLow<sp/>&gt;&gt;<sp/>8);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>MessageBlock[63]<sp/>=<sp/>(uint8_t)(LengthLow);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>SHA256ProcessMessageBlock();</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SHA::SHA256Context::SHA256Result(uint8_t<sp/>*digest)</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>SHA256ResultN(digest,<sp/>SHA256HashSize);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SHA::SHA256Context::SHA256ResultN(uint8_t<sp/>*digest,<sp/>uint32_t<sp/>hashSize)</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(1<sp/>!=<sp/>Computed)<sp/>{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SHA256Finalize(0x80);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(uint32_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>hashSize;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>digest[i]<sp/>=<sp/>(uint8_t)(IntermediateHash[i<sp/>&gt;&gt;<sp/>2]<sp/>&gt;&gt;<sp/>8<sp/>*<sp/>(3<sp/>-<sp/>(i<sp/>&amp;<sp/>0x03)));</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SHA::SHA256Context::SHA256AddLength(uint32_t<sp/>length)</highlight></codeline>
+<codeline lineno="176"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>addTemp<sp/>=<sp/>LengthLow;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>LengthLow<sp/>+=<sp/>length;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>Corrupted<sp/>=<sp/>LengthLow<sp/>&lt;<sp/>addTemp<sp/>&amp;&amp;<sp/>LengthHigh++<sp/>==<sp/>0</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>?<sp/>1<sp/>:<sp/>Corrupted;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SHA::SHA256Context::SHA256ProcessMessageBlock()</highlight></codeline>
+<codeline lineno="185"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>K[64]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x428a2f98,<sp/>0x71374491,<sp/>0xb5c0fbcf,<sp/>0xe9b5dba5,<sp/>0x3956c25b,</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x59f111f1,<sp/>0x923f82a4,<sp/>0xab1c5ed5,<sp/>0xd807aa98,<sp/>0x12835b01,</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x243185be,<sp/>0x550c7dc3,<sp/>0x72be5d74,<sp/>0x80deb1fe,<sp/>0x9bdc06a7,</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xc19bf174,<sp/>0xe49b69c1,<sp/>0xefbe4786,<sp/>0x0fc19dc6,<sp/>0x240ca1cc,</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x2de92c6f,<sp/>0x4a7484aa,<sp/>0x5cb0a9dc,<sp/>0x76f988da,<sp/>0x983e5152,</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xa831c66d,<sp/>0xb00327c8,<sp/>0xbf597fc7,<sp/>0xc6e00bf3,<sp/>0xd5a79147,</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x06ca6351,<sp/>0x14292967,<sp/>0x27b70a85,<sp/>0x2e1b2138,<sp/>0x4d2c6dfc,</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x53380d13,<sp/>0x650a7354,<sp/>0x766a0abb,<sp/>0x81c2c92e,<sp/>0x92722c85,</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xa2bfe8a1,<sp/>0xa81a664b,<sp/>0xc24b8b70,<sp/>0xc76c51a3,<sp/>0xd192e819,</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xd6990624,<sp/>0xf40e3585,<sp/>0x106aa070,<sp/>0x19a4c116,<sp/>0x1e376c08,</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x2748774c,<sp/>0x34b0bcb5,<sp/>0x391c0cb3,<sp/>0x4ed8aa4a,<sp/>0x5b9cca4f,</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x682e6ff3,<sp/>0x748f82ee,<sp/>0x78a5636f,<sp/>0x84c87814,<sp/>0x8cc70208,</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x90befffa,<sp/>0xa4506ceb,<sp/>0xbef9a3f7,<sp/>0xc67178f2</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>temp1,<sp/>temp2;<sp/><sp/></highlight><highlight class="comment">//<sp/>temp<sp/>word<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>W[64];<sp/><sp/></highlight><highlight class="comment">//<sp/>word<sp/>sequence</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>A,<sp/>B,<sp/>C,<sp/>D,<sp/>E,<sp/>F,<sp/>G,<sp/>H;<sp/><sp/></highlight><highlight class="comment">//<sp/>word<sp/>buffers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(uint16_t<sp/>t<sp/>=<sp/>0,<sp/>t4<sp/>=<sp/>0;<sp/>t<sp/>&lt;<sp/>16;<sp/>t++,<sp/>t4<sp/>+=<sp/>4)<sp/>{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>W[t]<sp/>=<sp/>(((uint32_t)MessageBlock[t4])<sp/>&lt;&lt;<sp/>24)<sp/>|</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((uint32_t)MessageBlock[t4<sp/>+<sp/>1])<sp/>&lt;&lt;<sp/>16)<sp/>|</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((uint32_t)MessageBlock[t4<sp/>+<sp/>2])<sp/>&lt;&lt;<sp/>8)<sp/>|</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((uint32_t)MessageBlock[t4<sp/>+<sp/>3]));</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(uint16_t<sp/>t<sp/>=<sp/>16;<sp/>t<sp/>&lt;<sp/>64;<sp/>t++)<sp/>{</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>W[t]<sp/>=<sp/><ref refid="fwoop__sha_8cpp_1a7de598c936af8cf0a77713f7276fae29" kindref="member">SHA256_sigma1</ref>(W[t-2])<sp/>+<sp/>W[t-7]<sp/>+<sp/><ref refid="fwoop__sha_8cpp_1a38a77702d02d1459a0d5321afd893cc9" kindref="member">SHA256_sigma0</ref>(W[t-15])<sp/>+<sp/>W[t-16];</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>A<sp/>=<sp/>IntermediateHash[0];</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>B<sp/>=<sp/>IntermediateHash[1];</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>C<sp/>=<sp/>IntermediateHash[2];</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>D<sp/>=<sp/>IntermediateHash[3];</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>E<sp/>=<sp/>IntermediateHash[4];</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>F<sp/>=<sp/>IntermediateHash[5];</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>G<sp/>=<sp/>IntermediateHash[6];</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>H<sp/>=<sp/>IntermediateHash[7];</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(uint16_t<sp/>t<sp/>=<sp/>0;<sp/>t<sp/>&lt;<sp/>64;<sp/>t++)<sp/>{</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp1<sp/>=<sp/>H<sp/>+<sp/><ref refid="fwoop__sha_8cpp_1a98d55970a7f59d26dadd54504c47ab34" kindref="member">SHA256_SIGMA1</ref>(E)<sp/>+<sp/><ref refid="fwoop__sha_8cpp_1a6aad1464e4cf4e57f0e2551558f0d783" kindref="member">SHA_Ch</ref>(E,<sp/>F,<sp/>G)<sp/>+<sp/>K[t]<sp/>+<sp/>W[t];</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp2<sp/>=<sp/><ref refid="fwoop__sha_8cpp_1a411a32a10e1c9a837fcaca699996b69d" kindref="member">SHA256_SIGMA0</ref>(A)<sp/>+<sp/><ref refid="fwoop__sha_8cpp_1a34c488411532e284913ae6c4ac5c1e75" kindref="member">SHA_Maj</ref>(A,<sp/>B,<sp/>C);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>H<sp/>=<sp/>G;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>G<sp/>=<sp/>F;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>F<sp/>=<sp/>E;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>E<sp/>=<sp/>D<sp/>+<sp/>temp1;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>D<sp/>=<sp/>C;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>C<sp/>=<sp/>B;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>B<sp/>=<sp/>A;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>A<sp/>=<sp/>temp1<sp/>+<sp/>temp2;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/>IntermediateHash[0]<sp/>+=<sp/>A;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/>IntermediateHash[1]<sp/>+=<sp/>B;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>IntermediateHash[2]<sp/>+=<sp/>C;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/>IntermediateHash[3]<sp/>+=<sp/>D;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>IntermediateHash[4]<sp/>+=<sp/>E;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>IntermediateHash[5]<sp/>+=<sp/>F;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>IntermediateHash[6]<sp/>+=<sp/>G;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/>IntermediateHash[7]<sp/>+=<sp/>H;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/>MessageBlockIndex<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="crypto/fwoop_sha.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1SHA" kind="class" language="C++" prot="public">
+    <compoundname>fwoop::SHA</compoundname>
+    <includes refid="fwoop__sha_8h" local="no">fwoop_sha.h</includes>
+    <innerclass refid="structfwoop_1_1SHA_1_1SHA256Context" prot="private">fwoop::SHA::SHA256Context</innerclass>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1SHA_1afccaa2fb6c2b8613bd0d4ab35a6e5260" prot="public" static="yes" mutable="no">
+        <type>const uint32_t</type>
+        <definition>const uint32_t fwoop::SHA::SHA256HashSize</definition>
+        <argsstring></argsstring>
+        <name>SHA256HashSize</name>
+        <qualifiedname>fwoop::SHA::SHA256HashSize</qualifiedname>
+        <initializer>= 32</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.h" line="10" column="27" bodyfile="crypto/fwoop_sha.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1SHA_1a217b2ebe774549b37788deca52a9cea3" prot="private" static="yes" mutable="no">
+        <type>const uint32_t</type>
+        <definition>const uint32_t fwoop::SHA::SHA256MessageBlockSize</definition>
+        <argsstring></argsstring>
+        <name>SHA256MessageBlockSize</name>
+        <qualifiedname>fwoop::SHA::SHA256MessageBlockSize</qualifiedname>
+        <initializer>= 64</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.h" line="13" column="27" bodyfile="crypto/fwoop_sha.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1SHA_1aa361a33e10f22a78120162bb6d1b2cfc" prot="private" static="yes" mutable="no">
+        <type>const uint32_t</type>
+        <definition>const uint32_t fwoop::SHA::SHA256_H0</definition>
+        <argsstring>[SHA256HashSize/4]</argsstring>
+        <name>SHA256_H0</name>
+        <qualifiedname>fwoop::SHA::SHA256_H0</qualifiedname>
+        <initializer>= {
+    0x6A09E667, 0xBB67AE85, 0x3C6EF372, 0xA54FF53A,
+    0x510E527F, 0x9B05688C, 0x1F83D9AB, 0x5BE0CD19
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.h" line="14" column="27" bodyfile="crypto/fwoop_sha.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classfwoop_1_1SHA_1a1009e812bd0acc16ae0dbdd0503e838c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int fwoop::SHA::h256</definition>
+        <argsstring>(const uint8_t *msg, uint32_t length, uint8_t *digest)</argsstring>
+        <name>h256</name>
+        <qualifiedname>fwoop::SHA::h256</qualifiedname>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>digest</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.h" line="42" column="16" bodyfile="crypto/fwoop_sha.cpp" bodystart="25" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1SHA_1ac148fd0eedea347e554153c5b1e42361" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int fwoop::SHA::h256</definition>
+        <argsstring>(const std::string &amp;msg, uint8_t *digest)</argsstring>
+        <name>h256</name>
+        <qualifiedname>fwoop::SHA::h256</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>digest</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_sha.h" line="43" column="16" bodyfile="crypto/fwoop_sha.cpp" bodystart="39" bodyend="42"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="crypto/fwoop_sha.h" line="8" column="1" bodyfile="crypto/fwoop_sha.h" bodystart="8" bodyend="44"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1SHA_1a1009e812bd0acc16ae0dbdd0503e838c" prot="public" virt="non-virtual"><scope>fwoop::SHA</scope><name>h256</name></member>
+      <member refid="classfwoop_1_1SHA_1ac148fd0eedea347e554153c5b1e42361" prot="public" virt="non-virtual"><scope>fwoop::SHA</scope><name>h256</name></member>
+      <member refid="classfwoop_1_1SHA_1aa361a33e10f22a78120162bb6d1b2cfc" prot="private" virt="non-virtual"><scope>fwoop::SHA</scope><name>SHA256_H0</name></member>
+      <member refid="classfwoop_1_1SHA_1afccaa2fb6c2b8613bd0d4ab35a6e5260" prot="public" virt="non-virtual"><scope>fwoop::SHA</scope><name>SHA256HashSize</name></member>
+      <member refid="classfwoop_1_1SHA_1a217b2ebe774549b37788deca52a9cea3" prot="private" virt="non-virtual"><scope>fwoop::SHA</scope><name>SHA256MessageBlockSize</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

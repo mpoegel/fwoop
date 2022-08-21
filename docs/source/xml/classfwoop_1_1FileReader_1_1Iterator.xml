@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1FileReader_1_1Iterator" kind="class" language="C++" prot="public">
+    <compoundname>fwoop::FileReader::Iterator</compoundname>
+    <includes refid="fwoop__filereader_8h" local="no">fwoop_filereader.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1FileReader_1_1Iterator_1a8d846e43ca492739bd32919f877c4f15" prot="private" static="no" mutable="no">
+        <type><ref refid="classfwoop_1_1FileReader" kindref="compound">FileReader</ref> &amp;</type>
+        <definition>FileReader&amp; fwoop::FileReader::Iterator::d_reader</definition>
+        <argsstring></argsstring>
+        <name>d_reader</name>
+        <qualifiedname>fwoop::FileReader::Iterator::d_reader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_filereader.h" line="32" column="16" bodyfile="basis/fwoop_filereader.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1FileReader_1_1Iterator_1a9277dc9cd5479456f1b659c5f91433d4" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string fwoop::FileReader::Iterator::d_currLine</definition>
+        <argsstring></argsstring>
+        <name>d_currLine</name>
+        <qualifiedname>fwoop::FileReader::Iterator::d_currLine</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_filereader.h" line="33" column="17" bodyfile="basis/fwoop_filereader.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1FileReader_1_1Iterator_1acedba33b1f70e17a248a0ffe536af0e5" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool fwoop::FileReader::Iterator::d_isEnd</definition>
+        <argsstring></argsstring>
+        <name>d_isEnd</name>
+        <qualifiedname>fwoop::FileReader::Iterator::d_isEnd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_filereader.h" line="34" column="17" bodyfile="basis/fwoop_filereader.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfwoop_1_1FileReader_1_1Iterator_1aefc73273795ff18dc04282041aea842c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::FileReader::Iterator::Iterator</definition>
+        <argsstring>(FileReader &amp;reader, bool isEnd)</argsstring>
+        <name>Iterator</name>
+        <qualifiedname>fwoop::FileReader::Iterator::Iterator</qualifiedname>
+        <param>
+          <type><ref refid="classfwoop_1_1FileReader" kindref="compound">FileReader</ref> &amp;</type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isEnd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_filereader.h" line="37" column="5" bodyfile="basis/fwoop_filereader.cpp" bodystart="53" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1FileReader_1_1Iterator_1a6b8efe659a2beb007a5ab12c63fe1015" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::FileReader::Iterator::~Iterator</definition>
+        <argsstring>()</argsstring>
+        <name>~Iterator</name>
+        <qualifiedname>fwoop::FileReader::Iterator::~Iterator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_filereader.h" line="38" column="5" bodyfile="basis/fwoop_filereader.h" bodystart="54" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1FileReader_1_1Iterator_1a17ece363b8df9f18c695414eaf9319eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::FileReader::Iterator::operator++</definition>
+        <argsstring>()</argsstring>
+        <name>operator++</name>
+        <qualifiedname>fwoop::FileReader::Iterator::operator++</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_filereader.h" line="40" column="10" bodyfile="basis/fwoop_filereader.cpp" bodystart="59" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1FileReader_1_1Iterator_1abbccb7c9c8a0cdf9c9954e8d603547d4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string fwoop::FileReader::Iterator::operator*</definition>
+        <argsstring>() const</argsstring>
+        <name>operator*</name>
+        <qualifiedname>fwoop::FileReader::Iterator::operator*</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_filereader.h" line="41" column="17" bodyfile="basis/fwoop_filereader.cpp" bodystart="70" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1FileReader_1_1Iterator_1a964bcde3b850afafad72efda7a65c9d4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fwoop::FileReader::Iterator::operator==</definition>
+        <argsstring>(const Iterator &amp;lhs) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>fwoop::FileReader::Iterator::operator==</qualifiedname>
+        <param>
+          <type>const <ref refid="classfwoop_1_1FileReader_1_1Iterator" kindref="compound">Iterator</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_filereader.h" line="43" column="10" bodyfile="basis/fwoop_filereader.cpp" bodystart="75" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1FileReader_1_1Iterator_1a1a0492afb790888d6b639a7b7eb93673" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fwoop::FileReader::Iterator::operator!=</definition>
+        <argsstring>(const Iterator &amp;lhs) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>fwoop::FileReader::Iterator::operator!=</qualifiedname>
+        <param>
+          <type>const <ref refid="classfwoop_1_1FileReader_1_1Iterator" kindref="compound">Iterator</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_filereader.h" line="44" column="10" bodyfile="basis/fwoop_filereader.h" bodystart="59" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="basis/fwoop_filereader.h" line="30" column="1" bodyfile="basis/fwoop_filereader.h" bodystart="30" bodyend="45"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1FileReader_1_1Iterator_1a9277dc9cd5479456f1b659c5f91433d4" prot="private" virt="non-virtual"><scope>fwoop::FileReader::Iterator</scope><name>d_currLine</name></member>
+      <member refid="classfwoop_1_1FileReader_1_1Iterator_1acedba33b1f70e17a248a0ffe536af0e5" prot="private" virt="non-virtual"><scope>fwoop::FileReader::Iterator</scope><name>d_isEnd</name></member>
+      <member refid="classfwoop_1_1FileReader_1_1Iterator_1a8d846e43ca492739bd32919f877c4f15" prot="private" virt="non-virtual"><scope>fwoop::FileReader::Iterator</scope><name>d_reader</name></member>
+      <member refid="classfwoop_1_1FileReader_1_1Iterator_1aefc73273795ff18dc04282041aea842c" prot="public" virt="non-virtual"><scope>fwoop::FileReader::Iterator</scope><name>Iterator</name></member>
+      <member refid="classfwoop_1_1FileReader_1_1Iterator_1a1a0492afb790888d6b639a7b7eb93673" prot="public" virt="non-virtual"><scope>fwoop::FileReader::Iterator</scope><name>operator!=</name></member>
+      <member refid="classfwoop_1_1FileReader_1_1Iterator_1abbccb7c9c8a0cdf9c9954e8d603547d4" prot="public" virt="non-virtual"><scope>fwoop::FileReader::Iterator</scope><name>operator*</name></member>
+      <member refid="classfwoop_1_1FileReader_1_1Iterator_1a17ece363b8df9f18c695414eaf9319eb" prot="public" virt="non-virtual"><scope>fwoop::FileReader::Iterator</scope><name>operator++</name></member>
+      <member refid="classfwoop_1_1FileReader_1_1Iterator_1a964bcde3b850afafad72efda7a65c9d4" prot="public" virt="non-virtual"><scope>fwoop::FileReader::Iterator</scope><name>operator==</name></member>
+      <member refid="classfwoop_1_1FileReader_1_1Iterator_1a6b8efe659a2beb007a5ab12c63fe1015" prot="public" virt="non-virtual"><scope>fwoop::FileReader::Iterator</scope><name>~Iterator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

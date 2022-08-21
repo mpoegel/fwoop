@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="fwoop__log_8g_8cpp" kind="file" language="C++">
+    <compoundname>fwoop_log.g.cpp</compoundname>
+    <includes refid="fwoop__log_8h" local="no">fwoop_log.h</includes>
+    <includes local="no">gtest/gtest.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>basis/fwoop_log.g.cpp</label>
+        <link refid="fwoop__log_8g_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>fwoop_log.h</label>
+        <link refid="fwoop__log_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>gtest/gtest.h</label>
+      </node>
+      <node id="3">
+        <label>iostream</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+      <node id="5">
+        <label>ostream</label>
+      </node>
+      <node id="6">
+        <label>sstream</label>
+      </node>
+      <node id="7">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="fwoop__log_8g_8cpp_1a650cfc9b1f5d2567386200b0e12e54df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(LogTest, Log)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>LogTest</type>
+        </param>
+        <param>
+          <type>Log</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.g.cpp" line="5" column="1" bodyfile="basis/fwoop_log.g.cpp" bodystart="5" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="fwoop__log_8g_8cpp_1abf069af9542d47b226c401b35a69d86b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(LogTest, LogFormat)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>LogTest</type>
+        </param>
+        <param>
+          <type>LogFormat</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.g.cpp" line="14" column="1" bodyfile="basis/fwoop_log.g.cpp" bodystart="14" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="fwoop__log_8g_8cpp_1a5e4471915810efa22bdb341e6d206b27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(LogTest, LogFormatInts)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>LogTest</type>
+        </param>
+        <param>
+          <type>LogFormatInts</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.g.cpp" line="23" column="1" bodyfile="basis/fwoop_log.g.cpp" bodystart="23" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="fwoop__log_8g_8cpp_1aceef082d3c7855b5eebc6b02483e0334" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(LogTest, LogFormatMultiTypes)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>LogTest</type>
+        </param>
+        <param>
+          <type>LogFormatMultiTypes</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.g.cpp" line="32" column="1" bodyfile="basis/fwoop_log.g.cpp" bodystart="32" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="fwoop__log_8g_8cpp_1a07e316bf289e2d1263955a8c0b4d4dba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(LogTest, LogComplexTypes)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>LogTest</type>
+        </param>
+        <param>
+          <type>LogComplexTypes</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_log.g.cpp" line="41" column="1" bodyfile="basis/fwoop_log.g.cpp" bodystart="41" bodyend="48"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;<ref refid="fwoop__log_8h" kindref="compound">fwoop_log.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;gtest/gtest.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><ref refid="fwoop__log_8g_8cpp_1a650cfc9b1f5d2567386200b0e12e54df" kindref="member">TEST</ref>(LogTest,<sp/>Log)</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>THEN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Log_1a05826844e33fb0f96c88a65fe6d63a94" kindref="member">fwoop::Log::Debug</ref>(</highlight><highlight class="stringliteral">&quot;Hello<sp/>World&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Log_1a6e412954295a899c03914856a3d3f538" kindref="member">fwoop::Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Hello<sp/>Solar<sp/>System&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Log_1a685b743897c2a9638f8bd775b2999f8d" kindref="member">fwoop::Log::Warn</ref>(</highlight><highlight class="stringliteral">&quot;Hello<sp/>Galaxy&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Log_1aa43c2bc1be7be6e0c338a256d22a864c" kindref="member">fwoop::Log::Error</ref>(</highlight><highlight class="stringliteral">&quot;Hello<sp/>Universe&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><ref refid="fwoop__log_8g_8cpp_1a650cfc9b1f5d2567386200b0e12e54df" kindref="member">TEST</ref>(LogTest,<sp/>LogFormat)</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>THEN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Log_1a05826844e33fb0f96c88a65fe6d63a94" kindref="member">fwoop::Log::Debug</ref>(</highlight><highlight class="stringliteral">&quot;Hello<sp/>&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;World&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Log_1a6e412954295a899c03914856a3d3f538" kindref="member">fwoop::Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Hello<sp/>&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Solar<sp/>System&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Log_1a685b743897c2a9638f8bd775b2999f8d" kindref="member">fwoop::Log::Warn</ref>(</highlight><highlight class="stringliteral">&quot;Hello<sp/>&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Galaxy&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Log_1aa43c2bc1be7be6e0c338a256d22a864c" kindref="member">fwoop::Log::Error</ref>(</highlight><highlight class="stringliteral">&quot;Hello<sp/>&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Universe&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><ref refid="fwoop__log_8g_8cpp_1a650cfc9b1f5d2567386200b0e12e54df" kindref="member">TEST</ref>(LogTest,<sp/>LogFormatInts)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>THEN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Log_1a05826844e33fb0f96c88a65fe6d63a94" kindref="member">fwoop::Log::Debug</ref>(</highlight><highlight class="stringliteral">&quot;Hello<sp/>in<sp/>&quot;</highlight><highlight class="normal">,<sp/>5,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>colors&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Log_1a6e412954295a899c03914856a3d3f538" kindref="member">fwoop::Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Hello<sp/>in<sp/>&quot;</highlight><highlight class="normal">,<sp/>6,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>colors&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Log_1a685b743897c2a9638f8bd775b2999f8d" kindref="member">fwoop::Log::Warn</ref>(</highlight><highlight class="stringliteral">&quot;Hello<sp/>in<sp/>&quot;</highlight><highlight class="normal">,<sp/>7,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>colors&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Log_1aa43c2bc1be7be6e0c338a256d22a864c" kindref="member">fwoop::Log::Error</ref>(</highlight><highlight class="stringliteral">&quot;Hello<sp/>in<sp/>&quot;</highlight><highlight class="normal">,<sp/>8,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>colors&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><ref refid="fwoop__log_8g_8cpp_1a650cfc9b1f5d2567386200b0e12e54df" kindref="member">TEST</ref>(LogTest,<sp/>LogFormatMultiTypes)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>THEN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Log_1a05826844e33fb0f96c88a65fe6d63a94" kindref="member">fwoop::Log::Debug</ref>(</highlight><highlight class="stringliteral">&quot;Hello<sp/>&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;world&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>in<sp/>&quot;</highlight><highlight class="normal">,<sp/>5,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>colors&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Log_1a6e412954295a899c03914856a3d3f538" kindref="member">fwoop::Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Hello<sp/>&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;solar<sp/>system&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>in<sp/>&quot;</highlight><highlight class="normal">,<sp/>6,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>colors&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Log_1a685b743897c2a9638f8bd775b2999f8d" kindref="member">fwoop::Log::Warn</ref>(</highlight><highlight class="stringliteral">&quot;Hello<sp/>&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;galaxy&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>in<sp/>&quot;</highlight><highlight class="normal">,<sp/>7,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>colors&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Log_1aa43c2bc1be7be6e0c338a256d22a864c" kindref="member">fwoop::Log::Error</ref>(</highlight><highlight class="stringliteral">&quot;Hello<sp/>&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;universe&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>in<sp/>&quot;</highlight><highlight class="normal">,<sp/>8,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>colors&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><ref refid="fwoop__log_8g_8cpp_1a650cfc9b1f5d2567386200b0e12e54df" kindref="member">TEST</ref>(LogTest,<sp/>LogComplexTypes)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GIVEN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>str(</highlight><highlight class="stringliteral">&quot;world&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>THEN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Log_1a05826844e33fb0f96c88a65fe6d63a94" kindref="member">fwoop::Log::Debug</ref>(</highlight><highlight class="stringliteral">&quot;Hello<sp/>&quot;</highlight><highlight class="normal">,<sp/>str);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="basis/fwoop_log.g.cpp"/>
+  </compounddef>
+</doxygen>

@@ -16,6 +16,12 @@ cd build
 ctest
 ```
 
+### Documenting
+```sh
+doxygen
+python3.9 -m sphinx -b html docs/source docs/html
+```
+
 ## Installing
 ```sh
 cd build

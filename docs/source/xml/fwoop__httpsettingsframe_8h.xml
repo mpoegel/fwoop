@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="fwoop__httpsettingsframe_8h" kind="file" language="C++">
+    <compoundname>fwoop_httpsettingsframe.h</compoundname>
+    <includes refid="fwoop__httpframe_8h" local="no">fwoop_httpframe.h</includes>
+    <includes local="no">optional</includes>
+    <includedby refid="fwoop__httpframe_8cpp" local="no">http/fwoop_httpframe.cpp</includedby>
+    <includedby refid="fwoop__httpserver_8cpp" local="no">http/fwoop_httpserver.cpp</includedby>
+    <includedby refid="fwoop__httpsettingsframe_8cpp" local="no">http/fwoop_httpsettingsframe.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>fwoop_httpframe.h</label>
+        <link refid="fwoop__httpframe_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>http/fwoop_httpsettingsframe.h</label>
+        <link refid="fwoop__httpsettingsframe_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>cstring</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+      <node id="7">
+        <label>optional</label>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>http/fwoop_httpframe.cpp</label>
+        <link refid="fwoop__httpframe_8cpp"/>
+      </node>
+      <node id="3">
+        <label>http/fwoop_httpserver.cpp</label>
+        <link refid="fwoop__httpserver_8cpp"/>
+      </node>
+      <node id="4">
+        <label>http/fwoop_httpsettingsframe.cpp</label>
+        <link refid="fwoop__httpsettingsframe_8cpp"/>
+      </node>
+      <node id="1">
+        <label>http/fwoop_httpsettingsframe.h</label>
+        <link refid="fwoop__httpsettingsframe_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classfwoop_1_1HttpSettingsFrame" prot="public">fwoop::HttpSettingsFrame</innerclass>
+    <innernamespace refid="namespacefwoop">fwoop</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="fwoop__httpframe_8h" kindref="compound">fwoop_httpframe.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefwoop" kindref="compound">fwoop</ref><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="classfwoop_1_1HttpSettingsFrame" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfwoop_1_1HttpSettingsFrame" kindref="compound">HttpSettingsFrame</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame" kindref="compound">HttpFrame</ref><sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>Parameter<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HeaderTableSize<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EnablePush<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>2,</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MaxConcurrentStreams<sp/>=<sp/>3,</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InitialWindowSize<sp/><sp/><sp/><sp/>=<sp/>4,</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MaxWindowSize<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>5,</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MaxFrameSize<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>6,</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MaxHeaderListSize<sp/><sp/><sp/><sp/>=<sp/>7,</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PARAMETER_SIZE<sp/>=<sp/>6;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;uint32_t&gt;<sp/>d_headerTableSize;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;bool&gt;<sp/><sp/><sp/><sp/><sp/>d_enablePush;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;uint32_t&gt;<sp/>d_maxConcurrentStreams;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;uint32_t&gt;<sp/>d_initialWindowSize;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;uint32_t&gt;<sp/>d_maxWindowSize;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;uint32_t&gt;<sp/>d_maxFrameSize;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;uint32_t&gt;<sp/>d_maxHeaderListSize;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1ae69a811d9682d71c4c0bb9e414572a21" kindref="member">HttpSettingsFrame</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1aa418c5a29a857d21bd83835836230696" kindref="member">length</ref>,<sp/>uint8_t<sp/>flags,<sp/>uint8_t<sp/>*streamID,<sp/>uint8_t<sp/>*<ref refid="classfwoop_1_1HttpFrame_1a7f1a53af685d8dc955a31f2fcd70fade" kindref="member">payload</ref>);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1ae69a811d9682d71c4c0bb9e414572a21" kindref="member">HttpSettingsFrame</ref>();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1a0ad009645c53c4070ca387b53900d496" kindref="member">~HttpSettingsFrame</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1af4251246f071e4c86e87f077a16aa436" kindref="member">setAck</ref>();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1ab3080cde048169f484902f941f443fa6" kindref="member">setHeaderTableSize</ref>(uint32_t<sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1ae949b87607204f28fb685dac26217415" kindref="member">headerTableSize</ref>);</highlight></codeline>
+<codeline lineno="39" refid="classfwoop_1_1HttpSettingsFrame_1a82cadaffeb044d7155f8b7357a7dab6f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1a82cadaffeb044d7155f8b7357a7dab6f" kindref="member">setEnablePush</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1af254ae74966f42fee7f6de3d5bdb2ce3" kindref="member">enablePush</ref>);</highlight></codeline>
+<codeline lineno="40" refid="classfwoop_1_1HttpSettingsFrame_1a22042dd0fd6a2462aa9960f45042c2d3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1a22042dd0fd6a2462aa9960f45042c2d3" kindref="member">setMaxConcurrentStreams</ref>(uint32_t<sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1a6badc5d858ef9a0c2c08fcbfc8874701" kindref="member">maxConcurrentStreams</ref>);</highlight></codeline>
+<codeline lineno="41" refid="classfwoop_1_1HttpSettingsFrame_1aeeb464fb6c6620589489204d009b875e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1aeeb464fb6c6620589489204d009b875e" kindref="member">setInitialWindowSize</ref>(uint32_t<sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1a4e725b07bfb7159b1044320b514493e0" kindref="member">initialWindowSize</ref>);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1aab2daed10fbf2d58729f5950bb6504e2" kindref="member">setMaxFrameSize</ref>(uint32_t<sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1ad45301e4095f82edb3f7721c6c00c953" kindref="member">maxFrameSize</ref>);</highlight></codeline>
+<codeline lineno="43" refid="classfwoop_1_1HttpSettingsFrame_1a7118296805eab77b61f4f5cc7e46f917" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1a7118296805eab77b61f4f5cc7e46f917" kindref="member">setMaxHeaderListSize</ref>(uint32_t<sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1a89eaaf80c48441313a91525141840043" kindref="member">maxHeaderListSize</ref>);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;uint32_t&gt;<sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1ae949b87607204f28fb685dac26217415" kindref="member">headerTableSize</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1af254ae74966f42fee7f6de3d5bdb2ce3" kindref="member">enablePush</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;uint32_t&gt;<sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1a6badc5d858ef9a0c2c08fcbfc8874701" kindref="member">maxConcurrentStreams</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;uint32_t&gt;<sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1a4e725b07bfb7159b1044320b514493e0" kindref="member">initialWindowSize</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;uint32_t&gt;<sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1ad45301e4095f82edb3f7721c6c00c953" kindref="member">maxFrameSize</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;uint32_t&gt;<sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1a89eaaf80c48441313a91525141840043" kindref="member">maxHeaderListSize</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*<ref refid="classfwoop_1_1HttpSettingsFrame_1a9343e7b63a3e0f20fd02ff883ee1c7fd" kindref="member">encode</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="classfwoop_1_1HttpSettingsFrame_1a0ad009645c53c4070ca387b53900d496" refkind="member"><highlight class="normal"><ref refid="classfwoop_1_1HttpSettingsFrame_1a0ad009645c53c4070ca387b53900d496" kindref="member">HttpSettingsFrame::~HttpSettingsFrame</ref>()</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="classfwoop_1_1HttpSettingsFrame_1af4251246f071e4c86e87f077a16aa436" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1af4251246f071e4c86e87f077a16aa436" kindref="member">HttpSettingsFrame::setAck</ref>()</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1af4ab160bcedcb2562d6001c6570548e2" kindref="member">d_flags</ref><sp/>|=<sp/>1;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="classfwoop_1_1HttpSettingsFrame_1ab3080cde048169f484902f941f443fa6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1ab3080cde048169f484902f941f443fa6" kindref="member">HttpSettingsFrame::setHeaderTableSize</ref>(uint32_t<sp/>headerTableSize)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!d_headerTableSize.has_value())<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1af9fb5740d57aee90e97cb7de45f3e321" kindref="member">d_length</ref><sp/>+=<sp/>6;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>d_headerTableSize.emplace(<ref refid="classfwoop_1_1HttpSettingsFrame_1ae949b87607204f28fb685dac26217415" kindref="member">headerTableSize</ref>);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="classfwoop_1_1HttpSettingsFrame_1aab2daed10fbf2d58729f5950bb6504e2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1aab2daed10fbf2d58729f5950bb6504e2" kindref="member">HttpSettingsFrame::setMaxFrameSize</ref>(uint32_t<sp/>maxFrameSize)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!d_maxFrameSize.has_value())<sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1af9fb5740d57aee90e97cb7de45f3e321" kindref="member">d_length</ref><sp/>+=<sp/>6;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>d_maxFrameSize.emplace(<ref refid="classfwoop_1_1HttpSettingsFrame_1ad45301e4095f82edb3f7721c6c00c953" kindref="member">maxFrameSize</ref>);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="classfwoop_1_1HttpSettingsFrame_1ae949b87607204f28fb685dac26217415" refkind="member"><highlight class="normal">std::optional&lt;uint32_t&gt;<sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1ae949b87607204f28fb685dac26217415" kindref="member">HttpSettingsFrame::headerTableSize</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="86"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_headerTableSize;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="classfwoop_1_1HttpSettingsFrame_1af254ae74966f42fee7f6de3d5bdb2ce3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1af254ae74966f42fee7f6de3d5bdb2ce3" kindref="member">HttpSettingsFrame::enablePush</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="92"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_enablePush.has_value()<sp/>?<sp/>d_enablePush.value()<sp/>:<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="classfwoop_1_1HttpSettingsFrame_1a6badc5d858ef9a0c2c08fcbfc8874701" refkind="member"><highlight class="normal">std::optional&lt;uint32_t&gt;<sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1a6badc5d858ef9a0c2c08fcbfc8874701" kindref="member">HttpSettingsFrame::maxConcurrentStreams</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="98"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_maxConcurrentStreams;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="classfwoop_1_1HttpSettingsFrame_1a4e725b07bfb7159b1044320b514493e0" refkind="member"><highlight class="normal">std::optional&lt;uint32_t&gt;<sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1a4e725b07bfb7159b1044320b514493e0" kindref="member">HttpSettingsFrame::initialWindowSize</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="104"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_initialWindowSize;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="classfwoop_1_1HttpSettingsFrame_1ad45301e4095f82edb3f7721c6c00c953" refkind="member"><highlight class="normal">std::optional&lt;uint32_t&gt;<sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1ad45301e4095f82edb3f7721c6c00c953" kindref="member">HttpSettingsFrame::maxFrameSize</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="110"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_maxFrameSize;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="classfwoop_1_1HttpSettingsFrame_1a89eaaf80c48441313a91525141840043" refkind="member"><highlight class="normal">std::optional&lt;uint32_t&gt;<sp/><ref refid="classfwoop_1_1HttpSettingsFrame_1a89eaaf80c48441313a91525141840043" kindref="member">HttpSettingsFrame::maxHeaderListSize</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="116"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_maxHeaderListSize;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="http/fwoop_httpsettingsframe.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="dir_5c387b9ed58eef5bc7c95f12be97e48e" kind="dir">
+    <compoundname>basis</compoundname>
+    <innerfile refid="fwoop__argparser_8cpp">fwoop_argparser.cpp</innerfile>
+    <innerfile refid="fwoop__argparser_8h">fwoop_argparser.h</innerfile>
+    <innerfile refid="fwoop__filereader_8cpp">fwoop_filereader.cpp</innerfile>
+    <innerfile refid="fwoop__filereader_8h">fwoop_filereader.h</innerfile>
+    <innerfile refid="fwoop__log_8cpp">fwoop_log.cpp</innerfile>
+    <innerfile refid="fwoop__log_8h">fwoop_log.h</innerfile>
+    <innerfile refid="fwoop__socketio_8cpp">fwoop_socketio.cpp</innerfile>
+    <innerfile refid="fwoop__socketio_8h">fwoop_socketio.h</innerfile>
+    <innerfile refid="fwoop__tokenizer_8cpp">fwoop_tokenizer.cpp</innerfile>
+    <innerfile refid="fwoop__tokenizer_8h">fwoop_tokenizer.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="basis/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,472 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.4" xml:lang="en-US">
+  <compound refid="classfwoop_1_1ArgParser" kind="class"><name>fwoop::ArgParser</name>
+  </compound>
+  <compound refid="structfwoop_1_1HttpHPacker_1_1DynamicTable__t" kind="struct"><name>fwoop::HttpHPacker::DynamicTable_t</name>
+    <member refid="structfwoop_1_1HttpHPacker_1_1DynamicTable__t_1afb2205d85e99fdbd62fd2a794b7f62bf" kind="variable"><name>queue</name></member>
+    <member refid="structfwoop_1_1HttpHPacker_1_1DynamicTable__t_1a863c5c9408da3297ef0c7703d154db81" kind="variable"><name>indexLookup</name></member>
+    <member refid="structfwoop_1_1HttpHPacker_1_1DynamicTable__t_1a6d0d0dcca881964ecbe08e17f8a4648c" kind="variable"><name>size</name></member>
+  </compound>
+  <compound refid="classfwoop_1_1FileReader" kind="class"><name>fwoop::FileReader</name>
+    <member refid="classfwoop_1_1FileReader_1aaa0580f04cc7e3f7b3407f0b9b8f4d61" kind="variable"><name>d_filename</name></member>
+    <member refid="classfwoop_1_1FileReader_1a2d35b7eca24b84349efb63e2d6361fc4" kind="variable"><name>d_file</name></member>
+    <member refid="classfwoop_1_1FileReader_1a279807aef5422f917358f68b596f0412" kind="function"><name>FileReader</name></member>
+    <member refid="classfwoop_1_1FileReader_1a75192e1847e2e0e080c8be9215e52622" kind="function"><name>~FileReader</name></member>
+    <member refid="classfwoop_1_1FileReader_1a2a0e54c43809fa51cbf619f3748d6ae1" kind="function"><name>open</name></member>
+    <member refid="classfwoop_1_1FileReader_1afcab282d88374a0abd86e76a99a1f80b" kind="function"><name>close</name></member>
+    <member refid="classfwoop_1_1FileReader_1a27ef656284e148a8971338595c8eab77" kind="function"><name>loadFile</name></member>
+    <member refid="classfwoop_1_1FileReader_1ab4cafab4adf37680c6dde63223aee418" kind="function"><name>begin</name></member>
+    <member refid="classfwoop_1_1FileReader_1af920fc8271e34d4c63a7b0bd29ef6b4d" kind="function"><name>end</name></member>
+  </compound>
+  <compound refid="classfwoop_1_1HttpDataFrame" kind="class"><name>fwoop::HttpDataFrame</name>
+    <member refid="classfwoop_1_1HttpDataFrame_1a9d3a9fbfef9fad501b96cd93e9c89992" kind="enum"><name>Flag</name></member>
+    <member refid="classfwoop_1_1HttpDataFrame_1a9d3a9fbfef9fad501b96cd93e9c89992a9cfb4fe5153e29502bd13dbb101ec573" kind="enumvalue"><name>EndStream</name></member>
+    <member refid="classfwoop_1_1HttpDataFrame_1a9d3a9fbfef9fad501b96cd93e9c89992af6628955c0334395561e6982c41f5f97" kind="enumvalue"><name>Padded</name></member>
+    <member refid="classfwoop_1_1HttpDataFrame_1a2f63aec8540ee511e15509f771c7259a" kind="variable"><name>d_padLength</name></member>
+    <member refid="classfwoop_1_1HttpDataFrame_1a41161a3ad122d3c206bd4c7f5c37a0b3" kind="function"><name>HttpDataFrame</name></member>
+    <member refid="classfwoop_1_1HttpDataFrame_1a5327cea18f8d86adb3a6c82b9725975a" kind="function"><name>HttpDataFrame</name></member>
+    <member refid="classfwoop_1_1HttpDataFrame_1a6c9eb20d3c39ea75e891808361275e74" kind="function"><name>~HttpDataFrame</name></member>
+    <member refid="classfwoop_1_1HttpDataFrame_1ac18b944415833c1b94ea6b4f9516fd73" kind="function"><name>encode</name></member>
+    <member refid="classfwoop_1_1HttpDataFrame_1a55c83ac304f0797c6b3f727acd6dff52" kind="function"><name>addFlag</name></member>
+    <member refid="classfwoop_1_1HttpDataFrame_1abb7ff3781f31371191a70653d5ba73f6" kind="function"><name>setData</name></member>
+  </compound>
+  <compound refid="classfwoop_1_1HttpFrame" kind="class"><name>fwoop::HttpFrame</name>
+    <member refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9c" kind="enum"><name>Type</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9ca88183b946cc5f0e8c96b2e66e1c74a7e" kind="enumvalue"><name>Unknown</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9caf6068daa29dbb05a7ead1e3b5a48bbee" kind="enumvalue"><name>Data</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9cabf50d5e661106d0abe925af3c2e6f7e7" kind="enumvalue"><name>Header</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9ca502996d9790340c5fd7b86a5b93b1c9f" kind="enumvalue"><name>Priority</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9ca7b647436224f5389cde132f2a53db872" kind="enumvalue"><name>ResetStream</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9caf4f70727dc34561dfde1a3c529b6205c" kind="enumvalue"><name>Settings</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9ca70e3e2633a044d32c5985d500fce7226" kind="enumvalue"><name>PushPromise</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9cab85815d04cec053ce6deb8021f2df1b8" kind="enumvalue"><name>Ping</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9cadbbef46a58319d82be4d7c14250a52f5" kind="enumvalue"><name>GoAway</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9cae01b52b36c09cb7df91119838a499172" kind="enumvalue"><name>WindowUpdate</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9caf11580a0250ef12842e64f487810cc70" kind="enumvalue"><name>Continuation</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1af748ad7f28c669c6616d60fe5965bd7e" kind="variable"><name>HEADER_LENGTH</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1af9fb5740d57aee90e97cb7de45f3e321" kind="variable"><name>d_length</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1a2c1b3db021c82daa3485ed8bcd547404" kind="variable"><name>d_type</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1af4ab160bcedcb2562d6001c6570548e2" kind="variable"><name>d_flags</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" kind="variable"><name>d_streamID</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1a1b7c3e3c81c64d953c13a96cf9cb31d3" kind="variable"><name>d_payload</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1a7ab4cf22d8e4df08b9e2c112d3a3579f" kind="function"><name>HttpFrame</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1a2d15a02a0cb21cfaa2643a87e8830426" kind="function"><name>encodeHeader</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1ac9e387d889689561660aa094aff1fd85" kind="function"><name>parse</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1ade1fb3cab89f2a3c95312cb2378abb6e" kind="function"><name>byteToType</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1a84a587cc6c2ec20b5b28e9612d6f4327" kind="function"><name>typeToString</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1a2a596317d262444416399415bf005498" kind="function"><name>HttpFrame</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1a0196e1520a2c49fdac7ff32886a36c1d" kind="function"><name>~HttpFrame</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1a9e0344f5dbb95f054009cd43cdb485b4" kind="function"><name>setStreamID</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1a83cdc5c45cb979d43a2b00043dc606b9" kind="function"><name>setLength</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1aa418c5a29a857d21bd83835836230696" kind="function"><name>length</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1ab535fb5b35df53538e2892639cce9f6f" kind="function"><name>type</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1a7f1a53af685d8dc955a31f2fcd70fade" kind="function"><name>payload</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1ac0b88de07f70e2a7c6dc4e6b4010cd80" kind="function"><name>printHex</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1a5bb16b36fec77fb383402306e7b30b3c" kind="function"><name>printHeader</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1a79aa423e31eefead7f0fd3e8f5a028ae" kind="function"><name>encodingLength</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1a2a316cf5e601ae7e60316f7632d7a26f" kind="function"><name>encode</name></member>
+    <member refid="classfwoop_1_1HttpFrame_1af91ef9220c742b6fe0e398fd0e8bc4da" kind="function"><name>getStreamID</name></member>
+  </compound>
+  <compound refid="classfwoop_1_1HttpGoAwayFrame" kind="class"><name>fwoop::HttpGoAwayFrame</name>
+    <member refid="classfwoop_1_1HttpGoAwayFrame_1a18bb32ea78dcc537e90cfe22d2a982a9" kind="variable"><name>d_lastStreamID</name></member>
+    <member refid="classfwoop_1_1HttpGoAwayFrame_1a625989af36addc0915c40315c72192a8" kind="variable"><name>d_errorCode</name></member>
+    <member refid="classfwoop_1_1HttpGoAwayFrame_1ad624ad300c8c579f198404321ffdbd66" kind="function"><name>HttpGoAwayFrame</name></member>
+    <member refid="classfwoop_1_1HttpGoAwayFrame_1af9ee69587d31ad2e7433fed609efc2ff" kind="function"><name>HttpGoAwayFrame</name></member>
+    <member refid="classfwoop_1_1HttpGoAwayFrame_1ad589c97893be3849b0367460a6f95ebe" kind="function"><name>~HttpGoAwayFrame</name></member>
+    <member refid="classfwoop_1_1HttpGoAwayFrame_1af823b8eef239c3c4ff28510ea6260944" kind="function"><name>encode</name></member>
+    <member refid="classfwoop_1_1HttpGoAwayFrame_1afb593c7a773c4b9ba684bae98b2e184e" kind="function"><name>setLastStreamID</name></member>
+    <member refid="classfwoop_1_1HttpGoAwayFrame_1a1a090973f266fa0c27b69dcc478c4a9c" kind="function"><name>setErrorCode</name></member>
+  </compound>
+  <compound refid="classfwoop_1_1HttpHeadersFrame" kind="class"><name>fwoop::HttpHeadersFrame</name>
+    <member refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00" kind="enum"><name>Flag</name></member>
+    <member refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00ab38d05bb0ccfd42f6d70512e5ef50621" kind="enumvalue"><name>EndStream</name></member>
+    <member refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00a1d30b925f47297dd4254a787895e1d05" kind="enumvalue"><name>EndHeaders</name></member>
+    <member refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00af7eda2000619187f7d133e618fc3bb80" kind="enumvalue"><name>Padded</name></member>
+    <member refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00a5882053c87ba133723d97697644cb770" kind="enumvalue"><name>Priority</name></member>
+    <member refid="classfwoop_1_1HttpHeadersFrame_1abe9a730a9318a34f52406f87ce620bdd" kind="variable"><name>d_padLength</name></member>
+    <member refid="classfwoop_1_1HttpHeadersFrame_1a012e22bd71e44d44a82a36fb15506a7b" kind="variable"><name>d_isDepMutuallyExclusive</name></member>
+    <member refid="classfwoop_1_1HttpHeadersFrame_1a94e216af932b85de6aef895efd02a279" kind="variable"><name>d_streamDep</name></member>
+    <member refid="classfwoop_1_1HttpHeadersFrame_1af948a5edec4fdc0f2dddadf734d6d3e6" kind="variable"><name>d_weight</name></member>
+    <member refid="classfwoop_1_1HttpHeadersFrame_1a36e2db232b22d2caaf149064b05a96b0" kind="variable"><name>d_headerList</name></member>
+    <member refid="classfwoop_1_1HttpHeadersFrame_1a6faa2b731c27cca6346b3a6647056014" kind="variable"><name>d_packer</name></member>
+    <member refid="classfwoop_1_1HttpHeadersFrame_1a5482cf0121f99e91398a54de9b62ab53" kind="function"><name>countExtraBits</name></member>
+    <member refid="classfwoop_1_1HttpHeadersFrame_1a83f767fe8ae94196988658bf72213b27" kind="function"><name>HttpHeadersFrame</name></member>
+    <member refid="classfwoop_1_1HttpHeadersFrame_1a8bb2af69288173ecce8a80443cda2d45" kind="function"><name>HttpHeadersFrame</name></member>
+    <member refid="classfwoop_1_1HttpHeadersFrame_1ab77dff6da981c436aa7856fdcad3ab56" kind="function"><name>addFlag</name></member>
+    <member refid="classfwoop_1_1HttpHeadersFrame_1a2132e58c879ef387a9ea2a9e44ee8a05" kind="function"><name>addHeaderBlock</name></member>
+    <member refid="classfwoop_1_1HttpHeadersFrame_1ad6e0194dd19ba6ba671fffeeb73cac16" kind="function"><name>addHeaderBlock</name></member>
+    <member refid="classfwoop_1_1HttpHeadersFrame_1a5312239d26ef4966539532a515b22074" kind="function"><name>clearHeaderBlocks</name></member>
+    <member refid="classfwoop_1_1HttpHeadersFrame_1a9a6e7044c22b245f5795944cfc1cf799" kind="function"><name>encode</name></member>
+    <member refid="classfwoop_1_1HttpHeadersFrame_1ace36358d7a9772c24e71ce6fb0069b21" kind="function"><name>beginHeaderList</name></member>
+    <member refid="classfwoop_1_1HttpHeadersFrame_1a511491150b19dbe422307e9525390d65" kind="function"><name>endHeaderList</name></member>
+  </compound>
+  <compound refid="classfwoop_1_1HttpHPacker" kind="class"><name>fwoop::HttpHPacker</name>
+    <member refid="classfwoop_1_1HttpHPacker_1a6965082e687cd498ec0a9a9e7833562a" kind="variable"><name>s_staticTable</name></member>
+    <member refid="classfwoop_1_1HttpHPacker_1a04ef67cc9c14235b27d2457518a98576" kind="variable"><name>STATIC_TABLE_SIZE</name></member>
+    <member refid="classfwoop_1_1HttpHPacker_1a249f6259106eec72a600a66ab1bc6b85" kind="variable"><name>d_dynamicTable</name></member>
+    <member refid="classfwoop_1_1HttpHPacker_1ae0b118f8df4ba8332b1994eca2d3f3fc" kind="variable"><name>d_maxTableSize</name></member>
+    <member refid="classfwoop_1_1HttpHPacker_1a0e1e3168d9269fafc4c4c7b209d51780" kind="function"><name>getEncodedLength</name></member>
+    <member refid="classfwoop_1_1HttpHPacker_1af01e5314e40e065d05eea27684203e1a" kind="function"><name>encode</name></member>
+    <member refid="classfwoop_1_1HttpHPacker_1ab13776e64346f9158f3422f5d5dd1c3e" kind="function"><name>HttpHPacker</name></member>
+    <member refid="classfwoop_1_1HttpHPacker_1af1ae92ccec1eed16df2f5d524f13fcfc" kind="function"><name>getEncodedLength</name></member>
+    <member refid="classfwoop_1_1HttpHPacker_1a037a40c49ea473f16271d6ecedbb9101" kind="function"><name>encodeLength</name></member>
+    <member refid="classfwoop_1_1HttpHPacker_1ace5011a48f8fffd580dd40751bfb45fc" kind="function"><name>encode</name></member>
+  </compound>
+  <compound refid="classfwoop_1_1HttpRequest" kind="class"><name>fwoop::HttpRequest</name>
+    <member refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89" kind="enum"><name>Method</name></member>
+    <member refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89aec0fc0100c4fc1ce4eea230c3dc10360" kind="enumvalue"><name>Undefined</name></member>
+    <member refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89ac55582518cba2c464f29f5bae1c68def" kind="enumvalue"><name>Get</name></member>
+    <member refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89a03d947a2158373c3b9d74325850cb8b9" kind="enumvalue"><name>Post</name></member>
+    <member refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89ad0bf1810982e9728fcf3ac444a015373" kind="enumvalue"><name>Put</name></member>
+    <member refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89af2a6c498fb90ee345d997f888fce3b18" kind="enumvalue"><name>Delete</name></member>
+    <member refid="classfwoop_1_1HttpRequest_1af9bcaea658b2bce3ede4db760dd9285a" kind="enum"><name>Version</name></member>
+    <member refid="classfwoop_1_1HttpRequest_1af9bcaea658b2bce3ede4db760dd9285aaec0fc0100c4fc1ce4eea230c3dc10360" kind="enumvalue"><name>Undefined</name></member>
+    <member refid="classfwoop_1_1HttpRequest_1af9bcaea658b2bce3ede4db760dd9285aaa820a7cca3410e94af1e51058023680a" kind="enumvalue"><name>Http1_0</name></member>
+    <member refid="classfwoop_1_1HttpRequest_1af9bcaea658b2bce3ede4db760dd9285aa2c494112f4c9bef921aacd3650fd34ea" kind="enumvalue"><name>Http1_1</name></member>
+    <member refid="classfwoop_1_1HttpRequest_1a5539721235b9001e1910b80b14eba3b0" kind="variable"><name>d_method</name></member>
+    <member refid="classfwoop_1_1HttpRequest_1ab484ce60518269c421c0a1072faa7d1b" kind="variable"><name>d_path</name></member>
+    <member refid="classfwoop_1_1HttpRequest_1a113765fdd065be5afb079f6972ca5adc" kind="variable"><name>d_version</name></member>
+    <member refid="classfwoop_1_1HttpRequest_1aab674dd887ff33fe2423d61308ae9d46" kind="variable"><name>d_headers</name></member>
+    <member refid="classfwoop_1_1HttpRequest_1a76b725a7f8bec05f1a57d7634cb498b7" kind="variable"><name>d_canUpgrade</name></member>
+    <member refid="classfwoop_1_1HttpRequest_1a43eccc1641f5dcb4ad41cd9ffd44076e" kind="function"><name>stringToMethod</name></member>
+    <member refid="classfwoop_1_1HttpRequest_1a1679189de848c744bbad286ea65751d4" kind="function"><name>stringToVersion</name></member>
+    <member refid="classfwoop_1_1HttpRequest_1a950c4bdae87dde4f90da2d011fbf545e" kind="function"><name>parse</name></member>
+    <member refid="classfwoop_1_1HttpRequest_1a0e137f16406ce40f132fd7c235e64412" kind="function"><name>HttpRequest</name></member>
+    <member refid="classfwoop_1_1HttpRequest_1aa3c327f807839f9414a5e93d06dcf9dd" kind="function"><name>getMethod</name></member>
+    <member refid="classfwoop_1_1HttpRequest_1a4a6dae6c801bc2acca03727f8b4b98f7" kind="function"><name>getPath</name></member>
+    <member refid="classfwoop_1_1HttpRequest_1a108b07a79fbdd6f5e7872c5c44c3f354" kind="function"><name>getVersion</name></member>
+    <member refid="classfwoop_1_1HttpRequest_1a9c809a90c746462a9c515280302df2b0" kind="function"><name>getHeaders</name></member>
+    <member refid="classfwoop_1_1HttpRequest_1a5fd5a4cbf0909952e49e6237c6aa9826" kind="function"><name>canUpgrade</name></member>
+  </compound>
+  <compound refid="classfwoop_1_1HttpResponse" kind="class"><name>fwoop::HttpResponse</name>
+    <member refid="classfwoop_1_1HttpResponse_1a7feebca28bfeeea3dd0dee698291d78c" kind="variable"><name>d_headers</name></member>
+    <member refid="classfwoop_1_1HttpResponse_1aed50f9041056ad80b9f63682dfca076f" kind="variable"><name>d_status</name></member>
+    <member refid="classfwoop_1_1HttpResponse_1a1248e63e4a04e13b115aae8041d40f88" kind="variable"><name>d_body</name></member>
+    <member refid="classfwoop_1_1HttpResponse_1a02d9f44e90855351cba46e222625c546" kind="variable"><name>d_fileName</name></member>
+    <member refid="classfwoop_1_1HttpResponse_1a249829ee7f5e22aef2c33a1853d9e09e" kind="function"><name>HttpResponse</name></member>
+    <member refid="classfwoop_1_1HttpResponse_1a050ff9534a94ab4e79fa4d6cbf9ec891" kind="function"><name>setStatus</name></member>
+    <member refid="classfwoop_1_1HttpResponse_1a35cbcecec5402da02a84baff37aabf13" kind="function"><name>addHeader</name></member>
+    <member refid="classfwoop_1_1HttpResponse_1ac872e46c9b0f9533a0a48041f6c455bc" kind="function"><name>addHeader</name></member>
+    <member refid="classfwoop_1_1HttpResponse_1a3108372419e3c58abce0b8c913468d5b" kind="function"><name>setBody</name></member>
+    <member refid="classfwoop_1_1HttpResponse_1aafacb64565e651bac83a592d80e0d176" kind="function"><name>streamFile</name></member>
+    <member refid="classfwoop_1_1HttpResponse_1a2ebb21daab35240ddb4442b695d7b2a8" kind="function"><name>encode</name></member>
+    <member refid="classfwoop_1_1HttpResponse_1a36ef985b213de68657d3c55efbef2874" kind="function"><name>getHeaders</name></member>
+    <member refid="classfwoop_1_1HttpResponse_1a0890c842fe11d8e4e4c3bdf406607510" kind="function"><name>getStatus</name></member>
+    <member refid="classfwoop_1_1HttpResponse_1a9e82b9605a3f9a2f62c4315815a25972" kind="function"><name>getBody</name></member>
+    <member refid="classfwoop_1_1HttpResponse_1a015276bfeb92644b7b8edd75a8caf474" kind="function"><name>getFile</name></member>
+  </compound>
+  <compound refid="classfwoop_1_1HttpServer" kind="class"><name>fwoop::HttpServer</name>
+    <member refid="classfwoop_1_1HttpServer_1a401343bcc6a5c09f81c3aee693407822" kind="variable"><name>d_port</name></member>
+    <member refid="classfwoop_1_1HttpServer_1aa190790e00b430f84571cedcb785d316" kind="variable"><name>d_serverFd</name></member>
+    <member refid="classfwoop_1_1HttpServer_1a41846f90d217ee9923c11ddc3695b908" kind="variable"><name>d_version</name></member>
+    <member refid="classfwoop_1_1HttpServer_1a11fdb28a0a432dc985956aada24a672c" kind="variable"><name>d_routeMap</name></member>
+    <member refid="classfwoop_1_1HttpServer_1a3db639d2d0aefb0ada2feb9fe809ad88" kind="variable"><name>d_isActive</name></member>
+    <member refid="classfwoop_1_1HttpServer_1acf5f1c8930a144a5f971a9842b974b06" kind="function"><name>parsePayloadBody</name></member>
+    <member refid="classfwoop_1_1HttpServer_1ae664c19bd6d92abdf646d28570bbd6d6" kind="function"><name>handleHttp1Connection</name></member>
+    <member refid="classfwoop_1_1HttpServer_1abb0c1232842422bb3a0f370b9eb5f04e" kind="function"><name>handleHttp2Connection</name></member>
+    <member refid="classfwoop_1_1HttpServer_1afdb7294f79013d88467e5c52958e2df0" kind="function"><name>HttpServer</name></member>
+    <member refid="classfwoop_1_1HttpServer_1abb0e1b98a4407e2ddc637ac542ab1890" kind="function"><name>~HttpServer</name></member>
+    <member refid="classfwoop_1_1HttpServer_1a89c7ea5a09e3bc3908207b86a8f8ba38" kind="function"><name>serve</name></member>
+    <member refid="classfwoop_1_1HttpServer_1a965013dc4a1cf25e49dfda574321910d" kind="function"><name>stop</name></member>
+    <member refid="classfwoop_1_1HttpServer_1a1c91caae02032f9b001d3add7acd3ee8" kind="function"><name>addRoute</name></member>
+    <member refid="classfwoop_1_1HttpServer_1a775b20e9df447ac93cb7baf3ef3899fa" kind="function"><name>addStaticRoute</name></member>
+  </compound>
+  <compound refid="classfwoop_1_1HttpSettingsFrame" kind="class"><name>fwoop::HttpSettingsFrame</name>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079" kind="enum"><name>Parameter</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079a5e9a4d9d06bf6342ae61ff566e6835fd" kind="enumvalue"><name>HeaderTableSize</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079a5ae829f0924d1e3874df02bb7e7fb8a0" kind="enumvalue"><name>EnablePush</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079aba81d51b0c652bd2d7e72a4021dd6a75" kind="enumvalue"><name>MaxConcurrentStreams</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079a8ec78aef71bf44c2a56831bc7d4117db" kind="enumvalue"><name>InitialWindowSize</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079a825637742fbffae7a11410ebb2520db3" kind="enumvalue"><name>MaxWindowSize</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079a6488d4b12f9c0697204a2c6016ab41df" kind="enumvalue"><name>MaxFrameSize</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079af61c1405be6d1487ce53b9ec6b076cc9" kind="enumvalue"><name>MaxHeaderListSize</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1a86eb50dcf188f383875662200a7db8dc" kind="variable"><name>PARAMETER_SIZE</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1a82b008f88a51b10bdaf39945b1f5a597" kind="variable"><name>d_headerTableSize</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1afd0525e32ba23eb344a8c3df2b29db3f" kind="variable"><name>d_enablePush</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1a25c948c54ca76c351f01da3202aa0cdf" kind="variable"><name>d_maxConcurrentStreams</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1a03b1981c4ce1e76046f91d55a36de110" kind="variable"><name>d_initialWindowSize</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1a69213664902ee1a6a12e1ece44c60263" kind="variable"><name>d_maxWindowSize</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1a97d51038a77bf1bfd9674469b26dd47a" kind="variable"><name>d_maxFrameSize</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1aea2c3bc64411f5d6195980eee120d2b6" kind="variable"><name>d_maxHeaderListSize</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1a605d76845fc76defa76e8add2b8e18b9" kind="function"><name>HttpSettingsFrame</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1ae69a811d9682d71c4c0bb9e414572a21" kind="function"><name>HttpSettingsFrame</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1a0ad009645c53c4070ca387b53900d496" kind="function"><name>~HttpSettingsFrame</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1af4251246f071e4c86e87f077a16aa436" kind="function"><name>setAck</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1ab3080cde048169f484902f941f443fa6" kind="function"><name>setHeaderTableSize</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1a82cadaffeb044d7155f8b7357a7dab6f" kind="function"><name>setEnablePush</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1a22042dd0fd6a2462aa9960f45042c2d3" kind="function"><name>setMaxConcurrentStreams</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1aeeb464fb6c6620589489204d009b875e" kind="function"><name>setInitialWindowSize</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1aab2daed10fbf2d58729f5950bb6504e2" kind="function"><name>setMaxFrameSize</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1a7118296805eab77b61f4f5cc7e46f917" kind="function"><name>setMaxHeaderListSize</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1ae949b87607204f28fb685dac26217415" kind="function"><name>headerTableSize</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1af254ae74966f42fee7f6de3d5bdb2ce3" kind="function"><name>enablePush</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1a6badc5d858ef9a0c2c08fcbfc8874701" kind="function"><name>maxConcurrentStreams</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1a4e725b07bfb7159b1044320b514493e0" kind="function"><name>initialWindowSize</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1ad45301e4095f82edb3f7721c6c00c953" kind="function"><name>maxFrameSize</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1a89eaaf80c48441313a91525141840043" kind="function"><name>maxHeaderListSize</name></member>
+    <member refid="classfwoop_1_1HttpSettingsFrame_1a9343e7b63a3e0f20fd02ff883ee1c7fd" kind="function"><name>encode</name></member>
+  </compound>
+  <compound refid="classfwoop_1_1HttpStream" kind="class"><name>fwoop::HttpStream</name>
+    <member refid="classfwoop_1_1HttpStream_1a124e113980591f406505d1e941b04ca8" kind="variable"><name>s_nextID</name></member>
+    <member refid="classfwoop_1_1HttpStream_1aba4c56e4d6934952bb561fa6435acb41" kind="variable"><name>d_id</name></member>
+    <member refid="classfwoop_1_1HttpStream_1a4f7efb0f2be081e2643698b1ba3d9483" kind="variable"><name>d_fd</name></member>
+    <member refid="classfwoop_1_1HttpStream_1ab1dc7ae6d72f08cc813b9e01fdf07eeb" kind="function"><name>HttpStream</name></member>
+    <member refid="classfwoop_1_1HttpStream_1a8db6f340e0b191b904b47551734d8489" kind="function"><name>open</name></member>
+    <member refid="classfwoop_1_1HttpStream_1a9ac3d3fd7b15ab6a75f5cd23c115e285" kind="function"><name>close</name></member>
+  </compound>
+  <compound refid="classfwoop_1_1HttpWindowUpdateFrame" kind="class"><name>fwoop::HttpWindowUpdateFrame</name>
+    <member refid="classfwoop_1_1HttpWindowUpdateFrame_1a1a262b694166ec6938c26d788bb31c98" kind="function"><name>HttpWindowUpdateFrame</name></member>
+    <member refid="classfwoop_1_1HttpWindowUpdateFrame_1a708eade1386fc580529713199de5c5ae" kind="function"><name>~HttpWindowUpdateFrame</name></member>
+    <member refid="classfwoop_1_1HttpWindowUpdateFrame_1ac389af66dce13c9a716e55d3e5cafb77" kind="function"><name>encode</name></member>
+  </compound>
+  <compound refid="classfwoop_1_1FileReader_1_1Iterator" kind="class"><name>fwoop::FileReader::Iterator</name>
+    <member refid="classfwoop_1_1FileReader_1_1Iterator_1a8d846e43ca492739bd32919f877c4f15" kind="variable"><name>d_reader</name></member>
+    <member refid="classfwoop_1_1FileReader_1_1Iterator_1a9277dc9cd5479456f1b659c5f91433d4" kind="variable"><name>d_currLine</name></member>
+    <member refid="classfwoop_1_1FileReader_1_1Iterator_1acedba33b1f70e17a248a0ffe536af0e5" kind="variable"><name>d_isEnd</name></member>
+    <member refid="classfwoop_1_1FileReader_1_1Iterator_1aefc73273795ff18dc04282041aea842c" kind="function"><name>Iterator</name></member>
+    <member refid="classfwoop_1_1FileReader_1_1Iterator_1a6b8efe659a2beb007a5ab12c63fe1015" kind="function"><name>~Iterator</name></member>
+    <member refid="classfwoop_1_1FileReader_1_1Iterator_1a17ece363b8df9f18c695414eaf9319eb" kind="function"><name>operator++</name></member>
+    <member refid="classfwoop_1_1FileReader_1_1Iterator_1abbccb7c9c8a0cdf9c9954e8d603547d4" kind="function"><name>operator*</name></member>
+    <member refid="classfwoop_1_1FileReader_1_1Iterator_1a964bcde3b850afafad72efda7a65c9d4" kind="function"><name>operator==</name></member>
+    <member refid="classfwoop_1_1FileReader_1_1Iterator_1a1a0492afb790888d6b639a7b7eb93673" kind="function"><name>operator!=</name></member>
+  </compound>
+  <compound refid="classfwoop_1_1Tokenizer_1_1Iterator" kind="class"><name>fwoop::Tokenizer::Iterator</name>
+    <member refid="classfwoop_1_1Tokenizer_1_1Iterator_1a17d707fd49a8b498e6056d1215b7a4e6" kind="variable"><name>d_tokenizer</name></member>
+    <member refid="classfwoop_1_1Tokenizer_1_1Iterator_1a5b0d3f58d88cab5b7dbce73cc82ab005" kind="variable"><name>d_isEnd</name></member>
+    <member refid="classfwoop_1_1Tokenizer_1_1Iterator_1a8fbb12dcdd127961ce750e5aa003b3cb" kind="variable"><name>d_lastLoc</name></member>
+    <member refid="classfwoop_1_1Tokenizer_1_1Iterator_1a69141ea3331c772cfb23c49655aa9cb6" kind="variable"><name>d_loc</name></member>
+    <member refid="classfwoop_1_1Tokenizer_1_1Iterator_1a08dcc38329b19b9d92181f6f396d7b09" kind="function"><name>Iterator</name></member>
+    <member refid="classfwoop_1_1Tokenizer_1_1Iterator_1a732d48dac1c1e59a2766d7b3e86e5d5d" kind="function"><name>~Iterator</name></member>
+    <member refid="classfwoop_1_1Tokenizer_1_1Iterator_1ac5a5b852e9ca24887cc5497d5383a774" kind="function"><name>operator++</name></member>
+    <member refid="classfwoop_1_1Tokenizer_1_1Iterator_1ad2e0a4cb7140924a9145445fbb48233b" kind="function"><name>operator*</name></member>
+    <member refid="classfwoop_1_1Tokenizer_1_1Iterator_1ad95f2e8282ad99a484420f8570ebddd0" kind="function"><name>operator==</name></member>
+    <member refid="classfwoop_1_1Tokenizer_1_1Iterator_1aae191c4cdfc4a0d27ac375b5adb5f4ab" kind="function"><name>operator!=</name></member>
+  </compound>
+  <compound refid="classfwoop_1_1Log" kind="class"><name>fwoop::Log</name>
+    <member refid="classfwoop_1_1Log_1aa24f3693a464622163f7472943ead7ae" kind="enum"><name>Level</name></member>
+    <member refid="classfwoop_1_1Log_1aa24f3693a464622163f7472943ead7aea01d36b78e689675825bbe9e0bfc8e78a" kind="enumvalue"><name>e_Debug</name></member>
+    <member refid="classfwoop_1_1Log_1aa24f3693a464622163f7472943ead7aeab5677570037cc5e0bd0ac9fc30b8c0b8" kind="enumvalue"><name>e_Info</name></member>
+    <member refid="classfwoop_1_1Log_1aa24f3693a464622163f7472943ead7aea7f276e04deba103c53d35f32a46f07e3" kind="enumvalue"><name>e_Warn</name></member>
+    <member refid="classfwoop_1_1Log_1aa24f3693a464622163f7472943ead7aea08f28a1f040d7fa6023fc269f8945642" kind="enumvalue"><name>e_Error</name></member>
+    <member refid="classfwoop_1_1Log_1ad14f37da2cc9103c6d5cb870f3bdb45e" kind="variable"><name>s_log</name></member>
+    <member refid="classfwoop_1_1Log_1a91f55851297a8ba6c54a5b68dec51995" kind="variable"><name>d_formatStr</name></member>
+    <member refid="classfwoop_1_1Log_1a8856a3a99033ced367efb486bf532deb" kind="function"><name>levelToString</name></member>
+    <member refid="classfwoop_1_1Log_1a6d65152c5d3de16bfddaf35db7a619d6" kind="function"><name>formatMsg</name></member>
+    <member refid="classfwoop_1_1Log_1aed4d668ce59436a35b55bf414d6b4673" kind="function"><name>getCurrentTime</name></member>
+    <member refid="classfwoop_1_1Log_1a57b6243fcb36d4f7bacac5ec1c05cb90" kind="function"><name>getDefault</name></member>
+    <member refid="classfwoop_1_1Log_1a05826844e33fb0f96c88a65fe6d63a94" kind="function"><name>Debug</name></member>
+    <member refid="classfwoop_1_1Log_1a6e412954295a899c03914856a3d3f538" kind="function"><name>Info</name></member>
+    <member refid="classfwoop_1_1Log_1a685b743897c2a9638f8bd775b2999f8d" kind="function"><name>Warn</name></member>
+    <member refid="classfwoop_1_1Log_1aa43c2bc1be7be6e0c338a256d22a864c" kind="function"><name>Error</name></member>
+    <member refid="classfwoop_1_1Log_1a8625934dec079806490552b945ca4eb5" kind="function"><name>Debug</name></member>
+    <member refid="classfwoop_1_1Log_1ab35405d0574be21ca043f7423aae04bb" kind="function"><name>Info</name></member>
+    <member refid="classfwoop_1_1Log_1a92021b1a38f8b3439973a478c55a55fb" kind="function"><name>Warn</name></member>
+    <member refid="classfwoop_1_1Log_1abc1992dbb1fccd417e4183fad1954f2f" kind="function"><name>Error</name></member>
+    <member refid="classfwoop_1_1Log_1a3eb92585ec1d3edc72956230a00066d9" kind="function"><name>Log</name></member>
+    <member refid="classfwoop_1_1Log_1ae6bd69a5cc9c26a4938226e2cd6d2998" kind="function"><name>setFormat</name></member>
+    <member refid="classfwoop_1_1Log_1a597a3c99e6190b70074df30224037676" kind="function"><name>debug</name></member>
+    <member refid="classfwoop_1_1Log_1a742c8cd46acd590fad33bb5a75363be8" kind="function"><name>info</name></member>
+    <member refid="classfwoop_1_1Log_1a820c2c010899fe2239dbc188b4975901" kind="function"><name>warn</name></member>
+    <member refid="classfwoop_1_1Log_1a3fa87367dc6ff547bca2c7a1ad8fb73d" kind="function"><name>error</name></member>
+    <member refid="classfwoop_1_1Log_1a745dc5dfbb363aee93bacd6bd90389be" kind="function"><name>debug</name></member>
+    <member refid="classfwoop_1_1Log_1a964ebdfa8574bdb6ec5281ff4d4a9d1c" kind="function"><name>info</name></member>
+    <member refid="classfwoop_1_1Log_1a82cce83ca6fd745613ec906337f992e2" kind="function"><name>warn</name></member>
+    <member refid="classfwoop_1_1Log_1af54088f71a1436e9f104ffc59f6d7602" kind="function"><name>error</name></member>
+  </compound>
+  <compound refid="classfwoop_1_1SHA" kind="class"><name>fwoop::SHA</name>
+    <member refid="classfwoop_1_1SHA_1afccaa2fb6c2b8613bd0d4ab35a6e5260" kind="variable"><name>SHA256HashSize</name></member>
+    <member refid="classfwoop_1_1SHA_1a217b2ebe774549b37788deca52a9cea3" kind="variable"><name>SHA256MessageBlockSize</name></member>
+    <member refid="classfwoop_1_1SHA_1aa361a33e10f22a78120162bb6d1b2cfc" kind="variable"><name>SHA256_H0</name></member>
+    <member refid="classfwoop_1_1SHA_1a1009e812bd0acc16ae0dbdd0503e838c" kind="function"><name>h256</name></member>
+    <member refid="classfwoop_1_1SHA_1ac148fd0eedea347e554153c5b1e42361" kind="function"><name>h256</name></member>
+  </compound>
+  <compound refid="structfwoop_1_1SHA_1_1SHA256Context" kind="struct"><name>fwoop::SHA::SHA256Context</name>
+    <member refid="structfwoop_1_1SHA_1_1SHA256Context_1a03bb469c34024d2a3dd801c4cb6ab7af" kind="variable"><name>IntermediateHash</name></member>
+    <member refid="structfwoop_1_1SHA_1_1SHA256Context_1a280389002ed77123d2f8ec5e6e133a60" kind="variable"><name>LengthHigh</name></member>
+    <member refid="structfwoop_1_1SHA_1_1SHA256Context_1a8d7e1255a9f291058569a5ba57e395c9" kind="variable"><name>LengthLow</name></member>
+    <member refid="structfwoop_1_1SHA_1_1SHA256Context_1ab4760d0057a1f0ddbbe754fceb73f73c" kind="variable"><name>MessageBlockIndex</name></member>
+    <member refid="structfwoop_1_1SHA_1_1SHA256Context_1ae3bb0dd39c064b9c95a9f85f024daa34" kind="variable"><name>MessageBlock</name></member>
+    <member refid="structfwoop_1_1SHA_1_1SHA256Context_1ae3635e01ef46c0fdad0a996d07d75937" kind="variable"><name>Computed</name></member>
+    <member refid="structfwoop_1_1SHA_1_1SHA256Context_1a994c65261a07179accd0acb07a001f32" kind="variable"><name>Corrupted</name></member>
+    <member refid="structfwoop_1_1SHA_1_1SHA256Context_1a1062f9548d164ff25f003ef174b6ed8b" kind="function"><name>SHA256Reset</name></member>
+    <member refid="structfwoop_1_1SHA_1_1SHA256Context_1a606348396e0cc7a48cc071b645683b60" kind="function"><name>SHA256Input</name></member>
+    <member refid="structfwoop_1_1SHA_1_1SHA256Context_1a6a09bee446d7e144cb4fcd15474009c8" kind="function"><name>SHA256FinalBits</name></member>
+    <member refid="structfwoop_1_1SHA_1_1SHA256Context_1a58748482de5e3bf5d87c7d735633255e" kind="function"><name>SHA256Result</name></member>
+    <member refid="structfwoop_1_1SHA_1_1SHA256Context_1a96123c0df0a0c3cda7795d70b28e5b6c" kind="function"><name>SHA256Finalize</name></member>
+    <member refid="structfwoop_1_1SHA_1_1SHA256Context_1acb804d2361fd6bb3e437524a7f00c42e" kind="function"><name>SHA256PadMessage</name></member>
+    <member refid="structfwoop_1_1SHA_1_1SHA256Context_1a5a579ae17c3a8626d4e142c8a2cb3591" kind="function"><name>SHA256AddLength</name></member>
+    <member refid="structfwoop_1_1SHA_1_1SHA256Context_1a5b0ec11dc3ef92b31d2a8b05c3dc6603" kind="function"><name>SHA256ProcessMessageBlock</name></member>
+    <member refid="structfwoop_1_1SHA_1_1SHA256Context_1a0e5eca8fb01d5a46109faf56476db8b3" kind="function"><name>SHA256ResultN</name></member>
+  </compound>
+  <compound refid="classfwoop_1_1SocketIO" kind="class"><name>fwoop::SocketIO</name>
+    <member refid="classfwoop_1_1SocketIO_1a4a66099cb56c04928a3ad0028d080eb0" kind="function"><name>read</name></member>
+    <member refid="classfwoop_1_1SocketIO_1a5a5522a6c055703c0d6ca2e121126640" kind="function"><name>write</name></member>
+  </compound>
+  <compound refid="classfwoop_1_1Tokenizer" kind="class"><name>fwoop::Tokenizer</name>
+    <member refid="classfwoop_1_1Tokenizer_1ac62f1198bdc71271e8bc540561f12b7b" kind="variable"><name>d_parseString</name></member>
+    <member refid="classfwoop_1_1Tokenizer_1a6dbdf595e181ee885207f34f75f2a3e4" kind="variable"><name>d_delim</name></member>
+    <member refid="classfwoop_1_1Tokenizer_1a49523276cceb35226000864f315ced6d" kind="function"><name>Tokenizer</name></member>
+    <member refid="classfwoop_1_1Tokenizer_1a161e3590952d679d320753a9565cf76c" kind="function"><name>~Tokenizer</name></member>
+    <member refid="classfwoop_1_1Tokenizer_1a0e0219715a87091c51d9741cb156f55e" kind="function"><name>begin</name></member>
+    <member refid="classfwoop_1_1Tokenizer_1ade8197fd4dd1da608469075c91da32e4" kind="function"><name>end</name></member>
+    <member refid="classfwoop_1_1Tokenizer_1a8ca689e6b1a1fe07001b7dec809a0939" kind="function"><name>operator==</name></member>
+  </compound>
+  <compound refid="namespacefwoop" kind="namespace"><name>fwoop</name>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929" kind="enum"><name>HttpHeader</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a12d3c85032c5adfc1834e8ad901f5c12" kind="enumvalue"><name>Authority</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a443068e8b8ac36acc68de6350b7b67e4" kind="enumvalue"><name>Method</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929af8e1c6bd894443ad6a9dfff30b7a7b11" kind="enumvalue"><name>Path</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a5e9a5bc302367175b7c30ff0c82d12f1" kind="enumvalue"><name>Scheme</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929ab26b089d31cf7474274b8514d48f4f24" kind="enumvalue"><name>Status</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a9c0e1bef355e51ebc8622a3c00f982f7" kind="enumvalue"><name>AcceptCharset</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929ae255dc56e459a07eb341be297497267d" kind="enumvalue"><name>AcceptEncoding</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a4468d753d7dccf7ca4ae1058cde18721" kind="enumvalue"><name>AcceptLanguage</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929ae7568c51d4b76025a7203d89118995d6" kind="enumvalue"><name>AcceptRanges</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a4829661c5d332fdc66d0138b626e7dcf" kind="enumvalue"><name>Accept</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a7c97c32ec3f99073467a8249f0b351f8" kind="enumvalue"><name>AccessControlAllowOrigin</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a88b643d3aa058c791b950780413466b6" kind="enumvalue"><name>Age</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a83094f2070e6160cea443d1971e493aa" kind="enumvalue"><name>Allow</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929ab87d89c83598922e5f71018a163d4894" kind="enumvalue"><name>Authorization</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929aea553d6999e51e77271f1391c3b20287" kind="enumvalue"><name>CacheControl</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a25749ad9d7d872299a53b8dfdac62613" kind="enumvalue"><name>ContentDisposition</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929ab606c2678f23a0516bf81cf514ad3c7b" kind="enumvalue"><name>ContentEncoding</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a80f9b4da20497411913981336ff1e6f0" kind="enumvalue"><name>ContentLanguage</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a43bca8ec173566d2b8587d52f2ab9b48" kind="enumvalue"><name>ContentLength</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a8bb082c73161fd3c2c3ab02a5d6ca047" kind="enumvalue"><name>ContentLocation</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a393aa0217c3cc1d081916009bc0b28e4" kind="enumvalue"><name>ContentRange</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a2aa38a0ce71d15df26f1536e74c20531" kind="enumvalue"><name>ContentType</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a7d8be05ead80300ce6c61aba9ae60f57" kind="enumvalue"><name>Cookie</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929af876363d9c2468049decb228007bdeb5" kind="enumvalue"><name>Date</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929ac1bc7bd75ccc301cdadb4f6a1042de7f" kind="enumvalue"><name>Etag</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a768b68fe81a20439ac83afd4dccdf858" kind="enumvalue"><name>Expect</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a7c6bd78b5f6d916fc9eb25c87f3bd168" kind="enumvalue"><name>Expires</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a3021da9ed177dd2bf53dbb70d42f5259" kind="enumvalue"><name>From</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a6792ac984bad7c867d8c4e0678d7ee74" kind="enumvalue"><name>Host</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929acdf4fc1ebd8ce5a118c136fb7b01f89a" kind="enumvalue"><name>IfMatch</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a570f4780604f76849eb23dc940f9ae47" kind="enumvalue"><name>IfModifiedSince</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a3198c965983aa6cb1beeee1a27855ec9" kind="enumvalue"><name>IfNoneMatch</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a3f4fac46df5d8164e89f757fae0546a6" kind="enumvalue"><name>IfRange</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a99e9d47a6304da70c5455c28211e99af" kind="enumvalue"><name>IfUnmodifiedSince</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a18c6e5667c80cac4a5d7bf6f89569eb5" kind="enumvalue"><name>LastModified</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a303c82a9dea7a7885b20d711dd9df210" kind="enumvalue"><name>Link</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a8fc88fbcf296393139b0ff26fe2b9bca" kind="enumvalue"><name>Location</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a77f95bee405f0b094431e471af87dd0f" kind="enumvalue"><name>MaxForwards</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929af147cdb8b4d5921738895e8e75040369" kind="enumvalue"><name>ProxyAuthenticate</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a98ea6c9c2eca1291cb6b9beacb796bda" kind="enumvalue"><name>ProxyAuthorization</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a52afb60d9cf1f75e22512db7421a1905" kind="enumvalue"><name>Range</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a5547fcb7b8e8aa7fbd236ce27dcc7a12" kind="enumvalue"><name>Referer</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929af6378cf47453b661fd1a8e5899feeb5c" kind="enumvalue"><name>Refresh</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a46545e41f8b0d22abc6925d5b56fa111" kind="enumvalue"><name>RetryAfter</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929aa634230dc44638e7b439eaf2789e77bc" kind="enumvalue"><name>Server</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a97f1656459045fede197d9f037f08cdd" kind="enumvalue"><name>SetCookie</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929af3e93a115fd3535ef4e21c614b766ade" kind="enumvalue"><name>StrictTransportSecurity</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a91a0f90cc0683875d5060005c47fb867" kind="enumvalue"><name>TransferEncoding</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929aef89873558f4825857271d8eae50b756" kind="enumvalue"><name>UserAgent</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929aadb1a597fd43096931de65e0b70b77ca" kind="enumvalue"><name>Vary</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929ab6ece475d729c0b0764d6be7072a1e83" kind="enumvalue"><name>Via</name></member>
+    <member refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a9cfdb5131c8b767aa7980b4f0e296918" kind="enumvalue"><name>WwwAuthenticate</name></member>
+    <member refid="namespacefwoop_1a87d0eaf35ffbee084790bb45549fd41e" kind="enum"><name>HttpVersion</name></member>
+    <member refid="namespacefwoop_1a87d0eaf35ffbee084790bb45549fd41ea3679f3c054a53fa8b42eb365657d1e6e" kind="enumvalue"><name>HTTP11</name></member>
+    <member refid="namespacefwoop_1a87d0eaf35ffbee084790bb45549fd41ea4ae7beb7dac7729fca694ef3b67cd623" kind="enumvalue"><name>HTTP2</name></member>
+    <member refid="namespacefwoop_1a87d0eaf35ffbee084790bb45549fd41ea84d06705108e1f7742f4905d8e777632" kind="enumvalue"><name>HTTP3</name></member>
+    <member refid="namespacefwoop_1ad8b2b49bc7a5746411b682ac94256ad7" kind="typedef"><name>HttpCustomHeader</name></member>
+    <member refid="namespacefwoop_1aadbc2ff63e6adfb1ee4c49bfba007118" kind="typedef"><name>HttpHeaderVariant_t</name></member>
+    <member refid="namespacefwoop_1a8f8f27ac925f849da3190dea9dcdcbf9" kind="typedef"><name>HttpHeaderField_t</name></member>
+    <member refid="namespacefwoop_1ac6d69cc8c349bf8c8f7cda57f4454948" kind="typedef"><name>HttpHandlerFunc_t</name></member>
+    <member refid="namespacefwoop_1a46d0c825a3e0e4897ae98516ac7a03f4" kind="function"><name>httpHeaderToString</name></member>
+    <member refid="namespacefwoop_1a30ee8a6b27929848b48589dd01124a0c" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="namespacefwoop_1acdc17097b67b645edd1ec21186e1f106" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="namespacefwoop_1a777cd08f94566d2e2ce2d8ddef76c68d" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="namespacefwoop_1a01c8e46aeee6a645b08aaf56aa04cd4e" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="namespacefwoop_1aff111a9ce46b51f06cacf383376d9733" kind="function"><name>operator&lt;&lt;</name></member>
+  </compound>
+  <compound refid="namespacefwoop_1_1_0d4" kind="namespace"><name>fwoop::@4</name>
+  </compound>
+  <compound refid="fwoop__argparser_8cpp" kind="file"><name>fwoop_argparser.cpp</name>
+  </compound>
+  <compound refid="fwoop__argparser_8h" kind="file"><name>fwoop_argparser.h</name>
+  </compound>
+  <compound refid="fwoop__filereader_8cpp" kind="file"><name>fwoop_filereader.cpp</name>
+  </compound>
+  <compound refid="fwoop__filereader_8h" kind="file"><name>fwoop_filereader.h</name>
+  </compound>
+  <compound refid="fwoop__log_8cpp" kind="file"><name>fwoop_log.cpp</name>
+  </compound>
+  <compound refid="fwoop__log_8h" kind="file"><name>fwoop_log.h</name>
+  </compound>
+  <compound refid="fwoop__socketio_8cpp" kind="file"><name>fwoop_socketio.cpp</name>
+  </compound>
+  <compound refid="fwoop__socketio_8h" kind="file"><name>fwoop_socketio.h</name>
+  </compound>
+  <compound refid="fwoop__tokenizer_8cpp" kind="file"><name>fwoop_tokenizer.cpp</name>
+  </compound>
+  <compound refid="fwoop__tokenizer_8h" kind="file"><name>fwoop_tokenizer.h</name>
+  </compound>
+  <compound refid="fwoop__sha_8cpp" kind="file"><name>fwoop_sha.cpp</name>
+    <member refid="fwoop__sha_8cpp_1a1d6104caf8e45aec83adbffcbae9b082" kind="define"><name>SHA256_SHR</name></member>
+    <member refid="fwoop__sha_8cpp_1a1dfdab376818cbd49c7be34fe6192eee" kind="define"><name>SHA256_ROTL</name></member>
+    <member refid="fwoop__sha_8cpp_1a900015f109da4f4f10222e989bb9d914" kind="define"><name>SHA256_ROTR</name></member>
+    <member refid="fwoop__sha_8cpp_1a411a32a10e1c9a837fcaca699996b69d" kind="define"><name>SHA256_SIGMA0</name></member>
+    <member refid="fwoop__sha_8cpp_1a98d55970a7f59d26dadd54504c47ab34" kind="define"><name>SHA256_SIGMA1</name></member>
+    <member refid="fwoop__sha_8cpp_1a38a77702d02d1459a0d5321afd893cc9" kind="define"><name>SHA256_sigma0</name></member>
+    <member refid="fwoop__sha_8cpp_1a7de598c936af8cf0a77713f7276fae29" kind="define"><name>SHA256_sigma1</name></member>
+    <member refid="fwoop__sha_8cpp_1a6aad1464e4cf4e57f0e2551558f0d783" kind="define"><name>SHA_Ch</name></member>
+    <member refid="fwoop__sha_8cpp_1a34c488411532e284913ae6c4ac5c1e75" kind="define"><name>SHA_Maj</name></member>
+  </compound>
+  <compound refid="fwoop__sha_8h" kind="file"><name>fwoop_sha.h</name>
+  </compound>
+  <compound refid="fwoop__httpdataframe_8cpp" kind="file"><name>fwoop_httpdataframe.cpp</name>
+  </compound>
+  <compound refid="fwoop__httpdataframe_8h" kind="file"><name>fwoop_httpdataframe.h</name>
+  </compound>
+  <compound refid="fwoop__httpframe_8cpp" kind="file"><name>fwoop_httpframe.cpp</name>
+  </compound>
+  <compound refid="fwoop__httpframe_8h" kind="file"><name>fwoop_httpframe.h</name>
+  </compound>
+  <compound refid="fwoop__httpgoawayframe_8cpp" kind="file"><name>fwoop_httpgoawayframe.cpp</name>
+  </compound>
+  <compound refid="fwoop__httpgoawayframe_8h" kind="file"><name>fwoop_httpgoawayframe.h</name>
+  </compound>
+  <compound refid="fwoop__httpheader_8cpp" kind="file"><name>fwoop_httpheader.cpp</name>
+  </compound>
+  <compound refid="fwoop__httpheader_8h" kind="file"><name>fwoop_httpheader.h</name>
+  </compound>
+  <compound refid="fwoop__httpheadersframe_8cpp" kind="file"><name>fwoop_httpheadersframe.cpp</name>
+  </compound>
+  <compound refid="fwoop__httpheadersframe_8h" kind="file"><name>fwoop_httpheadersframe.h</name>
+  </compound>
+  <compound refid="fwoop__httphpacker_8cpp" kind="file"><name>fwoop_httphpacker.cpp</name>
+  </compound>
+  <compound refid="fwoop__httphpacker_8h" kind="file"><name>fwoop_httphpacker.h</name>
+  </compound>
+  <compound refid="fwoop__httprequest_8cpp" kind="file"><name>fwoop_httprequest.cpp</name>
+  </compound>
+  <compound refid="fwoop__httprequest_8h" kind="file"><name>fwoop_httprequest.h</name>
+  </compound>
+  <compound refid="fwoop__httpresponse_8cpp" kind="file"><name>fwoop_httpresponse.cpp</name>
+  </compound>
+  <compound refid="fwoop__httpresponse_8h" kind="file"><name>fwoop_httpresponse.h</name>
+  </compound>
+  <compound refid="fwoop__httpserver_8cpp" kind="file"><name>fwoop_httpserver.cpp</name>
+  </compound>
+  <compound refid="fwoop__httpserver_8h" kind="file"><name>fwoop_httpserver.h</name>
+  </compound>
+  <compound refid="fwoop__httpsettingsframe_8cpp" kind="file"><name>fwoop_httpsettingsframe.cpp</name>
+  </compound>
+  <compound refid="fwoop__httpsettingsframe_8h" kind="file"><name>fwoop_httpsettingsframe.h</name>
+  </compound>
+  <compound refid="fwoop__httpstream_8cpp" kind="file"><name>fwoop_httpstream.cpp</name>
+  </compound>
+  <compound refid="fwoop__httpstream_8h" kind="file"><name>fwoop_httpstream.h</name>
+  </compound>
+  <compound refid="fwoop__httpwindowupdateframe_8cpp" kind="file"><name>fwoop_httpwindowupdateframe.cpp</name>
+  </compound>
+  <compound refid="fwoop__httpwindowupdateframe_8h" kind="file"><name>fwoop_httpwindowupdateframe.h</name>
+  </compound>
+  <compound refid="dir_5c387b9ed58eef5bc7c95f12be97e48e" kind="dir"><name>basis</name>
+  </compound>
+  <compound refid="dir_53403d93963d3f5d2fcffd0698f5bddb" kind="dir"><name>crypto</name>
+  </compound>
+  <compound refid="dir_de5b03c9e251d763a573c2ccd217de59" kind="dir"><name>http</name>
+  </compound>
+</doxygenindex>

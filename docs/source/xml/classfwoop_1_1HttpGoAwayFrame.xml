@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1HttpGoAwayFrame" kind="class" language="C++" prot="public">
+    <compoundname>fwoop::HttpGoAwayFrame</compoundname>
+    <basecompoundref refid="classfwoop_1_1HttpFrame" prot="public" virt="non-virtual">fwoop::HttpFrame</basecompoundref>
+    <includes refid="fwoop__httpgoawayframe_8h" local="no">fwoop_httpgoawayframe.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1HttpGoAwayFrame_1a18bb32ea78dcc537e90cfe22d2a982a9" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t fwoop::HttpGoAwayFrame::d_lastStreamID</definition>
+        <argsstring></argsstring>
+        <name>d_lastStreamID</name>
+        <qualifiedname>fwoop::HttpGoAwayFrame::d_lastStreamID</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpgoawayframe.h" line="9" column="14" bodyfile="http/fwoop_httpgoawayframe.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpGoAwayFrame_1a625989af36addc0915c40315c72192a8" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t fwoop::HttpGoAwayFrame::d_errorCode</definition>
+        <argsstring></argsstring>
+        <name>d_errorCode</name>
+        <qualifiedname>fwoop::HttpGoAwayFrame::d_errorCode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpgoawayframe.h" line="10" column="14" bodyfile="http/fwoop_httpgoawayframe.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfwoop_1_1HttpGoAwayFrame_1ad624ad300c8c579f198404321ffdbd66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::HttpGoAwayFrame::HttpGoAwayFrame</definition>
+        <argsstring>(unsigned int length, uint8_t flags, uint8_t *streamID, uint8_t *payload)</argsstring>
+        <name>HttpGoAwayFrame</name>
+        <qualifiedname>fwoop::HttpGoAwayFrame::HttpGoAwayFrame</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>streamID</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>payload</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpgoawayframe.h" line="13" column="5" bodyfile="http/fwoop_httpgoawayframe.cpp" bodystart="7" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpGoAwayFrame_1af9ee69587d31ad2e7433fed609efc2ff" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::HttpGoAwayFrame::HttpGoAwayFrame</definition>
+        <argsstring>()</argsstring>
+        <name>HttpGoAwayFrame</name>
+        <qualifiedname>fwoop::HttpGoAwayFrame::HttpGoAwayFrame</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpgoawayframe.h" line="14" column="14" bodyfile="http/fwoop_httpgoawayframe.cpp" bodystart="15" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpGoAwayFrame_1ad589c97893be3849b0367460a6f95ebe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::HttpGoAwayFrame::~HttpGoAwayFrame</definition>
+        <argsstring>()</argsstring>
+        <name>~HttpGoAwayFrame</name>
+        <qualifiedname>fwoop::HttpGoAwayFrame::~HttpGoAwayFrame</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpgoawayframe.h" line="16" column="5" bodyfile="http/fwoop_httpgoawayframe.h" bodystart="25" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpGoAwayFrame_1af823b8eef239c3c4ff28510ea6260944" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>uint8_t *</type>
+        <definition>uint8_t * fwoop::HttpGoAwayFrame::encode</definition>
+        <argsstring>() const override</argsstring>
+        <name>encode</name>
+        <qualifiedname>fwoop::HttpGoAwayFrame::encode</qualifiedname>
+        <reimplements refid="classfwoop_1_1HttpFrame_1a2a316cf5e601ae7e60316f7632d7a26f">encode</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpgoawayframe.h" line="18" column="13" bodyfile="http/fwoop_httpgoawayframe.cpp" bodystart="23" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpGoAwayFrame_1afb593c7a773c4b9ba684bae98b2e184e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::HttpGoAwayFrame::setLastStreamID</definition>
+        <argsstring>(uint32_t streamID)</argsstring>
+        <name>setLastStreamID</name>
+        <qualifiedname>fwoop::HttpGoAwayFrame::setLastStreamID</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>streamID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpgoawayframe.h" line="20" column="10" bodyfile="http/fwoop_httpgoawayframe.h" bodystart="30" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpGoAwayFrame_1a1a090973f266fa0c27b69dcc478c4a9c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::HttpGoAwayFrame::setErrorCode</definition>
+        <argsstring>(uint32_t ec)</argsstring>
+        <name>setErrorCode</name>
+        <qualifiedname>fwoop::HttpGoAwayFrame::setErrorCode</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>ec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpgoawayframe.h" line="21" column="10" bodyfile="http/fwoop_httpgoawayframe.h" bodystart="36" bodyend="39"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>fwoop::HttpFrame</label>
+        <link refid="classfwoop_1_1HttpFrame"/>
+      </node>
+      <node id="1">
+        <label>fwoop::HttpGoAwayFrame</label>
+        <link refid="classfwoop_1_1HttpGoAwayFrame"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>fwoop::HttpFrame</label>
+        <link refid="classfwoop_1_1HttpFrame"/>
+      </node>
+      <node id="1">
+        <label>fwoop::HttpGoAwayFrame</label>
+        <link refid="classfwoop_1_1HttpGoAwayFrame"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="http/fwoop_httpgoawayframe.h" line="7" column="1" bodyfile="http/fwoop_httpgoawayframe.h" bodystart="7" bodyend="22"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1HttpFrame_1ade1fb3cab89f2a3c95312cb2378abb6e" prot="public" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>byteToType</name></member>
+      <member refid="classfwoop_1_1HttpGoAwayFrame_1a625989af36addc0915c40315c72192a8" prot="private" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>d_errorCode</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1af4ab160bcedcb2562d6001c6570548e2" prot="protected" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>d_flags</name></member>
+      <member refid="classfwoop_1_1HttpGoAwayFrame_1a18bb32ea78dcc537e90cfe22d2a982a9" prot="private" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>d_lastStreamID</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1af9fb5740d57aee90e97cb7de45f3e321" prot="protected" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>d_length</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a1b7c3e3c81c64d953c13a96cf9cb31d3" prot="protected" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>d_payload</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" prot="protected" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>d_streamID</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a2c1b3db021c82daa3485ed8bcd547404" prot="protected" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>d_type</name></member>
+      <member refid="classfwoop_1_1HttpGoAwayFrame_1af823b8eef239c3c4ff28510ea6260944" prot="public" virt="virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>encode</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a2d15a02a0cb21cfaa2643a87e8830426" prot="protected" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>encodeHeader</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a79aa423e31eefead7f0fd3e8f5a028ae" prot="public" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>encodingLength</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1af91ef9220c742b6fe0e398fd0e8bc4da" prot="public" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>getStreamID</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1af748ad7f28c669c6616d60fe5965bd7e" prot="public" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>HEADER_LENGTH</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a7ab4cf22d8e4df08b9e2c112d3a3579f" prot="protected" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>HttpFrame</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a2a596317d262444416399415bf005498" prot="public" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>HttpFrame</name></member>
+      <member refid="classfwoop_1_1HttpGoAwayFrame_1ad624ad300c8c579f198404321ffdbd66" prot="public" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>HttpGoAwayFrame</name></member>
+      <member refid="classfwoop_1_1HttpGoAwayFrame_1af9ee69587d31ad2e7433fed609efc2ff" prot="public" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>HttpGoAwayFrame</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1aa418c5a29a857d21bd83835836230696" prot="public" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>length</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1ac9e387d889689561660aa094aff1fd85" prot="public" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>parse</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a7f1a53af685d8dc955a31f2fcd70fade" prot="public" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>payload</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a5bb16b36fec77fb383402306e7b30b3c" prot="public" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>printHeader</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1ac0b88de07f70e2a7c6dc4e6b4010cd80" prot="public" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>printHex</name></member>
+      <member refid="classfwoop_1_1HttpGoAwayFrame_1a1a090973f266fa0c27b69dcc478c4a9c" prot="public" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>setErrorCode</name></member>
+      <member refid="classfwoop_1_1HttpGoAwayFrame_1afb593c7a773c4b9ba684bae98b2e184e" prot="public" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>setLastStreamID</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a83cdc5c45cb979d43a2b00043dc606b9" prot="public" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>setLength</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a9e0344f5dbb95f054009cd43cdb485b4" prot="public" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>setStreamID</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1ab535fb5b35df53538e2892639cce9f6f" prot="public" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>type</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9c" prot="public" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>Type</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a84a587cc6c2ec20b5b28e9612d6f4327" prot="public" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>typeToString</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a0196e1520a2c49fdac7ff32886a36c1d" prot="public" virt="virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>~HttpFrame</name></member>
+      <member refid="classfwoop_1_1HttpGoAwayFrame_1ad589c97893be3849b0367460a6f95ebe" prot="public" virt="non-virtual"><scope>fwoop::HttpGoAwayFrame</scope><name>~HttpGoAwayFrame</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

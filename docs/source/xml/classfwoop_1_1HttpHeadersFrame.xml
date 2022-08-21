@@ -1,0 +1,400 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1HttpHeadersFrame" kind="class" language="C++" prot="public">
+    <compoundname>fwoop::HttpHeadersFrame</compoundname>
+    <basecompoundref refid="classfwoop_1_1HttpFrame" prot="public" virt="non-virtual">fwoop::HttpFrame</basecompoundref>
+    <includes refid="fwoop__httpheadersframe_8h" local="no">fwoop_httpheadersframe.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Flag</name>
+        <qualifiedname>fwoop::HttpHeadersFrame::Flag</qualifiedname>
+        <enumvalue id="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00ab38d05bb0ccfd42f6d70512e5ef50621" prot="public">
+          <name>EndStream</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00a1d30b925f47297dd4254a787895e1d05" prot="public">
+          <name>EndHeaders</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00af7eda2000619187f7d133e618fc3bb80" prot="public">
+          <name>Padded</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00a5882053c87ba133723d97697644cb770" prot="public">
+          <name>Priority</name>
+          <initializer>= 32</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpheadersframe.h" line="27" column="5" bodyfile="http/fwoop_httpheadersframe.h" bodystart="27" bodyend="32"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1HttpHeadersFrame_1abe9a730a9318a34f52406f87ce620bdd" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t fwoop::HttpHeadersFrame::d_padLength</definition>
+        <argsstring></argsstring>
+        <name>d_padLength</name>
+        <qualifiedname>fwoop::HttpHeadersFrame::d_padLength</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpheadersframe.h" line="17" column="36" bodyfile="http/fwoop_httpheadersframe.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpHeadersFrame_1a012e22bd71e44d44a82a36fb15506a7b" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool fwoop::HttpHeadersFrame::d_isDepMutuallyExclusive</definition>
+        <argsstring></argsstring>
+        <name>d_isDepMutuallyExclusive</name>
+        <qualifiedname>fwoop::HttpHeadersFrame::d_isDepMutuallyExclusive</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpheadersframe.h" line="18" column="36" bodyfile="http/fwoop_httpheadersframe.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpHeadersFrame_1a94e216af932b85de6aef895efd02a279" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t fwoop::HttpHeadersFrame::d_streamDep</definition>
+        <argsstring></argsstring>
+        <name>d_streamDep</name>
+        <qualifiedname>fwoop::HttpHeadersFrame::d_streamDep</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpheadersframe.h" line="19" column="36" bodyfile="http/fwoop_httpheadersframe.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpHeadersFrame_1af948a5edec4fdc0f2dddadf734d6d3e6" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t fwoop::HttpHeadersFrame::d_weight</definition>
+        <argsstring></argsstring>
+        <name>d_weight</name>
+        <qualifiedname>fwoop::HttpHeadersFrame::d_weight</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpheadersframe.h" line="20" column="36" bodyfile="http/fwoop_httpheadersframe.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpHeadersFrame_1a36e2db232b22d2caaf149064b05a96b0" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespacefwoop_1a8f8f27ac925f849da3190dea9dcdcbf9" kindref="member">HttpHeaderField_t</ref> &gt;</type>
+        <definition>std::vector&lt;HttpHeaderField_t&gt; fwoop::HttpHeadersFrame::d_headerList</definition>
+        <argsstring></argsstring>
+        <name>d_headerList</name>
+        <qualifiedname>fwoop::HttpHeadersFrame::d_headerList</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpheadersframe.h" line="21" column="17" bodyfile="http/fwoop_httpheadersframe.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpHeadersFrame_1a6faa2b731c27cca6346b3a6647056014" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classfwoop_1_1HttpHPacker" kindref="compound">HttpHPacker</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;HttpHPacker&gt; fwoop::HttpHeadersFrame::d_packer</definition>
+        <argsstring></argsstring>
+        <name>d_packer</name>
+        <qualifiedname>fwoop::HttpHeadersFrame::d_packer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpheadersframe.h" line="22" column="23" bodyfile="http/fwoop_httpheadersframe.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classfwoop_1_1HttpHeadersFrame_1a5482cf0121f99e91398a54de9b62ab53" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t fwoop::HttpHeadersFrame::countExtraBits</definition>
+        <argsstring>() const</argsstring>
+        <name>countExtraBits</name>
+        <qualifiedname>fwoop::HttpHeadersFrame::countExtraBits</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpheadersframe.h" line="24" column="13" bodyfile="http/fwoop_httpheadersframe.cpp" bodystart="59" bodyend="72"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfwoop_1_1HttpHeadersFrame_1a83f767fe8ae94196988658bf72213b27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::HttpHeadersFrame::HttpHeadersFrame</definition>
+        <argsstring>(unsigned int length, uint8_t flags, uint8_t *streamID, uint8_t *payload)</argsstring>
+        <name>HttpHeadersFrame</name>
+        <qualifiedname>fwoop::HttpHeadersFrame::HttpHeadersFrame</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>streamID</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>payload</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpheadersframe.h" line="34" column="5" bodyfile="http/fwoop_httpheadersframe.cpp" bodystart="8" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpHeadersFrame_1a8bb2af69288173ecce8a80443cda2d45" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::HttpHeadersFrame::HttpHeadersFrame</definition>
+        <argsstring>(const std::shared_ptr&lt; HttpHPacker &gt; &amp;packer)</argsstring>
+        <name>HttpHeadersFrame</name>
+        <qualifiedname>fwoop::HttpHeadersFrame::HttpHeadersFrame</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classfwoop_1_1HttpHPacker" kindref="compound">HttpHPacker</ref> &gt; &amp;</type>
+          <declname>packer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpheadersframe.h" line="35" column="14" bodyfile="http/fwoop_httpheadersframe.h" bodystart="50" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpHeadersFrame_1ab77dff6da981c436aa7856fdcad3ab56" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::HttpHeadersFrame::addFlag</definition>
+        <argsstring>(Flag flag)</argsstring>
+        <name>addFlag</name>
+        <qualifiedname>fwoop::HttpHeadersFrame::addFlag</qualifiedname>
+        <param>
+          <type><ref refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00" kindref="member">Flag</ref></type>
+          <declname>flag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpheadersframe.h" line="37" column="10" bodyfile="http/fwoop_httpheadersframe.h" bodystart="62" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpHeadersFrame_1a2132e58c879ef387a9ea2a9e44ee8a05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::HttpHeadersFrame::addHeaderBlock</definition>
+        <argsstring>(HttpHeader &amp;&amp;name, std::string &amp;&amp;value)</argsstring>
+        <name>addHeaderBlock</name>
+        <qualifiedname>fwoop::HttpHeadersFrame::addHeaderBlock</qualifiedname>
+        <param>
+          <type><ref refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929" kindref="member">HttpHeader</ref> &amp;&amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::string &amp;&amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpheadersframe.h" line="39" column="10" bodyfile="http/fwoop_httpheadersframe.cpp" bodystart="45" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpHeadersFrame_1ad6e0194dd19ba6ba671fffeeb73cac16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::HttpHeadersFrame::addHeaderBlock</definition>
+        <argsstring>(const std::string &amp;name, const std::string &amp;value)</argsstring>
+        <name>addHeaderBlock</name>
+        <qualifiedname>fwoop::HttpHeadersFrame::addHeaderBlock</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpheadersframe.h" line="40" column="10" bodyfile="http/fwoop_httpheadersframe.cpp" bodystart="52" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpHeadersFrame_1a5312239d26ef4966539532a515b22074" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::HttpHeadersFrame::clearHeaderBlocks</definition>
+        <argsstring>()</argsstring>
+        <name>clearHeaderBlocks</name>
+        <qualifiedname>fwoop::HttpHeadersFrame::clearHeaderBlocks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpheadersframe.h" line="41" column="10" bodyfile="http/fwoop_httpheadersframe.h" bodystart="68" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpHeadersFrame_1a9a6e7044c22b245f5795944cfc1cf799" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>uint8_t *</type>
+        <definition>uint8_t * fwoop::HttpHeadersFrame::encode</definition>
+        <argsstring>() const override</argsstring>
+        <name>encode</name>
+        <qualifiedname>fwoop::HttpHeadersFrame::encode</qualifiedname>
+        <reimplements refid="classfwoop_1_1HttpFrame_1a2a316cf5e601ae7e60316f7632d7a26f">encode</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpheadersframe.h" line="43" column="13" bodyfile="http/fwoop_httpheadersframe.cpp" bodystart="18" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpHeadersFrame_1ace36358d7a9772c24e71ce6fb0069b21" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="namespacefwoop_1a8f8f27ac925f849da3190dea9dcdcbf9" kindref="member">HttpHeaderField_t</ref> &gt;::const_iterator</type>
+        <definition>std::vector&lt; HttpHeaderField_t &gt;::const_iterator fwoop::HttpHeadersFrame::beginHeaderList</definition>
+        <argsstring>() const</argsstring>
+        <name>beginHeaderList</name>
+        <qualifiedname>fwoop::HttpHeadersFrame::beginHeaderList</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpheadersframe.h" line="45" column="34" bodyfile="http/fwoop_httpheadersframe.h" bodystart="74" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpHeadersFrame_1a511491150b19dbe422307e9525390d65" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="namespacefwoop_1a8f8f27ac925f849da3190dea9dcdcbf9" kindref="member">HttpHeaderField_t</ref> &gt;::const_iterator</type>
+        <definition>std::vector&lt; HttpHeaderField_t &gt;::const_iterator fwoop::HttpHeadersFrame::endHeaderList</definition>
+        <argsstring>() const</argsstring>
+        <name>endHeaderList</name>
+        <qualifiedname>fwoop::HttpHeadersFrame::endHeaderList</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpheadersframe.h" line="46" column="34" bodyfile="http/fwoop_httpheadersframe.h" bodystart="80" bodyend="83"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>fwoop::HttpFrame</label>
+        <link refid="classfwoop_1_1HttpFrame"/>
+      </node>
+      <node id="1">
+        <label>fwoop::HttpHeadersFrame</label>
+        <link refid="classfwoop_1_1HttpHeadersFrame"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>fwoop::HttpFrame</label>
+        <link refid="classfwoop_1_1HttpFrame"/>
+      </node>
+      <node id="1">
+        <label>fwoop::HttpHeadersFrame</label>
+        <link refid="classfwoop_1_1HttpHeadersFrame"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="http/fwoop_httpheadersframe.h" line="14" column="1" bodyfile="http/fwoop_httpheadersframe.h" bodystart="14" bodyend="47"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1HttpHeadersFrame_1ab77dff6da981c436aa7856fdcad3ab56" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>addFlag</name></member>
+      <member refid="classfwoop_1_1HttpHeadersFrame_1a2132e58c879ef387a9ea2a9e44ee8a05" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>addHeaderBlock</name></member>
+      <member refid="classfwoop_1_1HttpHeadersFrame_1ad6e0194dd19ba6ba671fffeeb73cac16" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>addHeaderBlock</name></member>
+      <member refid="classfwoop_1_1HttpHeadersFrame_1ace36358d7a9772c24e71ce6fb0069b21" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>beginHeaderList</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1ade1fb3cab89f2a3c95312cb2378abb6e" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>byteToType</name></member>
+      <member refid="classfwoop_1_1HttpHeadersFrame_1a5312239d26ef4966539532a515b22074" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>clearHeaderBlocks</name></member>
+      <member refid="classfwoop_1_1HttpHeadersFrame_1a5482cf0121f99e91398a54de9b62ab53" prot="private" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>countExtraBits</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1af4ab160bcedcb2562d6001c6570548e2" prot="protected" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>d_flags</name></member>
+      <member refid="classfwoop_1_1HttpHeadersFrame_1a36e2db232b22d2caaf149064b05a96b0" prot="private" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>d_headerList</name></member>
+      <member refid="classfwoop_1_1HttpHeadersFrame_1a012e22bd71e44d44a82a36fb15506a7b" prot="private" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>d_isDepMutuallyExclusive</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1af9fb5740d57aee90e97cb7de45f3e321" prot="protected" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>d_length</name></member>
+      <member refid="classfwoop_1_1HttpHeadersFrame_1a6faa2b731c27cca6346b3a6647056014" prot="private" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>d_packer</name></member>
+      <member refid="classfwoop_1_1HttpHeadersFrame_1abe9a730a9318a34f52406f87ce620bdd" prot="private" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>d_padLength</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a1b7c3e3c81c64d953c13a96cf9cb31d3" prot="protected" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>d_payload</name></member>
+      <member refid="classfwoop_1_1HttpHeadersFrame_1a94e216af932b85de6aef895efd02a279" prot="private" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>d_streamDep</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" prot="protected" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>d_streamID</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a2c1b3db021c82daa3485ed8bcd547404" prot="protected" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>d_type</name></member>
+      <member refid="classfwoop_1_1HttpHeadersFrame_1af948a5edec4fdc0f2dddadf734d6d3e6" prot="private" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>d_weight</name></member>
+      <member refid="classfwoop_1_1HttpHeadersFrame_1a9a6e7044c22b245f5795944cfc1cf799" prot="public" virt="virtual"><scope>fwoop::HttpHeadersFrame</scope><name>encode</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a2d15a02a0cb21cfaa2643a87e8830426" prot="protected" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>encodeHeader</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a79aa423e31eefead7f0fd3e8f5a028ae" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>encodingLength</name></member>
+      <member refid="classfwoop_1_1HttpHeadersFrame_1a511491150b19dbe422307e9525390d65" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>endHeaderList</name></member>
+      <member refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00a1d30b925f47297dd4254a787895e1d05" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>EndHeaders</name></member>
+      <member refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00ab38d05bb0ccfd42f6d70512e5ef50621" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>EndStream</name></member>
+      <member refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>Flag</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1af91ef9220c742b6fe0e398fd0e8bc4da" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>getStreamID</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1af748ad7f28c669c6616d60fe5965bd7e" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>HEADER_LENGTH</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a7ab4cf22d8e4df08b9e2c112d3a3579f" prot="protected" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>HttpFrame</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a2a596317d262444416399415bf005498" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>HttpFrame</name></member>
+      <member refid="classfwoop_1_1HttpHeadersFrame_1a83f767fe8ae94196988658bf72213b27" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>HttpHeadersFrame</name></member>
+      <member refid="classfwoop_1_1HttpHeadersFrame_1a8bb2af69288173ecce8a80443cda2d45" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>HttpHeadersFrame</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1aa418c5a29a857d21bd83835836230696" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>length</name></member>
+      <member refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00af7eda2000619187f7d133e618fc3bb80" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>Padded</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1ac9e387d889689561660aa094aff1fd85" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>parse</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a7f1a53af685d8dc955a31f2fcd70fade" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>payload</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a5bb16b36fec77fb383402306e7b30b3c" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>printHeader</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1ac0b88de07f70e2a7c6dc4e6b4010cd80" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>printHex</name></member>
+      <member refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00a5882053c87ba133723d97697644cb770" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>Priority</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a83cdc5c45cb979d43a2b00043dc606b9" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>setLength</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a9e0344f5dbb95f054009cd43cdb485b4" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>setStreamID</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9c" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>Type</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1ab535fb5b35df53538e2892639cce9f6f" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>type</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a84a587cc6c2ec20b5b28e9612d6f4327" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>typeToString</name></member>
+      <member refid="classfwoop_1_1HttpFrame_1a0196e1520a2c49fdac7ff32886a36c1d" prot="public" virt="virtual"><scope>fwoop::HttpHeadersFrame</scope><name>~HttpFrame</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

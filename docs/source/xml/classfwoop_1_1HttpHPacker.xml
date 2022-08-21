@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1HttpHPacker" kind="class" language="C++" prot="public">
+    <compoundname>fwoop::HttpHPacker</compoundname>
+    <includes refid="fwoop__httphpacker_8h" local="no">fwoop_httphpacker.h</includes>
+    <innerclass refid="structfwoop_1_1HttpHPacker_1_1DynamicTable__t" prot="private">fwoop::HttpHPacker::DynamicTable_t</innerclass>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1HttpHPacker_1a6965082e687cd498ec0a9a9e7833562a" prot="private" static="yes" mutable="no">
+        <type>std::unordered_map&lt; std::string, u_int8_t &gt;</type>
+        <definition>std::unordered_map&lt; std::string, uint8_t &gt; fwoop::HttpHPacker::s_staticTable</definition>
+        <argsstring></argsstring>
+        <name>s_staticTable</name>
+        <qualifiedname>fwoop::HttpHPacker::s_staticTable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httphpacker.h" line="17" column="31" bodyfile="http/fwoop_httphpacker.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpHPacker_1a04ef67cc9c14235b27d2457518a98576" prot="private" static="yes" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t fwoop::HttpHPacker::STATIC_TABLE_SIZE</definition>
+        <argsstring></argsstring>
+        <name>STATIC_TABLE_SIZE</name>
+        <qualifiedname>fwoop::HttpHPacker::STATIC_TABLE_SIZE</qualifiedname>
+        <initializer>= 61</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httphpacker.h" line="18" column="26" bodyfile="http/fwoop_httphpacker.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1HttpHPacker_1a249f6259106eec72a600a66ab1bc6b85" prot="private" static="no" mutable="no">
+        <type>DynamicTable_t</type>
+        <definition>DynamicTable_t fwoop::HttpHPacker::d_dynamicTable</definition>
+        <argsstring></argsstring>
+        <name>d_dynamicTable</name>
+        <qualifiedname>fwoop::HttpHPacker::d_dynamicTable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httphpacker.h" line="26" column="20" bodyfile="http/fwoop_httphpacker.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpHPacker_1ae0b118f8df4ba8332b1994eca2d3f3fc" prot="private" static="no" mutable="no">
+        <type>u_int32_t</type>
+        <definition>u_int32_t fwoop::HttpHPacker::d_maxTableSize</definition>
+        <argsstring></argsstring>
+        <name>d_maxTableSize</name>
+        <qualifiedname>fwoop::HttpHPacker::d_maxTableSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httphpacker.h" line="27" column="20" bodyfile="http/fwoop_httphpacker.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classfwoop_1_1HttpHPacker_1a0e1e3168d9269fafc4c4c7b209d51780" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t fwoop::HttpHPacker::getEncodedLength</definition>
+        <argsstring>(DynamicTable_t &amp;dynamicTable, HttpHeaderVariant_t header, const std::string &amp;headerValue) const</argsstring>
+        <name>getEncodedLength</name>
+        <qualifiedname>fwoop::HttpHPacker::getEncodedLength</qualifiedname>
+        <param>
+          <type>DynamicTable_t &amp;</type>
+          <declname>dynamicTable</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacefwoop_1aadbc2ff63e6adfb1ee4c49bfba007118" kindref="member">HttpHeaderVariant_t</ref></type>
+          <declname>header</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>headerValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httphpacker.h" line="29" column="14" bodyfile="http/fwoop_httphpacker.cpp" bodystart="77" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpHPacker_1af01e5314e40e065d05eea27684203e1a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t fwoop::HttpHPacker::encode</definition>
+        <argsstring>(uint8_t *out, HttpHeaderVariant_t header, const std::string &amp;headerValue)</argsstring>
+        <name>encode</name>
+        <qualifiedname>fwoop::HttpHPacker::encode</qualifiedname>
+        <param>
+          <type>uint8_t *</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacefwoop_1aadbc2ff63e6adfb1ee4c49bfba007118" kindref="member">HttpHeaderVariant_t</ref></type>
+          <declname>header</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>headerValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httphpacker.h" line="30" column="14" bodyfile="http/fwoop_httphpacker.cpp" bodystart="131" bodyend="188"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfwoop_1_1HttpHPacker_1ab13776e64346f9158f3422f5d5dd1c3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::HttpHPacker::HttpHPacker</definition>
+        <argsstring>()</argsstring>
+        <name>HttpHPacker</name>
+        <qualifiedname>fwoop::HttpHPacker::HttpHPacker</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httphpacker.h" line="33" column="5" bodyfile="http/fwoop_httphpacker.cpp" bodystart="71" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpHPacker_1af1ae92ccec1eed16df2f5d524f13fcfc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t fwoop::HttpHPacker::getEncodedLength</definition>
+        <argsstring>(const std::vector&lt; HttpHeaderField_t &gt; &amp;headerFields) const</argsstring>
+        <name>getEncodedLength</name>
+        <qualifiedname>fwoop::HttpHPacker::getEncodedLength</qualifiedname>
+        <param>
+          <type>const std::vector&lt; <ref refid="namespacefwoop_1a8f8f27ac925f849da3190dea9dcdcbf9" kindref="member">HttpHeaderField_t</ref> &gt; &amp;</type>
+          <declname>headerFields</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httphpacker.h" line="35" column="14" bodyfile="http/fwoop_httphpacker.cpp" bodystart="120" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpHPacker_1a037a40c49ea473f16271d6ecedbb9101" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t fwoop::HttpHPacker::encodeLength</definition>
+        <argsstring>(const std::vector&lt; HttpHeaderField_t &gt; &amp;headerFields)</argsstring>
+        <name>encodeLength</name>
+        <qualifiedname>fwoop::HttpHPacker::encodeLength</qualifiedname>
+        <param>
+          <type>const std::vector&lt; <ref refid="namespacefwoop_1a8f8f27ac925f849da3190dea9dcdcbf9" kindref="member">HttpHeaderField_t</ref> &gt; &amp;</type>
+          <declname>headerFields</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httphpacker.h" line="37" column="14" bodyfile="http/fwoop_httphpacker.cpp" bodystart="110" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpHPacker_1ace5011a48f8fffd580dd40751bfb45fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t *</type>
+        <definition>u_int8_t * fwoop::HttpHPacker::encode</definition>
+        <argsstring>(const std::vector&lt; HttpHeaderField_t &gt; &amp;headerFields)</argsstring>
+        <name>encode</name>
+        <qualifiedname>fwoop::HttpHPacker::encode</qualifiedname>
+        <param>
+          <type>const std::vector&lt; <ref refid="namespacefwoop_1a8f8f27ac925f849da3190dea9dcdcbf9" kindref="member">HttpHeaderField_t</ref> &gt; &amp;</type>
+          <declname>headerFields</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httphpacker.h" line="38" column="13" bodyfile="http/fwoop_httphpacker.cpp" bodystart="190" bodyend="202"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="http/fwoop_httphpacker.h" line="15" column="1" bodyfile="http/fwoop_httphpacker.h" bodystart="15" bodyend="39"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1HttpHPacker_1a249f6259106eec72a600a66ab1bc6b85" prot="private" virt="non-virtual"><scope>fwoop::HttpHPacker</scope><name>d_dynamicTable</name></member>
+      <member refid="classfwoop_1_1HttpHPacker_1ae0b118f8df4ba8332b1994eca2d3f3fc" prot="private" virt="non-virtual"><scope>fwoop::HttpHPacker</scope><name>d_maxTableSize</name></member>
+      <member refid="classfwoop_1_1HttpHPacker_1af01e5314e40e065d05eea27684203e1a" prot="private" virt="non-virtual"><scope>fwoop::HttpHPacker</scope><name>encode</name></member>
+      <member refid="classfwoop_1_1HttpHPacker_1ace5011a48f8fffd580dd40751bfb45fc" prot="public" virt="non-virtual"><scope>fwoop::HttpHPacker</scope><name>encode</name></member>
+      <member refid="classfwoop_1_1HttpHPacker_1a037a40c49ea473f16271d6ecedbb9101" prot="public" virt="non-virtual"><scope>fwoop::HttpHPacker</scope><name>encodeLength</name></member>
+      <member refid="classfwoop_1_1HttpHPacker_1a0e1e3168d9269fafc4c4c7b209d51780" prot="private" virt="non-virtual"><scope>fwoop::HttpHPacker</scope><name>getEncodedLength</name></member>
+      <member refid="classfwoop_1_1HttpHPacker_1af1ae92ccec1eed16df2f5d524f13fcfc" prot="public" virt="non-virtual"><scope>fwoop::HttpHPacker</scope><name>getEncodedLength</name></member>
+      <member refid="classfwoop_1_1HttpHPacker_1ab13776e64346f9158f3422f5d5dd1c3e" prot="public" virt="non-virtual"><scope>fwoop::HttpHPacker</scope><name>HttpHPacker</name></member>
+      <member refid="classfwoop_1_1HttpHPacker_1a6965082e687cd498ec0a9a9e7833562a" prot="private" virt="non-virtual"><scope>fwoop::HttpHPacker</scope><name>s_staticTable</name></member>
+      <member refid="classfwoop_1_1HttpHPacker_1a04ef67cc9c14235b27d2457518a98576" prot="private" virt="non-virtual"><scope>fwoop::HttpHPacker</scope><name>STATIC_TABLE_SIZE</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

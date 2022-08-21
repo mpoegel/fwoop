@@ -23,6 +23,7 @@ class HttpServer {
     int d_serverFd;
     HttpVersion d_version;
     std::unordered_map<std::string, HttpHandlerFunc_t> d_routeMap;
+    bool d_isActive;
 
     int parsePayloadBody(uint8_t *buffer, unsigned bufferSize, unsigned int& bytesParsed) const;
     int handleHttp1Connection(int clientFd) const;
@@ -33,9 +34,16 @@ class HttpServer {
     ~HttpServer();
 
     int serve();
+    void stop();
 
     void addRoute(const std::string& route, HttpHandlerFunc_t func);
     void addStaticRoute(const std::string& route, const std::string& fileName);
 };
+
+inline
+void HttpServer::stop()
+{
+    d_isActive = false;
+}
 
 }

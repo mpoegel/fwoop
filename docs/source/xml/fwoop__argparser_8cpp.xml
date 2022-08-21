@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="fwoop__argparser_8cpp" kind="file" language="C++">
+    <compoundname>fwoop_argparser.cpp</compoundname>
+    <includes refid="fwoop__argparser_8h" local="no">fwoop_argparser.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>basis/fwoop_argparser.cpp</label>
+        <link refid="fwoop__argparser_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>fwoop_argparser.h</label>
+        <link refid="fwoop__argparser_8h"/>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;<ref refid="fwoop__argparser_8h" kindref="compound">fwoop_argparser.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="basis/fwoop_argparser.cpp"/>
+  </compounddef>
+</doxygen>

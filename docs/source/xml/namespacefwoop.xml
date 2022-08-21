@@ -1,0 +1,630 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="namespacefwoop" kind="namespace" language="C++">
+    <compoundname>fwoop</compoundname>
+    <innerclass refid="classfwoop_1_1ArgParser" prot="public">fwoop::ArgParser</innerclass>
+    <innerclass refid="classfwoop_1_1FileReader" prot="public">fwoop::FileReader</innerclass>
+    <innerclass refid="classfwoop_1_1HttpDataFrame" prot="public">fwoop::HttpDataFrame</innerclass>
+    <innerclass refid="classfwoop_1_1HttpFrame" prot="public">fwoop::HttpFrame</innerclass>
+    <innerclass refid="classfwoop_1_1HttpGoAwayFrame" prot="public">fwoop::HttpGoAwayFrame</innerclass>
+    <innerclass refid="classfwoop_1_1HttpHeadersFrame" prot="public">fwoop::HttpHeadersFrame</innerclass>
+    <innerclass refid="classfwoop_1_1HttpHPacker" prot="public">fwoop::HttpHPacker</innerclass>
+    <innerclass refid="classfwoop_1_1HttpRequest" prot="public">fwoop::HttpRequest</innerclass>
+    <innerclass refid="classfwoop_1_1HttpResponse" prot="public">fwoop::HttpResponse</innerclass>
+    <innerclass refid="classfwoop_1_1HttpServer" prot="public">fwoop::HttpServer</innerclass>
+    <innerclass refid="classfwoop_1_1HttpSettingsFrame" prot="public">fwoop::HttpSettingsFrame</innerclass>
+    <innerclass refid="classfwoop_1_1HttpStream" prot="public">fwoop::HttpStream</innerclass>
+    <innerclass refid="classfwoop_1_1HttpWindowUpdateFrame" prot="public">fwoop::HttpWindowUpdateFrame</innerclass>
+    <innerclass refid="classfwoop_1_1Log" prot="public">fwoop::Log</innerclass>
+    <innerclass refid="classfwoop_1_1SHA" prot="public">fwoop::SHA</innerclass>
+    <innerclass refid="classfwoop_1_1SocketIO" prot="public">fwoop::SocketIO</innerclass>
+    <innerclass refid="classfwoop_1_1Tokenizer" prot="public">fwoop::Tokenizer</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929" prot="public" static="no" strong="no">
+        <type></type>
+        <name>HttpHeader</name>
+        <qualifiedname>fwoop::HttpHeader</qualifiedname>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a12d3c85032c5adfc1834e8ad901f5c12" prot="public">
+          <name>Authority</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a443068e8b8ac36acc68de6350b7b67e4" prot="public">
+          <name>Method</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929af8e1c6bd894443ad6a9dfff30b7a7b11" prot="public">
+          <name>Path</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a5e9a5bc302367175b7c30ff0c82d12f1" prot="public">
+          <name>Scheme</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929ab26b089d31cf7474274b8514d48f4f24" prot="public">
+          <name>Status</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a9c0e1bef355e51ebc8622a3c00f982f7" prot="public">
+          <name>AcceptCharset</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929ae255dc56e459a07eb341be297497267d" prot="public">
+          <name>AcceptEncoding</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a4468d753d7dccf7ca4ae1058cde18721" prot="public">
+          <name>AcceptLanguage</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929ae7568c51d4b76025a7203d89118995d6" prot="public">
+          <name>AcceptRanges</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a4829661c5d332fdc66d0138b626e7dcf" prot="public">
+          <name>Accept</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a7c97c32ec3f99073467a8249f0b351f8" prot="public">
+          <name>AccessControlAllowOrigin</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a88b643d3aa058c791b950780413466b6" prot="public">
+          <name>Age</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a83094f2070e6160cea443d1971e493aa" prot="public">
+          <name>Allow</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929ab87d89c83598922e5f71018a163d4894" prot="public">
+          <name>Authorization</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929aea553d6999e51e77271f1391c3b20287" prot="public">
+          <name>CacheControl</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a25749ad9d7d872299a53b8dfdac62613" prot="public">
+          <name>ContentDisposition</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929ab606c2678f23a0516bf81cf514ad3c7b" prot="public">
+          <name>ContentEncoding</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a80f9b4da20497411913981336ff1e6f0" prot="public">
+          <name>ContentLanguage</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a43bca8ec173566d2b8587d52f2ab9b48" prot="public">
+          <name>ContentLength</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a8bb082c73161fd3c2c3ab02a5d6ca047" prot="public">
+          <name>ContentLocation</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a393aa0217c3cc1d081916009bc0b28e4" prot="public">
+          <name>ContentRange</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a2aa38a0ce71d15df26f1536e74c20531" prot="public">
+          <name>ContentType</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a7d8be05ead80300ce6c61aba9ae60f57" prot="public">
+          <name>Cookie</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929af876363d9c2468049decb228007bdeb5" prot="public">
+          <name>Date</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929ac1bc7bd75ccc301cdadb4f6a1042de7f" prot="public">
+          <name>Etag</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a768b68fe81a20439ac83afd4dccdf858" prot="public">
+          <name>Expect</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a7c6bd78b5f6d916fc9eb25c87f3bd168" prot="public">
+          <name>Expires</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a3021da9ed177dd2bf53dbb70d42f5259" prot="public">
+          <name>From</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a6792ac984bad7c867d8c4e0678d7ee74" prot="public">
+          <name>Host</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929acdf4fc1ebd8ce5a118c136fb7b01f89a" prot="public">
+          <name>IfMatch</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a570f4780604f76849eb23dc940f9ae47" prot="public">
+          <name>IfModifiedSince</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a3198c965983aa6cb1beeee1a27855ec9" prot="public">
+          <name>IfNoneMatch</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a3f4fac46df5d8164e89f757fae0546a6" prot="public">
+          <name>IfRange</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a99e9d47a6304da70c5455c28211e99af" prot="public">
+          <name>IfUnmodifiedSince</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a18c6e5667c80cac4a5d7bf6f89569eb5" prot="public">
+          <name>LastModified</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a303c82a9dea7a7885b20d711dd9df210" prot="public">
+          <name>Link</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a8fc88fbcf296393139b0ff26fe2b9bca" prot="public">
+          <name>Location</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a77f95bee405f0b094431e471af87dd0f" prot="public">
+          <name>MaxForwards</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929af147cdb8b4d5921738895e8e75040369" prot="public">
+          <name>ProxyAuthenticate</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a98ea6c9c2eca1291cb6b9beacb796bda" prot="public">
+          <name>ProxyAuthorization</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a52afb60d9cf1f75e22512db7421a1905" prot="public">
+          <name>Range</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a5547fcb7b8e8aa7fbd236ce27dcc7a12" prot="public">
+          <name>Referer</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929af6378cf47453b661fd1a8e5899feeb5c" prot="public">
+          <name>Refresh</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a46545e41f8b0d22abc6925d5b56fa111" prot="public">
+          <name>RetryAfter</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929aa634230dc44638e7b439eaf2789e77bc" prot="public">
+          <name>Server</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a97f1656459045fede197d9f037f08cdd" prot="public">
+          <name>SetCookie</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929af3e93a115fd3535ef4e21c614b766ade" prot="public">
+          <name>StrictTransportSecurity</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a91a0f90cc0683875d5060005c47fb867" prot="public">
+          <name>TransferEncoding</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929aef89873558f4825857271d8eae50b756" prot="public">
+          <name>UserAgent</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929aadb1a597fd43096931de65e0b70b77ca" prot="public">
+          <name>Vary</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929ab6ece475d729c0b0764d6be7072a1e83" prot="public">
+          <name>Via</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929a9cfdb5131c8b767aa7980b4f0e296918" prot="public">
+          <name>WwwAuthenticate</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpheader.h" line="9" column="1" bodyfile="http/fwoop_httpheader.h" bodystart="9" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespacefwoop_1a87d0eaf35ffbee084790bb45549fd41e" prot="public" static="no" strong="no">
+        <type></type>
+        <name>HttpVersion</name>
+        <qualifiedname>fwoop::HttpVersion</qualifiedname>
+        <enumvalue id="namespacefwoop_1a87d0eaf35ffbee084790bb45549fd41ea3679f3c054a53fa8b42eb365657d1e6e" prot="public">
+          <name>HTTP11</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a87d0eaf35ffbee084790bb45549fd41ea4ae7beb7dac7729fca694ef3b67cd623" prot="public">
+          <name>HTTP2</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1a87d0eaf35ffbee084790bb45549fd41ea84d06705108e1f7742f4905d8e777632" prot="public">
+          <name>HTTP3</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpserver.h" line="12" column="1" bodyfile="http/fwoop_httpserver.h" bodystart="12" bodyend="16"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacefwoop_1ad8b2b49bc7a5746411b682ac94256ad7" prot="public" static="no">
+        <type>std::string</type>
+        <definition>typedef std::string fwoop::HttpCustomHeader</definition>
+        <argsstring></argsstring>
+        <name>HttpCustomHeader</name>
+        <qualifiedname>fwoop::HttpCustomHeader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpheader.h" line="66" column="21" bodyfile="http/fwoop_httpheader.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacefwoop_1aadbc2ff63e6adfb1ee4c49bfba007118" prot="public" static="no">
+        <type>std::variant&lt; <ref refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929" kindref="member">HttpHeader</ref>, <ref refid="namespacefwoop_1ad8b2b49bc7a5746411b682ac94256ad7" kindref="member">HttpCustomHeader</ref> &gt;</type>
+        <definition>typedef std::variant&lt;HttpHeader, HttpCustomHeader&gt; fwoop::HttpHeaderVariant_t</definition>
+        <argsstring></argsstring>
+        <name>HttpHeaderVariant_t</name>
+        <qualifiedname>fwoop::HttpHeaderVariant_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpheader.h" line="67" column="22" bodyfile="http/fwoop_httpheader.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacefwoop_1a8f8f27ac925f849da3190dea9dcdcbf9" prot="public" static="no">
+        <type>std::pair&lt; <ref refid="namespacefwoop_1aadbc2ff63e6adfb1ee4c49bfba007118" kindref="member">HttpHeaderVariant_t</ref>, std::string &gt;</type>
+        <definition>typedef std::pair&lt;HttpHeaderVariant_t, std::string&gt; fwoop::HttpHeaderField_t</definition>
+        <argsstring></argsstring>
+        <name>HttpHeaderField_t</name>
+        <qualifiedname>fwoop::HttpHeaderField_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpheader.h" line="68" column="19" bodyfile="http/fwoop_httpheader.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacefwoop_1ac6d69cc8c349bf8c8f7cda57f4454948" prot="public" static="no">
+        <type>std::function&lt; void(const <ref refid="classfwoop_1_1HttpRequest" kindref="compound">HttpRequest</ref> &amp;, <ref refid="classfwoop_1_1HttpResponse" kindref="compound">HttpResponse</ref> &amp;)&gt;</type>
+        <definition>typedef std::function&lt;void(const HttpRequest&amp;, HttpResponse&amp;)&gt; fwoop::HttpHandlerFunc_t</definition>
+        <argsstring></argsstring>
+        <name>HttpHandlerFunc_t</name>
+        <qualifiedname>fwoop::HttpHandlerFunc_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpserver.h" line="18" column="23" bodyfile="http/fwoop_httpserver.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacefwoop_1a46d0c825a3e0e4897ae98516ac7a03f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string fwoop::httpHeaderToString</definition>
+        <argsstring>(HttpHeader header)</argsstring>
+        <name>httpHeaderToString</name>
+        <qualifiedname>fwoop::httpHeaderToString</qualifiedname>
+        <param>
+          <type><ref refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929" kindref="member">HttpHeader</ref></type>
+          <declname>header</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpheader.cpp" line="5" column="13" bodyfile="http/fwoop_httpheader.cpp" bodystart="5" bodyend="63" declfile="http/fwoop_httpheader.h" declline="64" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefwoop_1a30ee8a6b27929848b48589dd01124a0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; fwoop::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const HttpHeaderVariant_t &amp;header)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>fwoop::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacefwoop_1aadbc2ff63e6adfb1ee4c49bfba007118" kindref="member">HttpHeaderVariant_t</ref> &amp;</type>
+          <declname>header</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpheader.cpp" line="65" column="1" bodyfile="http/fwoop_httpheader.cpp" bodystart="65" bodyend="73" declfile="http/fwoop_httpheader.h" declline="70" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefwoop_1acdc17097b67b645edd1ec21186e1f106" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; fwoop::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, HttpRequest::Method method)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>fwoop::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type><ref refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89" kindref="member">HttpRequest::Method</ref></type>
+          <declname>method</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httprequest.cpp" line="8" column="1" bodyfile="http/fwoop_httprequest.cpp" bodystart="8" bodyend="18" declfile="http/fwoop_httprequest.h" declline="49" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefwoop_1a777cd08f94566d2e2ce2d8ddef76c68d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; fwoop::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, HttpRequest::Version version)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>fwoop::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type><ref refid="classfwoop_1_1HttpRequest_1af9bcaea658b2bce3ede4db760dd9285a" kindref="member">HttpRequest::Version</ref></type>
+          <declname>version</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httprequest.cpp" line="20" column="1" bodyfile="http/fwoop_httprequest.cpp" bodystart="20" bodyend="28" declfile="http/fwoop_httprequest.h" declline="50" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefwoop_1a01c8e46aeee6a645b08aaf56aa04cd4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; fwoop::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const HttpRequest &amp;request)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>fwoop::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfwoop_1_1HttpRequest" kindref="compound">HttpRequest</ref> &amp;</type>
+          <declname>request</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httprequest.cpp" line="30" column="1" bodyfile="http/fwoop_httprequest.cpp" bodystart="30" bodyend="43" declfile="http/fwoop_httprequest.h" declline="51" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefwoop_1aff111a9ce46b51f06cacf383376d9733" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; fwoop::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const HttpResponse &amp;response)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>fwoop::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfwoop_1_1HttpResponse" kindref="compound">HttpResponse</ref> &amp;</type>
+          <declname>response</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpresponse.cpp" line="86" column="1" bodyfile="http/fwoop_httpresponse.cpp" bodystart="86" bodyend="98" declfile="http/fwoop_httpresponse.h" declline="34" declcolumn="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="basis/fwoop_argparser.h" line="3" column="1"/>
+  </compounddef>
+</doxygen>

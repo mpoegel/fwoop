@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="fwoop__httpserver_8h" kind="file" language="C++">
+    <compoundname>fwoop_httpserver.h</compoundname>
+    <includes refid="fwoop__httprequest_8h" local="no">fwoop_httprequest.h</includes>
+    <includes refid="fwoop__httpresponse_8h" local="no">fwoop_httpresponse.h</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">string</includes>
+    <includes local="no">unordered_map</includes>
+    <includedby refid="fwoop__httpserver_8cpp" local="no">http/fwoop_httpserver.cpp</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>fwoop_httpheader.h</label>
+        <link refid="fwoop__httpheader_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>fwoop_httprequest.h</label>
+        <link refid="fwoop__httprequest_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>fwoop_httpresponse.h</label>
+        <link refid="fwoop__httpresponse_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>http/fwoop_httpserver.h</label>
+        <link refid="fwoop__httpserver_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>functional</label>
+      </node>
+      <node id="7">
+        <label>memory</label>
+      </node>
+      <node id="4">
+        <label>ostream</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="11">
+        <label>unordered_map</label>
+      </node>
+      <node id="6">
+        <label>variant</label>
+      </node>
+      <node id="8">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>http/fwoop_httpserver.cpp</label>
+        <link refid="fwoop__httpserver_8cpp"/>
+      </node>
+      <node id="1">
+        <label>http/fwoop_httpserver.h</label>
+        <link refid="fwoop__httpserver_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classfwoop_1_1HttpServer" prot="public">fwoop::HttpServer</innerclass>
+    <innernamespace refid="namespacefwoop">fwoop</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="fwoop__httprequest_8h" kindref="compound">fwoop_httprequest.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="fwoop__httpresponse_8h" kindref="compound">fwoop_httpresponse.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefwoop" kindref="compound">fwoop</ref><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="namespacefwoop_1a87d0eaf35ffbee084790bb45549fd41e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespacefwoop_1a87d0eaf35ffbee084790bb45549fd41e" kindref="member">HttpVersion</ref><sp/>{</highlight></codeline>
+<codeline lineno="13" refid="namespacefwoop_1a87d0eaf35ffbee084790bb45549fd41ea3679f3c054a53fa8b42eb365657d1e6e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacefwoop_1a87d0eaf35ffbee084790bb45549fd41ea3679f3c054a53fa8b42eb365657d1e6e" kindref="member">HTTP11</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="14" refid="namespacefwoop_1a87d0eaf35ffbee084790bb45549fd41ea4ae7beb7dac7729fca694ef3b67cd623" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacefwoop_1a87d0eaf35ffbee084790bb45549fd41ea4ae7beb7dac7729fca694ef3b67cd623" kindref="member">HTTP2</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="15" refid="namespacefwoop_1a87d0eaf35ffbee084790bb45549fd41ea84d06705108e1f7742f4905d8e777632" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacefwoop_1a87d0eaf35ffbee084790bb45549fd41ea84d06705108e1f7742f4905d8e777632" kindref="member">HTTP3</ref><sp/>=<sp/>2,</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="namespacefwoop_1ac6d69cc8c349bf8c8f7cda57f4454948" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::function&lt;void(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest" kindref="compound">HttpRequest</ref>&amp;,<sp/><ref refid="classfwoop_1_1HttpResponse" kindref="compound">HttpResponse</ref>&amp;)&gt;<sp/><ref refid="namespacefwoop_1ac6d69cc8c349bf8c8f7cda57f4454948" kindref="member">HttpHandlerFunc_t</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="classfwoop_1_1HttpServer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfwoop_1_1HttpServer" kindref="compound">HttpServer</ref><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>d_port;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>d_serverFd;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacefwoop_1a87d0eaf35ffbee084790bb45549fd41e" kindref="member">HttpVersion</ref><sp/>d_version;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>HttpHandlerFunc_t&gt;<sp/>d_routeMap;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>d_isActive;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>parsePayloadBody(uint8_t<sp/>*buffer,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>bufferSize,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>bytesParsed)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>handleHttp1Connection(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>clientFd)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>handleHttp2Connection(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>clientFd)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpServer_1afdb7294f79013d88467e5c52958e2df0" kindref="member">HttpServer</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port,<sp/><ref refid="namespacefwoop_1a87d0eaf35ffbee084790bb45549fd41e" kindref="member">HttpVersion</ref><sp/>version);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpServer_1abb0e1b98a4407e2ddc637ac542ab1890" kindref="member">~HttpServer</ref>();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpServer_1a89c7ea5a09e3bc3908207b86a8f8ba38" kindref="member">serve</ref>();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpServer_1a965013dc4a1cf25e49dfda574321910d" kindref="member">stop</ref>();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpServer_1a1c91caae02032f9b001d3add7acd3ee8" kindref="member">addRoute</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>route,<sp/><ref refid="namespacefwoop_1ac6d69cc8c349bf8c8f7cda57f4454948" kindref="member">HttpHandlerFunc_t</ref><sp/>func);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpServer_1a775b20e9df447ac93cb7baf3ef3899fa" kindref="member">addStaticRoute</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>route,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>fileName);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="classfwoop_1_1HttpServer_1a965013dc4a1cf25e49dfda574321910d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpServer_1a965013dc4a1cf25e49dfda574321910d" kindref="member">HttpServer::stop</ref>()</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>d_isActive<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="http/fwoop_httpserver.h"/>
+  </compounddef>
+</doxygen>
