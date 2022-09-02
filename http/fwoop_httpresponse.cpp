@@ -9,6 +9,7 @@ namespace fwoop {
 
 HttpResponse::HttpResponse()
 : d_status()
+, d_body()
 {
 }
 
@@ -32,7 +33,9 @@ uint8_t *HttpResponse::encode(uint32_t& length) const
     length += contentLength;
 
     std::vector<HttpHeaderField_t> headers(d_headers);
-    headers.push_back({HttpHeader::ContentLength, std::to_string(contentLength)});
+    if (contentLength > 0) {
+        headers.push_back({HttpHeader::ContentLength, std::to_string(contentLength)});
+    }
 
     for (auto header : headers) {
         if (std::holds_alternative<HttpHeader>(header.first)) {

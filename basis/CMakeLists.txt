@@ -17,7 +17,8 @@ install(FILES
     DESTINATION include)
 
 include(GoogleTest)
-add_executable(fwoopbasis_test 
+add_executable(fwoopbasis_test
+    fwoop_argparser.g.cpp
     fwoop_filereader.g.cpp
     fwoop_log.g.cpp
     fwoop_tokenizer.g.cpp
