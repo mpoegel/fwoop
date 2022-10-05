@@ -7,6 +7,7 @@
 namespace fwoop {
 
 enum HttpHeader {
+    Undefined,
     Authority,
     Method,
     Path,
@@ -62,6 +63,7 @@ enum HttpHeader {
 };
 
 std::string httpHeaderToString(HttpHeader header);
+HttpHeader stringToHttpHeader(const std::string& headerStr);
 
 typedef std::string HttpCustomHeader;
 typedef std::variant<HttpHeader, HttpCustomHeader> HttpHeaderVariant_t;

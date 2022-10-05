@@ -1,8 +1,10 @@
 #pragma once
 
 #include <fwoop_httpheader.h>
+#include <fwoop_httpversion.h>
 
 #include <ostream>
+#include <memory>
 #include <string>
 #include <vector>
 
@@ -10,12 +12,15 @@ namespace fwoop {
 
 class HttpResponse {
   private:
+    HttpVersion::Value             d_version;
     std::vector<HttpHeaderField_t> d_headers;
     std::string                    d_status;
     std::string                    d_body;
     std::string                    d_fileName;
 
   public:
+    static std::shared_ptr<HttpResponse> parse(uint8_t *buffer, uint32_t bufferSize, uint32_t& bytesParsed);
+
     explicit HttpResponse();
 
     void setStatus(const std::string& status);
@@ -25,6 +30,7 @@ class HttpResponse {
     void streamFile(const std::string& fileName);
 
     uint8_t *encode(uint32_t& length) const;
+    const HttpVersion::Value getVersion() const;
     const std::vector<HttpHeaderField_t> getHeaders() const;
     const std::string& getStatus() const;
     const std::string& getBody() const;
@@ -61,6 +67,12 @@ inline
 void HttpResponse::streamFile(const std::string& fileName)
 {
     d_fileName = fileName;
+}
+
+inline
+const HttpVersion::Value HttpResponse::getVersion() const
+{
+    return d_version;
 }
 
 inline

@@ -4,6 +4,7 @@
 
 #include <fwoop_filereader.h>
 #include <fwoop_log.h>
+#include <fwoop_tokenizer.h>
 
 namespace fwoop {
 
@@ -86,9 +87,65 @@ uint8_t *HttpResponse::encode(uint32_t& length) const
     return encoding;
 }
 
+std::shared_ptr<HttpResponse> HttpResponse::parse(uint8_t *buffer, uint32_t bufferSize, uint32_t& bytesParsed)
+{
+    auto resp = std::make_shared<HttpResponse>();
+
+    bytesParsed = 0;
+
+    std::string payload((char*)buffer, bufferSize);
+    unsigned int end = payload.rfind("\r\n\r\n");
+    if (end == std::string::npos) {
+        return nullptr;
+    } else {
+        bytesParsed = end + 4;
+    }
+
+    payload.resize(end);
+    Tokenizer tokr(payload, '\n');
+    auto itr = tokr.begin();
+
+    Tokenizer reqLineTokr(*itr, ' ');
+    auto rlItr = reqLineTokr.begin();
+    resp->d_version = HttpVersion::fromString(*rlItr);
+    ++rlItr;
+    ++rlItr;
+    unsigned int statusEnd = (*rlItr).find('\r');
+    resp->d_status = (*rlItr).substr(0, statusEnd);
+    unsigned int contentLength = 0;
+
+    for (++itr; itr != tokr.end(); ++itr) {
+        unsigned int split = (*itr).find(':');
+        if (split == std::string::npos) {
+            Log::Warn("Received bad response header: ", *itr);
+        } else {
+            std::string name = (*itr).substr(0, split);
+            unsigned int valueEnd = (*itr).rfind('\r');
+            std::string value = (*itr).substr(split + 2, valueEnd - split - 2);
+            HttpHeader httpName = stringToHttpHeader(name);
+            if (httpName != HttpHeader::Undefined) {
+                resp->d_headers.push_back({httpName, value});
+            } else {
+                resp->d_headers.push_back({name, value});
+            }
+            if (httpName == HttpHeader::ContentLength) {
+                contentLength = std::atoi(value.c_str());
+            }
+        }
+    }
+
+    if (bytesParsed + contentLength > bufferSize) {
+        Log::Warn("incomplete response body, missing ", bytesParsed + contentLength - bufferSize, " bytes");
+        contentLength = std::min(bufferSize - bytesParsed, contentLength); 
+    }
+    resp->d_body = std::string((char*)buffer + bytesParsed, contentLength);
+
+    return resp;
+}
+
 std::ostream& operator<<(std::ostream& os, const HttpResponse& response)
 {
-    os << "[ status=" << response.getStatus() << " headers=[ ";
+    os << "[ version=" << response.getVersion() << " status=" << response.getStatus() << " headers=[ ";
     auto headers = response.getHeaders();
     for (unsigned int i = 0; i < headers.size(); ++i) {
         os << "[ name=" << headers[i].first << " value=" << headers[i].second << " ]";

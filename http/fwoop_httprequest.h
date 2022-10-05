@@ -1,6 +1,7 @@
 #pragma once
 
 #include <fwoop_httpheader.h>
+#include <fwoop_httpversion.h>
 
 #include <memory>
 #include <ostream>
@@ -18,37 +19,69 @@ class HttpRequest {
         Put,
         Delete,
     };
-    enum class Version {
-        Undefined,
-        Http1_0,
-        Http1_1,
-    };
 
   private:
     Method                         d_method;
     std::string                    d_path;
-    Version                        d_version;
+    HttpVersion::Value             d_version;
     std::vector<HttpHeaderField_t> d_headers;
     bool                           d_canUpgrade;
+    std::string                    d_body;
 
     static Method stringToMethod(const std::string& methodStr);
-    static Version stringToVersion(const std::string& versionStr);
 
   public:
     static std::shared_ptr<HttpRequest> parse(uint8_t *buffer, uint32_t bufferSize, uint32_t& bytesParsed);
+    static std::string methodToString(const Method& method);
 
     explicit HttpRequest();
 
+    void addHeader(const HttpHeader& name, const std::string& value);
+    void addHeader(const HttpCustomHeader& name, const std::string& value);
+    void setPath(const std::string& path);
+    void setBody(const std::string& body);
+    void setMethod(const Method& method);
+
     Method getMethod() const;
     const std::string& getPath() const;
-    Version getVersion() const;
+    HttpVersion::Value getVersion() const;
     const std::vector<HttpHeaderField_t>& getHeaders() const;
     bool canUpgrade() const;
+    uint8_t *encode(uint32_t& length) const;
 };
 
 std::ostream& operator<<(std::ostream& os, HttpRequest::Method method);
-std::ostream& operator<<(std::ostream& os, HttpRequest::Version version);
 std::ostream& operator<<(std::ostream& os, const HttpRequest& request);
+
+inline
+void HttpRequest::addHeader(const HttpHeader& name, const std::string& value)
+{
+    d_headers.push_back({name, value});
+}
+
+inline
+void HttpRequest::addHeader(const HttpCustomHeader& name, const std::string& value)
+{
+    d_headers.push_back({name, value});
+}
+
+inline
+void HttpRequest::setPath(const std::string& path)
+{
+    d_path = path;
+}
+
+inline
+void HttpRequest::setBody(const std::string& body)
+{
+    d_body = body;
+}
+
+inline
+void HttpRequest::setMethod(const Method& method)
+{
+    d_method = method;
+}
 
 inline
 HttpRequest::Method HttpRequest::getMethod() const
@@ -63,7 +96,7 @@ const std::string& HttpRequest::getPath() const
 }
 
 inline
-HttpRequest::Version HttpRequest::getVersion() const
+HttpVersion::Value HttpRequest::getVersion() const
 {
     return d_version;
 }

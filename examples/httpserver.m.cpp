@@ -4,6 +4,7 @@
 #include <fwoop_httpresponse.h>
 #include <fwoop_httpserver.h>
 #include <fwoop_httpheader.h>
+#include <fwoop_httpversion.h>
 
 int main(int argc, char* argv[])
 {
@@ -15,11 +16,11 @@ int main(int argc, char* argv[])
     const int port = std::atoi(argv[1]);
     const int rawVersion = std::stoi(argv[2]);
 
-    fwoop::HttpVersion version = fwoop::HTTP11;
+    fwoop::HttpVersion::Value version = fwoop::HttpVersion::Http1_1;
     if (rawVersion == 1) {
-        version = fwoop::HttpVersion::HTTP11;
+        version = fwoop::HttpVersion::Http1_1;
     } else if (rawVersion == 2) {
-        version = fwoop::HttpVersion::HTTP2;
+        version = fwoop::HttpVersion::Http2;
     } else {
         std::cerr << "bad version: " << argv[2] << '\n';
     }

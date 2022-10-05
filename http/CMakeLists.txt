@@ -1,4 +1,5 @@
 add_library(fwoophttp STATIC
+    fwoop_httpclient.cpp
     fwoop_httpdataframe.cpp
     fwoop_httpframe.cpp
     fwoop_httpgoawayframe.cpp
@@ -10,6 +11,7 @@ add_library(fwoophttp STATIC
     fwoop_httpserver.cpp
     fwoop_httpsettingsframe.cpp
     fwoop_httpstream.cpp
+    fwoop_httpversion.cpp
     fwoop_httpwindowupdateframe.cpp
 )
 target_include_directories(fwoophttp PUBLIC .)
@@ -17,6 +19,7 @@ target_link_libraries(fwoophttp fwoopbasis)
 
 install(TARGETS fwoophttp DESTINATION lib)
 install(FILES
+    fwoop_httpclient.h
     fwoop_httpdataframe.h
     fwoop_httpframe.h
     fwoop_httpgoawayframe.h
@@ -28,6 +31,7 @@ install(FILES
     fwoop_httpserver.h
     fwoop_httpsettingsframe.h
     fwoop_httpstream.h
+    fwoop_httpversion.h
     fwoop_httpwindowupdateframe.h
     DESTINATION include)
 
@@ -35,6 +39,7 @@ include(GoogleTest)
 add_executable(fwoophttp_test
     fwoop_httpheadersframe.g.cpp
     fwoop_httphpacker.g.cpp
+    fwoop_httprequest.g.cpp
     fwoop_httpresponse.g.cpp
     fwoop_httpserver.g.cpp
     fwoop_httpsettingsframe.g.cpp

@@ -2,6 +2,7 @@
 
 #include <fwoop_httprequest.h>
 #include <fwoop_httpresponse.h>
+#include <fwoop_httpversion.h>
 
 #include <functional>
 #include <string>
@@ -9,19 +10,13 @@
 
 namespace fwoop {
 
-enum HttpVersion {
-    HTTP11 = 0,
-    HTTP2 = 1,
-    HTTP3 = 2,
-};
-
 typedef std::function<void(const HttpRequest&, HttpResponse&)> HttpHandlerFunc_t;
 
 class HttpServer {
   private:
     int d_port;
     int d_serverFd;
-    HttpVersion d_version;
+    HttpVersion::Value d_version;
     std::unordered_map<std::string, HttpHandlerFunc_t> d_routeMap;
     bool d_isActive;
 
@@ -30,7 +25,7 @@ class HttpServer {
     int handleHttp2Connection(int clientFd) const;
 
   public:
-    explicit HttpServer(int port, HttpVersion version);
+    explicit HttpServer(int port, HttpVersion::Value version);
     ~HttpServer();
 
     int serve();

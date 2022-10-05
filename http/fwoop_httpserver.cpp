@@ -23,7 +23,7 @@
 
 namespace fwoop {
 
-HttpServer::HttpServer(int port, HttpVersion version)
+HttpServer::HttpServer(int port, HttpVersion::Value version)
 : d_port(port)
 , d_serverFd(-1)
 , d_version(version)
@@ -78,10 +78,10 @@ int HttpServer::serve()
         }
 
         switch (d_version) {
-            case HttpVersion::HTTP11:
+            case HttpVersion::Value::Http1_1:
                 handleHttp1Connection(clientFd);
                 break;
-            case HttpVersion::HTTP2:
+            case HttpVersion::Value::Http2:
                 handleHttp2Connection(clientFd);
                 break;
             default:
@@ -318,6 +318,7 @@ void HttpServer::addStaticRoute(const std::string& route, const std::string& fil
 
 int HttpServer::handleHttp1Connection(int clientFd) const
 {
+    Log::Debug("received http/1.1 connection");
     constexpr unsigned int bufferSize = 2048;
     uint8_t buffer[bufferSize];
     unsigned int bytesRead;

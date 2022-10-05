@@ -1,5 +1,7 @@
 #include <fwoop_httprequest.h>
 
+#include <cstring>
+
 #include <fwoop_log.h>
 #include <fwoop_tokenizer.h>
 
@@ -7,23 +9,7 @@ namespace fwoop {
 
 std::ostream& operator<<(std::ostream& os, HttpRequest::Method method)
 {
-    switch (method) {
-        case HttpRequest::Method::Get: os << "GET"; break;
-        case HttpRequest::Method::Post: os << "POST"; break;
-        case HttpRequest::Method::Put: os << "PUT"; break;
-        case HttpRequest::Method::Delete: os << "DELETE"; break;
-        case HttpRequest::Method::Undefined: os << "Undefined"; break;
-    }
-    return os;
-}
-
-std::ostream& operator<<(std::ostream& os, HttpRequest::Version version)
-{
-    switch (version) {
-        case HttpRequest::Version::Http1_0: os << "HTTP/1.0"; break;
-        case HttpRequest::Version::Http1_1: os << "HTTP/1.1"; break;
-        case HttpRequest::Version::Undefined: os << "Undefined"; break;
-    }
+    os << HttpRequest::methodToString(method);
     return os;
 }
 
@@ -45,7 +31,7 @@ std::ostream& operator<<(std::ostream& os, const HttpRequest& request)
 HttpRequest::HttpRequest()
 : d_method(Method::Undefined)
 , d_path()
-, d_version(Version::Undefined)
+, d_version(HttpVersion::Value::Undefined)
 , d_canUpgrade(false)
 {
 }
@@ -59,11 +45,15 @@ HttpRequest::Method HttpRequest::stringToMethod(const std::string& methodStr)
     return Method::Undefined;
 }
 
-HttpRequest::Version HttpRequest::stringToVersion(const std::string& versionStr)
+std::string HttpRequest::methodToString(const Method& method)
 {
-    if (versionStr == "HTTP/1.0") return Version::Http1_0;
-    if (versionStr == "HTTP/1.1") return Version::Http1_1;
-    return Version::Undefined;
+    switch (method) {
+        case HttpRequest::Method::Get: return "GET";
+        case HttpRequest::Method::Post: return "POST";
+        case HttpRequest::Method::Put: return "PUT";
+        case HttpRequest::Method::Delete: return "DELETE";
+        default: return "Undefined";
+    }
 }
 
 std::shared_ptr<HttpRequest> HttpRequest::parse(uint8_t *buffer, uint32_t bufferSize, uint32_t& bytesParsed)
@@ -91,7 +81,7 @@ std::shared_ptr<HttpRequest> HttpRequest::parse(uint8_t *buffer, uint32_t buffer
     ++rlItr;
     unsigned int versionEnd = (*rlItr).find('\r');
     std::string versionStr = (*rlItr).substr(0, versionEnd);
-    request->d_version = stringToVersion(versionStr);
+    request->d_version = HttpVersion::fromString(versionStr);
 
     for (++itr; itr != tokr.end(); ++itr) {
         unsigned int split = (*itr).find(':');
@@ -109,6 +99,69 @@ std::shared_ptr<HttpRequest> HttpRequest::parse(uint8_t *buffer, uint32_t buffer
     }
 
     return request;
+}
+
+uint8_t *HttpRequest::encode(uint32_t& length) const
+{
+    static const std::string VERSION = "HTTP/1.1";
+    const std::string method = methodToString(d_method);
+    length = method.length() + 1 + d_path.length() + 1 + VERSION.length() + 2;
+
+    uint32_t contentLength = d_body.length();
+    length += contentLength;
+
+    std::vector<HttpHeaderField_t> headers(d_headers);
+    if (contentLength > 0) {
+        headers.push_back({HttpHeader::ContentLength, std::to_string(contentLength)});
+    }
+
+    for (auto header : headers) {
+        if (std::holds_alternative<HttpHeader>(header.first)) {
+            length += httpHeaderToString(std::get<HttpHeader>(header.first)).length() + 2;
+        } else if (std::holds_alternative<HttpCustomHeader>(header.first)) {
+            length += std::get<HttpCustomHeader>(header).length() + 2;
+        }
+        length += header.second.length() + 2;
+    }
+    length += 2;
+
+    uint8_t *encoding = new uint8_t[length];
+    memset(encoding, 0, length);
+    uint32_t offset = 0;
+    memcpy(encoding + offset, method.data(), method.length());
+    offset += method.length();
+    encoding[offset++] = ' ';
+    memcpy(encoding + offset, d_path.data(), d_path.length());
+    offset += d_path.length();
+    encoding[offset++] = ' ';
+    memcpy(encoding + offset, VERSION.data(), VERSION.length());
+    offset += VERSION.length();
+    encoding[offset++] = '\r';
+    encoding[offset++] = '\n';
+    for (auto header : headers) {
+        if (std::holds_alternative<HttpHeader>(header.first)) {
+            const std::string name = httpHeaderToString(std::get<HttpHeader>(header.first));
+            memcpy(encoding + offset, name.data(), name.length());
+            offset += name.length();
+        } else if (std::holds_alternative<HttpCustomHeader>(header.first)) {
+            const std::string name = std::get<HttpCustomHeader>(header.first);
+            memcpy(encoding + offset, name.data(), name.length());
+            offset += name.length();
+        }
+        encoding[offset++] = ':';
+        encoding[offset++] = ' ';
+        memcpy(encoding + offset, header.second.data(), header.second.length());
+        offset += header.second.length();
+        encoding[offset++] = '\r';
+        encoding[offset++] = '\n';
+    }
+    encoding[offset++] = '\r';
+    encoding[offset++] = '\n';
+
+    memcpy(encoding + offset, d_body.data(), d_body.length());
+    offset += contentLength;
+
+    return encoding;
 }
 
 }
