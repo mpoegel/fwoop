@@ -64,12 +64,6 @@ void HttpResponse::setBody(const std::string& body)
 }
 
 inline
-void HttpResponse::streamFile(const std::string& fileName)
-{
-    d_fileName = fileName;
-}
-
-inline
 const HttpVersion::Value HttpResponse::getVersion() const
 {
     return d_version;

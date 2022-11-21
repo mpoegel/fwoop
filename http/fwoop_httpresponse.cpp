@@ -14,6 +14,17 @@ HttpResponse::HttpResponse()
 {
 }
 
+void HttpResponse::streamFile(const std::string& fileName)
+{
+    d_fileName = fileName;
+    auto ext = FileReader::getExtension(d_fileName);
+    if (ext == "html") {
+        d_headers.push_back({HttpHeader::ContentType, "text/html"});
+    } else {
+        d_headers.push_back({HttpHeader::ContentType, "text/plain"});
+    }
+}
+
 uint8_t *HttpResponse::encode(uint32_t& length) const
 {
     static const std::string VERSION = "HTTP/1.1";
@@ -80,6 +91,7 @@ uint8_t *HttpResponse::encode(uint32_t& length) const
 
     if (nullptr != fileContents) {
         memcpy(encoding + offset, fileContents, contentLength);
+        delete []fileContents;
     } else {
         memcpy(encoding + offset, d_body.data(), d_body.length());
     }

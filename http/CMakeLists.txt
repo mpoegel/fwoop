@@ -9,6 +9,7 @@ add_library(fwoophttp STATIC
     fwoop_httprequest.cpp
     fwoop_httpresponse.cpp
     fwoop_httpserver.cpp
+    fwoop_httpserverevent.cpp
     fwoop_httpsettingsframe.cpp
     fwoop_httpstream.cpp
     fwoop_httpversion.cpp
@@ -29,6 +30,7 @@ install(FILES
     fwoop_httprequest.h
     fwoop_httpresponse.h
     fwoop_httpserver.h
+    fwoop_httpserverevent.h
     fwoop_httpsettingsframe.h
     fwoop_httpstream.h
     fwoop_httpversion.h
@@ -42,6 +44,7 @@ add_executable(fwoophttp_test
     fwoop_httprequest.g.cpp
     fwoop_httpresponse.g.cpp
     fwoop_httpserver.g.cpp
+    fwoop_httpserverevent.g.cpp
     fwoop_httpsettingsframe.g.cpp
 )
 target_include_directories(fwoophttp_test PUBLIC .)

@@ -3,6 +3,7 @@
 #include <fwoop_httprequest.h>
 #include <fwoop_httpresponse.h>
 #include <fwoop_httpserver.h>
+#include <fwoop_httpserverevent.h>
 #include <fwoop_httpheader.h>
 #include <fwoop_httpversion.h>
 
@@ -33,9 +34,16 @@ int main(int argc, char* argv[])
         response.setBody(content);
     };
 
+    fwoop::HttpServerEventHandlerFunc_t eventHandler = [](const fwoop::HttpRequest& request, fwoop::HttpServerEvent& serverEvent) {
+        serverEvent.pushEvent("ping", "hello world");
+        serverEvent.pushEvent("ping", "hello world");
+        serverEvent.pushEvent("pong", "hello everyone");
+    };
+
     fwoop::HttpServer server(port, version);
     server.addRoute("/foo", handler);
-    server.addStaticRoute("/bar", "../basis/testdata/test.txt");
+    server.addStaticRoute("/bar", "examples/example.html");
+    server.addServerEventRoute("/pop", eventHandler);
 
     if (0 != server.serve()) {
         return 1;

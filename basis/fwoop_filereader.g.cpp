@@ -35,3 +35,15 @@ TEST(FileReaderTest, loadFile)
     EXPECT_EQ(11, length);
     EXPECT_STREQ(expected.data(), (char*)contents);
 }
+
+TEST(FileReaderText, getExtension)
+{
+    // GIVEN
+    const std::string filename("../../basis/testdata/test.html");
+
+    // WHEN
+    auto ext = fwoop::FileReader::getExtension(filename);
+
+    // THEN
+    EXPECT_EQ("html", ext);
+}

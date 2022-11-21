@@ -14,6 +14,7 @@ class FileReader {
 
   public:
     class Iterator;
+    static std::string getExtension(const std::string& filename);
 
     explicit FileReader(const std::string& filename);
     ~FileReader();

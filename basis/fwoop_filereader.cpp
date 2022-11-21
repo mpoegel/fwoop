@@ -5,6 +5,15 @@
 
 namespace fwoop {
 
+std::string FileReader::getExtension(const std::string& filename)
+{
+    auto index = filename.rfind(".");
+    if (index == std::string::npos) {
+        return "";
+    }
+    return filename.substr(index + 1, filename.length() - index - 1);
+}
+
 FileReader::FileReader(const std::string& filename)
 : d_filename(filename)
 {

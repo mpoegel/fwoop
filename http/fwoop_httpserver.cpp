@@ -311,9 +311,13 @@ void HttpServer::addStaticRoute(const std::string& route, const std::string& fil
 {
     d_routeMap[route] = [fileName](const fwoop::HttpRequest& request, fwoop::HttpResponse& response) {
         response.setStatus("200 OK");
-        response.addHeader(fwoop::HttpHeader::ContentType, "text/plain");
         response.streamFile(fileName);
     };
+}
+
+void HttpServer::addServerEventRoute(const std::string& route, HttpServerEventHandlerFunc_t func)
+{
+    d_serverEventMap[route] = func;
 }
 
 int HttpServer::handleHttp1Connection(int clientFd) const
@@ -325,8 +329,8 @@ int HttpServer::handleHttp1Connection(int clientFd) const
     std::error_code ec = SocketIO::read(clientFd, buffer, bufferSize, bytesRead);
     if (ec) {
         Log::Error("socket read failed", ec);
-        return -1;
         close(clientFd);
+        return -1;
     }
 
     unsigned int bytesParsed = 0;
@@ -340,9 +344,14 @@ int HttpServer::handleHttp1Connection(int clientFd) const
     Log::Debug("Recieved request: ", *request);
 
     auto routeFunc = d_routeMap.find(request->getPath());
+    auto serverEventFunc = d_serverEventMap.find(request->getPath());
     HttpResponse response;
     if (routeFunc != d_routeMap.end()) {
         routeFunc->second(*request, response);
+    } else if (serverEventFunc != d_serverEventMap.end()) {
+        response.addHeader(HttpHeader::ContentType, "text/event-stream");
+        response.addHeader(HttpHeader::CacheControl, "no-store");
+        response.setStatus("200 OK");
     } else {
         response.setStatus("404 Not Found");
     }
@@ -356,6 +365,11 @@ int HttpServer::handleHttp1Connection(int clientFd) const
         Log::Error("socket write failed, ec=", ec);
         close(clientFd);
         return -1;
+    }
+
+    if (serverEventFunc != d_serverEventMap.end()) {
+        HttpServerEvent serverEvent(clientFd);
+        serverEventFunc->second(*request, serverEvent);
     }
 
     Log::Debug("done");
