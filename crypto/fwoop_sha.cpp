@@ -1,3 +1,5 @@
+#ifndef USE_OPENSSL
+
 #include <fwoop_sha.h>
 
 #include <iostream>
@@ -251,3 +253,5 @@ int SHA::SHA256Context::SHA256ProcessMessageBlock()
 }
 
 }
+
+#endif

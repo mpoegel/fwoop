@@ -6,7 +6,10 @@ Requires `gtest` to build unit tests.
 ```sh
 mkdir build
 cd build
-cmake ../
+# Build with OpenSSL
+cmake -DUSE_OPENSSL=1 ..
+# Or build with fwoop crypto
+cmake -DUSE_OPENSSL=0 ..
 cmake --build .
 ```
 
