@@ -6,6 +6,7 @@
 #include <fwoop_httpserverevent.h>
 #include <fwoop_httpheader.h>
 #include <fwoop_httpversion.h>
+#include <fwoop_openmetrics.h>
 
 int main(int argc, char* argv[])
 {
@@ -26,12 +27,19 @@ int main(int argc, char* argv[])
         std::cerr << "bad version: " << argv[2] << '\n';
     }
 
-    fwoop::HttpHandlerFunc_t handler = [](const fwoop::HttpRequest& request, fwoop::HttpResponse& response) {
+    fwoop::OpenMetricsPublisher metrics;
+    metrics.start();
+    auto counter = metrics.newCounter("requests", "hits");
+    counter->addLabel({"path", "/foo"});
+    counter->addLabel({"response", "200"});
+
+    fwoop::HttpHandlerFunc_t handler = [&counter](const fwoop::HttpRequest& request, fwoop::HttpResponse& response) {
         response.setStatus("200 OK");
         response.addHeader(fwoop::HttpHeader::ContentType, "text/plain");
 
         const std::string content = "welcome, world!";
         response.setBody(content);
+        counter->increment();
     };
 
     fwoop::HttpServerEventHandlerFunc_t eventHandler = [](const fwoop::HttpRequest& request, fwoop::HttpServerEvent& serverEvent) {
