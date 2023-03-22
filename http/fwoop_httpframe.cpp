@@ -9,63 +9,64 @@
 
 namespace fwoop {
 
-HttpFrame::Type HttpFrame::byteToType(uint8_t byte) {
+HttpFrame::Type HttpFrame::byteToType(uint8_t byte)
+{
     switch (byte) {
-        case 0:
-            return Type::Data;
-        case 1:
-            return Type::Header;
-        case 2:
-            return Type::Priority;
-        case 3:
-            return Type::ResetStream;
-        case 4:
-            return Type::Settings;
-        case 5:
-            return Type::PushPromise;
-        case 6:
-            return Type::Ping;
-        case 7:
-            return Type::GoAway;
-        case 8:
-            return Type::WindowUpdate;
-        case 9:
-            return Type::Continuation;
-        default:
-            std::cerr << "unknown frame type: " << (int)byte << '\n';
-            return Type::Unknown;
+    case 0:
+        return Type::Data;
+    case 1:
+        return Type::Header;
+    case 2:
+        return Type::Priority;
+    case 3:
+        return Type::ResetStream;
+    case 4:
+        return Type::Settings;
+    case 5:
+        return Type::PushPromise;
+    case 6:
+        return Type::Ping;
+    case 7:
+        return Type::GoAway;
+    case 8:
+        return Type::WindowUpdate;
+    case 9:
+        return Type::Continuation;
+    default:
+        std::cerr << "unknown frame type: " << (int)byte << '\n';
+        return Type::Unknown;
     }
 }
 
 std::string HttpFrame::typeToString(Type type)
 {
     switch (type) {
-        case Type::Data:
-            return "Data";
-        case Type::Header:
-            return "Header";
-        case Type::Priority:
-            return "Priority";
-        case Type::ResetStream:
-            return "ResetStream";
-        case Type::Settings:
-            return "Settings";
-        case Type::PushPromise:
-            return "PushPromise";
-        case Type::Ping:
-            return "Ping";
-        case Type::GoAway:
-            return "GoAway";
-        case Type::WindowUpdate:
-            return "WindowUpdate";
-        case Type::Continuation:
-            return "Continuation";
-        default:
-            return "Unknown";
+    case Type::Data:
+        return "Data";
+    case Type::Header:
+        return "Header";
+    case Type::Priority:
+        return "Priority";
+    case Type::ResetStream:
+        return "ResetStream";
+    case Type::Settings:
+        return "Settings";
+    case Type::PushPromise:
+        return "PushPromise";
+    case Type::Ping:
+        return "Ping";
+    case Type::GoAway:
+        return "GoAway";
+    case Type::WindowUpdate:
+        return "WindowUpdate";
+    case Type::Continuation:
+        return "Continuation";
+    default:
+        return "Unknown";
     }
 }
 
-std::unique_ptr<HttpFrame> HttpFrame::parse(uint8_t *buffer, unsigned int bufferSize, unsigned int& bytesParsed)
+std::unique_ptr<HttpFrame> HttpFrame::parse(uint8_t *buffer, unsigned int bufferSize, unsigned int &bytesParsed)
 {
     bytesParsed = 0;
 
@@ -83,34 +84,28 @@ std::unique_ptr<HttpFrame> HttpFrame::parse(uint8_t *buffer, unsigned int buffer
     auto type = HttpFrame::byteToType(buffer[3]);
     uint8_t flags = buffer[4];
     switch (type) {
-        case Type::Header:
-            return std::make_unique<HttpHeadersFrame>(length, flags, buffer + 5, buffer + 9);
-        case Type::Settings:
-            return std::make_unique<HttpSettingsFrame>(length, flags, buffer + 5, buffer + 9);
-        case Type::GoAway:
-            return std::make_unique<HttpGoAwayFrame>(length, flags, buffer + 5, buffer + 9);
-        case Type::WindowUpdate:
-            return std::make_unique<HttpWindowUpdateFrame>(length, flags, buffer + 5, buffer + 9);
-        default:
-            return std::make_unique<HttpFrame>(length, type, flags, buffer + 5, buffer + 9);
+    case Type::Header:
+        return std::make_unique<HttpHeadersFrame>(length, flags, buffer + 5, buffer + 9);
+    case Type::Settings:
+        return std::make_unique<HttpSettingsFrame>(length, flags, buffer + 5, buffer + 9);
+    case Type::GoAway:
+        return std::make_unique<HttpGoAwayFrame>(length, flags, buffer + 5, buffer + 9);
+    case Type::WindowUpdate:
+        return std::make_unique<HttpWindowUpdateFrame>(length, flags, buffer + 5, buffer + 9);
+    default:
+        return std::make_unique<HttpFrame>(length, type, flags, buffer + 5, buffer + 9);
     }
 }
 
 HttpFrame::HttpFrame(unsigned int length, Type type, uint8_t flags, uint8_t *streamID, uint8_t *payload)
-: d_length(length)
-, d_type(type)
-, d_flags(flags)
+    : d_length(length), d_type(type), d_flags(flags)
 {
     d_payload = new uint8_t[d_length];
     memcpy(d_payload, payload, d_length);
     memcpy(d_streamID, streamID, 4);
 }
 
-HttpFrame::HttpFrame(Type type)
-: d_length(0)
-, d_type(type)
-, d_flags(0)
-, d_payload(nullptr)
+HttpFrame::HttpFrame(Type type) : d_length(0), d_type(type), d_flags(0), d_payload(nullptr)
 {
     memset(d_streamID, 0, 4);
 }
@@ -133,7 +128,8 @@ void HttpFrame::printHex() const
 
 void HttpFrame::printHeader() const
 {
-    std::cout << "length=" << d_length << " type=" << typeToString(d_type) << " flags=" << (int)d_flags << " streamID=" << getStreamID() << "\n";
+    std::cout << "length=" << d_length << " type=" << typeToString(d_type) << " flags=" << (int)d_flags
+              << " streamID=" << getStreamID() << "\n";
 }
 
 void HttpFrame::encodeHeader(uint8_t *out) const
@@ -148,4 +144,4 @@ void HttpFrame::encodeHeader(uint8_t *out) const
     memcpy(out + 5, d_streamID, 4);
 }
 
-}
+} // namespace fwoop

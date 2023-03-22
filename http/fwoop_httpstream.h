@@ -9,7 +9,7 @@ class HttpStream {
     static uint32_t s_nextID;
 
     uint32_t d_id;
-    int      d_fd;
+    int d_fd;
 
   public:
     explicit HttpStream(int clientFd);
@@ -18,4 +18,4 @@ class HttpStream {
     int close();
 };
 
-}
+} // namespace fwoop

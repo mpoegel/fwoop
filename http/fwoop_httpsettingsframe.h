@@ -9,19 +9,19 @@ namespace fwoop {
 class HttpSettingsFrame : public HttpFrame {
   private:
     enum Parameter {
-        HeaderTableSize      = 1,
-        EnablePush           = 2,
+        HeaderTableSize = 1,
+        EnablePush = 2,
         MaxConcurrentStreams = 3,
-        InitialWindowSize    = 4,
-        MaxWindowSize        = 5,
-        MaxFrameSize         = 6,
-        MaxHeaderListSize    = 7,
+        InitialWindowSize = 4,
+        MaxWindowSize = 5,
+        MaxFrameSize = 6,
+        MaxHeaderListSize = 7,
     };
 
     static const unsigned int PARAMETER_SIZE = 6;
 
     std::optional<uint32_t> d_headerTableSize;
-    std::optional<bool>     d_enablePush;
+    std::optional<bool> d_enablePush;
     std::optional<uint32_t> d_maxConcurrentStreams;
     std::optional<uint32_t> d_initialWindowSize;
     std::optional<uint32_t> d_maxWindowSize;
@@ -52,19 +52,11 @@ class HttpSettingsFrame : public HttpFrame {
     uint8_t *encode() const override;
 };
 
-inline
-HttpSettingsFrame::~HttpSettingsFrame()
-{
-}
+inline HttpSettingsFrame::~HttpSettingsFrame() {}
 
-inline
-void HttpSettingsFrame::setAck()
-{
-    d_flags |= 1;
-}
+inline void HttpSettingsFrame::setAck() { d_flags |= 1; }
 
-inline
-void HttpSettingsFrame::setHeaderTableSize(uint32_t headerTableSize)
+inline void HttpSettingsFrame::setHeaderTableSize(uint32_t headerTableSize)
 {
     if (!d_headerTableSize.has_value()) {
         d_length += 6;
@@ -72,8 +64,7 @@ void HttpSettingsFrame::setHeaderTableSize(uint32_t headerTableSize)
     d_headerTableSize.emplace(headerTableSize);
 }
 
-inline
-void HttpSettingsFrame::setMaxFrameSize(uint32_t maxFrameSize)
+inline void HttpSettingsFrame::setMaxFrameSize(uint32_t maxFrameSize)
 {
     if (!d_maxFrameSize.has_value()) {
         d_length += 6;
@@ -81,41 +72,16 @@ void HttpSettingsFrame::setMaxFrameSize(uint32_t maxFrameSize)
     d_maxFrameSize.emplace(maxFrameSize);
 }
 
-inline
-std::optional<uint32_t> HttpSettingsFrame::headerTableSize() const
-{
-    return d_headerTableSize;
-}
+inline std::optional<uint32_t> HttpSettingsFrame::headerTableSize() const { return d_headerTableSize; }
 
-inline
-bool HttpSettingsFrame::enablePush() const
-{
-    return d_enablePush.has_value() ? d_enablePush.value() : true;
-}
+inline bool HttpSettingsFrame::enablePush() const { return d_enablePush.has_value() ? d_enablePush.value() : true; }
 
-inline
-std::optional<uint32_t> HttpSettingsFrame::maxConcurrentStreams() const
-{
-    return d_maxConcurrentStreams;
-}
+inline std::optional<uint32_t> HttpSettingsFrame::maxConcurrentStreams() const { return d_maxConcurrentStreams; }
 
-inline
-std::optional<uint32_t> HttpSettingsFrame::initialWindowSize() const
-{
-    return d_initialWindowSize;
-}
+inline std::optional<uint32_t> HttpSettingsFrame::initialWindowSize() const { return d_initialWindowSize; }
 
-inline
-std::optional<uint32_t> HttpSettingsFrame::maxFrameSize() const
-{
-    return d_maxFrameSize;
-}
+inline std::optional<uint32_t> HttpSettingsFrame::maxFrameSize() const { return d_maxFrameSize; }
 
-inline
-std::optional<uint32_t> HttpSettingsFrame::maxHeaderListSize() const
-{
-    return d_maxHeaderListSize;
-}
+inline std::optional<uint32_t> HttpSettingsFrame::maxHeaderListSize() const { return d_maxHeaderListSize; }
 
-
-}
+} // namespace fwoop

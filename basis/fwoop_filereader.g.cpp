@@ -33,7 +33,7 @@ TEST(FileReaderTest, loadFile)
 
     // THEN
     EXPECT_EQ(11, length);
-    EXPECT_STREQ(expected.data(), (char*)contents);
+    EXPECT_STREQ(expected.data(), (char *)contents);
 }
 
 TEST(FileReaderText, getExtension)

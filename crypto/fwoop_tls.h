@@ -14,17 +14,17 @@ namespace fwoop {
 
 class TLS {
 
-private:
+  private:
     std::string d_certificatePath;
     std::string d_privateKeyPath;
 
 #ifdef USE_OPENSSL
     std::unique_ptr<SSL_CTX> d_ctx;
-    std::unique_ptr<BIO>     d_bio;
+    std::unique_ptr<BIO> d_bio;
 #endif
 
-public:
-    TLS(const std::string& certPath, const std::string& keyPath);
+  public:
+    TLS(const std::string &certPath, const std::string &keyPath);
     ~TLS();
 
     std::error_code handshake();
@@ -33,4 +33,4 @@ public:
     std::error_code read();
 };
 
-}
+} // namespace fwoop

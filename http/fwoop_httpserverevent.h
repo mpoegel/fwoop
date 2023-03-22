@@ -5,14 +5,14 @@
 namespace fwoop {
 
 class HttpServerEvent {
-    private:
+  private:
     int d_fd;
 
-    public:
+  public:
     explicit HttpServerEvent(int fd);
     ~HttpServerEvent();
 
-    bool pushEvent(const std::string& event, const std::string& data);
+    bool pushEvent(const std::string &event, const std::string &data);
 };
 
-}
+} // namespace fwoop

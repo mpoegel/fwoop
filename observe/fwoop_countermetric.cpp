@@ -6,20 +6,16 @@
 
 namespace fwoop {
 
-CounterMetric::CounterMetric(const std::string& name, const std::string& unit, const std::string& summary)
-: Metric(name, unit, summary)
-, d_count(0)
-{}
-
-CounterMetric::~CounterMetric()
-{}
-
-void CounterMetric::increment()
+CounterMetric::CounterMetric(const std::string &name, const std::string &unit, const std::string &summary)
+    : Metric(name, unit, summary), d_count(0)
 {
-    d_count++;
 }
 
-uint8_t *CounterMetric::encode(Format fmt, unsigned int& length) const
+CounterMetric::~CounterMetric() {}
+
+void CounterMetric::increment() { d_count++; }
+
+uint8_t *CounterMetric::encode(Format fmt, unsigned int &length) const
 {
     static const char TYPE[] = "# TYPE ";
     static const char TYPENAME[] = "counter";

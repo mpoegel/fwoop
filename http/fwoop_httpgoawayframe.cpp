@@ -5,17 +5,12 @@
 namespace fwoop {
 
 HttpGoAwayFrame::HttpGoAwayFrame(unsigned int length, uint8_t flags, uint8_t *streamID, uint8_t *payload)
-: HttpFrame(length, HttpFrame::Type::GoAway, flags, streamID, payload)
-, d_lastStreamID(0)
-, d_errorCode(0)
+    : HttpFrame(length, HttpFrame::Type::GoAway, flags, streamID, payload), d_lastStreamID(0), d_errorCode(0)
 {
     d_length = 8;
 }
 
-HttpGoAwayFrame::HttpGoAwayFrame()
-: HttpFrame(HttpFrame::Type::GoAway)
-, d_lastStreamID(0)
-, d_errorCode(0)
+HttpGoAwayFrame::HttpGoAwayFrame() : HttpFrame(HttpFrame::Type::GoAway), d_lastStreamID(0), d_errorCode(0)
 {
     d_length = 8;
 }
@@ -40,4 +35,4 @@ uint8_t *HttpGoAwayFrame::encode() const
     return encoding;
 }
 
-}
+} // namespace fwoop

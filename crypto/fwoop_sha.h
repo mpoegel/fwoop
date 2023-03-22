@@ -11,10 +11,10 @@ class SHA {
 
   private:
     static const uint32_t SHA256MessageBlockSize = 64;
-    static const uint32_t SHA256_H0[SHA256HashSize/4];
+    static const uint32_t SHA256_H0[SHA256HashSize / 4];
 
     struct SHA256Context {
-        uint32_t IntermediateHash[SHA256HashSize/4];
+        uint32_t IntermediateHash[SHA256HashSize / 4];
 
         uint32_t LengthHigh;
         uint32_t LengthLow;
@@ -40,7 +40,7 @@ class SHA {
 
   public:
     static int h256(const uint8_t *msg, uint32_t length, uint8_t *digest);
-    static int h256(const std::string& msg, uint8_t *digest);
+    static int h256(const std::string &msg, uint8_t *digest);
 };
 
-}
+} // namespace fwoop

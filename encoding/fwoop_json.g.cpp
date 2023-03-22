@@ -6,7 +6,7 @@
 TEST(JSON, basicString)
 {
     // GIVEN
-    uint8_t *input = (uint8_t*)"{ \"foo\": \"bar\" }";
+    uint8_t *input = (uint8_t *)"{ \"foo\": \"bar\" }";
     uint32_t length = 16;
     uint32_t bytesParsed;
 
@@ -23,7 +23,7 @@ TEST(JSON, basicString)
 TEST(JSON, basicTypes)
 {
     // GIVEN
-    uint8_t *input = (uint8_t*)"{ \"foo\": \"bar\", \"total\" : 24 , \"chance\": 0.30, \"winner\": true }";
+    uint8_t *input = (uint8_t *)"{ \"foo\": \"bar\", \"total\" : 24 , \"chance\": 0.30, \"winner\": true }";
     uint32_t length = 63;
     uint32_t bytesParsed;
 
@@ -53,7 +53,7 @@ TEST(JSON, basicTypes)
 TEST(JSON, array)
 {
     // GIVEN
-    uint8_t *input = (uint8_t*)"{ \"foo\": [ \"bar\", \"pop\", \"fizz\"] }";
+    uint8_t *input = (uint8_t *)"{ \"foo\": [ \"bar\", \"pop\", \"fizz\"] }";
     uint32_t length = 34;
     uint32_t bytesParsed;
 
@@ -72,7 +72,7 @@ TEST(JSON, array)
 TEST(JSON, nestedObject)
 {
     // GIVEN
-    uint8_t *input = (uint8_t*)"{ \"foo\": {\"bar\": \"pop\"} }";
+    uint8_t *input = (uint8_t *)"{ \"foo\": {\"bar\": \"pop\"} }";
     uint32_t length = 25;
     uint32_t bytesParsed;
 

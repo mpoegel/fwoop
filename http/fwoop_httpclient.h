@@ -9,18 +9,18 @@
 namespace fwoop {
 
 class HttpClient {
-    private:
+  private:
     std::string d_host;
-    int         d_port;
-    int         d_conn;
+    int d_port;
+    int d_conn;
 
     void reset();
 
-    public:
-    HttpClient(const std::string& host, int port);
+  public:
+    HttpClient(const std::string &host, int port);
     ~HttpClient();
 
-    std::error_code makeReqest(const HttpRequest& request, std::shared_ptr<HttpResponse>& response);
+    std::error_code makeReqest(const HttpRequest &request, std::shared_ptr<HttpResponse> &response);
 };
 
-}
+} // namespace fwoop

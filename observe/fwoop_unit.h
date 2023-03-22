@@ -5,17 +5,17 @@
 namespace fwoop {
 
 class Unit {
-    public:
+  public:
     ~Unit() = default;
 
     virtual std::string toString() const = 0;
 
-    protected:
+  protected:
     Unit() = default;
 };
 
 class TimeUnit : public Unit {
-    public:
+  public:
     enum Time {
         Nanosecond,
         Microsecond,
@@ -29,10 +29,10 @@ class TimeUnit : public Unit {
         Year,
     };
 
-    private:
+  private:
     Time d_time;
 
-    public:
+  public:
     TimeUnit(Time t);
 
     std::string toString() const;

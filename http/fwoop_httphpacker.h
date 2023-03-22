@@ -24,18 +24,19 @@ class HttpHPacker {
     } DynamicTable_t;
 
     DynamicTable_t d_dynamicTable;
-    u_int32_t      d_maxTableSize;
+    u_int32_t d_maxTableSize;
 
-    uint32_t getEncodedLength(DynamicTable_t& dynamicTable, HttpHeaderVariant_t header, const std::string& headerValue) const;
-    uint32_t encode(uint8_t *out, HttpHeaderVariant_t header, const std::string& headerValue);
+    uint32_t getEncodedLength(DynamicTable_t &dynamicTable, HttpHeaderVariant_t header,
+                              const std::string &headerValue) const;
+    uint32_t encode(uint8_t *out, HttpHeaderVariant_t header, const std::string &headerValue);
 
   public:
     HttpHPacker();
 
-    uint32_t getEncodedLength(const std::vector<HttpHeaderField_t>& headerFields) const;
+    uint32_t getEncodedLength(const std::vector<HttpHeaderField_t> &headerFields) const;
 
-    uint32_t encodeLength(const std::vector<HttpHeaderField_t>& headerFields);
-    uint8_t *encode(const std::vector<HttpHeaderField_t>& headerFields);
+    uint32_t encodeLength(const std::vector<HttpHeaderField_t> &headerFields);
+    uint8_t *encode(const std::vector<HttpHeaderField_t> &headerFields);
 };
 
-}
+} // namespace fwoop

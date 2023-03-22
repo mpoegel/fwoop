@@ -8,13 +8,9 @@
 
 namespace fwoop {
 
-HttpResponse::HttpResponse()
-: d_status()
-, d_body()
-{
-}
+HttpResponse::HttpResponse() : d_status(), d_body() {}
 
-void HttpResponse::streamFile(const std::string& fileName)
+void HttpResponse::streamFile(const std::string &fileName)
 {
     d_fileName = fileName;
     auto ext = FileReader::getExtension(d_fileName);
@@ -25,12 +21,12 @@ void HttpResponse::streamFile(const std::string& fileName)
     }
 }
 
-uint8_t *HttpResponse::encode(uint32_t& length) const
+uint8_t *HttpResponse::encode(uint32_t &length) const
 {
     static const std::string VERSION = "HTTP/1.1";
     length = VERSION.length() + 1 + d_status.length() + 2;
 
-    uint8_t* fileContents = nullptr;
+    uint8_t *fileContents = nullptr;
     uint32_t contentLength;
     if (d_fileName.length() > 0) {
         FileReader reader(d_fileName);
@@ -91,7 +87,7 @@ uint8_t *HttpResponse::encode(uint32_t& length) const
 
     if (nullptr != fileContents) {
         memcpy(encoding + offset, fileContents, contentLength);
-        delete []fileContents;
+        delete[] fileContents;
     } else {
         memcpy(encoding + offset, d_body.data(), d_body.length());
     }
@@ -99,13 +95,13 @@ uint8_t *HttpResponse::encode(uint32_t& length) const
     return encoding;
 }
 
-std::shared_ptr<HttpResponse> HttpResponse::parse(uint8_t *buffer, uint32_t bufferSize, uint32_t& bytesParsed)
+std::shared_ptr<HttpResponse> HttpResponse::parse(uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesParsed)
 {
     auto resp = std::make_shared<HttpResponse>();
 
     bytesParsed = 0;
 
-    std::string payload((char*)buffer, bufferSize);
+    std::string payload((char *)buffer, bufferSize);
     unsigned int end = payload.rfind("\r\n\r\n");
     if (end == std::string::npos) {
         return nullptr;
@@ -148,14 +144,14 @@ std::shared_ptr<HttpResponse> HttpResponse::parse(uint8_t *buffer, uint32_t buff
 
     if (bytesParsed + contentLength > bufferSize) {
         Log::Warn("incomplete response body, missing ", bytesParsed + contentLength - bufferSize, " bytes");
-        contentLength = std::min(bufferSize - bytesParsed, contentLength); 
+        contentLength = std::min(bufferSize - bytesParsed, contentLength);
     }
-    resp->d_body = std::string((char*)buffer + bytesParsed, contentLength);
+    resp->d_body = std::string((char *)buffer + bytesParsed, contentLength);
 
     return resp;
 }
 
-std::ostream& operator<<(std::ostream& os, const HttpResponse& response)
+std::ostream &operator<<(std::ostream &os, const HttpResponse &response)
 {
     os << "[ version=" << response.getVersion() << " status=" << response.getStatus() << " headers=[ ";
     auto headers = response.getHeaders();
@@ -169,4 +165,4 @@ std::ostream& operator<<(std::ostream& os, const HttpResponse& response)
     return os;
 }
 
-}
+} // namespace fwoop

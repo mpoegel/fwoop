@@ -2,21 +2,11 @@
 
 namespace fwoop {
 
-Tokenizer::Tokenizer(const std::string &parseString, char delim)
-: d_parseString(parseString)
-, d_delim(delim)
-{
-}
+Tokenizer::Tokenizer(const std::string &parseString, char delim) : d_parseString(parseString), d_delim(delim) {}
 
-Tokenizer::Iterator Tokenizer::begin()
-{
-    return Iterator(*this, false);
-}
+Tokenizer::Iterator Tokenizer::begin() { return Iterator(*this, false); }
 
-Tokenizer::Iterator Tokenizer::end()
-{
-    return Iterator(*this, true);
-}
+Tokenizer::Iterator Tokenizer::end() { return Iterator(*this, true); }
 
 bool Tokenizer::operator==(const Tokenizer &rhs) const
 {
@@ -24,10 +14,7 @@ bool Tokenizer::operator==(const Tokenizer &rhs) const
 }
 
 Tokenizer::Iterator::Iterator(Tokenizer &tokenizer, bool isEnd)
-: d_tokenizer(tokenizer)
-, d_isEnd(isEnd)
-, d_lastLoc(0)
-, d_loc(0)
+    : d_tokenizer(tokenizer), d_isEnd(isEnd), d_lastLoc(0), d_loc(0)
 {
     if (d_isEnd) {
         d_loc = std::string::npos;
@@ -56,4 +43,4 @@ bool Tokenizer::Iterator::operator==(const Iterator &rhs) const
     return d_tokenizer == rhs.d_tokenizer && d_isEnd == rhs.d_isEnd && d_loc == rhs.d_loc;
 }
 
-}
+} // namespace fwoop

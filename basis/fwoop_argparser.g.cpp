@@ -5,7 +5,7 @@
 TEST(ArgParser, parsePositionalArgs)
 {
     // GIVEN
-    const char* argv[] = {"foo", "3"};
+    const char *argv[] = {"foo", "3"};
     int argc = 2;
     fwoop::ArgParser parser(argv, argc);
 
@@ -25,7 +25,7 @@ TEST(ArgParser, parsePositionalArgs)
 TEST(ArgParser, parseNamedArgs)
 {
     // GIVEN
-    const char* argv[] = {"-arg1", "fizz", "-a", "9000", "-b"};
+    const char *argv[] = {"-arg1", "fizz", "-a", "9000", "-b"};
     int argc = 5;
     fwoop::ArgParser parser(argv, argc);
 

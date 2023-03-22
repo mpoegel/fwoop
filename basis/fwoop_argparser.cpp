@@ -6,11 +6,7 @@ namespace fwoop {
 
 const ArgParserErrCategory ArgParserError{};
 
-ArgParser::ArgParser(const char** argv, int argc)
-: d_argv(argv)
-, d_argc(argc)
-{
-}
+ArgParser::ArgParser(const char **argv, int argc) : d_argv(argv), d_argc(argc) {}
 
 std::error_code ArgParser::parse()
 {
@@ -89,25 +85,22 @@ std::error_code ArgParser::parse()
     return std::error_code();
 }
 
-const char* ArgParserErrCategory::name() const noexcept
-{
-    return "ArgParser";
-}
+const char *ArgParserErrCategory::name() const noexcept { return "ArgParser"; }
 
 std::string ArgParserErrCategory::message(int ev) const
 {
     switch (static_cast<ArgParser::ParseErr>(ev)) {
-        case ArgParser::ParseErr::InvalidType:
-            return "invalid type";
-        case ArgParser::ParseErr::ArgNotFound:
-            return "argument not found";
-        case ArgParser::ParseErr::TooManyPositionalArgs:
-            return "too many positional arguments";
-        case ArgParser::ParseErr::PositionalBoolNotAllowed:
-            return "positional arguments cannot be boolean";
-        default:
-            return "unknown parse error";
+    case ArgParser::ParseErr::InvalidType:
+        return "invalid type";
+    case ArgParser::ParseErr::ArgNotFound:
+        return "argument not found";
+    case ArgParser::ParseErr::TooManyPositionalArgs:
+        return "too many positional arguments";
+    case ArgParser::ParseErr::PositionalBoolNotAllowed:
+        return "positional arguments cannot be boolean";
+    default:
+        return "unknown parse error";
     }
 }
 
-}
+} // namespace fwoop

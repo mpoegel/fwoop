@@ -68,13 +68,10 @@ std::unordered_map<std::string, uint8_t> HttpHPacker::s_staticTable = {
     {"www-authenticate", 61},
 };
 
-HttpHPacker::HttpHPacker()
-: d_maxTableSize(4096)
-{
-    d_dynamicTable.size = 0;
-}
+HttpHPacker::HttpHPacker() : d_maxTableSize(4096) { d_dynamicTable.size = 0; }
 
-uint32_t HttpHPacker::getEncodedLength(DynamicTable_t& dynamicTable, HttpHeaderVariant_t header, const std::string& headerValue) const
+uint32_t HttpHPacker::getEncodedLength(DynamicTable_t &dynamicTable, HttpHeaderVariant_t header,
+                                       const std::string &headerValue) const
 {
     std::string headerStr;
     if (std::holds_alternative<HttpHeader>(header)) {
@@ -107,7 +104,7 @@ uint32_t HttpHPacker::getEncodedLength(DynamicTable_t& dynamicTable, HttpHeaderV
     return 1 + 1 + headerStr.length() + 1 + headerValue.length();
 }
 
-uint32_t HttpHPacker::encodeLength(const std::vector<HttpHeaderField_t>& headerFields)
+uint32_t HttpHPacker::encodeLength(const std::vector<HttpHeaderField_t> &headerFields)
 {
     uint32_t len = 0;
 
@@ -117,7 +114,7 @@ uint32_t HttpHPacker::encodeLength(const std::vector<HttpHeaderField_t>& headerF
     return len;
 }
 
-uint32_t HttpHPacker::getEncodedLength(const std::vector<HttpHeaderField_t>& headerFields) const
+uint32_t HttpHPacker::getEncodedLength(const std::vector<HttpHeaderField_t> &headerFields) const
 {
     uint32_t len = 0;
     DynamicTable_t dynamicTable = d_dynamicTable;
@@ -128,7 +125,7 @@ uint32_t HttpHPacker::getEncodedLength(const std::vector<HttpHeaderField_t>& hea
     return len;
 }
 
-uint32_t HttpHPacker::encode(uint8_t *out, HttpHeaderVariant_t header, const std::string& headerValue)
+uint32_t HttpHPacker::encode(uint8_t *out, HttpHeaderVariant_t header, const std::string &headerValue)
 {
     const static uint8_t incrementalIndexMask = 1 << 6;
     const static uint8_t indexedMask = 1 << 7;
@@ -187,7 +184,7 @@ uint32_t HttpHPacker::encode(uint8_t *out, HttpHeaderVariant_t header, const std
     return 1 + 1 + headerStr.length() + 1 + headerValue.length();
 }
 
-u_int8_t *HttpHPacker::encode(const std::vector<HttpHeaderField_t>& headerFields)
+u_int8_t *HttpHPacker::encode(const std::vector<HttpHeaderField_t> &headerFields)
 {
     uint32_t totalLen = getEncodedLength(headerFields);
     uint8_t *encoding = new u_int8_t[totalLen];
@@ -201,4 +198,4 @@ u_int8_t *HttpHPacker::encode(const std::vector<HttpHeaderField_t>& headerFields
     return encoding;
 }
 
-}
+} // namespace fwoop

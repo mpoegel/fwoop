@@ -7,7 +7,7 @@ namespace fwoop {
 class Tokenizer {
   private:
     std::string d_parseString;
-    char        d_delim;
+    char d_delim;
 
   public:
     class Iterator;
@@ -39,20 +39,10 @@ class Tokenizer::Iterator {
     bool operator!=(const Iterator &rhs) const;
 };
 
-inline
-Tokenizer::~Tokenizer()
-{
-}
+inline Tokenizer::~Tokenizer() {}
 
-inline
-Tokenizer::Iterator::~Iterator()
-{
-}
+inline Tokenizer::Iterator::~Iterator() {}
 
-inline
-bool Tokenizer::Iterator::operator!=(const Iterator &rhs) const
-{
-    return !(*this == rhs);
-}
+inline bool Tokenizer::Iterator::operator!=(const Iterator &rhs) const { return !(*this == rhs); }
 
-}
+} // namespace fwoop

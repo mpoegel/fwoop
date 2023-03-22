@@ -1,11 +1,10 @@
 #include <fwoop_template.h>
 
-#include <fwoop_log.h>
 #include <cstring>
+#include <fwoop_log.h>
 #include <string>
 
-namespace fwoop
-{
+namespace fwoop {
 
 namespace {
 
@@ -22,9 +21,9 @@ long unsigned int findWord(uint8_t *input, unsigned int inputLength, const char 
     return std::string::npos;
 }
 
-}
+} // namespace
 
-std::ostream& operator<<(std::ostream& os, const Template::Variable_t& var)
+std::ostream &operator<<(std::ostream &os, const Template::Variable_t &var)
 {
     if (std::holds_alternative<std::string>(var)) {
         os << std::get<std::string>(var);
@@ -38,19 +37,15 @@ std::ostream& operator<<(std::ostream& os, const Template::Variable_t& var)
     return os;
 }
 
-Template::Template(uint8_t *bytes, unsigned int bytesLength)
-: d_length(bytesLength)
+Template::Template(uint8_t *bytes, unsigned int bytesLength) : d_length(bytesLength)
 {
     d_bytes = new uint8_t[bytesLength];
     memcpy(d_bytes, bytes, bytesLength);
 }
 
-Template::~Template()
-{
-    delete[] d_bytes;
-}
+Template::~Template() { delete[] d_bytes; }
 
-Template::TemplateOperator Template::parseOperator(unsigned int index, unsigned int& bytesParsed)
+Template::TemplateOperator Template::parseOperator(unsigned int index, unsigned int &bytesParsed)
 {
     static const char *LESS_EQUAL = "<=";
     static const char *EQUAL = "==";
@@ -83,14 +78,14 @@ Template::TemplateOperator Template::parseOperator(unsigned int index, unsigned 
     return TemplateOperator::Undefined;
 }
 
-Template::Variable_t Template::parseVariable(unsigned int index, const Context_t& context, unsigned int& bytesParsed)
+Template::Variable_t Template::parseVariable(unsigned int index, const Context_t &context, unsigned int &bytesParsed)
 {
     for (auto itr = context.begin(); itr != context.end(); itr++) {
         // first check space requirement for variable name
         if (d_length - index < itr->first.length()) {
             continue;
         }
-        std::string guess = std::string((char*)(d_bytes + index), itr->first.length());
+        std::string guess = std::string((char *)(d_bytes + index), itr->first.length());
         if (guess == itr->first) {
             bytesParsed = itr->first.length();
             return itr->second;
@@ -100,17 +95,15 @@ Template::Variable_t Template::parseVariable(unsigned int index, const Context_t
     return Variable_t();
 }
 
-uint8_t* Template::parseVariable(unsigned int     index,
-                                 const Context_t& context,
-                                 unsigned int&    bytesParsed,
-                                 unsigned int&    outLength)
+uint8_t *Template::parseVariable(unsigned int index, const Context_t &context, unsigned int &bytesParsed,
+                                 unsigned int &outLength)
 {
     for (auto itr = context.begin(); itr != context.end(); itr++) {
         // first check space requirement for variable name
         if (d_length - index < itr->first.length()) {
             continue;
         }
-        std::string guess = std::string((char*)(d_bytes + index), itr->first.length());
+        std::string guess = std::string((char *)(d_bytes + index), itr->first.length());
         if (guess == itr->first) {
             std::string val;
             if (std::holds_alternative<int>(itr->second)) {
@@ -135,29 +128,28 @@ uint8_t* Template::parseVariable(unsigned int     index,
     return nullptr;
 }
 
-Template::Variable_t Template::parseConstant(unsigned int index, unsigned int& bytesParsed)
+Template::Variable_t Template::parseConstant(unsigned int index, unsigned int &bytesParsed)
 {
     Variable_t result;
     unsigned int tmpIndex = index;
-    while (!isWhitespace(tmpIndex)) tmpIndex++;
+    while (!isWhitespace(tmpIndex))
+        tmpIndex++;
     unsigned int length = tmpIndex - index;
     if (0 == length) {
         return result;
     }
-    std::string constant((char*)d_bytes + index, length);
+    std::string constant((char *)d_bytes + index, length);
     result = constant;
     return result;
 }
 
-uint8_t* Template::parseConditional(unsigned int     index,
-                                    const Context_t& context,
-                                    unsigned int&    bytesParsed,
-                                    unsigned int&    outLength)
+uint8_t *Template::parseConditional(unsigned int index, const Context_t &context, unsigned int &bytesParsed,
+                                    unsigned int &outLength)
 {
-    static const char* IF_KEYWORD = "if";
-    static const char* THEN_KEYWORD = "then";
-    static const char* ELSE_KEYWORD = "else";
-    static const char* ENDIF_KEYWORD = "endif";
+    static const char *IF_KEYWORD = "if";
+    static const char *THEN_KEYWORD = "then";
+    static const char *ELSE_KEYWORD = "else";
+    static const char *ENDIF_KEYWORD = "endif";
     if (0 != findWord(d_bytes + index, d_length - index, IF_KEYWORD, strlen(IF_KEYWORD))) {
         return nullptr;
     }
@@ -165,15 +157,18 @@ uint8_t* Template::parseConditional(unsigned int     index,
     if (std::string::npos == thenIndex) {
         return nullptr;
     }
-    long unsigned int elseIndex = findWord(d_bytes + thenIndex, d_length - thenIndex, ELSE_KEYWORD, strlen(ELSE_KEYWORD));
-    long unsigned int endifIndex = findWord(d_bytes + thenIndex, d_length - thenIndex, ENDIF_KEYWORD, strlen(ENDIF_KEYWORD));
+    long unsigned int elseIndex =
+        findWord(d_bytes + thenIndex, d_length - thenIndex, ELSE_KEYWORD, strlen(ELSE_KEYWORD));
+    long unsigned int endifIndex =
+        findWord(d_bytes + thenIndex, d_length - thenIndex, ENDIF_KEYWORD, strlen(ENDIF_KEYWORD));
     if (std::string::npos == endifIndex) {
         return nullptr;
     }
     bytesParsed = index - endifIndex + strlen(ENDIF_KEYWORD);
 
     unsigned int conditionIndex = strlen(IF_KEYWORD);
-    while (isWhitespace(conditionIndex)) conditionIndex++;
+    while (isWhitespace(conditionIndex))
+        conditionIndex++;
 
     Variable_t lhs;
     Variable_t rhs;
@@ -199,7 +194,8 @@ uint8_t* Template::parseConditional(unsigned int     index,
         Log::Debug("parsed lhs constant: ", lhs);
     }
     conditionIndex += lhsBytesParsed;
-    while (isWhitespace(conditionIndex)) conditionIndex++;
+    while (isWhitespace(conditionIndex))
+        conditionIndex++;
     if (conditionIndex < thenIndex) {
         unsigned operBytesParsed = 0;
         oper = parseOperator(conditionIndex, operBytesParsed);
@@ -209,7 +205,8 @@ uint8_t* Template::parseConditional(unsigned int     index,
         Log::Debug("parsed operator: ", oper);
         conditionIndex += operBytesParsed;
         unsigned int rhsBytesParsed = 0;
-        while (isWhitespace(conditionIndex)) conditionIndex++;
+        while (isWhitespace(conditionIndex))
+            conditionIndex++;
         Variable_t rhs = parseVariable(conditionIndex, context, rhsBytesParsed);
         if (rhsBytesParsed > 0) {
             // check type matches lhs
@@ -275,21 +272,18 @@ uint8_t* Template::parseConditional(unsigned int     index,
     return result;
 }
 
-uint8_t* Template::parseKeyword(unsigned int     index,
-                                const Context_t& context,
-                                unsigned int&    bytesParsed,
-                                unsigned int&    outLength)
+uint8_t *Template::parseKeyword(unsigned int index, const Context_t &context, unsigned int &bytesParsed,
+                                unsigned int &outLength)
 {
     return parseConditional(index, context, bytesParsed, outLength);
 }
 
 bool Template::isWhitespace(unsigned int index)
 {
-    return d_bytes[index] == 0x20;  // space
+    return d_bytes[index] == 0x20; // space
 }
 
-uint8_t* Template::encode(const Context_t&  context,
-                          unsigned int&     encodingLength)
+uint8_t *Template::encode(const Context_t &context, unsigned int &encodingLength)
 {
     unsigned int outLen = d_length * 2;
     uint8_t *out = new uint8_t[outLen];
@@ -332,4 +326,4 @@ uint8_t* Template::encode(const Context_t&  context,
     return out;
 }
 
-}
+} // namespace fwoop

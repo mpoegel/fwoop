@@ -1,14 +1,14 @@
 #include <iostream>
 
+#include <fwoop_httpheader.h>
 #include <fwoop_httprequest.h>
 #include <fwoop_httpresponse.h>
 #include <fwoop_httpserver.h>
 #include <fwoop_httpserverevent.h>
-#include <fwoop_httpheader.h>
 #include <fwoop_httpversion.h>
 #include <fwoop_openmetrics.h>
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
     if (argc < 3) {
         std::cerr << "USAGE: " << argv[0] << " <port> <http version>\n";
@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
     counter->addLabel({"path", "/foo"});
     counter->addLabel({"response", "200"});
 
-    fwoop::HttpHandlerFunc_t handler = [&counter](const fwoop::HttpRequest& request, fwoop::HttpResponse& response) {
+    fwoop::HttpHandlerFunc_t handler = [&counter](const fwoop::HttpRequest &request, fwoop::HttpResponse &response) {
         response.setStatus("200 OK");
         response.addHeader(fwoop::HttpHeader::ContentType, "text/plain");
 
@@ -42,7 +42,8 @@ int main(int argc, char* argv[])
         counter->increment();
     };
 
-    fwoop::HttpServerEventHandlerFunc_t eventHandler = [](const fwoop::HttpRequest& request, fwoop::HttpServerEvent& serverEvent) {
+    fwoop::HttpServerEventHandlerFunc_t eventHandler = [](const fwoop::HttpRequest &request,
+                                                          fwoop::HttpServerEvent &serverEvent) {
         serverEvent.pushEvent("ping", "hello world");
         serverEvent.pushEvent("ping", "hello world");
         serverEvent.pushEvent("pong", "hello everyone");

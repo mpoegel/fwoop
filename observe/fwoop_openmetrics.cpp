@@ -7,16 +7,13 @@
 
 namespace fwoop {
 
-OpenMetricsPublisher::OpenMetricsPublisher(int port)
-: d_server(port, HttpVersion::Http1_1)
+OpenMetricsPublisher::OpenMetricsPublisher(int port) : d_server(port, HttpVersion::Http1_1)
 {
-    d_server.addRoute("/metrics", std::bind(&OpenMetricsPublisher::handleMetricsEvent, this, std::placeholders::_1, std::placeholders::_2));
+    d_server.addRoute("/metrics", std::bind(&OpenMetricsPublisher::handleMetricsEvent, this, std::placeholders::_1,
+                                            std::placeholders::_2));
 }
 
-OpenMetricsPublisher::~OpenMetricsPublisher()
-{
-    stop();
-}
+OpenMetricsPublisher::~OpenMetricsPublisher() { stop(); }
 
 int OpenMetricsPublisher::start()
 {
@@ -33,14 +30,15 @@ void OpenMetricsPublisher::stop()
     }
 }
 
-std::shared_ptr<CounterMetric> OpenMetricsPublisher::newCounter(const std::string& name, const std::string& unit, const std::string& summary)
+std::shared_ptr<CounterMetric> OpenMetricsPublisher::newCounter(const std::string &name, const std::string &unit,
+                                                                const std::string &summary)
 {
     std::shared_ptr<Metric> counter = std::make_shared<CounterMetric>(name, unit, summary);
     d_metrics.push_back(counter);
     return std::dynamic_pointer_cast<CounterMetric>(counter);
 }
 
-void OpenMetricsPublisher::handleMetricsEvent(const HttpRequest& request, HttpResponse& response)
+void OpenMetricsPublisher::handleMetricsEvent(const HttpRequest &request, HttpResponse &response)
 {
     Log::Debug("got request for metrics");
     response.setStatus("200 OK");
@@ -50,7 +48,7 @@ void OpenMetricsPublisher::handleMetricsEvent(const HttpRequest& request, HttpRe
     for (auto metric : d_metrics) {
         Log::Debug("encoding metric");
         uint8_t *encoding = metric->encode(Metric::OpenMetric, length);
-        std::string tmp((char*)encoding, length);
+        std::string tmp((char *)encoding, length);
         delete[] encoding;
         body += tmp;
         body += "\n";
@@ -59,12 +57,12 @@ void OpenMetricsPublisher::handleMetricsEvent(const HttpRequest& request, HttpRe
     response.addHeader(fwoop::HttpHeader::ContentLength, std::to_string(body.length()));
 }
 
-std::ostream& OpenMetricsPublisher::print(std::ostream& os) const
+std::ostream &OpenMetricsPublisher::print(std::ostream &os) const
 {
     for (auto metric : d_metrics) {
         unsigned int length;
         uint8_t *encoding = metric->encode(Metric::OpenMetric, length);
-        std::string str((char*)encoding, length);
+        std::string str((char *)encoding, length);
         delete[] encoding;
         os << str << "\n";
     }

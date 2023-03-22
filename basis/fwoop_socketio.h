@@ -14,16 +14,14 @@ namespace fwoop {
 class SocketIO {
 
   public:
-    template<typename T>
-    static std::error_code read(int fd, T *buffer, unsigned int bufferSize, unsigned int& bytesRead);
+    template <typename T>
+    static std::error_code read(int fd, T *buffer, unsigned int bufferSize, unsigned int &bytesRead);
 
-    template<typename T>
-    static int write(int fd, T *out, unsigned int outLen);
-
+    template <typename T> static int write(int fd, T *out, unsigned int outLen);
 };
 
-template<typename T>
-std::error_code SocketIO::read(int fd, T *buffer, unsigned int bufferSize, unsigned int& bytesRead)
+template <typename T>
+std::error_code SocketIO::read(int fd, T *buffer, unsigned int bufferSize, unsigned int &bytesRead)
 {
     memset(buffer, 0, bufferSize);
     bytesRead = 0;
@@ -58,8 +56,7 @@ std::error_code SocketIO::read(int fd, T *buffer, unsigned int bufferSize, unsig
     return std::error_code();
 }
 
-template<typename T>
-int SocketIO::write(int fd, T *out, unsigned int outLen)
+template <typename T> int SocketIO::write(int fd, T *out, unsigned int outLen)
 {
     int rc = 0;
     int bytesWritten = 0;
@@ -74,4 +71,4 @@ int SocketIO::write(int fd, T *out, unsigned int outLen)
     return 0;
 }
 
-}
+} // namespace fwoop

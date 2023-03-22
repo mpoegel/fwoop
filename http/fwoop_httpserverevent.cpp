@@ -6,9 +6,7 @@
 
 namespace fwoop {
 
-HttpServerEvent::HttpServerEvent(int fd)
-: d_fd(fd)
-{}
+HttpServerEvent::HttpServerEvent(int fd) : d_fd(fd) {}
 
 HttpServerEvent::~HttpServerEvent()
 {
@@ -17,16 +15,16 @@ HttpServerEvent::~HttpServerEvent()
     uint32_t len;
     uint8_t *out = finalResponse.encode(len);
     int rc = SocketIO::write(d_fd, out, len);
-    delete []out;
+    delete[] out;
     if (0 != rc) {
         Log::Warn("failed to write final response");
     }
 }
 
-bool HttpServerEvent::pushEvent(const std::string& event, const std::string& data)
+bool HttpServerEvent::pushEvent(const std::string &event, const std::string &data)
 {
-    static const char* EVENT_PREFIX = "event: ";
-    static const char* DATA_PREFIX = "data: ";
+    static const char *EVENT_PREFIX = "event: ";
+    static const char *DATA_PREFIX = "data: ";
     static const unsigned int EVENT_PREFIX_LEN = strlen(EVENT_PREFIX);
     static const unsigned int DATA_PREFIX_LEN = strlen(DATA_PREFIX);
 
@@ -46,8 +44,8 @@ bool HttpServerEvent::pushEvent(const std::string& event, const std::string& dat
     out[offset++] = '\n';
 
     int rc = SocketIO::write(d_fd, out, outLen);
-    delete []out;
+    delete[] out;
     return 0 == rc;
 }
 
-}
+} // namespace fwoop

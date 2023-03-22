@@ -7,13 +7,13 @@
 
 namespace fwoop {
 
-std::ostream& operator<<(std::ostream& os, HttpRequest::Method method)
+std::ostream &operator<<(std::ostream &os, HttpRequest::Method method)
 {
     os << HttpRequest::methodToString(method);
     return os;
 }
 
-std::ostream& operator<<(std::ostream& os, const HttpRequest& request)
+std::ostream &operator<<(std::ostream &os, const HttpRequest &request)
 {
     os << "[ method=" << request.getMethod() << " path=" << request.getPath() << " version=" << request.getVersion()
        << " canUpgrade=" << request.canUpgrade() << " headers=[ ";
@@ -29,39 +29,45 @@ std::ostream& operator<<(std::ostream& os, const HttpRequest& request)
 }
 
 HttpRequest::HttpRequest()
-: d_method(Method::Undefined)
-, d_path()
-, d_version(HttpVersion::Value::Undefined)
-, d_canUpgrade(false)
+    : d_method(Method::Undefined), d_path(), d_version(HttpVersion::Value::Undefined), d_canUpgrade(false)
 {
 }
 
-HttpRequest::Method HttpRequest::stringToMethod(const std::string& methodStr)
+HttpRequest::Method HttpRequest::stringToMethod(const std::string &methodStr)
 {
-    if (methodStr == "GET") return Method::Get;
-    if (methodStr == "POST") return Method::Post;
-    if (methodStr == "PUT") return Method::Put;
-    if (methodStr == "DELETE") return Method::Delete;
+    if (methodStr == "GET")
+        return Method::Get;
+    if (methodStr == "POST")
+        return Method::Post;
+    if (methodStr == "PUT")
+        return Method::Put;
+    if (methodStr == "DELETE")
+        return Method::Delete;
     return Method::Undefined;
 }
 
-std::string HttpRequest::methodToString(const Method& method)
+std::string HttpRequest::methodToString(const Method &method)
 {
     switch (method) {
-        case HttpRequest::Method::Get: return "GET";
-        case HttpRequest::Method::Post: return "POST";
-        case HttpRequest::Method::Put: return "PUT";
-        case HttpRequest::Method::Delete: return "DELETE";
-        default: return "Undefined";
+    case HttpRequest::Method::Get:
+        return "GET";
+    case HttpRequest::Method::Post:
+        return "POST";
+    case HttpRequest::Method::Put:
+        return "PUT";
+    case HttpRequest::Method::Delete:
+        return "DELETE";
+    default:
+        return "Undefined";
     }
 }
 
-std::shared_ptr<HttpRequest> HttpRequest::parse(uint8_t *buffer, uint32_t bufferSize, uint32_t& bytesParsed)
+std::shared_ptr<HttpRequest> HttpRequest::parse(uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesParsed)
 {
     auto request = std::make_shared<HttpRequest>();
     bytesParsed = 0;
 
-    std::string payload((char*)buffer, bufferSize);
+    std::string payload((char *)buffer, bufferSize);
     unsigned int end = payload.rfind("\r\n\r\n");
     if (end == std::string::npos) {
         return nullptr;
@@ -101,7 +107,7 @@ std::shared_ptr<HttpRequest> HttpRequest::parse(uint8_t *buffer, uint32_t buffer
     return request;
 }
 
-uint8_t *HttpRequest::encode(uint32_t& length) const
+uint8_t *HttpRequest::encode(uint32_t &length) const
 {
     static const std::string VERSION = "HTTP/1.1";
     const std::string method = methodToString(d_method);
@@ -164,4 +170,4 @@ uint8_t *HttpRequest::encode(uint32_t& length) const
     return encoding;
 }
 
-}
+} // namespace fwoop

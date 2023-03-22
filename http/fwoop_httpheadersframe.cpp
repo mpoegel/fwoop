@@ -6,11 +6,8 @@
 namespace fwoop {
 
 HttpHeadersFrame::HttpHeadersFrame(unsigned int length, uint8_t flags, uint8_t *streamID, uint8_t *payload)
-: HttpFrame(length, HttpFrame::Type::Header, flags, streamID, payload)
-, d_padLength(0)
-, d_isDepMutuallyExclusive(false)
-, d_streamDep(0)
-, d_weight(0)
+    : HttpFrame(length, HttpFrame::Type::Header, flags, streamID, payload), d_padLength(0),
+      d_isDepMutuallyExclusive(false), d_streamDep(0), d_weight(0)
 {
     // TODO parse payload
 }
@@ -42,14 +39,15 @@ uint8_t *HttpHeadersFrame::encode() const
     return encoding;
 }
 
-void HttpHeadersFrame::addHeaderBlock(HttpHeader&& name, std::string&& value)
+void HttpHeadersFrame::addHeaderBlock(HttpHeader &&name, std::string &&value)
 {
-    std::pair<HttpHeaderVariant_t, std::string> pair = std::make_pair<HttpHeaderVariant_t, std::string>(std::move(name), std::move(value));
+    std::pair<HttpHeaderVariant_t, std::string> pair =
+        std::make_pair<HttpHeaderVariant_t, std::string>(std::move(name), std::move(value));
     d_headerList.push_back(pair);
     d_length = d_packer->getEncodedLength(d_headerList) + countExtraBits();
 }
 
-void HttpHeadersFrame::addHeaderBlock(const std::string &name, const std::string& value)
+void HttpHeadersFrame::addHeaderBlock(const std::string &name, const std::string &value)
 {
     HttpHeaderVariant_t headerName(name);
     d_headerList.emplace_back(headerName, value);
@@ -71,4 +69,4 @@ uint8_t HttpHeadersFrame::countExtraBits() const
     return extra;
 }
 
-}
+} // namespace fwoop

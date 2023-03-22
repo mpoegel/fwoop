@@ -6,16 +6,14 @@
 
 namespace fwoop {
 
-Metric::Metric(const std::string& name, const std::string& unit, const std::string& summary)
-: d_name(name)
-, d_unit(unit)
-, d_summary(summary)
-{}
+Metric::Metric(const std::string &name, const std::string &unit, const std::string &summary)
+    : d_name(name), d_unit(unit), d_summary(summary)
+{
+}
 
-Metric::~Metric()
-{}
+Metric::~Metric() {}
 
-uint8_t *Metric::encodeMetadata(Format fmt, unsigned int& length) const
+uint8_t *Metric::encodeMetadata(Format fmt, unsigned int &length) const
 {
     static const char HELP[] = "# HELP ";
     static const char UNIT[] = "# UNIT ";
@@ -48,7 +46,7 @@ uint8_t *Metric::encodeMetadata(Format fmt, unsigned int& length) const
     return encoding;
 }
 
-uint8_t *Metric::encodeNameWithLabels(Format fmt, unsigned int& length) const
+uint8_t *Metric::encodeNameWithLabels(Format fmt, unsigned int &length) const
 {
     length = d_name.length() + 2;
     for (auto label : d_labels) {
@@ -80,9 +78,6 @@ uint8_t *Metric::encodeNameWithLabels(Format fmt, unsigned int& length) const
     return encoding;
 }
 
-void Metric::addLabel(const std::pair<std::string, std::string>& label)
-{
-    d_labels.insert(label);
-}
+void Metric::addLabel(const std::pair<std::string, std::string> &label) { d_labels.insert(label); }
 
 } // namespace fwoop

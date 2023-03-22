@@ -11,14 +11,13 @@ namespace {
 const std::string DEFAULT_FORMAT_STR("%t %l %m");
 const char DEFAULT_TIME_FORMAT[] = "%H:%M:%S";
 
-}
+} // namespace
 
 std::shared_ptr<Log> Log::s_log = std::make_shared<Log>();
 
 std::string Log::levelToString(Level level) const
 {
-    switch (level)
-    {
+    switch (level) {
     case Level::e_Debug:
         return "DEBUG";
     case Level::e_Info:
@@ -42,35 +41,20 @@ void Log::getCurrentTime(char *outBuf, unsigned int bufSize) const
     sprintf(outBuf, "%s.%03d", outBuf, millis);
 }
 
-Log::Log()
-: d_formatStr(DEFAULT_FORMAT_STR)
-{
-}
+Log::Log() : d_formatStr(DEFAULT_FORMAT_STR) {}
 
-void Log::setFormat(const std::string& formatStr)
+void Log::setFormat(const std::string &formatStr)
 {
     // TODO validate format string
     d_formatStr = formatStr;
 }
 
-void Log::debug(const std::string& msg)
-{
-    std::cout << formatMsg(Level::e_Debug, msg) << '\n';
-}
+void Log::debug(const std::string &msg) { std::cout << formatMsg(Level::e_Debug, msg) << '\n'; }
 
-void Log::info(const std::string& msg)
-{
-    std::cout << formatMsg(Level::e_Info, msg) << '\n';
-}
+void Log::info(const std::string &msg) { std::cout << formatMsg(Level::e_Info, msg) << '\n'; }
 
-void Log::warn(const std::string& msg)
-{
-    std::cerr << formatMsg(Level::e_Warn, msg) << '\n';
-}
+void Log::warn(const std::string &msg) { std::cerr << formatMsg(Level::e_Warn, msg) << '\n'; }
 
-void Log::error(const std::string& msg)
-{
-    std::cerr << formatMsg(Level::e_Error, msg) << '\n';
-}
+void Log::error(const std::string &msg) { std::cerr << formatMsg(Level::e_Error, msg) << '\n'; }
 
-}
+} // namespace fwoop

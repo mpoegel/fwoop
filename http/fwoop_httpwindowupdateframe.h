@@ -6,7 +6,6 @@ namespace fwoop {
 
 class HttpWindowUpdateFrame : public HttpFrame {
   private:
-
   public:
     HttpWindowUpdateFrame(unsigned int length, uint8_t flags, uint8_t *streamID, uint8_t *payload);
     ~HttpWindowUpdateFrame();
@@ -14,9 +13,6 @@ class HttpWindowUpdateFrame : public HttpFrame {
     uint8_t *encode() const override;
 };
 
-inline
-HttpWindowUpdateFrame::~HttpWindowUpdateFrame()
-{
-}
+inline HttpWindowUpdateFrame::~HttpWindowUpdateFrame() {}
 
-}
+} // namespace fwoop

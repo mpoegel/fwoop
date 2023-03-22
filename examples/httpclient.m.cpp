@@ -1,12 +1,12 @@
 #include <iostream>
 #include <memory>
 
-#include <fwoop_log.h>
 #include <fwoop_httpclient.h>
 #include <fwoop_httprequest.h>
 #include <fwoop_httpresponse.h>
+#include <fwoop_log.h>
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
     auto request = fwoop::HttpRequest();
     request.setMethod(fwoop::HttpRequest::Method::Get);

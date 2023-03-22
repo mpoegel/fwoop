@@ -28,7 +28,7 @@ TEST(HttpSettingsFrame, DecodeThenEncode)
     const uint8_t expected[] = {0, 0, 12, 4, 1, 0, 0, 0, 0, 0, 1, 0, 0, 125, 0, 0, 6, 0, 0, 0, 24};
     const unsigned int length = 12;
     const uint8_t flags = 1;
-    auto frame = fwoop::HttpSettingsFrame(length, flags, (uint8_t*)expected + 5, (uint8_t*)expected + 9);
+    auto frame = fwoop::HttpSettingsFrame(length, flags, (uint8_t *)expected + 5, (uint8_t *)expected + 9);
 
     // WHEN
     u_int8_t *encoding = frame.encode();

@@ -10,8 +10,8 @@ class HttpDataFrame : public HttpFrame {
 
   public:
     enum Flag {
-        EndStream  = 1,
-        Padded     = 8,
+        EndStream = 1,
+        Padded = 8,
     };
 
     HttpDataFrame(unsigned int length, uint8_t flags, uint8_t *streamID, uint8_t *payload);
@@ -25,15 +25,8 @@ class HttpDataFrame : public HttpFrame {
     void setData(uint8_t *data, uint32_t dataLen);
 };
 
-inline
-HttpDataFrame::~HttpDataFrame()
-{
-}
+inline HttpDataFrame::~HttpDataFrame() {}
 
-inline
-void HttpDataFrame::addFlag(Flag flag)
-{
-    d_flags |= flag;
-}
+inline void HttpDataFrame::addFlag(Flag flag) { d_flags |= flag; }
 
-}
+} // namespace fwoop

@@ -20,7 +20,7 @@ TEST(HttpRequest, encode)
     for (unsigned int i = 0; i < length; ++i) {
         EXPECT_EQ(expected[i], encoding[i]) << "diff at index=" << i;
     }
-    const std::string result((char*)encoding, length);
+    const std::string result((char *)encoding, length);
     EXPECT_EQ(expected, result);
 
     delete[] encoding;

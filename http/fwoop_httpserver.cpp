@@ -1,20 +1,20 @@
-#include <fwoop_httpserver.h>
-#include <fwoop_log.h>
-#include <fwoop_socketio.h>
-#include <fwoop_tokenizer.h>
-#include <fwoop_httpframe.h>
-#include <fwoop_httpheadersframe.h>
-#include <fwoop_httpsettingsframe.h>
 #include <fwoop_httpdataframe.h>
+#include <fwoop_httpframe.h>
 #include <fwoop_httpgoawayframe.h>
+#include <fwoop_httpheadersframe.h>
 #include <fwoop_httphpacker.h>
 #include <fwoop_httprequest.h>
 #include <fwoop_httpresponse.h>
+#include <fwoop_httpserver.h>
+#include <fwoop_httpsettingsframe.h>
+#include <fwoop_log.h>
+#include <fwoop_socketio.h>
+#include <fwoop_tokenizer.h>
 
 #include <cstring>
-#include <system_error>
 #include <iostream>
 #include <string>
+#include <system_error>
 
 #include <netinet/in.h>
 #include <sys/socket.h>
@@ -24,11 +24,9 @@
 namespace fwoop {
 
 HttpServer::HttpServer(int port, HttpVersion::Value version)
-: d_port(port)
-, d_serverFd(-1)
-, d_version(version)
-, d_isActive(false)
-{}
+    : d_port(port), d_serverFd(-1), d_version(version), d_isActive(false)
+{
+}
 
 HttpServer::~HttpServer()
 {
@@ -56,7 +54,7 @@ int HttpServer::serve()
     addr.sin_addr.s_addr = INADDR_ANY;
     addr.sin_port = htons(d_port);
 
-    if (0 != bind(d_serverFd, (struct sockaddr*)&addr, sizeof(addr))) {
+    if (0 != bind(d_serverFd, (struct sockaddr *)&addr, sizeof(addr))) {
         std::cerr << "failed to bind, errno=" << errno << '\n';
         return -1;
     }
@@ -71,28 +69,27 @@ int HttpServer::serve()
     socklen_t addrLen;
     d_isActive = true;
     while (d_isActive) {
-        int clientFd = accept4(d_serverFd, (struct sockaddr*)&clientAddr, (socklen_t*)&addrLen, SOCK_NONBLOCK);
+        int clientFd = accept4(d_serverFd, (struct sockaddr *)&clientAddr, (socklen_t *)&addrLen, SOCK_NONBLOCK);
         if (clientFd < 0) {
             std::cerr << "failed to accept, errno" << errno << '\n';
             return -1;
         }
 
         switch (d_version) {
-            case HttpVersion::Value::Http1_1:
-                handleHttp1Connection(clientFd);
-                break;
-            case HttpVersion::Value::Http2:
-                handleHttp2Connection(clientFd);
-                break;
-            default:
-                std::cerr << "unsupported HTTP version: " << d_version;
-                return -1;
+        case HttpVersion::Value::Http1_1:
+            handleHttp1Connection(clientFd);
+            break;
+        case HttpVersion::Value::Http2:
+            handleHttp2Connection(clientFd);
+            break;
+        default:
+            std::cerr << "unsupported HTTP version: " << d_version;
+            return -1;
         }
         Log::Info("processed request");
     }
     return 0;
 }
-
 
 int HttpServer::handleHttp2Connection(int clientFd) const
 {
@@ -251,7 +248,7 @@ int HttpServer::handleHttp2Connection(int clientFd) const
     dataFrame.setStreamID(1);
     dataFrame.addFlag(HttpDataFrame::Flag::EndStream);
     std::string respData = "hello world!";
-    dataFrame.setData((uint8_t*)respData.data(), respData.length());
+    dataFrame.setData((uint8_t *)respData.data(), respData.length());
     uint8_t *data = dataFrame.encode();
     std::cout << "> ";
     dataFrame.printHex();
@@ -282,10 +279,10 @@ int HttpServer::handleHttp2Connection(int clientFd) const
     return 0;
 }
 
-int HttpServer::parsePayloadBody(uint8_t *buffer, unsigned int bufferSize, unsigned int& bytesParsed) const
+int HttpServer::parsePayloadBody(uint8_t *buffer, unsigned int bufferSize, unsigned int &bytesParsed) const
 {
     bytesParsed = 0;
-    std::string payload((char*)buffer, bufferSize);
+    std::string payload((char *)buffer, bufferSize);
     unsigned int end = payload.rfind("\r\n\r\n");
     if (end == std::string::npos) {
         bytesParsed = bufferSize;
@@ -302,20 +299,17 @@ int HttpServer::parsePayloadBody(uint8_t *buffer, unsigned int bufferSize, unsig
     return 0;
 }
 
-void HttpServer::addRoute(const std::string& route, HttpHandlerFunc_t func)
-{
-    d_routeMap[route] = func;
-}
+void HttpServer::addRoute(const std::string &route, HttpHandlerFunc_t func) { d_routeMap[route] = func; }
 
-void HttpServer::addStaticRoute(const std::string& route, const std::string& fileName)
+void HttpServer::addStaticRoute(const std::string &route, const std::string &fileName)
 {
-    d_routeMap[route] = [fileName](const fwoop::HttpRequest& request, fwoop::HttpResponse& response) {
+    d_routeMap[route] = [fileName](const fwoop::HttpRequest &request, fwoop::HttpResponse &response) {
         response.setStatus("200 OK");
         response.streamFile(fileName);
     };
 }
 
-void HttpServer::addServerEventRoute(const std::string& route, HttpServerEventHandlerFunc_t func)
+void HttpServer::addServerEventRoute(const std::string &route, HttpServerEventHandlerFunc_t func)
 {
     d_serverEventMap[route] = func;
 }
@@ -360,7 +354,7 @@ int HttpServer::handleHttp1Connection(int clientFd) const
     uint32_t length;
     uint8_t *encResp = response.encode(length);
     rc = SocketIO::write(clientFd, encResp, length);
-    delete []encResp;
+    delete[] encResp;
     if (0 != rc) {
         Log::Error("socket write failed, ec=", ec);
         close(clientFd);
@@ -378,4 +372,4 @@ int HttpServer::handleHttp1Connection(int clientFd) const
     return 0;
 }
 
-}
+} // namespace fwoop

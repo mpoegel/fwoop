@@ -21,21 +21,10 @@ class HttpGoAwayFrame : public HttpFrame {
     void setErrorCode(uint32_t ec);
 };
 
-inline
-HttpGoAwayFrame::~HttpGoAwayFrame()
-{
-}
+inline HttpGoAwayFrame::~HttpGoAwayFrame() {}
 
-inline
-void HttpGoAwayFrame::setLastStreamID(uint32_t streamID)
-{
-    d_lastStreamID = streamID;
-}
+inline void HttpGoAwayFrame::setLastStreamID(uint32_t streamID) { d_lastStreamID = streamID; }
 
-inline
-void HttpGoAwayFrame::setErrorCode(uint32_t ec)
-{
-    d_errorCode = ec;
-}
+inline void HttpGoAwayFrame::setErrorCode(uint32_t ec) { d_errorCode = ec; }
 
-}
+} // namespace fwoop

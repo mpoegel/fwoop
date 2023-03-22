@@ -1,8 +1,8 @@
 #include <fwoop_json.h>
 
-#include <fwoop_log.h>
 #include <cctype>
 #include <cmath>
+#include <fwoop_log.h>
 #include <memory>
 #include <string.h>
 
@@ -21,10 +21,10 @@ static const uint8_t COMMA = 0x2C;
 bool isWhitespace(uint8_t val)
 {
     // TODO replace with isspace()
-    return val == 0x20;  // space
+    return val == 0x20; // space
 }
 
-std::string decodeString(uint8_t *bytes, uint8_t bytesLen, uint32_t& bytesParsed)
+std::string decodeString(uint8_t *bytes, uint8_t bytesLen, uint32_t &bytesParsed)
 {
     uint32_t index = 0;
     bytesParsed = 0;
@@ -33,35 +33,36 @@ std::string decodeString(uint8_t *bytes, uint8_t bytesLen, uint32_t& bytesParsed
         return "";
     }
     index++;
-    while (QUOTE != bytes[index] && index < bytesLen) index++;
+    while (QUOTE != bytes[index] && index < bytesLen)
+        index++;
     if (index == bytesLen) {
         Log::Error("no end quote");
         return "";
     }
     bytesParsed = index + 1;
-    Log::Debug("string start: ", 1, ", end: ", index-1);
-    Log::Debug("string: ", std::string((char*)bytes + 1, (char*)bytes + index));
-    return std::string((char*)bytes + 1, (char*)bytes + index);
+    Log::Debug("string start: ", 1, ", end: ", index - 1);
+    Log::Debug("string: ", std::string((char *)bytes + 1, (char *)bytes + index));
+    return std::string((char *)bytes + 1, (char *)bytes + index);
 }
 
-bool decodeBool(uint8_t *bytes, uint8_t bytesLen, uint32_t& bytesParsed)
+bool decodeBool(uint8_t *bytes, uint8_t bytesLen, uint32_t &bytesParsed)
 {
     static const char *TRUE = "true";
     static const unsigned int TRUE_LEN = strlen(TRUE);
     static const char *FALSE = "false";
     static const unsigned int FALSE_LEN = strlen(FALSE);
     bytesParsed = 0;
-    if (bytesLen == TRUE_LEN && 0 == strncmp(TRUE, (char*)bytes, 4)) {
+    if (bytesLen == TRUE_LEN && 0 == strncmp(TRUE, (char *)bytes, 4)) {
         bytesParsed = 4;
         return true;
-    } else if (bytesLen == FALSE_LEN && 0 == strncmp(FALSE, (char*)bytes, 5)) {
+    } else if (bytesLen == FALSE_LEN && 0 == strncmp(FALSE, (char *)bytes, 5)) {
         bytesParsed = 5;
         return false;
     }
     return false;
 }
 
-int decodeInt(uint8_t *bytes, uint8_t bytesLen, uint32_t& bytesParsed)
+int decodeInt(uint8_t *bytes, uint8_t bytesLen, uint32_t &bytesParsed)
 {
     bytesParsed = 0;
     if (0 == bytesLen) {
@@ -73,7 +74,7 @@ int decodeInt(uint8_t *bytes, uint8_t bytesLen, uint32_t& bytesParsed)
     }
     uint8_t *tmp = new uint8_t[bytesLen];
     memcpy(tmp, bytes, bytesLen);
-    int res = atoi((char*)tmp);
+    int res = atoi((char *)tmp);
     if (res == 0) {
         return 0;
     }
@@ -81,7 +82,7 @@ int decodeInt(uint8_t *bytes, uint8_t bytesLen, uint32_t& bytesParsed)
     return res;
 }
 
-double decodeDouble(uint8_t *bytes, uint8_t bytesLen, uint32_t& bytesParsed)
+double decodeDouble(uint8_t *bytes, uint8_t bytesLen, uint32_t &bytesParsed)
 {
     // TODO refactor
     bytesParsed = 0;
@@ -111,7 +112,7 @@ double decodeDouble(uint8_t *bytes, uint8_t bytesLen, uint32_t& bytesParsed)
     return res;
 }
 
-JsonValue_t decodeValue(uint8_t *bytes, uint32_t bytesLen, uint32_t& bytesParsed)
+JsonValue_t decodeValue(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed)
 {
     uint32_t &index = bytesParsed;
     index = 0;
@@ -133,7 +134,8 @@ JsonValue_t decodeValue(uint8_t *bytes, uint32_t bytesLen, uint32_t& bytesParsed
     } else {
         // int or bool or double
         uint32_t end = index + 1;
-        while (!isWhitespace(bytes[end]) && bytes[end] != ',') end++;
+        while (!isWhitespace(bytes[end]) && bytes[end] != ',')
+            end++;
         tmpParsed = 0;
         Log::Debug("look for value with length: ", end - index);
         if (bool value = decodeBool(bytes + index, end - index, tmpParsed); tmpParsed > 0) {
@@ -151,28 +153,31 @@ JsonValue_t decodeValue(uint8_t *bytes, uint32_t bytesLen, uint32_t& bytesParsed
     return JsonValue_t();
 }
 
-}  // close anonymous namespace
+} // namespace
 
-void JsonArray::decode(uint8_t *bytes, uint32_t bytesLen, uint32_t& bytesParsed)
+void JsonArray::decode(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed)
 {
     uint32_t &index = bytesParsed;
     index = 0;
     if (bytesLen == 0) {
         return;
     }
-    while (isspace(bytes[index]) && index < bytesLen) index++;
+    while (isspace(bytes[index]) && index < bytesLen)
+        index++;
     if (index >= bytesLen || START_ARR != bytes[index]) {
         Log::Error("no start array");
         return;
     }
     index++;
-    while (isspace(bytes[index]) && index < bytesLen) index++;
+    while (isspace(bytes[index]) && index < bytesLen)
+        index++;
     if (index >= bytesLen) {
         Log::Error("no start of value in array");
         return;
     }
     do {
-        while (index < bytesLen && isspace(bytes[index])) index++;
+        while (index < bytesLen && isspace(bytes[index]))
+            index++;
         Log::Debug("looking for array value at index: ", index);
         uint32_t tmpParsed = 0;
         JsonValue_t value = decodeValue(bytes + index, bytesLen - index, tmpParsed);
@@ -196,32 +201,22 @@ void JsonArray::decode(uint8_t *bytes, uint32_t bytesLen, uint32_t& bytesParsed)
     index++;
 }
 
-JsonArray::JsonArray()
-{}
+JsonArray::JsonArray() {}
 
-JsonArray::JsonArray(uint8_t *bytes, uint32_t bytesLen, uint32_t& bytesParsed)
-{
-    decode(bytes, bytesLen, bytesParsed);
-}
+JsonArray::JsonArray(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed) { decode(bytes, bytesLen, bytesParsed); }
 
-JsonArray::JsonArray(JsonArray& rhs)
-{}
+JsonArray::JsonArray(JsonArray &rhs) {}
 
-JsonArray& JsonArray::operator=(JsonArray rhs)
-{
-    return *this;
-}
+JsonArray &JsonArray::operator=(JsonArray rhs) { return *this; }
 
-JsonArray::~JsonArray()
-{}
+JsonArray::~JsonArray() {}
 
-
-
-void JsonObject::decode(uint8_t *bytes, uint32_t bytesLen, uint32_t& bytesParsed)
+void JsonObject::decode(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed)
 {
     u_int32_t &index = bytesParsed;
     index = 0;
-    while (isWhitespace(bytes[index])) index++;
+    while (isWhitespace(bytes[index]))
+        index++;
     if (START_OBJ != bytes[index]) {
         Log::Error("no start object");
         return;
@@ -231,7 +226,8 @@ void JsonObject::decode(uint8_t *bytes, uint32_t bytesLen, uint32_t& bytesParsed
     do {
         // TODO handle escape characters
         // TODO handle out of bounds errors
-        while (isWhitespace(bytes[index])) index++;
+        while (isWhitespace(bytes[index]))
+            index++;
         uint32_t tmpParsed;
         std::string key = decodeString(bytes + index, bytesLen - index, tmpParsed);
         if (0 == key.length()) {
@@ -239,13 +235,15 @@ void JsonObject::decode(uint8_t *bytes, uint32_t bytesLen, uint32_t& bytesParsed
             return;
         }
         index += tmpParsed;
-        while (isWhitespace(bytes[index])) index++;
+        while (isWhitespace(bytes[index]))
+            index++;
         if (COLON != bytes[index]) {
             Log::Error("no colon");
             return;
         }
         index++;
-        while (isWhitespace(bytes[index])) index++;
+        while (isWhitespace(bytes[index]))
+            index++;
 
         if (QUOTE == bytes[index]) {
             tmpParsed = 0;
@@ -277,7 +275,8 @@ void JsonObject::decode(uint8_t *bytes, uint32_t bytesLen, uint32_t& bytesParsed
         } else {
             // int or bool or double
             uint32_t end = index + 1;
-            while (!isWhitespace(bytes[end]) && bytes[end] != ',') end++;
+            while (!isWhitespace(bytes[end]) && bytes[end] != ',')
+                end++;
             tmpParsed = 0;
             Log::Debug("look for value with length: ", end - index);
             if (bool value = decodeBool(bytes + index, end - index, tmpParsed); tmpParsed > 0) {
@@ -292,7 +291,8 @@ void JsonObject::decode(uint8_t *bytes, uint32_t bytesLen, uint32_t& bytesParsed
             }
             index += tmpParsed;
         }
-        while (isWhitespace(bytes[index])) index++;
+        while (isWhitespace(bytes[index]))
+            index++;
     } while (COMMA == bytes[index] && index++ < bytesLen);
 
     if (END_OBJ == bytes[index]) {
@@ -304,26 +304,20 @@ void JsonObject::decode(uint8_t *bytes, uint32_t bytesLen, uint32_t& bytesParsed
     // failure -- don't update bytes Parsed
 }
 
-JsonObject::JsonObject()
-{}
+JsonObject::JsonObject() {}
 
-JsonObject::JsonObject(uint8_t *bytes, uint32_t bytesLen, uint32_t& bytesParsed)
+JsonObject::JsonObject(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed)
 {
     decode(bytes, bytesLen, bytesParsed);
 }
 
-JsonObject::JsonObject(JsonObject& rhs)
-{}
+JsonObject::JsonObject(JsonObject &rhs) {}
 
-JsonObject& JsonObject::operator=(JsonObject rhs)
-{
-    return *this;
-}
+JsonObject &JsonObject::operator=(JsonObject rhs) { return *this; }
 
-JsonObject::~JsonObject()
-{}
+JsonObject::~JsonObject() {}
 
-std::optional<std::string> JsonObject::getString(const std::string& key) const
+std::optional<std::string> JsonObject::getString(const std::string &key) const
 {
     std::optional<std::string> res;
     auto itr = d_valueMap.find(key);
@@ -335,7 +329,7 @@ std::optional<std::string> JsonObject::getString(const std::string& key) const
     return res;
 }
 
-std::optional<int> JsonObject::getInt(const std::string& key) const
+std::optional<int> JsonObject::getInt(const std::string &key) const
 {
     std::optional<int> res;
     auto itr = d_valueMap.find(key);
@@ -347,7 +341,7 @@ std::optional<int> JsonObject::getInt(const std::string& key) const
     return res;
 }
 
-std::optional<double> JsonObject::getDouble(const std::string& key) const
+std::optional<double> JsonObject::getDouble(const std::string &key) const
 {
     std::optional<double> res;
     auto itr = d_valueMap.find(key);
@@ -359,7 +353,7 @@ std::optional<double> JsonObject::getDouble(const std::string& key) const
     return res;
 }
 
-std::optional<bool> JsonObject::getBool(const std::string& key) const
+std::optional<bool> JsonObject::getBool(const std::string &key) const
 {
     std::optional<bool> res;
     auto itr = d_valueMap.find(key);
@@ -371,7 +365,7 @@ std::optional<bool> JsonObject::getBool(const std::string& key) const
     return res;
 }
 
-std::shared_ptr<JsonArray> JsonObject::getArray(const std::string& key) const
+std::shared_ptr<JsonArray> JsonObject::getArray(const std::string &key) const
 {
     std::shared_ptr<JsonArray> res;
     auto itr = d_valueMap.find(key);
@@ -383,7 +377,7 @@ std::shared_ptr<JsonArray> JsonObject::getArray(const std::string& key) const
     return res;
 }
 
-std::shared_ptr<JsonObject> JsonObject::getObject(const std::string& key) const
+std::shared_ptr<JsonObject> JsonObject::getObject(const std::string &key) const
 {
     std::shared_ptr<JsonObject> res;
     auto itr = d_valueMap.find(key);
@@ -395,4 +389,4 @@ std::shared_ptr<JsonObject> JsonObject::getObject(const std::string& key) const
     return res;
 }
 
-}
+} // namespace fwoop

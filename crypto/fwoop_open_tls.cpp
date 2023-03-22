@@ -2,14 +2,12 @@
 
 namespace fwoop {
 
-TLS::TLS(const std::string& certPath, const std::string& keyPath)
-: d_certificatePath(certPath)
-, d_privateKeyPath(keyPath)
-{}
-
-TLS::~TLS()
+TLS::TLS(const std::string &certPath, const std::string &keyPath)
+    : d_certificatePath(certPath), d_privateKeyPath(keyPath)
 {
 }
+
+TLS::~TLS() {}
 
 std::error_code TLS::handshake()
 {
@@ -18,14 +16,8 @@ std::error_code TLS::handshake()
     return std::error_code();
 }
 
-std::error_code TLS::write()
-{
-    return std::error_code();
-}
+std::error_code TLS::write() { return std::error_code(); }
 
-std::error_code TLS::read()
-{
-    return std::error_code();
-}
+std::error_code TLS::read() { return std::error_code(); }
 
-}
+} // namespace fwoop

@@ -5,16 +5,11 @@
 namespace fwoop {
 
 HttpDataFrame::HttpDataFrame(unsigned int length, uint8_t flags, uint8_t *streamID, uint8_t *payload)
-: HttpFrame(length, HttpFrame::Type::Data, flags, streamID, payload)
-, d_padLength(0)
+    : HttpFrame(length, HttpFrame::Type::Data, flags, streamID, payload), d_padLength(0)
 {
 }
 
-HttpDataFrame::HttpDataFrame()
-: HttpFrame(HttpFrame::Type::Data)
-, d_padLength(0)
-{
-}
+HttpDataFrame::HttpDataFrame() : HttpFrame(HttpFrame::Type::Data), d_padLength(0) {}
 
 uint8_t *HttpDataFrame::encode() const
 {
@@ -37,4 +32,4 @@ void HttpDataFrame::setData(uint8_t *data, uint32_t dataLen)
     d_length = dataLen + 1 + d_padLength;
 }
 
-}
+} // namespace fwoop

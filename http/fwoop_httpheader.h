@@ -63,12 +63,12 @@ enum HttpHeader {
 };
 
 std::string httpHeaderToString(HttpHeader header);
-HttpHeader stringToHttpHeader(const std::string& headerStr);
+HttpHeader stringToHttpHeader(const std::string &headerStr);
 
 typedef std::string HttpCustomHeader;
 typedef std::variant<HttpHeader, HttpCustomHeader> HttpHeaderVariant_t;
 typedef std::pair<HttpHeaderVariant_t, std::string> HttpHeaderField_t;
 
-std::ostream& operator<<(std::ostream& os, const HttpHeaderVariant_t& header);
+std::ostream &operator<<(std::ostream &os, const HttpHeaderVariant_t &header);
 
-}
+} // namespace fwoop

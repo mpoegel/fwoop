@@ -5,7 +5,7 @@
 namespace fwoop {
 
 class HttpVersion {
-    public:
+  public:
     enum Value {
         Undefined,
         Http1_0,
@@ -13,13 +13,13 @@ class HttpVersion {
         Http2,
     };
 
-    static HttpVersion::Value fromString(const std::string& versionStr);
+    static HttpVersion::Value fromString(const std::string &versionStr);
     static std::string toString(const HttpVersion::Value version);
 
-    private:
+  private:
     HttpVersion() = delete;
 };
 
-std::ostream& operator<<(std::ostream& os, HttpVersion::Value version);
+std::ostream &operator<<(std::ostream &os, HttpVersion::Value version);
 
-}
+} // namespace fwoop

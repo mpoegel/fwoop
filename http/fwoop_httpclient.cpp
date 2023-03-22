@@ -11,11 +11,7 @@
 
 namespace fwoop {
 
-HttpClient::HttpClient(const std::string& host, int port)
-: d_host(host)
-, d_port(port)
-, d_conn(-1)
-{}
+HttpClient::HttpClient(const std::string &host, int port) : d_host(host), d_port(port), d_conn(-1) {}
 
 HttpClient::~HttpClient()
 {
@@ -30,7 +26,7 @@ void HttpClient::reset()
     d_conn = -1;
 }
 
-std::error_code HttpClient::makeReqest(const HttpRequest& request, std::shared_ptr<HttpResponse>& response)
+std::error_code HttpClient::makeReqest(const HttpRequest &request, std::shared_ptr<HttpResponse> &response)
 {
     if (d_conn < 0) {
         d_conn = socket(AF_INET, SOCK_STREAM, 0);
@@ -57,7 +53,7 @@ std::error_code HttpClient::makeReqest(const HttpRequest& request, std::shared_p
             return std::error_code();
         }
 
-        int rc = connect(d_conn, (struct sockaddr*)&serv_addr, sizeof(serv_addr));
+        int rc = connect(d_conn, (struct sockaddr *)&serv_addr, sizeof(serv_addr));
         if (0 != rc) {
             Log::Error("connection failed");
             reset();
@@ -99,4 +95,4 @@ std::error_code HttpClient::makeReqest(const HttpRequest& request, std::shared_p
     return std::error_code();
 }
 
-}
+} // namespace fwoop
