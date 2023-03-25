@@ -13,6 +13,10 @@ TEST(OpenMetrics, print)
     counter->addLabel({"pop", "fizz"});
     counter->increment();
 
+    auto gauge = metrics.newGauge("test_gauge", "celsius");
+    gauge->addLabel({"rack", "abc"});
+    gauge->set(24);
+
     // THEN
     metrics.print(std::cerr);
 }

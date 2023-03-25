@@ -1,6 +1,7 @@
 #pragma once
 
 #include <fwoop_countermetric.h>
+#include <fwoop_gaugemetric.h>
 #include <fwoop_httprequest.h>
 #include <fwoop_httpresponse.h>
 #include <fwoop_httpserver.h>
@@ -35,6 +36,8 @@ class OpenMetricsPublisher {
 
     std::shared_ptr<CounterMetric> newCounter(const std::string &name, const std::string &unit,
                                               const std::string &summary = "");
+    std::shared_ptr<GaugeMetric> newGauge(const std::string &name, const std::string &unit,
+                                          const std::string &summary = "");
 
     std::ostream &print(std::ostream &os) const;
 };

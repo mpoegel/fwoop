@@ -1,5 +1,6 @@
 add_library(fwoopobserve STATIC
     fwoop_countermetric.cpp
+    fwoop_gaugemetric.cpp
     fwoop_metric.cpp
     fwoop_openmetrics.cpp
     fwoop_unit.cpp
@@ -11,6 +12,7 @@ install(TARGETS fwoopobserve DESTINATION lib)
 target_link_libraries(fwoopobserve fwoopbasis fwoophttp)
 install(FILES
     fwoop_countermetric.h
+    fwoop_gaugemetric.h
     fwoop_metric.h
     fwoop_openmetrics.h
     fwoop_unit.h
@@ -18,6 +20,7 @@ install(FILES
 
 include(GoogleTest)
 add_executable(fwoopobserve_test
+    fwoop_gaugemetric.g.cpp
     fwoop_countermetric.g.cpp
     fwoop_openmetrics.g.cpp
 )

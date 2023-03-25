@@ -1,9 +1,11 @@
+#include "fwoop_gaugemetric.h"
 #include <fwoop_openmetrics.h>
 
 #include <fwoop_httpversion.h>
 #include <fwoop_log.h>
 
 #include <functional>
+#include <memory>
 
 namespace fwoop {
 
@@ -36,6 +38,14 @@ std::shared_ptr<CounterMetric> OpenMetricsPublisher::newCounter(const std::strin
     std::shared_ptr<Metric> counter = std::make_shared<CounterMetric>(name, unit, summary);
     d_metrics.push_back(counter);
     return std::dynamic_pointer_cast<CounterMetric>(counter);
+}
+
+std::shared_ptr<GaugeMetric> OpenMetricsPublisher::newGauge(const std::string &name, const std::string &unit,
+                                                            const std::string &summary)
+{
+    std::shared_ptr<Metric> gauge = std::make_shared<GaugeMetric>(name, unit, summary);
+    d_metrics.push_back(gauge);
+    return std::dynamic_pointer_cast<GaugeMetric>(gauge);
 }
 
 void OpenMetricsPublisher::handleMetricsEvent(const HttpRequest &request, HttpResponse &response)
