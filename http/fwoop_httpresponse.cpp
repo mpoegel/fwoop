@@ -123,7 +123,7 @@ std::shared_ptr<HttpResponse> HttpResponse::parse(uint8_t *buffer, uint32_t buff
     unsigned int contentLength = 0;
 
     for (++itr; itr != tokr.end(); ++itr) {
-        unsigned int split = (*itr).find(':');
+        size_t split = (*itr).find(':');
         if (split == std::string::npos) {
             Log::Warn("Received bad response header: ", *itr);
         } else {

@@ -90,6 +90,7 @@ std::error_code HttpClient::makeReqest(const HttpRequest &request, std::shared_p
         return std::error_code();
     }
 
+    Log::Debug("read ", bytesRead, " bytes");
     unsigned int bytesParsed;
     response = HttpResponse::parse(buffer, bufferSize, bytesParsed);
     if (!response) {
@@ -97,6 +98,7 @@ std::error_code HttpClient::makeReqest(const HttpRequest &request, std::shared_p
         reset();
         return std::error_code();
     }
+    Log::Debug("parsed ", bytesParsed, " bytes");
 
     return std::error_code();
 }

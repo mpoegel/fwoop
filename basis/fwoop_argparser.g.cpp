@@ -5,8 +5,8 @@
 TEST(ArgParser, parsePositionalArgs)
 {
     // GIVEN
-    const char *argv[] = {"foo", "3"};
-    int argc = 2;
+    const char *argv[] = {"./test", "foo", "3"};
+    int argc = 3;
     fwoop::ArgParser parser(argv, argc);
 
     // WHEN
@@ -16,7 +16,7 @@ TEST(ArgParser, parsePositionalArgs)
     auto ec = parser.parse();
 
     // THEN
-    ASSERT_FALSE(ec) << ec;
+    ASSERT_FALSE(ec) << ec.message();
     EXPECT_EQ("foo", parser.getPositionalArg<std::string>("arg1"));
     EXPECT_EQ(3, parser.getPositionalArg<int>("arg2"));
     EXPECT_EQ(88, parser.getPositionalArg<int>("arg3"));
@@ -25,8 +25,8 @@ TEST(ArgParser, parsePositionalArgs)
 TEST(ArgParser, parseNamedArgs)
 {
     // GIVEN
-    const char *argv[] = {"-arg1", "fizz", "-a", "9000", "-b"};
-    int argc = 5;
+    const char *argv[] = {"./test", "-arg1", "fizz", "-a", "9000", "-b"};
+    int argc = 6;
     fwoop::ArgParser parser(argv, argc);
 
     // WHEN
@@ -37,7 +37,7 @@ TEST(ArgParser, parseNamedArgs)
     auto ec = parser.parse();
 
     // THEN
-    ASSERT_FALSE(ec) << ec;
+    ASSERT_FALSE(ec) << ec.message();
     EXPECT_EQ("fizz", parser.getNamedArg<std::string>("arg1"));
     EXPECT_EQ(44, parser.getNamedArg<int>("arg2"));
     EXPECT_EQ(9000, parser.getNamedArg<int>("arg3"));

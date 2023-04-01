@@ -1,6 +1,7 @@
 #include <fwoop_argparser.h>
 
 #include <fwoop_log.h>
+#include <variant>
 
 namespace fwoop {
 
@@ -13,7 +14,7 @@ std::error_code ArgParser::parse()
     bool inNamedArg = false;
     unsigned int nameArgIndex = 0;
     unsigned int posArgIndex = 0;
-    for (unsigned int i = 0; i < d_argc; i++) {
+    for (unsigned int i = 1; i < d_argc; i++) {
         std::string arg(d_argv[i]);
         auto eqIndex = arg.find('=');
         bool hasDash = (arg[0] == '-');
@@ -101,6 +102,37 @@ std::string ArgParserErrCategory::message(int ev) const
     default:
         return "unknown parse error";
     }
+}
+
+std::ostream &operator<<(std::ostream &os, const ArgParser::ArgumentData arg)
+{
+    os << "value=";
+    if (std::holds_alternative<std::string>(arg.value)) {
+        os << std::get<std::string>(arg.value);
+    } else if (std::holds_alternative<int>(arg.value)) {
+        os << std::get<int>(arg.value);
+    } else if (std::holds_alternative<bool>(arg.value)) {
+        if (std::get<bool>(arg.value)) {
+            os << "true";
+        } else {
+            os << "false";
+        }
+    }
+    return os;
+}
+
+std::ostream &operator<<(std::ostream &os, const ArgParser &parser)
+{
+    os << "[ positional_args = [ ";
+    for (auto itr = parser.d_positionalArgIndex.begin(); itr != parser.d_positionalArgIndex.end(); itr++) {
+        os << "[ name=" << itr->first << " " << parser.d_positionalArgs[itr->second] << " ]";
+    }
+    os << " ] named_args = [ ";
+    for (auto itr = parser.d_argNameIndex.begin(); itr != parser.d_argNameIndex.end(); itr++) {
+        os << "[ name=" << itr->first << " " << parser.d_namedArgs[itr->second] << " ]";
+    }
+    os << " ] ]";
+    return os;
 }
 
 } // namespace fwoop

@@ -41,7 +41,7 @@ void Log::getCurrentTime(char *outBuf, unsigned int bufSize) const
     sprintf(outBuf, "%s.%03d", outBuf, millis);
 }
 
-Log::Log() : d_formatStr(DEFAULT_FORMAT_STR) {}
+Log::Log() : d_formatStr(DEFAULT_FORMAT_STR), d_threshold(Level::e_Debug) {}
 
 void Log::setFormat(const std::string &formatStr)
 {

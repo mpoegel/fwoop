@@ -1,5 +1,8 @@
 #include <fwoop_httpheader.h>
 
+#include <algorithm>
+#include <cctype>
+
 namespace fwoop {
 
 std::string httpHeaderToString(HttpHeader header)
@@ -115,109 +118,111 @@ std::string httpHeaderToString(HttpHeader header)
 
 HttpHeader stringToHttpHeader(const std::string &headerStr)
 {
-    if (headerStr == ":authority")
+    auto header(headerStr);
+    std::transform(header.begin(), header.end(), header.begin(), [](uint8_t c) { return std::tolower(c); });
+    if (header == ":authority")
         return Authority;
-    if (headerStr == ":method")
+    if (header == ":method")
         return Method;
-    if (headerStr == ":path")
+    if (header == ":path")
         return Path;
-    if (headerStr == ":scheme")
+    if (header == ":scheme")
         return Scheme;
-    if (headerStr == ":status")
+    if (header == ":status")
         return Status;
-    if (headerStr == "accept-charset")
+    if (header == "accept-charset")
         return AcceptCharset;
-    if (headerStr == "accept-encoding")
+    if (header == "accept-encoding")
         return AcceptEncoding;
-    if (headerStr == "accept-language")
+    if (header == "accept-language")
         return AcceptLanguage;
-    if (headerStr == "accept-ranges")
+    if (header == "accept-ranges")
         return AcceptRanges;
-    if (headerStr == "accept")
+    if (header == "accept")
         return Accept;
-    if (headerStr == "access-control-allow-origin")
+    if (header == "access-control-allow-origin")
         return AccessControlAllowOrigin;
-    if (headerStr == "age")
+    if (header == "age")
         return Age;
-    if (headerStr == "allow")
+    if (header == "allow")
         return Allow;
-    if (headerStr == "authorization")
+    if (header == "authorization")
         return Authorization;
-    if (headerStr == "cache-control")
+    if (header == "cache-control")
         return CacheControl;
-    if (headerStr == "content-disposition")
+    if (header == "content-disposition")
         return ContentDisposition;
-    if (headerStr == "content-encoding")
+    if (header == "content-encoding")
         return ContentEncoding;
-    if (headerStr == "content-language")
+    if (header == "content-language")
         return ContentLanguage;
-    if (headerStr == "content-length")
+    if (header == "content-length")
         return ContentLength;
-    if (headerStr == "content-location")
+    if (header == "content-location")
         return ContentLocation;
-    if (headerStr == "content-range")
+    if (header == "content-range")
         return ContentRange;
-    if (headerStr == "content-type")
+    if (header == "content-type")
         return ContentType;
-    if (headerStr == "cookie")
+    if (header == "cookie")
         return Cookie;
-    if (headerStr == "date")
+    if (header == "date")
         return Date;
-    if (headerStr == "etag")
+    if (header == "etag")
         return Etag;
-    if (headerStr == "expect")
+    if (header == "expect")
         return Expect;
-    if (headerStr == "expires")
+    if (header == "expires")
         return Expires;
-    if (headerStr == "from")
+    if (header == "from")
         return From;
-    if (headerStr == "host")
+    if (header == "host")
         return Host;
-    if (headerStr == "if-match")
+    if (header == "if-match")
         return IfMatch;
-    if (headerStr == "if-modified-since")
+    if (header == "if-modified-since")
         return IfModifiedSince;
-    if (headerStr == "if-none-match")
+    if (header == "if-none-match")
         return IfNoneMatch;
-    if (headerStr == "if-range")
+    if (header == "if-range")
         return IfRange;
-    if (headerStr == "if-unmodified-since")
+    if (header == "if-unmodified-since")
         return IfUnmodifiedSince;
-    if (headerStr == "last-modified")
+    if (header == "last-modified")
         return LastModified;
-    if (headerStr == "link")
+    if (header == "link")
         return Link;
-    if (headerStr == "location")
+    if (header == "location")
         return Location;
-    if (headerStr == "max-forwards")
+    if (header == "max-forwards")
         return MaxForwards;
-    if (headerStr == "proxy-authenticate")
+    if (header == "proxy-authenticate")
         return ProxyAuthenticate;
-    if (headerStr == "proxy-authorization")
+    if (header == "proxy-authorization")
         return ProxyAuthorization;
-    if (headerStr == "range")
+    if (header == "range")
         return Range;
-    if (headerStr == "referer")
+    if (header == "referer")
         return Referer;
-    if (headerStr == "refresh")
+    if (header == "refresh")
         return Refresh;
-    if (headerStr == "retry-after")
+    if (header == "retry-after")
         return RetryAfter;
-    if (headerStr == "server")
+    if (header == "server")
         return Server;
-    if (headerStr == "set-cookie")
+    if (header == "set-cookie")
         return SetCookie;
-    if (headerStr == "strict-transport-security")
+    if (header == "strict-transport-security")
         return StrictTransportSecurity;
-    if (headerStr == "transfer-encoding")
+    if (header == "transfer-encoding")
         return TransferEncoding;
-    if (headerStr == "user-agent")
+    if (header == "user-agent")
         return UserAgent;
-    if (headerStr == "vary")
+    if (header == "vary")
         return Vary;
-    if (headerStr == "via")
+    if (header == "via")
         return Via;
-    if (headerStr == "www-authenticate")
+    if (header == "www-authenticate")
         return WwwAuthenticate;
     return Undefined;
 }

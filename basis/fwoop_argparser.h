@@ -31,6 +31,8 @@ class ArgParser {
     std::unordered_map<std::string, unsigned int> d_argNameIndex;
     std::unordered_map<std::string, unsigned int> d_argFlagIndex;
 
+    friend std::ostream &operator<<(std::ostream &os, const ArgumentData);
+
   public:
     enum ParseErr {
         InvalidType = 1,
@@ -72,9 +74,9 @@ class ArgParser {
     template <typename T> T getNamedArg(const std::string &argName) const;
 
     template <typename T> T getPositionalArg(const std::string &argName) const;
-};
 
-std::ostream &operator<<(std::ostream &os, const ArgParser &parser);
+    friend std::ostream &operator<<(std::ostream &os, const ArgParser &parser);
+};
 
 struct ArgParserErrCategory : std::error_category {
     const char *name() const noexcept override;

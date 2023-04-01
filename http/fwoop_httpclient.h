@@ -17,7 +17,7 @@ class HttpClient {
     void reset();
 
   public:
-    HttpClient(const std::string &host, int port);
+    HttpClient(const std::string &host, int port = 80);
     ~HttpClient();
 
     std::error_code makeReqest(const HttpRequest &request, std::shared_ptr<HttpResponse> &response);

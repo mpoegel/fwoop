@@ -21,6 +21,7 @@ class Log {
     static std::shared_ptr<Log> s_log;
 
     std::string d_formatStr;
+    Level d_threshold;
 
     std::string levelToString(Level level) const;
     template <typename... Ts> std::string formatMsg(Level level, Ts... args) const;
@@ -28,13 +29,11 @@ class Log {
 
   public:
     static std::shared_ptr<Log> getDefault();
+    static void SetThreshold(Level lvl);
 
     template <typename... Ts> static void Debug(Ts &&...args);
-
     template <typename... Ts> static void Info(Ts &&...args);
-
     template <typename... Ts> static void Warn(Ts &&...args);
-
     template <typename... Ts> static void Error(Ts &&...args);
 
     static void Debug(const std::string &msg);
@@ -47,11 +46,8 @@ class Log {
     void setFormat(const std::string &formatStr);
 
     template <typename... Ts> void debug(Ts &&...args);
-
     template <typename... Ts> void info(Ts &&...args);
-
     template <typename... Ts> void warn(Ts &&...args);
-
     template <typename... Ts> void error(Ts &&...args);
 
     void debug(const std::string &msg);
@@ -61,30 +57,42 @@ class Log {
 };
 
 inline std::shared_ptr<Log> Log::getDefault() { return s_log; }
+inline void Log::SetThreshold(Level lvl) { getDefault()->d_threshold = lvl; }
 
 template <typename... Ts> inline void Log::Debug(Ts &&...args) { s_log->debug(args...); }
-
 template <typename... Ts> inline void Log::Info(Ts &&...args) { s_log->info(args...); }
-
 template <typename... Ts> inline void Log::Warn(Ts &&...args) { s_log->warn(args...); }
-
 template <typename... Ts> inline void Log::Error(Ts &&...args) { s_log->error(args...); }
 
 inline void Log::Debug(const std::string &msg) { s_log->debug(msg); }
-
 inline void Log::Info(const std::string &msg) { s_log->info(msg); }
-
 inline void Log::Warn(const std::string &msg) { s_log->warn(msg); }
-
 inline void Log::Error(const std::string &msg) { s_log->error(msg); }
 
-template <typename... Ts> void Log::debug(Ts &&...args) { std::cout << formatMsg(Level::e_Debug, args...) << '\n'; }
-
-template <typename... Ts> void Log::info(Ts &&...args) { std::cout << formatMsg(Level::e_Info, args...) << '\n'; }
-
-template <typename... Ts> void Log::warn(Ts &&...args) { std::cerr << formatMsg(Level::e_Warn, args...) << '\n'; }
-
-template <typename... Ts> void Log::error(Ts &&...args) { std::cerr << formatMsg(Level::e_Error, args...) << '\n'; }
+template <typename... Ts> void Log::debug(Ts &&...args)
+{
+    if (d_threshold <= Level::e_Debug) {
+        std::cout << formatMsg(Level::e_Debug, args...) << '\n';
+    }
+}
+template <typename... Ts> void Log::info(Ts &&...args)
+{
+    if (d_threshold <= Level::e_Info) {
+        std::cout << formatMsg(Level::e_Info, args...) << '\n';
+    }
+}
+template <typename... Ts> void Log::warn(Ts &&...args)
+{
+    if (d_threshold <= Level::e_Warn) {
+        std::cerr << formatMsg(Level::e_Warn, args...) << '\n';
+    }
+}
+template <typename... Ts> void Log::error(Ts &&...args)
+{
+    if (d_threshold <= Level::e_Error) {
+        std::cerr << formatMsg(Level::e_Error, args...) << '\n';
+    }
+}
 
 template <typename... Ts> std::string Log::formatMsg(Level level, Ts... args) const
 {
