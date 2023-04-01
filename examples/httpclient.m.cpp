@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
     auto request = fwoop::HttpRequest();
     request.setMethod(fwoop::HttpRequest::Method::Get);
     request.setPath("/foo");
+    request.setVersion(fwoop::HttpVersion::Http1_1);
 
     fwoop::Log::Info("sending request: ", request);
 

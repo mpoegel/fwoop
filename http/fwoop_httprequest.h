@@ -41,6 +41,7 @@ class HttpRequest {
     void setPath(const std::string &path);
     void setBody(const std::string &body);
     void setMethod(const Method &method);
+    void setVersion(const HttpVersion::Value &version);
 
     Method getMethod() const;
     const std::string &getPath() const;
@@ -64,19 +65,14 @@ inline void HttpRequest::addHeader(const HttpCustomHeader &name, const std::stri
 }
 
 inline void HttpRequest::setPath(const std::string &path) { d_path = path; }
-
 inline void HttpRequest::setBody(const std::string &body) { d_body = body; }
-
 inline void HttpRequest::setMethod(const Method &method) { d_method = method; }
+inline void HttpRequest::setVersion(const HttpVersion::Value &version) { d_version = version; }
 
 inline HttpRequest::Method HttpRequest::getMethod() const { return d_method; }
-
 inline const std::string &HttpRequest::getPath() const { return d_path; }
-
 inline HttpVersion::Value HttpRequest::getVersion() const { return d_version; }
-
 inline const std::vector<HttpHeaderField_t> &HttpRequest::getHeaders() const { return d_headers; }
-
 inline bool HttpRequest::canUpgrade() const { return d_canUpgrade; }
 
 } // namespace fwoop

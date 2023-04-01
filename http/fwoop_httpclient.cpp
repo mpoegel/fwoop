@@ -1,5 +1,6 @@
 #include <fwoop_httpclient.h>
 
+#include <fwoop_dnsquery.h>
 #include <fwoop_log.h>
 #include <fwoop_socketio.h>
 
@@ -7,6 +8,7 @@
 #include <netinet/in.h>
 #include <sys/socket.h>
 #include <sys/types.h>
+#include <system_error>
 #include <unistd.h>
 
 namespace fwoop {
@@ -46,8 +48,12 @@ std::error_code HttpClient::makeReqest(const HttpRequest &request, std::shared_p
         serv_addr.sin_family = AF_INET;
         serv_addr.sin_port = htons(d_port);
 
-        // TODO use d_host
-        if (inet_pton(AF_INET, "127.0.0.1", &serv_addr.sin_addr) <= 0) {
+        auto record = DNS::Query::getRecord(d_host);
+        if (record == nullptr) {
+            Log::Error("hostname ", d_host, " not found");
+            return std::error_code();
+        }
+        if (inet_pton(AF_INET, record->IP().c_str(), &serv_addr.sin_addr) <= 0) {
             Log::Error("invalid address or address not supported");
             reset();
             return std::error_code();
