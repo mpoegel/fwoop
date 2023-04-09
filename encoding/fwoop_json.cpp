@@ -126,11 +126,13 @@ JsonValue_t decodeValue(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed
         index += tmpParsed;
         return JsonValue_t(value);
     } else if (START_ARR == bytes[index]) {
-        Log::Error("array not implemented");
-        return JsonValue_t();
+        auto val = JsonValue_t(std::make_shared<JsonArray>(bytes + index, bytesLen - index, tmpParsed));
+        index += tmpParsed;
+        return val;
     } else if (START_OBJ == bytes[index]) {
-        Log::Error("sub object not implemented");
-        return JsonValue_t();
+        auto val = JsonValue_t(std::make_shared<JsonObject>(bytes + index, bytesLen - index, tmpParsed));
+        index += tmpParsed;
+        return val;
     } else {
         // int or bool or double
         uint32_t end = index + 1;
@@ -210,6 +212,32 @@ JsonArray::JsonArray(JsonArray &rhs) {}
 JsonArray &JsonArray::operator=(JsonArray rhs) { return *this; }
 
 JsonArray::~JsonArray() {}
+
+std::shared_ptr<JsonObject> JsonArray::getObject(unsigned int index) const
+{
+    std::shared_ptr<JsonObject> res;
+    if (index >= d_arr.size()) {
+        return res;
+    }
+    auto val = d_arr[index];
+    if (std::holds_alternative<std::shared_ptr<JsonObject>>(val)) {
+        return std::shared_ptr<JsonObject>(std::get<std::shared_ptr<JsonObject>>(val));
+    }
+    return res;
+}
+
+std::shared_ptr<JsonArray> JsonArray::getArray(unsigned int index) const
+{
+    std::shared_ptr<JsonArray> res;
+    if (index >= d_arr.size()) {
+        return res;
+    }
+    auto val = d_arr[index];
+    if (std::holds_alternative<std::shared_ptr<JsonArray>>(val)) {
+        return std::shared_ptr<JsonArray>(std::get<std::shared_ptr<JsonArray>>(val));
+    }
+    return res;
+}
 
 void JsonObject::decode(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed)
 {

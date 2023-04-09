@@ -2,6 +2,7 @@
 #include <fwoop_log.h>
 
 #include <gtest/gtest.h>
+#include <optional>
 
 TEST(JSON, basicString)
 {
@@ -86,4 +87,49 @@ TEST(JSON, nestedObject)
     std::optional<std::string> first = val->get<std::string>("bar");
     ASSERT_TRUE(first.has_value());
     EXPECT_EQ("pop", first.value());
+}
+
+TEST(JSON, arrayOfObjects)
+{
+    // GIVEN
+    uint8_t *input = (uint8_t *)"{ \"foo\": [{\"bar\": \"pop\"}] }";
+    uint32_t length = 27;
+    uint32_t bytesParsed;
+
+    // WHEN
+    auto json = fwoop::JsonObject(input, length, bytesParsed);
+
+    // THEN
+    EXPECT_EQ(length, bytesParsed);
+    std::shared_ptr<fwoop::JsonArray> val = json.getArray("foo");
+    ASSERT_TRUE(val.get());
+    std::shared_ptr<fwoop::JsonObject> first = val->getObject(0);
+    ASSERT_TRUE(first);
+    std::optional<std::string> inner = first->get<std::string>("bar");
+    ASSERT_TRUE(inner.has_value());
+    EXPECT_EQ("pop", inner.value());
+}
+
+TEST(JSON, arrayOfArrays)
+{
+    // GIVEN
+    uint8_t *input = (uint8_t *)"{ \"foo\": [[\"bar\", \"pop\"]] }";
+    uint32_t length = 27;
+    uint32_t bytesParsed;
+
+    // WHEN
+    auto json = fwoop::JsonObject(input, length, bytesParsed);
+
+    // THEN
+    EXPECT_EQ(length, bytesParsed);
+    std::shared_ptr<fwoop::JsonArray> val = json.getArray("foo");
+    ASSERT_TRUE(val.get());
+    std::shared_ptr<fwoop::JsonArray> first = val->getArray(0);
+    ASSERT_TRUE(first);
+    std::optional<std::string> innerFirst = first->get<std::string>(0);
+    ASSERT_TRUE(innerFirst.has_value());
+    EXPECT_EQ("bar", innerFirst.value());
+    std::optional<std::string> innerSecond = first->get<std::string>(1);
+    ASSERT_TRUE(innerSecond.has_value());
+    EXPECT_EQ("pop", innerSecond.value());
 }

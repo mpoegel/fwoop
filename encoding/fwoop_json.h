@@ -32,6 +32,9 @@ class JsonArray {
     unsigned int length() const;
 
     template <typename T> std::optional<T> get(unsigned int index) const;
+
+    std::shared_ptr<JsonObject> getObject(unsigned int index) const;
+    std::shared_ptr<JsonArray> getArray(unsigned int index) const;
 };
 
 class JsonObject {
