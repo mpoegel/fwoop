@@ -2,6 +2,7 @@
 
 #include <memory>
 #include <optional>
+#include <ostream>
 #include <string>
 #include <unordered_map>
 #include <variant>
@@ -14,6 +15,7 @@ class JsonArray;
 
 typedef std::variant<std::string, int, double, bool, std::shared_ptr<JsonArray>, std::shared_ptr<JsonObject>>
     JsonValue_t;
+std::ostream &operator<<(std::ostream &os, const JsonValue_t &val);
 
 class JsonArray {
   private:

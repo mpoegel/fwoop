@@ -1,3 +1,4 @@
+#include <cstdint>
 #include <fwoop_json.h>
 
 #include <cctype>
@@ -5,6 +6,8 @@
 #include <fwoop_log.h>
 #include <memory>
 #include <string.h>
+#include <string>
+#include <variant>
 
 namespace fwoop {
 
@@ -72,6 +75,12 @@ int decodeInt(uint8_t *bytes, uint8_t bytesLen, uint32_t &bytesParsed)
         bytesParsed = bytesLen;
         return *bytes - 0x30;
     }
+    for (uint32_t i = 0; i < bytesLen; i++) {
+        if (bytes[i] == '.') {
+            // value is a double not an int
+            return 0;
+        }
+    }
     uint8_t *tmp = new uint8_t[bytesLen];
     memcpy(tmp, bytes, bytesLen);
     int res = atoi((char *)tmp);
@@ -92,7 +101,10 @@ double decodeDouble(uint8_t *bytes, uint8_t bytesLen, uint32_t &bytesParsed)
     double res = 0;
     bool isNegative = (*bytes == '-');
     bool afterDecimal = false;
-    double factor = isNegative ? pow(10, bytesLen - 1) : pow(10, bytesLen - 2);
+    unsigned int beforeDecimal = 0;
+    for (; beforeDecimal < bytesLen && bytes[beforeDecimal] != '.'; beforeDecimal++)
+        ;
+    double factor = isNegative ? pow(10, beforeDecimal - 2) : pow(10, beforeDecimal - 1);
     uint8_t i = isNegative ? 1 : 0;
     for (; i < bytesLen; i++) {
         if (bytes[i] == '.') {
@@ -136,7 +148,7 @@ JsonValue_t decodeValue(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed
     } else {
         // int or bool or double
         uint32_t end = index + 1;
-        while (!isWhitespace(bytes[end]) && bytes[end] != ',')
+        while (!isWhitespace(bytes[end]) && bytes[end] != COMMA && bytes[end] != END_OBJ && bytes[end] != END_ARR)
             end++;
         tmpParsed = 0;
         Log::Debug("look for value with length: ", end - index);
@@ -156,6 +168,20 @@ JsonValue_t decodeValue(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed
 }
 
 } // namespace
+
+std::ostream &operator<<(std::ostream &os, const JsonValue_t &val)
+{
+    if (std::holds_alternative<std::string>(val)) {
+        os << "\"" << std::get<std::string>(val) << "\"";
+    } else if (std::holds_alternative<int>(val)) {
+        os << std::get<int>(val);
+    } else if (std::holds_alternative<double>(val)) {
+        os << std::get<double>(val);
+    } else if (std::holds_alternative<bool>(val)) {
+        os << (std::get<bool>(val) ? "true" : "false");
+    }
+    return os;
+}
 
 void JsonArray::decode(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed)
 {
@@ -195,6 +221,8 @@ void JsonArray::decode(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed)
         }
         Log::Debug("ending array value search iteration at index: ", index);
     } while (COMMA == bytes[index] && index++ < bytesLen);
+    while (index < bytesLen && isspace(bytes[index]))
+        index++;
     if (index >= bytesLen || END_ARR != bytes[index]) {
         Log::Error("bad array ending");
         return;
@@ -303,7 +331,7 @@ void JsonObject::decode(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed
         } else {
             // int or bool or double
             uint32_t end = index + 1;
-            while (!isWhitespace(bytes[end]) && bytes[end] != ',')
+            while (!isWhitespace(bytes[end]) && bytes[end] != COMMA && bytes[end] != END_OBJ && bytes[end] != END_ARR)
                 end++;
             tmpParsed = 0;
             Log::Debug("look for value with length: ", end - index);

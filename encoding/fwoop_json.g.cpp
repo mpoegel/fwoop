@@ -1,3 +1,4 @@
+#include <cstdint>
 #include <fwoop_json.h>
 #include <fwoop_log.h>
 
@@ -132,4 +133,51 @@ TEST(JSON, arrayOfArrays)
     std::optional<std::string> innerSecond = first->get<std::string>(1);
     ASSERT_TRUE(innerSecond.has_value());
     EXPECT_EQ("pop", innerSecond.value());
+}
+
+TEST(JSON, largeInput)
+{
+    // GIVEN
+    const std::string input =
+        "{"
+        "\"coord\" : {\"lon\" : -73.9497, \"lat\" : 40.6526},"
+        "\"weather\" : [ {\"id\" : 800, \"main\" : \"Clear\", \"description\" : \"clear sky\", \"icon\" : \"01d\"} ],"
+        "\"base\" : \"stations\","
+        "\"main\" : {"
+        "    \"temp\" : 45.25,"
+        "    \"feels_like\" : 39.24,"
+        "    \"temp_min\" : 41.32,"
+        "    \"temp_max\" : 48.11,"
+        "    \"pressure\" : 1033,"
+        "    \"humidity\" : 48"
+        "},"
+        "\"visibility\" : 10000,"
+        "\"wind\" : {\"speed\" : 12.66, \"deg\" : 40},"
+        "\"clouds\" : {\"all\" : 0},"
+        "\"dt\" : 1681044900,"
+        "\"sys\" : {\"type\" : 2, \"id\" : 2080536, \"country\" : \"US\", \"sunrise\" : 1681036000, \"sunset\" : "
+        "1681082866},"
+        "\"timezone\" : -14400,"
+        "\"id\" : 5110302,"
+        "\"name\" : \"Brooklyn\","
+        "\"cod\" : 200"
+        "}";
+    uint32_t bytesParsed;
+
+    // WHEN
+    auto json = fwoop::JsonObject((uint8_t *)input.c_str(), input.size(), bytesParsed);
+
+    // THEN
+    EXPECT_EQ(input.size(), bytesParsed);
+    auto name = json.get<std::string>("name");
+    ASSERT_TRUE(name.has_value());
+    EXPECT_EQ("Brooklyn", name.value());
+    auto main = json.getObject("main");
+    ASSERT_TRUE(main != nullptr);
+    auto temp = main->get<double>("temp");
+    ASSERT_TRUE(temp.has_value());
+    EXPECT_FLOAT_EQ(45.25, temp.value());
+    auto humidity = main->get<int>("humidity");
+    ASSERT_TRUE(humidity.has_value());
+    EXPECT_EQ(48, humidity.value());
 }
