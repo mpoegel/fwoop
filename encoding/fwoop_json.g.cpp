@@ -181,3 +181,43 @@ TEST(JSON, largeInput)
     ASSERT_TRUE(humidity.has_value());
     EXPECT_EQ(48, humidity.value());
 }
+
+TEST(JSON, largeInput2)
+{
+    // GIVEN
+    const std::string input =
+        "{"
+        "\"coord\": {\"lon\":-73.9496,\"lat\":40.6501},"
+        "\"weather\": [{\"id\":804,\"main\":\"Clouds\",\"description\":\"overcast clouds\",\"icon\":\"04d\"}],"
+        "\"base\": \"stations\","
+        "\"main\": "
+        "{\"temp\":65.25,\"feels_like\":64.85,\"temp_min\":62.85,\"temp_max\":68.88,\"pressure\":1016,\"humidity\":72},"
+        "\"visibility\":10000,"
+        "\"wind\":{\"speed\":17.27,\"deg\":60},"
+        "\"clouds\":{\"all\":100},"
+        "\"dt\":1685811607,"
+        "\"sys\":{\"type\":2,\"id\":2080536,\"country\":\"US\",\"sunrise\":1685784392,\"sunset\":1685838098},"
+        "\"timezone\":-14400,"
+        "\"id\":5110302,"
+        "\"name\":\"Brooklyn\","
+        "\"cod\":200"
+        "}";
+    uint32_t bytesParsed;
+
+    // WHEN
+    auto json = fwoop::JsonObject((uint8_t *)input.c_str(), input.size(), bytesParsed);
+
+    // THEN
+    EXPECT_EQ(input.size(), bytesParsed);
+    auto name = json.get<std::string>("name");
+    ASSERT_TRUE(name.has_value());
+    EXPECT_EQ("Brooklyn", name.value());
+    auto main = json.getObject("main");
+    ASSERT_TRUE(main != nullptr);
+    auto temp = main->get<double>("temp");
+    ASSERT_TRUE(temp.has_value());
+    EXPECT_FLOAT_EQ(65.25, temp.value());
+    auto humidity = main->get<int>("humidity");
+    ASSERT_TRUE(humidity.has_value());
+    EXPECT_EQ(72, humidity.value());
+}

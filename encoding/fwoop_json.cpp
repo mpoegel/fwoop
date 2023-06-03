@@ -27,7 +27,7 @@ bool isWhitespace(uint8_t val)
     return val == 0x20; // space
 }
 
-std::string decodeString(uint8_t *bytes, uint8_t bytesLen, uint32_t &bytesParsed)
+std::string decodeString(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed)
 {
     uint32_t index = 0;
     bytesParsed = 0;
@@ -48,7 +48,7 @@ std::string decodeString(uint8_t *bytes, uint8_t bytesLen, uint32_t &bytesParsed
     return std::string((char *)bytes + 1, (char *)bytes + index);
 }
 
-bool decodeBool(uint8_t *bytes, uint8_t bytesLen, uint32_t &bytesParsed)
+bool decodeBool(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed)
 {
     static const char *TRUE = "true";
     static const unsigned int TRUE_LEN = strlen(TRUE);
@@ -65,7 +65,7 @@ bool decodeBool(uint8_t *bytes, uint8_t bytesLen, uint32_t &bytesParsed)
     return false;
 }
 
-int decodeInt(uint8_t *bytes, uint8_t bytesLen, uint32_t &bytesParsed)
+int decodeInt(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed)
 {
     bytesParsed = 0;
     if (0 == bytesLen) {
@@ -91,7 +91,7 @@ int decodeInt(uint8_t *bytes, uint8_t bytesLen, uint32_t &bytesParsed)
     return res;
 }
 
-double decodeDouble(uint8_t *bytes, uint8_t bytesLen, uint32_t &bytesParsed)
+double decodeDouble(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed)
 {
     // TODO refactor
     bytesParsed = 0;
