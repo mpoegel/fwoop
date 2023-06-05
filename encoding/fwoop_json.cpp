@@ -5,6 +5,7 @@
 #include <cmath>
 #include <fwoop_log.h>
 #include <memory>
+#include <optional>
 #include <string.h>
 #include <string>
 #include <variant>
@@ -392,6 +393,8 @@ std::optional<int> JsonObject::getInt(const std::string &key) const
     if (itr != d_valueMap.end()) {
         if (std::holds_alternative<int>(itr->second)) {
             return std::optional<int>(std::get<int>(itr->second));
+        } else if (std::holds_alternative<double>(itr->second)) {
+            return std::optional<int>(std::floor(std::get<double>(itr->second)));
         }
     }
     return res;
@@ -404,6 +407,8 @@ std::optional<double> JsonObject::getDouble(const std::string &key) const
     if (itr != d_valueMap.end()) {
         if (std::holds_alternative<double>(itr->second)) {
             return std::optional<double>(std::get<double>(itr->second));
+        } else if (std::holds_alternative<int>(itr->second)) {
+            return std::optional<double>(std::get<int>(itr->second));
         }
     }
     return res;
