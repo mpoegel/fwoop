@@ -8,7 +8,7 @@
 
 namespace fwoop {
 
-HttpResponse::HttpResponse() : d_status(), d_body() {}
+HttpResponse::HttpResponse() : d_state(BuildState::WaitingOnHeaders), d_status(), d_body() {}
 
 void HttpResponse::streamFile(const std::string &fileName)
 {
@@ -95,60 +95,79 @@ uint8_t *HttpResponse::encode(uint32_t &length) const
     return encoding;
 }
 
-std::shared_ptr<HttpResponse> HttpResponse::parse(uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesParsed)
+HttpResponse::BuildResult HttpResponse::build(uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesParsed)
 {
-    auto resp = std::make_shared<HttpResponse>();
 
     bytesParsed = 0;
-
-    std::string payload((char *)buffer, bufferSize);
-    unsigned int end = payload.rfind("\r\n\r\n");
-    if (end == std::string::npos) {
-        return nullptr;
-    } else {
-        bytesParsed = end + 4;
+    if (d_state == Errored) {
+        return BuildResult::Failure;
     }
 
-    payload.resize(end);
-    Tokenizer tokr(payload, '\n');
-    auto itr = tokr.begin();
-
-    Tokenizer reqLineTokr(*itr, ' ');
-    auto rlItr = reqLineTokr.begin();
-    resp->d_version = HttpVersion::fromString(*rlItr);
-    ++rlItr;
-    ++rlItr;
-    unsigned int statusEnd = (*rlItr).find('\r');
-    resp->d_status = (*rlItr).substr(0, statusEnd);
-    unsigned int contentLength = 0;
-
-    for (++itr; itr != tokr.end(); ++itr) {
-        size_t split = (*itr).find(':');
-        if (split == std::string::npos) {
-            Log::Warn("Received bad response header: ", *itr);
+    if (d_state == WaitingOnHeaders) {
+        std::string payload((char *)buffer, bufferSize);
+        auto end = payload.rfind("\r\n\r\n");
+        if (end == std::string::npos) {
+            d_state = BuildState::WaitingOnHeaders;
+            end = bufferSize;
+            bytesParsed = end;
         } else {
-            std::string name = (*itr).substr(0, split);
-            unsigned int valueEnd = (*itr).rfind('\r');
-            std::string value = (*itr).substr(split + 2, valueEnd - split - 2);
-            HttpHeader httpName = stringToHttpHeader(name);
-            if (httpName != HttpHeader::Undefined) {
-                resp->d_headers.push_back({httpName, value});
+            d_state = BuildState::WaitingOnBody;
+            bytesParsed = end + 4;
+        }
+
+        payload.resize(end);
+        Tokenizer tokr(payload, '\n');
+        auto itr = tokr.begin();
+
+        Tokenizer reqLineTokr(*itr, ' ');
+        auto rlItr = reqLineTokr.begin();
+        d_version = HttpVersion::fromString(*rlItr);
+        ++rlItr;
+        ++rlItr;
+        unsigned int statusEnd = (*rlItr).find('\r');
+        d_status = (*rlItr).substr(0, statusEnd);
+        d_contentLength = 0;
+
+        for (++itr; itr != tokr.end(); ++itr) {
+            size_t split = (*itr).find(':');
+            if (split == std::string::npos) {
+                Log::Warn("Received bad response header: ", *itr);
             } else {
-                resp->d_headers.push_back({name, value});
+                std::string name = (*itr).substr(0, split);
+                unsigned int valueEnd = (*itr).rfind('\r');
+                std::string value = (*itr).substr(split + 2, valueEnd - split - 2);
+                HttpHeader httpName = stringToHttpHeader(name);
+                if (httpName != HttpHeader::Undefined) {
+                    d_headers.push_back({httpName, value});
+                } else {
+                    d_headers.push_back({name, value});
+                }
+                if (httpName == HttpHeader::ContentLength) {
+                    d_contentLength = std::atoi(value.c_str());
+                }
             }
-            if (httpName == HttpHeader::ContentLength) {
-                contentLength = std::atoi(value.c_str());
+        }
+
+        if (bytesParsed == bufferSize) {
+            if (d_contentLength == 0) {
+                d_state = BuildState::Complete;
+                return BuildResult::Done;
             }
+            return BuildResult::Incomplete;
+        }
+    }
+    if (d_state == WaitingOnBody) {
+        Log::Debug("content-length=", d_contentLength);
+        uint32_t end = std::min(bufferSize + bytesParsed, d_contentLength);
+        d_body += std::string((char *)buffer + bytesParsed, end);
+        bytesParsed += end;
+
+        if (d_body.length() < d_contentLength) {
+            return BuildResult::Incomplete;
         }
     }
 
-    if (bytesParsed + contentLength > bufferSize) {
-        Log::Warn("incomplete response body, missing ", bytesParsed + contentLength - bufferSize, " bytes");
-        contentLength = std::min(bufferSize - bytesParsed, contentLength);
-    }
-    resp->d_body = std::string((char *)buffer + bytesParsed, contentLength);
-
-    return resp;
+    return BuildResult::Done;
 }
 
 std::ostream &operator<<(std::ostream &os, const HttpResponse &response)

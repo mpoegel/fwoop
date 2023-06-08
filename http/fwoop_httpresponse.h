@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstdint>
 #include <fwoop_httpheader.h>
 #include <fwoop_httpversion.h>
 
@@ -11,7 +12,23 @@
 namespace fwoop {
 
 class HttpResponse {
+  public:
+    enum BuildResult {
+        Done = 0,
+        Incomplete,
+        Failure,
+    };
+
   private:
+    enum BuildState {
+        Complete = 0,
+        WaitingOnHeaders,
+        WaitingOnBody,
+        Errored,
+    };
+
+    BuildState d_state;
+    uint32_t d_contentLength;
     HttpVersion::Value d_version;
     std::vector<HttpHeaderField_t> d_headers;
     std::string d_status;
@@ -19,9 +36,9 @@ class HttpResponse {
     std::string d_fileName;
 
   public:
-    static std::shared_ptr<HttpResponse> parse(uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesParsed);
-
     explicit HttpResponse();
+
+    BuildResult build(uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesParsed);
 
     void setStatus(const std::string &status);
     void addHeader(const HttpHeader &name, const std::string &value);
