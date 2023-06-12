@@ -1,6 +1,7 @@
 #pragma once
 
 #include <fwoop_countermetric.h>
+#include <fwoop_gaugehistogrammetric.h>
 #include <fwoop_gaugemetric.h>
 #include <fwoop_httprequest.h>
 #include <fwoop_httpresponse.h>
@@ -38,6 +39,9 @@ class OpenMetricsPublisher {
                                               const std::string &summary = "");
     std::shared_ptr<GaugeMetric> newGauge(const std::string &name, const std::string &unit,
                                           const std::string &summary = "");
+    std::shared_ptr<fwoop::GaugeHistogramMetric> newGaugeHistogram(const std::string &name, const std::string &unit,
+                                                                   int32_t low, int32_t high, uint16_t numBuckets,
+                                                                   const std::string &summary = "");
 
     std::ostream &print(std::ostream &os) const;
 };

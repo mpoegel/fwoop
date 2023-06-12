@@ -1,3 +1,4 @@
+#include "fwoop_gaugehistogrammetric.h"
 #include "fwoop_gaugemetric.h"
 #include <fwoop_openmetrics.h>
 
@@ -46,6 +47,15 @@ std::shared_ptr<GaugeMetric> OpenMetricsPublisher::newGauge(const std::string &n
     std::shared_ptr<Metric> gauge = std::make_shared<GaugeMetric>(name, unit, summary);
     d_metrics.push_back(gauge);
     return std::dynamic_pointer_cast<GaugeMetric>(gauge);
+}
+
+std::shared_ptr<fwoop::GaugeHistogramMetric>
+OpenMetricsPublisher::newGaugeHistogram(const std::string &name, const std::string &unit, int32_t low, int32_t high,
+                                        uint16_t numBuckets, const std::string &summary)
+{
+    auto histogram = std::make_shared<GaugeHistogramMetric>(name, unit, low, high, numBuckets, summary);
+    d_metrics.push_back(histogram);
+    return histogram;
 }
 
 void OpenMetricsPublisher::handleMetricsEvent(const HttpRequest &request, HttpResponse &response)
