@@ -4,6 +4,7 @@
 #include <cctype>
 #include <cmath>
 #include <fwoop_log.h>
+#include <iterator>
 #include <memory>
 #include <optional>
 #include <string.h>
@@ -44,9 +45,20 @@ std::string decodeString(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParse
         return "";
     }
     bytesParsed = index + 1;
-    Log::Debug("string start: ", 1, ", end: ", index - 1);
-    Log::Debug("string: ", std::string((char *)bytes + 1, (char *)bytes + index));
     return std::string((char *)bytes + 1, (char *)bytes + index);
+}
+
+void encodeString(const std::string &input, uint8_t *out, uint32_t outLen, uint32_t &encodedLen)
+{
+    encodedLen = 0;
+    if (outLen < input.size() + 2) {
+        // not enough space
+        return;
+    }
+    out[encodedLen++] = QUOTE;
+    memcpy(out + encodedLen, input.c_str(), input.size());
+    encodedLen += input.size();
+    out[encodedLen++] = QUOTE;
 }
 
 bool decodeBool(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed)
@@ -64,6 +76,24 @@ bool decodeBool(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed)
         return false;
     }
     return false;
+}
+
+void encodeBool(bool input, uint8_t *out, uint32_t outLen, uint32_t &encodedLen)
+{
+    static const char *FALSE = "false";
+    static const char *TRUE = "true";
+    encodedLen = 0;
+    if ((input && outLen < 4) || (!input && outLen < 5)) {
+        // not enough space
+        return;
+    }
+    if (input) {
+        memcpy(out, TRUE, strlen(TRUE));
+        encodedLen = strlen(TRUE);
+    } else {
+        memcpy(out, FALSE, strlen(FALSE));
+        encodedLen = strlen(FALSE);
+    }
 }
 
 int decodeInt(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed)
@@ -90,6 +120,18 @@ int decodeInt(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed)
     }
     bytesParsed = bytesLen;
     return res;
+}
+
+void encodeInt(int input, uint8_t *out, uint32_t outLen, uint32_t &encodedLen)
+{
+    encodedLen = 0;
+    auto val = std::to_string(input);
+    if (outLen < val.size()) {
+        // not enough space
+        return;
+    }
+    memcpy(out, val.c_str(), val.size());
+    encodedLen += val.size();
 }
 
 double decodeDouble(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed)
@@ -125,6 +167,32 @@ double decodeDouble(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed)
     return res;
 }
 
+void encodeDouble(double input, uint8_t *out, uint32_t outLen, uint32_t &encodedLen)
+{
+    encodedLen = 0;
+    auto val = std::to_string(input);
+    if (outLen < val.size()) {
+        // not enough space
+        return;
+    }
+    memcpy(out, val.c_str(), val.size());
+    encodedLen += val.size();
+}
+
+void encodeValue(const JsonValue_t &value, uint8_t *out, uint32_t outLen, uint32_t &encodedLen)
+{
+    encodedLen = 0;
+    if (std::holds_alternative<std::string>(value)) {
+        encodeString(std::get<std::string>(value), out, outLen, encodedLen);
+    } else if (std::holds_alternative<bool>(value)) {
+        encodeBool(std::get<bool>(value), out, outLen, encodedLen);
+    } else if (std::holds_alternative<int>(value)) {
+        encodeInt(std::get<int>(value), out, outLen, encodedLen);
+    } else if (std::holds_alternative<double>(value)) {
+        encodeDouble(std::get<double>(value), out, outLen, encodedLen);
+    }
+}
+
 JsonValue_t decodeValue(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed)
 {
     uint32_t &index = bytesParsed;
@@ -152,7 +220,6 @@ JsonValue_t decodeValue(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed
         while (!isWhitespace(bytes[end]) && bytes[end] != COMMA && bytes[end] != END_OBJ && bytes[end] != END_ARR)
             end++;
         tmpParsed = 0;
-        Log::Debug("look for value with length: ", end - index);
         if (bool value = decodeBool(bytes + index, end - index, tmpParsed); tmpParsed > 0) {
             return JsonValue_t(value);
         } else if (int value = decodeInt(bytes + index, end - index, tmpParsed); tmpParsed > 0) {
@@ -207,7 +274,6 @@ void JsonArray::decode(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed)
     do {
         while (index < bytesLen && isspace(bytes[index]))
             index++;
-        Log::Debug("looking for array value at index: ", index);
         uint32_t tmpParsed = 0;
         JsonValue_t value = decodeValue(bytes + index, bytesLen - index, tmpParsed);
         if (0 == tmpParsed) {
@@ -220,7 +286,6 @@ void JsonArray::decode(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed)
             Log::Error("array ending not found");
             return;
         }
-        Log::Debug("ending array value search iteration at index: ", index);
     } while (COMMA == bytes[index] && index++ < bytesLen);
     while (index < bytesLen && isspace(bytes[index]))
         index++;
@@ -335,7 +400,6 @@ void JsonObject::decode(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed
             while (!isWhitespace(bytes[end]) && bytes[end] != COMMA && bytes[end] != END_OBJ && bytes[end] != END_ARR)
                 end++;
             tmpParsed = 0;
-            Log::Debug("look for value with length: ", end - index);
             if (bool value = decodeBool(bytes + index, end - index, tmpParsed); tmpParsed > 0) {
                 d_valueMap.insert({key, value});
             } else if (int value = decodeInt(bytes + index, end - index, tmpParsed); tmpParsed > 0) {
@@ -448,6 +512,61 @@ std::shared_ptr<JsonObject> JsonObject::getObject(const std::string &key) const
         }
     }
     return res;
+}
+
+uint8_t *JsonObject::encode(uint32_t &length, uint8_t indent)
+{
+    length = 0;
+    uint32_t bufferSize = 1024;
+    uint8_t *buffer = new uint8_t[bufferSize];
+
+    uint8_t *indentBuf = new uint8_t[indent];
+    memset(indentBuf, 0x20, indent);
+
+    buffer[length++] = START_OBJ;
+    bool isFirst = true;
+    for (auto itr = d_valueMap.begin(); itr != d_valueMap.end(); itr++) {
+        const uint32_t reqLen = 2 + itr->first.size() + 1 + indent;
+        if (reqLen > bufferSize - length) {
+            uint32_t newBufferSize = bufferSize * 2;
+            uint8_t *newBuffer = new uint8_t[newBufferSize];
+            memcpy(newBuffer, buffer, length);
+            delete[] buffer;
+            buffer = newBuffer;
+            bufferSize = newBufferSize;
+        }
+        if (!isFirst) {
+            buffer[length++] = ',';
+        }
+        isFirst = false;
+        if (indent > 0) {
+            buffer[length++] = '\n';
+            memcpy(buffer, indentBuf, indent);
+            length += indent;
+        }
+        buffer[length++] = '"';
+        memcpy(buffer + length, itr->first.c_str(), itr->first.size());
+        length += itr->first.size();
+        buffer[length++] = '"';
+        buffer[length++] = ':';
+        uint32_t encodedLen = 0;
+        while (encodedLen == 0) {
+            // TODO prevent buffer from getting too large and give up
+            encodeValue(itr->second, buffer + length, bufferSize, encodedLen);
+            if (encodedLen == 0) {
+                uint32_t newBufferSize = bufferSize * 2;
+                uint8_t *newBuffer = new uint8_t[newBufferSize];
+                memcpy(newBuffer, buffer, length);
+                delete[] buffer;
+                buffer = newBuffer;
+                bufferSize = newBufferSize;
+            }
+        }
+        length += encodedLen;
+    }
+    buffer[length++] = END_OBJ;
+    delete[] indentBuf;
+    return buffer;
 }
 
 } // namespace fwoop

@@ -221,3 +221,19 @@ TEST(JSON, largeInput2)
     ASSERT_TRUE(humidity.has_value());
     EXPECT_EQ(72, humidity.value());
 }
+
+TEST(JSON, encodeBasicTypes)
+{
+    // GIVEN
+    uint8_t *input = (uint8_t *)"{ \"foo\": \"bar\", \"total\" : 24 , \"chance\": 0.30, \"winner\": true }";
+    uint32_t length = 63;
+    uint32_t bytesParsed;
+    uint32_t encodedLen = 0;
+
+    // WHEN
+    auto json = fwoop::JsonObject(input, length, bytesParsed);
+
+    // THEN
+    auto encoding = json.encode(encodedLen);
+    std::cerr << encoding << '\n';
+}

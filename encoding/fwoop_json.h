@@ -52,7 +52,7 @@ class JsonObject {
     JsonObject &operator=(JsonObject rhs);
     ~JsonObject();
 
-    uint8_t *encode(uint32_t &length);
+    uint8_t *encode(uint32_t &length, uint8_t indent = 0);
 
     std::optional<std::string> getString(const std::string &key) const;
     std::optional<int> getInt(const std::string &key) const;
