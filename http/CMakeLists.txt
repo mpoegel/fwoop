@@ -1,5 +1,4 @@
 add_library(fwoophttp STATIC
-    fwoop_dnsquery.cpp
     fwoop_httpclient.cpp
     fwoop_httpdataframe.cpp
     fwoop_httpframe.cpp
@@ -21,7 +20,6 @@ target_link_libraries(fwoophttp fwoopbasis)
 
 install(TARGETS fwoophttp DESTINATION lib)
 install(FILES
-    fwoop_dnsquery.h
     fwoop_httpclient.h
     fwoop_httpdataframe.h
     fwoop_httpframe.h
@@ -41,7 +39,6 @@ install(FILES
 
 include(GoogleTest)
 add_executable(fwoophttp_test
-    fwoop_dnsquery.g.cpp
     fwoop_httpheadersframe.g.cpp
     fwoop_httphpacker.g.cpp
     fwoop_httprequest.g.cpp
