@@ -31,6 +31,8 @@ class JsonArray {
     JsonArray &operator=(JsonArray rhs);
     ~JsonArray();
 
+    uint8_t *encode(uint32_t &length, uint8_t indent = 0);
+
     unsigned int length() const;
 
     template <typename T> std::optional<T> get(unsigned int index) const;

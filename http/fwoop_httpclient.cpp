@@ -88,20 +88,24 @@ std::error_code HttpClient::makeReqest(const HttpRequest &request, std::shared_p
     constexpr unsigned int bufferSize = 32768;
     uint8_t buffer[bufferSize];
     unsigned int bytesRead = 0;
+    unsigned int totalRead = 0;
+    unsigned int totalParsed = 0;
     auto br = HttpResponse::BuildResult::Incomplete;
     response = std::make_shared<HttpResponse>();
 
     while (br == HttpResponse::BuildResult::Incomplete) {
+        bytesRead = 0;
         auto ec = SocketIO::read(d_conn, buffer, bufferSize, bytesRead);
         if (ec && ec.value() != ETIMEDOUT) {
             reset();
             return std::error_code(static_cast<int>(HttpErrc::ReadFailed), HttpClientError);
         }
 
-        Log::Debug("read ", bytesRead, " bytes");
-        unsigned int bytesParsed;
+        totalRead += bytesRead;
+        unsigned int bytesParsed = 0;
         br = response->build(buffer, bytesRead, bytesParsed);
-        Log::Debug("parsed ", bytesParsed, " bytes");
+        totalParsed += bytesParsed;
+        Log::Debug("totalRead=", totalRead, " totalParsed=", totalParsed);
     }
 
     return std::error_code();

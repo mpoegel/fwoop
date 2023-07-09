@@ -97,7 +97,6 @@ uint8_t *HttpResponse::encode(uint32_t &length) const
 
 HttpResponse::BuildResult HttpResponse::build(uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesParsed)
 {
-
     bytesParsed = 0;
     if (d_state == Errored) {
         return BuildResult::Failure;
@@ -158,7 +157,9 @@ HttpResponse::BuildResult HttpResponse::build(uint8_t *buffer, uint32_t bufferSi
     }
     if (d_state == WaitingOnBody) {
         Log::Debug("content-length=", d_contentLength);
-        uint32_t end = std::min(bufferSize + bytesParsed, d_contentLength);
+        uint32_t bytesRemaining = bufferSize - bytesParsed;
+        uint32_t bodyLenRemaining = d_contentLength - d_body.length();
+        uint32_t end = std::min(bytesRemaining, bodyLenRemaining);
         d_body += std::string((char *)buffer + bytesParsed, end);
         bytesParsed += end;
 

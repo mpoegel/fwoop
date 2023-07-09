@@ -1,3 +1,4 @@
+#include <cstdint>
 #include <iostream>
 #include <memory>
 
@@ -5,6 +6,7 @@
 #include <fwoop_httpclient.h>
 #include <fwoop_httprequest.h>
 #include <fwoop_httpresponse.h>
+#include <fwoop_json.h>
 #include <fwoop_log.h>
 
 int main(int argc, const char *argv[])
@@ -12,6 +14,7 @@ int main(int argc, const char *argv[])
     auto args = fwoop::ArgParser(argv, argc);
     args.addPositionalArg("url", "", "URL of request");
     args.addNamedArg("verbose", "v", false, "enable verbose logs");
+    args.addNamedArg("json", "j", false, "parse response body as JSON");
 
     std::error_code ec = args.parse();
     if (ec) {
@@ -56,9 +59,21 @@ int main(int argc, const char *argv[])
         return 1;
     }
 
-    fwoop::Log::Debug("response: ", *response);
+    const uint32_t bodyLen = response->getBody().length();
+    fwoop::Log::Debug("response body length: ", bodyLen);
 
-    std::cout << response->getBody() << std::endl;
+    bool doParseJson = args.getNamedArg<bool>("json");
+    if (doParseJson) {
+        uint32_t bytesParsed;
+        uint8_t *body = (uint8_t *)response->getBody().c_str();
+        auto json = fwoop::JsonObject(body, bodyLen, bytesParsed);
+        uint32_t prettyLen = 0;
+        auto prettyJson = json.encode(prettyLen, 2);
+        std::cout << std::string((char *)prettyJson, prettyLen) << std::endl;
+        delete[] prettyJson;
+    } else {
+        std::cout << response->getBody() << std::endl;
+    }
 
     return 0;
 }

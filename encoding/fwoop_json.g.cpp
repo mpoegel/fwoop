@@ -220,6 +220,11 @@ TEST(JSON, largeInput2)
     auto humidity = main->get<int>("humidity");
     ASSERT_TRUE(humidity.has_value());
     EXPECT_EQ(72, humidity.value());
+
+    // FINALLY
+    uint32_t encodedLen = 0;
+    auto encoding = json.encode(encodedLen);
+    std::cerr << std::string((char *)encoding, encodedLen) << '\n';
 }
 
 TEST(JSON, encodeBasicTypes)
@@ -234,6 +239,6 @@ TEST(JSON, encodeBasicTypes)
     auto json = fwoop::JsonObject(input, length, bytesParsed);
 
     // THEN
-    auto encoding = json.encode(encodedLen);
-    std::cerr << encoding << '\n';
+    auto encoding = json.encode(encodedLen, 2);
+    std::cerr << std::string((char *)encoding, encodedLen) << '\n';
 }

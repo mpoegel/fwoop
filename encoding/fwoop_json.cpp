@@ -179,6 +179,32 @@ void encodeDouble(double input, uint8_t *out, uint32_t outLen, uint32_t &encoded
     encodedLen += val.size();
 }
 
+void encodeArray(const std::shared_ptr<JsonArray> &input, uint8_t *out, uint32_t outLen, uint32_t &encodedLen)
+{
+    // TODO: propagate indent value
+    uint8_t *val = input->encode(encodedLen, 2);
+    if (encodedLen > outLen) {
+        // not enough space
+        encodedLen = 0;
+    } else {
+        memcpy(out, val, encodedLen);
+    }
+    delete[] val;
+}
+
+void encodeObject(const std::shared_ptr<JsonObject> &input, uint8_t *out, uint32_t outLen, uint32_t &encodedLen)
+{
+    // TODO: propagate indent value
+    uint8_t *val = input->encode(encodedLen, 2);
+    if (encodedLen > outLen) {
+        // not enough space
+        encodedLen = 0;
+    } else {
+        memcpy(out, val, encodedLen);
+    }
+    delete[] val;
+}
+
 void encodeValue(const JsonValue_t &value, uint8_t *out, uint32_t outLen, uint32_t &encodedLen)
 {
     encodedLen = 0;
@@ -190,6 +216,10 @@ void encodeValue(const JsonValue_t &value, uint8_t *out, uint32_t outLen, uint32
         encodeInt(std::get<int>(value), out, outLen, encodedLen);
     } else if (std::holds_alternative<double>(value)) {
         encodeDouble(std::get<double>(value), out, outLen, encodedLen);
+    } else if (std::holds_alternative<std::shared_ptr<JsonArray>>(value)) {
+        encodeArray(std::get<std::shared_ptr<JsonArray>>(value), out, outLen, encodedLen);
+    } else if (std::holds_alternative<std::shared_ptr<JsonObject>>(value)) {
+        encodeObject(std::get<std::shared_ptr<JsonObject>>(value), out, outLen, encodedLen);
     }
 }
 
@@ -306,6 +336,39 @@ JsonArray::JsonArray(JsonArray &rhs) {}
 JsonArray &JsonArray::operator=(JsonArray rhs) { return *this; }
 
 JsonArray::~JsonArray() {}
+
+uint8_t *JsonArray::encode(uint32_t &length, uint8_t indent)
+{
+
+    length = 0;
+    uint32_t bufferSize = 32768;
+    uint8_t *buffer = new uint8_t[bufferSize];
+
+    buffer[length++] = START_ARR;
+    bool isFirst = true;
+    for (auto itr = d_arr.begin(); itr != d_arr.end(); itr++) {
+        if (!isFirst) {
+            buffer[length++] = ',';
+        }
+        isFirst = false;
+        uint32_t encodedLen = 0;
+        while (encodedLen == 0) {
+            // TODO prevent buffer from getting too large and give up
+            encodeValue(*itr, buffer + length, bufferSize, encodedLen);
+            if (encodedLen == 0) {
+                uint32_t newBufferSize = bufferSize * 2;
+                uint8_t *newBuffer = new uint8_t[newBufferSize];
+                memcpy(newBuffer, buffer, length);
+                delete[] buffer;
+                buffer = newBuffer;
+                bufferSize = newBufferSize;
+            }
+        }
+        length += encodedLen;
+    }
+    buffer[length++] = END_ARR;
+    return buffer;
+}
 
 std::shared_ptr<JsonObject> JsonArray::getObject(unsigned int index) const
 {
@@ -517,7 +580,7 @@ std::shared_ptr<JsonObject> JsonObject::getObject(const std::string &key) const
 uint8_t *JsonObject::encode(uint32_t &length, uint8_t indent)
 {
     length = 0;
-    uint32_t bufferSize = 1024;
+    uint32_t bufferSize = 32768;
     uint8_t *buffer = new uint8_t[bufferSize];
 
     uint8_t *indentBuf = new uint8_t[indent];
@@ -541,7 +604,7 @@ uint8_t *JsonObject::encode(uint32_t &length, uint8_t indent)
         isFirst = false;
         if (indent > 0) {
             buffer[length++] = '\n';
-            memcpy(buffer, indentBuf, indent);
+            memcpy(buffer + length, indentBuf, indent);
             length += indent;
         }
         buffer[length++] = '"';
@@ -563,6 +626,9 @@ uint8_t *JsonObject::encode(uint32_t &length, uint8_t indent)
             }
         }
         length += encodedLen;
+    }
+    if (indent > 0) {
+        buffer[length++] = '\n';
     }
     buffer[length++] = END_OBJ;
     delete[] indentBuf;
