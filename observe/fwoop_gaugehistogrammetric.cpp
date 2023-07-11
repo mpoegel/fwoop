@@ -33,8 +33,8 @@ void GaugeHistogramMetric::encodeBucket(const uint16_t bucketNum, uint8_t *out, 
                                         uint32_t &encodedLen) const
 {
     static const char BUCKET[] = "_bucket";
-    static const char OPEN_LABEL[] = "{le=\"";
-    static const char CLOSE_LABEL[] = "\"} ";
+    static const char OPEN_LABEL[] = "{le=";
+    static const char CLOSE_LABEL[] = "} ";
 
     encodedLen = 0;
     std::string le;
@@ -54,8 +54,22 @@ void GaugeHistogramMetric::encodeBucket(const uint16_t bucketNum, uint8_t *out, 
     encodedLen += strlen(BUCKET);
     memcpy(out + encodedLen, OPEN_LABEL, strlen(OPEN_LABEL));
     encodedLen += strlen(OPEN_LABEL);
+    out[encodedLen++] = '"';
     memcpy(out + encodedLen, le.c_str(), le.size());
     encodedLen += le.size();
+    out[encodedLen++] = '"';
+
+    for (auto lbl : d_labels) {
+        out[encodedLen++] = ',';
+        memcpy(out + encodedLen, lbl.first.c_str(), lbl.first.length());
+        encodedLen += lbl.first.length();
+        out[encodedLen++] = '=';
+        out[encodedLen++] = '"';
+        memcpy(out + encodedLen, lbl.second.c_str(), lbl.second.length());
+        encodedLen += lbl.second.length();
+        out[encodedLen++] = '"';
+    }
+
     memcpy(out + encodedLen, CLOSE_LABEL, strlen(CLOSE_LABEL));
     encodedLen += strlen(CLOSE_LABEL);
     memcpy(out + encodedLen, value.c_str(), value.size());

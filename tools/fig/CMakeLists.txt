@@ -3,4 +3,4 @@ add_executable(fig
 )
 target_include_directories(fig PUBLIC .)
 target_link_libraries(fig fwoophttp fwoopbasis pthread)
-install(TARGETS fig DESTINATION usr/local/bin)
+install(TARGETS fig DESTINATION bin)

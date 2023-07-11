@@ -4,7 +4,7 @@
 
 #include <gtest/gtest.h>
 
-TEST(HistogramMetric, record)
+TEST(GaugeHistogramMetric, record)
 {
     // GIVEN
     auto metric = fwoop::GaugeHistogramMetric("histogram_test", "seconds", 4, 10, 3);
@@ -20,10 +20,11 @@ TEST(HistogramMetric, record)
     EXPECT_EQ(1, metric.getBin(2));
 }
 
-TEST(HistogramMetric, encode)
+TEST(GaugeHistogramMetric, encode)
 {
     // GIVEN
     auto metric = fwoop::GaugeHistogramMetric("histogram_test", "seconds", 4, 10, 3);
+    metric.addLabel(std::pair<std::string, std::string>{"color", "blue"});
     unsigned int length = 0;
 
     // WHEN

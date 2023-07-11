@@ -3,4 +3,4 @@ add_executable(furl
 )
 target_include_directories(furl PUBLIC .)
 target_link_libraries(furl fwoophttp fwoopbasis fwoopencoding pthread)
-install(TARGETS furl DESTINATION usr/local/bin)
+install(TARGETS furl DESTINATION bin)
