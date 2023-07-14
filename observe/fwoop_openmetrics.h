@@ -18,11 +18,10 @@ namespace fwoop {
 
 class OpenMetricsPublisher {
   private:
-    std::vector<std::shared_ptr<Metric>> d_metrics;
+    std::vector<std::shared_ptr<MetricSeries>> d_series;
     HttpServer d_server;
     std::thread d_serverThread;
 
-    static uint8_t *encodeCounter(std::shared_ptr<CounterMetric> metric, unsigned int &length);
     void handleMetricsEvent(const HttpRequest &request, HttpResponse &response);
 
   public:
@@ -35,13 +34,12 @@ class OpenMetricsPublisher {
     int start();
     void stop();
 
-    std::shared_ptr<CounterMetric> newCounter(const std::string &name, const std::string &unit,
-                                              const std::string &summary = "");
-    std::shared_ptr<GaugeMetric> newGauge(const std::string &name, const std::string &unit,
-                                          const std::string &summary = "");
-    std::shared_ptr<fwoop::GaugeHistogramMetric> newGaugeHistogram(const std::string &name, const std::string &unit,
-                                                                   int32_t low, int32_t high, uint16_t numBuckets,
-                                                                   const std::string &summary = "");
+    std::shared_ptr<CounterMetricSeries> newCounterSeries(const std::string &name, const std::string &unit,
+                                                          const std::string &summary = "");
+    std::shared_ptr<GaugeMetricSeries> newGaugeSeries(const std::string &name, const std::string &unit,
+                                                      const std::string &summary = "");
+    std::shared_ptr<fwoop::GaugeHistogramMetricSeries>
+    newGaugeHistogramSeries(const std::string &name, const std::string &unit, const std::string &summary = "");
 
     std::ostream &print(std::ostream &os) const;
 };

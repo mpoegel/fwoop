@@ -33,28 +33,28 @@ void OpenMetricsPublisher::stop()
     }
 }
 
-std::shared_ptr<CounterMetric> OpenMetricsPublisher::newCounter(const std::string &name, const std::string &unit,
-                                                                const std::string &summary)
+std::shared_ptr<CounterMetricSeries>
+OpenMetricsPublisher::newCounterSeries(const std::string &name, const std::string &unit, const std::string &summary)
 {
-    std::shared_ptr<Metric> counter = std::make_shared<CounterMetric>(name, unit, summary);
-    d_metrics.push_back(counter);
-    return std::dynamic_pointer_cast<CounterMetric>(counter);
+    auto series = std::make_shared<CounterMetricSeries>(name, unit, summary);
+    d_series.push_back(series);
+    return series;
 }
 
-std::shared_ptr<GaugeMetric> OpenMetricsPublisher::newGauge(const std::string &name, const std::string &unit,
-                                                            const std::string &summary)
+std::shared_ptr<GaugeMetricSeries>
+OpenMetricsPublisher::newGaugeSeries(const std::string &name, const std::string &unit, const std::string &summary)
 {
-    std::shared_ptr<Metric> gauge = std::make_shared<GaugeMetric>(name, unit, summary);
-    d_metrics.push_back(gauge);
-    return std::dynamic_pointer_cast<GaugeMetric>(gauge);
+    auto series = std::make_shared<GaugeMetricSeries>(name, unit, summary);
+    d_series.push_back(series);
+    return series;
 }
 
-std::shared_ptr<fwoop::GaugeHistogramMetric>
-OpenMetricsPublisher::newGaugeHistogram(const std::string &name, const std::string &unit, int32_t low, int32_t high,
-                                        uint16_t numBuckets, const std::string &summary)
+std::shared_ptr<fwoop::GaugeHistogramMetricSeries>
+OpenMetricsPublisher::newGaugeHistogramSeries(const std::string &name, const std::string &unit,
+                                              const std::string &summary)
 {
-    auto histogram = std::make_shared<GaugeHistogramMetric>(name, unit, low, high, numBuckets, summary);
-    d_metrics.push_back(histogram);
+    auto histogram = std::make_shared<GaugeHistogramMetricSeries>(name, unit, summary);
+    d_series.push_back(histogram);
     return histogram;
 }
 
@@ -65,8 +65,8 @@ void OpenMetricsPublisher::handleMetricsEvent(const HttpRequest &request, HttpRe
     response.addHeader(fwoop::HttpHeader::ContentType, "text/plain");
     std::string body;
     unsigned int length;
-    for (auto metric : d_metrics) {
-        Log::Debug("encoding metric");
+    for (auto metric : d_series) {
+        Log::Debug("encoding metric ", metric->name());
         uint8_t *encoding = metric->encode(Metric::OpenMetric, length);
         std::string tmp((char *)encoding, length);
         delete[] encoding;
@@ -79,7 +79,7 @@ void OpenMetricsPublisher::handleMetricsEvent(const HttpRequest &request, HttpRe
 
 std::ostream &OpenMetricsPublisher::print(std::ostream &os) const
 {
-    for (auto metric : d_metrics) {
+    for (auto metric : d_series) {
         unsigned int length;
         uint8_t *encoding = metric->encode(Metric::OpenMetric, length);
         std::string str((char *)encoding, length);

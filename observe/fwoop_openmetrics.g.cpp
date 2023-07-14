@@ -8,13 +8,12 @@ TEST(OpenMetrics, print)
     auto metrics = fwoop::OpenMetricsPublisher();
 
     // WHEN
-    auto counter = metrics.newCounter("test_counter", "second", "this is a test counter");
-    counter->addLabel({"foo", "bar"});
-    counter->addLabel({"pop", "fizz"});
+    auto counterSeries = metrics.newCounterSeries("test_counter", "second", "this is a test counter");
+    auto counter = counterSeries->newCounter({{"foo", "bar"}, {"pop", "fizz"}});
     counter->increment();
 
-    auto gauge = metrics.newGauge("test_gauge", "celsius");
-    gauge->addLabel({"rack", "abc"});
+    auto gaugeSeries = metrics.newGaugeSeries("test_gauge", "celsius");
+    auto gauge = gaugeSeries->newGauge({{"rack", "abc"}});
     gauge->set(24);
 
     // THEN

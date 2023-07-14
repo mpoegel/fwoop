@@ -12,9 +12,9 @@ void GaugeHistogramMetric::reset() { d_buckets.clear(); }
 
 const int32_t &GaugeHistogramMetric::getBin(uint16_t bucketNum) { return d_buckets[bucketNum]; }
 
-GaugeHistogramMetric::GaugeHistogramMetric(const std::string &name, const std::string &unit, int32_t low, int32_t high,
-                                           uint16_t numBuckets, const std::string &summary)
-    : Metric(name, unit, summary), d_low(low), d_high(high), d_numBuckets(numBuckets),
+GaugeHistogramMetric::GaugeHistogramMetric(const std::string &name, int32_t low, int32_t high, uint16_t numBuckets,
+                                           const Labels_t &labels)
+    : Metric(name, labels), d_low(low), d_high(high), d_numBuckets(numBuckets),
       d_stepSize(double(d_high - d_low) / d_numBuckets), d_buckets(d_numBuckets, int32_t())
 {
 }
@@ -79,12 +79,7 @@ void GaugeHistogramMetric::encodeBucket(const uint16_t bucketNum, uint8_t *out, 
 
 uint8_t *GaugeHistogramMetric::encode(Format fmt, unsigned int &length) const
 {
-    static const char TYPE[] = "# TYPE ";
-    static const char TYPENAME[] = " gaugehistogram";
-    unsigned int metadataLength;
-    uint8_t *metadata = encodeMetadata(fmt, metadataLength);
-    length = metadataLength + strlen(TYPE) + d_name.length() + 1 + strlen(TYPENAME) + 1;
-
+    length = 0;
     uint32_t bufferSize = 1024;
     uint8_t *buffer = new uint8_t[bufferSize];
     uint32_t offset = 0;
@@ -107,21 +102,17 @@ uint8_t *GaugeHistogramMetric::encode(Format fmt, unsigned int &length) const
 
     uint8_t *encoding = new uint8_t[length];
     memset(encoding, 0, length);
-
-    length = 0;
-    memcpy(encoding + length, metadata, metadataLength);
-    length += metadataLength;
-    memcpy(encoding + length, TYPE, strlen(TYPE));
-    length += strlen(TYPE);
-    memcpy(encoding + length, d_name.c_str(), d_name.length());
-    length += d_name.length();
-    memcpy(encoding + length, TYPENAME, strlen(TYPENAME));
-    length += strlen(TYPENAME);
-    encoding[length++] = '\n';
-    memcpy(encoding + length, buffer, offset);
-    length += offset;
+    memcpy(encoding, buffer, offset);
 
     return encoding;
 }
+
+GaugeHistogramMetricSeries::GaugeHistogramMetricSeries(const std::string &name, const std::string &unit,
+                                                       const std::string &summary)
+    : MetricSeries(name, unit, summary)
+{
+}
+
+GaugeHistogramMetricSeries::~GaugeHistogramMetricSeries() {}
 
 } // namespace fwoop
