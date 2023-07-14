@@ -29,9 +29,8 @@ int main(int argc, char *argv[])
 
     fwoop::OpenMetricsPublisher metrics;
     metrics.start();
-    auto counter = metrics.newCounter("requests", "hits");
-    counter->addLabel({"path", "/foo"});
-    counter->addLabel({"response", "200"});
+    auto counterSeries = metrics.newCounterSeries("requests", "hits");
+    auto counter = counterSeries->newCounter({{"path", "/foo"}, {"response", "200"}});
 
     fwoop::HttpHandlerFunc_t handler = [&counter](const fwoop::HttpRequest &request, fwoop::HttpResponse &response) {
         response.setStatus("200 OK");
