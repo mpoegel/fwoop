@@ -5,6 +5,17 @@
 namespace fwoop {
 
 class DateTime {
+  public:
+    enum DayOfWeek : uint8_t {
+        Sunday = 0,
+        Monday,
+        Tuesday,
+        Wednesday,
+        Thursday,
+        Friday,
+        Saturday,
+    };
+
   private:
     uint32_t d_time;
 
@@ -14,6 +25,7 @@ class DateTime {
     uint8_t d_hour;
     uint8_t d_minute;
     uint8_t d_second;
+    DayOfWeek d_dow;
 
     void recalculate();
 
@@ -32,6 +44,7 @@ class DateTime {
     const uint8_t hour();
     const uint8_t minute();
     const uint8_t second();
+    const DayOfWeek dayOfWeek();
 };
 
 inline const uint16_t DateTime::year() { return d_year; }
@@ -40,5 +53,6 @@ inline const uint8_t DateTime::day() { return d_day; }
 inline const uint8_t DateTime::hour() { return d_hour; }
 inline const uint8_t DateTime::minute() { return d_minute; }
 inline const uint8_t DateTime::second() { return d_second; }
+inline const DateTime::DayOfWeek DateTime::dayOfWeek() { return d_dow; }
 
 } // namespace fwoop
