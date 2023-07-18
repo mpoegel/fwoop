@@ -38,21 +38,26 @@ class DateTime {
     DateTime &operator=(const DateTime &rhs) = default;
     DateTime(DateTime &&rhs) = default;
 
-    const uint16_t year();
-    const uint8_t month();
-    const uint8_t day();
-    const uint8_t hour();
-    const uint8_t minute();
-    const uint8_t second();
-    const DayOfWeek dayOfWeek();
+    void addDays(int16_t daysToAdd);
+    void addHours(int16_t hoursToAdd);
+    void addMinutes(int16_t minutesToAdd);
+    void addSeconds(int64_t secondsToAdd);
+
+    const uint16_t year() const;
+    const uint8_t month() const;
+    const uint8_t day() const;
+    const uint8_t hour() const;
+    const uint8_t minute() const;
+    const uint8_t second() const;
+    const DayOfWeek dayOfWeek() const;
 };
 
-inline const uint16_t DateTime::year() { return d_year; }
-inline const uint8_t DateTime::month() { return d_month; }
-inline const uint8_t DateTime::day() { return d_day; }
-inline const uint8_t DateTime::hour() { return d_hour; }
-inline const uint8_t DateTime::minute() { return d_minute; }
-inline const uint8_t DateTime::second() { return d_second; }
-inline const DateTime::DayOfWeek DateTime::dayOfWeek() { return d_dow; }
+inline const uint16_t DateTime::year() const { return d_year; }
+inline const uint8_t DateTime::month() const { return d_month; }
+inline const uint8_t DateTime::day() const { return d_day; }
+inline const uint8_t DateTime::hour() const { return d_hour; }
+inline const uint8_t DateTime::minute() const { return d_minute; }
+inline const uint8_t DateTime::second() const { return d_second; }
+inline const DateTime::DayOfWeek DateTime::dayOfWeek() const { return d_dow; }
 
 } // namespace fwoop

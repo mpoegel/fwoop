@@ -73,4 +73,24 @@ void DateTime::recalculate()
     d_second = remaining - (d_minute * SecondsInMinute);
 }
 
+void DateTime::addDays(int16_t daysToAdd)
+{
+    d_time += (daysToAdd * SecondsInDay);
+    recalculate();
+}
+
+void DateTime::addHours(int16_t hoursToAdd)
+{
+    d_time += (hoursToAdd * SecondsInHour);
+    recalculate();
+}
+
+void DateTime::addMinutes(int16_t minutesToAdd)
+{
+    d_time += (minutesToAdd * SecondsInMinute);
+    recalculate();
+}
+
+void DateTime::addSeconds(int64_t secondsToAdd) { d_time += secondsToAdd; }
+
 } // namespace fwoop
