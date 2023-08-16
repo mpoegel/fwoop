@@ -217,6 +217,7 @@ std::ostream &operator<<(std::ostream &os, const ResourceRecord &record)
 }
 
 Query *Query::s_query_p = nullptr;
+std::string Query::ServerAddress = "127.0.0.1";
 
 Query &Query::singleton()
 {
@@ -264,8 +265,7 @@ std::string Query::getHostByName(const std::string &hostname)
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_port = htons(53);
 
-    // TODO make dns server configurable
-    if (inet_pton(AF_INET, "127.0.0.1", &serv_addr.sin_addr) <= 0) {
+    if (inet_pton(AF_INET, ServerAddress.c_str(), &serv_addr.sin_addr) <= 0) {
         Log::Error("invalid address or address not supported");
         close(sockfd);
         return "";
@@ -398,8 +398,7 @@ std::shared_ptr<ResourceRecord> Query::getRecord(const Question &question)
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_port = htons(53);
 
-    // TODO make dns server configurable
-    if (inet_pton(AF_INET, "127.0.0.1", &serv_addr.sin_addr) <= 0) {
+    if (inet_pton(AF_INET, ServerAddress.c_str(), &serv_addr.sin_addr) <= 0) {
         Log::Error("invalid address or address not supported");
         close(sockfd);
         return nullptr;

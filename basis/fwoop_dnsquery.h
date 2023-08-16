@@ -114,6 +114,8 @@ class Query {
     static uint8_t *encodeHostName(const std::string &hostname, unsigned int &outLen);
 
   public:
+    static std::string ServerAddress;
+
     static std::string getHostByName(const std::string &hostname);
 
     static std::shared_ptr<ResourceRecord> getRecord(const Question &question);
