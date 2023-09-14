@@ -28,7 +28,7 @@ bool HttpServerEvent::pushEvent(const std::string &event, const std::string &dat
     static const unsigned int EVENT_PREFIX_LEN = strlen(EVENT_PREFIX);
     static const unsigned int DATA_PREFIX_LEN = strlen(DATA_PREFIX);
 
-    const unsigned int outLen = EVENT_PREFIX_LEN + DATA_PREFIX_LEN + event.length() + data.length() + 2;
+    const unsigned int outLen = EVENT_PREFIX_LEN + DATA_PREFIX_LEN + event.length() + data.length() + 3;
     uint8_t *out = new uint8_t[outLen];
     memset(out, 0, outLen);
     unsigned int offset = 0;
@@ -41,6 +41,7 @@ bool HttpServerEvent::pushEvent(const std::string &event, const std::string &dat
     offset += DATA_PREFIX_LEN;
     memcpy(out + offset, data.data(), data.length());
     offset += data.length();
+    out[offset++] = '\n';
     out[offset++] = '\n';
 
     int rc = SocketIO::write(d_fd, out, outLen);

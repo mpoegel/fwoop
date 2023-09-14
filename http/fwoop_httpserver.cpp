@@ -291,7 +291,7 @@ int HttpServer::parsePayloadBody(uint8_t *buffer, unsigned int bufferSize, unsig
 {
     bytesParsed = 0;
     std::string payload((char *)buffer, bufferSize);
-    unsigned int end = payload.rfind("\r\n\r\n");
+    auto end = payload.rfind("\r\n\r\n");
     if (end == std::string::npos) {
         bytesParsed = bufferSize;
     } else {
