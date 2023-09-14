@@ -1,3 +1,4 @@
+#include <fwoop_httpconnhandler.h>
 #include <fwoop_httpdataframe.h>
 #include <fwoop_httpframe.h>
 #include <fwoop_httpgoawayframe.h>
@@ -15,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include <system_error>
+#include <thread>
 
 #include <netinet/in.h>
 #include <sys/socket.h>
@@ -24,7 +26,7 @@
 namespace fwoop {
 
 HttpServer::HttpServer(int port, HttpVersion::Value version)
-    : d_port(port), d_serverFd(-1), d_version(version), d_isActive(false)
+    : d_port(port), d_serverFd(-1), d_version(version), d_isActive(false), d_handlerPool(5)
 {
 }
 
@@ -61,7 +63,7 @@ int HttpServer::serve()
 
     const int maxQueued = 1;
     if (0 != listen(d_serverFd, maxQueued)) {
-        std::cerr << "failed to listen, errno" << errno << '\n';
+        std::cerr << "failed to listen, errno=" << std::strerror(errno) << '\n';
         return -1;
     }
 
@@ -71,17 +73,23 @@ int HttpServer::serve()
     while (d_isActive) {
         int clientFd = accept4(d_serverFd, (struct sockaddr *)&clientAddr, (socklen_t *)&addrLen, SOCK_NONBLOCK);
         if (clientFd < 0) {
-            std::cerr << "failed to accept, errno" << errno << '\n';
+            std::cerr << "failed to accept, errno" << std::strerror(errno) << '\n';
             return -1;
         }
 
         switch (d_version) {
         case HttpVersion::Value::Http1_1:
-            handleHttp1Connection(clientFd);
+        {
+            HttpConnHandler handler(clientFd, d_routeMap, d_serverEventMap);
+            d_handlerPool.enqueue(std::move(handler));
             break;
+        }
         case HttpVersion::Value::Http2:
+        {
+            // TODO use the thread pool
             handleHttp2Connection(clientFd);
             break;
+        }
         default:
             std::cerr << "unsupported HTTP version: " << d_version;
             return -1;
