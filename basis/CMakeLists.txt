@@ -5,6 +5,7 @@ add_library(fwoopbasis STATIC
     fwoop_filereader.cpp
     fwoop_log.cpp
     fwoop_socketio.cpp
+    fwoop_threadpool.cpp
     fwoop_tokenizer.cpp
 )
 target_include_directories(fwoopbasis PUBLIC .)
@@ -17,6 +18,7 @@ install(FILES
     fwoop_filereader.h
     fwoop_log.h
     fwoop_socketio.h
+    fwoop_threadpool.h
     fwoop_tokenizer.h
     DESTINATION include)
 
@@ -27,6 +29,7 @@ add_executable(fwoopbasis_test
     fwoop_dnsquery.g.cpp
     fwoop_filereader.g.cpp
     fwoop_log.g.cpp
+    fwoop_threadpool.g.cpp
     fwoop_tokenizer.g.cpp
 )
 target_include_directories(fwoopbasis_test PUBLIC .)
