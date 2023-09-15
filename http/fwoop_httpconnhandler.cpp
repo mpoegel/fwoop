@@ -3,6 +3,8 @@
 #include <fwoop_log.h>
 #include <fwoop_socketio.h>
 
+#include <signal.h>
+
 namespace fwoop {
 
 HttpConnHandler::HttpConnHandler(int fd, const std::unordered_map<std::string, HttpHandlerFunc_t> &routeMap,
@@ -27,6 +29,8 @@ HttpConnHandler::HttpConnHandler(HttpConnHandler &&rhs)
 
 void HttpConnHandler::operator()()
 {
+    signal(SIGPIPE, SIG_IGN);
+
     Log::Debug("received http/1.1 connection");
     constexpr unsigned int bufferSize = 2048;
     uint8_t buffer[bufferSize];
