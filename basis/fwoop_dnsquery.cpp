@@ -488,18 +488,19 @@ std::shared_ptr<ResourceRecord> Query::getRecord(const Question &question)
     }
 
     std::vector<std::shared_ptr<ResourceRecord>> records;
+    std::shared_ptr<ResourceRecord> result;
     for (unsigned int i = 0; i < rAnswers; i++) {
         auto record = ResourceRecord::parse(response, bytesRead, offset);
         if (record) {
+            if (result == nullptr && record->type() == RecordType::A) {
+                result = record;
+            }
             records.push_back(record);
         } else {
             Log::Error("failed to parse resource record");
         }
     }
-    if (rAnswers > 0) {
-        return records[0];
-    }
-    return nullptr;
+    return result;
 }
 
 } // namespace DNS

@@ -120,6 +120,8 @@ std::string HttpClientErrCategory::message(int ev) const
         return "socket error";
     case HttpClient::HttpErrc::ConnectFailed:
         return "connect failed";
+    case HttpClient::HttpErrc::HostNotFound:
+        return "host not found";
     case HttpClient::HttpErrc::WriteFailed:
         return "write failed";
     case HttpClient::HttpErrc::ReadFailed:
