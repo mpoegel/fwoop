@@ -38,7 +38,7 @@ void Log::getCurrentTime(char *outBuf, unsigned int bufSize) const
     const time_t rawTime = std::chrono::system_clock::to_time_t(now);
     struct tm *timeInfo = localtime(&rawTime);
     strftime(outBuf, bufSize, DEFAULT_TIME_FORMAT, timeInfo);
-    sprintf(outBuf, "%s.%03d", outBuf, millis);
+    sprintf(outBuf, "%s.%03ld", outBuf, millis);
 }
 
 Log::Log() : d_formatStr(DEFAULT_FORMAT_STR), d_threshold(Level::e_Debug) {}

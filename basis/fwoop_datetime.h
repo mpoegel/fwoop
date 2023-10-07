@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstdint>
+#include <string>
 
 namespace fwoop {
 
@@ -50,6 +51,7 @@ class DateTime {
     const uint8_t minute() const;
     const uint8_t second() const;
     const DayOfWeek dayOfWeek() const;
+    std::string dayOfWeekShortString() const;
 };
 
 inline const uint16_t DateTime::year() const { return d_year; }

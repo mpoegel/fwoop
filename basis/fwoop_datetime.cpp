@@ -93,4 +93,26 @@ void DateTime::addMinutes(int16_t minutesToAdd)
 
 void DateTime::addSeconds(int64_t secondsToAdd) { d_time += secondsToAdd; }
 
+std::string DateTime::dayOfWeekShortString() const
+{
+    switch (dayOfWeek()) {
+    case fwoop::DateTime::Sunday:
+        return "Sun";
+    case fwoop::DateTime::Monday:
+        return "Mon";
+    case fwoop::DateTime::Tuesday:
+        return "Tue";
+    case fwoop::DateTime::Wednesday:
+        return "Wed";
+    case fwoop::DateTime::Thursday:
+        return "Thu";
+    case fwoop::DateTime::Friday:
+        return "Fri";
+    case fwoop::DateTime::Saturday:
+        return "Sat";
+    default:
+        return "N/A";
+    }
+}
+
 } // namespace fwoop
