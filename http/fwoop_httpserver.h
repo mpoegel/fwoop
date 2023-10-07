@@ -9,12 +9,13 @@
 #include <fwoop_threadpool.h>
 
 #include <functional>
+#include <memory>
 #include <string>
 #include <unordered_map>
 
 namespace fwoop {
 
-class HttpServer {
+class HttpServer : public HttpRequestCallback {
   private:
     int d_port;
     int d_serverFd;
@@ -25,7 +26,6 @@ class HttpServer {
     ThreadPool<HttpConnHandler> d_handlerPool;
 
     int parsePayloadBody(uint8_t *buffer, unsigned bufferSize, unsigned int &bytesParsed) const;
-    int handleHttp1Connection(int clientFd) const;
     int handleHttp2Connection(int clientFd) const;
 
   public:
@@ -38,6 +38,10 @@ class HttpServer {
     void addRoute(const std::string &route, HttpHandlerFunc_t func);
     void addStaticRoute(const std::string &route, const std::string &fileName);
     void addServerEventRoute(const std::string &route, HttpServerEventHandlerFunc_t func);
+
+    // from HttpRequestCallback
+    void onRequest(const std::shared_ptr<HttpRequest> &request, HttpResponse &response) override;
+    void afterResponse(const std::shared_ptr<HttpRequest> &request, WriterPtr_t writer) override;
 };
 
 inline void HttpServer::stop()

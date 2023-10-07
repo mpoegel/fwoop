@@ -1,22 +1,24 @@
-#include <fwoop_httpserverevent.h>
-
 #include <fwoop_httpresponse.h>
+#include <fwoop_httpserverevent.h>
 #include <fwoop_log.h>
 #include <fwoop_socketio.h>
 
+#include <cstdint>
+
 namespace fwoop {
 
-HttpServerEvent::HttpServerEvent(int fd) : d_fd(fd) {}
+HttpServerEvent::HttpServerEvent(WriterPtr_t writer) : d_writer(writer) {}
 
 HttpServerEvent::~HttpServerEvent()
 {
     HttpResponse finalResponse;
     finalResponse.setStatus("204 No Content");
     uint32_t len;
+    uint32_t bytesWritten;
     uint8_t *out = finalResponse.encode(len);
-    int rc = SocketIO::write(d_fd, out, len);
+    auto ec = d_writer->write(out, len, bytesWritten);
     delete[] out;
-    if (0 != rc) {
+    if (ec) {
         Log::Warn("failed to write final response");
     }
 }
@@ -44,9 +46,10 @@ bool HttpServerEvent::pushEvent(const std::string &event, const std::string &dat
     out[offset++] = '\n';
     out[offset++] = '\n';
 
-    int rc = SocketIO::write(d_fd, out, outLen);
+    uint32_t bytesWritten;
+    auto ec = d_writer->write(out, offset, bytesWritten);
     delete[] out;
-    return 0 == rc;
+    return ec.value() == 0;
 }
 
 } // namespace fwoop

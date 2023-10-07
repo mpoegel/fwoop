@@ -1,30 +1,24 @@
+#include <cstdint>
 #include <fwoop_httpconnhandler.h>
 
 #include <fwoop_log.h>
 #include <fwoop_socketio.h>
 
 #include <signal.h>
+#include <system_error>
 
 namespace fwoop {
 
-HttpConnHandler::HttpConnHandler(int fd, const std::unordered_map<std::string, HttpHandlerFunc_t> &routeMap,
-                                 const std::unordered_map<std::string, HttpServerEventHandlerFunc_t> &serverEventMap)
-    : d_fd(fd), d_routeMap(routeMap), d_serverEventMap(serverEventMap)
+HttpConnHandler::HttpConnHandler(const ReaderPtr_t &reader, const WriterPtr_t &writer, HttpRequestCallback *callback)
+    : d_reader(reader), d_writer(writer), d_callback(callback)
 {
 }
 
-HttpConnHandler::~HttpConnHandler()
-{
-    if (d_fd > 0) {
-        close(d_fd);
-        d_fd = -1;
-    }
-}
+HttpConnHandler::~HttpConnHandler() {}
 
 HttpConnHandler::HttpConnHandler(HttpConnHandler &&rhs)
-    : d_fd(rhs.d_fd), d_routeMap(rhs.d_routeMap), d_serverEventMap(rhs.d_serverEventMap)
+    : d_reader(rhs.d_reader), d_writer(rhs.d_writer), d_callback(rhs.d_callback)
 {
-    rhs.d_fd = -1;
 }
 
 void HttpConnHandler::operator()()
@@ -35,48 +29,35 @@ void HttpConnHandler::operator()()
     constexpr unsigned int bufferSize = 2048;
     uint8_t buffer[bufferSize];
     unsigned int bytesRead;
-    std::error_code ec = SocketIO::read(d_fd, buffer, bufferSize, bytesRead);
+    std::error_code ec = d_reader->read(buffer, bufferSize, bytesRead);
     if (ec) {
         Log::Error("socket read failed", ec);
     }
 
     unsigned int bytesParsed = 0;
-    int rc;
     std::shared_ptr<HttpRequest> request = HttpRequest::parse(buffer, bytesRead, bytesParsed);
     if (!request) {
         Log::Error("did not receive full http request");
     }
 
     Log::Debug("Recieved request: ", *request);
-
-    auto routeFunc = d_routeMap.find(request->getPath());
-    auto serverEventFunc = d_serverEventMap.find(request->getPath());
     HttpResponse response;
-    if (routeFunc != d_routeMap.end()) {
-        routeFunc->second(*request, response);
-    } else if (serverEventFunc != d_serverEventMap.end()) {
-        response.addHeader(HttpHeader::ContentType, "text/event-stream");
-        response.addHeader(HttpHeader::CacheControl, "no-store");
-        response.setStatus("200 OK");
-    } else {
-        response.setStatus("404 Not Found");
-    }
+    d_callback->onRequest(request, response);
 
     Log::Debug("Sending response: ", response);
     uint32_t length;
+    uint32_t bytesWritten;
     uint8_t *encResp = response.encode(length);
-    rc = SocketIO::write(d_fd, encResp, length);
+    ec = d_writer->write(encResp, length, bytesWritten);
     delete[] encResp;
-    if (0 != rc) {
+    if (ec) {
         Log::Error("socket write failed, ec=", ec);
     }
 
-    if (serverEventFunc != d_serverEventMap.end()) {
-        HttpServerEvent serverEvent(d_fd);
-        serverEventFunc->second(*request, serverEvent);
-    }
-
+    d_callback->afterResponse(request, d_writer);
     Log::Debug("done");
+    d_reader->close();
+    d_writer->close();
 }
 
 } // namespace fwoop

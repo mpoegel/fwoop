@@ -80,7 +80,8 @@ int HttpServer::serve()
         switch (d_version) {
         case HttpVersion::Value::Http1_1:
         {
-            HttpConnHandler handler(clientFd, d_routeMap, d_serverEventMap);
+            auto socket = std::make_shared<Socket>(clientFd);
+            HttpConnHandler handler(socket, socket, this);
             d_handlerPool.enqueue(std::move(handler));
             break;
         }
@@ -322,32 +323,10 @@ void HttpServer::addServerEventRoute(const std::string &route, HttpServerEventHa
     d_serverEventMap[route] = func;
 }
 
-int HttpServer::handleHttp1Connection(int clientFd) const
+void HttpServer::onRequest(const std::shared_ptr<HttpRequest> &request, HttpResponse &response)
 {
-    Log::Debug("received http/1.1 connection");
-    constexpr unsigned int bufferSize = 2048;
-    uint8_t buffer[bufferSize];
-    unsigned int bytesRead;
-    std::error_code ec = SocketIO::read(clientFd, buffer, bufferSize, bytesRead);
-    if (ec) {
-        Log::Error("socket read failed", ec);
-        close(clientFd);
-        return -1;
-    }
-
-    unsigned int bytesParsed = 0;
-    int rc;
-    std::shared_ptr<HttpRequest> request = HttpRequest::parse(buffer, bytesRead, bytesParsed);
-    if (!request) {
-        Log::Error("did not receive full http request");
-        return -1;
-    }
-
-    Log::Debug("Recieved request: ", *request);
-
     auto routeFunc = d_routeMap.find(request->getPath());
     auto serverEventFunc = d_serverEventMap.find(request->getPath());
-    HttpResponse response;
     if (routeFunc != d_routeMap.end()) {
         routeFunc->second(*request, response);
     } else if (serverEventFunc != d_serverEventMap.end()) {
@@ -357,27 +336,15 @@ int HttpServer::handleHttp1Connection(int clientFd) const
     } else {
         response.setStatus("404 Not Found");
     }
+}
 
-    Log::Debug("Sending response: ", response);
-    uint32_t length;
-    uint8_t *encResp = response.encode(length);
-    rc = SocketIO::write(clientFd, encResp, length);
-    delete[] encResp;
-    if (0 != rc) {
-        Log::Error("socket write failed, ec=", ec);
-        close(clientFd);
-        return -1;
-    }
-
+void HttpServer::afterResponse(const std::shared_ptr<HttpRequest> &request, WriterPtr_t writer)
+{
+    auto serverEventFunc = d_serverEventMap.find(request->getPath());
     if (serverEventFunc != d_serverEventMap.end()) {
-        HttpServerEvent serverEvent(clientFd);
+        HttpServerEvent serverEvent(writer);
         serverEventFunc->second(*request, serverEvent);
     }
-
-    Log::Debug("done");
-
-    close(clientFd);
-    return 0;
 }
 
 } // namespace fwoop

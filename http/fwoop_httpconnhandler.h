@@ -1,18 +1,25 @@
 #pragma once
 
 #include <fwoop_httpfunc.h>
+#include <fwoop_socketio.h>
 
 namespace fwoop {
 
+class HttpRequestCallback {
+  public:
+    ~HttpRequestCallback() {}
+    virtual void onRequest(const std::shared_ptr<HttpRequest> &request, HttpResponse &response) = 0;
+    virtual void afterResponse(const std::shared_ptr<HttpRequest> &req, WriterPtr_t writer) = 0;
+};
+
 class HttpConnHandler {
   private:
-    int d_fd;
-    const std::unordered_map<std::string, HttpHandlerFunc_t> d_routeMap;
-    const std::unordered_map<std::string, HttpServerEventHandlerFunc_t> d_serverEventMap;
+    ReaderPtr_t d_reader;
+    WriterPtr_t d_writer;
+    HttpRequestCallback *d_callback;
 
   public:
-    HttpConnHandler(int fd, const std::unordered_map<std::string, HttpHandlerFunc_t> &routeMap,
-                    const std::unordered_map<std::string, HttpServerEventHandlerFunc_t> &serverEventMap);
+    HttpConnHandler(const ReaderPtr_t &reader, const WriterPtr_t &writer, HttpRequestCallback *callback);
     ~HttpConnHandler();
     HttpConnHandler(const HttpConnHandler &rhs) = delete;
     HttpConnHandler operator=(const HttpConnHandler &rhs) = delete;

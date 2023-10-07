@@ -52,5 +52,5 @@ add_executable(fwoophttp_test
     fwoop_httpsettingsframe.g.cpp
 )
 target_include_directories(fwoophttp_test PUBLIC .)
-target_link_libraries(fwoophttp_test fwoophttp fwoopbasis gtest gtest_main pthread)
+target_link_libraries(fwoophttp_test fwoophttp fwoopbasis gtest gmock gtest_main pthread)
 gtest_add_tests(TARGET fwoophttp_test)
