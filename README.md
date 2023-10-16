@@ -1,15 +1,12 @@
 # fwoop
 
 ## Building
-Requires `gtest` to build unit tests.
+Requires `gtest` to build unit tests. Requires [Botan](https://botan.randombit.net/) for crypto.
 
 ```sh
 mkdir build
 cd build
-# Build with OpenSSL
-cmake -DUSE_OPENSSL=1 ..
-# Or build with fwoop crypto
-cmake -DUSE_OPENSSL=0 ..
+cmake  ..
 cmake --build .
 ```
 

@@ -7,6 +7,8 @@ Socket::Socket(int fd) : d_fd(fd) {}
 
 Socket::~Socket() {}
 
+Socket::Socket(const Socket &rhs) : d_fd(rhs.d_fd) {}
+
 std::error_code Socket::read(uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesRead)
 {
     memset(buffer, 0, bufferSize);

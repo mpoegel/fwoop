@@ -30,7 +30,13 @@ class Writer {
 
 typedef std::shared_ptr<Writer> WriterPtr_t;
 
-class Socket : public Reader, public Writer {
+class SocketBase : public Reader, public Writer {
+  public:
+};
+
+typedef std::shared_ptr<SocketBase> SocketBasePtr_t;
+
+class Socket : public SocketBase {
   private:
     int d_fd;
 
@@ -43,6 +49,23 @@ class Socket : public Reader, public Writer {
     std::error_code read(uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesRead) override;
     std::error_code write(const uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesWritten) override;
     void close() override;
+};
+
+typedef std::shared_ptr<Socket> SocketPtr_t;
+
+class SocketFactoryBase {
+  public:
+    ~SocketFactoryBase() {}
+
+    virtual SocketBasePtr_t connect() = 0;
+};
+
+class SocketFactory : public SocketFactoryBase {
+  private:
+  public:
+    SocketFactory();
+    ~SocketFactory() {}
+    SocketBasePtr_t connect() override;
 };
 
 class SocketIO {
