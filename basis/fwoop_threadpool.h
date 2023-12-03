@@ -65,11 +65,11 @@ template <typename T> void ThreadPool<T>::workJob()
                 break;
             }
         }
-        T &j = d_jobQueue.front();
-        j();
+        T j = std::move(d_jobQueue.front());
         d_jobQueue.pop_front();
         lock.unlock();
         lock.release();
+        j();
     }
     d_numFinished++;
     d_poolCond.notify_all();

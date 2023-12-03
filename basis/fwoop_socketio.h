@@ -32,6 +32,7 @@ typedef std::shared_ptr<Writer> WriterPtr_t;
 
 class SocketBase : public Reader, public Writer {
   public:
+    ~SocketBase() {}
 };
 
 typedef std::shared_ptr<SocketBase> SocketBasePtr_t;

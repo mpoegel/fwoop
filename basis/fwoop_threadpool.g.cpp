@@ -2,6 +2,9 @@
 
 #include <atomic>
 #include <gtest/gtest.h>
+#include <thread>
+
+using namespace std::chrono_literals;
 
 TEST(ThreadPool, EnqueueAndWait)
 {
@@ -36,6 +39,30 @@ TEST(ThreadPool, EnqueueAndWaitLambda)
     std::atomic_uint16_t count = 0;
     auto job = [&count]() {
         std::cout << "lambda job called" << std::endl;
+        count++;
+    };
+    fwoop::ThreadPool<decltype(job)> pool(2);
+
+    // WHEN
+    EXPECT_TRUE(pool.enqueue(std::move(job)));
+    EXPECT_TRUE(pool.enqueue(std::move(job)));
+    EXPECT_TRUE(pool.enqueue(std::move(job)));
+    EXPECT_TRUE(pool.enqueue(std::move(job)));
+
+    pool.close();
+    pool.wait();
+
+    // THEN
+    EXPECT_EQ(count.load(), 4);
+}
+
+TEST(ThreadPool, EnqueueLongJob)
+{
+    // GIVEN
+    std::atomic_uint16_t count = 0;
+    auto job = [&count]() {
+        std::cout << "lambda job called" << std::endl;
+        std::this_thread::sleep_for(1s);
         count++;
     };
     fwoop::ThreadPool<decltype(job)> pool(2);

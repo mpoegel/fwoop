@@ -25,8 +25,8 @@
 
 namespace fwoop {
 
-HttpServer::HttpServer(int port, HttpVersion::Value version)
-    : d_port(port), d_serverFd(-1), d_version(version), d_isActive(false), d_handlerPool(5)
+HttpServer::HttpServer(int port, HttpVersion::Value version, unsigned int threadPoolSize)
+    : d_port(port), d_serverFd(-1), d_version(version), d_isActive(false), d_handlerPool(threadPoolSize)
 {
 }
 
@@ -76,6 +76,7 @@ int HttpServer::serve()
             std::cerr << "failed to accept, errno" << std::strerror(errno) << '\n';
             return -1;
         }
+        Log::Info("http request received");
 
         switch (d_version) {
         case HttpVersion::Value::Http1_1:

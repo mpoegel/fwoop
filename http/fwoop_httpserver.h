@@ -29,7 +29,7 @@ class HttpServer : public HttpRequestCallback {
     int handleHttp2Connection(int clientFd) const;
 
   public:
-    explicit HttpServer(int port, HttpVersion::Value version);
+    explicit HttpServer(int port, HttpVersion::Value version, unsigned int threadPoolSize = 5);
     ~HttpServer();
 
     int serve();
