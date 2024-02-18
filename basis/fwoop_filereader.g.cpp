@@ -33,7 +33,8 @@ TEST(FileReaderTest, loadFile)
 
     // THEN
     EXPECT_EQ(11, length);
-    EXPECT_STREQ(expected.data(), (char *)contents);
+    EXPECT_EQ(expected, std::string((char *)contents, length));
+    delete[] contents;
 }
 
 TEST(FileReaderText, getExtension)

@@ -308,6 +308,7 @@ std::string Query::getHostByName(const std::string &hostname)
     request[offset++] = (additional & 0xFF);
     // Queries
     memcpy(request + offset, encodedHostName, hostNameLen);
+    delete[] encodedHostName;
     offset += hostNameLen;
     request[offset++] = (resourceRecordType >> 8);
     request[offset++] = (resourceRecordType & 0xFF);

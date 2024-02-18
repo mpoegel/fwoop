@@ -40,7 +40,7 @@ void HttpConnHandler::operator()()
         Log::Error("did not receive full http request");
     }
 
-    Log::Debug("Recieved request: ", *request);
+    Log::Debug("Received request: ", *request);
     HttpResponse response;
     d_callback->onRequest(request, response);
 

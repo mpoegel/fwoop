@@ -22,7 +22,7 @@ std::string ErrCategory::message(int ev) const
     case Message::DecodeResult::WantSubMessage:
         return "want sub message";
     default:
-        return "unknown protobuf decode eror";
+        return "unknown protobuf decode error";
     }
 }
 
