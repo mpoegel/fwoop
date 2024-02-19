@@ -141,7 +141,7 @@ std::shared_ptr<ResourceRecord> ResourceRecord::parse(uint8_t *data, unsigned in
     auto record = std::make_shared<ResourceRecord>();
     if (dataLen == 0 || offset >= dataLen) {
         // error
-        Log::Debug("not enought data to parse resource record");
+        Log::Debug("not enough data to parse resource record");
         return nullptr;
     }
 
@@ -185,7 +185,7 @@ std::shared_ptr<ResourceRecord> ResourceRecord::parse(uint8_t *data, unsigned in
     offset += 2;
     if (offset + record->d_rdLength > dataLen) {
         // error
-        Log::Debug("not enought left to parse rData");
+        Log::Debug("not enough left to parse rData");
         return nullptr;
     }
     memcpy(record->d_rData, data + offset, std::min(record->d_rdLength, s_maxDataLen));
