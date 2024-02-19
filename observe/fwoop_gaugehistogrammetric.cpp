@@ -103,6 +103,7 @@ uint8_t *GaugeHistogramMetric::encode(Format fmt, unsigned int &length) const
     uint8_t *encoding = new uint8_t[length];
     memset(encoding, 0, length);
     memcpy(encoding, buffer, offset);
+    delete[] buffer;
 
     return encoding;
 }

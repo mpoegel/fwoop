@@ -112,12 +112,13 @@ int decodeInt(uint8_t *bytes, uint32_t bytesLen, uint32_t &bytesParsed)
             return 0;
         }
     }
-    uint8_t *tmp = new uint8_t[bytesLen];
+    uint8_t *tmp = new uint8_t[bytesLen + 1];
     memcpy(tmp, bytes, bytesLen);
     int res = atoi((char *)tmp);
     if (res == 0) {
         return 0;
     }
+    delete[] tmp;
     bytesParsed = bytesLen;
     return res;
 }

@@ -225,6 +225,7 @@ TEST(JSON, largeInput2)
     uint32_t encodedLen = 0;
     auto encoding = json.encode(encodedLen);
     std::cerr << std::string((char *)encoding, encodedLen) << '\n';
+    delete[] encoding;
 }
 
 TEST(JSON, encodeBasicTypes)
@@ -241,4 +242,5 @@ TEST(JSON, encodeBasicTypes)
     // THEN
     auto encoding = json.encode(encodedLen, 2);
     std::cerr << std::string((char *)encoding, encodedLen) << '\n';
+    delete[] encoding;
 }

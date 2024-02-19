@@ -57,7 +57,7 @@ class HttpFrame {
     uint32_t getStreamID() const;
 };
 
-inline HttpFrame::~HttpFrame() { delete d_payload; }
+inline HttpFrame::~HttpFrame() { delete[] d_payload; }
 
 inline unsigned int HttpFrame::length() const { return d_length; }
 

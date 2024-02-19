@@ -20,6 +20,7 @@ TEST(HttpSettingsFrame, Encode)
     for (unsigned int i = 0; i < frame.encodingLength(); ++i) {
         EXPECT_EQ(expected[i], encoding[i]) << "diff at index=" << i;
     }
+    delete[] encoding;
 }
 
 TEST(HttpSettingsFrame, DecodeThenEncode)
@@ -41,4 +42,5 @@ TEST(HttpSettingsFrame, DecodeThenEncode)
     }
     frame.printHeader();
     frame.printHex();
+    delete[] encoding;
 }

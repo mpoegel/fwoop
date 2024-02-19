@@ -123,6 +123,7 @@ void HttpFrame::printHex() const
         sprintf(buf, "%x", encoding[i]);
         std::cout << buf << " ";
     }
+    delete[] encoding;
     std::cout << '\n';
 }
 

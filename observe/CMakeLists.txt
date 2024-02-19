@@ -27,6 +27,8 @@ add_executable(fwoopobserve_test
     fwoop_gaugemetric.g.cpp
     fwoop_openmetrics.g.cpp
 )
+target_compile_options(fwoopobserve_test PRIVATE -fsanitize=address)
+target_link_options(fwoopobserve_test PRIVATE -fsanitize=address)
 target_include_directories(fwoopobserve_test PUBLIC .)
 target_link_libraries(fwoopobserve_test fwoopobserve fwoopbasis fwoophttp gtest gtest_main pthread)
 

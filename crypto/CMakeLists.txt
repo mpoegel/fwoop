@@ -19,6 +19,8 @@ add_executable(fwoopcrypto_test
     fwoop_sha.g.cpp
     fwoop_securesocket.g.cpp
 )
+target_compile_options(fwoopcrypto_test PRIVATE -fsanitize=address)
+target_link_options(fwoopcrypto_test PRIVATE -fsanitize=address)
 target_include_directories(fwoopcrypto_test PUBLIC . /usr/local/include/botan-3)
 target_link_libraries(fwoopcrypto_test fwoopcrypto fwoopbasis botan-3 gtest gtest_main pthread)
 
