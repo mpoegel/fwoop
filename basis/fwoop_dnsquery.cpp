@@ -1,3 +1,4 @@
+#include "fwoop_array.h"
 #include <fwoop_dnsquery.h>
 
 #include <algorithm>
@@ -64,26 +65,26 @@ ClassValue NewClassValue(uint16_t val)
     }
 }
 
-std::shared_ptr<Question> Question::parse(uint8_t *data, unsigned int dataLen, unsigned int &offset)
+std::shared_ptr<Question> Question::parse(const Array &data, uint32_t &offset)
 {
-    if (dataLen == 0 || offset >= dataLen) {
+    if (data.size() == 0 || offset >= data.size()) {
         Log::Debug("not enough data to parse question");
         return nullptr;
     }
 
     std::string name;
-    while (offset < dataLen && data[offset] != 0) {
+    while (offset < data.size() && data[offset] != 0) {
         unsigned int labelLen = data[offset++];
-        if (offset + labelLen >= dataLen) {
+        if (offset + labelLen >= data.size()) {
             // error
             Log::Debug("incomplete name in question");
             return nullptr;
         }
-        name += std::string(data + offset, data + offset + labelLen);
+        name += std::string(data[offset], data[offset + labelLen]);
         name += ".";
         offset += labelLen;
     }
-    if (offset + 4 >= dataLen) {
+    if (offset + 4 >= data.size()) {
         // error
         Log::Debug("question missing type and/or class");
         return nullptr;
@@ -104,28 +105,25 @@ Question::Question(const std::string &name, RecordType qType, ClassValue qClass)
 {
 }
 
-uint8_t *Question::encode(unsigned int &outLen) const
+Array Question::encode() const
 {
-    outLen = d_name.length();
+    uint32_t outLen = d_name.length();
     outLen += std::count(d_name.begin(), d_name.end(), '.') + 2;
     outLen += 4;
 
-    uint8_t *encoding = new uint8_t[outLen];
-    memset(encoding, 0, outLen);
+    Array encoding(outLen);
 
-    unsigned int offset = 0;
     Tokenizer tok(d_name, '.');
     for (auto t = tok.begin(); t != tok.end(); ++t) {
-        encoding[offset++] = (*t).length();
-        memcpy(encoding + offset, (*t).c_str(), (*t).length());
-        offset += (*t).length();
+        encoding.append((*t).length());
+        encoding.append(*t);
     }
-    encoding[offset++] = 0;
+    encoding.append(uint8_t(0));
 
-    encoding[offset++] = (d_type >> 8);
-    encoding[offset++] = (d_type & 0xFF);
-    encoding[offset++] = (d_class >> 8);
-    encoding[offset++] = (d_class & 0xFF);
+    encoding.append(d_type >> 8);
+    encoding.append(d_type & 0xFF);
+    encoding.append(d_class >> 8);
+    encoding.append(d_class & 0xFF);
 
     return encoding;
 }
@@ -136,17 +134,17 @@ std::ostream &operator<<(std::ostream &os, const Question &question)
     return os;
 }
 
-std::shared_ptr<ResourceRecord> ResourceRecord::parse(uint8_t *data, unsigned int dataLen, unsigned int &offset)
+std::shared_ptr<ResourceRecord> ResourceRecord::parse(const Array &data, unsigned int &offset)
 {
     auto record = std::make_shared<ResourceRecord>();
-    if (dataLen == 0 || offset >= dataLen) {
+    if (data.size() == 0) {
         // error
         Log::Debug("not enough data to parse resource record");
         return nullptr;
     }
 
     unsigned int tmp = 0;
-    while (offset < dataLen && data[offset] != 0) {
+    while (offset < data.size() && data[offset] != 0) {
         unsigned int labelLen = data[offset++];
         if ((labelLen & 0xC0) == 0xC0) {
             // pointer
@@ -155,12 +153,12 @@ std::shared_ptr<ResourceRecord> ResourceRecord::parse(uint8_t *data, unsigned in
             offset = pointer;
             continue;
         }
-        if (offset + labelLen >= dataLen) {
+        if (offset + labelLen >= data.size()) {
             // error
             Log::Debug("label length out of range");
             return nullptr;
         }
-        record->d_name += std::string(data + offset, data + offset + labelLen);
+        record->d_name += std::string(data[offset], data[offset + labelLen]);
         record->d_name += ".";
         offset += labelLen;
     }
@@ -169,7 +167,7 @@ std::shared_ptr<ResourceRecord> ResourceRecord::parse(uint8_t *data, unsigned in
     } else {
         offset++;
     }
-    if (offset + 10 >= dataLen) {
+    if (offset + 10 >= data.size()) {
         // error
         Log::Debug("record incomplete, missing type and/or value");
         return nullptr;
@@ -183,15 +181,17 @@ std::shared_ptr<ResourceRecord> ResourceRecord::parse(uint8_t *data, unsigned in
 
     record->d_rdLength = (data[offset] << 8) + data[offset + 1];
     offset += 2;
-    if (offset + record->d_rdLength > dataLen) {
+    if (offset + record->d_rdLength > data.size()) {
         // error
         Log::Debug("not enough left to parse rData");
         return nullptr;
     }
-    memcpy(record->d_rData, data + offset, std::min(record->d_rdLength, s_maxDataLen));
+    record->d_rData = data.subArray(offset, std::min(record->d_rdLength, s_maxDataLen));
     offset += record->d_rdLength;
     return record;
 }
+
+ResourceRecord::ResourceRecord() : d_rData(s_maxDataLen) {}
 
 std::string ResourceRecord::IP() const
 {
@@ -229,19 +229,16 @@ Query &Query::singleton()
     return *s_query_p;
 }
 
-uint8_t *Query::encodeHostName(const std::string &hostname, unsigned int &outLen)
+Array Query::encodeHostName(const std::string &hostname)
 {
-    outLen = hostname.length();
+    uint32_t outLen = hostname.length();
     outLen += std::count(hostname.begin(), hostname.end(), '.');
+    Array encoding(outLen);
 
-    unsigned int offset = 0;
-    uint8_t *encoding = new uint8_t[outLen];
-    memset(encoding, 0, outLen);
     Tokenizer tok(hostname, '.');
     for (auto t = tok.begin(); t != tok.end(); ++t) {
-        encoding[offset++] = (*t).length();
-        memcpy(encoding + offset, (*t).c_str(), (*t).length());
-        offset += (*t).length();
+        encoding.append((*t).length());
+        encoding.append(*t);
     }
     return encoding;
 }
@@ -273,13 +270,11 @@ std::string Query::getHostByName(const std::string &hostname)
 
     const unsigned int headerLen = 12;
 
-    unsigned int hostNameLen = 0;
-    uint8_t *encodedHostName = encodeHostName(hostname, hostNameLen);
-    Log::Debug("encoding header len is ", hostNameLen);
+    Array encodedHostName = encodeHostName(hostname);
+    Log::Debug("encoding header len is ", encodedHostName.size());
 
-    const unsigned int requestLen = headerLen + hostNameLen + 4;
-    uint8_t *request = new uint8_t[requestLen];
-    memset(request, 0, requestLen);
+    const unsigned int requestLen = headerLen + encodedHostName.size() + 4;
+    Array request(requestLen);
 
     // TODO make random
     const uint16_t transactionID = 0x7598;
@@ -292,48 +287,38 @@ std::string Query::getHostByName(const std::string &hostname)
     const uint16_t resourceRecordType = 0x1;  // A Record
     const uint16_t resourceRecordClass = 0x1; // IN (internet) Class
 
-    unsigned int offset = 0;
     // Query header
-    request[offset++] = (transactionID >> 8);
-    request[offset++] = (transactionID & 0xFF);
-    request[offset++] = (flags >> 8);
-    request[offset++] = (flags & 0xFF);
-    request[offset++] = (numQuestions >> 8);
-    request[offset++] = (numQuestions & 0xFF);
-    request[offset++] = (answers >> 8);
-    request[offset++] = (answers & 0xFF);
-    request[offset++] = (authorities >> 8);
-    request[offset++] = (authorities & 0xFF);
-    request[offset++] = (additional >> 8);
-    request[offset++] = (additional & 0xFF);
+    request.append(transactionID >> 8);
+    request.append(transactionID & 0xFF);
+    request.append(flags >> 8);
+    request.append(flags & 0xFF);
+    request.append(numQuestions >> 8);
+    request.append(numQuestions & 0xFF);
+    request.append(answers >> 8);
+    request.append(answers & 0xFF);
+    request.append(authorities >> 8);
+    request.append(authorities & 0xFF);
+    request.append(additional >> 8);
+    request.append(additional & 0xFF);
     // Queries
-    memcpy(request + offset, encodedHostName, hostNameLen);
-    delete[] encodedHostName;
-    offset += hostNameLen;
-    request[offset++] = (resourceRecordType >> 8);
-    request[offset++] = (resourceRecordType & 0xFF);
-    request[offset++] = (resourceRecordClass >> 8);
-    request[offset++] = (resourceRecordClass & 0xFF);
+    request.extend(encodedHostName);
+    request.append(resourceRecordType >> 8);
+    request.append(resourceRecordType & 0xFF);
+    request.append(resourceRecordClass >> 8);
+    request.append(resourceRecordClass & 0xFF);
 
-    char buf[3];
-    for (unsigned int i = 0; i < requestLen; ++i) {
-        memset(buf, 0, sizeof(buf));
-        sprintf(buf, "%x", request[i]);
-        std::cout << buf << " ";
-    }
-    std::cout << '\n';
+    Log::Debug("dns request: ", request.toHex());
 
-    unsigned int bytesSend = sendto(sockfd, (const char *)request, requestLen, MSG_CONFIRM,
+    unsigned int bytesSend = sendto(sockfd, (const char *)*request, request.size(), MSG_CONFIRM,
                                     (const struct sockaddr *)&serv_addr, sizeof(serv_addr));
-    Log::Debug("wrote ", bytesSend, " of ", requestLen, " bytes");
-    delete[] request;
+    Log::Debug("wrote ", bytesSend, " of ", request.size(), " bytes");
 
-    uint8_t response[512];
+    Array response(512);
     socklen_t sockLen;
-    int bytesRead = recvfrom(sockfd, response, sizeof(response), MSG_WAITALL, (struct sockaddr *)&serv_addr, &sockLen);
+    int bytesRead = recvfrom(sockfd, *response, 512, MSG_WAITALL, (struct sockaddr *)&serv_addr, &sockLen);
     close(sockfd);
     if (bytesRead < 0) {
-        Log::Error("read failed, errno=", errno);
+        Log::Error("read failed, errno=", errno, " errstr=", std::strerror(errno));
         return "";
     }
     Log::Debug("read ", bytesRead, " bytes in response");
@@ -342,8 +327,8 @@ std::string Query::getHostByName(const std::string &hostname)
         Log::Error("response too short");
         return "";
     }
+    response.enlarge(bytesRead);
 
-    offset = 0;
     const uint16_t rTransactionID = (response[0] << 8) + response[1];
     const uint16_t rFlags = (response[2] << 8) + response[3];
     const uint16_t rNumQuestions = (response[4] << 8) + response[5];
@@ -354,10 +339,11 @@ std::string Query::getHostByName(const std::string &hostname)
     Log::Debug("transactionID=", rTransactionID, " flags=", rFlags, " questions=", rNumQuestions, " answers=", rAnswers,
                " authority=", rAuthority, " additional=", rAdditional);
 
-    offset = 12;
+    uint32_t offset = 12;
     std::vector<std::shared_ptr<Question>> questions;
     for (unsigned int i = 0; i < rNumQuestions; i++) {
-        auto question = Question::parse(response, bytesRead, offset);
+        Array arr = response.subArray(offset, response.size());
+        auto question = Question::parse(arr, offset);
         if (question) {
             Log::Info("question: ", *question.get());
             questions.push_back(question);
@@ -368,7 +354,8 @@ std::string Query::getHostByName(const std::string &hostname)
 
     std::vector<std::shared_ptr<ResourceRecord>> records;
     for (unsigned int i = 0; i < rAnswers; i++) {
-        auto record = ResourceRecord::parse(response, bytesRead, offset);
+        Array arr = response.subArray(offset, response.size());
+        auto record = ResourceRecord::parse(arr, offset);
         if (record) {
             Log::Info("record: ", *record.get());
             records.push_back(record);
@@ -406,12 +393,10 @@ std::shared_ptr<ResourceRecord> Query::getRecord(const Question &question)
     }
 
     const unsigned int headerLen = 12;
-    unsigned int questionLen = 0;
-    uint8_t *encodedQuestion = question.encode(questionLen);
+    Array encodedQuestion = question.encode();
 
-    const unsigned int requestLen = headerLen + questionLen;
-    uint8_t *request = new uint8_t[requestLen];
-    memset(request, 0, requestLen);
+    const unsigned int requestLen = headerLen + encodedQuestion.size();
+    Array request(requestLen);
 
     // TODO make random
     const uint16_t transactionID = 0x7598;
@@ -423,36 +408,34 @@ std::shared_ptr<ResourceRecord> Query::getRecord(const Question &question)
 
     unsigned int offset = 0;
     // Query header
-    request[offset++] = (transactionID >> 8);
-    request[offset++] = (transactionID & 0xFF);
-    request[offset++] = (flags >> 8);
-    request[offset++] = (flags & 0xFF);
-    request[offset++] = (numQuestions >> 8);
-    request[offset++] = (numQuestions & 0xFF);
-    request[offset++] = (answers >> 8);
-    request[offset++] = (answers & 0xFF);
-    request[offset++] = (authorities >> 8);
-    request[offset++] = (authorities & 0xFF);
-    request[offset++] = (additional >> 8);
-    request[offset++] = (additional & 0xFF);
+    request.append(transactionID >> 8);
+    request.append(transactionID & 0xFF);
+    request.append(flags >> 8);
+    request.append(flags & 0xFF);
+    request.append(numQuestions >> 8);
+    request.append(numQuestions & 0xFF);
+    request.append(answers >> 8);
+    request.append(answers & 0xFF);
+    request.append(authorities >> 8);
+    request.append(authorities & 0xFF);
+    request.append(additional >> 8);
+    request.append(additional & 0xFF);
     // Queries
-    memcpy(request + offset, encodedQuestion, questionLen);
-    delete[] encodedQuestion;
+    request.extend(encodedQuestion);
 
-    unsigned int bytesSend = sendto(sockfd, (const char *)request, requestLen, MSG_CONFIRM,
+    unsigned int bytesSend = sendto(sockfd, (const char *)*request, requestLen, MSG_CONFIRM,
                                     (const struct sockaddr *)&serv_addr, sizeof(serv_addr));
     if (bytesSend != requestLen) {
         close(sockfd);
         return nullptr;
     }
-    delete[] request;
 
-    uint8_t response[512];
+    Array response(512);
     socklen_t sockLen;
     int retries = 3;
     int bytesRead = -1;
     while (retries-- > 0 && bytesRead < 0) {
-        bytesRead = recvfrom(sockfd, response, sizeof(response), MSG_WAITALL, (struct sockaddr *)&serv_addr, &sockLen);
+        bytesRead = recvfrom(sockfd, *response, 512, MSG_WAITALL, (struct sockaddr *)&serv_addr, &sockLen);
     }
     close(sockfd);
     if (bytesRead < 0) {
@@ -464,6 +447,7 @@ std::shared_ptr<ResourceRecord> Query::getRecord(const Question &question)
         Log::Error("response too short");
         return nullptr;
     }
+    response.enlarge(bytesRead);
 
     const uint16_t rTransactionID = (response[0] << 8) + response[1];
     const uint16_t rFlags = (response[2] << 8) + response[3];
@@ -480,7 +464,7 @@ std::shared_ptr<ResourceRecord> Query::getRecord(const Question &question)
 
     std::vector<std::shared_ptr<Question>> questions;
     for (unsigned int i = 0; i < rNumQuestions; i++) {
-        auto question = Question::parse(response, bytesRead, offset);
+        auto question = Question::parse(response, offset);
         if (question) {
             questions.push_back(question);
         } else {
@@ -491,7 +475,7 @@ std::shared_ptr<ResourceRecord> Query::getRecord(const Question &question)
     std::vector<std::shared_ptr<ResourceRecord>> records;
     std::shared_ptr<ResourceRecord> result;
     for (unsigned int i = 0; i < rAnswers; i++) {
-        auto record = ResourceRecord::parse(response, bytesRead, offset);
+        auto record = ResourceRecord::parse(response, offset);
         if (record) {
             if (result == nullptr && record->type() == RecordType::A) {
                 result = record;

@@ -7,9 +7,10 @@ TEST(DnsQuery, GetHostByName)
     // GIVEN
 
     // WHEN
-    fwoop::DNS::Query::getHostByName("www.google.com");
+    const std::string host = fwoop::DNS::Query::getHostByName("www.google.com");
 
     // THEN
+    std::cerr << "host: " << host << '\n';
 }
 
 TEST(DnsQuery, GetRecord)

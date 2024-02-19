@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstdint>
+#include <fwoop_array.h>
 #include <memory>
 #include <ostream>
 #include <string>
@@ -44,7 +45,7 @@ class Question {
     ClassValue d_class;
 
   public:
-    static std::shared_ptr<Question> parse(uint8_t *data, unsigned int dataLen, unsigned int &offset);
+    static std::shared_ptr<Question> parse(const Array &arr, uint32_t &offset);
 
     Question(const std::string &name, RecordType qType = RecordType::A, ClassValue qClass = ClassValue::IN);
     ~Question() = default;
@@ -55,7 +56,7 @@ class Question {
     const std::string &name() const;
     RecordType type() const;
     ClassValue classValue() const;
-    uint8_t *encode(unsigned int &outLen) const;
+    Array encode() const;
 };
 
 std::ostream &operator<<(std::ostream &os, const Question &question);
@@ -72,12 +73,12 @@ class ResourceRecord {
     ClassValue d_class;
     uint32_t d_ttl;
     uint16_t d_rdLength;
-    uint8_t d_rData[s_maxDataLen];
+    Array d_rData;
 
   public:
-    static std::shared_ptr<ResourceRecord> parse(uint8_t *data, unsigned int dataLen, unsigned int &offset);
+    static std::shared_ptr<ResourceRecord> parse(const Array &data, unsigned int &offset);
 
-    ResourceRecord() = default;
+    ResourceRecord();
     ~ResourceRecord() = default;
     ResourceRecord(ResourceRecord &rhs) = default;
     ResourceRecord &operator=(const ResourceRecord &rhs) const = delete;
@@ -111,7 +112,7 @@ class Query {
 
     Query &singleton();
 
-    static uint8_t *encodeHostName(const std::string &hostname, unsigned int &outLen);
+    static Array encodeHostName(const std::string &hostname);
 
   public:
     static std::string ServerAddress;
