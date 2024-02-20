@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1SocketBase" kind="class" language="C++" prot="public">
+    <compoundname>fwoop::SocketBase</compoundname>
+    <basecompoundref refid="classfwoop_1_1Reader" prot="public" virt="non-virtual">fwoop::Reader</basecompoundref>
+    <basecompoundref refid="classfwoop_1_1Writer" prot="public" virt="non-virtual">fwoop::Writer</basecompoundref>
+    <derivedcompoundref refid="classfwoop_1_1SecureSocket" prot="public" virt="non-virtual">fwoop::SecureSocket</derivedcompoundref>
+    <derivedcompoundref refid="classfwoop_1_1Socket" prot="public" virt="non-virtual">fwoop::Socket</derivedcompoundref>
+    <includes refid="fwoop__socketio_8h" local="no">fwoop_socketio.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfwoop_1_1SocketBase_1ad1708bc60aab59c1b7f36abe4421429a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::SocketBase::~SocketBase</definition>
+        <argsstring>()</argsstring>
+        <name>~SocketBase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_socketio.h" line="35" column="5" bodyfile="basis/fwoop_socketio.h" bodystart="35" bodyend="35"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>fwoop::Writer</label>
+        <link refid="classfwoop_1_1Writer"/>
+      </node>
+      <node id="2">
+        <label>fwoop::Reader</label>
+        <link refid="classfwoop_1_1Reader"/>
+      </node>
+      <node id="5">
+        <label>fwoop::Socket</label>
+        <link refid="classfwoop_1_1Socket"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>fwoop::SocketBase</label>
+        <link refid="classfwoop_1_1SocketBase"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>fwoop::SecureSocket</label>
+        <link refid="classfwoop_1_1SecureSocket"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>fwoop::Writer</label>
+        <link refid="classfwoop_1_1Writer"/>
+      </node>
+      <node id="2">
+        <label>fwoop::Reader</label>
+        <link refid="classfwoop_1_1Reader"/>
+      </node>
+      <node id="1">
+        <label>fwoop::SocketBase</label>
+        <link refid="classfwoop_1_1SocketBase"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="basis/fwoop_socketio.h" line="33" column="1" bodyfile="basis/fwoop_socketio.h" bodystart="33" bodyend="36"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1Reader_1a90597f688f2e4610d39a10c98addad98" prot="public" virt="pure-virtual" ambiguityscope="fwoop::"><scope>fwoop::SocketBase</scope><name>close</name></member>
+      <member refid="classfwoop_1_1Writer_1a17b85f9d80cab5f8eb12ecd3f4ee7073" prot="public" virt="pure-virtual" ambiguityscope="fwoop::Writer::"><scope>fwoop::SocketBase</scope><name>close</name></member>
+      <member refid="classfwoop_1_1Reader_1a76cc37f2f2fd5a021b87a577a39d3af7" prot="public" virt="pure-virtual"><scope>fwoop::SocketBase</scope><name>read</name></member>
+      <member refid="classfwoop_1_1Writer_1a9ca1cce9f2d609cc987e5cca42bfe3f5" prot="public" virt="pure-virtual"><scope>fwoop::SocketBase</scope><name>write</name></member>
+      <member refid="classfwoop_1_1Reader_1a20174ae82af8a9dde11176e23ef810f9" prot="public" virt="non-virtual"><scope>fwoop::SocketBase</scope><name>~Reader</name></member>
+      <member refid="classfwoop_1_1SocketBase_1ad1708bc60aab59c1b7f36abe4421429a" prot="public" virt="non-virtual"><scope>fwoop::SocketBase</scope><name>~SocketBase</name></member>
+      <member refid="classfwoop_1_1Writer_1af091c2ea4f81c51b2f18a61f1f46bab6" prot="public" virt="non-virtual"><scope>fwoop::SocketBase</scope><name>~Writer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

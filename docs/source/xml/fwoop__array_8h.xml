@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="fwoop__array_8h" kind="file" language="C++">
+    <compoundname>fwoop_array.h</compoundname>
+    <includes local="no">cmath</includes>
+    <includes local="no">cstdint</includes>
+    <includes local="no">cstring</includes>
+    <includes local="no">inttypes.h</includes>
+    <includes local="no">string</includes>
+    <includedby refid="fwoop__array_8cpp" local="no">basis/fwoop_array.cpp</includedby>
+    <includedby refid="fwoop__dnsquery_8cpp" local="yes">basis/fwoop_dnsquery.cpp</includedby>
+    <includedby refid="fwoop__dnsquery_8h" local="no">basis/fwoop_dnsquery.h</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>cstdint</label>
+      </node>
+      <node id="2">
+        <label>cmath</label>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="1">
+        <label>basis/fwoop_array.h</label>
+        <link refid="fwoop__array_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>cstring</label>
+      </node>
+      <node id="5">
+        <label>inttypes.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>basis/fwoop_dnsquery.cpp</label>
+        <link refid="fwoop__dnsquery_8cpp"/>
+      </node>
+      <node id="5">
+        <label>crypto/fwoop_securesocket.cpp</label>
+        <link refid="fwoop__securesocket_8cpp"/>
+      </node>
+      <node id="4">
+        <label>basis/fwoop_dnsquery.h</label>
+        <link refid="fwoop__dnsquery_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>basis/fwoop_array.cpp</label>
+        <link refid="fwoop__array_8cpp"/>
+      </node>
+      <node id="6">
+        <label>http/fwoop_httpclient.cpp</label>
+        <link refid="fwoop__httpclient_8cpp"/>
+      </node>
+      <node id="1">
+        <label>basis/fwoop_array.h</label>
+        <link refid="fwoop__array_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classfwoop_1_1Array" prot="public">fwoop::Array</innerclass>
+    <innernamespace refid="namespacefwoop">fwoop</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstring&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;inttypes.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefwoop" kindref="compound">fwoop</ref><sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="classfwoop_1_1Array" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfwoop_1_1Array" kindref="compound">Array</ref><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*d_data;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>d_size;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>d_actualSize;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Array_1ad030a80ed8f63d7cd63bf275ff56071d" kindref="member">Array</ref>(uint32_t<sp/><ref refid="classfwoop_1_1Array_1a29b8f36321351e63d1c74657c3372a8e" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Array_1ad030a80ed8f63d7cd63bf275ff56071d" kindref="member">Array</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Array" kindref="compound">Array</ref><sp/>&amp;rhs);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Array_1a88dea90421baa2456000c3772fa99d7f" kindref="member">~Array</ref>();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Array" kindref="compound">Array</ref><sp/>*<ref refid="classfwoop_1_1Array_1a3430ff20979b19593ece786e0e2ae01f" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Array" kindref="compound">Array</ref><sp/>&amp;rhs);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>&amp;<ref refid="classfwoop_1_1Array_1a611cba9c7bbedadb4356a295c38980bc" kindref="member">operator[]</ref>(uint32_t<sp/>i);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>&amp;<ref refid="classfwoop_1_1Array_1a611cba9c7bbedadb4356a295c38980bc" kindref="member">operator[]</ref>(uint32_t<sp/>i)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*<ref refid="classfwoop_1_1Array_1ac1451e4b2d12a519c7e459d964206c3b" kindref="member">operator*</ref>();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Array_1aef09ce7cb551a2fad328720e84913cd1" kindref="member">extend</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Array" kindref="compound">Array</ref><sp/>&amp;arr);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Array_1aa784615d89e841b0e239b1fbe0a9e51e" kindref="member">shrink</ref>(uint32_t<sp/>newSize);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="classfwoop_1_1Array_1a29b8f36321351e63d1c74657c3372a8e" kindref="member">size</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Array_1ad2298d717440e5b7d58e11fde21e074c" kindref="member">enlarge</ref>(uint32_t<sp/>newSize);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Array_1ab0efb7b9177351cdda6ffc6c53553983" kindref="member">append</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;str);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Array_1ab0efb7b9177351cdda6ffc6c53553983" kindref="member">append</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str,<sp/>uint32_t<sp/>len);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Array_1ab0efb7b9177351cdda6ffc6c53553983" kindref="member">append</ref>(uint8_t<sp/>d);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Array" kindref="compound">Array</ref><sp/><ref refid="classfwoop_1_1Array_1a2e0c898e5aaf933bbda46332ee9dcd5f" kindref="member">subArray</ref>(uint32_t<sp/>start,<sp/>uint32_t<sp/>end)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classfwoop_1_1Array_1a472ac1bfa891533c0b45a7090a91f2de" kindref="member">toString</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Array_1a3c4793b1084eb6a9b1ae729924d342a2" kindref="member">clear</ref>();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classfwoop_1_1Array_1af29ea02b932ad0dbffe6b7594d066e4d" kindref="member">toHex</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="classfwoop_1_1Array_1a611cba9c7bbedadb4356a295c38980bc" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint8_t<sp/>&amp;<ref refid="classfwoop_1_1Array_1a611cba9c7bbedadb4356a295c38980bc" kindref="member">Array::operator[]</ref>(uint32_t<sp/>i)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_data[i];<sp/>}</highlight></codeline>
+<codeline lineno="41" refid="classfwoop_1_1Array_1ac442c232ee58526ea9f63a6e0c0bafc3" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>&amp;<ref refid="classfwoop_1_1Array_1a611cba9c7bbedadb4356a295c38980bc" kindref="member">Array::operator[]</ref>(uint32_t<sp/>i)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_data[i];<sp/>}</highlight></codeline>
+<codeline lineno="42" refid="classfwoop_1_1Array_1ac1451e4b2d12a519c7e459d964206c3b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint8_t<sp/>*<ref refid="classfwoop_1_1Array_1ac1451e4b2d12a519c7e459d964206c3b" kindref="member">Array::operator*</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_data;<sp/>}</highlight></codeline>
+<codeline lineno="43" refid="classfwoop_1_1Array_1a29b8f36321351e63d1c74657c3372a8e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint32_t<sp/><ref refid="classfwoop_1_1Array_1a29b8f36321351e63d1c74657c3372a8e" kindref="member">Array::size</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_size;<sp/>}</highlight></codeline>
+<codeline lineno="44" refid="classfwoop_1_1Array_1aa784615d89e841b0e239b1fbe0a9e51e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Array_1aa784615d89e841b0e239b1fbe0a9e51e" kindref="member">Array::shrink</ref>(uint32_t<sp/>newSize)<sp/>{<sp/>d_size<sp/>=<sp/>std::min(d_size,<sp/>newSize);<sp/>}</highlight></codeline>
+<codeline lineno="45" refid="classfwoop_1_1Array_1ab0efb7b9177351cdda6ffc6c53553983" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Array_1ab0efb7b9177351cdda6ffc6c53553983" kindref="member">Array::append</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;str)<sp/>{<sp/><ref refid="classfwoop_1_1Array_1ab0efb7b9177351cdda6ffc6c53553983" kindref="member">append</ref>(str.data(),<sp/>str.length());<sp/>}</highlight></codeline>
+<codeline lineno="46" refid="classfwoop_1_1Array_1a472ac1bfa891533c0b45a7090a91f2de" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classfwoop_1_1Array_1a472ac1bfa891533c0b45a7090a91f2de" kindref="member">Array::toString</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::string((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)d_data,<sp/>d_size);<sp/>}</highlight></codeline>
+<codeline lineno="47" refid="classfwoop_1_1Array_1a3c4793b1084eb6a9b1ae729924d342a2" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Array_1a3c4793b1084eb6a9b1ae729924d342a2" kindref="member">Array::clear</ref>()<sp/>{<sp/>memset(d_data,<sp/>0,<sp/>d_actualSize);<sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>fwoop</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="basis/fwoop_array.h"/>
+  </compounddef>
+</doxygen>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classfwoop_1_1HttpFrame" kind="class" language="C++" prot="public">
     <compoundname>fwoop::HttpFrame</compoundname>
     <derivedcompoundref refid="classfwoop_1_1HttpDataFrame" prot="public" virt="non-virtual">fwoop::HttpDataFrame</derivedcompoundref>
@@ -12,7 +12,6 @@
       <memberdef kind="enum" id="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9c" prot="public" static="no" strong="yes">
         <type></type>
         <name>Type</name>
-        <qualifiedname>fwoop::HttpFrame::Type</qualifiedname>
         <enumvalue id="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9ca88183b946cc5f0e8c96b2e66e1c74a7e" prot="public">
           <name>Unknown</name>
           <initializer>= 255</initializer>
@@ -23,7 +22,7 @@
         </enumvalue>
         <enumvalue id="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9caf6068daa29dbb05a7ead1e3b5a48bbee" prot="public">
           <name>Data</name>
-          <initializer>=   0</initializer>
+          <initializer>= 0</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -31,7 +30,7 @@
         </enumvalue>
         <enumvalue id="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9cabf50d5e661106d0abe925af3c2e6f7e7" prot="public">
           <name>Header</name>
-          <initializer>=   1</initializer>
+          <initializer>= 1</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -39,7 +38,7 @@
         </enumvalue>
         <enumvalue id="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9ca502996d9790340c5fd7b86a5b93b1c9f" prot="public">
           <name>Priority</name>
-          <initializer>=   2</initializer>
+          <initializer>= 2</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -47,7 +46,7 @@
         </enumvalue>
         <enumvalue id="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9ca7b647436224f5389cde132f2a53db872" prot="public">
           <name>ResetStream</name>
-          <initializer>=   3</initializer>
+          <initializer>= 3</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -55,7 +54,7 @@
         </enumvalue>
         <enumvalue id="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9caf4f70727dc34561dfde1a3c529b6205c" prot="public">
           <name>Settings</name>
-          <initializer>=   4</initializer>
+          <initializer>= 4</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -63,7 +62,7 @@
         </enumvalue>
         <enumvalue id="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9ca70e3e2633a044d32c5985d500fce7226" prot="public">
           <name>PushPromise</name>
-          <initializer>=   5</initializer>
+          <initializer>= 5</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -71,7 +70,7 @@
         </enumvalue>
         <enumvalue id="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9cab85815d04cec053ce6deb8021f2df1b8" prot="public">
           <name>Ping</name>
-          <initializer>=   6</initializer>
+          <initializer>= 6</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -79,7 +78,7 @@
         </enumvalue>
         <enumvalue id="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9cadbbef46a58319d82be4d7c14250a52f5" prot="public">
           <name>GoAway</name>
-          <initializer>=   7</initializer>
+          <initializer>= 7</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -87,7 +86,7 @@
         </enumvalue>
         <enumvalue id="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9cae01b52b36c09cb7df91119838a499172" prot="public">
           <name>WindowUpdate</name>
-          <initializer>=   8</initializer>
+          <initializer>= 8</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -95,7 +94,7 @@
         </enumvalue>
         <enumvalue id="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9caf11580a0250ef12842e64f487810cc70" prot="public">
           <name>Continuation</name>
-          <initializer>=   9</initializer>
+          <initializer>= 9</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -116,7 +115,6 @@
         <definition>constexpr unsigned int fwoop::HttpFrame::HEADER_LENGTH</definition>
         <argsstring></argsstring>
         <name>HEADER_LENGTH</name>
-        <qualifiedname>fwoop::HttpFrame::HEADER_LENGTH</qualifiedname>
         <initializer>= 9</initializer>
         <briefdescription>
         </briefdescription>
@@ -133,70 +131,65 @@
         <definition>unsigned int fwoop::HttpFrame::d_length</definition>
         <argsstring></argsstring>
         <name>d_length</name>
-        <qualifiedname>fwoop::HttpFrame::d_length</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpframe.h" line="29" column="19" bodyfile="http/fwoop_httpframe.h" bodystart="29" bodyend="-1"/>
+        <location file="http/fwoop_httpframe.h" line="29" column="18" bodyfile="http/fwoop_httpframe.h" bodystart="29" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfwoop_1_1HttpFrame_1a2c1b3db021c82daa3485ed8bcd547404" prot="protected" static="no" mutable="no">
         <type><ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9c" kindref="member">Type</ref></type>
         <definition>Type fwoop::HttpFrame::d_type</definition>
         <argsstring></argsstring>
         <name>d_type</name>
-        <qualifiedname>fwoop::HttpFrame::d_type</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpframe.h" line="30" column="19" bodyfile="http/fwoop_httpframe.h" bodystart="30" bodyend="-1"/>
+        <location file="http/fwoop_httpframe.h" line="30" column="10" bodyfile="http/fwoop_httpframe.h" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfwoop_1_1HttpFrame_1af4ab160bcedcb2562d6001c6570548e2" prot="protected" static="no" mutable="no">
         <type>uint8_t</type>
         <definition>uint8_t fwoop::HttpFrame::d_flags</definition>
         <argsstring></argsstring>
         <name>d_flags</name>
-        <qualifiedname>fwoop::HttpFrame::d_flags</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpframe.h" line="31" column="19" bodyfile="http/fwoop_httpframe.h" bodystart="31" bodyend="-1"/>
+        <location file="http/fwoop_httpframe.h" line="31" column="13" bodyfile="http/fwoop_httpframe.h" bodystart="31" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" prot="protected" static="no" mutable="no">
         <type>uint8_t</type>
         <definition>uint8_t fwoop::HttpFrame::d_streamID[4]</definition>
         <argsstring>[4]</argsstring>
         <name>d_streamID</name>
-        <qualifiedname>fwoop::HttpFrame::d_streamID</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpframe.h" line="32" column="19" bodyfile="http/fwoop_httpframe.h" bodystart="32" bodyend="-1"/>
+        <location file="http/fwoop_httpframe.h" line="32" column="13" bodyfile="http/fwoop_httpframe.h" bodystart="32" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfwoop_1_1HttpFrame_1a1b7c3e3c81c64d953c13a96cf9cb31d3" prot="protected" static="no" mutable="no">
         <type>uint8_t *</type>
         <definition>uint8_t* fwoop::HttpFrame::d_payload</definition>
         <argsstring></argsstring>
         <name>d_payload</name>
-        <qualifiedname>fwoop::HttpFrame::d_payload</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpframe.h" line="33" column="18" bodyfile="http/fwoop_httpframe.h" bodystart="33" bodyend="-1"/>
+        <location file="http/fwoop_httpframe.h" line="33" column="13" bodyfile="http/fwoop_httpframe.h" bodystart="33" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -205,7 +198,6 @@
         <definition>fwoop::HttpFrame::HttpFrame</definition>
         <argsstring>(Type type)</argsstring>
         <name>HttpFrame</name>
-        <qualifiedname>fwoop::HttpFrame::HttpFrame</qualifiedname>
         <param>
           <type><ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9c" kindref="member">Type</ref></type>
           <declname>type</declname>
@@ -216,14 +208,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpframe.h" line="35" column="14" bodyfile="http/fwoop_httpframe.cpp" bodystart="109" bodyend="116"/>
+        <location file="http/fwoop_httpframe.h" line="35" column="14" bodyfile="http/fwoop_httpframe.cpp" bodystart="108" bodyend="111"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpFrame_1a2d15a02a0cb21cfaa2643a87e8830426" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void fwoop::HttpFrame::encodeHeader</definition>
         <argsstring>(uint8_t *out) const</argsstring>
         <name>encodeHeader</name>
-        <qualifiedname>fwoop::HttpFrame::encodeHeader</qualifiedname>
         <param>
           <type>uint8_t *</type>
           <declname>out</declname>
@@ -234,7 +225,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpframe.h" line="37" column="10" bodyfile="http/fwoop_httpframe.cpp" bodystart="139" bodyend="149"/>
+        <location file="http/fwoop_httpframe.h" line="37" column="10" bodyfile="http/fwoop_httpframe.cpp" bodystart="136" bodyend="146"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -243,7 +234,6 @@
         <definition>std::unique_ptr&lt; HttpFrame &gt; fwoop::HttpFrame::parse</definition>
         <argsstring>(uint8_t *buffer, unsigned int bufferSize, unsigned int &amp;bytesParsed)</argsstring>
         <name>parse</name>
-        <qualifiedname>fwoop::HttpFrame::parse</qualifiedname>
         <param>
           <type>uint8_t *</type>
           <declname>buffer</declname>
@@ -262,14 +252,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpframe.h" line="40" column="28" bodyfile="http/fwoop_httpframe.cpp" bodystart="68" bodyend="97"/>
+        <location file="http/fwoop_httpframe.h" line="40" column="28" bodyfile="http/fwoop_httpframe.cpp" bodystart="69" bodyend="98"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpFrame_1ade1fb3cab89f2a3c95312cb2378abb6e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9c" kindref="member">Type</ref></type>
         <definition>HttpFrame::Type fwoop::HttpFrame::byteToType</definition>
         <argsstring>(uint8_t byte)</argsstring>
         <name>byteToType</name>
-        <qualifiedname>fwoop::HttpFrame::byteToType</qualifiedname>
         <param>
           <type>uint8_t</type>
           <declname>byte</declname>
@@ -280,14 +269,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpframe.h" line="41" column="17" bodyfile="http/fwoop_httpframe.cpp" bodystart="12" bodyend="38"/>
+        <location file="http/fwoop_httpframe.h" line="41" column="17" bodyfile="http/fwoop_httpframe.cpp" bodystart="12" bodyend="39"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpFrame_1a84a587cc6c2ec20b5b28e9612d6f4327" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::string</type>
         <definition>std::string fwoop::HttpFrame::typeToString</definition>
         <argsstring>(Type type)</argsstring>
         <name>typeToString</name>
-        <qualifiedname>fwoop::HttpFrame::typeToString</qualifiedname>
         <param>
           <type><ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9c" kindref="member">Type</ref></type>
           <declname>type</declname>
@@ -298,7 +286,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpframe.h" line="42" column="24" bodyfile="http/fwoop_httpframe.cpp" bodystart="40" bodyend="66"/>
+        <location file="http/fwoop_httpframe.h" line="42" column="24" bodyfile="http/fwoop_httpframe.cpp" bodystart="41" bodyend="67"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -307,7 +295,6 @@
         <definition>fwoop::HttpFrame::HttpFrame</definition>
         <argsstring>(unsigned int length, Type type, uint8_t flags, uint8_t *streamID, uint8_t *payload)</argsstring>
         <name>HttpFrame</name>
-        <qualifiedname>fwoop::HttpFrame::HttpFrame</qualifiedname>
         <param>
           <type>unsigned int</type>
           <declname>length</declname>
@@ -334,28 +321,26 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpframe.h" line="44" column="5" bodyfile="http/fwoop_httpframe.cpp" bodystart="99" bodyend="107"/>
+        <location file="http/fwoop_httpframe.h" line="44" column="5" bodyfile="http/fwoop_httpframe.cpp" bodystart="100" bodyend="106"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpFrame_1a0196e1520a2c49fdac7ff32886a36c1d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type></type>
         <definition>fwoop::HttpFrame::~HttpFrame</definition>
         <argsstring>()</argsstring>
         <name>~HttpFrame</name>
-        <qualifiedname>fwoop::HttpFrame::~HttpFrame</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpframe.h" line="45" column="13" bodyfile="http/fwoop_httpframe.h" bodystart="61" bodyend="64"/>
+        <location file="http/fwoop_httpframe.h" line="45" column="13" bodyfile="http/fwoop_httpframe.h" bodystart="60" bodyend="60"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpFrame_1a9e0344f5dbb95f054009cd43cdb485b4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void fwoop::HttpFrame::setStreamID</definition>
         <argsstring>(uint32_t id)</argsstring>
         <name>setStreamID</name>
-        <qualifiedname>fwoop::HttpFrame::setStreamID</qualifiedname>
         <param>
           <type>uint32_t</type>
           <declname>id</declname>
@@ -366,14 +351,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpframe.h" line="47" column="10" bodyfile="http/fwoop_httpframe.h" bodystart="100" bodyend="106"/>
+        <location file="http/fwoop_httpframe.h" line="47" column="10" bodyfile="http/fwoop_httpframe.h" bodystart="78" bodyend="84"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpFrame_1a83cdc5c45cb979d43a2b00043dc606b9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void fwoop::HttpFrame::setLength</definition>
         <argsstring>(unsigned int length)</argsstring>
         <name>setLength</name>
-        <qualifiedname>fwoop::HttpFrame::setLength</qualifiedname>
         <param>
           <type>unsigned int</type>
           <declname>length</declname>
@@ -384,98 +368,91 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpframe.h" line="48" column="10" bodyfile="http/fwoop_httpframe.h" bodystart="116" bodyend="119"/>
+        <location file="http/fwoop_httpframe.h" line="48" column="10" bodyfile="http/fwoop_httpframe.h" bodystart="92" bodyend="92"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpFrame_1aa418c5a29a857d21bd83835836230696" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>unsigned int</type>
         <definition>unsigned int fwoop::HttpFrame::length</definition>
         <argsstring>() const</argsstring>
         <name>length</name>
-        <qualifiedname>fwoop::HttpFrame::length</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpframe.h" line="50" column="18" bodyfile="http/fwoop_httpframe.h" bodystart="67" bodyend="70"/>
+        <location file="http/fwoop_httpframe.h" line="50" column="18" bodyfile="http/fwoop_httpframe.h" bodystart="62" bodyend="62"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpFrame_1ab535fb5b35df53538e2892639cce9f6f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9c" kindref="member">Type</ref></type>
         <definition>HttpFrame::Type fwoop::HttpFrame::type</definition>
         <argsstring>() const</argsstring>
         <name>type</name>
-        <qualifiedname>fwoop::HttpFrame::type</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpframe.h" line="51" column="10" bodyfile="http/fwoop_httpframe.h" bodystart="73" bodyend="76"/>
+        <location file="http/fwoop_httpframe.h" line="51" column="10" bodyfile="http/fwoop_httpframe.h" bodystart="64" bodyend="64"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpFrame_1a7f1a53af685d8dc955a31f2fcd70fade" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>uint8_t *</type>
         <definition>uint8_t * fwoop::HttpFrame::payload</definition>
         <argsstring>() const</argsstring>
         <name>payload</name>
-        <qualifiedname>fwoop::HttpFrame::payload</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpframe.h" line="52" column="13" bodyfile="http/fwoop_httpframe.h" bodystart="79" bodyend="82"/>
+        <location file="http/fwoop_httpframe.h" line="52" column="13" bodyfile="http/fwoop_httpframe.h" bodystart="66" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpFrame_1ac0b88de07f70e2a7c6dc4e6b4010cd80" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void fwoop::HttpFrame::printHex</definition>
         <argsstring>() const</argsstring>
         <name>printHex</name>
-        <qualifiedname>fwoop::HttpFrame::printHex</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpframe.h" line="53" column="10" bodyfile="http/fwoop_httpframe.cpp" bodystart="118" bodyend="132"/>
+        <location file="http/fwoop_httpframe.h" line="53" column="10" bodyfile="http/fwoop_httpframe.cpp" bodystart="113" bodyend="128"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpFrame_1a5bb16b36fec77fb383402306e7b30b3c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void fwoop::HttpFrame::printHeader</definition>
         <argsstring>() const</argsstring>
         <name>printHeader</name>
-        <qualifiedname>fwoop::HttpFrame::printHeader</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpframe.h" line="54" column="10" bodyfile="http/fwoop_httpframe.cpp" bodystart="134" bodyend="137"/>
+        <location file="http/fwoop_httpframe.h" line="54" column="10" bodyfile="http/fwoop_httpframe.cpp" bodystart="130" bodyend="134"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpFrame_1a79aa423e31eefead7f0fd3e8f5a028ae" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>unsigned int</type>
         <definition>unsigned int fwoop::HttpFrame::encodingLength</definition>
         <argsstring>() const</argsstring>
         <name>encodingLength</name>
-        <qualifiedname>fwoop::HttpFrame::encodingLength</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpframe.h" line="55" column="18" bodyfile="http/fwoop_httpframe.h" bodystart="85" bodyend="88"/>
+        <location file="http/fwoop_httpframe.h" line="55" column="18" bodyfile="http/fwoop_httpframe.h" bodystart="68" bodyend="68"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpFrame_1a2a316cf5e601ae7e60316f7632d7a26f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type>uint8_t *</type>
         <definition>uint8_t * fwoop::HttpFrame::encode</definition>
         <argsstring>() const</argsstring>
         <name>encode</name>
-        <qualifiedname>fwoop::HttpFrame::encode</qualifiedname>
         <reimplementedby refid="classfwoop_1_1HttpDataFrame_1ac18b944415833c1b94ea6b4f9516fd73">encode</reimplementedby>
         <reimplementedby refid="classfwoop_1_1HttpGoAwayFrame_1af823b8eef239c3c4ff28510ea6260944">encode</reimplementedby>
         <reimplementedby refid="classfwoop_1_1HttpHeadersFrame_1a9a6e7044c22b245f5795944cfc1cf799">encode</reimplementedby>
@@ -487,21 +464,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpframe.h" line="56" column="21" bodyfile="http/fwoop_httpframe.h" bodystart="91" bodyend="97"/>
+        <location file="http/fwoop_httpframe.h" line="56" column="21" bodyfile="http/fwoop_httpframe.h" bodystart="70" bodyend="76"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpFrame_1af91ef9220c742b6fe0e398fd0e8bc4da" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>uint32_t</type>
         <definition>uint32_t fwoop::HttpFrame::getStreamID</definition>
         <argsstring>() const</argsstring>
         <name>getStreamID</name>
-        <qualifiedname>fwoop::HttpFrame::getStreamID</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpframe.h" line="57" column="14" bodyfile="http/fwoop_httpframe.h" bodystart="109" bodyend="113"/>
+        <location file="http/fwoop_httpframe.h" line="57" column="14" bodyfile="http/fwoop_httpframe.h" bodystart="86" bodyend="90"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -509,9 +485,9 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>fwoop::HttpDataFrame</label>
-        <link refid="classfwoop_1_1HttpDataFrame"/>
+      <node id="4">
+        <label>fwoop::HttpHeadersFrame</label>
+        <link refid="classfwoop_1_1HttpHeadersFrame"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -519,15 +495,9 @@
         <label>fwoop::HttpFrame</label>
         <link refid="classfwoop_1_1HttpFrame"/>
       </node>
-      <node id="3">
-        <label>fwoop::HttpGoAwayFrame</label>
-        <link refid="classfwoop_1_1HttpGoAwayFrame"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>fwoop::HttpHeadersFrame</label>
-        <link refid="classfwoop_1_1HttpHeadersFrame"/>
+      <node id="6">
+        <label>fwoop::HttpWindowUpdateFrame</label>
+        <link refid="classfwoop_1_1HttpWindowUpdateFrame"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -537,9 +507,15 @@
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6">
-        <label>fwoop::HttpWindowUpdateFrame</label>
-        <link refid="classfwoop_1_1HttpWindowUpdateFrame"/>
+      <node id="2">
+        <label>fwoop::HttpDataFrame</label>
+        <link refid="classfwoop_1_1HttpDataFrame"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>fwoop::HttpGoAwayFrame</label>
+        <link refid="classfwoop_1_1HttpGoAwayFrame"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>

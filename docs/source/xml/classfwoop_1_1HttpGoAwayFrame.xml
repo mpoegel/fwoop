@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classfwoop_1_1HttpGoAwayFrame" kind="class" language="C++" prot="public">
     <compoundname>fwoop::HttpGoAwayFrame</compoundname>
     <basecompoundref refid="classfwoop_1_1HttpFrame" prot="public" virt="non-virtual">fwoop::HttpFrame</basecompoundref>
@@ -10,7 +10,6 @@
         <definition>uint32_t fwoop::HttpGoAwayFrame::d_lastStreamID</definition>
         <argsstring></argsstring>
         <name>d_lastStreamID</name>
-        <qualifiedname>fwoop::HttpGoAwayFrame::d_lastStreamID</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -24,7 +23,6 @@
         <definition>uint32_t fwoop::HttpGoAwayFrame::d_errorCode</definition>
         <argsstring></argsstring>
         <name>d_errorCode</name>
-        <qualifiedname>fwoop::HttpGoAwayFrame::d_errorCode</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -40,7 +38,6 @@
         <definition>fwoop::HttpGoAwayFrame::HttpGoAwayFrame</definition>
         <argsstring>(unsigned int length, uint8_t flags, uint8_t *streamID, uint8_t *payload)</argsstring>
         <name>HttpGoAwayFrame</name>
-        <qualifiedname>fwoop::HttpGoAwayFrame::HttpGoAwayFrame</qualifiedname>
         <param>
           <type>unsigned int</type>
           <declname>length</declname>
@@ -63,42 +60,39 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpgoawayframe.h" line="13" column="5" bodyfile="http/fwoop_httpgoawayframe.cpp" bodystart="7" bodyend="13"/>
+        <location file="http/fwoop_httpgoawayframe.h" line="13" column="5" bodyfile="http/fwoop_httpgoawayframe.cpp" bodystart="7" bodyend="11"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpGoAwayFrame_1af9ee69587d31ad2e7433fed609efc2ff" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>fwoop::HttpGoAwayFrame::HttpGoAwayFrame</definition>
         <argsstring>()</argsstring>
         <name>HttpGoAwayFrame</name>
-        <qualifiedname>fwoop::HttpGoAwayFrame::HttpGoAwayFrame</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpgoawayframe.h" line="14" column="14" bodyfile="http/fwoop_httpgoawayframe.cpp" bodystart="15" bodyend="21"/>
+        <location file="http/fwoop_httpgoawayframe.h" line="14" column="14" bodyfile="http/fwoop_httpgoawayframe.cpp" bodystart="13" bodyend="16"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpGoAwayFrame_1ad589c97893be3849b0367460a6f95ebe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>fwoop::HttpGoAwayFrame::~HttpGoAwayFrame</definition>
         <argsstring>()</argsstring>
         <name>~HttpGoAwayFrame</name>
-        <qualifiedname>fwoop::HttpGoAwayFrame::~HttpGoAwayFrame</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpgoawayframe.h" line="16" column="5" bodyfile="http/fwoop_httpgoawayframe.h" bodystart="25" bodyend="27"/>
+        <location file="http/fwoop_httpgoawayframe.h" line="16" column="5" bodyfile="http/fwoop_httpgoawayframe.h" bodystart="24" bodyend="24"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpGoAwayFrame_1af823b8eef239c3c4ff28510ea6260944" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>uint8_t *</type>
         <definition>uint8_t * fwoop::HttpGoAwayFrame::encode</definition>
         <argsstring>() const override</argsstring>
         <name>encode</name>
-        <qualifiedname>fwoop::HttpGoAwayFrame::encode</qualifiedname>
         <reimplements refid="classfwoop_1_1HttpFrame_1a2a316cf5e601ae7e60316f7632d7a26f">encode</reimplements>
         <briefdescription>
         </briefdescription>
@@ -106,14 +100,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpgoawayframe.h" line="18" column="13" bodyfile="http/fwoop_httpgoawayframe.cpp" bodystart="23" bodyend="41"/>
+        <location file="http/fwoop_httpgoawayframe.h" line="18" column="13" bodyfile="http/fwoop_httpgoawayframe.cpp" bodystart="18" bodyend="36"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpGoAwayFrame_1afb593c7a773c4b9ba684bae98b2e184e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void fwoop::HttpGoAwayFrame::setLastStreamID</definition>
         <argsstring>(uint32_t streamID)</argsstring>
         <name>setLastStreamID</name>
-        <qualifiedname>fwoop::HttpGoAwayFrame::setLastStreamID</qualifiedname>
         <param>
           <type>uint32_t</type>
           <declname>streamID</declname>
@@ -124,14 +117,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpgoawayframe.h" line="20" column="10" bodyfile="http/fwoop_httpgoawayframe.h" bodystart="30" bodyend="33"/>
+        <location file="http/fwoop_httpgoawayframe.h" line="20" column="10" bodyfile="http/fwoop_httpgoawayframe.h" bodystart="26" bodyend="26"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpGoAwayFrame_1a1a090973f266fa0c27b69dcc478c4a9c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void fwoop::HttpGoAwayFrame::setErrorCode</definition>
         <argsstring>(uint32_t ec)</argsstring>
         <name>setErrorCode</name>
-        <qualifiedname>fwoop::HttpGoAwayFrame::setErrorCode</qualifiedname>
         <param>
           <type>uint32_t</type>
           <declname>ec</declname>
@@ -142,7 +134,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpgoawayframe.h" line="21" column="10" bodyfile="http/fwoop_httpgoawayframe.h" bodystart="36" bodyend="39"/>
+        <location file="http/fwoop_httpgoawayframe.h" line="21" column="10" bodyfile="http/fwoop_httpgoawayframe.h" bodystart="28" bodyend="28"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="fwoop__httpheadersframe_8h" kind="file" language="C++">
     <compoundname>fwoop_httpheadersframe.h</compoundname>
     <includes refid="fwoop__httpframe_8h" local="no">fwoop_httpframe.h</includes>
@@ -13,19 +13,8 @@
     <includedby refid="fwoop__httpheadersframe_8cpp" local="no">http/fwoop_httpheadersframe.cpp</includedby>
     <includedby refid="fwoop__httpserver_8cpp" local="no">http/fwoop_httpserver.cpp</includedby>
     <incdepgraph>
-      <node id="15">
-        <label>fwoop_log.h</label>
-        <link refid="fwoop__log_8h"/>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
+      <node id="12">
+        <label>list</label>
       </node>
       <node id="2">
         <label>fwoop_httpframe.h</label>
@@ -39,15 +28,8 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="7">
-        <label>fwoop_httpheader.h</label>
-        <link refid="fwoop__httpheader_8h"/>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
+      <node id="11">
+        <label>cstdint</label>
       </node>
       <node id="1">
         <label>http/fwoop_httpheadersframe.h</label>
@@ -66,6 +48,32 @@
         </childnode>
         <childnode refid="14" relation="include">
         </childnode>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+      <node id="9">
+        <label>variant</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="15">
+        <label>fwoop_log.h</label>
+        <link refid="fwoop__log_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>ostream</label>
       </node>
       <node id="10">
         <label>fwoop_httphpacker.h</label>
@@ -87,48 +95,36 @@
         <childnode refid="14" relation="include">
         </childnode>
       </node>
-      <node id="11">
-        <label>cstdint</label>
-      </node>
-      <node id="3">
-        <label>cstring</label>
-      </node>
-      <node id="16">
-        <label>iostream</label>
-      </node>
-      <node id="12">
-        <label>list</label>
-      </node>
-      <node id="4">
-        <label>memory</label>
-      </node>
-      <node id="8">
-        <label>ostream</label>
+      <node id="14">
+        <label>vector</label>
       </node>
       <node id="17">
         <label>sstream</label>
       </node>
-      <node id="6">
-        <label>stdint.h</label>
+      <node id="7">
+        <label>fwoop_httpheader.h</label>
+        <link refid="fwoop__httpheader_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
       </node>
-      <node id="5">
-        <label>string</label>
+      <node id="16">
+        <label>iostream</label>
       </node>
       <node id="13">
         <label>unordered_map</label>
       </node>
-      <node id="9">
-        <label>variant</label>
+      <node id="3">
+        <label>cstring</label>
       </node>
-      <node id="14">
-        <label>vector</label>
+      <node id="4">
+        <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="2">
-        <label>http/fwoop_httpframe.cpp</label>
-        <link refid="fwoop__httpframe_8cpp"/>
-      </node>
       <node id="3">
         <label>http/fwoop_httpheadersframe.cpp</label>
         <link refid="fwoop__httpheadersframe_8cpp"/>
@@ -142,6 +138,10 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
+      </node>
+      <node id="2">
+        <label>http/fwoop_httpframe.cpp</label>
+        <link refid="fwoop__httpframe_8cpp"/>
       </node>
       <node id="4">
         <label>http/fwoop_httpserver.cpp</label>
@@ -170,76 +170,60 @@
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
 <codeline lineno="14" refid="classfwoop_1_1HttpHeadersFrame" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfwoop_1_1HttpHeadersFrame" kindref="compound">HttpHeadersFrame</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame" kindref="compound">HttpFrame</ref><sp/>{</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d_padLength;</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d_isDepMutuallyExclusive;</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d_streamDep;</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d_weight;</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;HttpHeaderField_t&gt;<sp/>d_headerList;</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;HttpHPacker&gt;<sp/><sp/><sp/>d_packer;</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>countExtraBits()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="27" refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00" kindref="member">Flag</ref><sp/>{</highlight></codeline>
-<codeline lineno="28" refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00ab38d05bb0ccfd42f6d70512e5ef50621" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00ab38d05bb0ccfd42f6d70512e5ef50621" kindref="member">EndStream</ref><sp/><sp/>=<sp/>1,</highlight></codeline>
-<codeline lineno="29" refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00a1d30b925f47297dd4254a787895e1d05" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00a1d30b925f47297dd4254a787895e1d05" kindref="member">EndHeaders</ref><sp/>=<sp/>4,</highlight></codeline>
-<codeline lineno="30" refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00af7eda2000619187f7d133e618fc3bb80" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00af7eda2000619187f7d133e618fc3bb80" kindref="member">Padded</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>8,</highlight></codeline>
-<codeline lineno="31" refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00a5882053c87ba133723d97697644cb770" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00a5882053c87ba133723d97697644cb770" kindref="member">Priority</ref><sp/><sp/><sp/>=<sp/>32,</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a83f767fe8ae94196988658bf72213b27" kindref="member">HttpHeadersFrame</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1aa418c5a29a857d21bd83835836230696" kindref="member">length</ref>,<sp/>uint8_t<sp/>flags,<sp/>uint8_t<sp/>*streamID,<sp/>uint8_t<sp/>*<ref refid="classfwoop_1_1HttpFrame_1a7f1a53af685d8dc955a31f2fcd70fade" kindref="member">payload</ref>);</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a83f767fe8ae94196988658bf72213b27" kindref="member">HttpHeadersFrame</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;HttpHPacker&gt;&amp;<sp/>packer);</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1ab77dff6da981c436aa7856fdcad3ab56" kindref="member">addFlag</ref>(<ref refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00" kindref="member">Flag</ref><sp/>flag);</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a2132e58c879ef387a9ea2a9e44ee8a05" kindref="member">addHeaderBlock</ref>(<ref refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929" kindref="member">HttpHeader</ref>&amp;&amp;<sp/>name,<sp/>std::string&amp;&amp;<sp/>value);</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a2132e58c879ef387a9ea2a9e44ee8a05" kindref="member">addHeaderBlock</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>value);</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a5312239d26ef4966539532a515b22074" kindref="member">clearHeaderBlocks</ref>();</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*<ref refid="classfwoop_1_1HttpHeadersFrame_1a9a6e7044c22b245f5795944cfc1cf799" kindref="member">encode</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;HttpHeaderField_t&gt;::const_iterator<sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1ace36358d7a9772c24e71ce6fb0069b21" kindref="member">beginHeaderList</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;HttpHeaderField_t&gt;::const_iterator<sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a511491150b19dbe422307e9525390d65" kindref="member">endHeaderList</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="47"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="50" refid="classfwoop_1_1HttpHeadersFrame_1a8bb2af69288173ecce8a80443cda2d45" refkind="member"><highlight class="normal"><ref refid="classfwoop_1_1HttpHeadersFrame_1a83f767fe8ae94196988658bf72213b27" kindref="member">HttpHeadersFrame::HttpHeadersFrame</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;HttpHPacker&gt;&amp;<sp/>packer)</highlight></codeline>
-<codeline lineno="51"><highlight class="normal">:<sp/><ref refid="classfwoop_1_1HttpFrame" kindref="compound">HttpFrame</ref>(<ref refid="classfwoop_1_1HttpFrame" kindref="compound">HttpFrame</ref>::<ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9c" kindref="member">Type</ref>::Header)</highlight></codeline>
-<codeline lineno="52"><highlight class="normal">,<sp/>d_padLength(0)</highlight></codeline>
-<codeline lineno="53"><highlight class="normal">,<sp/>d_isDepMutuallyExclusive(false)</highlight></codeline>
-<codeline lineno="54"><highlight class="normal">,<sp/>d_streamDep(0)</highlight></codeline>
-<codeline lineno="55"><highlight class="normal">,<sp/>d_weight(0)</highlight></codeline>
-<codeline lineno="56"><highlight class="normal">,<sp/>d_packer(packer)</highlight></codeline>
-<codeline lineno="57"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1af9fb5740d57aee90e97cb7de45f3e321" kindref="member">d_length</ref><sp/>+=<sp/>6;</highlight></codeline>
-<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="62" refid="classfwoop_1_1HttpHeadersFrame_1ab77dff6da981c436aa7856fdcad3ab56" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1ab77dff6da981c436aa7856fdcad3ab56" kindref="member">HttpHeadersFrame::addFlag</ref>(<ref refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00" kindref="member">Flag</ref><sp/>flag)</highlight></codeline>
-<codeline lineno="63"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1af4ab160bcedcb2562d6001c6570548e2" kindref="member">d_flags</ref><sp/>|=<sp/>flag;</highlight></codeline>
-<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="68" refid="classfwoop_1_1HttpHeadersFrame_1a5312239d26ef4966539532a515b22074" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a5312239d26ef4966539532a515b22074" kindref="member">HttpHeadersFrame::clearHeaderBlocks</ref>()</highlight></codeline>
-<codeline lineno="69"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>d_headerList.clear();</highlight></codeline>
-<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="74" refid="classfwoop_1_1HttpHeadersFrame_1ace36358d7a9772c24e71ce6fb0069b21" refkind="member"><highlight class="normal">std::vector&lt;HttpHeaderField_t&gt;::const_iterator<sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1ace36358d7a9772c24e71ce6fb0069b21" kindref="member">HttpHeadersFrame::beginHeaderList</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="75"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_headerList.cbegin();</highlight></codeline>
-<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="80" refid="classfwoop_1_1HttpHeadersFrame_1a511491150b19dbe422307e9525390d65" refkind="member"><highlight class="normal">std::vector&lt;HttpHeaderField_t&gt;::const_iterator<sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a511491150b19dbe422307e9525390d65" kindref="member">HttpHeadersFrame::endHeaderList</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="81"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_headerList.cend();</highlight></codeline>
-<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>d_padLength;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>d_isDepMutuallyExclusive;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>d_streamDep;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>d_weight;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;HttpHeaderField_t&gt;<sp/>d_headerList;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;HttpHPacker&gt;<sp/>d_packer;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>countExtraBits()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="26" refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00" kindref="member">Flag</ref><sp/>{</highlight></codeline>
+<codeline lineno="27" refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00ab38d05bb0ccfd42f6d70512e5ef50621" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00ab38d05bb0ccfd42f6d70512e5ef50621" kindref="member">EndStream</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="28" refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00a1d30b925f47297dd4254a787895e1d05" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00a1d30b925f47297dd4254a787895e1d05" kindref="member">EndHeaders</ref><sp/>=<sp/>4,</highlight></codeline>
+<codeline lineno="29" refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00af7eda2000619187f7d133e618fc3bb80" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00af7eda2000619187f7d133e618fc3bb80" kindref="member">Padded</ref><sp/>=<sp/>8,</highlight></codeline>
+<codeline lineno="30" refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00a5882053c87ba133723d97697644cb770" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00a5882053c87ba133723d97697644cb770" kindref="member">Priority</ref><sp/>=<sp/>32,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a83f767fe8ae94196988658bf72213b27" kindref="member">HttpHeadersFrame</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1aa418c5a29a857d21bd83835836230696" kindref="member">length</ref>,<sp/>uint8_t<sp/>flags,<sp/>uint8_t<sp/>*streamID,<sp/>uint8_t<sp/>*<ref refid="classfwoop_1_1HttpFrame_1a7f1a53af685d8dc955a31f2fcd70fade" kindref="member">payload</ref>);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a83f767fe8ae94196988658bf72213b27" kindref="member">HttpHeadersFrame</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;HttpHPacker&gt;<sp/>&amp;packer);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1ab77dff6da981c436aa7856fdcad3ab56" kindref="member">addFlag</ref>(<ref refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00" kindref="member">Flag</ref><sp/>flag);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a2132e58c879ef387a9ea2a9e44ee8a05" kindref="member">addHeaderBlock</ref>(<ref refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929" kindref="member">HttpHeader</ref><sp/>&amp;&amp;name,<sp/>std::string<sp/>&amp;&amp;value);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a2132e58c879ef387a9ea2a9e44ee8a05" kindref="member">addHeaderBlock</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;value);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a5312239d26ef4966539532a515b22074" kindref="member">clearHeaderBlocks</ref>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*<ref refid="classfwoop_1_1HttpHeadersFrame_1a9a6e7044c22b245f5795944cfc1cf799" kindref="member">encode</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;HttpHeaderField_t&gt;::const_iterator<sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1ace36358d7a9772c24e71ce6fb0069b21" kindref="member">beginHeaderList</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;HttpHeaderField_t&gt;::const_iterator<sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a511491150b19dbe422307e9525390d65" kindref="member">endHeaderList</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="classfwoop_1_1HttpHeadersFrame_1a8bb2af69288173ecce8a80443cda2d45" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a83f767fe8ae94196988658bf72213b27" kindref="member">HttpHeadersFrame::HttpHeadersFrame</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;HttpHPacker&gt;<sp/>&amp;packer)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="classfwoop_1_1HttpFrame" kindref="compound">HttpFrame</ref>(<ref refid="classfwoop_1_1HttpFrame" kindref="compound">HttpFrame</ref>::<ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9c" kindref="member">Type</ref>::Header),<sp/>d_padLength(0),<sp/>d_isDepMutuallyExclusive(false),<sp/>d_streamDep(0),<sp/>d_weight(0),</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>d_packer(packer)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1af9fb5740d57aee90e97cb7de45f3e321" kindref="member">d_length</ref><sp/>+=<sp/>6;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="classfwoop_1_1HttpHeadersFrame_1ab77dff6da981c436aa7856fdcad3ab56" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1ab77dff6da981c436aa7856fdcad3ab56" kindref="member">HttpHeadersFrame::addFlag</ref>(<ref refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00" kindref="member">Flag</ref><sp/>flag)<sp/>{<sp/><ref refid="classfwoop_1_1HttpFrame_1af4ab160bcedcb2562d6001c6570548e2" kindref="member">d_flags</ref><sp/>|=<sp/>flag;<sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="classfwoop_1_1HttpHeadersFrame_1a5312239d26ef4966539532a515b22074" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a5312239d26ef4966539532a515b22074" kindref="member">HttpHeadersFrame::clearHeaderBlocks</ref>()<sp/>{<sp/>d_headerList.clear();<sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="classfwoop_1_1HttpHeadersFrame_1ace36358d7a9772c24e71ce6fb0069b21" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>std::vector&lt;HttpHeaderField_t&gt;::const_iterator<sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1ace36358d7a9772c24e71ce6fb0069b21" kindref="member">HttpHeadersFrame::beginHeaderList</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="60"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_headerList.cbegin();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="classfwoop_1_1HttpHeadersFrame_1a511491150b19dbe422307e9525390d65" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>std::vector&lt;HttpHeaderField_t&gt;::const_iterator<sp/><ref refid="classfwoop_1_1HttpHeadersFrame_1a511491150b19dbe422307e9525390d65" kindref="member">HttpHeadersFrame::endHeaderList</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="65"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_headerList.cend();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>fwoop</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="http/fwoop_httpheadersframe.h"/>
   </compounddef>

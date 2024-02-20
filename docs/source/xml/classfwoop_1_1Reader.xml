@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1Reader" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>fwoop::Reader</compoundname>
+    <derivedcompoundref refid="classfwoop_1_1SocketBase" prot="public" virt="non-virtual">fwoop::SocketBase</derivedcompoundref>
+    <includes refid="fwoop__socketio_8h" local="no">fwoop_socketio.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfwoop_1_1Reader_1a20174ae82af8a9dde11176e23ef810f9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::Reader::~Reader</definition>
+        <argsstring>()</argsstring>
+        <name>~Reader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_socketio.h" line="17" column="5" bodyfile="basis/fwoop_socketio.h" bodystart="17" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Reader_1a76cc37f2f2fd5a021b87a577a39d3af7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::error_code</type>
+        <definition>virtual std::error_code fwoop::Reader::read</definition>
+        <argsstring>(uint8_t *buffer, uint32_t bufferSize, uint32_t &amp;bytesRead)=0</argsstring>
+        <name>read</name>
+        <reimplementedby refid="classfwoop_1_1Socket_1ad4ca0ab53b166baff0577ad0de5778f6">read</reimplementedby>
+        <reimplementedby refid="classfwoop_1_1SecureSocket_1abd8bda2589f3eab01e0a121808a1cda7">read</reimplementedby>
+        <param>
+          <type>uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>bufferSize</declname>
+        </param>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>bytesRead</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_socketio.h" line="18" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Reader_1a90597f688f2e4610d39a10c98addad98" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void fwoop::Reader::close</definition>
+        <argsstring>()=0</argsstring>
+        <name>close</name>
+        <reimplementedby refid="classfwoop_1_1Socket_1aeb61e7e16f832382cddc66675a6f3bf9">close</reimplementedby>
+        <reimplementedby refid="classfwoop_1_1SecureSocket_1a7e4f8f2e6d80ecd87c87ca0053affc22">close</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_socketio.h" line="19" column="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>fwoop::Reader</label>
+        <link refid="classfwoop_1_1Reader"/>
+      </node>
+      <node id="4">
+        <label>fwoop::Socket</label>
+        <link refid="classfwoop_1_1Socket"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>fwoop::SocketBase</label>
+        <link refid="classfwoop_1_1SocketBase"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>fwoop::SecureSocket</label>
+        <link refid="classfwoop_1_1SecureSocket"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="basis/fwoop_socketio.h" line="15" column="1" bodyfile="basis/fwoop_socketio.h" bodystart="15" bodyend="20"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1Reader_1a90597f688f2e4610d39a10c98addad98" prot="public" virt="pure-virtual"><scope>fwoop::Reader</scope><name>close</name></member>
+      <member refid="classfwoop_1_1Reader_1a76cc37f2f2fd5a021b87a577a39d3af7" prot="public" virt="pure-virtual"><scope>fwoop::Reader</scope><name>read</name></member>
+      <member refid="classfwoop_1_1Reader_1a20174ae82af8a9dde11176e23ef810f9" prot="public" virt="non-virtual"><scope>fwoop::Reader</scope><name>~Reader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

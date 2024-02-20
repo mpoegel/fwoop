@@ -1,16 +1,47 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="fwoop__httprequest_8h" kind="file" language="C++">
     <compoundname>fwoop_httprequest.h</compoundname>
     <includes refid="fwoop__httpheader_8h" local="no">fwoop_httpheader.h</includes>
+    <includes refid="fwoop__httpversion_8h" local="no">fwoop_httpversion.h</includes>
     <includes local="no">memory</includes>
     <includes local="no">ostream</includes>
     <includes local="no">string</includes>
     <includes local="no">vector</includes>
+    <includedby refid="fwoop__httpclient_8h" local="no">http/fwoop_httpclient.h</includedby>
+    <includedby refid="fwoop__httpfunc_8h" local="no">http/fwoop_httpfunc.h</includedby>
     <includedby refid="fwoop__httprequest_8cpp" local="no">http/fwoop_httprequest.cpp</includedby>
     <includedby refid="fwoop__httpserver_8cpp" local="no">http/fwoop_httpserver.cpp</includedby>
     <includedby refid="fwoop__httpserver_8h" local="no">http/fwoop_httpserver.h</includedby>
     <incdepgraph>
+      <node id="5">
+        <label>variant</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="1">
+        <label>http/fwoop_httprequest.h</label>
+        <link refid="fwoop__httprequest_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ostream</label>
+      </node>
+      <node id="8">
+        <label>vector</label>
+      </node>
       <node id="2">
         <label>fwoop_httpheader.h</label>
         <link refid="fwoop__httpheader_8h"/>
@@ -21,59 +52,75 @@
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="1">
-        <label>http/fwoop_httprequest.h</label>
-        <link refid="fwoop__httprequest_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
+      <node id="6">
+        <label>fwoop_httpversion.h</label>
+        <link refid="fwoop__httpversion_8h"/>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>memory</label>
-      </node>
-      <node id="3">
-        <label>ostream</label>
-      </node>
-      <node id="4">
-        <label>string</label>
-      </node>
-      <node id="5">
-        <label>variant</label>
       </node>
       <node id="7">
-        <label>vector</label>
+        <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
       <node id="2">
-        <label>http/fwoop_httprequest.cpp</label>
-        <link refid="fwoop__httprequest_8cpp"/>
+        <label>http/fwoop_httpclient.h</label>
+        <link refid="fwoop__httpclient_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>http/fwoop_httpconnhandler.h</label>
+        <link refid="fwoop__httpconnhandler_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>http/fwoop_httpserver.h</label>
+        <link refid="fwoop__httpserver_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>http/fwoop_httpserver.cpp</label>
+        <link refid="fwoop__httpserver_8cpp"/>
       </node>
       <node id="1">
         <label>http/fwoop_httprequest.h</label>
         <link refid="fwoop__httprequest_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
         <childnode refid="4" relation="include">
         </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>http/fwoop_httprequest.cpp</label>
+        <link refid="fwoop__httprequest_8cpp"/>
+      </node>
+      <node id="6">
+        <label>http/fwoop_httpconnhandler.cpp</label>
+        <link refid="fwoop__httpconnhandler_8cpp"/>
       </node>
       <node id="3">
-        <label>http/fwoop_httpserver.cpp</label>
-        <link refid="fwoop__httpserver_8cpp"/>
+        <label>http/fwoop_httpclient.cpp</label>
+        <link refid="fwoop__httpclient_8cpp"/>
       </node>
       <node id="4">
-        <label>http/fwoop_httpserver.h</label>
-        <link refid="fwoop__httpserver_8h"/>
-        <childnode refid="3" relation="include">
+        <label>http/fwoop_httpfunc.h</label>
+        <link refid="fwoop__httpfunc_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -87,86 +134,81 @@
 <codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="fwoop__httpheader_8h" kindref="compound">fwoop_httpheader.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ostream&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefwoop" kindref="compound">fwoop</ref><sp/>{</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12" refid="classfwoop_1_1HttpRequest" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfwoop_1_1HttpRequest" kindref="compound">HttpRequest</ref><sp/>{</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="14" refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89" kindref="member">Method</ref><sp/>{</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Undefined,</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Get,</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Post,</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Put,</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Delete,</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="21" refid="classfwoop_1_1HttpRequest_1af9bcaea658b2bce3ede4db760dd9285a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1af9bcaea658b2bce3ede4db760dd9285a" kindref="member">Version</ref><sp/>{</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Undefined,</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Http1_0,</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Http1_1,</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89" kindref="member">Method</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d_method;</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d_path;</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpRequest_1af9bcaea658b2bce3ede4db760dd9285a" kindref="member">Version</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d_version;</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;HttpHeaderField_t&gt;<sp/>d_headers;</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d_canUpgrade;</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89" kindref="member">Method</ref><sp/>stringToMethod(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>methodStr);</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1af9bcaea658b2bce3ede4db760dd9285a" kindref="member">Version</ref><sp/>stringToVersion(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>versionStr);</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="fwoop__httpversion_8h" kindref="compound">fwoop_httpversion.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefwoop" kindref="compound">fwoop</ref><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="classfwoop_1_1HttpRequest" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfwoop_1_1HttpRequest" kindref="compound">HttpRequest</ref><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="15" refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89" kindref="member">Method</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89aec0fc0100c4fc1ce4eea230c3dc10360" kindref="member">Undefined</ref>,</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89ac55582518cba2c464f29f5bae1c68def" kindref="member">Get</ref>,</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89a03d947a2158373c3b9d74325850cb8b9" kindref="member">Post</ref>,</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89ad0bf1810982e9728fcf3ac444a015373" kindref="member">Put</ref>,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89af2a6c498fb90ee345d997f888fce3b18" kindref="member">Delete</ref>,</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89" kindref="member">Method</ref><sp/>d_method;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>d_path;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989" kindref="member">HttpVersion::Value</ref><sp/>d_version;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;HttpHeaderField_t&gt;<sp/>d_headers;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>d_canUpgrade;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>d_body;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89" kindref="member">Method</ref><sp/>stringToMethod(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;methodStr);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;HttpRequest&gt;<sp/><ref refid="classfwoop_1_1HttpRequest_1a950c4bdae87dde4f90da2d011fbf545e" kindref="member">parse</ref>(uint8_t<sp/>*buffer,<sp/>uint32_t<sp/>bufferSize,<sp/>uint32_t<sp/>&amp;bytesParsed);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classfwoop_1_1HttpRequest_1a0f01bc3f3bdf6a1c6395d52ea2cd58ff" kindref="member">methodToString</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89" kindref="member">Method</ref><sp/>&amp;method);</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;HttpRequest&gt;<sp/><ref refid="classfwoop_1_1HttpRequest_1a950c4bdae87dde4f90da2d011fbf545e" kindref="member">parse</ref>(uint8_t<sp/>*buffer,<sp/>uint32_t<sp/>bufferSize,<sp/>uint32_t&amp;<sp/>bytesParsed);</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1a0e137f16406ce40f132fd7c235e64412" kindref="member">HttpRequest</ref>();</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89" kindref="member">Method</ref><sp/><ref refid="classfwoop_1_1HttpRequest_1aa3c327f807839f9414a5e93d06dcf9dd" kindref="member">getMethod</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="classfwoop_1_1HttpRequest_1a4a6dae6c801bc2acca03727f8b4b98f7" kindref="member">getPath</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpRequest_1af9bcaea658b2bce3ede4db760dd9285a" kindref="member">Version</ref><sp/><ref refid="classfwoop_1_1HttpRequest_1a108b07a79fbdd6f5e7872c5c44c3f354" kindref="member">getVersion</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;HttpHeaderField_t&gt;&amp;<sp/><ref refid="classfwoop_1_1HttpRequest_1a9c809a90c746462a9c515280302df2b0" kindref="member">getHeaders</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1a5fd5a4cbf0909952e49e6237c6aa9826" kindref="member">canUpgrade</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="47"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal">std::ostream&amp;<sp/><ref refid="namespacefwoop_1a30ee8a6b27929848b48589dd01124a0c" kindref="member">operator&lt;&lt;</ref>(std::ostream&amp;<sp/>os,<sp/><ref refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89" kindref="member">HttpRequest::Method</ref><sp/>method);</highlight></codeline>
-<codeline lineno="50"><highlight class="normal">std::ostream&amp;<sp/><ref refid="namespacefwoop_1a30ee8a6b27929848b48589dd01124a0c" kindref="member">operator&lt;&lt;</ref>(std::ostream&amp;<sp/>os,<sp/><ref refid="classfwoop_1_1HttpRequest_1af9bcaea658b2bce3ede4db760dd9285a" kindref="member">HttpRequest::Version</ref><sp/>version);</highlight></codeline>
-<codeline lineno="51"><highlight class="normal">std::ostream&amp;<sp/><ref refid="namespacefwoop_1a30ee8a6b27929848b48589dd01124a0c" kindref="member">operator&lt;&lt;</ref>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>HttpRequest&amp;<sp/>request);</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="54" refid="classfwoop_1_1HttpRequest_1aa3c327f807839f9414a5e93d06dcf9dd" refkind="member"><highlight class="normal"><ref refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89" kindref="member">HttpRequest::Method</ref><sp/><ref refid="classfwoop_1_1HttpRequest_1aa3c327f807839f9414a5e93d06dcf9dd" kindref="member">HttpRequest::getMethod</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="55"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_method;</highlight></codeline>
-<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="60" refid="classfwoop_1_1HttpRequest_1a4a6dae6c801bc2acca03727f8b4b98f7" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="classfwoop_1_1HttpRequest_1a4a6dae6c801bc2acca03727f8b4b98f7" kindref="member">HttpRequest::getPath</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="61"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_path;</highlight></codeline>
-<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="66" refid="classfwoop_1_1HttpRequest_1a108b07a79fbdd6f5e7872c5c44c3f354" refkind="member"><highlight class="normal"><ref refid="classfwoop_1_1HttpRequest_1af9bcaea658b2bce3ede4db760dd9285a" kindref="member">HttpRequest::Version</ref><sp/><ref refid="classfwoop_1_1HttpRequest_1a108b07a79fbdd6f5e7872c5c44c3f354" kindref="member">HttpRequest::getVersion</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="67"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_version;</highlight></codeline>
-<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="72" refid="classfwoop_1_1HttpRequest_1a9c809a90c746462a9c515280302df2b0" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;HttpHeaderField_t&gt;&amp;<sp/><ref refid="classfwoop_1_1HttpRequest_1a9c809a90c746462a9c515280302df2b0" kindref="member">HttpRequest::getHeaders</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="73"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_headers;</highlight></codeline>
-<codeline lineno="75"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"></highlight></codeline>
-<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="78" refid="classfwoop_1_1HttpRequest_1a5fd5a4cbf0909952e49e6237c6aa9826" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1a5fd5a4cbf0909952e49e6237c6aa9826" kindref="member">HttpRequest::canUpgrade</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="79"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_canUpgrade;</highlight></codeline>
-<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"></highlight></codeline>
-<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1a0e137f16406ce40f132fd7c235e64412" kindref="member">HttpRequest</ref>();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1ad2a324df618ec19a408c9ad83e18269c" kindref="member">addHeader</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929" kindref="member">HttpHeader</ref><sp/>&amp;name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;value);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1ad2a324df618ec19a408c9ad83e18269c" kindref="member">addHeader</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacefwoop_1ad8b2b49bc7a5746411b682ac94256ad7" kindref="member">HttpCustomHeader</ref><sp/>&amp;name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;value);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1af21127850697dbcdbe07508b76f51bc1" kindref="member">setPath</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;path);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1a34dbe7a9dd60a4c4262a59b34e0e558c" kindref="member">setBody</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;body);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1af4e84bb45b69f44cb4bbab8bf50c23bd" kindref="member">setMethod</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89" kindref="member">Method</ref><sp/>&amp;method);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1a6c712cfb02b8f54353e38de081d484b8" kindref="member">setVersion</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989" kindref="member">HttpVersion::Value</ref><sp/>&amp;version);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89" kindref="member">Method</ref><sp/><ref refid="classfwoop_1_1HttpRequest_1aa3c327f807839f9414a5e93d06dcf9dd" kindref="member">getMethod</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<ref refid="classfwoop_1_1HttpRequest_1a4a6dae6c801bc2acca03727f8b4b98f7" kindref="member">getPath</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989" kindref="member">HttpVersion::Value</ref><sp/><ref refid="classfwoop_1_1HttpRequest_1a7b87aedefe9692a62579dfe2a8dfe493" kindref="member">getVersion</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;HttpHeaderField_t&gt;<sp/>&amp;<ref refid="classfwoop_1_1HttpRequest_1a9c809a90c746462a9c515280302df2b0" kindref="member">getHeaders</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1a5fd5a4cbf0909952e49e6237c6aa9826" kindref="member">canUpgrade</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*<ref refid="classfwoop_1_1HttpRequest_1ac89e92eb1a3be32b0df6762822b49595" kindref="member">encode</ref>(uint32_t<sp/>&amp;length)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">std::ostream<sp/>&amp;<ref refid="namespacefwoop_1af754828089c02701bb5033423f28faff" kindref="member">operator&lt;&lt;</ref>(std::ostream<sp/>&amp;os,<sp/><ref refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89" kindref="member">HttpRequest::Method</ref><sp/>method);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">std::ostream<sp/>&amp;<ref refid="namespacefwoop_1af754828089c02701bb5033423f28faff" kindref="member">operator&lt;&lt;</ref>(std::ostream<sp/>&amp;os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>HttpRequest<sp/>&amp;request);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="classfwoop_1_1HttpRequest_1ad2a324df618ec19a408c9ad83e18269c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1ad2a324df618ec19a408c9ad83e18269c" kindref="member">HttpRequest::addHeader</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929" kindref="member">HttpHeader</ref><sp/>&amp;name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;value)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>d_headers.push_back({name,<sp/>value});</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="classfwoop_1_1HttpRequest_1ab3c993e8d90aff83e79c2760e2d0c79c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1ad2a324df618ec19a408c9ad83e18269c" kindref="member">HttpRequest::addHeader</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacefwoop_1ad8b2b49bc7a5746411b682ac94256ad7" kindref="member">HttpCustomHeader</ref><sp/>&amp;name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;value)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>d_headers.push_back({name,<sp/>value});</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="classfwoop_1_1HttpRequest_1af21127850697dbcdbe07508b76f51bc1" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1af21127850697dbcdbe07508b76f51bc1" kindref="member">HttpRequest::setPath</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;path)<sp/>{<sp/>d_path<sp/>=<sp/>path;<sp/>}</highlight></codeline>
+<codeline lineno="68" refid="classfwoop_1_1HttpRequest_1a34dbe7a9dd60a4c4262a59b34e0e558c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1a34dbe7a9dd60a4c4262a59b34e0e558c" kindref="member">HttpRequest::setBody</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;body)<sp/>{<sp/>d_body<sp/>=<sp/>body;<sp/>}</highlight></codeline>
+<codeline lineno="69" refid="classfwoop_1_1HttpRequest_1af4e84bb45b69f44cb4bbab8bf50c23bd" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1af4e84bb45b69f44cb4bbab8bf50c23bd" kindref="member">HttpRequest::setMethod</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89" kindref="member">Method</ref><sp/>&amp;method)<sp/>{<sp/>d_method<sp/>=<sp/>method;<sp/>}</highlight></codeline>
+<codeline lineno="70" refid="classfwoop_1_1HttpRequest_1a6c712cfb02b8f54353e38de081d484b8" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1a6c712cfb02b8f54353e38de081d484b8" kindref="member">HttpRequest::setVersion</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989" kindref="member">HttpVersion::Value</ref><sp/>&amp;version)<sp/>{<sp/>d_version<sp/>=<sp/>version;<sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="classfwoop_1_1HttpRequest_1aa3c327f807839f9414a5e93d06dcf9dd" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1a90ab96d97170689ba12fd4b11b2b6d89" kindref="member">HttpRequest::Method</ref><sp/><ref refid="classfwoop_1_1HttpRequest_1aa3c327f807839f9414a5e93d06dcf9dd" kindref="member">HttpRequest::getMethod</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_method;<sp/>}</highlight></codeline>
+<codeline lineno="73" refid="classfwoop_1_1HttpRequest_1a4a6dae6c801bc2acca03727f8b4b98f7" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<ref refid="classfwoop_1_1HttpRequest_1a4a6dae6c801bc2acca03727f8b4b98f7" kindref="member">HttpRequest::getPath</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_path;<sp/>}</highlight></codeline>
+<codeline lineno="74" refid="classfwoop_1_1HttpRequest_1a7b87aedefe9692a62579dfe2a8dfe493" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989" kindref="member">HttpVersion::Value</ref><sp/><ref refid="classfwoop_1_1HttpRequest_1a7b87aedefe9692a62579dfe2a8dfe493" kindref="member">HttpRequest::getVersion</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_version;<sp/>}</highlight></codeline>
+<codeline lineno="75" refid="classfwoop_1_1HttpRequest_1a9c809a90c746462a9c515280302df2b0" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;HttpHeaderField_t&gt;<sp/>&amp;<ref refid="classfwoop_1_1HttpRequest_1a9c809a90c746462a9c515280302df2b0" kindref="member">HttpRequest::getHeaders</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_headers;<sp/>}</highlight></codeline>
+<codeline lineno="76" refid="classfwoop_1_1HttpRequest_1a5fd5a4cbf0909952e49e6237c6aa9826" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpRequest_1a5fd5a4cbf0909952e49e6237c6aa9826" kindref="member">HttpRequest::canUpgrade</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_canUpgrade;<sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>fwoop</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="http/fwoop_httprequest.h"/>
   </compounddef>

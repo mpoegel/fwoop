@@ -1,0 +1,368 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1Array" kind="class" language="C++" prot="public">
+    <compoundname>fwoop::Array</compoundname>
+    <includes refid="fwoop__array_8h" local="no">fwoop_array.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1Array_1aa25366275c9a2caa760fd1c60f78dc9c" prot="private" static="no" mutable="no">
+        <type>uint8_t *</type>
+        <definition>uint8_t* fwoop::Array::d_data</definition>
+        <argsstring></argsstring>
+        <name>d_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_array.h" line="13" column="13" bodyfile="basis/fwoop_array.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1Array_1af09ed960f3a25d7a280e357fe96168d2" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t fwoop::Array::d_size</definition>
+        <argsstring></argsstring>
+        <name>d_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_array.h" line="14" column="14" bodyfile="basis/fwoop_array.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1Array_1a48ce204e5c5d8c131e095cdb8c5dd6df" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t fwoop::Array::d_actualSize</definition>
+        <argsstring></argsstring>
+        <name>d_actualSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_array.h" line="15" column="14" bodyfile="basis/fwoop_array.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfwoop_1_1Array_1ad030a80ed8f63d7cd63bf275ff56071d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::Array::Array</definition>
+        <argsstring>(uint32_t size)</argsstring>
+        <name>Array</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_array.h" line="18" column="5" bodyfile="basis/fwoop_array.cpp" bodystart="8" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Array_1a6aad0c5e9012eb87b1492f0f22c07d99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::Array::Array</definition>
+        <argsstring>(const Array &amp;rhs)</argsstring>
+        <name>Array</name>
+        <param>
+          <type>const <ref refid="classfwoop_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_array.h" line="19" column="5" bodyfile="basis/fwoop_array.cpp" bodystart="14" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Array_1a88dea90421baa2456000c3772fa99d7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::Array::~Array</definition>
+        <argsstring>()</argsstring>
+        <name>~Array</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_array.h" line="20" column="5" bodyfile="basis/fwoop_array.cpp" bodystart="21" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Array_1a3430ff20979b19593ece786e0e2ae01f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfwoop_1_1Array" kindref="compound">Array</ref> *</type>
+        <definition>Array * fwoop::Array::operator=</definition>
+        <argsstring>(const Array &amp;rhs)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classfwoop_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_array.h" line="22" column="11" bodyfile="basis/fwoop_array.cpp" bodystart="23" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Array_1a611cba9c7bbedadb4356a295c38980bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t &amp;</type>
+        <definition>uint8_t &amp; fwoop::Array::operator[]</definition>
+        <argsstring>(uint32_t i)</argsstring>
+        <name>operator[]</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_array.h" line="23" column="13" bodyfile="basis/fwoop_array.h" bodystart="40" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Array_1ac442c232ee58526ea9f63a6e0c0bafc3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const uint8_t &amp;</type>
+        <definition>const uint8_t &amp; fwoop::Array::operator[]</definition>
+        <argsstring>(uint32_t i) const</argsstring>
+        <name>operator[]</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_array.h" line="24" column="19" bodyfile="basis/fwoop_array.h" bodystart="41" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Array_1ac1451e4b2d12a519c7e459d964206c3b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t *</type>
+        <definition>uint8_t * fwoop::Array::operator*</definition>
+        <argsstring>()</argsstring>
+        <name>operator*</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_array.h" line="25" column="13" bodyfile="basis/fwoop_array.h" bodystart="42" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Array_1aef09ce7cb551a2fad328720e84913cd1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::Array::extend</definition>
+        <argsstring>(const Array &amp;arr)</argsstring>
+        <name>extend</name>
+        <param>
+          <type>const <ref refid="classfwoop_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>arr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_array.h" line="27" column="10" bodyfile="basis/fwoop_array.cpp" bodystart="31" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Array_1aa784615d89e841b0e239b1fbe0a9e51e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::Array::shrink</definition>
+        <argsstring>(uint32_t newSize)</argsstring>
+        <name>shrink</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>newSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_array.h" line="28" column="10" bodyfile="basis/fwoop_array.h" bodystart="44" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Array_1a29b8f36321351e63d1c74657c3372a8e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t fwoop::Array::size</definition>
+        <argsstring>() const</argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_array.h" line="29" column="14" bodyfile="basis/fwoop_array.h" bodystart="43" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Array_1ad2298d717440e5b7d58e11fde21e074c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::Array::enlarge</definition>
+        <argsstring>(uint32_t newSize)</argsstring>
+        <name>enlarge</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>newSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_array.h" line="30" column="10" bodyfile="basis/fwoop_array.cpp" bodystart="41" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Array_1ab0efb7b9177351cdda6ffc6c53553983" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::Array::append</definition>
+        <argsstring>(const std::string &amp;str)</argsstring>
+        <name>append</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_array.h" line="31" column="10" bodyfile="basis/fwoop_array.h" bodystart="45" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Array_1adb59d3779ddbb604f31b30dc278e67e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::Array::append</definition>
+        <argsstring>(const char *str, uint32_t len)</argsstring>
+        <name>append</name>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_array.h" line="32" column="10" bodyfile="basis/fwoop_array.cpp" bodystart="57" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Array_1a23f4ccae67790be7fb23a98a0dbcfd4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::Array::append</definition>
+        <argsstring>(uint8_t d)</argsstring>
+        <name>append</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_array.h" line="33" column="10" bodyfile="basis/fwoop_array.cpp" bodystart="67" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Array_1a2e0c898e5aaf933bbda46332ee9dcd5f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfwoop_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array fwoop::Array::subArray</definition>
+        <argsstring>(uint32_t start, uint32_t end) const</argsstring>
+        <name>subArray</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>end</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_array.h" line="34" column="11" bodyfile="basis/fwoop_array.cpp" bodystart="82" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Array_1a472ac1bfa891533c0b45a7090a91f2de" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string fwoop::Array::toString</definition>
+        <argsstring>() const</argsstring>
+        <name>toString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_array.h" line="35" column="17" bodyfile="basis/fwoop_array.h" bodystart="46" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Array_1a3c4793b1084eb6a9b1ae729924d342a2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::Array::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_array.h" line="36" column="10" bodyfile="basis/fwoop_array.h" bodystart="47" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Array_1af29ea02b932ad0dbffe6b7594d066e4d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string fwoop::Array::toHex</definition>
+        <argsstring>() const</argsstring>
+        <name>toHex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_array.h" line="37" column="17" bodyfile="basis/fwoop_array.cpp" bodystart="69" bodyend="80"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="basis/fwoop_array.h" line="11" column="1" bodyfile="basis/fwoop_array.h" bodystart="11" bodyend="38"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1Array_1ab0efb7b9177351cdda6ffc6c53553983" prot="public" virt="non-virtual"><scope>fwoop::Array</scope><name>append</name></member>
+      <member refid="classfwoop_1_1Array_1adb59d3779ddbb604f31b30dc278e67e9" prot="public" virt="non-virtual"><scope>fwoop::Array</scope><name>append</name></member>
+      <member refid="classfwoop_1_1Array_1a23f4ccae67790be7fb23a98a0dbcfd4d" prot="public" virt="non-virtual"><scope>fwoop::Array</scope><name>append</name></member>
+      <member refid="classfwoop_1_1Array_1ad030a80ed8f63d7cd63bf275ff56071d" prot="public" virt="non-virtual"><scope>fwoop::Array</scope><name>Array</name></member>
+      <member refid="classfwoop_1_1Array_1a6aad0c5e9012eb87b1492f0f22c07d99" prot="public" virt="non-virtual"><scope>fwoop::Array</scope><name>Array</name></member>
+      <member refid="classfwoop_1_1Array_1a3c4793b1084eb6a9b1ae729924d342a2" prot="public" virt="non-virtual"><scope>fwoop::Array</scope><name>clear</name></member>
+      <member refid="classfwoop_1_1Array_1a48ce204e5c5d8c131e095cdb8c5dd6df" prot="private" virt="non-virtual"><scope>fwoop::Array</scope><name>d_actualSize</name></member>
+      <member refid="classfwoop_1_1Array_1aa25366275c9a2caa760fd1c60f78dc9c" prot="private" virt="non-virtual"><scope>fwoop::Array</scope><name>d_data</name></member>
+      <member refid="classfwoop_1_1Array_1af09ed960f3a25d7a280e357fe96168d2" prot="private" virt="non-virtual"><scope>fwoop::Array</scope><name>d_size</name></member>
+      <member refid="classfwoop_1_1Array_1ad2298d717440e5b7d58e11fde21e074c" prot="public" virt="non-virtual"><scope>fwoop::Array</scope><name>enlarge</name></member>
+      <member refid="classfwoop_1_1Array_1aef09ce7cb551a2fad328720e84913cd1" prot="public" virt="non-virtual"><scope>fwoop::Array</scope><name>extend</name></member>
+      <member refid="classfwoop_1_1Array_1ac1451e4b2d12a519c7e459d964206c3b" prot="public" virt="non-virtual"><scope>fwoop::Array</scope><name>operator*</name></member>
+      <member refid="classfwoop_1_1Array_1a3430ff20979b19593ece786e0e2ae01f" prot="public" virt="non-virtual"><scope>fwoop::Array</scope><name>operator=</name></member>
+      <member refid="classfwoop_1_1Array_1a611cba9c7bbedadb4356a295c38980bc" prot="public" virt="non-virtual"><scope>fwoop::Array</scope><name>operator[]</name></member>
+      <member refid="classfwoop_1_1Array_1ac442c232ee58526ea9f63a6e0c0bafc3" prot="public" virt="non-virtual"><scope>fwoop::Array</scope><name>operator[]</name></member>
+      <member refid="classfwoop_1_1Array_1aa784615d89e841b0e239b1fbe0a9e51e" prot="public" virt="non-virtual"><scope>fwoop::Array</scope><name>shrink</name></member>
+      <member refid="classfwoop_1_1Array_1a29b8f36321351e63d1c74657c3372a8e" prot="public" virt="non-virtual"><scope>fwoop::Array</scope><name>size</name></member>
+      <member refid="classfwoop_1_1Array_1a2e0c898e5aaf933bbda46332ee9dcd5f" prot="public" virt="non-virtual"><scope>fwoop::Array</scope><name>subArray</name></member>
+      <member refid="classfwoop_1_1Array_1af29ea02b932ad0dbffe6b7594d066e4d" prot="public" virt="non-virtual"><scope>fwoop::Array</scope><name>toHex</name></member>
+      <member refid="classfwoop_1_1Array_1a472ac1bfa891533c0b45a7090a91f2de" prot="public" virt="non-virtual"><scope>fwoop::Array</scope><name>toString</name></member>
+      <member refid="classfwoop_1_1Array_1a88dea90421baa2456000c3772fa99d7f" prot="public" virt="non-virtual"><scope>fwoop::Array</scope><name>~Array</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="fwoop__datetime_8h" kind="file" language="C++">
+    <compoundname>fwoop_datetime.h</compoundname>
+    <includes local="no">cstdint</includes>
+    <includes local="no">string</includes>
+    <includedby refid="fwoop__datetime_8cpp" local="no">basis/fwoop_datetime.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>basis/fwoop_datetime.h</label>
+        <link refid="fwoop__datetime_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>cstdint</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>basis/fwoop_datetime.h</label>
+        <link refid="fwoop__datetime_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>basis/fwoop_datetime.cpp</label>
+        <link refid="fwoop__datetime_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classfwoop_1_1DateTime" prot="public">fwoop::DateTime</innerclass>
+    <innernamespace refid="namespacefwoop">fwoop</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefwoop" kindref="compound">fwoop</ref><sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="classfwoop_1_1DateTime" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfwoop_1_1DateTime" kindref="compound">DateTime</ref><sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="10" refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68c" kindref="member">DayOfWeek</ref><sp/>:<sp/>uint8_t<sp/>{</highlight></codeline>
+<codeline lineno="11" refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68ca005d03aed048785e029ab36e6ddb03dd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68ca005d03aed048785e029ab36e6ddb03dd" kindref="member">Sunday</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="12" refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68ca88acb2af85e0616eee9fb36760998334" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68ca88acb2af85e0616eee9fb36760998334" kindref="member">Monday</ref>,</highlight></codeline>
+<codeline lineno="13" refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68cad8f396d4a8d960fb84d8b396e830f4dc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68cad8f396d4a8d960fb84d8b396e830f4dc" kindref="member">Tuesday</ref>,</highlight></codeline>
+<codeline lineno="14" refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68ca8f0eedb6ceb875f26df806fb3bb67288" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68ca8f0eedb6ceb875f26df806fb3bb67288" kindref="member">Wednesday</ref>,</highlight></codeline>
+<codeline lineno="15" refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68caa9850d622dec393f669446384bbe6664" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68caa9850d622dec393f669446384bbe6664" kindref="member">Thursday</ref>,</highlight></codeline>
+<codeline lineno="16" refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68cae629c555e1b17da019564be7e29f0771" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68cae629c555e1b17da019564be7e29f0771" kindref="member">Friday</ref>,</highlight></codeline>
+<codeline lineno="17" refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68ca7be7878f10c4c060eb9f9fbef6c088ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68ca7be7878f10c4c060eb9f9fbef6c088ca" kindref="member">Saturday</ref>,</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>d_time;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>d_year;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>d_month;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>d_day;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>d_hour;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>d_minute;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>d_second;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68c" kindref="member">DayOfWeek</ref><sp/>d_dow;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>recalculate();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1DateTime" kindref="compound">DateTime</ref><sp/><ref refid="classfwoop_1_1DateTime_1a5c2ec1f1ec362b6ba1559e1129e52f07" kindref="member">now</ref>();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1DateTime_1aa18e687dd803df42fe2310b2714169fb" kindref="member">DateTime</ref>(uint32_t<sp/>unix_time);</highlight></codeline>
+<codeline lineno="37" refid="classfwoop_1_1DateTime_1a3900632a9d1ac0f57cc35d158b7d7a2a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1DateTime_1a3900632a9d1ac0f57cc35d158b7d7a2a" kindref="member">~DateTime</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38" refid="classfwoop_1_1DateTime_1a72a87500fb3acb58cb57dce0ccdc2b2b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1DateTime_1a72a87500fb3acb58cb57dce0ccdc2b2b" kindref="member">DateTime</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1DateTime" kindref="compound">DateTime</ref><sp/>&amp;rhs)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39" refid="classfwoop_1_1DateTime_1a8072f6caada0658e7d4ef88392a1425f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1DateTime" kindref="compound">DateTime</ref><sp/>&amp;<ref refid="classfwoop_1_1DateTime_1a8072f6caada0658e7d4ef88392a1425f" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1DateTime" kindref="compound">DateTime</ref><sp/>&amp;rhs)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40" refid="classfwoop_1_1DateTime_1acf1c8c0d1bbea2076a0f607868eb8db9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1DateTime_1acf1c8c0d1bbea2076a0f607868eb8db9" kindref="member">DateTime</ref>(<ref refid="classfwoop_1_1DateTime" kindref="compound">DateTime</ref><sp/>&amp;&amp;rhs)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1DateTime_1ab6b088e8bfc29ee603c520aa5853bf17" kindref="member">addDays</ref>(int16_t<sp/>daysToAdd);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1DateTime_1a8baafd73fe77f19f3f9d63a7e5d0fb52" kindref="member">addHours</ref>(int16_t<sp/>hoursToAdd);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1DateTime_1a6b6ba515500f5e4c7b1d4ec4658d55b2" kindref="member">addMinutes</ref>(int16_t<sp/>minutesToAdd);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1DateTime_1ada6a898c700f20d4b611e64e7783c765" kindref="member">addSeconds</ref>(int64_t<sp/>secondsToAdd);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/><ref refid="classfwoop_1_1DateTime_1a963606b21f152d2614ea4091d6848e29" kindref="member">year</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="classfwoop_1_1DateTime_1ab78255f56cefa98b525d379d6b72ab0a" kindref="member">month</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="classfwoop_1_1DateTime_1a2d12ca9f7c5f5a6103b14ee1701f59f6" kindref="member">day</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="classfwoop_1_1DateTime_1a58830a7509d8d76bfd1cb436fa548afc" kindref="member">hour</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="classfwoop_1_1DateTime_1aee346abe70d2544d9c8d3af12b129795" kindref="member">minute</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="classfwoop_1_1DateTime_1a200172b079d69106f1ed9c6252565cc0" kindref="member">second</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68c" kindref="member">DayOfWeek</ref><sp/><ref refid="classfwoop_1_1DateTime_1a500bddae7a6c4fbdee1c6b6cbdbbab2a" kindref="member">dayOfWeek</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classfwoop_1_1DateTime_1ac54f7b78333a11d668d4c8fddd9d9918" kindref="member">dayOfWeekShortString</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="classfwoop_1_1DateTime_1a963606b21f152d2614ea4091d6848e29" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/><ref refid="classfwoop_1_1DateTime_1a963606b21f152d2614ea4091d6848e29" kindref="member">DateTime::year</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_year;<sp/>}</highlight></codeline>
+<codeline lineno="58" refid="classfwoop_1_1DateTime_1ab78255f56cefa98b525d379d6b72ab0a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="classfwoop_1_1DateTime_1ab78255f56cefa98b525d379d6b72ab0a" kindref="member">DateTime::month</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_month;<sp/>}</highlight></codeline>
+<codeline lineno="59" refid="classfwoop_1_1DateTime_1a2d12ca9f7c5f5a6103b14ee1701f59f6" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="classfwoop_1_1DateTime_1a2d12ca9f7c5f5a6103b14ee1701f59f6" kindref="member">DateTime::day</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_day;<sp/>}</highlight></codeline>
+<codeline lineno="60" refid="classfwoop_1_1DateTime_1a58830a7509d8d76bfd1cb436fa548afc" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="classfwoop_1_1DateTime_1a58830a7509d8d76bfd1cb436fa548afc" kindref="member">DateTime::hour</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_hour;<sp/>}</highlight></codeline>
+<codeline lineno="61" refid="classfwoop_1_1DateTime_1aee346abe70d2544d9c8d3af12b129795" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="classfwoop_1_1DateTime_1aee346abe70d2544d9c8d3af12b129795" kindref="member">DateTime::minute</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_minute;<sp/>}</highlight></codeline>
+<codeline lineno="62" refid="classfwoop_1_1DateTime_1a200172b079d69106f1ed9c6252565cc0" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="classfwoop_1_1DateTime_1a200172b079d69106f1ed9c6252565cc0" kindref="member">DateTime::second</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_second;<sp/>}</highlight></codeline>
+<codeline lineno="63" refid="classfwoop_1_1DateTime_1a500bddae7a6c4fbdee1c6b6cbdbbab2a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68c" kindref="member">DateTime::DayOfWeek</ref><sp/><ref refid="classfwoop_1_1DateTime_1a500bddae7a6c4fbdee1c6b6cbdbbab2a" kindref="member">DateTime::dayOfWeek</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_dow;<sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>fwoop</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="basis/fwoop_datetime.h"/>
+  </compounddef>
+</doxygen>

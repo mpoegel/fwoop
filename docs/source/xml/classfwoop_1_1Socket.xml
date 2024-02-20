@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1Socket" kind="class" language="C++" prot="public">
+    <compoundname>fwoop::Socket</compoundname>
+    <basecompoundref refid="classfwoop_1_1SocketBase" prot="public" virt="non-virtual">fwoop::SocketBase</basecompoundref>
+    <includes refid="fwoop__socketio_8h" local="no">fwoop_socketio.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1Socket_1a3818056ed0792d094c4a26f56798c0e5" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int fwoop::Socket::d_fd</definition>
+        <argsstring></argsstring>
+        <name>d_fd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_socketio.h" line="42" column="9" bodyfile="basis/fwoop_socketio.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfwoop_1_1Socket_1a2035402f88854036556943c232acbf3b" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::Socket::Socket</definition>
+        <argsstring>(int fd)</argsstring>
+        <name>Socket</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_socketio.h" line="45" column="14" bodyfile="basis/fwoop_socketio.cpp" bodystart="6" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Socket_1a1b033718366a5dfe47efaa63dc8cbe9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::Socket::~Socket</definition>
+        <argsstring>()</argsstring>
+        <name>~Socket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_socketio.h" line="46" column="5" bodyfile="basis/fwoop_socketio.cpp" bodystart="8" bodyend="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Socket_1a50a242fa9260be83ccaf403edd1e8d19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::Socket::Socket</definition>
+        <argsstring>(const Socket &amp;rhs)</argsstring>
+        <name>Socket</name>
+        <param>
+          <type>const <ref refid="classfwoop_1_1Socket" kindref="compound">Socket</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_socketio.h" line="47" column="5" bodyfile="basis/fwoop_socketio.cpp" bodystart="10" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Socket_1a13605726c80aedc5c1c4504f64be5804" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfwoop_1_1Socket" kindref="compound">Socket</ref></type>
+        <definition>Socket fwoop::Socket::operator=</definition>
+        <argsstring>(const Socket &amp;rhs)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classfwoop_1_1Socket" kindref="compound">Socket</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_socketio.h" line="48" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Socket_1ad4ca0ab53b166baff0577ad0de5778f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::error_code</type>
+        <definition>std::error_code fwoop::Socket::read</definition>
+        <argsstring>(uint8_t *buffer, uint32_t bufferSize, uint32_t &amp;bytesRead) override</argsstring>
+        <name>read</name>
+        <reimplements refid="classfwoop_1_1Reader_1a76cc37f2f2fd5a021b87a577a39d3af7">read</reimplements>
+        <param>
+          <type>uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>bufferSize</declname>
+        </param>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>bytesRead</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_socketio.h" line="50" column="21" bodyfile="basis/fwoop_socketio.cpp" bodystart="12" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Socket_1a890482fe214b8c9f395ce41ef8f90564" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::error_code</type>
+        <definition>std::error_code fwoop::Socket::write</definition>
+        <argsstring>(const uint8_t *buffer, uint32_t bufferSize, uint32_t &amp;bytesWritten) override</argsstring>
+        <name>write</name>
+        <reimplements refid="classfwoop_1_1Writer_1a9ca1cce9f2d609cc987e5cca42bfe3f5">write</reimplements>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>bufferSize</declname>
+        </param>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>bytesWritten</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_socketio.h" line="51" column="21" bodyfile="basis/fwoop_socketio.cpp" bodystart="45" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Socket_1aeb61e7e16f832382cddc66675a6f3bf9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void fwoop::Socket::close</definition>
+        <argsstring>() override</argsstring>
+        <name>close</name>
+        <reimplements refid="classfwoop_1_1Reader_1a90597f688f2e4610d39a10c98addad98">close</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_socketio.h" line="52" column="10" bodyfile="basis/fwoop_socketio.cpp" bodystart="60" bodyend="66"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>fwoop::Writer</label>
+        <link refid="classfwoop_1_1Writer"/>
+      </node>
+      <node id="3">
+        <label>fwoop::Reader</label>
+        <link refid="classfwoop_1_1Reader"/>
+      </node>
+      <node id="1">
+        <label>fwoop::Socket</label>
+        <link refid="classfwoop_1_1Socket"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>fwoop::SocketBase</label>
+        <link refid="classfwoop_1_1SocketBase"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>fwoop::Writer</label>
+        <link refid="classfwoop_1_1Writer"/>
+      </node>
+      <node id="3">
+        <label>fwoop::Reader</label>
+        <link refid="classfwoop_1_1Reader"/>
+      </node>
+      <node id="1">
+        <label>fwoop::Socket</label>
+        <link refid="classfwoop_1_1Socket"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>fwoop::SocketBase</label>
+        <link refid="classfwoop_1_1SocketBase"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="basis/fwoop_socketio.h" line="40" column="1" bodyfile="basis/fwoop_socketio.h" bodystart="40" bodyend="53"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1Socket_1aeb61e7e16f832382cddc66675a6f3bf9" prot="public" virt="virtual"><scope>fwoop::Socket</scope><name>close</name></member>
+      <member refid="classfwoop_1_1Socket_1a3818056ed0792d094c4a26f56798c0e5" prot="private" virt="non-virtual"><scope>fwoop::Socket</scope><name>d_fd</name></member>
+      <member refid="classfwoop_1_1Socket_1a13605726c80aedc5c1c4504f64be5804" prot="public" virt="non-virtual"><scope>fwoop::Socket</scope><name>operator=</name></member>
+      <member refid="classfwoop_1_1Socket_1ad4ca0ab53b166baff0577ad0de5778f6" prot="public" virt="virtual"><scope>fwoop::Socket</scope><name>read</name></member>
+      <member refid="classfwoop_1_1Socket_1a2035402f88854036556943c232acbf3b" prot="public" virt="non-virtual"><scope>fwoop::Socket</scope><name>Socket</name></member>
+      <member refid="classfwoop_1_1Socket_1a50a242fa9260be83ccaf403edd1e8d19" prot="public" virt="non-virtual"><scope>fwoop::Socket</scope><name>Socket</name></member>
+      <member refid="classfwoop_1_1Socket_1a890482fe214b8c9f395ce41ef8f90564" prot="public" virt="virtual"><scope>fwoop::Socket</scope><name>write</name></member>
+      <member refid="classfwoop_1_1Reader_1a20174ae82af8a9dde11176e23ef810f9" prot="public" virt="non-virtual"><scope>fwoop::Socket</scope><name>~Reader</name></member>
+      <member refid="classfwoop_1_1Socket_1a1b033718366a5dfe47efaa63dc8cbe9e" prot="public" virt="non-virtual"><scope>fwoop::Socket</scope><name>~Socket</name></member>
+      <member refid="classfwoop_1_1SocketBase_1ad1708bc60aab59c1b7f36abe4421429a" prot="public" virt="non-virtual"><scope>fwoop::Socket</scope><name>~SocketBase</name></member>
+      <member refid="classfwoop_1_1Writer_1af091c2ea4f81c51b2f18a61f1f46bab6" prot="public" virt="non-virtual"><scope>fwoop::Socket</scope><name>~Writer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

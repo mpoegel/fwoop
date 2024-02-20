@@ -1,11 +1,32 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="fwoop__sha_8h" kind="file" language="C++">
     <compoundname>fwoop_sha.h</compoundname>
     <includes local="no">stdint.h</includes>
     <includes local="no">string</includes>
+    <includedby refid="fwoop__open__sha_8cpp" local="no">crypto/fwoop_open_sha.cpp</includedby>
     <includedby refid="fwoop__sha_8cpp" local="no">crypto/fwoop_sha.cpp</includedby>
     <incdepgraph>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="1">
+        <label>crypto/fwoop_sha.h</label>
+        <link refid="fwoop__sha_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>crypto/fwoop_sha.cpp</label>
+        <link refid="fwoop__sha_8cpp"/>
+      </node>
       <node id="1">
         <label>crypto/fwoop_sha.h</label>
         <link refid="fwoop__sha_8h"/>
@@ -15,22 +36,8 @@
         </childnode>
       </node>
       <node id="2">
-        <label>stdint.h</label>
-      </node>
-      <node id="3">
-        <label>string</label>
-      </node>
-    </incdepgraph>
-    <invincdepgraph>
-      <node id="2">
-        <label>crypto/fwoop_sha.cpp</label>
-        <link refid="fwoop__sha_8cpp"/>
-      </node>
-      <node id="1">
-        <label>crypto/fwoop_sha.h</label>
-        <link refid="fwoop__sha_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
+        <label>crypto/fwoop_open_sha.cpp</label>
+        <link refid="fwoop__open__sha_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classfwoop_1_1SHA" prot="public">fwoop::SHA</innerclass>
@@ -54,10 +61,10 @@
 <codeline lineno="11"><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>SHA256MessageBlockSize<sp/>=<sp/>64;</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>SHA256_H0[<ref refid="classfwoop_1_1SHA_1afccaa2fb6c2b8613bd0d4ab35a6e5260" kindref="member">SHA256HashSize</ref>/4];</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>SHA256_H0[<ref refid="classfwoop_1_1SHA_1afccaa2fb6c2b8613bd0d4ab35a6e5260" kindref="member">SHA256HashSize</ref><sp/>/<sp/>4];</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SHA256Context<sp/>{</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>IntermediateHash[<ref refid="classfwoop_1_1SHA_1afccaa2fb6c2b8613bd0d4ab35a6e5260" kindref="member">SHA256HashSize</ref>/4];</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>IntermediateHash[<ref refid="classfwoop_1_1SHA_1afccaa2fb6c2b8613bd0d4ab35a6e5260" kindref="member">SHA256HashSize</ref><sp/>/<sp/>4];</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>LengthHigh;</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>LengthLow;</highlight></codeline>
@@ -83,10 +90,10 @@
 <codeline lineno="40"><highlight class="normal"></highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1SHA_1a1009e812bd0acc16ae0dbdd0503e838c" kindref="member">h256</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*msg,<sp/>uint32_t<sp/>length,<sp/>uint8_t<sp/>*digest);</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1SHA_1a1009e812bd0acc16ae0dbdd0503e838c" kindref="member">h256</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>msg,<sp/>uint8_t<sp/>*digest);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1SHA_1a1009e812bd0acc16ae0dbdd0503e838c" kindref="member">h256</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;msg,<sp/>uint8_t<sp/>*digest);</highlight></codeline>
 <codeline lineno="44"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>fwoop</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="crypto/fwoop_sha.h"/>
   </compounddef>

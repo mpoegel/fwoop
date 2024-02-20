@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classfwoop_1_1HttpServer" kind="class" language="C++" prot="public">
     <compoundname>fwoop::HttpServer</compoundname>
+    <basecompoundref refid="classfwoop_1_1HttpRequestCallback" prot="public" virt="non-virtual">fwoop::HttpRequestCallback</basecompoundref>
     <includes refid="fwoop__httpserver_8h" local="no">fwoop_httpserver.h</includes>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classfwoop_1_1HttpServer_1a401343bcc6a5c09f81c3aee693407822" prot="private" static="no" mutable="no">
@@ -9,70 +10,91 @@
         <definition>int fwoop::HttpServer::d_port</definition>
         <argsstring></argsstring>
         <name>d_port</name>
-        <qualifiedname>fwoop::HttpServer::d_port</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpserver.h" line="22" column="9" bodyfile="http/fwoop_httpserver.h" bodystart="22" bodyend="-1"/>
+        <location file="http/fwoop_httpserver.h" line="20" column="9" bodyfile="http/fwoop_httpserver.h" bodystart="20" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfwoop_1_1HttpServer_1aa190790e00b430f84571cedcb785d316" prot="private" static="no" mutable="no">
         <type>int</type>
         <definition>int fwoop::HttpServer::d_serverFd</definition>
         <argsstring></argsstring>
         <name>d_serverFd</name>
-        <qualifiedname>fwoop::HttpServer::d_serverFd</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpserver.h" line="23" column="9" bodyfile="http/fwoop_httpserver.h" bodystart="23" bodyend="-1"/>
+        <location file="http/fwoop_httpserver.h" line="21" column="9" bodyfile="http/fwoop_httpserver.h" bodystart="21" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classfwoop_1_1HttpServer_1a41846f90d217ee9923c11ddc3695b908" prot="private" static="no" mutable="no">
-        <type><ref refid="namespacefwoop_1a87d0eaf35ffbee084790bb45549fd41e" kindref="member">HttpVersion</ref></type>
-        <definition>HttpVersion fwoop::HttpServer::d_version</definition>
+      <memberdef kind="variable" id="classfwoop_1_1HttpServer_1a2cc3581089095a037ea158d9179c203e" prot="private" static="no" mutable="no">
+        <type><ref refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989" kindref="member">HttpVersion::Value</ref></type>
+        <definition>HttpVersion::Value fwoop::HttpServer::d_version</definition>
         <argsstring></argsstring>
         <name>d_version</name>
-        <qualifiedname>fwoop::HttpServer::d_version</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpserver.h" line="24" column="17" bodyfile="http/fwoop_httpserver.h" bodystart="24" bodyend="-1"/>
+        <location file="http/fwoop_httpserver.h" line="22" column="24" bodyfile="http/fwoop_httpserver.h" bodystart="22" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfwoop_1_1HttpServer_1a11fdb28a0a432dc985956aada24a672c" prot="private" static="no" mutable="no">
-        <type>std::unordered_map&lt; std::string, <ref refid="namespacefwoop_1ac6d69cc8c349bf8c8f7cda57f4454948" kindref="member">HttpHandlerFunc_t</ref> &gt;</type>
+        <type>std::unordered_map&lt; std::string, <ref refid="namespacefwoop_1a8858d7df8099f2a5f33e31bc112db03c" kindref="member">HttpHandlerFunc_t</ref> &gt;</type>
         <definition>std::unordered_map&lt;std::string, HttpHandlerFunc_t&gt; fwoop::HttpServer::d_routeMap</definition>
         <argsstring></argsstring>
         <name>d_routeMap</name>
-        <qualifiedname>fwoop::HttpServer::d_routeMap</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpserver.h" line="25" column="24" bodyfile="http/fwoop_httpserver.h" bodystart="25" bodyend="-1"/>
+        <location file="http/fwoop_httpserver.h" line="23" column="24" bodyfile="http/fwoop_httpserver.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpServer_1aab9dd6e294c01cf409fba918619a519e" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, <ref refid="namespacefwoop_1a774dddd01470ace8ca56755a0a66eb07" kindref="member">HttpServerEventHandlerFunc_t</ref> &gt;</type>
+        <definition>std::unordered_map&lt;std::string, HttpServerEventHandlerFunc_t&gt; fwoop::HttpServer::d_serverEventMap</definition>
+        <argsstring></argsstring>
+        <name>d_serverEventMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpserver.h" line="24" column="24" bodyfile="http/fwoop_httpserver.h" bodystart="24" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfwoop_1_1HttpServer_1a3db639d2d0aefb0ada2feb9fe809ad88" prot="private" static="no" mutable="no">
         <type>bool</type>
         <definition>bool fwoop::HttpServer::d_isActive</definition>
         <argsstring></argsstring>
         <name>d_isActive</name>
-        <qualifiedname>fwoop::HttpServer::d_isActive</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpserver.h" line="26" column="10" bodyfile="http/fwoop_httpserver.h" bodystart="26" bodyend="-1"/>
+        <location file="http/fwoop_httpserver.h" line="25" column="10" bodyfile="http/fwoop_httpserver.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpServer_1a2b482896e1cec44b0cd6c98d7f9b4e0b" prot="private" static="no" mutable="no">
+        <type><ref refid="classfwoop_1_1ThreadPool" kindref="compound">ThreadPool</ref>&lt; <ref refid="classfwoop_1_1HttpConnHandler" kindref="compound">HttpConnHandler</ref> &gt;</type>
+        <definition>ThreadPool&lt;HttpConnHandler&gt; fwoop::HttpServer::d_handlerPool</definition>
+        <argsstring></argsstring>
+        <name>d_handlerPool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpserver.h" line="26" column="16" bodyfile="http/fwoop_httpserver.h" bodystart="26" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -81,7 +103,6 @@
         <definition>int fwoop::HttpServer::parsePayloadBody</definition>
         <argsstring>(uint8_t *buffer, unsigned bufferSize, unsigned int &amp;bytesParsed) const</argsstring>
         <name>parsePayloadBody</name>
-        <qualifiedname>fwoop::HttpServer::parsePayloadBody</qualifiedname>
         <param>
           <type>uint8_t *</type>
           <declname>buffer</declname>
@@ -100,32 +121,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpserver.h" line="28" column="9" bodyfile="http/fwoop_httpserver.cpp" bodystart="285" bodyend="303"/>
-      </memberdef>
-      <memberdef kind="function" id="classfwoop_1_1HttpServer_1ae664c19bd6d92abdf646d28570bbd6d6" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>int</type>
-        <definition>int fwoop::HttpServer::handleHttp1Connection</definition>
-        <argsstring>(int clientFd) const</argsstring>
-        <name>handleHttp1Connection</name>
-        <qualifiedname>fwoop::HttpServer::handleHttp1Connection</qualifiedname>
-        <param>
-          <type>int</type>
-          <declname>clientFd</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="http/fwoop_httpserver.h" line="29" column="9" bodyfile="http/fwoop_httpserver.cpp" bodystart="319" bodyend="364"/>
+        <location file="http/fwoop_httpserver.h" line="28" column="9" bodyfile="http/fwoop_httpserver.cpp" bodystart="292" bodyend="310"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpServer_1abb0c1232842422bb3a0f370b9eb5f04e" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int fwoop::HttpServer::handleHttp2Connection</definition>
         <argsstring>(int clientFd) const</argsstring>
         <name>handleHttp2Connection</name>
-        <qualifiedname>fwoop::HttpServer::handleHttp2Connection</qualifiedname>
         <param>
           <type>int</type>
           <declname>clientFd</declname>
@@ -136,23 +138,27 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpserver.h" line="30" column="9" bodyfile="http/fwoop_httpserver.cpp" bodystart="97" bodyend="283"/>
+        <location file="http/fwoop_httpserver.h" line="29" column="9" bodyfile="http/fwoop_httpserver.cpp" bodystart="104" bodyend="290"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classfwoop_1_1HttpServer_1afdb7294f79013d88467e5c52958e2df0" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classfwoop_1_1HttpServer_1aceeafe9351878be39165e709bd298441" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>fwoop::HttpServer::HttpServer</definition>
-        <argsstring>(int port, HttpVersion version)</argsstring>
+        <argsstring>(int port, HttpVersion::Value version, unsigned int threadPoolSize=5)</argsstring>
         <name>HttpServer</name>
-        <qualifiedname>fwoop::HttpServer::HttpServer</qualifiedname>
         <param>
           <type>int</type>
           <declname>port</declname>
         </param>
         <param>
-          <type><ref refid="namespacefwoop_1a87d0eaf35ffbee084790bb45549fd41e" kindref="member">HttpVersion</ref></type>
+          <type><ref refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989" kindref="member">HttpVersion::Value</ref></type>
           <declname>version</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>threadPoolSize</declname>
+          <defval>5</defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -160,62 +166,58 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpserver.h" line="33" column="14" bodyfile="http/fwoop_httpserver.cpp" bodystart="26" bodyend="31"/>
+        <location file="http/fwoop_httpserver.h" line="32" column="14" bodyfile="http/fwoop_httpserver.cpp" bodystart="28" bodyend="31"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpServer_1abb0e1b98a4407e2ddc637ac542ab1890" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>fwoop::HttpServer::~HttpServer</definition>
         <argsstring>()</argsstring>
         <name>~HttpServer</name>
-        <qualifiedname>fwoop::HttpServer::~HttpServer</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpserver.h" line="34" column="5" bodyfile="http/fwoop_httpserver.cpp" bodystart="33" bodyend="38"/>
+        <location file="http/fwoop_httpserver.h" line="33" column="5" bodyfile="http/fwoop_httpserver.cpp" bodystart="33" bodyend="38"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpServer_1a89c7ea5a09e3bc3908207b86a8f8ba38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int fwoop::HttpServer::serve</definition>
         <argsstring>()</argsstring>
         <name>serve</name>
-        <qualifiedname>fwoop::HttpServer::serve</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpserver.h" line="36" column="9" bodyfile="http/fwoop_httpserver.cpp" bodystart="40" bodyend="94"/>
+        <location file="http/fwoop_httpserver.h" line="35" column="9" bodyfile="http/fwoop_httpserver.cpp" bodystart="40" bodyend="102"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpServer_1a965013dc4a1cf25e49dfda574321910d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void fwoop::HttpServer::stop</definition>
         <argsstring>()</argsstring>
         <name>stop</name>
-        <qualifiedname>fwoop::HttpServer::stop</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpserver.h" line="37" column="10" bodyfile="http/fwoop_httpserver.h" bodystart="44" bodyend="47"/>
+        <location file="http/fwoop_httpserver.h" line="36" column="10" bodyfile="http/fwoop_httpserver.h" bodystart="47" bodyend="52"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpServer_1a1c91caae02032f9b001d3add7acd3ee8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void fwoop::HttpServer::addRoute</definition>
         <argsstring>(const std::string &amp;route, HttpHandlerFunc_t func)</argsstring>
         <name>addRoute</name>
-        <qualifiedname>fwoop::HttpServer::addRoute</qualifiedname>
         <param>
           <type>const std::string &amp;</type>
           <declname>route</declname>
         </param>
         <param>
-          <type><ref refid="namespacefwoop_1ac6d69cc8c349bf8c8f7cda57f4454948" kindref="member">HttpHandlerFunc_t</ref></type>
+          <type><ref refid="namespacefwoop_1a8858d7df8099f2a5f33e31bc112db03c" kindref="member">HttpHandlerFunc_t</ref></type>
           <declname>func</declname>
         </param>
         <briefdescription>
@@ -224,14 +226,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpserver.h" line="39" column="10" bodyfile="http/fwoop_httpserver.cpp" bodystart="305" bodyend="308"/>
+        <location file="http/fwoop_httpserver.h" line="38" column="10" bodyfile="http/fwoop_httpserver.cpp" bodystart="312" bodyend="312"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpServer_1a775b20e9df447ac93cb7baf3ef3899fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void fwoop::HttpServer::addStaticRoute</definition>
         <argsstring>(const std::string &amp;route, const std::string &amp;fileName)</argsstring>
         <name>addStaticRoute</name>
-        <qualifiedname>fwoop::HttpServer::addStaticRoute</qualifiedname>
         <param>
           <type>const std::string &amp;</type>
           <declname>route</declname>
@@ -246,28 +247,122 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpserver.h" line="40" column="10" bodyfile="http/fwoop_httpserver.cpp" bodystart="310" bodyend="317"/>
+        <location file="http/fwoop_httpserver.h" line="39" column="10" bodyfile="http/fwoop_httpserver.cpp" bodystart="314" bodyend="320"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpServer_1ad3085998cbe88e9c39f9f5fd5fb411ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::HttpServer::addServerEventRoute</definition>
+        <argsstring>(const std::string &amp;route, HttpServerEventHandlerFunc_t func)</argsstring>
+        <name>addServerEventRoute</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>route</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacefwoop_1a774dddd01470ace8ca56755a0a66eb07" kindref="member">HttpServerEventHandlerFunc_t</ref></type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpserver.h" line="40" column="10" bodyfile="http/fwoop_httpserver.cpp" bodystart="322" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpServer_1ae9d4f26b3cc3ada9ded72c9c0b6d74ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void fwoop::HttpServer::onRequest</definition>
+        <argsstring>(const std::shared_ptr&lt; HttpRequest &gt; &amp;request, HttpResponse &amp;response) override</argsstring>
+        <name>onRequest</name>
+        <reimplements refid="classfwoop_1_1HttpRequestCallback_1ae22846324cf1489c439345e89aee840b">onRequest</reimplements>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classfwoop_1_1HttpRequest" kindref="compound">HttpRequest</ref> &gt; &amp;</type>
+          <declname>request</declname>
+        </param>
+        <param>
+          <type><ref refid="classfwoop_1_1HttpResponse" kindref="compound">HttpResponse</ref> &amp;</type>
+          <declname>response</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpserver.h" line="43" column="10" bodyfile="http/fwoop_httpserver.cpp" bodystart="327" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpServer_1a781279caca763d7ddcef83a0170d297c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void fwoop::HttpServer::afterResponse</definition>
+        <argsstring>(const std::shared_ptr&lt; HttpRequest &gt; &amp;request, WriterPtr_t writer) override</argsstring>
+        <name>afterResponse</name>
+        <reimplements refid="classfwoop_1_1HttpRequestCallback_1afdd5a89f2c990a5f9dc8a23be0de2541">afterResponse</reimplements>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classfwoop_1_1HttpRequest" kindref="compound">HttpRequest</ref> &gt; &amp;</type>
+          <declname>request</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacefwoop_1a29e3dc14ec8cacd05c1d81c92c2f15bd" kindref="member">WriterPtr_t</ref></type>
+          <declname>writer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpserver.h" line="44" column="10" bodyfile="http/fwoop_httpserver.cpp" bodystart="342" bodyend="349"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="http/fwoop_httpserver.h" line="20" column="1" bodyfile="http/fwoop_httpserver.h" bodystart="20" bodyend="41"/>
+    <inheritancegraph>
+      <node id="2">
+        <label>fwoop::HttpRequestCallback</label>
+        <link refid="classfwoop_1_1HttpRequestCallback"/>
+      </node>
+      <node id="1">
+        <label>fwoop::HttpServer</label>
+        <link refid="classfwoop_1_1HttpServer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>fwoop::HttpRequestCallback</label>
+        <link refid="classfwoop_1_1HttpRequestCallback"/>
+      </node>
+      <node id="1">
+        <label>fwoop::HttpServer</label>
+        <link refid="classfwoop_1_1HttpServer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="http/fwoop_httpserver.h" line="18" column="1" bodyfile="http/fwoop_httpserver.h" bodystart="18" bodyend="45"/>
     <listofallmembers>
       <member refid="classfwoop_1_1HttpServer_1a1c91caae02032f9b001d3add7acd3ee8" prot="public" virt="non-virtual"><scope>fwoop::HttpServer</scope><name>addRoute</name></member>
+      <member refid="classfwoop_1_1HttpServer_1ad3085998cbe88e9c39f9f5fd5fb411ed" prot="public" virt="non-virtual"><scope>fwoop::HttpServer</scope><name>addServerEventRoute</name></member>
       <member refid="classfwoop_1_1HttpServer_1a775b20e9df447ac93cb7baf3ef3899fa" prot="public" virt="non-virtual"><scope>fwoop::HttpServer</scope><name>addStaticRoute</name></member>
+      <member refid="classfwoop_1_1HttpServer_1a781279caca763d7ddcef83a0170d297c" prot="public" virt="virtual"><scope>fwoop::HttpServer</scope><name>afterResponse</name></member>
+      <member refid="classfwoop_1_1HttpServer_1a2b482896e1cec44b0cd6c98d7f9b4e0b" prot="private" virt="non-virtual"><scope>fwoop::HttpServer</scope><name>d_handlerPool</name></member>
       <member refid="classfwoop_1_1HttpServer_1a3db639d2d0aefb0ada2feb9fe809ad88" prot="private" virt="non-virtual"><scope>fwoop::HttpServer</scope><name>d_isActive</name></member>
       <member refid="classfwoop_1_1HttpServer_1a401343bcc6a5c09f81c3aee693407822" prot="private" virt="non-virtual"><scope>fwoop::HttpServer</scope><name>d_port</name></member>
       <member refid="classfwoop_1_1HttpServer_1a11fdb28a0a432dc985956aada24a672c" prot="private" virt="non-virtual"><scope>fwoop::HttpServer</scope><name>d_routeMap</name></member>
+      <member refid="classfwoop_1_1HttpServer_1aab9dd6e294c01cf409fba918619a519e" prot="private" virt="non-virtual"><scope>fwoop::HttpServer</scope><name>d_serverEventMap</name></member>
       <member refid="classfwoop_1_1HttpServer_1aa190790e00b430f84571cedcb785d316" prot="private" virt="non-virtual"><scope>fwoop::HttpServer</scope><name>d_serverFd</name></member>
-      <member refid="classfwoop_1_1HttpServer_1a41846f90d217ee9923c11ddc3695b908" prot="private" virt="non-virtual"><scope>fwoop::HttpServer</scope><name>d_version</name></member>
-      <member refid="classfwoop_1_1HttpServer_1ae664c19bd6d92abdf646d28570bbd6d6" prot="private" virt="non-virtual"><scope>fwoop::HttpServer</scope><name>handleHttp1Connection</name></member>
+      <member refid="classfwoop_1_1HttpServer_1a2cc3581089095a037ea158d9179c203e" prot="private" virt="non-virtual"><scope>fwoop::HttpServer</scope><name>d_version</name></member>
       <member refid="classfwoop_1_1HttpServer_1abb0c1232842422bb3a0f370b9eb5f04e" prot="private" virt="non-virtual"><scope>fwoop::HttpServer</scope><name>handleHttp2Connection</name></member>
-      <member refid="classfwoop_1_1HttpServer_1afdb7294f79013d88467e5c52958e2df0" prot="public" virt="non-virtual"><scope>fwoop::HttpServer</scope><name>HttpServer</name></member>
+      <member refid="classfwoop_1_1HttpServer_1aceeafe9351878be39165e709bd298441" prot="public" virt="non-virtual"><scope>fwoop::HttpServer</scope><name>HttpServer</name></member>
+      <member refid="classfwoop_1_1HttpServer_1ae9d4f26b3cc3ada9ded72c9c0b6d74ea" prot="public" virt="virtual"><scope>fwoop::HttpServer</scope><name>onRequest</name></member>
       <member refid="classfwoop_1_1HttpServer_1acf5f1c8930a144a5f971a9842b974b06" prot="private" virt="non-virtual"><scope>fwoop::HttpServer</scope><name>parsePayloadBody</name></member>
       <member refid="classfwoop_1_1HttpServer_1a89c7ea5a09e3bc3908207b86a8f8ba38" prot="public" virt="non-virtual"><scope>fwoop::HttpServer</scope><name>serve</name></member>
       <member refid="classfwoop_1_1HttpServer_1a965013dc4a1cf25e49dfda574321910d" prot="public" virt="non-virtual"><scope>fwoop::HttpServer</scope><name>stop</name></member>
+      <member refid="classfwoop_1_1HttpRequestCallback_1ae3d648b137b07c45376b8d7a2c703042" prot="public" virt="non-virtual"><scope>fwoop::HttpServer</scope><name>~HttpRequestCallback</name></member>
       <member refid="classfwoop_1_1HttpServer_1abb0e1b98a4407e2ddc637ac542ab1890" prot="public" virt="non-virtual"><scope>fwoop::HttpServer</scope><name>~HttpServer</name></member>
     </listofallmembers>
   </compounddef>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classfwoop_1_1HttpHPacker" kind="class" language="C++" prot="public">
     <compoundname>fwoop::HttpHPacker</compoundname>
     <includes refid="fwoop__httphpacker_8h" local="no">fwoop_httphpacker.h</includes>
@@ -10,7 +10,6 @@
         <definition>std::unordered_map&lt; std::string, uint8_t &gt; fwoop::HttpHPacker::s_staticTable</definition>
         <argsstring></argsstring>
         <name>s_staticTable</name>
-        <qualifiedname>fwoop::HttpHPacker::s_staticTable</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -24,7 +23,6 @@
         <definition>const uint8_t fwoop::HttpHPacker::STATIC_TABLE_SIZE</definition>
         <argsstring></argsstring>
         <name>STATIC_TABLE_SIZE</name>
-        <qualifiedname>fwoop::HttpHPacker::STATIC_TABLE_SIZE</qualifiedname>
         <initializer>= 61</initializer>
         <briefdescription>
         </briefdescription>
@@ -41,7 +39,6 @@
         <definition>DynamicTable_t fwoop::HttpHPacker::d_dynamicTable</definition>
         <argsstring></argsstring>
         <name>d_dynamicTable</name>
-        <qualifiedname>fwoop::HttpHPacker::d_dynamicTable</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -55,14 +52,13 @@
         <definition>u_int32_t fwoop::HttpHPacker::d_maxTableSize</definition>
         <argsstring></argsstring>
         <name>d_maxTableSize</name>
-        <qualifiedname>fwoop::HttpHPacker::d_maxTableSize</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httphpacker.h" line="27" column="20" bodyfile="http/fwoop_httphpacker.h" bodystart="27" bodyend="-1"/>
+        <location file="http/fwoop_httphpacker.h" line="27" column="15" bodyfile="http/fwoop_httphpacker.h" bodystart="27" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -71,7 +67,6 @@
         <definition>uint32_t fwoop::HttpHPacker::getEncodedLength</definition>
         <argsstring>(DynamicTable_t &amp;dynamicTable, HttpHeaderVariant_t header, const std::string &amp;headerValue) const</argsstring>
         <name>getEncodedLength</name>
-        <qualifiedname>fwoop::HttpHPacker::getEncodedLength</qualifiedname>
         <param>
           <type>DynamicTable_t &amp;</type>
           <declname>dynamicTable</declname>
@@ -90,14 +85,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httphpacker.h" line="29" column="14" bodyfile="http/fwoop_httphpacker.cpp" bodystart="77" bodyend="108"/>
+        <location file="http/fwoop_httphpacker.h" line="29" column="14" bodyfile="http/fwoop_httphpacker.cpp" bodystart="73" bodyend="105"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpHPacker_1af01e5314e40e065d05eea27684203e1a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>uint32_t</type>
         <definition>uint32_t fwoop::HttpHPacker::encode</definition>
         <argsstring>(uint8_t *out, HttpHeaderVariant_t header, const std::string &amp;headerValue)</argsstring>
         <name>encode</name>
-        <qualifiedname>fwoop::HttpHPacker::encode</qualifiedname>
         <param>
           <type>uint8_t *</type>
           <declname>out</declname>
@@ -116,7 +110,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httphpacker.h" line="30" column="14" bodyfile="http/fwoop_httphpacker.cpp" bodystart="131" bodyend="188"/>
+        <location file="http/fwoop_httphpacker.h" line="31" column="14" bodyfile="http/fwoop_httphpacker.cpp" bodystart="128" bodyend="185"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -125,21 +119,19 @@
         <definition>fwoop::HttpHPacker::HttpHPacker</definition>
         <argsstring>()</argsstring>
         <name>HttpHPacker</name>
-        <qualifiedname>fwoop::HttpHPacker::HttpHPacker</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httphpacker.h" line="33" column="5" bodyfile="http/fwoop_httphpacker.cpp" bodystart="71" bodyend="75"/>
+        <location file="http/fwoop_httphpacker.h" line="34" column="5" bodyfile="http/fwoop_httphpacker.cpp" bodystart="71" bodyend="71"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpHPacker_1af1ae92ccec1eed16df2f5d524f13fcfc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>uint32_t</type>
         <definition>uint32_t fwoop::HttpHPacker::getEncodedLength</definition>
         <argsstring>(const std::vector&lt; HttpHeaderField_t &gt; &amp;headerFields) const</argsstring>
         <name>getEncodedLength</name>
-        <qualifiedname>fwoop::HttpHPacker::getEncodedLength</qualifiedname>
         <param>
           <type>const std::vector&lt; <ref refid="namespacefwoop_1a8f8f27ac925f849da3190dea9dcdcbf9" kindref="member">HttpHeaderField_t</ref> &gt; &amp;</type>
           <declname>headerFields</declname>
@@ -150,14 +142,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httphpacker.h" line="35" column="14" bodyfile="http/fwoop_httphpacker.cpp" bodystart="120" bodyend="129"/>
+        <location file="http/fwoop_httphpacker.h" line="36" column="14" bodyfile="http/fwoop_httphpacker.cpp" bodystart="117" bodyend="126"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpHPacker_1a037a40c49ea473f16271d6ecedbb9101" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>uint32_t</type>
         <definition>uint32_t fwoop::HttpHPacker::encodeLength</definition>
         <argsstring>(const std::vector&lt; HttpHeaderField_t &gt; &amp;headerFields)</argsstring>
         <name>encodeLength</name>
-        <qualifiedname>fwoop::HttpHPacker::encodeLength</qualifiedname>
         <param>
           <type>const std::vector&lt; <ref refid="namespacefwoop_1a8f8f27ac925f849da3190dea9dcdcbf9" kindref="member">HttpHeaderField_t</ref> &gt; &amp;</type>
           <declname>headerFields</declname>
@@ -168,14 +159,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httphpacker.h" line="37" column="14" bodyfile="http/fwoop_httphpacker.cpp" bodystart="110" bodyend="118"/>
+        <location file="http/fwoop_httphpacker.h" line="38" column="14" bodyfile="http/fwoop_httphpacker.cpp" bodystart="107" bodyend="115"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpHPacker_1ace5011a48f8fffd580dd40751bfb45fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>uint8_t *</type>
         <definition>u_int8_t * fwoop::HttpHPacker::encode</definition>
         <argsstring>(const std::vector&lt; HttpHeaderField_t &gt; &amp;headerFields)</argsstring>
         <name>encode</name>
-        <qualifiedname>fwoop::HttpHPacker::encode</qualifiedname>
         <param>
           <type>const std::vector&lt; <ref refid="namespacefwoop_1a8f8f27ac925f849da3190dea9dcdcbf9" kindref="member">HttpHeaderField_t</ref> &gt; &amp;</type>
           <declname>headerFields</declname>
@@ -186,14 +176,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httphpacker.h" line="38" column="13" bodyfile="http/fwoop_httphpacker.cpp" bodystart="190" bodyend="202"/>
+        <location file="http/fwoop_httphpacker.h" line="39" column="13" bodyfile="http/fwoop_httphpacker.cpp" bodystart="187" bodyend="199"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="http/fwoop_httphpacker.h" line="15" column="1" bodyfile="http/fwoop_httphpacker.h" bodystart="15" bodyend="39"/>
+    <location file="http/fwoop_httphpacker.h" line="15" column="1" bodyfile="http/fwoop_httphpacker.h" bodystart="15" bodyend="40"/>
     <listofallmembers>
       <member refid="classfwoop_1_1HttpHPacker_1a249f6259106eec72a600a66ab1bc6b85" prot="private" virt="non-virtual"><scope>fwoop::HttpHPacker</scope><name>d_dynamicTable</name></member>
       <member refid="classfwoop_1_1HttpHPacker_1ae0b118f8df4ba8332b1994eca2d3f3fc" prot="private" virt="non-virtual"><scope>fwoop::HttpHPacker</scope><name>d_maxTableSize</name></member>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classfwoop_1_1SocketIO" kind="class" language="C++" prot="public">
     <compoundname>fwoop::SocketIO</compoundname>
     <includes refid="fwoop__socketio_8h" local="no">fwoop_socketio.h</includes>
@@ -14,7 +14,6 @@
         <definition>std::error_code fwoop::SocketIO::read</definition>
         <argsstring>(int fd, T *buffer, unsigned int bufferSize, unsigned int &amp;bytesRead)</argsstring>
         <name>read</name>
-        <qualifiedname>fwoop::SocketIO::read</qualifiedname>
         <param>
           <type>int</type>
           <declname>fd</declname>
@@ -37,7 +36,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="basis/fwoop_socketio.h" line="18" column="28" bodyfile="basis/fwoop_socketio.h" bodystart="26" bodyend="59"/>
+        <location file="basis/fwoop_socketio.h" line="76" column="28" bodyfile="basis/fwoop_socketio.h" bodystart="82" bodyend="115"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1SocketIO_1a5a5522a6c055703c0d6ca2e121126640" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -49,7 +48,6 @@
         <definition>int fwoop::SocketIO::write</definition>
         <argsstring>(int fd, T *out, unsigned int outLen)</argsstring>
         <name>write</name>
-        <qualifiedname>fwoop::SocketIO::write</qualifiedname>
         <param>
           <type>int</type>
           <declname>fd</declname>
@@ -68,14 +66,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="basis/fwoop_socketio.h" line="21" column="16" bodyfile="basis/fwoop_socketio.h" bodystart="62" bodyend="75"/>
+        <location file="basis/fwoop_socketio.h" line="78" column="28" bodyfile="basis/fwoop_socketio.h" bodystart="117" bodyend="130"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="basis/fwoop_socketio.h" line="14" column="1" bodyfile="basis/fwoop_socketio.h" bodystart="14" bodyend="23"/>
+    <location file="basis/fwoop_socketio.h" line="72" column="1" bodyfile="basis/fwoop_socketio.h" bodystart="72" bodyend="79"/>
     <listofallmembers>
       <member refid="classfwoop_1_1SocketIO_1a4a66099cb56c04928a3ad0028d080eb0" prot="public" virt="non-virtual"><scope>fwoop::SocketIO</scope><name>read</name></member>
       <member refid="classfwoop_1_1SocketIO_1a5a5522a6c055703c0d6ca2e121126640" prot="public" virt="non-virtual"><scope>fwoop::SocketIO</scope><name>write</name></member>

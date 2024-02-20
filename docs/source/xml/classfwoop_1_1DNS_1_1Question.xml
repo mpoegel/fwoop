@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1DNS_1_1Question" kind="class" language="C++" prot="public">
+    <compoundname>fwoop::DNS::Question</compoundname>
+    <includes refid="fwoop__dnsquery_8h" local="no">fwoop_dnsquery.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1DNS_1_1Question_1a78502b295f7a8cb91e9d239286d387c8" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string fwoop::DNS::Question::d_name</definition>
+        <argsstring></argsstring>
+        <name>d_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="43" column="17" bodyfile="basis/fwoop_dnsquery.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1DNS_1_1Question_1a8f9298cf2a9a9797f910a7d813a0561e" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacefwoop_1_1DNS_1ad379e3a7792683b000e15b882a7a2f6f" kindref="member">RecordType</ref></type>
+        <definition>RecordType fwoop::DNS::Question::d_type</definition>
+        <argsstring></argsstring>
+        <name>d_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="44" column="16" bodyfile="basis/fwoop_dnsquery.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1DNS_1_1Question_1a45871a93e2bf03c1301c9d1a38db68d4" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacefwoop_1_1DNS_1af0d37c39ea9bf2c44ef33ba928962910" kindref="member">ClassValue</ref></type>
+        <definition>ClassValue fwoop::DNS::Question::d_class</definition>
+        <argsstring></argsstring>
+        <name>d_class</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="45" column="16" bodyfile="basis/fwoop_dnsquery.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classfwoop_1_1DNS_1_1Question_1a53f4465ea6078dd7cc65fc62b2be8347" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classfwoop_1_1DNS_1_1Question" kindref="compound">Question</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Question &gt; fwoop::DNS::Question::parse</definition>
+        <argsstring>(const Array &amp;arr, uint32_t &amp;offset)</argsstring>
+        <name>parse</name>
+        <param>
+          <type>const <ref refid="classfwoop_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>arr</declname>
+        </param>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="48" column="28" bodyfile="basis/fwoop_dnsquery.cpp" bodystart="68" bodyend="101"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfwoop_1_1DNS_1_1Question_1a3836b051d32393b2a474f48a2c24aae9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::DNS::Question::Question</definition>
+        <argsstring>(const std::string &amp;name, RecordType qType=RecordType::A, ClassValue qClass=ClassValue::IN)</argsstring>
+        <name>Question</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacefwoop_1_1DNS_1ad379e3a7792683b000e15b882a7a2f6f" kindref="member">RecordType</ref></type>
+          <declname>qType</declname>
+          <defval>RecordType::A</defval>
+        </param>
+        <param>
+          <type><ref refid="namespacefwoop_1_1DNS_1af0d37c39ea9bf2c44ef33ba928962910" kindref="member">ClassValue</ref></type>
+          <declname>qClass</declname>
+          <defval>ClassValue::IN</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="50" column="5" bodyfile="basis/fwoop_dnsquery.cpp" bodystart="103" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DNS_1_1Question_1a1c0c85f8a72c7b479a2dee00611d7cbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::DNS::Question::~Question</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Question</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="51" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DNS_1_1Question_1a6be980e9ca3b0a41d608069065b420ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::DNS::Question::Question</definition>
+        <argsstring>(Question &amp;rhs)=default</argsstring>
+        <name>Question</name>
+        <param>
+          <type><ref refid="classfwoop_1_1DNS_1_1Question" kindref="compound">Question</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="52" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DNS_1_1Question_1a53221ea94acd8008dd1392ccf2a2ce42" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfwoop_1_1DNS_1_1Question" kindref="compound">Question</ref> &amp;</type>
+        <definition>Question&amp; fwoop::DNS::Question::operator=</definition>
+        <argsstring>(const Question &amp;rhs) const =delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classfwoop_1_1DNS_1_1Question" kindref="compound">Question</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="53" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DNS_1_1Question_1a2a367914e3e769cff4bd378565396ef2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::DNS::Question::Question</definition>
+        <argsstring>(Question &amp;&amp;rhs)=default</argsstring>
+        <name>Question</name>
+        <param>
+          <type><ref refid="classfwoop_1_1DNS_1_1Question" kindref="compound">Question</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="54" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DNS_1_1Question_1abcc870542386fd4842a7a294e9ce024e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; fwoop::DNS::Question::name</definition>
+        <argsstring>() const</argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="56" column="23" bodyfile="basis/fwoop_dnsquery.h" bodystart="64" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DNS_1_1Question_1acc874b0d246474f7ef2b261dde2cce47" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacefwoop_1_1DNS_1ad379e3a7792683b000e15b882a7a2f6f" kindref="member">RecordType</ref></type>
+        <definition>RecordType fwoop::DNS::Question::type</definition>
+        <argsstring>() const</argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="57" column="16" bodyfile="basis/fwoop_dnsquery.h" bodystart="65" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DNS_1_1Question_1aff61d974cfe60a07baf7a59e6dac1323" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacefwoop_1_1DNS_1af0d37c39ea9bf2c44ef33ba928962910" kindref="member">ClassValue</ref></type>
+        <definition>ClassValue fwoop::DNS::Question::classValue</definition>
+        <argsstring>() const</argsstring>
+        <name>classValue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="58" column="16" bodyfile="basis/fwoop_dnsquery.h" bodystart="66" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DNS_1_1Question_1a16992f3439a2838cb253362befdebf88" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfwoop_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array fwoop::DNS::Question::encode</definition>
+        <argsstring>() const</argsstring>
+        <name>encode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="59" column="11" bodyfile="basis/fwoop_dnsquery.cpp" bodystart="108" bodyend="129"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="basis/fwoop_dnsquery.h" line="41" column="1" bodyfile="basis/fwoop_dnsquery.h" bodystart="41" bodyend="60"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1DNS_1_1Question_1aff61d974cfe60a07baf7a59e6dac1323" prot="public" virt="non-virtual"><scope>fwoop::DNS::Question</scope><name>classValue</name></member>
+      <member refid="classfwoop_1_1DNS_1_1Question_1a45871a93e2bf03c1301c9d1a38db68d4" prot="private" virt="non-virtual"><scope>fwoop::DNS::Question</scope><name>d_class</name></member>
+      <member refid="classfwoop_1_1DNS_1_1Question_1a78502b295f7a8cb91e9d239286d387c8" prot="private" virt="non-virtual"><scope>fwoop::DNS::Question</scope><name>d_name</name></member>
+      <member refid="classfwoop_1_1DNS_1_1Question_1a8f9298cf2a9a9797f910a7d813a0561e" prot="private" virt="non-virtual"><scope>fwoop::DNS::Question</scope><name>d_type</name></member>
+      <member refid="classfwoop_1_1DNS_1_1Question_1a16992f3439a2838cb253362befdebf88" prot="public" virt="non-virtual"><scope>fwoop::DNS::Question</scope><name>encode</name></member>
+      <member refid="classfwoop_1_1DNS_1_1Question_1abcc870542386fd4842a7a294e9ce024e" prot="public" virt="non-virtual"><scope>fwoop::DNS::Question</scope><name>name</name></member>
+      <member refid="classfwoop_1_1DNS_1_1Question_1a53221ea94acd8008dd1392ccf2a2ce42" prot="public" virt="non-virtual"><scope>fwoop::DNS::Question</scope><name>operator=</name></member>
+      <member refid="classfwoop_1_1DNS_1_1Question_1a53f4465ea6078dd7cc65fc62b2be8347" prot="public" virt="non-virtual"><scope>fwoop::DNS::Question</scope><name>parse</name></member>
+      <member refid="classfwoop_1_1DNS_1_1Question_1a3836b051d32393b2a474f48a2c24aae9" prot="public" virt="non-virtual"><scope>fwoop::DNS::Question</scope><name>Question</name></member>
+      <member refid="classfwoop_1_1DNS_1_1Question_1a6be980e9ca3b0a41d608069065b420ca" prot="public" virt="non-virtual"><scope>fwoop::DNS::Question</scope><name>Question</name></member>
+      <member refid="classfwoop_1_1DNS_1_1Question_1a2a367914e3e769cff4bd378565396ef2" prot="public" virt="non-virtual"><scope>fwoop::DNS::Question</scope><name>Question</name></member>
+      <member refid="classfwoop_1_1DNS_1_1Question_1acc874b0d246474f7ef2b261dde2cce47" prot="public" virt="non-virtual"><scope>fwoop::DNS::Question</scope><name>type</name></member>
+      <member refid="classfwoop_1_1DNS_1_1Question_1a1c0c85f8a72c7b479a2dee00611d7cbd" prot="public" virt="non-virtual"><scope>fwoop::DNS::Question</scope><name>~Question</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacefwoop_1_1DNS" kind="namespace" language="C++">
+    <compoundname>fwoop::DNS</compoundname>
+    <innerclass refid="classfwoop_1_1DNS_1_1Question" prot="public">fwoop::DNS::Question</innerclass>
+    <innerclass refid="classfwoop_1_1DNS_1_1ResourceRecord" prot="public">fwoop::DNS::ResourceRecord</innerclass>
+    <innerclass refid="classfwoop_1_1DNS_1_1Query" prot="public">fwoop::DNS::Query</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacefwoop_1_1DNS_1ad379e3a7792683b000e15b882a7a2f6f" prot="public" static="no" strong="no">
+        <type></type>
+        <name>RecordType</name>
+        <enumvalue id="namespacefwoop_1_1DNS_1ad379e3a7792683b000e15b882a7a2f6fa946247acab5aae9b61ea7c04efde08ec" prot="public">
+          <name>UndefinedType</name>
+          <initializer>= 0x0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1_1DNS_1ad379e3a7792683b000e15b882a7a2f6faf62812c26301897a6cc05672ab03ac56" prot="public">
+          <name>A</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1_1DNS_1ad379e3a7792683b000e15b882a7a2f6faad9f94ab14a05880141a815760a50e57" prot="public">
+          <name>NS</name>
+          <initializer>= 0x2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1_1DNS_1ad379e3a7792683b000e15b882a7a2f6fa647ad73a27da4a46b22139c461ef45ae" prot="public">
+          <name>CNAME</name>
+          <initializer>= 0x5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1_1DNS_1ad379e3a7792683b000e15b882a7a2f6fa4cbc88de8b8ff4e8366f382a5716e150" prot="public">
+          <name>SOA</name>
+          <initializer>= 0x6</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1_1DNS_1ad379e3a7792683b000e15b882a7a2f6fa445499d8cdb584aa939bc87ebecd1020" prot="public">
+          <name>WKS</name>
+          <initializer>= 0x11</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1_1DNS_1ad379e3a7792683b000e15b882a7a2f6face92a3a7713c6f8eec01547db1d73584" prot="public">
+          <name>PTR</name>
+          <initializer>= 0x12</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1_1DNS_1ad379e3a7792683b000e15b882a7a2f6faf92ce3c02a2919345c702a5aae1a8382" prot="public">
+          <name>HINFO</name>
+          <initializer>= 0x13</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1_1DNS_1ad379e3a7792683b000e15b882a7a2f6fa35f158fa031998532f7bcfdcd2c669f2" prot="public">
+          <name>MINFO</name>
+          <initializer>= 0x14</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1_1DNS_1ad379e3a7792683b000e15b882a7a2f6fa5eb61108be8afcc96fa688b62384a68a" prot="public">
+          <name>MX</name>
+          <initializer>= 0x15</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1_1DNS_1ad379e3a7792683b000e15b882a7a2f6fa71fda585679e83884a3483a173cf0f62" prot="public">
+          <name>TXT</name>
+          <initializer>= 0x16</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="16" column="1" bodyfile="basis/fwoop_dnsquery.h" bodystart="16" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespacefwoop_1_1DNS_1af0d37c39ea9bf2c44ef33ba928962910" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ClassValue</name>
+        <enumvalue id="namespacefwoop_1_1DNS_1af0d37c39ea9bf2c44ef33ba928962910adbe5e6ad6b42d095469bb00537ad842b" prot="public">
+          <name>UndefinedClass</name>
+          <initializer>= 0x0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1_1DNS_1af0d37c39ea9bf2c44ef33ba928962910a70b2f768130a17034a9e23474c4330b3" prot="public">
+          <name>IN</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1_1DNS_1af0d37c39ea9bf2c44ef33ba928962910a56d691c6265808aecf24a50b2aaa45fb" prot="public">
+          <name>CH</name>
+          <initializer>= 0x3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacefwoop_1_1DNS_1af0d37c39ea9bf2c44ef33ba928962910ad058841e7b25ae1253b0522d62f25c08" prot="public">
+          <name>HS</name>
+          <initializer>= 0x4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="32" column="1" bodyfile="basis/fwoop_dnsquery.h" bodystart="32" bodyend="37"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacefwoop_1_1DNS_1ae486b6e026d138f717800e7cd49312a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacefwoop_1_1DNS_1ad379e3a7792683b000e15b882a7a2f6f" kindref="member">RecordType</ref></type>
+        <definition>RecordType fwoop::DNS::NewRecordType</definition>
+        <argsstring>(uint16_t val)</argsstring>
+        <name>NewRecordType</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.cpp" line="26" column="12" bodyfile="basis/fwoop_dnsquery.cpp" bodystart="26" bodyend="52" declfile="basis/fwoop_dnsquery.h" declline="30" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefwoop_1_1DNS_1ae8cf23fdb4a77b60b682e8ab22c92229" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacefwoop_1_1DNS_1af0d37c39ea9bf2c44ef33ba928962910" kindref="member">ClassValue</ref></type>
+        <definition>ClassValue fwoop::DNS::NewClassValue</definition>
+        <argsstring>(uint16_t val)</argsstring>
+        <name>NewClassValue</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.cpp" line="54" column="12" bodyfile="basis/fwoop_dnsquery.cpp" bodystart="54" bodyend="66" declfile="basis/fwoop_dnsquery.h" declline="39" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefwoop_1_1DNS_1a25a819b94418292009b2f42c41b85070" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; fwoop::DNS::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const Question &amp;question)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfwoop_1_1DNS_1_1Question" kindref="compound">Question</ref> &amp;</type>
+          <declname>question</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.cpp" line="131" column="1" bodyfile="basis/fwoop_dnsquery.cpp" bodystart="131" bodyend="135" declfile="basis/fwoop_dnsquery.h" declline="62" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefwoop_1_1DNS_1aaa9bf91e131ef679a5297f7a2aa9de8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; fwoop::DNS::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const ResourceRecord &amp;record)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfwoop_1_1DNS_1_1ResourceRecord" kindref="compound">ResourceRecord</ref> &amp;</type>
+          <declname>record</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.cpp" line="212" column="1" bodyfile="basis/fwoop_dnsquery.cpp" bodystart="212" bodyend="217" declfile="basis/fwoop_dnsquery.h" declline="94" declcolumn="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="basis/fwoop_dnsquery.cpp" line="24" column="1"/>
+  </compounddef>
+</doxygen>

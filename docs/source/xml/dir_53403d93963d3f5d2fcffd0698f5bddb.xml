@@ -1,9 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="dir_53403d93963d3f5d2fcffd0698f5bddb" kind="dir">
     <compoundname>crypto</compoundname>
+    <innerfile refid="fwoop__open__sha_8cpp">fwoop_open_sha.cpp</innerfile>
+    <innerfile refid="fwoop__securesocket_8cpp">fwoop_securesocket.cpp</innerfile>
+    <innerfile refid="fwoop__securesocket_8h">fwoop_securesocket.h</innerfile>
     <innerfile refid="fwoop__sha_8cpp">fwoop_sha.cpp</innerfile>
     <innerfile refid="fwoop__sha_8h">fwoop_sha.h</innerfile>
+    <innerfile refid="fwoop__tlscredentials_8cpp">fwoop_tlscredentials.cpp</innerfile>
+    <innerfile refid="fwoop__tlscredentials_8h">fwoop_tlscredentials.h</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1SocketFactoryBase" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>fwoop::SocketFactoryBase</compoundname>
+    <derivedcompoundref refid="classfwoop_1_1SecureSocketFactory" prot="public" virt="non-virtual">fwoop::SecureSocketFactory</derivedcompoundref>
+    <derivedcompoundref refid="classfwoop_1_1SocketFactory" prot="public" virt="non-virtual">fwoop::SocketFactory</derivedcompoundref>
+    <includes refid="fwoop__socketio_8h" local="no">fwoop_socketio.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfwoop_1_1SocketFactoryBase_1a0fc57cb46389b382aacdb289051e83e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::SocketFactoryBase::~SocketFactoryBase</definition>
+        <argsstring>()</argsstring>
+        <name>~SocketFactoryBase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_socketio.h" line="59" column="5" bodyfile="basis/fwoop_socketio.h" bodystart="59" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1SocketFactoryBase_1aed2eeeaedf1fa1599239882422bfbb65" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="namespacefwoop_1a9e8ea75aefa788f734a020c2d1c8d40a" kindref="member">SocketBasePtr_t</ref></type>
+        <definition>virtual SocketBasePtr_t fwoop::SocketFactoryBase::connect</definition>
+        <argsstring>()=0</argsstring>
+        <name>connect</name>
+        <reimplementedby refid="classfwoop_1_1SocketFactory_1ad4a2f6177f70669e3e70f0df30ad2e7e">connect</reimplementedby>
+        <reimplementedby refid="classfwoop_1_1SecureSocketFactory_1a09f82520db3797ac1c8b4710f841aac2">connect</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_socketio.h" line="61" column="29"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>fwoop::SecureSocketFactory</label>
+        <link refid="classfwoop_1_1SecureSocketFactory"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>fwoop::SocketFactory</label>
+        <link refid="classfwoop_1_1SocketFactory"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>fwoop::SocketFactoryBase</label>
+        <link refid="classfwoop_1_1SocketFactoryBase"/>
+      </node>
+    </inheritancegraph>
+    <location file="basis/fwoop_socketio.h" line="57" column="1" bodyfile="basis/fwoop_socketio.h" bodystart="57" bodyend="62"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1SocketFactoryBase_1aed2eeeaedf1fa1599239882422bfbb65" prot="public" virt="pure-virtual"><scope>fwoop::SocketFactoryBase</scope><name>connect</name></member>
+      <member refid="classfwoop_1_1SocketFactoryBase_1a0fc57cb46389b382aacdb289051e83e6" prot="public" virt="non-virtual"><scope>fwoop::SocketFactoryBase</scope><name>~SocketFactoryBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

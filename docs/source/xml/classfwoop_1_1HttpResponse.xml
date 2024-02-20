@@ -1,64 +1,176 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classfwoop_1_1HttpResponse" kind="class" language="C++" prot="public">
     <compoundname>fwoop::HttpResponse</compoundname>
     <includes refid="fwoop__httpresponse_8h" local="no">fwoop_httpresponse.h</includes>
-      <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classfwoop_1_1HttpResponse_1a7feebca28bfeeea3dd0dee698291d78c" prot="private" static="no" mutable="no">
-        <type>std::vector&lt; <ref refid="namespacefwoop_1a8f8f27ac925f849da3190dea9dcdcbf9" kindref="member">HttpHeaderField_t</ref> &gt;</type>
-        <definition>std::vector&lt;HttpHeaderField_t&gt; fwoop::HttpResponse::d_headers</definition>
-        <argsstring></argsstring>
-        <name>d_headers</name>
-        <qualifiedname>fwoop::HttpResponse::d_headers</qualifiedname>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classfwoop_1_1HttpResponse_1aa49b465ee9cc323c8caf8a2c51c1fbb8" prot="public" static="no" strong="no">
+        <type></type>
+        <name>BuildResult</name>
+        <enumvalue id="classfwoop_1_1HttpResponse_1aa49b465ee9cc323c8caf8a2c51c1fbb8a2315d5d3c62a0fbcd676fea1cf926a83" prot="public">
+          <name>Done</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpResponse_1aa49b465ee9cc323c8caf8a2c51c1fbb8a56603aa07bf554a94cebd3af59a2ac21" prot="public">
+          <name>Incomplete</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpResponse_1aa49b465ee9cc323c8caf8a2c51c1fbb8a192a0bca8526a495a59d081e75e96174" prot="public">
+          <name>Failure</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpresponse.h" line="13" column="17" bodyfile="http/fwoop_httpresponse.h" bodystart="13" bodyend="-1"/>
+        <location file="http/fwoop_httpresponse.h" line="16" column="5" bodyfile="http/fwoop_httpresponse.h" bodystart="16" bodyend="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classfwoop_1_1HttpResponse_1a1f8d8def8bd0bcd523e2ff4501053be6" prot="private" static="no" strong="no">
+        <type></type>
+        <name>BuildState</name>
+        <enumvalue id="classfwoop_1_1HttpResponse_1a1f8d8def8bd0bcd523e2ff4501053be6a3af5bedcb144e78bce6e63cb3475502d" prot="private">
+          <name>Complete</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpResponse_1a1f8d8def8bd0bcd523e2ff4501053be6aab2dd8d76281f13175e9cd3336cf0237" prot="private">
+          <name>WaitingOnHeaders</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpResponse_1a1f8d8def8bd0bcd523e2ff4501053be6a8af8f3fc71885b8befd113939569db23" prot="private">
+          <name>WaitingOnBody</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpResponse_1a1f8d8def8bd0bcd523e2ff4501053be6a2b9cbf2cde1ccf146489b4ab1b563fdb" prot="private">
+          <name>Errored</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpresponse.h" line="23" column="5" bodyfile="http/fwoop_httpresponse.h" bodystart="23" bodyend="28"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1HttpResponse_1a4b901dbb2fd593be73419e1064ae1e87" prot="private" static="no" mutable="no">
+        <type>BuildState</type>
+        <definition>BuildState fwoop::HttpResponse::d_state</definition>
+        <argsstring></argsstring>
+        <name>d_state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpresponse.h" line="30" column="16" bodyfile="http/fwoop_httpresponse.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpResponse_1a9f41039ace90e8101bdef427641ef64a" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t fwoop::HttpResponse::d_contentLength</definition>
+        <argsstring></argsstring>
+        <name>d_contentLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpresponse.h" line="31" column="14" bodyfile="http/fwoop_httpresponse.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpResponse_1a1bc3dcd3c779454a7f7c7d89e4dd72dc" prot="private" static="no" mutable="no">
+        <type><ref refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989" kindref="member">HttpVersion::Value</ref></type>
+        <definition>HttpVersion::Value fwoop::HttpResponse::d_version</definition>
+        <argsstring></argsstring>
+        <name>d_version</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpresponse.h" line="32" column="24" bodyfile="http/fwoop_httpresponse.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpResponse_1a7feebca28bfeeea3dd0dee698291d78c" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespacefwoop_1a8f8f27ac925f849da3190dea9dcdcbf9" kindref="member">HttpHeaderField_t</ref> &gt;</type>
+        <definition>std::vector&lt;HttpHeaderField_t&gt; fwoop::HttpResponse::d_headers</definition>
+        <argsstring></argsstring>
+        <name>d_headers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpresponse.h" line="33" column="17" bodyfile="http/fwoop_httpresponse.h" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfwoop_1_1HttpResponse_1aed50f9041056ad80b9f63682dfca076f" prot="private" static="no" mutable="no">
         <type>std::string</type>
         <definition>std::string fwoop::HttpResponse::d_status</definition>
         <argsstring></argsstring>
         <name>d_status</name>
-        <qualifiedname>fwoop::HttpResponse::d_status</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpresponse.h" line="14" column="36" bodyfile="http/fwoop_httpresponse.h" bodystart="14" bodyend="-1"/>
+        <location file="http/fwoop_httpresponse.h" line="34" column="17" bodyfile="http/fwoop_httpresponse.h" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfwoop_1_1HttpResponse_1a1248e63e4a04e13b115aae8041d40f88" prot="private" static="no" mutable="no">
         <type>std::string</type>
         <definition>std::string fwoop::HttpResponse::d_body</definition>
         <argsstring></argsstring>
         <name>d_body</name>
-        <qualifiedname>fwoop::HttpResponse::d_body</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpresponse.h" line="15" column="36" bodyfile="http/fwoop_httpresponse.h" bodystart="15" bodyend="-1"/>
+        <location file="http/fwoop_httpresponse.h" line="35" column="17" bodyfile="http/fwoop_httpresponse.h" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfwoop_1_1HttpResponse_1a02d9f44e90855351cba46e222625c546" prot="private" static="no" mutable="no">
         <type>std::string</type>
         <definition>std::string fwoop::HttpResponse::d_fileName</definition>
         <argsstring></argsstring>
         <name>d_fileName</name>
-        <qualifiedname>fwoop::HttpResponse::d_fileName</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpresponse.h" line="16" column="36" bodyfile="http/fwoop_httpresponse.h" bodystart="16" bodyend="-1"/>
+        <location file="http/fwoop_httpresponse.h" line="36" column="17" bodyfile="http/fwoop_httpresponse.h" bodystart="36" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -67,21 +179,44 @@
         <definition>fwoop::HttpResponse::HttpResponse</definition>
         <argsstring>()</argsstring>
         <name>HttpResponse</name>
-        <qualifiedname>fwoop::HttpResponse::HttpResponse</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpresponse.h" line="19" column="14" bodyfile="http/fwoop_httpresponse.cpp" bodystart="10" bodyend="13"/>
+        <location file="http/fwoop_httpresponse.h" line="39" column="14" bodyfile="http/fwoop_httpresponse.cpp" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpResponse_1a96705dd8fd0cb45ffe662b1e513401c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfwoop_1_1HttpResponse_1aa49b465ee9cc323c8caf8a2c51c1fbb8" kindref="member">BuildResult</ref></type>
+        <definition>HttpResponse::BuildResult fwoop::HttpResponse::build</definition>
+        <argsstring>(uint8_t *buffer, uint32_t bufferSize, uint32_t &amp;bytesParsed)</argsstring>
+        <name>build</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>bufferSize</declname>
+        </param>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>bytesParsed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpresponse.h" line="41" column="17" bodyfile="http/fwoop_httpresponse.cpp" bodystart="98" bodyend="172"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpResponse_1a050ff9534a94ab4e79fa4d6cbf9ec891" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void fwoop::HttpResponse::setStatus</definition>
         <argsstring>(const std::string &amp;status)</argsstring>
         <name>setStatus</name>
-        <qualifiedname>fwoop::HttpResponse::setStatus</qualifiedname>
         <param>
           <type>const std::string &amp;</type>
           <declname>status</declname>
@@ -92,14 +227,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpresponse.h" line="21" column="10" bodyfile="http/fwoop_httpresponse.h" bodystart="37" bodyend="40"/>
+        <location file="http/fwoop_httpresponse.h" line="43" column="10" bodyfile="http/fwoop_httpresponse.h" bodystart="59" bodyend="59"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpResponse_1a35cbcecec5402da02a84baff37aabf13" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void fwoop::HttpResponse::addHeader</definition>
         <argsstring>(const HttpHeader &amp;name, const std::string &amp;value)</argsstring>
         <name>addHeader</name>
-        <qualifiedname>fwoop::HttpResponse::addHeader</qualifiedname>
         <param>
           <type>const <ref refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929" kindref="member">HttpHeader</ref> &amp;</type>
           <declname>name</declname>
@@ -114,14 +248,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpresponse.h" line="22" column="10" bodyfile="http/fwoop_httpresponse.h" bodystart="43" bodyend="46"/>
+        <location file="http/fwoop_httpresponse.h" line="44" column="10" bodyfile="http/fwoop_httpresponse.h" bodystart="61" bodyend="64"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpResponse_1ac872e46c9b0f9533a0a48041f6c455bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void fwoop::HttpResponse::addHeader</definition>
         <argsstring>(const HttpCustomHeader &amp;name, const std::string &amp;value)</argsstring>
         <name>addHeader</name>
-        <qualifiedname>fwoop::HttpResponse::addHeader</qualifiedname>
         <param>
           <type>const <ref refid="namespacefwoop_1ad8b2b49bc7a5746411b682ac94256ad7" kindref="member">HttpCustomHeader</ref> &amp;</type>
           <declname>name</declname>
@@ -136,14 +269,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpresponse.h" line="23" column="10" bodyfile="http/fwoop_httpresponse.h" bodystart="49" bodyend="52"/>
+        <location file="http/fwoop_httpresponse.h" line="45" column="10" bodyfile="http/fwoop_httpresponse.h" bodystart="66" bodyend="69"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpResponse_1a3108372419e3c58abce0b8c913468d5b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void fwoop::HttpResponse::setBody</definition>
         <argsstring>(const std::string &amp;body)</argsstring>
         <name>setBody</name>
-        <qualifiedname>fwoop::HttpResponse::setBody</qualifiedname>
         <param>
           <type>const std::string &amp;</type>
           <declname>body</declname>
@@ -154,14 +286,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpresponse.h" line="24" column="10" bodyfile="http/fwoop_httpresponse.h" bodystart="55" bodyend="58"/>
+        <location file="http/fwoop_httpresponse.h" line="46" column="10" bodyfile="http/fwoop_httpresponse.h" bodystart="71" bodyend="71"/>
       </memberdef>
-      <memberdef kind="function" id="classfwoop_1_1HttpResponse_1aafacb64565e651bac83a592d80e0d176" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classfwoop_1_1HttpResponse_1aafacb64565e651bac83a592d80e0d176" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void fwoop::HttpResponse::streamFile</definition>
         <argsstring>(const std::string &amp;fileName)</argsstring>
         <name>streamFile</name>
-        <qualifiedname>fwoop::HttpResponse::streamFile</qualifiedname>
         <param>
           <type>const std::string &amp;</type>
           <declname>fileName</declname>
@@ -172,14 +303,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpresponse.h" line="25" column="10" bodyfile="http/fwoop_httpresponse.h" bodystart="61" bodyend="64"/>
+        <location file="http/fwoop_httpresponse.h" line="47" column="10" bodyfile="http/fwoop_httpresponse.cpp" bodystart="13" bodyend="22"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpResponse_1a2ebb21daab35240ddb4442b695d7b2a8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>uint8_t *</type>
         <definition>uint8_t * fwoop::HttpResponse::encode</definition>
         <argsstring>(uint32_t &amp;length) const</argsstring>
         <name>encode</name>
-        <qualifiedname>fwoop::HttpResponse::encode</qualifiedname>
         <param>
           <type>uint32_t &amp;</type>
           <declname>length</declname>
@@ -190,86 +320,109 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpresponse.h" line="27" column="13" bodyfile="http/fwoop_httpresponse.cpp" bodystart="15" bodyend="84"/>
+        <location file="http/fwoop_httpresponse.h" line="49" column="13" bodyfile="http/fwoop_httpresponse.cpp" bodystart="24" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpResponse_1a0c26dbc992c0ec3c70c76aab95050cec" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989" kindref="member">HttpVersion::Value</ref></type>
+        <definition>const HttpVersion::Value fwoop::HttpResponse::getVersion</definition>
+        <argsstring>() const</argsstring>
+        <name>getVersion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpresponse.h" line="50" column="30" bodyfile="http/fwoop_httpresponse.h" bodystart="73" bodyend="73"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpResponse_1a36ef985b213de68657d3c55efbef2874" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>const std::vector&lt; <ref refid="namespacefwoop_1a8f8f27ac925f849da3190dea9dcdcbf9" kindref="member">HttpHeaderField_t</ref> &gt;</type>
         <definition>const std::vector&lt; HttpHeaderField_t &gt; fwoop::HttpResponse::getHeaders</definition>
         <argsstring>() const</argsstring>
         <name>getHeaders</name>
-        <qualifiedname>fwoop::HttpResponse::getHeaders</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpresponse.h" line="28" column="23" bodyfile="http/fwoop_httpresponse.h" bodystart="67" bodyend="70"/>
+        <location file="http/fwoop_httpresponse.h" line="51" column="23" bodyfile="http/fwoop_httpresponse.h" bodystart="75" bodyend="75"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpResponse_1a0890c842fe11d8e4e4c3bdf406607510" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>const std::string &amp;</type>
         <definition>const std::string &amp; fwoop::HttpResponse::getStatus</definition>
         <argsstring>() const</argsstring>
         <name>getStatus</name>
-        <qualifiedname>fwoop::HttpResponse::getStatus</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpresponse.h" line="29" column="23" bodyfile="http/fwoop_httpresponse.h" bodystart="73" bodyend="76"/>
+        <location file="http/fwoop_httpresponse.h" line="52" column="23" bodyfile="http/fwoop_httpresponse.h" bodystart="77" bodyend="77"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpResponse_1a9e82b9605a3f9a2f62c4315815a25972" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>const std::string &amp;</type>
         <definition>const std::string &amp; fwoop::HttpResponse::getBody</definition>
         <argsstring>() const</argsstring>
         <name>getBody</name>
-        <qualifiedname>fwoop::HttpResponse::getBody</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpresponse.h" line="30" column="23" bodyfile="http/fwoop_httpresponse.h" bodystart="79" bodyend="82"/>
+        <location file="http/fwoop_httpresponse.h" line="53" column="23" bodyfile="http/fwoop_httpresponse.h" bodystart="79" bodyend="79"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpResponse_1a015276bfeb92644b7b8edd75a8caf474" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>const std::string &amp;</type>
         <definition>const std::string &amp; fwoop::HttpResponse::getFile</definition>
         <argsstring>() const</argsstring>
         <name>getFile</name>
-        <qualifiedname>fwoop::HttpResponse::getFile</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpresponse.h" line="31" column="23" bodyfile="http/fwoop_httpresponse.h" bodystart="85" bodyend="88"/>
+        <location file="http/fwoop_httpresponse.h" line="54" column="23" bodyfile="http/fwoop_httpresponse.h" bodystart="81" bodyend="81"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="http/fwoop_httpresponse.h" line="11" column="1" bodyfile="http/fwoop_httpresponse.h" bodystart="11" bodyend="32"/>
+    <location file="http/fwoop_httpresponse.h" line="14" column="1" bodyfile="http/fwoop_httpresponse.h" bodystart="14" bodyend="55"/>
     <listofallmembers>
       <member refid="classfwoop_1_1HttpResponse_1a35cbcecec5402da02a84baff37aabf13" prot="public" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>addHeader</name></member>
       <member refid="classfwoop_1_1HttpResponse_1ac872e46c9b0f9533a0a48041f6c455bc" prot="public" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>addHeader</name></member>
+      <member refid="classfwoop_1_1HttpResponse_1a96705dd8fd0cb45ffe662b1e513401c7" prot="public" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>build</name></member>
+      <member refid="classfwoop_1_1HttpResponse_1aa49b465ee9cc323c8caf8a2c51c1fbb8" prot="public" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>BuildResult</name></member>
+      <member refid="classfwoop_1_1HttpResponse_1a1f8d8def8bd0bcd523e2ff4501053be6" prot="private" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>BuildState</name></member>
+      <member refid="classfwoop_1_1HttpResponse_1a1f8d8def8bd0bcd523e2ff4501053be6a3af5bedcb144e78bce6e63cb3475502d" prot="private" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>Complete</name></member>
       <member refid="classfwoop_1_1HttpResponse_1a1248e63e4a04e13b115aae8041d40f88" prot="private" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>d_body</name></member>
+      <member refid="classfwoop_1_1HttpResponse_1a9f41039ace90e8101bdef427641ef64a" prot="private" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>d_contentLength</name></member>
       <member refid="classfwoop_1_1HttpResponse_1a02d9f44e90855351cba46e222625c546" prot="private" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>d_fileName</name></member>
       <member refid="classfwoop_1_1HttpResponse_1a7feebca28bfeeea3dd0dee698291d78c" prot="private" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>d_headers</name></member>
+      <member refid="classfwoop_1_1HttpResponse_1a4b901dbb2fd593be73419e1064ae1e87" prot="private" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>d_state</name></member>
       <member refid="classfwoop_1_1HttpResponse_1aed50f9041056ad80b9f63682dfca076f" prot="private" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>d_status</name></member>
+      <member refid="classfwoop_1_1HttpResponse_1a1bc3dcd3c779454a7f7c7d89e4dd72dc" prot="private" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>d_version</name></member>
+      <member refid="classfwoop_1_1HttpResponse_1aa49b465ee9cc323c8caf8a2c51c1fbb8a2315d5d3c62a0fbcd676fea1cf926a83" prot="public" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>Done</name></member>
       <member refid="classfwoop_1_1HttpResponse_1a2ebb21daab35240ddb4442b695d7b2a8" prot="public" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>encode</name></member>
+      <member refid="classfwoop_1_1HttpResponse_1a1f8d8def8bd0bcd523e2ff4501053be6a2b9cbf2cde1ccf146489b4ab1b563fdb" prot="private" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>Errored</name></member>
+      <member refid="classfwoop_1_1HttpResponse_1aa49b465ee9cc323c8caf8a2c51c1fbb8a192a0bca8526a495a59d081e75e96174" prot="public" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>Failure</name></member>
       <member refid="classfwoop_1_1HttpResponse_1a9e82b9605a3f9a2f62c4315815a25972" prot="public" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>getBody</name></member>
       <member refid="classfwoop_1_1HttpResponse_1a015276bfeb92644b7b8edd75a8caf474" prot="public" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>getFile</name></member>
       <member refid="classfwoop_1_1HttpResponse_1a36ef985b213de68657d3c55efbef2874" prot="public" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>getHeaders</name></member>
       <member refid="classfwoop_1_1HttpResponse_1a0890c842fe11d8e4e4c3bdf406607510" prot="public" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>getStatus</name></member>
+      <member refid="classfwoop_1_1HttpResponse_1a0c26dbc992c0ec3c70c76aab95050cec" prot="public" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>getVersion</name></member>
       <member refid="classfwoop_1_1HttpResponse_1a249829ee7f5e22aef2c33a1853d9e09e" prot="public" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>HttpResponse</name></member>
+      <member refid="classfwoop_1_1HttpResponse_1aa49b465ee9cc323c8caf8a2c51c1fbb8a56603aa07bf554a94cebd3af59a2ac21" prot="public" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>Incomplete</name></member>
       <member refid="classfwoop_1_1HttpResponse_1a3108372419e3c58abce0b8c913468d5b" prot="public" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>setBody</name></member>
       <member refid="classfwoop_1_1HttpResponse_1a050ff9534a94ab4e79fa4d6cbf9ec891" prot="public" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>setStatus</name></member>
       <member refid="classfwoop_1_1HttpResponse_1aafacb64565e651bac83a592d80e0d176" prot="public" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>streamFile</name></member>
+      <member refid="classfwoop_1_1HttpResponse_1a1f8d8def8bd0bcd523e2ff4501053be6a8af8f3fc71885b8befd113939569db23" prot="private" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>WaitingOnBody</name></member>
+      <member refid="classfwoop_1_1HttpResponse_1a1f8d8def8bd0bcd523e2ff4501053be6aab2dd8d76281f13175e9cd3336cf0237" prot="private" virt="non-virtual"><scope>fwoop::HttpResponse</scope><name>WaitingOnHeaders</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

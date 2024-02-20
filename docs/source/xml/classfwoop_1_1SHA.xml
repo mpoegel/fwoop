@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classfwoop_1_1SHA" kind="class" language="C++" prot="public">
     <compoundname>fwoop::SHA</compoundname>
     <includes refid="fwoop__sha_8h" local="no">fwoop_sha.h</includes>
@@ -10,7 +10,6 @@
         <definition>const uint32_t fwoop::SHA::SHA256HashSize</definition>
         <argsstring></argsstring>
         <name>SHA256HashSize</name>
-        <qualifiedname>fwoop::SHA::SHA256HashSize</qualifiedname>
         <initializer>= 32</initializer>
         <briefdescription>
         </briefdescription>
@@ -27,7 +26,6 @@
         <definition>const uint32_t fwoop::SHA::SHA256MessageBlockSize</definition>
         <argsstring></argsstring>
         <name>SHA256MessageBlockSize</name>
-        <qualifiedname>fwoop::SHA::SHA256MessageBlockSize</qualifiedname>
         <initializer>= 64</initializer>
         <briefdescription>
         </briefdescription>
@@ -42,11 +40,8 @@
         <definition>const uint32_t fwoop::SHA::SHA256_H0</definition>
         <argsstring>[SHA256HashSize/4]</argsstring>
         <name>SHA256_H0</name>
-        <qualifiedname>fwoop::SHA::SHA256_H0</qualifiedname>
-        <initializer>= {
-    0x6A09E667, 0xBB67AE85, 0x3C6EF372, 0xA54FF53A,
-    0x510E527F, 0x9B05688C, 0x1F83D9AB, 0x5BE0CD19
-}</initializer>
+        <initializer>= {0x6A09E667, 0xBB67AE85, 0x3C6EF372, 0xA54FF53A,
+                                   0x510E527F, 0x9B05688C, 0x1F83D9AB, 0x5BE0CD19}</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -62,7 +57,6 @@
         <definition>int fwoop::SHA::h256</definition>
         <argsstring>(const uint8_t *msg, uint32_t length, uint8_t *digest)</argsstring>
         <name>h256</name>
-        <qualifiedname>fwoop::SHA::h256</qualifiedname>
         <param>
           <type>const uint8_t *</type>
           <declname>msg</declname>
@@ -81,14 +75,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="crypto/fwoop_sha.h" line="42" column="16" bodyfile="crypto/fwoop_sha.cpp" bodystart="25" bodyend="37"/>
+        <location file="crypto/fwoop_sha.h" line="42" column="16" bodyfile="crypto/fwoop_open_sha.cpp" bodystart="7" bodyend="7"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1SHA_1ac148fd0eedea347e554153c5b1e42361" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int fwoop::SHA::h256</definition>
         <argsstring>(const std::string &amp;msg, uint8_t *digest)</argsstring>
         <name>h256</name>
-        <qualifiedname>fwoop::SHA::h256</qualifiedname>
         <param>
           <type>const std::string &amp;</type>
           <declname>msg</declname>
@@ -103,7 +96,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="crypto/fwoop_sha.h" line="43" column="16" bodyfile="crypto/fwoop_sha.cpp" bodystart="39" bodyend="42"/>
+        <location file="crypto/fwoop_sha.h" line="43" column="16" bodyfile="crypto/fwoop_open_sha.cpp" bodystart="9" bodyend="9"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

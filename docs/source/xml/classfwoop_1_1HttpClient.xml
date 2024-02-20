@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1HttpClient" kind="class" language="C++" prot="public">
+    <compoundname>fwoop::HttpClient</compoundname>
+    <includes refid="fwoop__httpclient_8h" local="no">fwoop_httpclient.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classfwoop_1_1HttpClient_1aa416981960aa5f641a7d6839d35d0934" prot="public" static="no" strong="no">
+        <type></type>
+        <name>HttpErrc</name>
+        <enumvalue id="classfwoop_1_1HttpClient_1aa416981960aa5f641a7d6839d35d0934a0dbce8eb79414ddf23ecdafd9dfca892" prot="public">
+          <name>SocketError</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpClient_1aa416981960aa5f641a7d6839d35d0934a0280ab97036333a65f4f5380b6c5a3ba" prot="public">
+          <name>ConnectFailed</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpClient_1aa416981960aa5f641a7d6839d35d0934a461ea3feb72ab11b7f3ddc55f5a2eec0" prot="public">
+          <name>HostNotFound</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpClient_1aa416981960aa5f641a7d6839d35d0934aa5ed71749cfc26d7b233299a052bdf51" prot="public">
+          <name>WriteFailed</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpClient_1aa416981960aa5f641a7d6839d35d0934a983b0042d384742816de70f3a2b74011" prot="public">
+          <name>ReadFailed</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpclient.h" line="13" column="5" bodyfile="http/fwoop_httpclient.h" bodystart="13" bodyend="19"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1HttpClient_1ad1427013df0f1f0680b8ca6d9456e005" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string fwoop::HttpClient::d_host</definition>
+        <argsstring></argsstring>
+        <name>d_host</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpclient.h" line="22" column="17" bodyfile="http/fwoop_httpclient.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpClient_1a50e653a80f44afbe2d54337a2404641b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int fwoop::HttpClient::d_port</definition>
+        <argsstring></argsstring>
+        <name>d_port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpclient.h" line="23" column="9" bodyfile="http/fwoop_httpclient.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpClient_1af1e4263e3e0f7f660f671fd272420215" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int fwoop::HttpClient::d_conn</definition>
+        <argsstring></argsstring>
+        <name>d_conn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpclient.h" line="24" column="9" bodyfile="http/fwoop_httpclient.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classfwoop_1_1HttpClient_1aab0018b4c805b7b0c6b4e02f38abe87e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::HttpClient::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpclient.h" line="26" column="10" bodyfile="http/fwoop_httpclient.cpp" bodystart="29" bodyend="33"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfwoop_1_1HttpClient_1a7e8d7d53dd07ff6f3d5681f8931c396b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::HttpClient::HttpClient</definition>
+        <argsstring>(const std::string &amp;host, int port=80)</argsstring>
+        <name>HttpClient</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>host</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+          <defval>80</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpclient.h" line="29" column="5" bodyfile="http/fwoop_httpclient.cpp" bodystart="20" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpClient_1ac12e85a1ea44e9138897d2e602d21963" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::HttpClient::~HttpClient</definition>
+        <argsstring>()</argsstring>
+        <name>~HttpClient</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpclient.h" line="30" column="5" bodyfile="http/fwoop_httpclient.cpp" bodystart="22" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpClient_1aa2840469a2142ff053f913d295518c09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::error_code</type>
+        <definition>std::error_code fwoop::HttpClient::makeReqest</definition>
+        <argsstring>(const HttpRequest &amp;request, std::shared_ptr&lt; HttpResponse &gt; &amp;response)</argsstring>
+        <name>makeReqest</name>
+        <param>
+          <type>const <ref refid="classfwoop_1_1HttpRequest" kindref="compound">HttpRequest</ref> &amp;</type>
+          <declname>request</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classfwoop_1_1HttpResponse" kindref="compound">HttpResponse</ref> &gt; &amp;</type>
+          <declname>response</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpclient.h" line="32" column="21" bodyfile="http/fwoop_httpclient.cpp" bodystart="35" bodyend="112"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="http/fwoop_httpclient.h" line="11" column="1" bodyfile="http/fwoop_httpclient.h" bodystart="11" bodyend="33"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1HttpClient_1aa416981960aa5f641a7d6839d35d0934a0280ab97036333a65f4f5380b6c5a3ba" prot="public" virt="non-virtual"><scope>fwoop::HttpClient</scope><name>ConnectFailed</name></member>
+      <member refid="classfwoop_1_1HttpClient_1af1e4263e3e0f7f660f671fd272420215" prot="private" virt="non-virtual"><scope>fwoop::HttpClient</scope><name>d_conn</name></member>
+      <member refid="classfwoop_1_1HttpClient_1ad1427013df0f1f0680b8ca6d9456e005" prot="private" virt="non-virtual"><scope>fwoop::HttpClient</scope><name>d_host</name></member>
+      <member refid="classfwoop_1_1HttpClient_1a50e653a80f44afbe2d54337a2404641b" prot="private" virt="non-virtual"><scope>fwoop::HttpClient</scope><name>d_port</name></member>
+      <member refid="classfwoop_1_1HttpClient_1aa416981960aa5f641a7d6839d35d0934a461ea3feb72ab11b7f3ddc55f5a2eec0" prot="public" virt="non-virtual"><scope>fwoop::HttpClient</scope><name>HostNotFound</name></member>
+      <member refid="classfwoop_1_1HttpClient_1a7e8d7d53dd07ff6f3d5681f8931c396b" prot="public" virt="non-virtual"><scope>fwoop::HttpClient</scope><name>HttpClient</name></member>
+      <member refid="classfwoop_1_1HttpClient_1aa416981960aa5f641a7d6839d35d0934" prot="public" virt="non-virtual"><scope>fwoop::HttpClient</scope><name>HttpErrc</name></member>
+      <member refid="classfwoop_1_1HttpClient_1aa2840469a2142ff053f913d295518c09" prot="public" virt="non-virtual"><scope>fwoop::HttpClient</scope><name>makeReqest</name></member>
+      <member refid="classfwoop_1_1HttpClient_1aa416981960aa5f641a7d6839d35d0934a983b0042d384742816de70f3a2b74011" prot="public" virt="non-virtual"><scope>fwoop::HttpClient</scope><name>ReadFailed</name></member>
+      <member refid="classfwoop_1_1HttpClient_1aab0018b4c805b7b0c6b4e02f38abe87e" prot="private" virt="non-virtual"><scope>fwoop::HttpClient</scope><name>reset</name></member>
+      <member refid="classfwoop_1_1HttpClient_1aa416981960aa5f641a7d6839d35d0934a0dbce8eb79414ddf23ecdafd9dfca892" prot="public" virt="non-virtual"><scope>fwoop::HttpClient</scope><name>SocketError</name></member>
+      <member refid="classfwoop_1_1HttpClient_1aa416981960aa5f641a7d6839d35d0934aa5ed71749cfc26d7b233299a052bdf51" prot="public" virt="non-virtual"><scope>fwoop::HttpClient</scope><name>WriteFailed</name></member>
+      <member refid="classfwoop_1_1HttpClient_1ac12e85a1ea44e9138897d2e602d21963" prot="public" virt="non-virtual"><scope>fwoop::HttpClient</scope><name>~HttpClient</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

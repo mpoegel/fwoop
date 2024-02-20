@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classfwoop_1_1HttpSettingsFrame" kind="class" language="C++" prot="public">
     <compoundname>fwoop::HttpSettingsFrame</compoundname>
     <basecompoundref refid="classfwoop_1_1HttpFrame" prot="public" virt="non-virtual">fwoop::HttpFrame</basecompoundref>
@@ -8,7 +8,6 @@
       <memberdef kind="enum" id="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079" prot="private" static="no" strong="no">
         <type></type>
         <name>Parameter</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::Parameter</qualifiedname>
         <enumvalue id="classfwoop_1_1HttpSettingsFrame_1a6740c3eae34fbb49bd904fb52d424079a5e9a4d9d06bf6342ae61ff566e6835fd" prot="private">
           <name>HeaderTableSize</name>
           <initializer>= 1</initializer>
@@ -80,7 +79,6 @@
         <definition>const unsigned int fwoop::HttpSettingsFrame::PARAMETER_SIZE</definition>
         <argsstring></argsstring>
         <name>PARAMETER_SIZE</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::PARAMETER_SIZE</qualifiedname>
         <initializer>= 6</initializer>
         <briefdescription>
         </briefdescription>
@@ -97,7 +95,6 @@
         <definition>std::optional&lt;uint32_t&gt; fwoop::HttpSettingsFrame::d_headerTableSize</definition>
         <argsstring></argsstring>
         <name>d_headerTableSize</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::d_headerTableSize</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -111,21 +108,19 @@
         <definition>std::optional&lt;bool&gt; fwoop::HttpSettingsFrame::d_enablePush</definition>
         <argsstring></argsstring>
         <name>d_enablePush</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::d_enablePush</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpsettingsframe.h" line="24" column="23" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="24" bodyend="-1"/>
+        <location file="http/fwoop_httpsettingsframe.h" line="24" column="19" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="24" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfwoop_1_1HttpSettingsFrame_1a25c948c54ca76c351f01da3202aa0cdf" prot="private" static="no" mutable="no">
         <type>std::optional&lt; uint32_t &gt;</type>
         <definition>std::optional&lt;uint32_t&gt; fwoop::HttpSettingsFrame::d_maxConcurrentStreams</definition>
         <argsstring></argsstring>
         <name>d_maxConcurrentStreams</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::d_maxConcurrentStreams</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -139,7 +134,6 @@
         <definition>std::optional&lt;uint32_t&gt; fwoop::HttpSettingsFrame::d_initialWindowSize</definition>
         <argsstring></argsstring>
         <name>d_initialWindowSize</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::d_initialWindowSize</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -153,7 +147,6 @@
         <definition>std::optional&lt;uint32_t&gt; fwoop::HttpSettingsFrame::d_maxWindowSize</definition>
         <argsstring></argsstring>
         <name>d_maxWindowSize</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::d_maxWindowSize</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -167,7 +160,6 @@
         <definition>std::optional&lt;uint32_t&gt; fwoop::HttpSettingsFrame::d_maxFrameSize</definition>
         <argsstring></argsstring>
         <name>d_maxFrameSize</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::d_maxFrameSize</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -181,7 +173,6 @@
         <definition>std::optional&lt;uint32_t&gt; fwoop::HttpSettingsFrame::d_maxHeaderListSize</definition>
         <argsstring></argsstring>
         <name>d_maxHeaderListSize</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::d_maxHeaderListSize</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -197,7 +188,6 @@
         <definition>fwoop::HttpSettingsFrame::HttpSettingsFrame</definition>
         <argsstring>(unsigned int length, uint8_t flags, uint8_t *streamID, uint8_t *payload)</argsstring>
         <name>HttpSettingsFrame</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::HttpSettingsFrame</qualifiedname>
         <param>
           <type>unsigned int</type>
           <declname>length</declname>
@@ -227,49 +217,45 @@
         <definition>fwoop::HttpSettingsFrame::HttpSettingsFrame</definition>
         <argsstring>()</argsstring>
         <name>HttpSettingsFrame</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::HttpSettingsFrame</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpsettingsframe.h" line="33" column="14" bodyfile="http/fwoop_httpsettingsframe.cpp" bodystart="52" bodyend="55"/>
+        <location file="http/fwoop_httpsettingsframe.h" line="33" column="14" bodyfile="http/fwoop_httpsettingsframe.cpp" bodystart="52" bodyend="52"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1a0ad009645c53c4070ca387b53900d496" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>fwoop::HttpSettingsFrame::~HttpSettingsFrame</definition>
         <argsstring>()</argsstring>
         <name>~HttpSettingsFrame</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::~HttpSettingsFrame</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpsettingsframe.h" line="35" column="5" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="56" bodyend="58"/>
+        <location file="http/fwoop_httpsettingsframe.h" line="35" column="5" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="55" bodyend="55"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1af4251246f071e4c86e87f077a16aa436" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void fwoop::HttpSettingsFrame::setAck</definition>
         <argsstring>()</argsstring>
         <name>setAck</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::setAck</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpsettingsframe.h" line="37" column="10" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="61" bodyend="64"/>
+        <location file="http/fwoop_httpsettingsframe.h" line="37" column="10" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="57" bodyend="57"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1ab3080cde048169f484902f941f443fa6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void fwoop::HttpSettingsFrame::setHeaderTableSize</definition>
         <argsstring>(uint32_t headerTableSize)</argsstring>
         <name>setHeaderTableSize</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::setHeaderTableSize</qualifiedname>
         <param>
           <type>uint32_t</type>
           <declname>headerTableSize</declname>
@@ -280,14 +266,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpsettingsframe.h" line="38" column="10" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="67" bodyend="73"/>
+        <location file="http/fwoop_httpsettingsframe.h" line="38" column="10" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="59" bodyend="65"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1a82cadaffeb044d7155f8b7357a7dab6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void fwoop::HttpSettingsFrame::setEnablePush</definition>
         <argsstring>(bool enablePush)</argsstring>
         <name>setEnablePush</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::setEnablePush</qualifiedname>
         <param>
           <type>bool</type>
           <declname>enablePush</declname>
@@ -305,7 +290,6 @@
         <definition>void fwoop::HttpSettingsFrame::setMaxConcurrentStreams</definition>
         <argsstring>(uint32_t maxConcurrentStreams)</argsstring>
         <name>setMaxConcurrentStreams</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::setMaxConcurrentStreams</qualifiedname>
         <param>
           <type>uint32_t</type>
           <declname>maxConcurrentStreams</declname>
@@ -323,7 +307,6 @@
         <definition>void fwoop::HttpSettingsFrame::setInitialWindowSize</definition>
         <argsstring>(uint32_t initialWindowSize)</argsstring>
         <name>setInitialWindowSize</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::setInitialWindowSize</qualifiedname>
         <param>
           <type>uint32_t</type>
           <declname>initialWindowSize</declname>
@@ -341,7 +324,6 @@
         <definition>void fwoop::HttpSettingsFrame::setMaxFrameSize</definition>
         <argsstring>(uint32_t maxFrameSize)</argsstring>
         <name>setMaxFrameSize</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::setMaxFrameSize</qualifiedname>
         <param>
           <type>uint32_t</type>
           <declname>maxFrameSize</declname>
@@ -352,14 +334,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpsettingsframe.h" line="42" column="10" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="76" bodyend="82"/>
+        <location file="http/fwoop_httpsettingsframe.h" line="42" column="10" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="67" bodyend="73"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1a7118296805eab77b61f4f5cc7e46f917" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void fwoop::HttpSettingsFrame::setMaxHeaderListSize</definition>
         <argsstring>(uint32_t maxHeaderListSize)</argsstring>
         <name>setMaxHeaderListSize</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::setMaxHeaderListSize</qualifiedname>
         <param>
           <type>uint32_t</type>
           <declname>maxHeaderListSize</declname>
@@ -377,91 +358,84 @@
         <definition>std::optional&lt; uint32_t &gt; fwoop::HttpSettingsFrame::headerTableSize</definition>
         <argsstring>() const</argsstring>
         <name>headerTableSize</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::headerTableSize</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpsettingsframe.h" line="45" column="19" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="85" bodyend="88"/>
+        <location file="http/fwoop_httpsettingsframe.h" line="45" column="19" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="75" bodyend="75"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1af254ae74966f42fee7f6de3d5bdb2ce3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
         <definition>bool fwoop::HttpSettingsFrame::enablePush</definition>
         <argsstring>() const</argsstring>
         <name>enablePush</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::enablePush</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpsettingsframe.h" line="46" column="10" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="91" bodyend="94"/>
+        <location file="http/fwoop_httpsettingsframe.h" line="46" column="10" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="77" bodyend="77"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1a6badc5d858ef9a0c2c08fcbfc8874701" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::optional&lt; uint32_t &gt;</type>
         <definition>std::optional&lt; uint32_t &gt; fwoop::HttpSettingsFrame::maxConcurrentStreams</definition>
         <argsstring>() const</argsstring>
         <name>maxConcurrentStreams</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::maxConcurrentStreams</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpsettingsframe.h" line="47" column="19" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="97" bodyend="100"/>
+        <location file="http/fwoop_httpsettingsframe.h" line="47" column="19" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="79" bodyend="79"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1a4e725b07bfb7159b1044320b514493e0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::optional&lt; uint32_t &gt;</type>
         <definition>std::optional&lt; uint32_t &gt; fwoop::HttpSettingsFrame::initialWindowSize</definition>
         <argsstring>() const</argsstring>
         <name>initialWindowSize</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::initialWindowSize</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpsettingsframe.h" line="48" column="19" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="103" bodyend="106"/>
+        <location file="http/fwoop_httpsettingsframe.h" line="48" column="19" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="81" bodyend="81"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1ad45301e4095f82edb3f7721c6c00c953" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::optional&lt; uint32_t &gt;</type>
         <definition>std::optional&lt; uint32_t &gt; fwoop::HttpSettingsFrame::maxFrameSize</definition>
         <argsstring>() const</argsstring>
         <name>maxFrameSize</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::maxFrameSize</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpsettingsframe.h" line="49" column="19" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="109" bodyend="112"/>
+        <location file="http/fwoop_httpsettingsframe.h" line="49" column="19" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="83" bodyend="83"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1a89eaaf80c48441313a91525141840043" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::optional&lt; uint32_t &gt;</type>
         <definition>std::optional&lt; uint32_t &gt; fwoop::HttpSettingsFrame::maxHeaderListSize</definition>
         <argsstring>() const</argsstring>
         <name>maxHeaderListSize</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::maxHeaderListSize</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpsettingsframe.h" line="50" column="19" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="115" bodyend="118"/>
+        <location file="http/fwoop_httpsettingsframe.h" line="50" column="19" bodyfile="http/fwoop_httpsettingsframe.h" bodystart="85" bodyend="85"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpSettingsFrame_1a9343e7b63a3e0f20fd02ff883ee1c7fd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>uint8_t *</type>
         <definition>uint8_t * fwoop::HttpSettingsFrame::encode</definition>
         <argsstring>() const override</argsstring>
         <name>encode</name>
-        <qualifiedname>fwoop::HttpSettingsFrame::encode</qualifiedname>
         <reimplements refid="classfwoop_1_1HttpFrame_1a2a316cf5e601ae7e60316f7632d7a26f">encode</reimplements>
         <briefdescription>
         </briefdescription>
@@ -469,7 +443,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpsettingsframe.h" line="52" column="13" bodyfile="http/fwoop_httpsettingsframe.cpp" bodystart="57" bodyend="128"/>
+        <location file="http/fwoop_httpsettingsframe.h" line="52" column="13" bodyfile="http/fwoop_httpsettingsframe.cpp" bodystart="54" bodyend="125"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

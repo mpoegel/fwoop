@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="fwoop__httpversion_8h" kind="file" language="C++">
+    <compoundname>fwoop_httpversion.h</compoundname>
+    <includes local="no">string</includes>
+    <includedby refid="fwoop__httprequest_8h" local="no">http/fwoop_httprequest.h</includedby>
+    <includedby refid="fwoop__httpresponse_8h" local="no">http/fwoop_httpresponse.h</includedby>
+    <includedby refid="fwoop__httpserver_8h" local="no">http/fwoop_httpserver.h</includedby>
+    <includedby refid="fwoop__httpversion_8cpp" local="no">http/fwoop_httpversion.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="1">
+        <label>http/fwoop_httpversion.h</label>
+        <link refid="fwoop__httpversion_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>http/fwoop_httpclient.h</label>
+        <link refid="fwoop__httpclient_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>http/fwoop_httpconnhandler.h</label>
+        <link refid="fwoop__httpconnhandler_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>http/fwoop_httpserver.h</label>
+        <link refid="fwoop__httpserver_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>http/fwoop_httpserver.cpp</label>
+        <link refid="fwoop__httpserver_8cpp"/>
+      </node>
+      <node id="2">
+        <label>http/fwoop_httprequest.h</label>
+        <link refid="fwoop__httprequest_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>http/fwoop_httprequest.cpp</label>
+        <link refid="fwoop__httprequest_8cpp"/>
+      </node>
+      <node id="7">
+        <label>http/fwoop_httpconnhandler.cpp</label>
+        <link refid="fwoop__httpconnhandler_8cpp"/>
+      </node>
+      <node id="13">
+        <label>http/fwoop_httpserverevent.cpp</label>
+        <link refid="fwoop__httpserverevent_8cpp"/>
+      </node>
+      <node id="4">
+        <label>http/fwoop_httpclient.cpp</label>
+        <link refid="fwoop__httpclient_8cpp"/>
+      </node>
+      <node id="14">
+        <label>http/fwoop_httpversion.cpp</label>
+        <link refid="fwoop__httpversion_8cpp"/>
+      </node>
+      <node id="1">
+        <label>http/fwoop_httpversion.h</label>
+        <link refid="fwoop__httpversion_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>http/fwoop_httpresponse.h</label>
+        <link refid="fwoop__httpresponse_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>http/fwoop_httpfunc.h</label>
+        <link refid="fwoop__httpfunc_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>http/fwoop_httpresponse.cpp</label>
+        <link refid="fwoop__httpresponse_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classfwoop_1_1HttpVersion" prot="public">fwoop::HttpVersion</innerclass>
+    <innernamespace refid="namespacefwoop">fwoop</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefwoop" kindref="compound">fwoop</ref><sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="classfwoop_1_1HttpVersion" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfwoop_1_1HttpVersion" kindref="compound">HttpVersion</ref><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="9" refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989" kindref="member">Value</ref><sp/>{</highlight></codeline>
+<codeline lineno="10" refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989a1bb8de17b526f928300953a5151c98fe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989a1bb8de17b526f928300953a5151c98fe" kindref="member">Undefined</ref>,</highlight></codeline>
+<codeline lineno="11" refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989aef92c2ae7f1f4ee9221a369e9bc6822b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989aef92c2ae7f1f4ee9221a369e9bc6822b" kindref="member">Http1_0</ref>,</highlight></codeline>
+<codeline lineno="12" refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989a745f517b96aa9e770d8025393f291abe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989a745f517b96aa9e770d8025393f291abe" kindref="member">Http1_1</ref>,</highlight></codeline>
+<codeline lineno="13" refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989a076bd99c65854aa6ed28437fcf8d5640" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989a076bd99c65854aa6ed28437fcf8d5640" kindref="member">Http2</ref>,</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989" kindref="member">HttpVersion::Value</ref><sp/><ref refid="classfwoop_1_1HttpVersion_1af5da86b5d2eeb89c723a5c50a8653461" kindref="member">fromString</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;versionStr);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classfwoop_1_1HttpVersion_1a76825f8eabe30ab9e7afc868b5d12cf6" kindref="member">toString</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989" kindref="member">HttpVersion::Value</ref><sp/>version);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpVersion" kindref="compound">HttpVersion</ref>()<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">std::ostream<sp/>&amp;<ref refid="namespacefwoop_1af754828089c02701bb5033423f28faff" kindref="member">operator&lt;&lt;</ref>(std::ostream<sp/>&amp;os,<sp/><ref refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989" kindref="member">HttpVersion::Value</ref><sp/>version);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>fwoop</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="http/fwoop_httpversion.h"/>
+  </compounddef>
+</doxygen>

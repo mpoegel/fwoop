@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1Writer" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>fwoop::Writer</compoundname>
+    <derivedcompoundref refid="classfwoop_1_1SocketBase" prot="public" virt="non-virtual">fwoop::SocketBase</derivedcompoundref>
+    <includes refid="fwoop__socketio_8h" local="no">fwoop_socketio.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfwoop_1_1Writer_1af091c2ea4f81c51b2f18a61f1f46bab6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::Writer::~Writer</definition>
+        <argsstring>()</argsstring>
+        <name>~Writer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_socketio.h" line="26" column="5" bodyfile="basis/fwoop_socketio.h" bodystart="26" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Writer_1a9ca1cce9f2d609cc987e5cca42bfe3f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::error_code</type>
+        <definition>virtual std::error_code fwoop::Writer::write</definition>
+        <argsstring>(const uint8_t *buffer, uint32_t bufferSize, uint32_t &amp;bytesWritten)=0</argsstring>
+        <name>write</name>
+        <reimplementedby refid="classfwoop_1_1Socket_1a890482fe214b8c9f395ce41ef8f90564">write</reimplementedby>
+        <reimplementedby refid="classfwoop_1_1SecureSocket_1afb85f3b2ae99083c26e9b436937f2161">write</reimplementedby>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>bufferSize</declname>
+        </param>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>bytesWritten</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_socketio.h" line="27" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1Writer_1a17b85f9d80cab5f8eb12ecd3f4ee7073" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void fwoop::Writer::close</definition>
+        <argsstring>()=0</argsstring>
+        <name>close</name>
+        <reimplementedby refid="classfwoop_1_1Socket_1aeb61e7e16f832382cddc66675a6f3bf9">close</reimplementedby>
+        <reimplementedby refid="classfwoop_1_1SecureSocket_1a7e4f8f2e6d80ecd87c87ca0053affc22">close</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_socketio.h" line="28" column="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>fwoop::Writer</label>
+        <link refid="classfwoop_1_1Writer"/>
+      </node>
+      <node id="4">
+        <label>fwoop::Socket</label>
+        <link refid="classfwoop_1_1Socket"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>fwoop::SocketBase</label>
+        <link refid="classfwoop_1_1SocketBase"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>fwoop::SecureSocket</label>
+        <link refid="classfwoop_1_1SecureSocket"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="basis/fwoop_socketio.h" line="24" column="1" bodyfile="basis/fwoop_socketio.h" bodystart="24" bodyend="29"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1Writer_1a17b85f9d80cab5f8eb12ecd3f4ee7073" prot="public" virt="pure-virtual"><scope>fwoop::Writer</scope><name>close</name></member>
+      <member refid="classfwoop_1_1Writer_1a9ca1cce9f2d609cc987e5cca42bfe3f5" prot="public" virt="pure-virtual"><scope>fwoop::Writer</scope><name>write</name></member>
+      <member refid="classfwoop_1_1Writer_1af091c2ea4f81c51b2f18a61f1f46bab6" prot="public" virt="non-virtual"><scope>fwoop::Writer</scope><name>~Writer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

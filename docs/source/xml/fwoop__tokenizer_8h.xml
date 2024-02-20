@@ -1,26 +1,40 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="fwoop__tokenizer_8h" kind="file" language="C++">
     <compoundname>fwoop_tokenizer.h</compoundname>
     <includes local="no">string</includes>
+    <includedby refid="fwoop__dnsquery_8cpp" local="no">basis/fwoop_dnsquery.cpp</includedby>
     <includedby refid="fwoop__tokenizer_8cpp" local="no">basis/fwoop_tokenizer.cpp</includedby>
     <includedby refid="fwoop__httprequest_8cpp" local="no">http/fwoop_httprequest.cpp</includedby>
+    <includedby refid="fwoop__httpresponse_8cpp" local="no">http/fwoop_httpresponse.cpp</includedby>
     <includedby refid="fwoop__httpserver_8cpp" local="no">http/fwoop_httpserver.cpp</includedby>
     <incdepgraph>
+      <node id="2">
+        <label>string</label>
+      </node>
       <node id="1">
         <label>basis/fwoop_tokenizer.h</label>
         <link refid="fwoop__tokenizer_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="2">
-        <label>string</label>
-      </node>
     </incdepgraph>
     <invincdepgraph>
       <node id="2">
+        <label>basis/fwoop_dnsquery.cpp</label>
+        <link refid="fwoop__dnsquery_8cpp"/>
+      </node>
+      <node id="3">
         <label>basis/fwoop_tokenizer.cpp</label>
         <link refid="fwoop__tokenizer_8cpp"/>
+      </node>
+      <node id="6">
+        <label>http/fwoop_httpserver.cpp</label>
+        <link refid="fwoop__httpserver_8cpp"/>
+      </node>
+      <node id="4">
+        <label>http/fwoop_httprequest.cpp</label>
+        <link refid="fwoop__httprequest_8cpp"/>
       </node>
       <node id="1">
         <label>basis/fwoop_tokenizer.h</label>
@@ -31,14 +45,14 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
       </node>
-      <node id="3">
-        <label>http/fwoop_httprequest.cpp</label>
-        <link refid="fwoop__httprequest_8cpp"/>
-      </node>
-      <node id="4">
-        <label>http/fwoop_httpserver.cpp</label>
-        <link refid="fwoop__httpserver_8cpp"/>
+      <node id="5">
+        <label>http/fwoop_httpresponse.cpp</label>
+        <link refid="fwoop__httpresponse_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classfwoop_1_1Tokenizer" prot="public">fwoop::Tokenizer</innerclass>
@@ -58,7 +72,7 @@
 <codeline lineno="7" refid="classfwoop_1_1Tokenizer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfwoop_1_1Tokenizer" kindref="compound">Tokenizer</ref><sp/>{</highlight></codeline>
 <codeline lineno="8"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>d_parseString;</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d_delim;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>d_delim;</highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfwoop_1_1Tokenizer_1_1Iterator" kindref="compound">Iterator</ref>;</highlight></codeline>
@@ -90,23 +104,13 @@
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Tokenizer_1_1Iterator_1aae191c4cdfc4a0d27ac375b5adb5f4ab" kindref="member">operator!=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Tokenizer_1_1Iterator" kindref="compound">Iterator</ref><sp/>&amp;rhs)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="40"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="43" refid="classfwoop_1_1Tokenizer_1a161e3590952d679d320753a9565cf76c" refkind="member"><highlight class="normal"><ref refid="classfwoop_1_1Tokenizer_1a161e3590952d679d320753a9565cf76c" kindref="member">Tokenizer::~Tokenizer</ref>()</highlight></codeline>
-<codeline lineno="44"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="48" refid="classfwoop_1_1Tokenizer_1_1Iterator_1a732d48dac1c1e59a2766d7b3e86e5d5d" refkind="member"><highlight class="normal"><ref refid="classfwoop_1_1Tokenizer_1_1Iterator_1a732d48dac1c1e59a2766d7b3e86e5d5d" kindref="member">Tokenizer::Iterator::~Iterator</ref>()</highlight></codeline>
-<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="53" refid="classfwoop_1_1Tokenizer_1_1Iterator_1aae191c4cdfc4a0d27ac375b5adb5f4ab" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Tokenizer_1_1Iterator_1aae191c4cdfc4a0d27ac375b5adb5f4ab" kindref="member">Tokenizer::Iterator::operator!=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Tokenizer_1_1Iterator" kindref="compound">Iterator</ref><sp/>&amp;rhs)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="54"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>==<sp/>rhs);</highlight></codeline>
-<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42" refid="classfwoop_1_1Tokenizer_1a161e3590952d679d320753a9565cf76c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Tokenizer_1a161e3590952d679d320753a9565cf76c" kindref="member">Tokenizer::~Tokenizer</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="classfwoop_1_1Tokenizer_1_1Iterator_1a732d48dac1c1e59a2766d7b3e86e5d5d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Tokenizer_1_1Iterator_1a732d48dac1c1e59a2766d7b3e86e5d5d" kindref="member">Tokenizer::Iterator::~Iterator</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="classfwoop_1_1Tokenizer_1_1Iterator_1aae191c4cdfc4a0d27ac375b5adb5f4ab" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Tokenizer_1_1Iterator_1aae191c4cdfc4a0d27ac375b5adb5f4ab" kindref="member">Tokenizer::Iterator::operator!=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Tokenizer_1_1Iterator" kindref="compound">Iterator</ref><sp/>&amp;rhs)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>==<sp/>rhs);<sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>fwoop</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="basis/fwoop_tokenizer.h"/>
   </compounddef>

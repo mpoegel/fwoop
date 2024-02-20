@@ -1,16 +1,39 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="fwoop__socketio_8h" kind="file" language="C++">
     <compoundname>fwoop_socketio.h</compoundname>
     <includes refid="fwoop__log_8h" local="no">fwoop_log.h</includes>
+    <includes local="no">cstdint</includes>
     <includes local="no">cstring</includes>
     <includes local="no">iostream</includes>
-    <includes local="no">system_error</includes>
+    <includes local="no">memory</includes>
     <includes local="no">sys/poll.h</includes>
+    <includes local="no">system_error</includes>
     <includes local="no">unistd.h</includes>
+    <includedby refid="fwoop__dnsquery_8cpp" local="no">basis/fwoop_dnsquery.cpp</includedby>
     <includedby refid="fwoop__socketio_8cpp" local="no">basis/fwoop_socketio.cpp</includedby>
+    <includedby refid="fwoop__securesocket_8cpp" local="no">crypto/fwoop_securesocket.cpp</includedby>
+    <includedby refid="fwoop__securesocket_8h" local="no">crypto/fwoop_securesocket.h</includedby>
+    <includedby refid="fwoop__tlscredentials_8h" local="no">crypto/fwoop_tlscredentials.h</includedby>
+    <includedby refid="fwoop__httpclient_8cpp" local="no">http/fwoop_httpclient.cpp</includedby>
+    <includedby refid="fwoop__httpconnhandler_8cpp" local="no">http/fwoop_httpconnhandler.cpp</includedby>
+    <includedby refid="fwoop__httpconnhandler_8h" local="no">http/fwoop_httpconnhandler.h</includedby>
     <includedby refid="fwoop__httpserver_8cpp" local="no">http/fwoop_httpserver.cpp</includedby>
+    <includedby refid="fwoop__httpserverevent_8cpp" local="no">http/fwoop_httpserverevent.cpp</includedby>
+    <includedby refid="fwoop__httpserverevent_8h" local="no">http/fwoop_httpserverevent.h</includedby>
     <incdepgraph>
+      <node id="11">
+        <label>system_error</label>
+      </node>
+      <node id="8">
+        <label>cstdint</label>
+      </node>
+      <node id="10">
+        <label>sys/poll.h</label>
+      </node>
+      <node id="7">
+        <label>string</label>
+      </node>
       <node id="2">
         <label>fwoop_log.h</label>
         <link refid="fwoop__log_8h"/>
@@ -25,6 +48,9 @@
         <childnode refid="7" relation="include">
         </childnode>
       </node>
+      <node id="5">
+        <label>ostream</label>
+      </node>
       <node id="1">
         <label>basis/fwoop_socketio.h</label>
         <link refid="fwoop__socketio_8h"/>
@@ -32,47 +58,87 @@
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
       </node>
-      <node id="8">
-        <label>cstring</label>
-      </node>
-      <node id="3">
-        <label>iostream</label>
-      </node>
-      <node id="4">
-        <label>memory</label>
-      </node>
-      <node id="5">
-        <label>ostream</label>
+      <node id="12">
+        <label>unistd.h</label>
       </node>
       <node id="6">
         <label>sstream</label>
       </node>
-      <node id="7">
-        <label>string</label>
-      </node>
-      <node id="10">
-        <label>sys/poll.h</label>
+      <node id="3">
+        <label>iostream</label>
       </node>
       <node id="9">
-        <label>system_error</label>
+        <label>cstring</label>
       </node>
-      <node id="11">
-        <label>unistd.h</label>
+      <node id="4">
+        <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
       <node id="2">
-        <label>basis/fwoop_socketio.cpp</label>
-        <link refid="fwoop__socketio_8cpp"/>
+        <label>basis/fwoop_dnsquery.cpp</label>
+        <link refid="fwoop__dnsquery_8cpp"/>
+      </node>
+      <node id="6">
+        <label>crypto/fwoop_tlscredentials.h</label>
+        <link refid="fwoop__tlscredentials_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>crypto/fwoop_securesocket.cpp</label>
+        <link refid="fwoop__securesocket_8cpp"/>
+      </node>
+      <node id="10">
+        <label>http/fwoop_httpconnhandler.h</label>
+        <link refid="fwoop__httpconnhandler_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>http/fwoop_httpserver.h</label>
+        <link refid="fwoop__httpserver_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>crypto/fwoop_securesocket.h</label>
+        <link refid="fwoop__securesocket_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>http/fwoop_httpserver.cpp</label>
+        <link refid="fwoop__httpserver_8cpp"/>
+      </node>
+      <node id="14">
+        <label>http/fwoop_httpserverevent.h</label>
+        <link refid="fwoop__httpserverevent_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>basis/fwoop_socketio.h</label>
@@ -81,12 +147,60 @@
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>http/fwoop_httpconnhandler.cpp</label>
+        <link refid="fwoop__httpconnhandler_8cpp"/>
+      </node>
+      <node id="7">
+        <label>crypto/fwoop_tlscredentials.cpp</label>
+        <link refid="fwoop__tlscredentials_8cpp"/>
+      </node>
+      <node id="13">
+        <label>http/fwoop_httpserverevent.cpp</label>
+        <link refid="fwoop__httpserverevent_8cpp"/>
       </node>
       <node id="3">
-        <label>http/fwoop_httpserver.cpp</label>
-        <link refid="fwoop__httpserver_8cpp"/>
+        <label>basis/fwoop_socketio.cpp</label>
+        <link refid="fwoop__socketio_8cpp"/>
+      </node>
+      <node id="8">
+        <label>http/fwoop_httpclient.cpp</label>
+        <link refid="fwoop__httpclient_8cpp"/>
+      </node>
+      <node id="15">
+        <label>http/fwoop_httpfunc.h</label>
+        <link refid="fwoop__httpfunc_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
       </node>
     </invincdepgraph>
+    <innerclass refid="classfwoop_1_1Reader" prot="public">fwoop::Reader</innerclass>
+    <innerclass refid="classfwoop_1_1Writer" prot="public">fwoop::Writer</innerclass>
+    <innerclass refid="classfwoop_1_1SocketBase" prot="public">fwoop::SocketBase</innerclass>
+    <innerclass refid="classfwoop_1_1Socket" prot="public">fwoop::Socket</innerclass>
+    <innerclass refid="classfwoop_1_1SocketFactoryBase" prot="public">fwoop::SocketFactoryBase</innerclass>
+    <innerclass refid="classfwoop_1_1SocketFactory" prot="public">fwoop::SocketFactory</innerclass>
     <innerclass refid="classfwoop_1_1SocketIO" prot="public">fwoop::SocketIO</innerclass>
     <innernamespace refid="namespacefwoop">fwoop</innernamespace>
     <briefdescription>
@@ -98,79 +212,134 @@
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="fwoop__log_8h" kindref="compound">fwoop_log.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstring&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;system_error&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstring&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/poll.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefwoop" kindref="compound">fwoop</ref><sp/>{</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14" refid="classfwoop_1_1SocketIO" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfwoop_1_1SocketIO" kindref="compound">SocketIO</ref><sp/>{</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;system_error&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefwoop" kindref="compound">fwoop</ref><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="classfwoop_1_1Reader" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfwoop_1_1Reader" kindref="compound">Reader</ref><sp/>{</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::error_code<sp/><ref refid="classfwoop_1_1SocketIO_1a4a66099cb56c04928a3ad0028d080eb0" kindref="member">read</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/>T<sp/>*buffer,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bufferSize,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>bytesRead);</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1SocketIO_1a5a5522a6c055703c0d6ca2e121126640" kindref="member">write</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/>T<sp/>*out,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>outLen);</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="26" refid="classfwoop_1_1SocketIO_1a4a66099cb56c04928a3ad0028d080eb0" refkind="member"><highlight class="normal">std::error_code<sp/><ref refid="classfwoop_1_1SocketIO_1a4a66099cb56c04928a3ad0028d080eb0" kindref="member">SocketIO::read</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/>T<sp/>*buffer,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bufferSize,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>bytesRead)</highlight></codeline>
-<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(buffer,<sp/>0,<sp/>bufferSize);</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>bytesRead<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="17" refid="classfwoop_1_1Reader_1a20174ae82af8a9dde11176e23ef810f9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Reader_1a20174ae82af8a9dde11176e23ef810f9" kindref="member">~Reader</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="18" refid="classfwoop_1_1Reader_1a76cc37f2f2fd5a021b87a577a39d3af7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::error_code<sp/><ref refid="classfwoop_1_1Reader_1a76cc37f2f2fd5a021b87a577a39d3af7" kindref="member">read</ref>(uint8_t<sp/>*buffer,<sp/>uint32_t<sp/>bufferSize,<sp/>uint32_t<sp/>&amp;bytesRead)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="19" refid="classfwoop_1_1Reader_1a90597f688f2e4610d39a10c98addad98" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Reader_1a90597f688f2e4610d39a10c98addad98" kindref="member">close</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="namespacefwoop_1ae9cfc08f475d6149c406ccf27f1b527f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;Reader&gt;<sp/><ref refid="namespacefwoop_1ae9cfc08f475d6149c406ccf27f1b527f" kindref="member">ReaderPtr_t</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="classfwoop_1_1Writer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfwoop_1_1Writer" kindref="compound">Writer</ref><sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="26" refid="classfwoop_1_1Writer_1af091c2ea4f81c51b2f18a61f1f46bab6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Writer_1af091c2ea4f81c51b2f18a61f1f46bab6" kindref="member">~Writer</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="27" refid="classfwoop_1_1Writer_1a9ca1cce9f2d609cc987e5cca42bfe3f5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::error_code<sp/><ref refid="classfwoop_1_1Writer_1a9ca1cce9f2d609cc987e5cca42bfe3f5" kindref="member">write</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*buffer,<sp/>uint32_t<sp/>bufferSize,<sp/>uint32_t<sp/>&amp;bytesWritten)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="28" refid="classfwoop_1_1Writer_1a17b85f9d80cab5f8eb12ecd3f4ee7073" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Writer_1a17b85f9d80cab5f8eb12ecd3f4ee7073" kindref="member">close</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">pollfd<sp/>pfd[1];</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>pfd[0].fd<sp/>=<sp/>fd;</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>pfd[0].events<sp/>=<sp/>POLLIN;</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rc<sp/>=<sp/>poll(pfd,<sp/>1,<sp/>1000);</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rc<sp/>==<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Log_1a6e412954295a899c03914856a3d3f538" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;poll<sp/>timed<sp/>out&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::error_code(errno,<sp/>std::system_category());</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rc<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;poll<sp/>failed,<sp/>errno=&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>errno<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::strerror(errno)<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Log::Error(&quot;polled<sp/>failed,<sp/>errno=%d:<sp/>%s&quot;,<sp/>errno,<sp/>std::strerror(errno));</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::error_code(errno,<sp/>std::system_category());</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pfd[0].revents<sp/>&amp;<sp/>POLLIN)<sp/>{</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rc<sp/>=<sp/><ref refid="classfwoop_1_1SocketIO_1a4a66099cb56c04928a3ad0028d080eb0" kindref="member">::read</ref>(fd,<sp/>buffer,<sp/>bufferSize);</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(0<sp/>==<sp/>rc)<sp/>{</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Log_1a6e412954295a899c03914856a3d3f538" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;client<sp/>closed<sp/>the<sp/>connection&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::error_code(errno,<sp/>std::system_category());</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rc<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;read<sp/>error,<sp/>errno=&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>errno<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::strerror(errno)<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::error_code(errno,<sp/>std::system_category());</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bytesRead<sp/>=<sp/>rc;</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::error_code();</highlight></codeline>
-<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31" refid="namespacefwoop_1a29e3dc14ec8cacd05c1d81c92c2f15bd" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;Writer&gt;<sp/><ref refid="namespacefwoop_1a29e3dc14ec8cacd05c1d81c92c2f15bd" kindref="member">WriterPtr_t</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="classfwoop_1_1SocketBase" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfwoop_1_1SocketBase" kindref="compound">SocketBase</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Reader" kindref="compound">Reader</ref>,<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Writer" kindref="compound">Writer</ref><sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="35" refid="classfwoop_1_1SocketBase_1ad1708bc60aab59c1b7f36abe4421429a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1SocketBase_1ad1708bc60aab59c1b7f36abe4421429a" kindref="member">~SocketBase</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="namespacefwoop_1a9e8ea75aefa788f734a020c2d1c8d40a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;SocketBase&gt;<sp/><ref refid="namespacefwoop_1a9e8ea75aefa788f734a020c2d1c8d40a" kindref="member">SocketBasePtr_t</ref>;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="classfwoop_1_1Socket" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfwoop_1_1Socket" kindref="compound">Socket</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1SocketBase" kindref="compound">SocketBase</ref><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>d_fd;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Socket_1a2035402f88854036556943c232acbf3b" kindref="member">Socket</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Socket_1a1b033718366a5dfe47efaa63dc8cbe9e" kindref="member">~Socket</ref>();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Socket_1a2035402f88854036556943c232acbf3b" kindref="member">Socket</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Socket" kindref="compound">Socket</ref><sp/>&amp;rhs);</highlight></codeline>
+<codeline lineno="48" refid="classfwoop_1_1Socket_1a13605726c80aedc5c1c4504f64be5804" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Socket" kindref="compound">Socket</ref><sp/><ref refid="classfwoop_1_1Socket_1a13605726c80aedc5c1c4504f64be5804" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Socket" kindref="compound">Socket</ref><sp/>&amp;rhs);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>std::error_code<sp/><ref refid="classfwoop_1_1Socket_1ad4ca0ab53b166baff0577ad0de5778f6" kindref="member">read</ref>(uint8_t<sp/>*buffer,<sp/>uint32_t<sp/>bufferSize,<sp/>uint32_t<sp/>&amp;bytesRead)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>std::error_code<sp/><ref refid="classfwoop_1_1Socket_1a890482fe214b8c9f395ce41ef8f90564" kindref="member">write</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*buffer,<sp/>uint32_t<sp/>bufferSize,<sp/>uint32_t<sp/>&amp;bytesWritten)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1Socket_1aeb61e7e16f832382cddc66675a6f3bf9" kindref="member">close</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="namespacefwoop_1a0f1384595df7e0ab6ea257f1cdb424d4" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;Socket&gt;<sp/><ref refid="namespacefwoop_1a0f1384595df7e0ab6ea257f1cdb424d4" kindref="member">SocketPtr_t</ref>;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="classfwoop_1_1SocketFactoryBase" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfwoop_1_1SocketFactoryBase" kindref="compound">SocketFactoryBase</ref><sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="59" refid="classfwoop_1_1SocketFactoryBase_1a0fc57cb46389b382aacdb289051e83e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1SocketFactoryBase_1a0fc57cb46389b382aacdb289051e83e6" kindref="member">~SocketFactoryBase</ref>()<sp/>{}</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="62" refid="classfwoop_1_1SocketIO_1a5a5522a6c055703c0d6ca2e121126640" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1SocketIO_1a5a5522a6c055703c0d6ca2e121126640" kindref="member">SocketIO::write</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/>T<sp/>*out,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>outLen)</highlight></codeline>
-<codeline lineno="63"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rc<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bytesWritten<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(bytesWritten<sp/>&lt;<sp/>outLen)<sp/>{</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rc<sp/>=<sp/><ref refid="classfwoop_1_1SocketIO_1a5a5522a6c055703c0d6ca2e121126640" kindref="member">::write</ref>(fd,<sp/>out<sp/>+<sp/>bytesWritten,<sp/>outLen<sp/>-<sp/>bytesWritten);</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rc<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;write<sp/>failed,<sp/>errno=&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>errno<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::strerror(errno)<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bytesWritten<sp/>+=<sp/>rc;</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
-<codeline lineno="75"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"></highlight></codeline>
-<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61" refid="classfwoop_1_1SocketFactoryBase_1aed2eeeaedf1fa1599239882422bfbb65" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="namespacefwoop_1a9e8ea75aefa788f734a020c2d1c8d40a" kindref="member">SocketBasePtr_t</ref><sp/><ref refid="classfwoop_1_1SocketFactoryBase_1aed2eeeaedf1fa1599239882422bfbb65" kindref="member">connect</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="classfwoop_1_1SocketFactory" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfwoop_1_1SocketFactory" kindref="compound">SocketFactory</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1SocketFactoryBase" kindref="compound">SocketFactoryBase</ref><sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="67" refid="classfwoop_1_1SocketFactory_1a16e5ce2683d89fa392147eba48babbf3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1SocketFactory_1a16e5ce2683d89fa392147eba48babbf3" kindref="member">SocketFactory</ref>();</highlight></codeline>
+<codeline lineno="68" refid="classfwoop_1_1SocketFactory_1a52bd2fcdaf47fe18d9ab1de67fbdc6f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1SocketFactory_1a52bd2fcdaf47fe18d9ab1de67fbdc6f3" kindref="member">~SocketFactory</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="69" refid="classfwoop_1_1SocketFactory_1ad4a2f6177f70669e3e70f0df30ad2e7e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacefwoop_1a9e8ea75aefa788f734a020c2d1c8d40a" kindref="member">SocketBasePtr_t</ref><sp/><ref refid="classfwoop_1_1SocketFactory_1ad4a2f6177f70669e3e70f0df30ad2e7e" kindref="member">connect</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="classfwoop_1_1SocketIO" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfwoop_1_1SocketIO" kindref="compound">SocketIO</ref><sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::error_code<sp/><ref refid="classfwoop_1_1SocketIO_1a4a66099cb56c04928a3ad0028d080eb0" kindref="member">read</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/>T<sp/>*buffer,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bufferSize,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;bytesRead);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1SocketIO_1a5a5522a6c055703c0d6ca2e121126640" kindref="member">write</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/>T<sp/>*out,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>outLen);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="82" refid="classfwoop_1_1SocketIO_1a4a66099cb56c04928a3ad0028d080eb0" refkind="member"><highlight class="normal">std::error_code<sp/><ref refid="classfwoop_1_1SocketIO_1a4a66099cb56c04928a3ad0028d080eb0" kindref="member">SocketIO::read</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/>T<sp/>*buffer,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bufferSize,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;bytesRead)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(buffer,<sp/>0,<sp/>bufferSize);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>bytesRead<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">pollfd<sp/>pfd[1];</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>pfd[0].fd<sp/>=<sp/>fd;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>pfd[0].events<sp/>=<sp/>POLLIN;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rc<sp/>=<sp/>poll(pfd,<sp/>1,<sp/>1000);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rc<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Log_1ac630c179fe7cae712043f53d3deac73c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;poll<sp/>timed<sp/>out&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::error_code(errno,<sp/>std::system_category());</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rc<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;poll<sp/>failed,<sp/>errno=&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>errno<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::strerror(errno)<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Log::Error(&quot;polled<sp/>failed,<sp/>errno=%d:<sp/>%s&quot;,<sp/>errno,<sp/>std::strerror(errno));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::error_code(errno,<sp/>std::system_category());</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pfd[0].revents<sp/>&amp;<sp/>POLLIN)<sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rc<sp/>=<sp/><ref refid="classfwoop_1_1SocketIO_1a4a66099cb56c04928a3ad0028d080eb0" kindref="member">::read</ref>(fd,<sp/>buffer,<sp/>bufferSize);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(0<sp/>==<sp/>rc)<sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1Log_1ac630c179fe7cae712043f53d3deac73c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;client<sp/>closed<sp/>the<sp/>connection&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::error_code(errno,<sp/>std::system_category());</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rc<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;read<sp/>error,<sp/>errno=&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>errno<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::strerror(errno)<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::error_code(errno,<sp/>std::system_category());</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bytesRead<sp/>=<sp/>rc;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::error_code();</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="classfwoop_1_1SocketIO_1a5a5522a6c055703c0d6ca2e121126640" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1SocketIO_1a5a5522a6c055703c0d6ca2e121126640" kindref="member">SocketIO::write</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/>T<sp/>*out,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>outLen)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rc<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bytesWritten<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(bytesWritten<sp/>&lt;<sp/>outLen)<sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rc<sp/>=<sp/><ref refid="classfwoop_1_1SocketIO_1a5a5522a6c055703c0d6ca2e121126640" kindref="member">::write</ref>(fd,<sp/>out<sp/>+<sp/>bytesWritten,<sp/>outLen<sp/>-<sp/>bytesWritten);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rc<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;write<sp/>failed,<sp/>errno=&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>errno<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::strerror(errno)<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bytesWritten<sp/>+=<sp/>rc;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>fwoop</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="basis/fwoop_socketio.h"/>
   </compounddef>

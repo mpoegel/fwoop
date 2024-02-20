@@ -1,0 +1,279 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1ThreadPool" kind="class" language="C++" prot="public">
+    <compoundname>fwoop::ThreadPool</compoundname>
+    <includes refid="fwoop__threadpool_8h" local="no">fwoop_threadpool.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1ThreadPool_1af7a334a156342017576fbab96ea6653a" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex fwoop::ThreadPool&lt; T &gt;::d_poolMutex</definition>
+        <argsstring></argsstring>
+        <name>d_poolMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_threadpool.h" line="17" column="16" bodyfile="basis/fwoop_threadpool.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1ThreadPool_1a9cb5e8de056d514431d51424756670b5" prot="private" static="no" mutable="no">
+        <type>std::condition_variable</type>
+        <definition>std::condition_variable fwoop::ThreadPool&lt; T &gt;::d_poolCond</definition>
+        <argsstring></argsstring>
+        <name>d_poolCond</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_threadpool.h" line="18" column="29" bodyfile="basis/fwoop_threadpool.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1ThreadPool_1af771e6602002a6e2690b86cc221e6f57" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex fwoop::ThreadPool&lt; T &gt;::d_startMutex</definition>
+        <argsstring></argsstring>
+        <name>d_startMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_threadpool.h" line="19" column="16" bodyfile="basis/fwoop_threadpool.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1ThreadPool_1a4e03b7e035df0469a45bd394cae4f9fe" prot="private" static="no" mutable="no">
+        <type>std::condition_variable</type>
+        <definition>std::condition_variable fwoop::ThreadPool&lt; T &gt;::d_startCond</definition>
+        <argsstring></argsstring>
+        <name>d_startCond</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_threadpool.h" line="20" column="29" bodyfile="basis/fwoop_threadpool.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1ThreadPool_1a13a76d3a082bc93f9fd4873e7293e535" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::thread &gt;</type>
+        <definition>std::vector&lt;std::thread&gt; fwoop::ThreadPool&lt; T &gt;::d_pool</definition>
+        <argsstring></argsstring>
+        <name>d_pool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_threadpool.h" line="21" column="17" bodyfile="basis/fwoop_threadpool.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1ThreadPool_1ae0848ed855947369c1d63d4ef363d88a" prot="private" static="no" mutable="no">
+        <type>std::deque&lt; T &gt;</type>
+        <definition>std::deque&lt;T&gt; fwoop::ThreadPool&lt; T &gt;::d_jobQueue</definition>
+        <argsstring></argsstring>
+        <name>d_jobQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_threadpool.h" line="22" column="16" bodyfile="basis/fwoop_threadpool.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1ThreadPool_1a46dd57918bc3dcf13f16704637ae05f6" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool fwoop::ThreadPool&lt; T &gt;::d_isStopping</definition>
+        <argsstring></argsstring>
+        <name>d_isStopping</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_threadpool.h" line="23" column="10" bodyfile="basis/fwoop_threadpool.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1ThreadPool_1a7762762c2e676320ecfb15fdc75b82d1" prot="private" static="no" mutable="no">
+        <type>std::atomic_uint32_t</type>
+        <definition>std::atomic_uint32_t fwoop::ThreadPool&lt; T &gt;::d_numFinished</definition>
+        <argsstring></argsstring>
+        <name>d_numFinished</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_threadpool.h" line="24" column="26" bodyfile="basis/fwoop_threadpool.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1ThreadPool_1ac310ecc2abd264b629a626c50ba288f6" prot="private" static="no" mutable="no">
+        <type>std::atomic_uint32_t</type>
+        <definition>std::atomic_uint32_t fwoop::ThreadPool&lt; T &gt;::d_numActive</definition>
+        <argsstring></argsstring>
+        <name>d_numActive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_threadpool.h" line="25" column="26" bodyfile="basis/fwoop_threadpool.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classfwoop_1_1ThreadPool_1abda2f6858d6e9b0fbd2f964ed359c493" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::ThreadPool&lt; T &gt;::workJob</definition>
+        <argsstring>()</argsstring>
+        <name>workJob</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_threadpool.h" line="27" column="10" bodyfile="basis/fwoop_threadpool.h" bodystart="50" bodyend="76"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfwoop_1_1ThreadPool_1ab91a80ae692c436091fab2dae7709af3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::ThreadPool&lt; T &gt;::ThreadPool</definition>
+        <argsstring>(unsigned int size)</argsstring>
+        <name>ThreadPool</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_threadpool.h" line="30" column="5" bodyfile="basis/fwoop_threadpool.h" bodystart="40" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1ThreadPool_1a6f0c956f65fa64e7d01265311173baca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::ThreadPool&lt; T &gt;::~ThreadPool</definition>
+        <argsstring>()</argsstring>
+        <name>~ThreadPool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_threadpool.h" line="31" column="5" bodyfile="basis/fwoop_threadpool.h" bodystart="48" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1ThreadPool_1ac4fc52e1ed76999a5354e7d99cb3b929" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::ThreadPool&lt; T &gt;::ThreadPool</definition>
+        <argsstring>(const ThreadPool &amp;rhs)=delete</argsstring>
+        <name>ThreadPool</name>
+        <param>
+          <type>const <ref refid="classfwoop_1_1ThreadPool" kindref="compound">ThreadPool</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_threadpool.h" line="32" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1ThreadPool_1a6d4445578562542c17d233e8948adb39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfwoop_1_1ThreadPool" kindref="compound">ThreadPool</ref></type>
+        <definition>ThreadPool fwoop::ThreadPool&lt; T &gt;::operator=</definition>
+        <argsstring>(const ThreadPool &amp;rhs)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classfwoop_1_1ThreadPool" kindref="compound">ThreadPool</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_threadpool.h" line="33" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1ThreadPool_1a0ef57ee3a0a19819a99a647955ff85cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fwoop::ThreadPool&lt; T &gt;::enqueue</definition>
+        <argsstring>(T &amp;&amp;job)</argsstring>
+        <name>enqueue</name>
+        <param>
+          <type>T &amp;&amp;</type>
+          <declname>job</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_threadpool.h" line="35" column="10" bodyfile="basis/fwoop_threadpool.h" bodystart="78" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1ThreadPool_1a694cba67401b58f7f5970cdcf72f4697" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::ThreadPool&lt; T &gt;::close</definition>
+        <argsstring>()</argsstring>
+        <name>close</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_threadpool.h" line="36" column="10" bodyfile="basis/fwoop_threadpool.h" bodystart="90" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1ThreadPool_1a5b8d7977e7475bcc55a814bf812d3fc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::ThreadPool&lt; T &gt;::wait</definition>
+        <argsstring>()</argsstring>
+        <name>wait</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_threadpool.h" line="37" column="10" bodyfile="basis/fwoop_threadpool.h" bodystart="101" bodyend="111"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="basis/fwoop_threadpool.h" line="15" column="12" bodyfile="basis/fwoop_threadpool.h" bodystart="15" bodyend="38"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1ThreadPool_1a694cba67401b58f7f5970cdcf72f4697" prot="public" virt="non-virtual"><scope>fwoop::ThreadPool</scope><name>close</name></member>
+      <member refid="classfwoop_1_1ThreadPool_1a46dd57918bc3dcf13f16704637ae05f6" prot="private" virt="non-virtual"><scope>fwoop::ThreadPool</scope><name>d_isStopping</name></member>
+      <member refid="classfwoop_1_1ThreadPool_1ae0848ed855947369c1d63d4ef363d88a" prot="private" virt="non-virtual"><scope>fwoop::ThreadPool</scope><name>d_jobQueue</name></member>
+      <member refid="classfwoop_1_1ThreadPool_1ac310ecc2abd264b629a626c50ba288f6" prot="private" virt="non-virtual"><scope>fwoop::ThreadPool</scope><name>d_numActive</name></member>
+      <member refid="classfwoop_1_1ThreadPool_1a7762762c2e676320ecfb15fdc75b82d1" prot="private" virt="non-virtual"><scope>fwoop::ThreadPool</scope><name>d_numFinished</name></member>
+      <member refid="classfwoop_1_1ThreadPool_1a13a76d3a082bc93f9fd4873e7293e535" prot="private" virt="non-virtual"><scope>fwoop::ThreadPool</scope><name>d_pool</name></member>
+      <member refid="classfwoop_1_1ThreadPool_1a9cb5e8de056d514431d51424756670b5" prot="private" virt="non-virtual"><scope>fwoop::ThreadPool</scope><name>d_poolCond</name></member>
+      <member refid="classfwoop_1_1ThreadPool_1af7a334a156342017576fbab96ea6653a" prot="private" virt="non-virtual"><scope>fwoop::ThreadPool</scope><name>d_poolMutex</name></member>
+      <member refid="classfwoop_1_1ThreadPool_1a4e03b7e035df0469a45bd394cae4f9fe" prot="private" virt="non-virtual"><scope>fwoop::ThreadPool</scope><name>d_startCond</name></member>
+      <member refid="classfwoop_1_1ThreadPool_1af771e6602002a6e2690b86cc221e6f57" prot="private" virt="non-virtual"><scope>fwoop::ThreadPool</scope><name>d_startMutex</name></member>
+      <member refid="classfwoop_1_1ThreadPool_1a0ef57ee3a0a19819a99a647955ff85cd" prot="public" virt="non-virtual"><scope>fwoop::ThreadPool</scope><name>enqueue</name></member>
+      <member refid="classfwoop_1_1ThreadPool_1a6d4445578562542c17d233e8948adb39" prot="public" virt="non-virtual"><scope>fwoop::ThreadPool</scope><name>operator=</name></member>
+      <member refid="classfwoop_1_1ThreadPool_1ab91a80ae692c436091fab2dae7709af3" prot="public" virt="non-virtual"><scope>fwoop::ThreadPool</scope><name>ThreadPool</name></member>
+      <member refid="classfwoop_1_1ThreadPool_1ac4fc52e1ed76999a5354e7d99cb3b929" prot="public" virt="non-virtual"><scope>fwoop::ThreadPool</scope><name>ThreadPool</name></member>
+      <member refid="classfwoop_1_1ThreadPool_1a5b8d7977e7475bcc55a814bf812d3fc7" prot="public" virt="non-virtual"><scope>fwoop::ThreadPool</scope><name>wait</name></member>
+      <member refid="classfwoop_1_1ThreadPool_1abda2f6858d6e9b0fbd2f964ed359c493" prot="private" virt="non-virtual"><scope>fwoop::ThreadPool</scope><name>workJob</name></member>
+      <member refid="classfwoop_1_1ThreadPool_1a6f0c956f65fa64e7d01265311173baca" prot="public" virt="non-virtual"><scope>fwoop::ThreadPool</scope><name>~ThreadPool</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

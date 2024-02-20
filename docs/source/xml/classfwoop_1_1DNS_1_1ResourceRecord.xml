@@ -1,0 +1,295 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1DNS_1_1ResourceRecord" kind="class" language="C++" prot="public">
+    <compoundname>fwoop::DNS::ResourceRecord</compoundname>
+    <includes refid="fwoop__dnsquery_8h" local="no">fwoop_dnsquery.h</includes>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1DNS_1_1ResourceRecord_1a388f7d03cac20187a85b79c83f03b7db" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr uint16_t</type>
+        <definition>constexpr uint16_t fwoop::DNS::ResourceRecord::s_maxDataLen</definition>
+        <argsstring></argsstring>
+        <name>s_maxDataLen</name>
+        <initializer>= 256</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="70" column="31" bodyfile="basis/fwoop_dnsquery.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1DNS_1_1ResourceRecord_1a4b2031bb8b2dbb4ec80c126eaa4e410f" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string fwoop::DNS::ResourceRecord::d_name</definition>
+        <argsstring></argsstring>
+        <name>d_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="71" column="17" bodyfile="basis/fwoop_dnsquery.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1DNS_1_1ResourceRecord_1a601c4f72acbbeeee34630d4c06a9c126" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacefwoop_1_1DNS_1ad379e3a7792683b000e15b882a7a2f6f" kindref="member">RecordType</ref></type>
+        <definition>RecordType fwoop::DNS::ResourceRecord::d_type</definition>
+        <argsstring></argsstring>
+        <name>d_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="72" column="16" bodyfile="basis/fwoop_dnsquery.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1DNS_1_1ResourceRecord_1a2e856cf46a9c2143a2413785b5949c3a" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacefwoop_1_1DNS_1af0d37c39ea9bf2c44ef33ba928962910" kindref="member">ClassValue</ref></type>
+        <definition>ClassValue fwoop::DNS::ResourceRecord::d_class</definition>
+        <argsstring></argsstring>
+        <name>d_class</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="73" column="16" bodyfile="basis/fwoop_dnsquery.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1DNS_1_1ResourceRecord_1aca3b6c572eeed41925d7a9c176f2a561" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t fwoop::DNS::ResourceRecord::d_ttl</definition>
+        <argsstring></argsstring>
+        <name>d_ttl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="74" column="14" bodyfile="basis/fwoop_dnsquery.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1DNS_1_1ResourceRecord_1a2c471b810930bd0fd4dcf1e21bf2dda4" prot="private" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t fwoop::DNS::ResourceRecord::d_rdLength</definition>
+        <argsstring></argsstring>
+        <name>d_rdLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="75" column="14" bodyfile="basis/fwoop_dnsquery.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1DNS_1_1ResourceRecord_1ad0183f0b5850427b320f7ebde677d099" prot="private" static="no" mutable="no">
+        <type><ref refid="classfwoop_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array fwoop::DNS::ResourceRecord::d_rData</definition>
+        <argsstring></argsstring>
+        <name>d_rData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="76" column="11" bodyfile="basis/fwoop_dnsquery.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classfwoop_1_1DNS_1_1ResourceRecord_1ab0e440601c78bb7d8cba07f501c184ae" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classfwoop_1_1DNS_1_1ResourceRecord" kindref="compound">ResourceRecord</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; ResourceRecord &gt; fwoop::DNS::ResourceRecord::parse</definition>
+        <argsstring>(const Array &amp;data, unsigned int &amp;offset)</argsstring>
+        <name>parse</name>
+        <param>
+          <type>const <ref refid="classfwoop_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>unsigned int &amp;</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="79" column="28" bodyfile="basis/fwoop_dnsquery.cpp" bodystart="137" bodyend="192"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfwoop_1_1DNS_1_1ResourceRecord_1ab214a2dec52c799f996f3a45a285f001" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::DNS::ResourceRecord::ResourceRecord</definition>
+        <argsstring>()</argsstring>
+        <name>ResourceRecord</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="81" column="5" bodyfile="basis/fwoop_dnsquery.cpp" bodystart="194" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DNS_1_1ResourceRecord_1ade6b0d80683bbb224686bec0c92c992c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::DNS::ResourceRecord::~ResourceRecord</definition>
+        <argsstring>()=default</argsstring>
+        <name>~ResourceRecord</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="82" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DNS_1_1ResourceRecord_1af5147928551d48ef120e39a57a021892" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::DNS::ResourceRecord::ResourceRecord</definition>
+        <argsstring>(ResourceRecord &amp;rhs)=default</argsstring>
+        <name>ResourceRecord</name>
+        <param>
+          <type><ref refid="classfwoop_1_1DNS_1_1ResourceRecord" kindref="compound">ResourceRecord</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="83" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DNS_1_1ResourceRecord_1a376bdfb0fc607b925c7bc938cea47727" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfwoop_1_1DNS_1_1ResourceRecord" kindref="compound">ResourceRecord</ref> &amp;</type>
+        <definition>ResourceRecord&amp; fwoop::DNS::ResourceRecord::operator=</definition>
+        <argsstring>(const ResourceRecord &amp;rhs) const =delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classfwoop_1_1DNS_1_1ResourceRecord" kindref="compound">ResourceRecord</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="84" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DNS_1_1ResourceRecord_1aa4d2f58bf2ab1344eb5675389ec3c981" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::DNS::ResourceRecord::ResourceRecord</definition>
+        <argsstring>(ResourceRecord &amp;&amp;rhs)=default</argsstring>
+        <name>ResourceRecord</name>
+        <param>
+          <type><ref refid="classfwoop_1_1DNS_1_1ResourceRecord" kindref="compound">ResourceRecord</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="85" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DNS_1_1ResourceRecord_1a42b9d978c0eb25359e16c10493e07b5a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; fwoop::DNS::ResourceRecord::name</definition>
+        <argsstring>() const</argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="87" column="23" bodyfile="basis/fwoop_dnsquery.h" bodystart="96" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DNS_1_1ResourceRecord_1a608dff56f44b815ac0cc4b5815b17957" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacefwoop_1_1DNS_1ad379e3a7792683b000e15b882a7a2f6f" kindref="member">RecordType</ref></type>
+        <definition>RecordType fwoop::DNS::ResourceRecord::type</definition>
+        <argsstring>() const</argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="88" column="16" bodyfile="basis/fwoop_dnsquery.h" bodystart="97" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DNS_1_1ResourceRecord_1a129f536f4880d468d2b90e91024a7deb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacefwoop_1_1DNS_1af0d37c39ea9bf2c44ef33ba928962910" kindref="member">ClassValue</ref></type>
+        <definition>ClassValue fwoop::DNS::ResourceRecord::classValue</definition>
+        <argsstring>() const</argsstring>
+        <name>classValue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="89" column="16" bodyfile="basis/fwoop_dnsquery.h" bodystart="98" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DNS_1_1ResourceRecord_1aba844de33d0abd440fb1a93382d47180" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t fwoop::DNS::ResourceRecord::timeToLive</definition>
+        <argsstring>() const</argsstring>
+        <name>timeToLive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="90" column="14" bodyfile="basis/fwoop_dnsquery.h" bodystart="99" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DNS_1_1ResourceRecord_1a1e836340740057c1577926eb4154d6b8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string fwoop::DNS::ResourceRecord::IP</definition>
+        <argsstring>() const</argsstring>
+        <name>IP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_dnsquery.h" line="91" column="17" bodyfile="basis/fwoop_dnsquery.cpp" bodystart="196" bodyend="210"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="basis/fwoop_dnsquery.h" line="68" column="1" bodyfile="basis/fwoop_dnsquery.h" bodystart="68" bodyend="92"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1DNS_1_1ResourceRecord_1a129f536f4880d468d2b90e91024a7deb" prot="public" virt="non-virtual"><scope>fwoop::DNS::ResourceRecord</scope><name>classValue</name></member>
+      <member refid="classfwoop_1_1DNS_1_1ResourceRecord_1a2e856cf46a9c2143a2413785b5949c3a" prot="private" virt="non-virtual"><scope>fwoop::DNS::ResourceRecord</scope><name>d_class</name></member>
+      <member refid="classfwoop_1_1DNS_1_1ResourceRecord_1a4b2031bb8b2dbb4ec80c126eaa4e410f" prot="private" virt="non-virtual"><scope>fwoop::DNS::ResourceRecord</scope><name>d_name</name></member>
+      <member refid="classfwoop_1_1DNS_1_1ResourceRecord_1ad0183f0b5850427b320f7ebde677d099" prot="private" virt="non-virtual"><scope>fwoop::DNS::ResourceRecord</scope><name>d_rData</name></member>
+      <member refid="classfwoop_1_1DNS_1_1ResourceRecord_1a2c471b810930bd0fd4dcf1e21bf2dda4" prot="private" virt="non-virtual"><scope>fwoop::DNS::ResourceRecord</scope><name>d_rdLength</name></member>
+      <member refid="classfwoop_1_1DNS_1_1ResourceRecord_1aca3b6c572eeed41925d7a9c176f2a561" prot="private" virt="non-virtual"><scope>fwoop::DNS::ResourceRecord</scope><name>d_ttl</name></member>
+      <member refid="classfwoop_1_1DNS_1_1ResourceRecord_1a601c4f72acbbeeee34630d4c06a9c126" prot="private" virt="non-virtual"><scope>fwoop::DNS::ResourceRecord</scope><name>d_type</name></member>
+      <member refid="classfwoop_1_1DNS_1_1ResourceRecord_1a1e836340740057c1577926eb4154d6b8" prot="public" virt="non-virtual"><scope>fwoop::DNS::ResourceRecord</scope><name>IP</name></member>
+      <member refid="classfwoop_1_1DNS_1_1ResourceRecord_1a42b9d978c0eb25359e16c10493e07b5a" prot="public" virt="non-virtual"><scope>fwoop::DNS::ResourceRecord</scope><name>name</name></member>
+      <member refid="classfwoop_1_1DNS_1_1ResourceRecord_1a376bdfb0fc607b925c7bc938cea47727" prot="public" virt="non-virtual"><scope>fwoop::DNS::ResourceRecord</scope><name>operator=</name></member>
+      <member refid="classfwoop_1_1DNS_1_1ResourceRecord_1ab0e440601c78bb7d8cba07f501c184ae" prot="public" virt="non-virtual"><scope>fwoop::DNS::ResourceRecord</scope><name>parse</name></member>
+      <member refid="classfwoop_1_1DNS_1_1ResourceRecord_1ab214a2dec52c799f996f3a45a285f001" prot="public" virt="non-virtual"><scope>fwoop::DNS::ResourceRecord</scope><name>ResourceRecord</name></member>
+      <member refid="classfwoop_1_1DNS_1_1ResourceRecord_1af5147928551d48ef120e39a57a021892" prot="public" virt="non-virtual"><scope>fwoop::DNS::ResourceRecord</scope><name>ResourceRecord</name></member>
+      <member refid="classfwoop_1_1DNS_1_1ResourceRecord_1aa4d2f58bf2ab1344eb5675389ec3c981" prot="public" virt="non-virtual"><scope>fwoop::DNS::ResourceRecord</scope><name>ResourceRecord</name></member>
+      <member refid="classfwoop_1_1DNS_1_1ResourceRecord_1a388f7d03cac20187a85b79c83f03b7db" prot="private" virt="non-virtual"><scope>fwoop::DNS::ResourceRecord</scope><name>s_maxDataLen</name></member>
+      <member refid="classfwoop_1_1DNS_1_1ResourceRecord_1aba844de33d0abd440fb1a93382d47180" prot="public" virt="non-virtual"><scope>fwoop::DNS::ResourceRecord</scope><name>timeToLive</name></member>
+      <member refid="classfwoop_1_1DNS_1_1ResourceRecord_1a608dff56f44b815ac0cc4b5815b17957" prot="public" virt="non-virtual"><scope>fwoop::DNS::ResourceRecord</scope><name>type</name></member>
+      <member refid="classfwoop_1_1DNS_1_1ResourceRecord_1ade6b0d80683bbb224686bec0c92c992c" prot="public" virt="non-virtual"><scope>fwoop::DNS::ResourceRecord</scope><name>~ResourceRecord</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

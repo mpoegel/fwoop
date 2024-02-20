@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="structfwoop_1_1HttpHPacker_1_1DynamicTable__t" kind="struct" language="C++" prot="private">
     <compoundname>fwoop::HttpHPacker::DynamicTable_t</compoundname>
       <sectiondef kind="public-attrib">
@@ -8,7 +8,6 @@
         <definition>std::list&lt;std::string&gt; fwoop::HttpHPacker::DynamicTable_t::queue</definition>
         <argsstring></argsstring>
         <name>queue</name>
-        <qualifiedname>fwoop::HttpHPacker::DynamicTable_t::queue</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -22,7 +21,6 @@
         <definition>std::unordered_map&lt;std::string, uint32_t&gt; fwoop::HttpHPacker::DynamicTable_t::indexLookup</definition>
         <argsstring></argsstring>
         <name>indexLookup</name>
-        <qualifiedname>fwoop::HttpHPacker::DynamicTable_t::indexLookup</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -36,7 +34,6 @@
         <definition>u_int32_t fwoop::HttpHPacker::DynamicTable_t::size</definition>
         <argsstring></argsstring>
         <name>size</name>
-        <qualifiedname>fwoop::HttpHPacker::DynamicTable_t::size</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>

@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1HttpConnHandler" kind="class" language="C++" prot="public">
+    <compoundname>fwoop::HttpConnHandler</compoundname>
+    <includes refid="fwoop__httpconnhandler_8h" local="no">fwoop_httpconnhandler.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1HttpConnHandler_1a09a773b39596ab39e1095cdc3c43b569" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacefwoop_1ae9cfc08f475d6149c406ccf27f1b527f" kindref="member">ReaderPtr_t</ref></type>
+        <definition>ReaderPtr_t fwoop::HttpConnHandler::d_reader</definition>
+        <argsstring></argsstring>
+        <name>d_reader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpconnhandler.h" line="17" column="17" bodyfile="http/fwoop_httpconnhandler.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpConnHandler_1a359f59d7ea660e1e9500f33742615790" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacefwoop_1a29e3dc14ec8cacd05c1d81c92c2f15bd" kindref="member">WriterPtr_t</ref></type>
+        <definition>WriterPtr_t fwoop::HttpConnHandler::d_writer</definition>
+        <argsstring></argsstring>
+        <name>d_writer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpconnhandler.h" line="18" column="17" bodyfile="http/fwoop_httpconnhandler.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1HttpConnHandler_1a8bd17057a8c604cc9007ebd4d3ad8647" prot="private" static="no" mutable="no">
+        <type><ref refid="classfwoop_1_1HttpRequestCallback" kindref="compound">HttpRequestCallback</ref> *</type>
+        <definition>HttpRequestCallback* fwoop::HttpConnHandler::d_callback</definition>
+        <argsstring></argsstring>
+        <name>d_callback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpconnhandler.h" line="19" column="25" bodyfile="http/fwoop_httpconnhandler.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfwoop_1_1HttpConnHandler_1a290c847f6f132ec7b6a779f8ede6b0cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::HttpConnHandler::HttpConnHandler</definition>
+        <argsstring>(const ReaderPtr_t &amp;reader, const WriterPtr_t &amp;writer, HttpRequestCallback *callback)</argsstring>
+        <name>HttpConnHandler</name>
+        <param>
+          <type>const <ref refid="namespacefwoop_1ae9cfc08f475d6149c406ccf27f1b527f" kindref="member">ReaderPtr_t</ref> &amp;</type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacefwoop_1a29e3dc14ec8cacd05c1d81c92c2f15bd" kindref="member">WriterPtr_t</ref> &amp;</type>
+          <declname>writer</declname>
+        </param>
+        <param>
+          <type><ref refid="classfwoop_1_1HttpRequestCallback" kindref="compound">HttpRequestCallback</ref> *</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpconnhandler.h" line="22" column="5" bodyfile="http/fwoop_httpconnhandler.cpp" bodystart="12" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpConnHandler_1ab0c68c96fc109f398cf5eb87b162b315" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::HttpConnHandler::~HttpConnHandler</definition>
+        <argsstring>()</argsstring>
+        <name>~HttpConnHandler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpconnhandler.h" line="23" column="5" bodyfile="http/fwoop_httpconnhandler.cpp" bodystart="17" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpConnHandler_1a2a79b11af5c8cdc6ab81ecef9a2606e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::HttpConnHandler::HttpConnHandler</definition>
+        <argsstring>(const HttpConnHandler &amp;rhs)=delete</argsstring>
+        <name>HttpConnHandler</name>
+        <param>
+          <type>const <ref refid="classfwoop_1_1HttpConnHandler" kindref="compound">HttpConnHandler</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpconnhandler.h" line="24" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpConnHandler_1aead910f7a41818a7c4cd4d71f005475d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfwoop_1_1HttpConnHandler" kindref="compound">HttpConnHandler</ref></type>
+        <definition>HttpConnHandler fwoop::HttpConnHandler::operator=</definition>
+        <argsstring>(const HttpConnHandler &amp;rhs)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classfwoop_1_1HttpConnHandler" kindref="compound">HttpConnHandler</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpconnhandler.h" line="25" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpConnHandler_1a08e72e603e4d41613c33d84b4a0becae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::HttpConnHandler::HttpConnHandler</definition>
+        <argsstring>(HttpConnHandler &amp;&amp;rhs)</argsstring>
+        <name>HttpConnHandler</name>
+        <param>
+          <type><ref refid="classfwoop_1_1HttpConnHandler" kindref="compound">HttpConnHandler</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpconnhandler.h" line="26" column="5" bodyfile="http/fwoop_httpconnhandler.cpp" bodystart="19" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpConnHandler_1af72d1ebe338df9d389e5f31bdedf22a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::HttpConnHandler::operator()</definition>
+        <argsstring>()</argsstring>
+        <name>operator()</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpconnhandler.h" line="28" column="10" bodyfile="http/fwoop_httpconnhandler.cpp" bodystart="24" bodyend="61"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="http/fwoop_httpconnhandler.h" line="15" column="1" bodyfile="http/fwoop_httpconnhandler.h" bodystart="15" bodyend="29"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1HttpConnHandler_1a8bd17057a8c604cc9007ebd4d3ad8647" prot="private" virt="non-virtual"><scope>fwoop::HttpConnHandler</scope><name>d_callback</name></member>
+      <member refid="classfwoop_1_1HttpConnHandler_1a09a773b39596ab39e1095cdc3c43b569" prot="private" virt="non-virtual"><scope>fwoop::HttpConnHandler</scope><name>d_reader</name></member>
+      <member refid="classfwoop_1_1HttpConnHandler_1a359f59d7ea660e1e9500f33742615790" prot="private" virt="non-virtual"><scope>fwoop::HttpConnHandler</scope><name>d_writer</name></member>
+      <member refid="classfwoop_1_1HttpConnHandler_1a290c847f6f132ec7b6a779f8ede6b0cf" prot="public" virt="non-virtual"><scope>fwoop::HttpConnHandler</scope><name>HttpConnHandler</name></member>
+      <member refid="classfwoop_1_1HttpConnHandler_1a2a79b11af5c8cdc6ab81ecef9a2606e8" prot="public" virt="non-virtual"><scope>fwoop::HttpConnHandler</scope><name>HttpConnHandler</name></member>
+      <member refid="classfwoop_1_1HttpConnHandler_1a08e72e603e4d41613c33d84b4a0becae" prot="public" virt="non-virtual"><scope>fwoop::HttpConnHandler</scope><name>HttpConnHandler</name></member>
+      <member refid="classfwoop_1_1HttpConnHandler_1af72d1ebe338df9d389e5f31bdedf22a3" prot="public" virt="non-virtual"><scope>fwoop::HttpConnHandler</scope><name>operator()</name></member>
+      <member refid="classfwoop_1_1HttpConnHandler_1aead910f7a41818a7c4cd4d71f005475d" prot="public" virt="non-virtual"><scope>fwoop::HttpConnHandler</scope><name>operator=</name></member>
+      <member refid="classfwoop_1_1HttpConnHandler_1ab0c68c96fc109f398cf5eb87b162b315" prot="public" virt="non-virtual"><scope>fwoop::HttpConnHandler</scope><name>~HttpConnHandler</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

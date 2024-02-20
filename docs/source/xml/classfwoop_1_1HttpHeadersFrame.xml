@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classfwoop_1_1HttpHeadersFrame" kind="class" language="C++" prot="public">
     <compoundname>fwoop::HttpHeadersFrame</compoundname>
     <basecompoundref refid="classfwoop_1_1HttpFrame" prot="public" virt="non-virtual">fwoop::HttpFrame</basecompoundref>
@@ -8,7 +8,6 @@
       <memberdef kind="enum" id="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00" prot="public" static="no" strong="no">
         <type></type>
         <name>Flag</name>
-        <qualifiedname>fwoop::HttpHeadersFrame::Flag</qualifiedname>
         <enumvalue id="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00ab38d05bb0ccfd42f6d70512e5ef50621" prot="public">
           <name>EndStream</name>
           <initializer>= 1</initializer>
@@ -47,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpheadersframe.h" line="27" column="5" bodyfile="http/fwoop_httpheadersframe.h" bodystart="27" bodyend="32"/>
+        <location file="http/fwoop_httpheadersframe.h" line="26" column="5" bodyfile="http/fwoop_httpheadersframe.h" bodystart="26" bodyend="31"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -56,84 +55,78 @@
         <definition>uint8_t fwoop::HttpHeadersFrame::d_padLength</definition>
         <argsstring></argsstring>
         <name>d_padLength</name>
-        <qualifiedname>fwoop::HttpHeadersFrame::d_padLength</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpheadersframe.h" line="17" column="36" bodyfile="http/fwoop_httpheadersframe.h" bodystart="17" bodyend="-1"/>
+        <location file="http/fwoop_httpheadersframe.h" line="16" column="13" bodyfile="http/fwoop_httpheadersframe.h" bodystart="16" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfwoop_1_1HttpHeadersFrame_1a012e22bd71e44d44a82a36fb15506a7b" prot="private" static="no" mutable="no">
         <type>bool</type>
         <definition>bool fwoop::HttpHeadersFrame::d_isDepMutuallyExclusive</definition>
         <argsstring></argsstring>
         <name>d_isDepMutuallyExclusive</name>
-        <qualifiedname>fwoop::HttpHeadersFrame::d_isDepMutuallyExclusive</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpheadersframe.h" line="18" column="36" bodyfile="http/fwoop_httpheadersframe.h" bodystart="18" bodyend="-1"/>
+        <location file="http/fwoop_httpheadersframe.h" line="17" column="10" bodyfile="http/fwoop_httpheadersframe.h" bodystart="17" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfwoop_1_1HttpHeadersFrame_1a94e216af932b85de6aef895efd02a279" prot="private" static="no" mutable="no">
         <type>uint32_t</type>
         <definition>uint32_t fwoop::HttpHeadersFrame::d_streamDep</definition>
         <argsstring></argsstring>
         <name>d_streamDep</name>
-        <qualifiedname>fwoop::HttpHeadersFrame::d_streamDep</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpheadersframe.h" line="19" column="36" bodyfile="http/fwoop_httpheadersframe.h" bodystart="19" bodyend="-1"/>
+        <location file="http/fwoop_httpheadersframe.h" line="18" column="14" bodyfile="http/fwoop_httpheadersframe.h" bodystart="18" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfwoop_1_1HttpHeadersFrame_1af948a5edec4fdc0f2dddadf734d6d3e6" prot="private" static="no" mutable="no">
         <type>uint8_t</type>
         <definition>uint8_t fwoop::HttpHeadersFrame::d_weight</definition>
         <argsstring></argsstring>
         <name>d_weight</name>
-        <qualifiedname>fwoop::HttpHeadersFrame::d_weight</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpheadersframe.h" line="20" column="36" bodyfile="http/fwoop_httpheadersframe.h" bodystart="20" bodyend="-1"/>
+        <location file="http/fwoop_httpheadersframe.h" line="19" column="13" bodyfile="http/fwoop_httpheadersframe.h" bodystart="19" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfwoop_1_1HttpHeadersFrame_1a36e2db232b22d2caaf149064b05a96b0" prot="private" static="no" mutable="no">
         <type>std::vector&lt; <ref refid="namespacefwoop_1a8f8f27ac925f849da3190dea9dcdcbf9" kindref="member">HttpHeaderField_t</ref> &gt;</type>
         <definition>std::vector&lt;HttpHeaderField_t&gt; fwoop::HttpHeadersFrame::d_headerList</definition>
         <argsstring></argsstring>
         <name>d_headerList</name>
-        <qualifiedname>fwoop::HttpHeadersFrame::d_headerList</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpheadersframe.h" line="21" column="17" bodyfile="http/fwoop_httpheadersframe.h" bodystart="21" bodyend="-1"/>
+        <location file="http/fwoop_httpheadersframe.h" line="20" column="17" bodyfile="http/fwoop_httpheadersframe.h" bodystart="20" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfwoop_1_1HttpHeadersFrame_1a6faa2b731c27cca6346b3a6647056014" prot="private" static="no" mutable="no">
         <type>std::shared_ptr&lt; <ref refid="classfwoop_1_1HttpHPacker" kindref="compound">HttpHPacker</ref> &gt;</type>
         <definition>std::shared_ptr&lt;HttpHPacker&gt; fwoop::HttpHeadersFrame::d_packer</definition>
         <argsstring></argsstring>
         <name>d_packer</name>
-        <qualifiedname>fwoop::HttpHeadersFrame::d_packer</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpheadersframe.h" line="22" column="23" bodyfile="http/fwoop_httpheadersframe.h" bodystart="22" bodyend="-1"/>
+        <location file="http/fwoop_httpheadersframe.h" line="21" column="21" bodyfile="http/fwoop_httpheadersframe.h" bodystart="21" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -142,14 +135,13 @@
         <definition>uint8_t fwoop::HttpHeadersFrame::countExtraBits</definition>
         <argsstring>() const</argsstring>
         <name>countExtraBits</name>
-        <qualifiedname>fwoop::HttpHeadersFrame::countExtraBits</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpheadersframe.h" line="24" column="13" bodyfile="http/fwoop_httpheadersframe.cpp" bodystart="59" bodyend="72"/>
+        <location file="http/fwoop_httpheadersframe.h" line="23" column="13" bodyfile="http/fwoop_httpheadersframe.cpp" bodystart="57" bodyend="70"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -158,7 +150,6 @@
         <definition>fwoop::HttpHeadersFrame::HttpHeadersFrame</definition>
         <argsstring>(unsigned int length, uint8_t flags, uint8_t *streamID, uint8_t *payload)</argsstring>
         <name>HttpHeadersFrame</name>
-        <qualifiedname>fwoop::HttpHeadersFrame::HttpHeadersFrame</qualifiedname>
         <param>
           <type>unsigned int</type>
           <declname>length</declname>
@@ -181,14 +172,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpheadersframe.h" line="34" column="5" bodyfile="http/fwoop_httpheadersframe.cpp" bodystart="8" bodyend="16"/>
+        <location file="http/fwoop_httpheadersframe.h" line="33" column="5" bodyfile="http/fwoop_httpheadersframe.cpp" bodystart="8" bodyend="13"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpHeadersFrame_1a8bb2af69288173ecce8a80443cda2d45" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type></type>
         <definition>fwoop::HttpHeadersFrame::HttpHeadersFrame</definition>
         <argsstring>(const std::shared_ptr&lt; HttpHPacker &gt; &amp;packer)</argsstring>
         <name>HttpHeadersFrame</name>
-        <qualifiedname>fwoop::HttpHeadersFrame::HttpHeadersFrame</qualifiedname>
         <param>
           <type>const std::shared_ptr&lt; <ref refid="classfwoop_1_1HttpHPacker" kindref="compound">HttpHPacker</ref> &gt; &amp;</type>
           <declname>packer</declname>
@@ -199,14 +189,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpheadersframe.h" line="35" column="14" bodyfile="http/fwoop_httpheadersframe.h" bodystart="50" bodyend="59"/>
+        <location file="http/fwoop_httpheadersframe.h" line="34" column="14" bodyfile="http/fwoop_httpheadersframe.h" bodystart="48" bodyend="53"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpHeadersFrame_1ab77dff6da981c436aa7856fdcad3ab56" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void fwoop::HttpHeadersFrame::addFlag</definition>
         <argsstring>(Flag flag)</argsstring>
         <name>addFlag</name>
-        <qualifiedname>fwoop::HttpHeadersFrame::addFlag</qualifiedname>
         <param>
           <type><ref refid="classfwoop_1_1HttpHeadersFrame_1a588fb6914f785517bece71f302ce9f00" kindref="member">Flag</ref></type>
           <declname>flag</declname>
@@ -217,14 +206,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpheadersframe.h" line="37" column="10" bodyfile="http/fwoop_httpheadersframe.h" bodystart="62" bodyend="65"/>
+        <location file="http/fwoop_httpheadersframe.h" line="36" column="10" bodyfile="http/fwoop_httpheadersframe.h" bodystart="55" bodyend="55"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpHeadersFrame_1a2132e58c879ef387a9ea2a9e44ee8a05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void fwoop::HttpHeadersFrame::addHeaderBlock</definition>
         <argsstring>(HttpHeader &amp;&amp;name, std::string &amp;&amp;value)</argsstring>
         <name>addHeaderBlock</name>
-        <qualifiedname>fwoop::HttpHeadersFrame::addHeaderBlock</qualifiedname>
         <param>
           <type><ref refid="namespacefwoop_1a79bfb2b8f66124351e5ba38d4fcce929" kindref="member">HttpHeader</ref> &amp;&amp;</type>
           <declname>name</declname>
@@ -239,14 +227,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpheadersframe.h" line="39" column="10" bodyfile="http/fwoop_httpheadersframe.cpp" bodystart="45" bodyend="50"/>
+        <location file="http/fwoop_httpheadersframe.h" line="38" column="10" bodyfile="http/fwoop_httpheadersframe.cpp" bodystart="42" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpHeadersFrame_1ad6e0194dd19ba6ba671fffeeb73cac16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void fwoop::HttpHeadersFrame::addHeaderBlock</definition>
         <argsstring>(const std::string &amp;name, const std::string &amp;value)</argsstring>
         <name>addHeaderBlock</name>
-        <qualifiedname>fwoop::HttpHeadersFrame::addHeaderBlock</qualifiedname>
         <param>
           <type>const std::string &amp;</type>
           <declname>name</declname>
@@ -261,28 +248,26 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpheadersframe.h" line="40" column="10" bodyfile="http/fwoop_httpheadersframe.cpp" bodystart="52" bodyend="57"/>
+        <location file="http/fwoop_httpheadersframe.h" line="39" column="10" bodyfile="http/fwoop_httpheadersframe.cpp" bodystart="50" bodyend="55"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpHeadersFrame_1a5312239d26ef4966539532a515b22074" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void fwoop::HttpHeadersFrame::clearHeaderBlocks</definition>
         <argsstring>()</argsstring>
         <name>clearHeaderBlocks</name>
-        <qualifiedname>fwoop::HttpHeadersFrame::clearHeaderBlocks</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpheadersframe.h" line="41" column="10" bodyfile="http/fwoop_httpheadersframe.h" bodystart="68" bodyend="71"/>
+        <location file="http/fwoop_httpheadersframe.h" line="40" column="10" bodyfile="http/fwoop_httpheadersframe.h" bodystart="57" bodyend="57"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpHeadersFrame_1a9a6e7044c22b245f5795944cfc1cf799" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>uint8_t *</type>
         <definition>uint8_t * fwoop::HttpHeadersFrame::encode</definition>
         <argsstring>() const override</argsstring>
         <name>encode</name>
-        <qualifiedname>fwoop::HttpHeadersFrame::encode</qualifiedname>
         <reimplements refid="classfwoop_1_1HttpFrame_1a2a316cf5e601ae7e60316f7632d7a26f">encode</reimplements>
         <briefdescription>
         </briefdescription>
@@ -290,35 +275,33 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpheadersframe.h" line="43" column="13" bodyfile="http/fwoop_httpheadersframe.cpp" bodystart="18" bodyend="43"/>
+        <location file="http/fwoop_httpheadersframe.h" line="42" column="13" bodyfile="http/fwoop_httpheadersframe.cpp" bodystart="15" bodyend="40"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpHeadersFrame_1ace36358d7a9772c24e71ce6fb0069b21" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::vector&lt; <ref refid="namespacefwoop_1a8f8f27ac925f849da3190dea9dcdcbf9" kindref="member">HttpHeaderField_t</ref> &gt;::const_iterator</type>
         <definition>std::vector&lt; HttpHeaderField_t &gt;::const_iterator fwoop::HttpHeadersFrame::beginHeaderList</definition>
         <argsstring>() const</argsstring>
         <name>beginHeaderList</name>
-        <qualifiedname>fwoop::HttpHeadersFrame::beginHeaderList</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpheadersframe.h" line="45" column="34" bodyfile="http/fwoop_httpheadersframe.h" bodystart="74" bodyend="77"/>
+        <location file="http/fwoop_httpheadersframe.h" line="44" column="34" bodyfile="http/fwoop_httpheadersframe.h" bodystart="59" bodyend="62"/>
       </memberdef>
       <memberdef kind="function" id="classfwoop_1_1HttpHeadersFrame_1a511491150b19dbe422307e9525390d65" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::vector&lt; <ref refid="namespacefwoop_1a8f8f27ac925f849da3190dea9dcdcbf9" kindref="member">HttpHeaderField_t</ref> &gt;::const_iterator</type>
         <definition>std::vector&lt; HttpHeaderField_t &gt;::const_iterator fwoop::HttpHeadersFrame::endHeaderList</definition>
         <argsstring>() const</argsstring>
         <name>endHeaderList</name>
-        <qualifiedname>fwoop::HttpHeadersFrame::endHeaderList</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="http/fwoop_httpheadersframe.h" line="46" column="34" bodyfile="http/fwoop_httpheadersframe.h" bodystart="80" bodyend="83"/>
+        <location file="http/fwoop_httpheadersframe.h" line="45" column="34" bodyfile="http/fwoop_httpheadersframe.h" bodystart="64" bodyend="67"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -326,30 +309,30 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>fwoop::HttpFrame</label>
-        <link refid="classfwoop_1_1HttpFrame"/>
-      </node>
       <node id="1">
         <label>fwoop::HttpHeadersFrame</label>
         <link refid="classfwoop_1_1HttpHeadersFrame"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="2">
+        <label>fwoop::HttpFrame</label>
+        <link refid="classfwoop_1_1HttpFrame"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2">
-        <label>fwoop::HttpFrame</label>
-        <link refid="classfwoop_1_1HttpFrame"/>
-      </node>
       <node id="1">
         <label>fwoop::HttpHeadersFrame</label>
         <link refid="classfwoop_1_1HttpHeadersFrame"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="2">
+        <label>fwoop::HttpFrame</label>
+        <link refid="classfwoop_1_1HttpFrame"/>
+      </node>
     </collaborationgraph>
-    <location file="http/fwoop_httpheadersframe.h" line="14" column="1" bodyfile="http/fwoop_httpheadersframe.h" bodystart="14" bodyend="47"/>
+    <location file="http/fwoop_httpheadersframe.h" line="14" column="1" bodyfile="http/fwoop_httpheadersframe.h" bodystart="14" bodyend="46"/>
     <listofallmembers>
       <member refid="classfwoop_1_1HttpHeadersFrame_1ab77dff6da981c436aa7856fdcad3ab56" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>addFlag</name></member>
       <member refid="classfwoop_1_1HttpHeadersFrame_1a2132e58c879ef387a9ea2a9e44ee8a05" prot="public" virt="non-virtual"><scope>fwoop::HttpHeadersFrame</scope><name>addHeaderBlock</name></member>

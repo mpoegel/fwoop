@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1HttpRequestCallback" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>fwoop::HttpRequestCallback</compoundname>
+    <derivedcompoundref refid="classfwoop_1_1HttpServer" prot="public" virt="non-virtual">fwoop::HttpServer</derivedcompoundref>
+    <includes refid="fwoop__httpconnhandler_8h" local="no">fwoop_httpconnhandler.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfwoop_1_1HttpRequestCallback_1ae3d648b137b07c45376b8d7a2c703042" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::HttpRequestCallback::~HttpRequestCallback</definition>
+        <argsstring>()</argsstring>
+        <name>~HttpRequestCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpconnhandler.h" line="10" column="5" bodyfile="http/fwoop_httpconnhandler.h" bodystart="10" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpRequestCallback_1ae22846324cf1489c439345e89aee840b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void fwoop::HttpRequestCallback::onRequest</definition>
+        <argsstring>(const std::shared_ptr&lt; HttpRequest &gt; &amp;request, HttpResponse &amp;response)=0</argsstring>
+        <name>onRequest</name>
+        <reimplementedby refid="classfwoop_1_1HttpServer_1ae9d4f26b3cc3ada9ded72c9c0b6d74ea">onRequest</reimplementedby>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classfwoop_1_1HttpRequest" kindref="compound">HttpRequest</ref> &gt; &amp;</type>
+          <declname>request</declname>
+        </param>
+        <param>
+          <type><ref refid="classfwoop_1_1HttpResponse" kindref="compound">HttpResponse</ref> &amp;</type>
+          <declname>response</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpconnhandler.h" line="11" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpRequestCallback_1afdd5a89f2c990a5f9dc8a23be0de2541" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void fwoop::HttpRequestCallback::afterResponse</definition>
+        <argsstring>(const std::shared_ptr&lt; HttpRequest &gt; &amp;req, WriterPtr_t writer)=0</argsstring>
+        <name>afterResponse</name>
+        <reimplementedby refid="classfwoop_1_1HttpServer_1a781279caca763d7ddcef83a0170d297c">afterResponse</reimplementedby>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classfwoop_1_1HttpRequest" kindref="compound">HttpRequest</ref> &gt; &amp;</type>
+          <declname>req</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacefwoop_1a29e3dc14ec8cacd05c1d81c92c2f15bd" kindref="member">WriterPtr_t</ref></type>
+          <declname>writer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpconnhandler.h" line="12" column="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>fwoop::HttpRequestCallback</label>
+        <link refid="classfwoop_1_1HttpRequestCallback"/>
+      </node>
+      <node id="2">
+        <label>fwoop::HttpServer</label>
+        <link refid="classfwoop_1_1HttpServer"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="http/fwoop_httpconnhandler.h" line="8" column="1" bodyfile="http/fwoop_httpconnhandler.h" bodystart="8" bodyend="13"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1HttpRequestCallback_1afdd5a89f2c990a5f9dc8a23be0de2541" prot="public" virt="pure-virtual"><scope>fwoop::HttpRequestCallback</scope><name>afterResponse</name></member>
+      <member refid="classfwoop_1_1HttpRequestCallback_1ae22846324cf1489c439345e89aee840b" prot="public" virt="pure-virtual"><scope>fwoop::HttpRequestCallback</scope><name>onRequest</name></member>
+      <member refid="classfwoop_1_1HttpRequestCallback_1ae3d648b137b07c45376b8d7a2c703042" prot="public" virt="non-virtual"><scope>fwoop::HttpRequestCallback</scope><name>~HttpRequestCallback</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,503 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1DateTime" kind="class" language="C++" prot="public">
+    <compoundname>fwoop::DateTime</compoundname>
+    <includes refid="fwoop__datetime_8h" local="no">fwoop_datetime.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68c" prot="public" static="no" strong="no">
+        <type>uint8_t</type>
+        <name>DayOfWeek</name>
+        <enumvalue id="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68ca005d03aed048785e029ab36e6ddb03dd" prot="public">
+          <name>Sunday</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68ca88acb2af85e0616eee9fb36760998334" prot="public">
+          <name>Monday</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68cad8f396d4a8d960fb84d8b396e830f4dc" prot="public">
+          <name>Tuesday</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68ca8f0eedb6ceb875f26df806fb3bb67288" prot="public">
+          <name>Wednesday</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68caa9850d622dec393f669446384bbe6664" prot="public">
+          <name>Thursday</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68cae629c555e1b17da019564be7e29f0771" prot="public">
+          <name>Friday</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68ca7be7878f10c4c060eb9f9fbef6c088ca" prot="public">
+          <name>Saturday</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="10" column="5" bodyfile="basis/fwoop_datetime.h" bodystart="10" bodyend="18"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1DateTime_1aba6211d564fcc5be9e8082322bfd2194" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t fwoop::DateTime::d_time</definition>
+        <argsstring></argsstring>
+        <name>d_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="21" column="14" bodyfile="basis/fwoop_datetime.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1DateTime_1a39a1b8967daf20788a2060ddb9ef2b08" prot="private" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t fwoop::DateTime::d_year</definition>
+        <argsstring></argsstring>
+        <name>d_year</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="23" column="14" bodyfile="basis/fwoop_datetime.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1DateTime_1ab181c4dade0faf0356d8164271c149f8" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t fwoop::DateTime::d_month</definition>
+        <argsstring></argsstring>
+        <name>d_month</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="24" column="13" bodyfile="basis/fwoop_datetime.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1DateTime_1a47d123a4ddae501ab8995c4bf6e7ec20" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t fwoop::DateTime::d_day</definition>
+        <argsstring></argsstring>
+        <name>d_day</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="25" column="13" bodyfile="basis/fwoop_datetime.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1DateTime_1a1ac588d9da31aff7b4a1503bf06e5cb5" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t fwoop::DateTime::d_hour</definition>
+        <argsstring></argsstring>
+        <name>d_hour</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="26" column="13" bodyfile="basis/fwoop_datetime.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1DateTime_1ad3868dd500ccc77b130f5fda1ac251e7" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t fwoop::DateTime::d_minute</definition>
+        <argsstring></argsstring>
+        <name>d_minute</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="27" column="13" bodyfile="basis/fwoop_datetime.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1DateTime_1a65a6d4d9d71e1d581afcfee72a4b67fe" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t fwoop::DateTime::d_second</definition>
+        <argsstring></argsstring>
+        <name>d_second</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="28" column="13" bodyfile="basis/fwoop_datetime.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1DateTime_1a2e4c131818b3b92b6289dff2c8862953" prot="private" static="no" mutable="no">
+        <type><ref refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68c" kindref="member">DayOfWeek</ref></type>
+        <definition>DayOfWeek fwoop::DateTime::d_dow</definition>
+        <argsstring></argsstring>
+        <name>d_dow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="29" column="15" bodyfile="basis/fwoop_datetime.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classfwoop_1_1DateTime_1ad8054199a2d9faffc34e4aa49edb2717" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::DateTime::recalculate</definition>
+        <argsstring>()</argsstring>
+        <name>recalculate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="31" column="10" bodyfile="basis/fwoop_datetime.cpp" bodystart="38" bodyend="74"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classfwoop_1_1DateTime_1a5c2ec1f1ec362b6ba1559e1129e52f07" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfwoop_1_1DateTime" kindref="compound">DateTime</ref></type>
+        <definition>DateTime fwoop::DateTime::now</definition>
+        <argsstring>()</argsstring>
+        <name>now</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="34" column="21" bodyfile="basis/fwoop_datetime.cpp" bodystart="34" bodyend="34"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfwoop_1_1DateTime_1aa18e687dd803df42fe2310b2714169fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::DateTime::DateTime</definition>
+        <argsstring>(uint32_t unix_time)</argsstring>
+        <name>DateTime</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>unix_time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="36" column="5" bodyfile="basis/fwoop_datetime.cpp" bodystart="36" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DateTime_1a3900632a9d1ac0f57cc35d158b7d7a2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::DateTime::~DateTime</definition>
+        <argsstring>()=default</argsstring>
+        <name>~DateTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="37" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DateTime_1a72a87500fb3acb58cb57dce0ccdc2b2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::DateTime::DateTime</definition>
+        <argsstring>(const DateTime &amp;rhs)=default</argsstring>
+        <name>DateTime</name>
+        <param>
+          <type>const <ref refid="classfwoop_1_1DateTime" kindref="compound">DateTime</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="38" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DateTime_1a8072f6caada0658e7d4ef88392a1425f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfwoop_1_1DateTime" kindref="compound">DateTime</ref> &amp;</type>
+        <definition>DateTime&amp; fwoop::DateTime::operator=</definition>
+        <argsstring>(const DateTime &amp;rhs)=default</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classfwoop_1_1DateTime" kindref="compound">DateTime</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="39" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DateTime_1acf1c8c0d1bbea2076a0f607868eb8db9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::DateTime::DateTime</definition>
+        <argsstring>(DateTime &amp;&amp;rhs)=default</argsstring>
+        <name>DateTime</name>
+        <param>
+          <type><ref refid="classfwoop_1_1DateTime" kindref="compound">DateTime</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="40" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DateTime_1ab6b088e8bfc29ee603c520aa5853bf17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::DateTime::addDays</definition>
+        <argsstring>(int16_t daysToAdd)</argsstring>
+        <name>addDays</name>
+        <param>
+          <type>int16_t</type>
+          <declname>daysToAdd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="42" column="10" bodyfile="basis/fwoop_datetime.cpp" bodystart="76" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DateTime_1a8baafd73fe77f19f3f9d63a7e5d0fb52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::DateTime::addHours</definition>
+        <argsstring>(int16_t hoursToAdd)</argsstring>
+        <name>addHours</name>
+        <param>
+          <type>int16_t</type>
+          <declname>hoursToAdd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="43" column="10" bodyfile="basis/fwoop_datetime.cpp" bodystart="82" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DateTime_1a6b6ba515500f5e4c7b1d4ec4658d55b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::DateTime::addMinutes</definition>
+        <argsstring>(int16_t minutesToAdd)</argsstring>
+        <name>addMinutes</name>
+        <param>
+          <type>int16_t</type>
+          <declname>minutesToAdd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="44" column="10" bodyfile="basis/fwoop_datetime.cpp" bodystart="88" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DateTime_1ada6a898c700f20d4b611e64e7783c765" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::DateTime::addSeconds</definition>
+        <argsstring>(int64_t secondsToAdd)</argsstring>
+        <name>addSeconds</name>
+        <param>
+          <type>int64_t</type>
+          <declname>secondsToAdd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="45" column="10" bodyfile="basis/fwoop_datetime.cpp" bodystart="94" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DateTime_1a963606b21f152d2614ea4091d6848e29" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const uint16_t</type>
+        <definition>const uint16_t fwoop::DateTime::year</definition>
+        <argsstring>() const</argsstring>
+        <name>year</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="47" column="20" bodyfile="basis/fwoop_datetime.h" bodystart="57" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DateTime_1ab78255f56cefa98b525d379d6b72ab0a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const uint8_t</type>
+        <definition>const uint8_t fwoop::DateTime::month</definition>
+        <argsstring>() const</argsstring>
+        <name>month</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="48" column="19" bodyfile="basis/fwoop_datetime.h" bodystart="58" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DateTime_1a2d12ca9f7c5f5a6103b14ee1701f59f6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const uint8_t</type>
+        <definition>const uint8_t fwoop::DateTime::day</definition>
+        <argsstring>() const</argsstring>
+        <name>day</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="49" column="19" bodyfile="basis/fwoop_datetime.h" bodystart="59" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DateTime_1a58830a7509d8d76bfd1cb436fa548afc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const uint8_t</type>
+        <definition>const uint8_t fwoop::DateTime::hour</definition>
+        <argsstring>() const</argsstring>
+        <name>hour</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="50" column="19" bodyfile="basis/fwoop_datetime.h" bodystart="60" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DateTime_1aee346abe70d2544d9c8d3af12b129795" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const uint8_t</type>
+        <definition>const uint8_t fwoop::DateTime::minute</definition>
+        <argsstring>() const</argsstring>
+        <name>minute</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="51" column="19" bodyfile="basis/fwoop_datetime.h" bodystart="61" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DateTime_1a200172b079d69106f1ed9c6252565cc0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const uint8_t</type>
+        <definition>const uint8_t fwoop::DateTime::second</definition>
+        <argsstring>() const</argsstring>
+        <name>second</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="52" column="19" bodyfile="basis/fwoop_datetime.h" bodystart="62" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DateTime_1a500bddae7a6c4fbdee1c6b6cbdbbab2a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68c" kindref="member">DayOfWeek</ref></type>
+        <definition>const DateTime::DayOfWeek fwoop::DateTime::dayOfWeek</definition>
+        <argsstring>() const</argsstring>
+        <name>dayOfWeek</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="53" column="21" bodyfile="basis/fwoop_datetime.h" bodystart="63" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1DateTime_1ac54f7b78333a11d668d4c8fddd9d9918" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string fwoop::DateTime::dayOfWeekShortString</definition>
+        <argsstring>() const</argsstring>
+        <name>dayOfWeekShortString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="basis/fwoop_datetime.h" line="54" column="17" bodyfile="basis/fwoop_datetime.cpp" bodystart="96" bodyend="116"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="basis/fwoop_datetime.h" line="8" column="1" bodyfile="basis/fwoop_datetime.h" bodystart="8" bodyend="55"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1DateTime_1ab6b088e8bfc29ee603c520aa5853bf17" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>addDays</name></member>
+      <member refid="classfwoop_1_1DateTime_1a8baafd73fe77f19f3f9d63a7e5d0fb52" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>addHours</name></member>
+      <member refid="classfwoop_1_1DateTime_1a6b6ba515500f5e4c7b1d4ec4658d55b2" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>addMinutes</name></member>
+      <member refid="classfwoop_1_1DateTime_1ada6a898c700f20d4b611e64e7783c765" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>addSeconds</name></member>
+      <member refid="classfwoop_1_1DateTime_1a47d123a4ddae501ab8995c4bf6e7ec20" prot="private" virt="non-virtual"><scope>fwoop::DateTime</scope><name>d_day</name></member>
+      <member refid="classfwoop_1_1DateTime_1a2e4c131818b3b92b6289dff2c8862953" prot="private" virt="non-virtual"><scope>fwoop::DateTime</scope><name>d_dow</name></member>
+      <member refid="classfwoop_1_1DateTime_1a1ac588d9da31aff7b4a1503bf06e5cb5" prot="private" virt="non-virtual"><scope>fwoop::DateTime</scope><name>d_hour</name></member>
+      <member refid="classfwoop_1_1DateTime_1ad3868dd500ccc77b130f5fda1ac251e7" prot="private" virt="non-virtual"><scope>fwoop::DateTime</scope><name>d_minute</name></member>
+      <member refid="classfwoop_1_1DateTime_1ab181c4dade0faf0356d8164271c149f8" prot="private" virt="non-virtual"><scope>fwoop::DateTime</scope><name>d_month</name></member>
+      <member refid="classfwoop_1_1DateTime_1a65a6d4d9d71e1d581afcfee72a4b67fe" prot="private" virt="non-virtual"><scope>fwoop::DateTime</scope><name>d_second</name></member>
+      <member refid="classfwoop_1_1DateTime_1aba6211d564fcc5be9e8082322bfd2194" prot="private" virt="non-virtual"><scope>fwoop::DateTime</scope><name>d_time</name></member>
+      <member refid="classfwoop_1_1DateTime_1a39a1b8967daf20788a2060ddb9ef2b08" prot="private" virt="non-virtual"><scope>fwoop::DateTime</scope><name>d_year</name></member>
+      <member refid="classfwoop_1_1DateTime_1aa18e687dd803df42fe2310b2714169fb" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>DateTime</name></member>
+      <member refid="classfwoop_1_1DateTime_1a72a87500fb3acb58cb57dce0ccdc2b2b" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>DateTime</name></member>
+      <member refid="classfwoop_1_1DateTime_1acf1c8c0d1bbea2076a0f607868eb8db9" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>DateTime</name></member>
+      <member refid="classfwoop_1_1DateTime_1a2d12ca9f7c5f5a6103b14ee1701f59f6" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>day</name></member>
+      <member refid="classfwoop_1_1DateTime_1a500bddae7a6c4fbdee1c6b6cbdbbab2a" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>dayOfWeek</name></member>
+      <member refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68c" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>DayOfWeek</name></member>
+      <member refid="classfwoop_1_1DateTime_1ac54f7b78333a11d668d4c8fddd9d9918" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>dayOfWeekShortString</name></member>
+      <member refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68cae629c555e1b17da019564be7e29f0771" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>Friday</name></member>
+      <member refid="classfwoop_1_1DateTime_1a58830a7509d8d76bfd1cb436fa548afc" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>hour</name></member>
+      <member refid="classfwoop_1_1DateTime_1aee346abe70d2544d9c8d3af12b129795" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>minute</name></member>
+      <member refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68ca88acb2af85e0616eee9fb36760998334" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>Monday</name></member>
+      <member refid="classfwoop_1_1DateTime_1ab78255f56cefa98b525d379d6b72ab0a" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>month</name></member>
+      <member refid="classfwoop_1_1DateTime_1a5c2ec1f1ec362b6ba1559e1129e52f07" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>now</name></member>
+      <member refid="classfwoop_1_1DateTime_1a8072f6caada0658e7d4ef88392a1425f" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>operator=</name></member>
+      <member refid="classfwoop_1_1DateTime_1ad8054199a2d9faffc34e4aa49edb2717" prot="private" virt="non-virtual"><scope>fwoop::DateTime</scope><name>recalculate</name></member>
+      <member refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68ca7be7878f10c4c060eb9f9fbef6c088ca" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>Saturday</name></member>
+      <member refid="classfwoop_1_1DateTime_1a200172b079d69106f1ed9c6252565cc0" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>second</name></member>
+      <member refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68ca005d03aed048785e029ab36e6ddb03dd" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>Sunday</name></member>
+      <member refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68caa9850d622dec393f669446384bbe6664" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>Thursday</name></member>
+      <member refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68cad8f396d4a8d960fb84d8b396e830f4dc" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>Tuesday</name></member>
+      <member refid="classfwoop_1_1DateTime_1abea484cc7ec0f10ae5c2f192f3f1e68ca8f0eedb6ceb875f26df806fb3bb67288" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>Wednesday</name></member>
+      <member refid="classfwoop_1_1DateTime_1a963606b21f152d2614ea4091d6848e29" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>year</name></member>
+      <member refid="classfwoop_1_1DateTime_1a3900632a9d1ac0f57cc35d158b7d7a2a" prot="public" virt="non-virtual"><scope>fwoop::DateTime</scope><name>~DateTime</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

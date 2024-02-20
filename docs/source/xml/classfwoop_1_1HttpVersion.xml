@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1HttpVersion" kind="class" language="C++" prot="public">
+    <compoundname>fwoop::HttpVersion</compoundname>
+    <includes refid="fwoop__httpversion_8h" local="no">fwoop_httpversion.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Value</name>
+        <enumvalue id="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989a1bb8de17b526f928300953a5151c98fe" prot="public">
+          <name>Undefined</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989aef92c2ae7f1f4ee9221a369e9bc6822b" prot="public">
+          <name>Http1_0</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989a745f517b96aa9e770d8025393f291abe" prot="public">
+          <name>Http1_1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989a076bd99c65854aa6ed28437fcf8d5640" prot="public">
+          <name>Http2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpversion.h" line="9" column="5" bodyfile="http/fwoop_httpversion.h" bodystart="9" bodyend="14"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classfwoop_1_1HttpVersion_1af5da86b5d2eeb89c723a5c50a8653461" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989" kindref="member">HttpVersion::Value</ref></type>
+        <definition>HttpVersion::Value fwoop::HttpVersion::fromString</definition>
+        <argsstring>(const std::string &amp;versionStr)</argsstring>
+        <name>fromString</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>versionStr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpversion.h" line="16" column="31" bodyfile="http/fwoop_httpversion.cpp" bodystart="5" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1HttpVersion_1a76825f8eabe30ab9e7afc868b5d12cf6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string fwoop::HttpVersion::toString</definition>
+        <argsstring>(const HttpVersion::Value version)</argsstring>
+        <name>toString</name>
+        <param>
+          <type>const <ref refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989" kindref="member">HttpVersion::Value</ref></type>
+          <declname>version</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpversion.h" line="17" column="24" bodyfile="http/fwoop_httpversion.cpp" bodystart="16" bodyend="28"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classfwoop_1_1HttpVersion_1ab0f7e92293842bb98b4143c16203fd49" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::HttpVersion::HttpVersion</definition>
+        <argsstring>()=delete</argsstring>
+        <name>HttpVersion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="http/fwoop_httpversion.h" line="20" column="5"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="http/fwoop_httpversion.h" line="7" column="1" bodyfile="http/fwoop_httpversion.h" bodystart="7" bodyend="21"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1HttpVersion_1af5da86b5d2eeb89c723a5c50a8653461" prot="public" virt="non-virtual"><scope>fwoop::HttpVersion</scope><name>fromString</name></member>
+      <member refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989aef92c2ae7f1f4ee9221a369e9bc6822b" prot="public" virt="non-virtual"><scope>fwoop::HttpVersion</scope><name>Http1_0</name></member>
+      <member refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989a745f517b96aa9e770d8025393f291abe" prot="public" virt="non-virtual"><scope>fwoop::HttpVersion</scope><name>Http1_1</name></member>
+      <member refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989a076bd99c65854aa6ed28437fcf8d5640" prot="public" virt="non-virtual"><scope>fwoop::HttpVersion</scope><name>Http2</name></member>
+      <member refid="classfwoop_1_1HttpVersion_1ab0f7e92293842bb98b4143c16203fd49" prot="private" virt="non-virtual"><scope>fwoop::HttpVersion</scope><name>HttpVersion</name></member>
+      <member refid="classfwoop_1_1HttpVersion_1a76825f8eabe30ab9e7afc868b5d12cf6" prot="public" virt="non-virtual"><scope>fwoop::HttpVersion</scope><name>toString</name></member>
+      <member refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989a1bb8de17b526f928300953a5151c98fe" prot="public" virt="non-virtual"><scope>fwoop::HttpVersion</scope><name>Undefined</name></member>
+      <member refid="classfwoop_1_1HttpVersion_1a4544b244c9938502eb24ab88208ad989" prot="public" virt="non-virtual"><scope>fwoop::HttpVersion</scope><name>Value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

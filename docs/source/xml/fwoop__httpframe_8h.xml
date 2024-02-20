@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="fwoop__httpframe_8h" kind="file" language="C++">
     <compoundname>fwoop_httpframe.h</compoundname>
     <includes local="no">cstring</includes>
@@ -26,35 +26,31 @@
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="2">
-        <label>cstring</label>
-      </node>
-      <node id="3">
-        <label>memory</label>
-      </node>
       <node id="5">
         <label>stdint.h</label>
       </node>
       <node id="4">
         <label>string</label>
       </node>
+      <node id="2">
+        <label>cstring</label>
+      </node>
+      <node id="3">
+        <label>memory</label>
+      </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="3">
-        <label>http/fwoop_httpdataframe.cpp</label>
-        <link refid="fwoop__httpdataframe_8cpp"/>
-      </node>
-      <node id="2">
-        <label>http/fwoop_httpdataframe.h</label>
-        <link refid="fwoop__httpdataframe_8h"/>
-        <childnode refid="3" relation="include">
+      <node id="12">
+        <label>http/fwoop_httpwindowupdateframe.h</label>
+        <link refid="fwoop__httpwindowupdateframe_8h"/>
+        <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
+        <childnode refid="13" relation="include">
         </childnode>
       </node>
-      <node id="5">
-        <label>http/fwoop_httpframe.cpp</label>
-        <link refid="fwoop__httpframe_8cpp"/>
+      <node id="9">
+        <label>http/fwoop_httpheadersframe.cpp</label>
+        <link refid="fwoop__httpheadersframe_8cpp"/>
       </node>
       <node id="1">
         <label>http/fwoop_httpframe.h</label>
@@ -74,24 +70,6 @@
         <childnode refid="12" relation="include">
         </childnode>
       </node>
-      <node id="7">
-        <label>http/fwoop_httpgoawayframe.cpp</label>
-        <link refid="fwoop__httpgoawayframe_8cpp"/>
-      </node>
-      <node id="6">
-        <label>http/fwoop_httpgoawayframe.h</label>
-        <link refid="fwoop__httpgoawayframe_8h"/>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="9">
-        <label>http/fwoop_httpheadersframe.cpp</label>
-        <link refid="fwoop__httpheadersframe_8cpp"/>
-      </node>
       <node id="8">
         <label>http/fwoop_httpheadersframe.h</label>
         <link refid="fwoop__httpheadersframe_8h"/>
@@ -102,13 +80,25 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
+      <node id="3">
+        <label>http/fwoop_httpdataframe.cpp</label>
+        <link refid="fwoop__httpdataframe_8cpp"/>
+      </node>
+      <node id="5">
+        <label>http/fwoop_httpframe.cpp</label>
+        <link refid="fwoop__httpframe_8cpp"/>
+      </node>
       <node id="4">
         <label>http/fwoop_httpserver.cpp</label>
         <link refid="fwoop__httpserver_8cpp"/>
       </node>
-      <node id="11">
-        <label>http/fwoop_httpsettingsframe.cpp</label>
-        <link refid="fwoop__httpsettingsframe_8cpp"/>
+      <node id="2">
+        <label>http/fwoop_httpdataframe.h</label>
+        <link refid="fwoop__httpdataframe_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
       </node>
       <node id="10">
         <label>http/fwoop_httpsettingsframe.h</label>
@@ -120,17 +110,27 @@
         <childnode refid="11" relation="include">
         </childnode>
       </node>
+      <node id="6">
+        <label>http/fwoop_httpgoawayframe.h</label>
+        <link refid="fwoop__httpgoawayframe_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>http/fwoop_httpsettingsframe.cpp</label>
+        <link refid="fwoop__httpsettingsframe_8cpp"/>
+      </node>
       <node id="13">
         <label>http/fwoop_httpwindowupdateframe.cpp</label>
         <link refid="fwoop__httpwindowupdateframe_8cpp"/>
       </node>
-      <node id="12">
-        <label>http/fwoop_httpwindowupdateframe.h</label>
-        <link refid="fwoop__httpwindowupdateframe_8h"/>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
+      <node id="7">
+        <label>http/fwoop_httpgoawayframe.cpp</label>
+        <link refid="fwoop__httpgoawayframe_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classfwoop_1_1HttpFrame" prot="public">fwoop::HttpFrame</innerclass>
@@ -153,33 +153,33 @@
 <codeline lineno="11" refid="classfwoop_1_1HttpFrame" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfwoop_1_1HttpFrame" kindref="compound">HttpFrame</ref><sp/>{</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="13" refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9c" kindref="member">Type</ref><sp/>{</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Unknown<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>255,</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Data<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><sp/><sp/>0,</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Header<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><sp/><sp/>1,</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Priority<sp/><sp/><sp/><sp/><sp/>=<sp/><sp/><sp/>2,</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ResetStream<sp/><sp/>=<sp/><sp/><sp/>3,</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Settings<sp/><sp/><sp/><sp/><sp/>=<sp/><sp/><sp/>4,</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PushPromise<sp/><sp/>=<sp/><sp/><sp/>5,</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Ping<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><sp/><sp/>6,</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GoAway<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><sp/><sp/>7,</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>WindowUpdate<sp/>=<sp/><sp/><sp/>8,</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Continuation<sp/>=<sp/><sp/><sp/>9,</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9ca88183b946cc5f0e8c96b2e66e1c74a7e" kindref="member">Unknown</ref><sp/>=<sp/>255,</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9caf6068daa29dbb05a7ead1e3b5a48bbee" kindref="member">Data</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9cabf50d5e661106d0abe925af3c2e6f7e7" kindref="member">Header</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9ca502996d9790340c5fd7b86a5b93b1c9f" kindref="member">Priority</ref><sp/>=<sp/>2,</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9ca7b647436224f5389cde132f2a53db872" kindref="member">ResetStream</ref><sp/>=<sp/>3,</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9caf4f70727dc34561dfde1a3c529b6205c" kindref="member">Settings</ref><sp/>=<sp/>4,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9ca70e3e2633a044d32c5985d500fce7226" kindref="member">PushPromise</ref><sp/>=<sp/>5,</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9cab85815d04cec053ce6deb8021f2df1b8" kindref="member">Ping</ref><sp/>=<sp/>6,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9cadbbef46a58319d82be4d7c14250a52f5" kindref="member">GoAway</ref><sp/>=<sp/>7,</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9cae01b52b36c09cb7df91119838a499172" kindref="member">WindowUpdate</ref><sp/>=<sp/>8,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9caf11580a0250ef12842e64f487810cc70" kindref="member">Continuation</ref><sp/>=<sp/>9,</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="26" refid="classfwoop_1_1HttpFrame_1af748ad7f28c669c6616d60fe5965bd7e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1af748ad7f28c669c6616d60fe5965bd7e" kindref="member">HEADER_LENGTH</ref><sp/>=<sp/>9;</highlight></codeline>
+<codeline lineno="26" refid="classfwoop_1_1HttpFrame_1af748ad7f28c669c6616d60fe5965bd7e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>constexpr<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1af748ad7f28c669c6616d60fe5965bd7e" kindref="member">HEADER_LENGTH</ref><sp/>=<sp/>9;</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="29" refid="classfwoop_1_1HttpFrame_1af9fb5740d57aee90e97cb7de45f3e321" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1af9fb5740d57aee90e97cb7de45f3e321" kindref="member">d_length</ref>;</highlight></codeline>
-<codeline lineno="30" refid="classfwoop_1_1HttpFrame_1a2c1b3db021c82daa3485ed8bcd547404" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9c" kindref="member">Type</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1a2c1b3db021c82daa3485ed8bcd547404" kindref="member">d_type</ref>;</highlight></codeline>
-<codeline lineno="31" refid="classfwoop_1_1HttpFrame_1af4ab160bcedcb2562d6001c6570548e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1af4ab160bcedcb2562d6001c6570548e2" kindref="member">d_flags</ref>;</highlight></codeline>
-<codeline lineno="32" refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" kindref="member">d_streamID</ref>[4];</highlight></codeline>
-<codeline lineno="33" refid="classfwoop_1_1HttpFrame_1a1b7c3e3c81c64d953c13a96cf9cb31d3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="classfwoop_1_1HttpFrame_1a1b7c3e3c81c64d953c13a96cf9cb31d3" kindref="member">d_payload</ref>;</highlight></codeline>
+<codeline lineno="29" refid="classfwoop_1_1HttpFrame_1af9fb5740d57aee90e97cb7de45f3e321" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1af9fb5740d57aee90e97cb7de45f3e321" kindref="member">d_length</ref>;</highlight></codeline>
+<codeline lineno="30" refid="classfwoop_1_1HttpFrame_1a2c1b3db021c82daa3485ed8bcd547404" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9c" kindref="member">Type</ref><sp/><ref refid="classfwoop_1_1HttpFrame_1a2c1b3db021c82daa3485ed8bcd547404" kindref="member">d_type</ref>;</highlight></codeline>
+<codeline lineno="31" refid="classfwoop_1_1HttpFrame_1af4ab160bcedcb2562d6001c6570548e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="classfwoop_1_1HttpFrame_1af4ab160bcedcb2562d6001c6570548e2" kindref="member">d_flags</ref>;</highlight></codeline>
+<codeline lineno="32" refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" kindref="member">d_streamID</ref>[4];</highlight></codeline>
+<codeline lineno="33" refid="classfwoop_1_1HttpFrame_1a1b7c3e3c81c64d953c13a96cf9cb31d3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*<ref refid="classfwoop_1_1HttpFrame_1a1b7c3e3c81c64d953c13a96cf9cb31d3" kindref="member">d_payload</ref>;</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1a7ab4cf22d8e4df08b9e2c112d3a3579f" kindref="member">HttpFrame</ref>(<ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9c" kindref="member">Type</ref><sp/><ref refid="classfwoop_1_1HttpFrame_1ab535fb5b35df53538e2892639cce9f6f" kindref="member">type</ref>);</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1a2d15a02a0cb21cfaa2643a87e8830426" kindref="member">encodeHeader</ref>(uint8_t<sp/>*out)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::unique_ptr&lt;HttpFrame&gt;<sp/><ref refid="classfwoop_1_1HttpFrame_1ac9e387d889689561660aa094aff1fd85" kindref="member">parse</ref>(uint8_t<sp/>*buffer,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bufferSize,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>bytesParsed);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::unique_ptr&lt;HttpFrame&gt;<sp/><ref refid="classfwoop_1_1HttpFrame_1ac9e387d889689561660aa094aff1fd85" kindref="member">parse</ref>(uint8_t<sp/>*buffer,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bufferSize,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;bytesParsed);</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9c" kindref="member">Type</ref><sp/><ref refid="classfwoop_1_1HttpFrame_1ade1fb3cab89f2a3c95312cb2378abb6e" kindref="member">byteToType</ref>(uint8_t<sp/></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classfwoop_1_1HttpFrame_1a84a587cc6c2ec20b5b28e9612d6f4327" kindref="member">typeToString</ref>(<ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9c" kindref="member">Type</ref><sp/><ref refid="classfwoop_1_1HttpFrame_1ab535fb5b35df53538e2892639cce9f6f" kindref="member">type</ref>);</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight></codeline>
@@ -199,68 +199,41 @@
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="classfwoop_1_1HttpFrame_1af91ef9220c742b6fe0e398fd0e8bc4da" kindref="member">getStreamID</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="58"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="61" refid="classfwoop_1_1HttpFrame_1a0196e1520a2c49fdac7ff32886a36c1d" refkind="member"><highlight class="normal"><ref refid="classfwoop_1_1HttpFrame_1a0196e1520a2c49fdac7ff32886a36c1d" kindref="member">HttpFrame::~HttpFrame</ref>()</highlight></codeline>
-<codeline lineno="62"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1a1b7c3e3c81c64d953c13a96cf9cb31d3" kindref="member">d_payload</ref>;</highlight></codeline>
-<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60" refid="classfwoop_1_1HttpFrame_1a0196e1520a2c49fdac7ff32886a36c1d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1a0196e1520a2c49fdac7ff32886a36c1d" kindref="member">HttpFrame::~HttpFrame</ref>()<sp/>{<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classfwoop_1_1HttpFrame_1a1b7c3e3c81c64d953c13a96cf9cb31d3" kindref="member">d_payload</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="classfwoop_1_1HttpFrame_1aa418c5a29a857d21bd83835836230696" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1aa418c5a29a857d21bd83835836230696" kindref="member">HttpFrame::length</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1af9fb5740d57aee90e97cb7de45f3e321" kindref="member">d_length</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="classfwoop_1_1HttpFrame_1ab535fb5b35df53538e2892639cce9f6f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9c" kindref="member">HttpFrame::Type</ref><sp/><ref refid="classfwoop_1_1HttpFrame_1ab535fb5b35df53538e2892639cce9f6f" kindref="member">HttpFrame::type</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1a2c1b3db021c82daa3485ed8bcd547404" kindref="member">d_type</ref>;<sp/>}</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="67" refid="classfwoop_1_1HttpFrame_1aa418c5a29a857d21bd83835836230696" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1aa418c5a29a857d21bd83835836230696" kindref="member">HttpFrame::length</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="68"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1af9fb5740d57aee90e97cb7de45f3e321" kindref="member">d_length</ref>;</highlight></codeline>
-<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="73" refid="classfwoop_1_1HttpFrame_1ab535fb5b35df53538e2892639cce9f6f" refkind="member"><highlight class="normal"><ref refid="classfwoop_1_1HttpFrame_1ae0ed6093e189dc10f889743acae7ec9c" kindref="member">HttpFrame::Type</ref><sp/><ref refid="classfwoop_1_1HttpFrame_1ab535fb5b35df53538e2892639cce9f6f" kindref="member">HttpFrame::type</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="74"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1a2c1b3db021c82daa3485ed8bcd547404" kindref="member">d_type</ref>;</highlight></codeline>
+<codeline lineno="66" refid="classfwoop_1_1HttpFrame_1a7f1a53af685d8dc955a31f2fcd70fade" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint8_t<sp/>*<ref refid="classfwoop_1_1HttpFrame_1a7f1a53af685d8dc955a31f2fcd70fade" kindref="member">HttpFrame::payload</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1a1b7c3e3c81c64d953c13a96cf9cb31d3" kindref="member">d_payload</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="classfwoop_1_1HttpFrame_1a79aa423e31eefead7f0fd3e8f5a028ae" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1a79aa423e31eefead7f0fd3e8f5a028ae" kindref="member">HttpFrame::encodingLength</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1af748ad7f28c669c6616d60fe5965bd7e" kindref="member">HEADER_LENGTH</ref><sp/>+<sp/><ref refid="classfwoop_1_1HttpFrame_1af9fb5740d57aee90e97cb7de45f3e321" kindref="member">d_length</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="classfwoop_1_1HttpFrame_1a2a316cf5e601ae7e60316f7632d7a26f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint8_t<sp/>*<ref refid="classfwoop_1_1HttpFrame_1a2a316cf5e601ae7e60316f7632d7a26f" kindref="member">HttpFrame::encode</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="71"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*encoding<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>uint8_t[<ref refid="classfwoop_1_1HttpFrame_1a79aa423e31eefead7f0fd3e8f5a028ae" kindref="member">encodingLength</ref>()];</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(encoding,<sp/>0,<sp/><ref refid="classfwoop_1_1HttpFrame_1a79aa423e31eefead7f0fd3e8f5a028ae" kindref="member">encodingLength</ref>());</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1a2d15a02a0cb21cfaa2643a87e8830426" kindref="member">encodeHeader</ref>(encoding);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>encoding;</highlight></codeline>
 <codeline lineno="76"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="77"><highlight class="normal"></highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="79" refid="classfwoop_1_1HttpFrame_1a7f1a53af685d8dc955a31f2fcd70fade" refkind="member"><highlight class="normal">uint8_t<sp/>*<ref refid="classfwoop_1_1HttpFrame_1a7f1a53af685d8dc955a31f2fcd70fade" kindref="member">HttpFrame::payload</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="80"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1a1b7c3e3c81c64d953c13a96cf9cb31d3" kindref="member">d_payload</ref>;</highlight></codeline>
-<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"></highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="85" refid="classfwoop_1_1HttpFrame_1a79aa423e31eefead7f0fd3e8f5a028ae" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1a79aa423e31eefead7f0fd3e8f5a028ae" kindref="member">HttpFrame::encodingLength</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="86"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1af748ad7f28c669c6616d60fe5965bd7e" kindref="member">HEADER_LENGTH</ref><sp/>+<sp/><ref refid="classfwoop_1_1HttpFrame_1af9fb5740d57aee90e97cb7de45f3e321" kindref="member">d_length</ref>;</highlight></codeline>
-<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="91" refid="classfwoop_1_1HttpFrame_1a2a316cf5e601ae7e60316f7632d7a26f" refkind="member"><highlight class="normal">uint8_t<sp/>*<ref refid="classfwoop_1_1HttpFrame_1a2a316cf5e601ae7e60316f7632d7a26f" kindref="member">HttpFrame::encode</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="92"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*encoding<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>uint8_t[<ref refid="classfwoop_1_1HttpFrame_1a79aa423e31eefead7f0fd3e8f5a028ae" kindref="member">encodingLength</ref>()];</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(encoding,<sp/>0,<sp/><ref refid="classfwoop_1_1HttpFrame_1a79aa423e31eefead7f0fd3e8f5a028ae" kindref="member">encodingLength</ref>());</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1a2d15a02a0cb21cfaa2643a87e8830426" kindref="member">encodeHeader</ref>(encoding);</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>encoding;</highlight></codeline>
-<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"></highlight></codeline>
-<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="100" refid="classfwoop_1_1HttpFrame_1a9e0344f5dbb95f054009cd43cdb485b4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1a9e0344f5dbb95f054009cd43cdb485b4" kindref="member">HttpFrame::setStreamID</ref>(uint32_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="101"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" kindref="member">d_streamID</ref>[0]<sp/>=<sp/>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>24);</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" kindref="member">d_streamID</ref>[1]<sp/>=<sp/>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>16);</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" kindref="member">d_streamID</ref>[2]<sp/>=<sp/>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>8);</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" kindref="member">d_streamID</ref>[3]<sp/>=<sp/>id;</highlight></codeline>
-<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"></highlight></codeline>
-<codeline lineno="108"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="109" refid="classfwoop_1_1HttpFrame_1af91ef9220c742b6fe0e398fd0e8bc4da" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="classfwoop_1_1HttpFrame_1af91ef9220c742b6fe0e398fd0e8bc4da" kindref="member">HttpFrame::getStreamID</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="110"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>result<sp/>=<sp/><ref refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" kindref="member">d_streamID</ref>[3]<sp/>+<sp/>(<ref refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" kindref="member">d_streamID</ref>[2]<sp/>&lt;&lt;<sp/>8)<sp/>+<sp/>(<ref refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" kindref="member">d_streamID</ref>[1]<sp/>&lt;&lt;<sp/>16)<sp/>+(<ref refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" kindref="member">d_streamID</ref>[0]<sp/>&lt;&lt;<sp/>24);</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
-<codeline lineno="113"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"></highlight></codeline>
-<codeline lineno="115"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="116" refid="classfwoop_1_1HttpFrame_1a83cdc5c45cb979d43a2b00043dc606b9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1a83cdc5c45cb979d43a2b00043dc606b9" kindref="member">HttpFrame::setLength</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length)</highlight></codeline>
-<codeline lineno="117"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1af9fb5740d57aee90e97cb7de45f3e321" kindref="member">d_length</ref><sp/>=<sp/><ref refid="classfwoop_1_1HttpFrame_1aa418c5a29a857d21bd83835836230696" kindref="member">length</ref>;</highlight></codeline>
-<codeline lineno="119"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78" refid="classfwoop_1_1HttpFrame_1a9e0344f5dbb95f054009cd43cdb485b4" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1a9e0344f5dbb95f054009cd43cdb485b4" kindref="member">HttpFrame::setStreamID</ref>(uint32_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" kindref="member">d_streamID</ref>[0]<sp/>=<sp/>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>24);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" kindref="member">d_streamID</ref>[1]<sp/>=<sp/>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>16);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" kindref="member">d_streamID</ref>[2]<sp/>=<sp/>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>8);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" kindref="member">d_streamID</ref>[3]<sp/>=<sp/>id;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="classfwoop_1_1HttpFrame_1af91ef9220c742b6fe0e398fd0e8bc4da" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint32_t<sp/><ref refid="classfwoop_1_1HttpFrame_1af91ef9220c742b6fe0e398fd0e8bc4da" kindref="member">HttpFrame::getStreamID</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="87"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>result<sp/>=<sp/><ref refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" kindref="member">d_streamID</ref>[3]<sp/>+<sp/>(<ref refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" kindref="member">d_streamID</ref>[2]<sp/>&lt;&lt;<sp/>8)<sp/>+<sp/>(<ref refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" kindref="member">d_streamID</ref>[1]<sp/>&lt;&lt;<sp/>16)<sp/>+<sp/>(<ref refid="classfwoop_1_1HttpFrame_1a280d9f782a77e8f833c9a6bf0141bc34" kindref="member">d_streamID</ref>[0]<sp/>&lt;&lt;<sp/>24);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="classfwoop_1_1HttpFrame_1a83cdc5c45cb979d43a2b00043dc606b9" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfwoop_1_1HttpFrame_1a83cdc5c45cb979d43a2b00043dc606b9" kindref="member">HttpFrame::setLength</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length)<sp/>{<sp/><ref refid="classfwoop_1_1HttpFrame_1af9fb5740d57aee90e97cb7de45f3e321" kindref="member">d_length</ref><sp/>=<sp/><ref refid="classfwoop_1_1HttpFrame_1aa418c5a29a857d21bd83835836230696" kindref="member">length</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>fwoop</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="http/fwoop_httpframe.h"/>
   </compounddef>

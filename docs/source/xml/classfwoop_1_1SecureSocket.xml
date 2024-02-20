@@ -1,0 +1,413 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classfwoop_1_1SecureSocket" kind="class" language="C++" prot="public">
+    <compoundname>fwoop::SecureSocket</compoundname>
+    <basecompoundref refid="classfwoop_1_1SocketBase" prot="public" virt="non-virtual">fwoop::SocketBase</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">Botan::TLS::Callbacks</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">std::enable_shared_from_this&lt; SecureSocket &gt;</basecompoundref>
+    <includes refid="fwoop__securesocket_8h" local="no">fwoop_securesocket.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfwoop_1_1SecureSocket_1a0671cf8df99d5e8fb847cfac6d445ad6" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int fwoop::SecureSocket::d_fd</definition>
+        <argsstring></argsstring>
+        <name>d_fd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_securesocket.h" line="26" column="9" bodyfile="crypto/fwoop_securesocket.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1SecureSocket_1ab293ddaa10b610d53b7975750cd25684" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool fwoop::SecureSocket::d_peer_closed</definition>
+        <argsstring></argsstring>
+        <name>d_peer_closed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_securesocket.h" line="27" column="10" bodyfile="crypto/fwoop_securesocket.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1SecureSocket_1aaeffd20af4466485ad82ee4f66e84433" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; Botan::TLS::Client &gt;</type>
+        <definition>std::shared_ptr&lt;Botan::TLS::Client&gt; fwoop::SecureSocket::d_client</definition>
+        <argsstring></argsstring>
+        <name>d_client</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_securesocket.h" line="28" column="21" bodyfile="crypto/fwoop_securesocket.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1SecureSocket_1abf2f0252f9a59890e55f03cad5aa8cc2" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t fwoop::SecureSocket::d_readBuffer[16384]</definition>
+        <argsstring>[16384]</argsstring>
+        <name>d_readBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_securesocket.h" line="29" column="13" bodyfile="crypto/fwoop_securesocket.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfwoop_1_1SecureSocket_1a4ae642280914f164bf23c03468258c0b" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t fwoop::SecureSocket::d_readWaiting</definition>
+        <argsstring></argsstring>
+        <name>d_readWaiting</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_securesocket.h" line="30" column="14" bodyfile="crypto/fwoop_securesocket.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classfwoop_1_1SecureSocket_1acb324ddb4cd9a1e25ddb0c7555756809" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::SecureSocket::SecureSocket</definition>
+        <argsstring>(int fd)</argsstring>
+        <name>SecureSocket</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_securesocket.h" line="32" column="5" bodyfile="crypto/fwoop_securesocket.cpp" bodystart="21" bodyend="24"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classfwoop_1_1SecureSocket_1af5dfef95232b5b7b9b022d82cd1236a9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classfwoop_1_1SecureSocket" kindref="compound">SecureSocket</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; SecureSocket &gt; fwoop::SecureSocket::create</definition>
+        <argsstring>(int fd, const std::shared_ptr&lt; tls::ClientCredentials &gt; &amp;creds, const std::shared_ptr&lt; Botan::AutoSeeded_RNG &gt; &amp;rng, const std::shared_ptr&lt; Botan::TLS::Session_Manager_In_Memory &gt; &amp;sessionMgr, const Botan::TLS::Server_Information &amp;serverInfo, const std::shared_ptr&lt; Botan::TLS::Policy &gt; &amp;policy, Botan::TLS::Protocol_Version version)</argsstring>
+        <name>create</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classfwoop_1_1tls_1_1ClientCredentials" kindref="compound">tls::ClientCredentials</ref> &gt; &amp;</type>
+          <declname>creds</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; Botan::AutoSeeded_RNG &gt; &amp;</type>
+          <declname>rng</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; Botan::TLS::Session_Manager_In_Memory &gt; &amp;</type>
+          <declname>sessionMgr</declname>
+        </param>
+        <param>
+          <type>const Botan::TLS::Server_Information &amp;</type>
+          <declname>serverInfo</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; Botan::TLS::Policy &gt; &amp;</type>
+          <declname>policy</declname>
+        </param>
+        <param>
+          <type>Botan::TLS::Protocol_Version</type>
+          <declname>version</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_securesocket.h" line="36" column="5" bodyfile="crypto/fwoop_securesocket.cpp" bodystart="29" bodyend="39"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfwoop_1_1SecureSocket_1a8cd86492c559e698092876c2f1683b05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fwoop::SecureSocket::~SecureSocket</definition>
+        <argsstring>()</argsstring>
+        <name>~SecureSocket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_securesocket.h" line="41" column="5" bodyfile="crypto/fwoop_securesocket.cpp" bodystart="26" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1SecureSocket_1a698fa656cbb0f01c11867b73abedd82b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::error_code</type>
+        <definition>std::error_code fwoop::SecureSocket::handshake</definition>
+        <argsstring>()</argsstring>
+        <name>handshake</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_securesocket.h" line="43" column="21" bodyfile="crypto/fwoop_securesocket.cpp" bodystart="41" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1SecureSocket_1abd8bda2589f3eab01e0a121808a1cda7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::error_code</type>
+        <definition>std::error_code fwoop::SecureSocket::read</definition>
+        <argsstring>(uint8_t *buffer, uint32_t bufferSize, uint32_t &amp;bytesRead) override</argsstring>
+        <name>read</name>
+        <reimplements refid="classfwoop_1_1Reader_1a76cc37f2f2fd5a021b87a577a39d3af7">read</reimplements>
+        <param>
+          <type>uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>bufferSize</declname>
+        </param>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>bytesRead</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_securesocket.h" line="46" column="21" bodyfile="crypto/fwoop_securesocket.cpp" bodystart="52" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1SecureSocket_1afb85f3b2ae99083c26e9b436937f2161" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::error_code</type>
+        <definition>std::error_code fwoop::SecureSocket::write</definition>
+        <argsstring>(const uint8_t *buffer, uint32_t bufferSize, uint32_t &amp;bytesWritten) override</argsstring>
+        <name>write</name>
+        <reimplements refid="classfwoop_1_1Writer_1a9ca1cce9f2d609cc987e5cca42bfe3f5">write</reimplements>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>bufferSize</declname>
+        </param>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>bytesWritten</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_securesocket.h" line="47" column="21" bodyfile="crypto/fwoop_securesocket.cpp" bodystart="96" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1SecureSocket_1a7e4f8f2e6d80ecd87c87ca0053affc22" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void fwoop::SecureSocket::close</definition>
+        <argsstring>() override</argsstring>
+        <name>close</name>
+        <reimplements refid="classfwoop_1_1Reader_1a90597f688f2e4610d39a10c98addad98">close</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_securesocket.h" line="48" column="10" bodyfile="crypto/fwoop_securesocket.cpp" bodystart="110" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1SecureSocket_1acee899469ecc5b2fec9df9a6e7180893" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::SecureSocket::tls_emit_data</definition>
+        <argsstring>(std::span&lt; const uint8_t &gt; data) override</argsstring>
+        <name>tls_emit_data</name>
+        <param>
+          <type>std::span&lt; const uint8_t &gt;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_securesocket.h" line="51" column="10" bodyfile="crypto/fwoop_securesocket.cpp" bodystart="121" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1SecureSocket_1a5f3d1806c184ac363c36f97a17f0902a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::SecureSocket::tls_record_received</definition>
+        <argsstring>(uint64_t seq_no, std::span&lt; const uint8_t &gt; data) override</argsstring>
+        <name>tls_record_received</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>seq_no</declname>
+        </param>
+        <param>
+          <type>std::span&lt; const uint8_t &gt;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_securesocket.h" line="52" column="10" bodyfile="crypto/fwoop_securesocket.cpp" bodystart="137" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1SecureSocket_1a46e5472f43653e8362f050a903acc050" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::SecureSocket::tls_alert</definition>
+        <argsstring>(Botan::TLS::Alert alert) override</argsstring>
+        <name>tls_alert</name>
+        <param>
+          <type>Botan::TLS::Alert</type>
+          <declname>alert</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_securesocket.h" line="53" column="10" bodyfile="crypto/fwoop_securesocket.cpp" bodystart="147" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1SecureSocket_1aa05df6e0da60f24b40c9da606bcbebba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fwoop::SecureSocket::tls_session_established</definition>
+        <argsstring>(const Botan::TLS::Session_Summary &amp;session) override</argsstring>
+        <name>tls_session_established</name>
+        <param>
+          <type>const Botan::TLS::Session_Summary &amp;</type>
+          <declname>session</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_securesocket.h" line="54" column="10" bodyfile="crypto/fwoop_securesocket.cpp" bodystart="154" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="classfwoop_1_1SecureSocket_1a36f34c50eb95c6b5ab679c8c3679b2eb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fwoop::SecureSocket::tls_peer_closed_connection</definition>
+        <argsstring>() override</argsstring>
+        <name>tls_peer_closed_connection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="crypto/fwoop_securesocket.h" line="55" column="10" bodyfile="crypto/fwoop_securesocket.h" bodystart="60" bodyend="60"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="5">
+        <label>Botan::TLS::Callbacks</label>
+      </node>
+      <node id="4">
+        <label>fwoop::Writer</label>
+        <link refid="classfwoop_1_1Writer"/>
+      </node>
+      <node id="3">
+        <label>fwoop::Reader</label>
+        <link refid="classfwoop_1_1Reader"/>
+      </node>
+      <node id="2">
+        <label>fwoop::SocketBase</label>
+        <link refid="classfwoop_1_1SocketBase"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>fwoop::SecureSocket</label>
+        <link refid="classfwoop_1_1SecureSocket"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>std::enable_shared_from_this&lt; SecureSocket &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="5">
+        <label>Botan::TLS::Callbacks</label>
+      </node>
+      <node id="4">
+        <label>fwoop::Writer</label>
+        <link refid="classfwoop_1_1Writer"/>
+      </node>
+      <node id="3">
+        <label>fwoop::Reader</label>
+        <link refid="classfwoop_1_1Reader"/>
+      </node>
+      <node id="2">
+        <label>fwoop::SocketBase</label>
+        <link refid="classfwoop_1_1SocketBase"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>fwoop::SecureSocket</label>
+        <link refid="classfwoop_1_1SecureSocket"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>std::enable_shared_from_this&lt; SecureSocket &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="crypto/fwoop_securesocket.h" line="22" column="1" bodyfile="crypto/fwoop_securesocket.h" bodystart="24" bodyend="56"/>
+    <listofallmembers>
+      <member refid="classfwoop_1_1SecureSocket_1a7e4f8f2e6d80ecd87c87ca0053affc22" prot="public" virt="virtual"><scope>fwoop::SecureSocket</scope><name>close</name></member>
+      <member refid="classfwoop_1_1SecureSocket_1af5dfef95232b5b7b9b022d82cd1236a9" prot="public" virt="non-virtual"><scope>fwoop::SecureSocket</scope><name>create</name></member>
+      <member refid="classfwoop_1_1SecureSocket_1aaeffd20af4466485ad82ee4f66e84433" prot="private" virt="non-virtual"><scope>fwoop::SecureSocket</scope><name>d_client</name></member>
+      <member refid="classfwoop_1_1SecureSocket_1a0671cf8df99d5e8fb847cfac6d445ad6" prot="private" virt="non-virtual"><scope>fwoop::SecureSocket</scope><name>d_fd</name></member>
+      <member refid="classfwoop_1_1SecureSocket_1ab293ddaa10b610d53b7975750cd25684" prot="private" virt="non-virtual"><scope>fwoop::SecureSocket</scope><name>d_peer_closed</name></member>
+      <member refid="classfwoop_1_1SecureSocket_1abf2f0252f9a59890e55f03cad5aa8cc2" prot="private" virt="non-virtual"><scope>fwoop::SecureSocket</scope><name>d_readBuffer</name></member>
+      <member refid="classfwoop_1_1SecureSocket_1a4ae642280914f164bf23c03468258c0b" prot="private" virt="non-virtual"><scope>fwoop::SecureSocket</scope><name>d_readWaiting</name></member>
+      <member refid="classfwoop_1_1SecureSocket_1a698fa656cbb0f01c11867b73abedd82b" prot="public" virt="non-virtual"><scope>fwoop::SecureSocket</scope><name>handshake</name></member>
+      <member refid="classfwoop_1_1SecureSocket_1abd8bda2589f3eab01e0a121808a1cda7" prot="public" virt="virtual"><scope>fwoop::SecureSocket</scope><name>read</name></member>
+      <member refid="classfwoop_1_1SecureSocket_1acb324ddb4cd9a1e25ddb0c7555756809" prot="private" virt="non-virtual"><scope>fwoop::SecureSocket</scope><name>SecureSocket</name></member>
+      <member refid="classfwoop_1_1SecureSocket_1a46e5472f43653e8362f050a903acc050" prot="public" virt="non-virtual"><scope>fwoop::SecureSocket</scope><name>tls_alert</name></member>
+      <member refid="classfwoop_1_1SecureSocket_1acee899469ecc5b2fec9df9a6e7180893" prot="public" virt="non-virtual"><scope>fwoop::SecureSocket</scope><name>tls_emit_data</name></member>
+      <member refid="classfwoop_1_1SecureSocket_1a36f34c50eb95c6b5ab679c8c3679b2eb" prot="public" virt="non-virtual"><scope>fwoop::SecureSocket</scope><name>tls_peer_closed_connection</name></member>
+      <member refid="classfwoop_1_1SecureSocket_1a5f3d1806c184ac363c36f97a17f0902a" prot="public" virt="non-virtual"><scope>fwoop::SecureSocket</scope><name>tls_record_received</name></member>
+      <member refid="classfwoop_1_1SecureSocket_1aa05df6e0da60f24b40c9da606bcbebba" prot="public" virt="non-virtual"><scope>fwoop::SecureSocket</scope><name>tls_session_established</name></member>
+      <member refid="classfwoop_1_1SecureSocket_1afb85f3b2ae99083c26e9b436937f2161" prot="public" virt="virtual"><scope>fwoop::SecureSocket</scope><name>write</name></member>
+      <member refid="classfwoop_1_1Reader_1a20174ae82af8a9dde11176e23ef810f9" prot="public" virt="non-virtual"><scope>fwoop::SecureSocket</scope><name>~Reader</name></member>
+      <member refid="classfwoop_1_1SecureSocket_1a8cd86492c559e698092876c2f1683b05" prot="public" virt="non-virtual"><scope>fwoop::SecureSocket</scope><name>~SecureSocket</name></member>
+      <member refid="classfwoop_1_1SocketBase_1ad1708bc60aab59c1b7f36abe4421429a" prot="public" virt="non-virtual"><scope>fwoop::SecureSocket</scope><name>~SocketBase</name></member>
+      <member refid="classfwoop_1_1Writer_1af091c2ea4f81c51b2f18a61f1f46bab6" prot="public" virt="non-virtual"><scope>fwoop::SecureSocket</scope><name>~Writer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
