@@ -25,7 +25,7 @@ int main(int argc, const char *argv[])
     fwoop::Log::Debug("arguments", args);
 
     std::string url = args.getPositionalArg<std::string>("url");
-    auto record = fwoop::DNS::Query::getRecord(url);
+    auto record = fwoop::DNS::Query::GetRecord(url);
 
     if (record == nullptr) {
         std::cerr << "record not found\n";

@@ -184,7 +184,7 @@ SocketBasePtr_t SecureSocketFactory::connect()
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_port = htons(d_port);
 
-    auto record = DNS::Query::getRecord(d_hostname);
+    auto record = DNS::Query::GetRecord(d_hostname);
     if (record == nullptr) {
         Log::Error("hostname ", d_hostname, " not found");
         return nullptr;

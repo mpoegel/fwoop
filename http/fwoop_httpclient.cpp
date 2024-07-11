@@ -52,7 +52,7 @@ std::error_code HttpClient::makeReqest(const HttpRequest &request, std::shared_p
         serv_addr.sin_family = AF_INET;
         serv_addr.sin_port = htons(d_port);
 
-        auto record = DNS::Query::getRecord(d_host);
+        auto record = DNS::Query::GetRecord(d_host);
         if (record == nullptr) {
             Log::Error("hostname ", d_host, " not found");
             return std::error_code(static_cast<int>(HttpErrc::HostNotFound), HttpClientError);

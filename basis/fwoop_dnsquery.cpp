@@ -1,10 +1,12 @@
 #include "fwoop_array.h"
+#include "fwoop_filereader.h"
 #include <fwoop_dnsquery.h>
 
 #include <algorithm>
 #include <cmath>
 #include <cstdint>
 #include <cstring>
+#include <mutex>
 #include <vector>
 
 #include <fwoop_log.h>
@@ -226,7 +228,25 @@ Query &Query::singleton()
     }
 
     s_query_p = new Query();
+    s_query_p->loadResolvConf();
     return *s_query_p;
+}
+
+void Query::loadResolvConf()
+{
+    // read /etc/resolve.conf for nameserver
+    FileReader fr("/etc/resolv.conf");
+    if (0 == fr.open()) {
+        for (FileReader::Iterator itr = fr.begin(); itr != fr.end(); ++itr) {
+            Tokenizer tkz(*itr, ' ');
+            Tokenizer::Iterator itr2 = tkz.begin();
+            if (*itr2 == "nameserver") {
+                ++itr2;
+                Query::ServerAddress = *itr2;
+            }
+        }
+    }
+    Log::Debug("nameserver is ", Query::ServerAddress);
 }
 
 Array Query::encodeHostName(const std::string &hostname)
@@ -242,6 +262,8 @@ Array Query::encodeHostName(const std::string &hostname)
     }
     return encoding;
 }
+
+std::string Query::GetHostByName(const std::string &hostname) { return singleton().getHostByName(hostname); }
 
 std::string Query::getHostByName(const std::string &hostname)
 {
@@ -366,6 +388,8 @@ std::string Query::getHostByName(const std::string &hostname)
     }
     return "";
 }
+
+std::shared_ptr<ResourceRecord> Query::GetRecord(const Question &question) { return singleton().getRecord(question); }
 
 std::shared_ptr<ResourceRecord> Query::getRecord(const Question &question)
 {

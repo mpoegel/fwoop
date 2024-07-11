@@ -3,6 +3,7 @@
 #include <cstdint>
 #include <fwoop_array.h>
 #include <memory>
+#include <mutex>
 #include <ostream>
 #include <string>
 
@@ -110,16 +111,19 @@ class Query {
     Query &operator=(const Query &rhs) const = delete;
     Query(Query &&rhs) = default;
 
-    Query &singleton();
+    static Query &singleton();
 
     static Array encodeHostName(const std::string &hostname);
 
   public:
+    void loadResolvConf();
     static std::string ServerAddress;
 
-    static std::string getHostByName(const std::string &hostname);
+    static std::string GetHostByName(const std::string &hostname);
+    static std::shared_ptr<ResourceRecord> GetRecord(const Question &question);
 
-    static std::shared_ptr<ResourceRecord> getRecord(const Question &question);
+    std::string getHostByName(const std::string &hostname);
+    std::shared_ptr<ResourceRecord> getRecord(const Question &question);
 };
 
 } // namespace DNS

@@ -7,7 +7,7 @@ TEST(DnsQuery, GetHostByName)
     // GIVEN
 
     // WHEN
-    const std::string host = fwoop::DNS::Query::getHostByName("www.google.com");
+    const std::string host = fwoop::DNS::Query::GetHostByName("www.google.com");
 
     // THEN
     std::cerr << "host: " << host << '\n';
@@ -20,7 +20,7 @@ TEST(DnsQuery, GetRecord)
     auto question = fwoop::DNS::Question(hostname, fwoop::DNS::A, fwoop::DNS::IN);
 
     // WHEN
-    auto record = fwoop::DNS::Query::getRecord(question);
+    auto record = fwoop::DNS::Query::GetRecord(question);
 
     // THEN
     ASSERT_TRUE(record);
