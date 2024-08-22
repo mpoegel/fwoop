@@ -10,6 +10,7 @@ TEST(DnsQuery, GetHostByName)
     const std::string host = fwoop::DNS::Query::GetHostByName("www.google.com");
 
     // THEN
+    EXPECT_LT(0, host.length());
     std::cerr << "host: " << host << '\n';
 }
 
