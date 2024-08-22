@@ -57,6 +57,7 @@ std::error_code HttpClient::makeReqest(const HttpRequest &request, std::shared_p
             Log::Error("hostname ", d_host, " not found");
             return std::error_code(static_cast<int>(HttpErrc::HostNotFound), HttpClientError);
         }
+        Log::Debug("connecting to IP: ", record->IP());
         if (inet_pton(AF_INET, record->IP().c_str(), &serv_addr.sin_addr) <= 0) {
             Log::Error("invalid address or address not supported");
             reset();

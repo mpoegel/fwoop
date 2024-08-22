@@ -16,6 +16,8 @@ void HttpResponse::streamFile(const std::string &fileName)
     auto ext = FileReader::getExtension(d_fileName);
     if (ext == "html") {
         d_headers.push_back({HttpHeader::ContentType, "text/html"});
+    } else if (ext == "css") {
+        d_headers.push_back({HttpHeader::ContentType, "text/css"});
     } else {
         d_headers.push_back({HttpHeader::ContentType, "text/plain"});
     }
