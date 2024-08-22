@@ -90,6 +90,7 @@ class ResourceRecord {
     ClassValue classValue() const;
     uint32_t timeToLive() const;
     std::string IP() const;
+    std::string toString() const;
 };
 
 std::ostream &operator<<(std::ostream &os, const ResourceRecord &record);

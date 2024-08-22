@@ -7,6 +7,7 @@
 #include <cstdint>
 #include <cstring>
 #include <mutex>
+#include <sstream>
 #include <vector>
 
 #include <fwoop_log.h>
@@ -188,7 +189,7 @@ std::shared_ptr<ResourceRecord> ResourceRecord::parse(const Array &data, unsigne
         Log::Debug("not enough left to parse rData");
         return nullptr;
     }
-    record->d_rData = data.subArray(offset, std::min(record->d_rdLength, s_maxDataLen));
+    record->d_rData = data.subArray(offset, offset + std::min(record->d_rdLength, s_maxDataLen));
     offset += record->d_rdLength;
     return record;
 }
@@ -211,10 +212,17 @@ std::string ResourceRecord::IP() const
     return result;
 }
 
+std::string ResourceRecord::toString() const
+{
+    std::stringstream ss;
+    ss << "[ name=" << name() << " type=" << type() << " class=" << classValue() << " ttl=" << timeToLive()
+       << " IP=" << IP() << " ]";
+    return ss.str();
+}
+
 std::ostream &operator<<(std::ostream &os, const ResourceRecord &record)
 {
-    os << "[ name=" << record.name() << " type=" << record.type() << " class=" << record.classValue()
-       << " ttl=" << record.timeToLive() << " IP=" << record.IP() << " ]";
+    os << record.toString();
     return os;
 }
 
@@ -333,6 +341,8 @@ std::shared_ptr<ResourceRecord> Query::getRecord(const Question &question)
     // Queries
     request.extend(encodedQuestion);
 
+    Log::Debug("dns request: ", request.toHex());
+
     unsigned int bytesSend = sendto(sockfd, (const char *)*request, requestLen, MSG_CONFIRM,
                                     (const struct sockaddr *)&serv_addr, sizeof(serv_addr));
     if (bytesSend != requestLen) {
@@ -358,6 +368,8 @@ std::shared_ptr<ResourceRecord> Query::getRecord(const Question &question)
         return nullptr;
     }
     response.enlarge(bytesRead);
+
+    Log::Debug("dns response: ", response.toHex());
 
     const uint16_t rTransactionID = (response[0] << 8) + response[1];
     const uint16_t rFlags = (response[2] << 8) + response[3];
