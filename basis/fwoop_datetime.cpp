@@ -39,6 +39,8 @@ void DateTime::recalculate()
 {
     int64_t remaining = d_time;
     int64_t daysSinceEpoch = 0;
+    remaining += (int)(d_tzOffset * SecondsInHour);
+
     for (d_year = 1970; remaining > SecondsInYear; d_year++) {
         daysSinceEpoch += DaysInYear;
         remaining -= SecondsInYear;
@@ -60,17 +62,27 @@ void DateTime::recalculate()
         }
     };
 
+    d_firstOfMonth = (DayOfWeek)((daysSinceEpoch + Thursday) % DaysInWeek);
+
     d_day = std::floor(remaining / SecondsInDay) + 1;
     remaining -= (d_day - 1) * SecondsInDay;
 
     daysSinceEpoch += d_day - 1;
     d_dow = (DayOfWeek)((daysSinceEpoch + Thursday) % DaysInWeek);
 
+    d_weekOfMonth = std::floor((d_day + d_firstOfMonth + 1) / DaysInWeek);
+
     d_hour = std::floor(remaining / SecondsInHour);
     remaining -= d_hour * SecondsInHour;
 
     d_minute = std::floor(remaining / SecondsInMinute);
     d_second = remaining - (d_minute * SecondsInMinute);
+
+    // assuming that DST never occurs near midnight
+    updateDST();
+    if (d_isDST) {
+        d_hour += 1;
+    }
 }
 
 void DateTime::addDays(int16_t daysToAdd)
@@ -92,6 +104,51 @@ void DateTime::addMinutes(int16_t minutesToAdd)
 }
 
 void DateTime::addSeconds(int64_t secondsToAdd) { d_time += secondsToAdd; }
+
+void DateTime::updateDST()
+{
+    switch (d_tz) {
+    default:
+        break;
+    case AMERICA_NEW_YORK:
+        uint8_t shifted_dow = (d_dow - d_firstOfMonth + DaysInWeek) % DaysInWeek;
+        uint8_t shifted_sunday = (Sunday - d_firstOfMonth + DaysInWeek) % DaysInWeek;
+        // uint8_t hour = (d_isDST ? d_hour - 1 : d_hour);
+        // begins at 2:00 a.m. (EST) on the second Sunday of March
+        // ends at 2:00 a.m. (EDT) on the first Sunday of November (ends at 1:00 am EST)
+        if (d_month > 2 && d_month < 10) {
+            d_isDST = true;
+        } else if (d_month == 2 && d_weekOfMonth > 2) {
+            d_isDST = true;
+        } else if (d_month == 2 && d_weekOfMonth == 2 && shifted_dow > shifted_sunday) {
+            d_isDST = true;
+        } else if (d_month == 2 && d_weekOfMonth == 2 && shifted_dow == shifted_sunday && d_hour > 2) {
+            d_isDST = true;
+        } else if (d_month == 2 && d_weekOfMonth == 2 && shifted_dow == shifted_sunday && d_hour == 2) {
+            d_isDST = true;
+        } else if (d_month == 10 && d_weekOfMonth == 1 && shifted_dow < shifted_sunday) {
+            d_isDST = true;
+        } else if (d_month == 10 && d_weekOfMonth == 1 && shifted_dow == shifted_sunday && d_hour < 1) {
+            d_isDST = true;
+        } else {
+            d_isDST = false;
+        }
+    }
+}
+
+void DateTime::setTimezone(Timezone tz)
+{
+    d_tz = tz;
+    switch (d_tz) {
+    case Timezone::UTC:
+        d_tzOffset = 0;
+        break;
+    case Timezone::AMERICA_NEW_YORK:
+        d_tzOffset = -5;
+        break;
+    }
+    recalculate();
+}
 
 std::string DateTime::dayOfWeekShortString() const
 {
