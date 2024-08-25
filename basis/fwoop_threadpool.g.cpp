@@ -2,6 +2,7 @@
 
 #include <atomic>
 #include <gtest/gtest.h>
+#include <memory>
 #include <thread>
 
 using namespace std::chrono_literals;
@@ -11,15 +12,15 @@ TEST(ThreadPool, EnqueueAndWait)
     // GIVEN
     std::atomic_uint16_t count = 0;
     struct Job {
-        std::atomic_uint16_t &c;
+        std::atomic_uint16_t *c;
         void operator()()
         {
             fwoop::Log::Debug("job in progress");
-            c++;
+            (*c)++;
         }
     };
     fwoop::ThreadPool<Job> pool(2);
-    Job j{count};
+    Job j{&count};
 
     // WHEN
     EXPECT_TRUE(pool.enqueue(std::move(j)));
@@ -27,7 +28,9 @@ TEST(ThreadPool, EnqueueAndWait)
     EXPECT_TRUE(pool.enqueue(std::move(j)));
 
     pool.close();
+    std::cerr << "close done\n";
     pool.wait();
+    std::cerr << "wait done\n";
 
     // THEN
     EXPECT_EQ(count.load(), 3);

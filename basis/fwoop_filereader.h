@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstdint>
 #include <fstream>
 #include <string>
 #include <system_error>
@@ -23,6 +24,7 @@ class FileReader {
     void close();
 
     uint8_t *loadFile(uint32_t &length);
+    uint8_t *head(uint32_t length);
 
     Iterator begin();
     Iterator end();

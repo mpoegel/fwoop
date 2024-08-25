@@ -100,10 +100,13 @@ template <typename T> void ThreadPool<T>::close()
 
 template <typename T> void ThreadPool<T>::wait()
 {
+    std::cerr << "wait started\n";
     const unsigned int totalJobs = d_pool.size();
     while (d_numFinished < totalJobs) {
         std::unique_lock lock(d_poolMutex);
+        std::cerr << "wait got lock\n";
         d_poolCond.wait(lock, [&]() { return d_numFinished.load() == totalJobs; });
+        std::cerr << "num finished=" << d_numFinished.load() << '\n';
     }
 }
 

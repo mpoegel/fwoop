@@ -5,6 +5,7 @@ add_library(fwoopbasis STATIC
     fwoop_dnsquery.cpp
     fwoop_filereader.cpp
     fwoop_log.cpp
+    fwoop_random.cpp
     fwoop_socketio.cpp
     fwoop_threadpool.cpp
     fwoop_tokenizer.cpp
@@ -19,6 +20,7 @@ install(FILES
     fwoop_dnsquery.h
     fwoop_filereader.h
     fwoop_log.h
+    fwoop_random.h
     fwoop_socketio.h
     fwoop_threadpool.h
     fwoop_tokenizer.h
@@ -32,6 +34,7 @@ add_executable(fwoopbasis_test
     fwoop_dnsquery.g.cpp
     fwoop_filereader.g.cpp
     fwoop_log.g.cpp
+    fwoop_random.g.cpp
     fwoop_threadpool.g.cpp
     fwoop_tokenizer.g.cpp
 )

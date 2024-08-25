@@ -40,6 +40,14 @@ uint8_t *FileReader::loadFile(uint32_t &length)
     return contents;
 }
 
+uint8_t *FileReader::head(uint32_t length)
+{
+    uint8_t *contents = new uint8_t[length];
+    memset(contents, 0, length);
+    d_file.read((char *)contents, length);
+    return contents;
+}
+
 FileReader::Iterator FileReader::begin()
 {
     Iterator itr(*this, false);

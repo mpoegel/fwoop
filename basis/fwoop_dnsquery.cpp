@@ -1,6 +1,3 @@
-#include "fwoop_array.h"
-#include "fwoop_filereader.h"
-#include <fwoop_dnsquery.h>
 
 #include <algorithm>
 #include <cmath>
@@ -10,7 +7,11 @@
 #include <sstream>
 #include <vector>
 
+#include <fwoop_array.h>
+#include <fwoop_dnsquery.h>
+#include <fwoop_filereader.h>
 #include <fwoop_log.h>
+#include <fwoop_random.h>
 #include <fwoop_socketio.h>
 #include <fwoop_tokenizer.h>
 
@@ -317,7 +318,7 @@ std::shared_ptr<ResourceRecord> Query::getRecord(const Question &question)
     Array request(requestLen);
 
     // TODO make random
-    const uint16_t transactionID = 0x7598;
+    const uint16_t transactionID = Random::getUInt16();
     const uint16_t flags = 0x0100;
     const uint16_t numQuestions = 0x1;
     const uint16_t answers = 0;

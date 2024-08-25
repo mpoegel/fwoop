@@ -5,15 +5,13 @@ Requires `gtest` to build unit tests. Requires [Botan](https://botan.randombit.n
 
 ```sh
 mkdir build
-cd build
-cmake  ..
-cmake --build .
+cmake  build/
+cmake --build build/ -j4
 ```
 
 ### Testing
 ```sh
-cd build
-ctest
+ctest --test-dir build/
 ```
 
 ### Documenting
@@ -24,11 +22,11 @@ python3.9 -m sphinx -b html docs/source docs/html
 
 ## Installing
 ```sh
-cd build
-sudo `which cmake` --install .
+sudo `which cmake` --install build/
 ```
 
 ### Uninstalling
 ```sh
+cd build
 sudo xargs rm <install_manifest.txt
 ```
