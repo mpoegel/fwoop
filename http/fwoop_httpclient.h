@@ -2,6 +2,7 @@
 
 #include <fwoop_httprequest.h>
 #include <fwoop_httpresponse.h>
+#include <fwoop_socketio.h>
 
 #include <string>
 #include <system_error>
@@ -19,14 +20,13 @@ class HttpClient {
     };
 
   private:
-    std::string d_host;
-    int d_port;
-    int d_conn;
+    SocketFactoryBasePtr_t d_socketFactory;
 
     void reset();
 
   public:
     HttpClient(const std::string &host, int port = 80);
+    HttpClient(const SocketFactoryBasePtr_t &factory);
     ~HttpClient();
 
     std::error_code makeReqest(const HttpRequest &request, std::shared_ptr<HttpResponse> &response);

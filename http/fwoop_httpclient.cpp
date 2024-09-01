@@ -1,4 +1,5 @@
 #include "fwoop_httpresponse.h"
+#include <cstdint>
 #include <fwoop_httpclient.h>
 
 #include <fwoop_dnsquery.h>
@@ -17,94 +18,57 @@ namespace fwoop {
 
 const HttpClientErrCategory HttpClientError{};
 
-HttpClient::HttpClient(const std::string &host, int port) : d_host(host), d_port(port), d_conn(-1) {}
-
-HttpClient::~HttpClient()
+HttpClient::HttpClient(const std::string &host, int port) : d_socketFactory(std::make_shared<SocketFactory>(host, port))
 {
-    if (d_conn > 0) {
-        close(d_conn);
-    }
 }
 
-void HttpClient::reset()
-{
-    close(d_conn);
-    d_conn = -1;
-}
+HttpClient::HttpClient(const SocketFactoryBasePtr_t &factory) : d_socketFactory(factory) {}
+
+HttpClient::~HttpClient() {}
+
+void HttpClient::reset() {}
 
 std::error_code HttpClient::makeReqest(const HttpRequest &request, std::shared_ptr<HttpResponse> &response)
 {
-    if (d_conn < 0) {
-        d_conn = socket(AF_INET, SOCK_STREAM, 0);
-        if (d_conn < 0) {
-            Log::Error("failed to create socket, errno=", errno);
-            return std::error_code(static_cast<int>(HttpErrc::SocketError), HttpClientError);
-        }
-
-        const int opt = 1;
-        if (0 != setsockopt(d_conn, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt))) {
-            Log::Error("failed to setsockopt, errno=", errno);
-            reset();
-            return std::error_code(static_cast<int>(HttpErrc::SocketError), HttpClientError);
-        }
-
-        struct sockaddr_in serv_addr;
-        serv_addr.sin_family = AF_INET;
-        serv_addr.sin_port = htons(d_port);
-
-        auto record = DNS::Query::GetRecord(d_host);
-        if (record == nullptr) {
-            Log::Error("hostname ", d_host, " not found");
-            return std::error_code(static_cast<int>(HttpErrc::HostNotFound), HttpClientError);
-        }
-        Log::Debug("connecting to IP: ", record->IP());
-        if (inet_pton(AF_INET, record->IP().c_str(), &serv_addr.sin_addr) <= 0) {
-            Log::Error("invalid address or address not supported");
-            reset();
-            return std::error_code(static_cast<int>(HttpErrc::HostNotFound), HttpClientError);
-        }
-
-        int rc = connect(d_conn, (struct sockaddr *)&serv_addr, sizeof(serv_addr));
-        if (0 != rc) {
-            Log::Error("connection failed");
-            reset();
-            return std::error_code(static_cast<int>(HttpErrc::ConnectFailed), HttpClientError);
-        }
-        Log::Debug("connected to ", d_host);
+    // TODO close conn
+    auto conn = d_socketFactory->connect();
+    if (!conn) {
+        return std::error_code(static_cast<int>(HttpErrc::HostNotFound), HttpClientError);
     }
 
     uint32_t length;
     uint8_t *encReq = request.encode(length);
-
-    int rc = SocketIO::write(d_conn, encReq, length);
+    Array arr(length);
+    arr.append(encReq, length);
     delete[] encReq;
-    if (0 != rc) {
+
+    uint32_t bytesWritten;
+    auto ec = conn->write(arr, bytesWritten);
+    if (ec) {
         reset();
         return std::error_code(static_cast<int>(HttpErrc::WriteFailed), HttpClientError);
     }
     ::usleep(5 * 1000);
 
-    Log::Debug("wrote ", length, " bytes");
+    Log::Debug("wrote ", bytesWritten, " bytes");
 
     constexpr unsigned int bufferSize = 32768;
-    uint8_t buffer[bufferSize];
-    unsigned int bytesRead = 0;
+    Array buf(bufferSize);
     unsigned int totalRead = 0;
     unsigned int totalParsed = 0;
     auto br = HttpResponse::BuildResult::Incomplete;
     response = std::make_shared<HttpResponse>();
 
     while (br == HttpResponse::BuildResult::Incomplete) {
-        bytesRead = 0;
-        auto ec = SocketIO::read(d_conn, buffer, bufferSize, bytesRead);
+        ec = conn->read(buf);
         if (ec && ec.value() != ETIMEDOUT) {
             reset();
             return std::error_code(static_cast<int>(HttpErrc::ReadFailed), HttpClientError);
         }
 
-        totalRead += bytesRead;
+        totalRead += buf.size();
         unsigned int bytesParsed = 0;
-        br = response->build(buffer, bytesRead, bytesParsed);
+        br = response->build(*buf, buf.size(), bytesParsed);
         totalParsed += bytesParsed;
         Log::Debug("totalRead=", totalRead, " totalParsed=", totalParsed);
     }

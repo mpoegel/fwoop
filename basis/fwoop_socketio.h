@@ -62,10 +62,15 @@ class SocketFactoryBase {
     virtual SocketBasePtr_t connect() = 0;
 };
 
+typedef std::shared_ptr<SocketFactoryBase> SocketFactoryBasePtr_t;
+
 class SocketFactory : public SocketFactoryBase {
   private:
+    std::string d_hostname;
+    uint16_t d_port;
+
   public:
-    SocketFactory();
+    SocketFactory(const std::string &hostname, uint16_t port);
     ~SocketFactory() {}
     SocketBasePtr_t connect() override;
 };
