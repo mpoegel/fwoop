@@ -1,3 +1,4 @@
+#include "fwoop_array.h"
 #include <fwoop_socketio.h>
 #include <system_error>
 
@@ -9,11 +10,8 @@ Socket::~Socket() {}
 
 Socket::Socket(const Socket &rhs) : d_fd(rhs.d_fd) {}
 
-std::error_code Socket::read(uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesRead)
+std::error_code Socket::read(Array &arr)
 {
-    memset(buffer, 0, bufferSize);
-    bytesRead = 0;
-
     struct pollfd pfd[1];
     pfd[0].fd = d_fd;
     pfd[0].events = POLLIN;
@@ -28,7 +26,7 @@ std::error_code Socket::read(uint8_t *buffer, uint32_t bufferSize, uint32_t &byt
     }
 
     if (pfd[0].revents & POLLIN) {
-        rc = ::read(d_fd, buffer, bufferSize);
+        rc = ::read(d_fd, *arr, arr.size());
         if (0 == rc) {
             // peer closed the connection
             return std::error_code(errno, std::system_category());
@@ -36,18 +34,18 @@ std::error_code Socket::read(uint8_t *buffer, uint32_t bufferSize, uint32_t &byt
             // read error
             return std::error_code(errno, std::system_category());
         } else {
-            bytesRead = rc;
+            arr.shrink(rc);
         }
     }
     return std::error_code();
 }
 
-std::error_code Socket::write(const uint8_t *out, uint32_t outLen, uint32_t &bytesWritten)
+std::error_code Socket::write(const Array &arr, uint32_t &bytesWritten)
 {
     int rc = 0;
     bytesWritten = 0;
-    while (bytesWritten < outLen) {
-        rc = ::write(d_fd, out + bytesWritten, outLen - bytesWritten);
+    while (bytesWritten < arr.size()) {
+        rc = ::write(d_fd, *arr + bytesWritten, arr.size() - bytesWritten);
         if (rc < 0) {
             // write failed
             return std::error_code(errno, std::system_category());

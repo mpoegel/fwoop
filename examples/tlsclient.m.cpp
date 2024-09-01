@@ -1,3 +1,4 @@
+#include "fwoop_array.h"
 #include <cstdint>
 #include <cstring>
 #include <iostream>
@@ -21,28 +22,30 @@ int main(int argc, char *argv[])
     ::sleep(1);
     if (sock) {
         fwoop::Log::Info("connected");
-        uint8_t buf[16384];
         uint32_t bytesRead = 0;
         uint8_t msg[] = "GET /get HTTP/1.1\r\n"
                         "Host: httpbin.org\r\n"
                         "User-Agent: fwoop/1\r\n"
                         "Accept: */*\r\n\r\n";
         uint32_t bytesWritten = 0;
-        auto ec = sock->write(msg, sizeof(msg) - 1, bytesWritten);
+        fwoop::Array arr(sizeof(msg));
+        arr.append(msg, sizeof(msg) - 1);
+        auto ec = sock->write(arr, bytesWritten);
         if (ec) {
             fwoop::Log::Error("secure write failed: ", ec.message());
             return 1;
         }
+        const uint32_t bufSize = 16384;
+        fwoop::Array buf(bufSize);
         do {
-            bytesRead = 0;
-            memset(buf, 0, sizeof(buf));
-            ec = sock->read(buf, sizeof(buf), bytesRead);
+            buf.clear();
+            ec = sock->read(buf);
             if (ec) {
                 fwoop::Log::Error("secure read failed: ", ec.message());
                 return 1;
             }
-            fwoop::Log::Info("readBytes=", bytesRead, " DATA: ", std::string(buf, buf + bytesRead));
-        } while (!ec && bytesRead > 0);
+            fwoop::Log::Info("readBytes=", bytesRead, " DATA: ", buf.toString());
+        } while (!ec && buf.size() > 0);
     }
 
     fwoop::Log::Info("done");

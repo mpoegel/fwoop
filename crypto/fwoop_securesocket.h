@@ -1,5 +1,6 @@
 #pragma once
 
+#include <fwoop_array.h>
 #include <fwoop_socketio.h>
 #include <fwoop_tlscredentials.h>
 
@@ -35,8 +36,8 @@ class SecureSocket : public SocketBase {
     std::error_code handshake();
 
     // from SocketBase
-    std::error_code read(uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesRead) override;
-    std::error_code write(const uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesWritten) override;
+    std::error_code read(Array &arr) override;
+    std::error_code write(const Array &arr, uint32_t &bytesWritten) override;
     void close() override;
 };
 
@@ -71,14 +72,14 @@ class SecureCallbacks : public Botan::TLS::Callbacks {
   private:
     int d_fd;
     bool d_peer_closed;
-    uint8_t d_readBuffer[16384];
+    Array d_readBuffer;
     uint32_t d_readWaiting;
 
   public:
     SecureCallbacks(int fd);
     ~SecureCallbacks() {}
 
-    void readWaiting(uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesRead);
+    void readWaiting(Array &arr);
 
     // from Botan::TLS::Callbacks
     void tls_emit_data(std::span<const uint8_t> data) override;

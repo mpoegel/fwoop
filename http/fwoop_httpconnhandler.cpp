@@ -27,15 +27,14 @@ void HttpConnHandler::operator()()
 
     Log::Debug("received http/1.1 connection");
     constexpr unsigned int bufferSize = 2048;
-    uint8_t buffer[bufferSize];
-    unsigned int bytesRead;
-    std::error_code ec = d_reader->read(buffer, bufferSize, bytesRead);
+    Array arr(bufferSize);
+    std::error_code ec = d_reader->read(arr);
     if (ec) {
         Log::Error("socket read failed", ec);
     }
 
     unsigned int bytesParsed = 0;
-    std::shared_ptr<HttpRequest> request = HttpRequest::parse(buffer, bytesRead, bytesParsed);
+    std::shared_ptr<HttpRequest> request = HttpRequest::parse(*arr, arr.size(), bytesParsed);
     if (!request) {
         Log::Error("did not receive full http request");
     }
@@ -48,7 +47,9 @@ void HttpConnHandler::operator()()
     uint32_t length;
     uint32_t bytesWritten;
     uint8_t *encResp = response.encode(length);
-    ec = d_writer->write(encResp, length, bytesWritten);
+    Array resp(length);
+    resp.append(encResp, length);
+    ec = d_writer->write(resp, bytesWritten);
     delete[] encResp;
     if (ec) {
         Log::Error("socket write failed, ec=", ec);

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <fwoop_array.h>
 #include <fwoop_log.h>
 
 #include <cstdint>
@@ -15,7 +16,7 @@ namespace fwoop {
 class Reader {
   public:
     ~Reader() {}
-    virtual std::error_code read(uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesRead) = 0;
+    virtual std::error_code read(Array &arr) = 0;
     virtual void close() = 0;
 };
 
@@ -24,7 +25,7 @@ typedef std::shared_ptr<Reader> ReaderPtr_t;
 class Writer {
   public:
     ~Writer() {}
-    virtual std::error_code write(const uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesWritten) = 0;
+    virtual std::error_code write(const Array &arr, uint32_t &bytesWritten) = 0;
     virtual void close() = 0;
 };
 
@@ -47,8 +48,8 @@ class Socket : public SocketBase {
     Socket(const Socket &rhs);
     Socket operator=(const Socket &rhs);
 
-    std::error_code read(uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesRead) override;
-    std::error_code write(const uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesWritten) override;
+    std::error_code read(Array &arr) override;
+    std::error_code write(const Array &arr, uint32_t &bytesWritten) override;
     void close() override;
 };
 

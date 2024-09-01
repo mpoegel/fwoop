@@ -1,3 +1,4 @@
+#include "fwoop_array.h"
 #include <arpa/inet.h>
 #include <botan/auto_rng.h>
 #include <botan/tls_client.h>
@@ -39,31 +40,32 @@ SecureSocket::~SecureSocket() {}
 
 std::error_code SecureSocket::handshake()
 {
-    uint8_t buf[16384];
+    Array arr(16384);
     uint32_t bytesRead = 0;
     std::error_code ec;
     while (!d_client->is_active() && !ec) {
-        ec = read(buf, sizeof(buf), bytesRead);
+        // TODO capture lost data
+        ec = read(arr);
     }
     return ec;
 }
 
-std::error_code SecureSocket::read(uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesRead)
+std::error_code SecureSocket::read(Array &arr)
 {
-    bytesRead = 0;
+    uint32_t bytesRead = 0;
 
     // return early if there's already pending data
-    d_callbacks->readWaiting(buffer, bufferSize, bytesRead);
-    if (bytesRead > 0) {
+    d_callbacks->readWaiting(arr);
+    if (arr.size() > 0) {
         return std::error_code();
     }
 
-    size_t numMoreBytes = bufferSize;
+    uint32_t numMoreBytes = arr.maxSize();
     struct pollfd pfd[1];
     pfd[0].fd = d_fd;
     pfd[0].events = POLLIN;
 
-    while (numMoreBytes > 0 && bytesRead < bufferSize) {
+    while (numMoreBytes > 0) {
         int rc = poll(pfd, 1, 1000);
         if (rc == 0) {
             // poll timed out
@@ -74,38 +76,32 @@ std::error_code SecureSocket::read(uint8_t *buffer, uint32_t bufferSize, uint32_
         }
 
         if (pfd[0].revents & POLLIN) {
-            rc = ::read(d_fd, buffer, numMoreBytes);
+            rc = ::read(d_fd, *arr, numMoreBytes);
             if (0 == rc) {
                 // peer closed the connection
                 return std::error_code(errno, std::system_category());
             } else if (rc < 0) {
                 // read error
                 return std::error_code(errno, std::system_category());
-            } else {
-                bytesRead = rc;
             }
         }
 
-        Log::Debug("tls read ", bytesRead, " bytes");
+        bytesRead += rc;
+        Log::Debug("tls read ", rc, " bytes");
         // decrypt the incoming data
-        numMoreBytes = d_client->received_data(buffer, bytesRead);
+        numMoreBytes = d_client->received_data(*arr, rc);
         Log::Debug("need ", numMoreBytes, " more bytes to complete TLS record");
-    }
-
-    if (bytesRead == bufferSize) {
-        Log::Error("read buffer full!");
-        // TODO return error
+        numMoreBytes = std::min(arr.maxSize(), numMoreBytes);
     }
 
     // reset the buffer
-    memset(buffer, 0, bufferSize);
-    bytesRead = 0;
+    arr.clear();
     // copy the decrypted data into the buffer
-    d_callbacks->readWaiting(buffer, bufferSize, bytesRead);
+    d_callbacks->readWaiting(arr);
     return std::error_code();
 }
 
-std::error_code SecureSocket::write(const uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesWritten)
+std::error_code SecureSocket::write(const Array &arr, uint32_t &bytesWritten)
 {
     if (d_client->is_closed_for_writing()) {
         Log::Error("cannot write at this time");
@@ -114,8 +110,8 @@ std::error_code SecureSocket::write(const uint8_t *buffer, uint32_t bufferSize, 
     if (!d_client->is_active()) {
         handshake();
     }
-    d_client->send(buffer, bufferSize);
-    bytesWritten = bufferSize;
+    d_client->send(*arr, arr.size());
+    bytesWritten = arr.size();
     return std::error_code();
 }
 
@@ -181,18 +177,17 @@ SocketBasePtr_t SecureSocketFactory::connect()
     return std::make_shared<SecureSocket>(fd, config);
 }
 
-SecureCallbacks::SecureCallbacks(int fd) : d_fd(fd), d_peer_closed(false), d_readWaiting(0)
-{
-    memset(d_readBuffer, 0, sizeof(d_readBuffer));
-}
+SecureCallbacks::SecureCallbacks(int fd) : d_fd(fd), d_peer_closed(false), d_readBuffer(16384), d_readWaiting(0) {}
 
-void SecureCallbacks::readWaiting(uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesRead)
+void SecureCallbacks::readWaiting(Array &arr)
 {
-    bytesRead = 0;
     if (d_readWaiting > 0) {
-        bytesRead = std::min(bufferSize, d_readWaiting);
-        memcpy(buffer, d_readBuffer, bytesRead);
-        d_readWaiting -= bytesRead;
+        Log::Debug("waiting ", d_readWaiting);
+        // TODO remove unnecessary allocations
+        arr = d_readBuffer;
+        d_readWaiting = 0;
+        d_readBuffer.clear();
+        d_readBuffer.shrink(0);
     }
 }
 
@@ -218,9 +213,7 @@ void SecureCallbacks::tls_record_received(uint64_t seqNum, std::span<const uint8
 {
     // TODO we could recv more data than the read buffer size?
     Log::Info("got app data [seqNum ", seqNum, "]: ", data.size(), " bytes");
-    uint32_t n =
-        sizeof(d_readBuffer) > d_readWaiting + data.size() ? data.size() : sizeof(d_readBuffer) - d_readWaiting;
-    memcpy(d_readBuffer + d_readWaiting, data.data(), n);
+    d_readBuffer.append(data.data(), data.size_bytes());
     d_readWaiting += data.size();
 }
 

@@ -23,8 +23,9 @@ Array::~Array() { delete[] d_data; }
 Array *Array::operator=(const Array &rhs)
 {
     delete[] d_data;
-    d_data = new uint8_t[d_actualSize];
+    d_data = new uint8_t[rhs.d_actualSize];
     memcpy(d_data, rhs.d_data, rhs.d_size);
+    d_size = rhs.d_size;
     return this;
 }
 
@@ -54,14 +55,14 @@ void Array::enlarge(uint32_t newSize)
     // new size is smaller
 }
 
-void Array::append(const char *str, uint32_t len)
+void Array::append(const uint8_t *buf, uint32_t bufLen)
 {
     uint32_t remaining = d_actualSize - d_size;
-    if (len > remaining) {
-        enlarge(d_size + len);
+    if (bufLen > remaining) {
+        enlarge(d_size + bufLen);
     }
-    memcpy(d_data + d_size, str, len);
-    d_size += len;
+    memcpy(d_data + d_size, buf, bufLen);
+    d_size += bufLen;
 }
 
 void Array::append(uint8_t d) { d_data[d_size++] = d; }

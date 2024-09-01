@@ -1,3 +1,4 @@
+#include "fwoop_array.h"
 #include <fwoop_httpresponse.h>
 #include <fwoop_httpserverevent.h>
 #include <fwoop_log.h>
@@ -16,7 +17,9 @@ HttpServerEvent::~HttpServerEvent()
     uint32_t len;
     uint32_t bytesWritten;
     uint8_t *out = finalResponse.encode(len);
-    auto ec = d_writer->write(out, len, bytesWritten);
+    Array arr(len);
+    arr.append(out, len);
+    auto ec = d_writer->write(arr, bytesWritten);
     delete[] out;
     if (ec) {
         Log::Warn("failed to write final response");
@@ -47,7 +50,10 @@ bool HttpServerEvent::pushEvent(const std::string &event, const std::string &dat
     out[offset++] = '\n';
 
     uint32_t bytesWritten;
-    auto ec = d_writer->write(out, offset, bytesWritten);
+    // TODO refactor for Array
+    Array arr(offset);
+    arr.append(out, offset);
+    auto ec = d_writer->write(arr, bytesWritten);
     delete[] out;
     return ec.value() == 0;
 }

@@ -1,3 +1,4 @@
+#include "fwoop_array.h"
 #include "fwoop_socketio.h"
 #include "gmock/gmock.h"
 #include <cstdint>
@@ -12,10 +13,9 @@ class MockHttpReader : public fwoop::Reader {
   public:
     ~MockHttpReader() {}
     std::string response;
-    std::error_code read(uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesRead)
+    std::error_code read(fwoop::Array &arr)
     {
-        ::memcpy(buffer, response.data(), response.length());
-        bytesRead = response.length();
+        arr.append(response);
         return std::error_code();
     }
     MOCK_METHOD(void, close, ());
@@ -24,7 +24,7 @@ class MockHttpReader : public fwoop::Reader {
 class MockHttpWriter : public fwoop::Writer {
   public:
     ~MockHttpWriter() {}
-    MOCK_METHOD(std::error_code, write, (const uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesWritten));
+    MOCK_METHOD(std::error_code, write, (const fwoop::Array &arr, uint32_t &bytesWritten));
     MOCK_METHOD(void, close, ());
 };
 
@@ -46,8 +46,7 @@ TEST(HttpConnHandler, Handle)
 
     EXPECT_CALL(*reader, close()).WillOnce(::testing::Return());
     EXPECT_CALL(*writer, close()).WillOnce(::testing::Return());
-    EXPECT_CALL(*writer, write(::testing::_, ::testing::_, ::testing::_))
-        .WillOnce(::testing::Return(std::error_code()));
+    EXPECT_CALL(*writer, write(::testing::_, ::testing::_)).WillOnce(::testing::Return(std::error_code()));
     EXPECT_CALL(mockCallback, onRequest(::testing::_, ::testing::_)).WillOnce(::testing::Return());
     EXPECT_CALL(mockCallback, afterResponse(::testing::_, ::testing::_)).WillOnce(::testing::Return());
 
