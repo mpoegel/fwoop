@@ -10,7 +10,7 @@
 #include <fwoop_socketio.h>
 #include <memory>
 #include <netinet/in.h>
-#include <openssl/x509v3.h>
+#include <string>
 #include <sys/socket.h>
 #include <sys/types.h>
 #include <system_error>
@@ -18,25 +18,24 @@
 
 namespace fwoop {
 
-SecureSocket::SecureSocket(int fd) : d_fd(fd), d_peer_closed(false), d_readWaiting(0)
+SecureSocket::SecureSocket(int fd, const SecureSocketConfig &config) : d_fd(fd)
 {
-    memset(d_readBuffer, 0, sizeof(d_readBuffer));
+    d_callbacks = std::make_shared<SecureCallbacks>(d_fd);
+
+    auto policy = std::make_shared<SecureSocketPolicy>();
+
+    Botan::TLS::Protocol_Version version = Botan::TLS::Protocol_Version::TLS_V12;
+    auto info = Botan::TLS::Server_Information(config.hostname, config.port);
+
+    auto creds = std::make_shared<tls::ClientCredentials>();
+    creds->loadTrustedStoreFromFile("/etc/ssl/certs");
+    auto rng = std::make_shared<Botan::AutoSeeded_RNG>();
+    auto mgr = std::make_shared<Botan::TLS::Session_Manager_In_Memory>(rng);
+
+    d_client = std::make_shared<Botan::TLS::Client>(d_callbacks, mgr, creds, policy, rng, info, version);
 }
 
 SecureSocket::~SecureSocket() {}
-
-[[nodiscard]] std::shared_ptr<SecureSocket>
-SecureSocket::create(int fd, const std::shared_ptr<tls::ClientCredentials> &creds,
-                     const std::shared_ptr<Botan::AutoSeeded_RNG> &rng,
-                     const std::shared_ptr<Botan::TLS::Session_Manager_In_Memory> &sessionMgr,
-                     const Botan::TLS::Server_Information &serverInfo,
-                     const std::shared_ptr<Botan::TLS::Policy> &policy, Botan::TLS::Protocol_Version version)
-{
-    auto sock = std::shared_ptr<SecureSocket>(new SecureSocket(fd));
-    sock->d_client = std::make_shared<Botan::TLS::Client>(sock->shared_from_this(), sessionMgr, creds, policy, rng,
-                                                          serverInfo, version);
-    return sock;
-};
 
 std::error_code SecureSocket::handshake()
 {
@@ -51,13 +50,20 @@ std::error_code SecureSocket::handshake()
 
 std::error_code SecureSocket::read(uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesRead)
 {
-    memset(d_readBuffer, 0, sizeof(d_readBuffer));
     bytesRead = 0;
-    if (d_readWaiting == 0) {
-        struct pollfd pfd[1];
-        pfd[0].fd = d_fd;
-        pfd[0].events = POLLIN;
 
+    // return early if there's already pending data
+    d_callbacks->readWaiting(buffer, bufferSize, bytesRead);
+    if (bytesRead > 0) {
+        return std::error_code();
+    }
+
+    size_t numMoreBytes = bufferSize;
+    struct pollfd pfd[1];
+    pfd[0].fd = d_fd;
+    pfd[0].events = POLLIN;
+
+    while (numMoreBytes > 0 && bytesRead < bufferSize) {
         int rc = poll(pfd, 1, 1000);
         if (rc == 0) {
             // poll timed out
@@ -68,7 +74,7 @@ std::error_code SecureSocket::read(uint8_t *buffer, uint32_t bufferSize, uint32_
         }
 
         if (pfd[0].revents & POLLIN) {
-            rc = ::read(d_fd, buffer, bufferSize);
+            rc = ::read(d_fd, buffer, numMoreBytes);
             if (0 == rc) {
                 // peer closed the connection
                 return std::error_code(errno, std::system_category());
@@ -82,14 +88,20 @@ std::error_code SecureSocket::read(uint8_t *buffer, uint32_t bufferSize, uint32_
 
         Log::Debug("tls read ", bytesRead, " bytes");
         // decrypt the incoming data
-        d_client->received_data(buffer, bytesRead);
+        numMoreBytes = d_client->received_data(buffer, bytesRead);
+        Log::Debug("need ", numMoreBytes, " more bytes to complete TLS record");
     }
+
+    if (bytesRead == bufferSize) {
+        Log::Error("read buffer full!");
+        // TODO return error
+    }
+
     // reset the buffer
     memset(buffer, 0, bufferSize);
+    bytesRead = 0;
     // copy the decrypted data into the buffer
-    bytesRead = d_readWaiting >= bufferSize ? bufferSize : d_readWaiting;
-    memcpy(buffer, d_readBuffer, bytesRead);
-    d_readWaiting = 0;
+    d_callbacks->readWaiting(buffer, bufferSize, bytesRead);
     return std::error_code();
 }
 
@@ -116,45 +128,6 @@ void SecureSocket::close()
         ::close(d_fd);
         d_fd = -1;
     }
-}
-
-void SecureSocket::tls_emit_data(std::span<const uint8_t> data)
-{
-    int rc = 0;
-    uint32_t bytesWritten = 0;
-    bytesWritten = 0;
-    while (bytesWritten < data.size()) {
-        rc = ::write(d_fd, data.data() + bytesWritten, data.size() - bytesWritten);
-        if (rc < 0) {
-            // TODO how to handle errors?
-            fwoop::Log::Error("tls write failed: ", std::strerror(errno));
-        }
-        bytesWritten += rc;
-    }
-    Log::Debug("tls wrote ", bytesWritten, " bytes");
-}
-
-void SecureSocket::tls_record_received(uint64_t seq_no, std::span<const uint8_t> data)
-{
-    // TODO we could recv more data than the read buffer size?
-    Log::Info("got app data: ", data.size(), " bytes");
-    uint32_t n =
-        sizeof(d_readBuffer) > d_readWaiting + data.size() ? data.size() : sizeof(d_readBuffer) - d_readWaiting;
-    memcpy(d_readBuffer + d_readWaiting, data.data(), n);
-    d_readWaiting = data.size();
-}
-
-void SecureSocket::tls_alert(Botan::TLS::Alert alert)
-{
-    // TODO should anything else be done?
-    auto d = alert.serialize();
-    fwoop::Log::Error("TLS error: ", std::string(d.data(), d.data() + d.size()));
-}
-
-void SecureSocket::tls_session_established(const Botan::TLS::Session_Summary &session)
-{
-    std::cout << "Handshake complete, " << session.version().to_string() << " using "
-              << session.ciphersuite().to_string() << std::endl;
 }
 
 SecureSocketFactory::SecureSocketFactory(const std::string &hostname, uint16_t port)
@@ -200,12 +173,68 @@ SocketBasePtr_t SecureSocketFactory::connect()
         return nullptr;
     }
 
-    // TODO make configurable
-    auto policy = std::make_shared<Botan::TLS::Policy>();
-    Botan::TLS::Protocol_Version version = Botan::TLS::Protocol_Version::TLS_V12;
-    auto info = Botan::TLS::Server_Information(d_hostname, d_port);
+    SecureSocketConfig config;
+    config.hostname = d_hostname;
+    config.port = d_port;
 
-    return SecureSocket::create(fd, d_creds, d_rng, d_sessionMgr, info, policy, version);
+    // TODO make configurable
+    return std::make_shared<SecureSocket>(fd, config);
+}
+
+SecureCallbacks::SecureCallbacks(int fd) : d_fd(fd), d_peer_closed(false), d_readWaiting(0)
+{
+    memset(d_readBuffer, 0, sizeof(d_readBuffer));
+}
+
+void SecureCallbacks::readWaiting(uint8_t *buffer, uint32_t bufferSize, uint32_t &bytesRead)
+{
+    bytesRead = 0;
+    if (d_readWaiting > 0) {
+        bytesRead = std::min(bufferSize, d_readWaiting);
+        memcpy(buffer, d_readBuffer, bytesRead);
+        d_readWaiting -= bytesRead;
+    }
+}
+
+void SecureCallbacks::tls_emit_data(std::span<const uint8_t> data)
+{
+    int rc = 0;
+    uint32_t bytesWritten = 0;
+    bytesWritten = 0;
+    const uint32_t total = data.size();
+    while (bytesWritten < total) {
+        rc = ::write(d_fd, data.data() + bytesWritten, total - bytesWritten);
+        if (rc < 0) {
+            // TODO how to handle errors?
+            fwoop::Log::Error("tls write failed: ", std::strerror(errno));
+            return;
+        }
+        bytesWritten += rc;
+    }
+    Log::Debug("tls wrote ", bytesWritten, " bytes, total=", total);
+}
+
+void SecureCallbacks::tls_record_received(uint64_t seqNum, std::span<const uint8_t> data)
+{
+    // TODO we could recv more data than the read buffer size?
+    Log::Info("got app data [seqNum ", seqNum, "]: ", data.size(), " bytes");
+    uint32_t n =
+        sizeof(d_readBuffer) > d_readWaiting + data.size() ? data.size() : sizeof(d_readBuffer) - d_readWaiting;
+    memcpy(d_readBuffer + d_readWaiting, data.data(), n);
+    d_readWaiting += data.size();
+}
+
+void SecureCallbacks::tls_alert(Botan::TLS::Alert alert)
+{
+    // TODO should anything else be done?
+    auto d = alert.serialize();
+    fwoop::Log::Error("TLS error: ", std::string(d.data(), d.data() + d.size()));
+}
+
+void SecureCallbacks::tls_session_established(const Botan::TLS::Session_Summary &session)
+{
+    fwoop::Log::Info("handshake complete, ", session.version().to_string(), " using ",
+                     session.ciphersuite().to_string());
 }
 
 } // namespace fwoop

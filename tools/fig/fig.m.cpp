@@ -25,11 +25,14 @@ int main(int argc, const char *argv[])
     fwoop::Log::Debug("arguments", args);
 
     std::string url = args.getPositionalArg<std::string>("url");
-    auto record = fwoop::DNS::Query::GetRecord(url);
+    fwoop::DNS::Question question(url, fwoop::DNS::RecordType::A, fwoop::DNS::ClassValue::IN);
+    fwoop::Log::Debug("question: ", question);
+    auto record = fwoop::DNS::Query::GetRecord(question);
 
     if (record == nullptr) {
         std::cerr << "record not found\n";
     } else {
+        fwoop::Log::Debug("record: ", record->toString());
         std::cout << record->IP() << "\n";
     }
 

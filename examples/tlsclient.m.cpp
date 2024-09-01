@@ -1,4 +1,5 @@
 #include <cstdint>
+#include <cstring>
 #include <iostream>
 
 #include <fwoop_log.h>
@@ -14,7 +15,7 @@ int main(int argc, char *argv[])
     const std::string hostname("localhost");
     const uint16_t port = 9099;
 
-    auto sockFactory = fwoop::SecureSocketFactory("botan.randombit.net", 443);
+    auto sockFactory = fwoop::SecureSocketFactory("httpbin.org", 443);
     sockFactory.addTrustStore("/etc/ssl/certs");
     auto sock = sockFactory.connect();
     ::sleep(1);
@@ -22,18 +23,26 @@ int main(int argc, char *argv[])
         fwoop::Log::Info("connected");
         uint8_t buf[16384];
         uint32_t bytesRead = 0;
-        uint8_t msg[] = "GET / HTTP/1.1\r\n"
-                        "Host: botan.randombit.net\r\n\r\n";
+        uint8_t msg[] = "GET /get HTTP/1.1\r\n"
+                        "Host: httpbin.org\r\n"
+                        "User-Agent: fwoop/1\r\n"
+                        "Accept: */*\r\n\r\n";
         uint32_t bytesWritten = 0;
-        auto ec = sock->write(msg, sizeof(msg), bytesWritten);
+        auto ec = sock->write(msg, sizeof(msg) - 1, bytesWritten);
         if (ec) {
             fwoop::Log::Error("secure write failed: ", ec.message());
+            return 1;
         }
-        ec = sock->read(buf, sizeof(buf), bytesRead);
-        if (ec) {
-            fwoop::Log::Error("secure read failed: ", ec.message());
-        }
-        fwoop::Log::Info("DATA: ", std::string(buf, buf + bytesRead));
+        do {
+            bytesRead = 0;
+            memset(buf, 0, sizeof(buf));
+            ec = sock->read(buf, sizeof(buf), bytesRead);
+            if (ec) {
+                fwoop::Log::Error("secure read failed: ", ec.message());
+                return 1;
+            }
+            fwoop::Log::Info("readBytes=", bytesRead, " DATA: ", std::string(buf, buf + bytesRead));
+        } while (!ec && bytesRead > 0);
     }
 
     fwoop::Log::Info("done");
