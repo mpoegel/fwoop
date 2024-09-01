@@ -8,6 +8,8 @@
 #include <fwoop_httpresponse.h>
 #include <fwoop_json.h>
 #include <fwoop_log.h>
+#include <fwoop_securesocket.h>
+#include <fwoop_socketio.h>
 
 int main(int argc, const char *argv[])
 {
@@ -31,6 +33,18 @@ int main(int argc, const char *argv[])
     fwoop::Log::Debug("arguments: ", args);
 
     std::string url = args.getPositionalArg<std::string>("url");
+
+    const auto schemeSplit = url.find("://");
+    std::string scheme;
+    if (schemeSplit != std::string::npos) {
+        scheme = url.substr(0, schemeSplit);
+        url = url.substr(schemeSplit + 3);
+    } else {
+        fwoop::Log::Error("unsupported scheme");
+        return 1;
+    }
+    fwoop::Log::Debug("selected scheme: ", scheme);
+
     const auto splitOnIndex = url.find('/');
     std::string hostname;
     std::string path;
@@ -50,7 +64,17 @@ int main(int argc, const char *argv[])
 
     fwoop::Log::Debug("sending request: ", request);
 
-    auto client = fwoop::HttpClient(hostname);
+    fwoop::SocketFactoryBasePtr_t factory;
+    if (scheme == "http") {
+        factory = std::make_shared<fwoop::SocketFactory>(hostname, 80);
+    } else if (scheme == "https") {
+        factory = std::make_shared<fwoop::SecureSocketFactory>(hostname, 443);
+    } else {
+        fwoop::Log::Error("unsupported scheme: ", scheme);
+        return 1;
+    }
+
+    auto client = fwoop::HttpClient(factory);
     auto response = std::make_shared<fwoop::HttpResponse>();
 
     ec = client.makeReqest(request, response);
