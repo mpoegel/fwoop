@@ -10,6 +10,8 @@
 namespace fwoop {
 namespace protobuf {
 
+// https://protobuf.dev/programming-guides/encoding/
+
 struct ErrCategory : std::error_category {
     const char *name() const noexcept override;
     std::string message(int ev) const override;

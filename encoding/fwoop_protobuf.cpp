@@ -29,15 +29,15 @@ std::string ErrCategory::message(int ev) const
 uint64_t Message::decodeUint64(uint8_t *buf, uint32_t bufLen)
 {
     static constexpr uint8_t mask = 0b01111111;
-    int64_t res = 0;
+    uint64_t res = 0;
     for (unsigned int i = 0; i < bufLen; i++) {
-        uint32_t shift = 0;
+        uint64_t shift = 0;
         if (i > 0) {
-            shift = (i * 8) - 1;
+            shift = (i * 7);
         }
-        uint64_t val = ((mask & buf[i]) << shift);
+        uint64_t val = ((uint64_t)(mask & buf[i]) << shift);
         res += val;
-        Log::Debug("decodeUint64 ", int(buf[i]), " shift=", shift, " chunk=", val);
+        Log::Debug("decodeUint64 ", int(buf[i]), " shift=", shift, " chunk=", val, " postMask=", (mask & buf[i]));
     }
     return res;
 }

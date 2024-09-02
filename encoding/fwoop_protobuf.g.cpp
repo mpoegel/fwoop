@@ -100,6 +100,22 @@ TEST(Protobuf, decodeTest1)
     EXPECT_EQ(msg.a, 150);
 }
 
+TEST(Protobuf, decodeTest1BigInt)
+{
+    // GIVEN
+    uint8_t input[] = {0x08, 0xd3, 0xbd, 0xd4, 0xb6, 0x06};
+    uint32_t bytesParsed = 0;
+    Test1 msg;
+
+    // WHEN
+    msg.decode(input, sizeof(input), bytesParsed);
+
+    // THEN
+    EXPECT_EQ(bytesParsed, sizeof(input));
+    ASSERT_TRUE(msg.a.has_value());
+    EXPECT_EQ(msg.a, 1725243091);
+}
+
 TEST(Protobuf, decodeTest2)
 {
     // GIVEN
