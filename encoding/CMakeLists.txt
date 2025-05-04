@@ -6,6 +6,8 @@ add_library(fwoopencoding STATIC
 )
 
 target_include_directories(fwoopencoding PUBLIC .)
+set_property(TARGET fwoopencoding PROPERTY COMPILE_WARNING_AS_ERROR ON)
+target_compile_options(fwoopencoding PRIVATE "-Wall")
 
 install(TARGETS fwoopencoding DESTINATION lib)
 target_link_libraries(fwoopencoding fwoopbasis)

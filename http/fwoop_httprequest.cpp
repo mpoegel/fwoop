@@ -68,7 +68,7 @@ std::shared_ptr<HttpRequest> HttpRequest::parse(uint8_t *buffer, uint32_t buffer
     bytesParsed = 0;
 
     std::string payload((char *)buffer, bufferSize);
-    unsigned int end = payload.rfind("\r\n\r\n");
+    auto end = payload.rfind("\r\n\r\n");
     if (end == std::string::npos) {
         return nullptr;
     } else {
@@ -90,7 +90,7 @@ std::shared_ptr<HttpRequest> HttpRequest::parse(uint8_t *buffer, uint32_t buffer
     request->d_version = HttpVersion::fromString(versionStr);
 
     for (++itr; itr != tokr.end(); ++itr) {
-        unsigned int split = (*itr).find(':');
+        auto split = (*itr).find(':');
         if (split == std::string::npos) {
             Log::Warn("Received bad request header: ", *itr);
         } else {

@@ -37,6 +37,14 @@ class HttpHPacker {
 
     uint32_t encodeLength(const std::vector<HttpHeaderField_t> &headerFields);
     uint8_t *encode(const std::vector<HttpHeaderField_t> &headerFields);
+
+    uint32_t maxTableSize() const;
 };
+
+inline
+uint32_t HttpHPacker::maxTableSize() const
+{
+    return d_maxTableSize;
+}
 
 } // namespace fwoop

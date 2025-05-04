@@ -18,6 +18,8 @@ add_library(fwoophttp STATIC
 )
 target_include_directories(fwoophttp PUBLIC .)
 target_link_libraries(fwoophttp fwoopbasis)
+set_property(TARGET fwoophttp PROPERTY COMPILE_WARNING_AS_ERROR ON)
+target_compile_options(fwoophttp PRIVATE "-Wall")
 
 install(TARGETS fwoophttp DESTINATION lib)
 install(FILES

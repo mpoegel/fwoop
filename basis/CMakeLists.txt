@@ -10,6 +10,8 @@ add_library(fwoopbasis STATIC
     fwoop_threadpool.cpp
     fwoop_tokenizer.cpp
 )
+set_property(TARGET fwoopbasis PROPERTY COMPILE_WARNING_AS_ERROR ON)
+target_compile_options(fwoopbasis PRIVATE "-Wall")
 target_include_directories(fwoopbasis PUBLIC .)
 
 install(TARGETS fwoopbasis DESTINATION lib)

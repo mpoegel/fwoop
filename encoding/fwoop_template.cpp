@@ -184,7 +184,6 @@ uint8_t *Template::parseConditional(unsigned int index, const Context_t &context
     Log::Debug("endif index=", endifIndex);
 
     unsigned int lhsBytesParsed = 0;
-    unsigned int lhsLength = 0;
     lhs = parseVariable(conditionIndex, context, lhsBytesParsed);
     if (lhsBytesParsed > 0) {
         Log::Debug("parsed lhs variable: ", lhs);

@@ -166,7 +166,6 @@ int HttpServer::handleHttp2Connection(int clientFd) const
 
     char buf[3];
     unsigned int offset = bytesParsed;
-    unsigned int itrs = 0;
     unsigned int totalRead = bytesRead;
     unsigned int totalParsed = bytesParsed;
     std::unique_ptr<HttpFrame> settingsFrame;

@@ -15,7 +15,7 @@ namespace fwoop {
 
 class Reader {
   public:
-    ~Reader() {}
+    virtual ~Reader() {}
     virtual std::error_code read(Array &arr) = 0;
     virtual void close() = 0;
 };
@@ -24,7 +24,7 @@ typedef std::shared_ptr<Reader> ReaderPtr_t;
 
 class Writer {
   public:
-    ~Writer() {}
+    virtual ~Writer() {}
     virtual std::error_code write(const Array &arr, uint32_t &bytesWritten) = 0;
     virtual void close() = 0;
 };
@@ -33,7 +33,7 @@ typedef std::shared_ptr<Writer> WriterPtr_t;
 
 class SocketBase : public Reader, public Writer {
   public:
-    ~SocketBase() {}
+    virtual ~SocketBase() {}
 };
 
 typedef std::shared_ptr<SocketBase> SocketBasePtr_t;
@@ -44,7 +44,7 @@ class Socket : public SocketBase {
 
   public:
     explicit Socket(int fd);
-    ~Socket();
+    virtual ~Socket();
     Socket(const Socket &rhs);
     Socket operator=(const Socket &rhs);
 
@@ -57,7 +57,7 @@ typedef std::shared_ptr<Socket> SocketPtr_t;
 
 class SocketFactoryBase {
   public:
-    ~SocketFactoryBase() {}
+    virtual ~SocketFactoryBase() {}
 
     virtual SocketBasePtr_t connect() = 0;
 };
@@ -71,7 +71,7 @@ class SocketFactory : public SocketFactoryBase {
 
   public:
     SocketFactory(const std::string &hostname, uint16_t port);
-    ~SocketFactory() {}
+    virtual ~SocketFactory() {}
     SocketBasePtr_t connect() override;
 };
 

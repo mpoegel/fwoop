@@ -28,7 +28,6 @@ class OpenMetricsPublisher {
     OpenMetricsPublisher(int port = 19950);
     ~OpenMetricsPublisher();
     OpenMetricsPublisher(OpenMetricsPublisher &rhs) = delete;
-    OpenMetricsPublisher(OpenMetricsPublisher &&rhs) = default;
     OpenMetricsPublisher &operator=(OpenMetricsPublisher &rhs) = delete;
 
     int start();

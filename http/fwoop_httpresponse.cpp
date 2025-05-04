@@ -29,7 +29,7 @@ uint8_t *HttpResponse::encode(uint32_t &length) const
     length = VERSION.length() + 1 + d_status.length() + 2;
 
     uint8_t *fileContents = nullptr;
-    uint32_t contentLength;
+    uint32_t contentLength = 0;
     if (d_fileName.length() > 0) {
         FileReader reader(d_fileName);
         if (0 != reader.open()) {

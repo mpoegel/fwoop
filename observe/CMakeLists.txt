@@ -8,6 +8,8 @@ add_library(fwoopobserve STATIC
 )
 
 target_include_directories(fwoopobserve PUBLIC .)
+set_property(TARGET fwoopobserve PROPERTY COMPILE_WARNING_AS_ERROR ON)
+target_compile_options(fwoopobserve PRIVATE "-Wall")
 
 install(TARGETS fwoopobserve DESTINATION lib)
 target_link_libraries(fwoopobserve fwoopbasis fwoophttp)

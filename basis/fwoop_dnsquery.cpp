@@ -372,12 +372,12 @@ std::shared_ptr<ResourceRecord> Query::getRecord(const Question &question)
 
     Log::Debug("dns response: ", response.toHex());
 
-    const uint16_t rTransactionID = (response[0] << 8) + response[1];
-    const uint16_t rFlags = (response[2] << 8) + response[3];
+    // const uint16_t rTransactionID = (response[0] << 8) + response[1];
+    // const uint16_t rFlags = (response[2] << 8) + response[3];
     const uint16_t rNumQuestions = (response[4] << 8) + response[5];
     const uint16_t rAnswers = (response[6] << 8) + response[7];
-    const uint16_t rAuthority = (response[8] << 8) + response[9];
-    const uint16_t rAdditional = (response[10] << 8) + response[11];
+    // const uint16_t rAuthority = (response[8] << 8) + response[9];
+    // const uint16_t rAdditional = (response[10] << 8) + response[11];
     offset = 12;
 
     if (rAnswers == 0) {

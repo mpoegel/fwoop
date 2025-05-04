@@ -113,8 +113,9 @@ std::string httpHeaderToString(HttpHeader header)
         return "via";
     case WwwAuthenticate:
         return "www-authenticate";
+    default:
+        return "unknown";
     }
-    return "unknown";
 }
 
 HttpHeader stringToHttpHeader(const std::string &headerStr)

@@ -16,6 +16,21 @@ class HttpStream {
 
     int open();
     int close();
+
+    uint32_t id() const;
+    int fd() const;
 };
+
+inline
+uint32_t HttpStream::id() const
+{
+    return d_id;
+}
+
+inline
+int HttpStream::fd() const
+{
+    return d_fd;
+}
 
 } // namespace fwoop

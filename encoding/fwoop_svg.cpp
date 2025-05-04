@@ -11,26 +11,21 @@ Array Document::encode() const
 {
     Array arr(64);
     arr.append("<svg");
-    uint32_t len = 5;
     if (width > 0) {
         std::string tmp(" width=\"" + std::to_string(width) + '"');
         arr.append(tmp);
-        len += tmp.length();
     }
     if (height > 0) {
         std::string tmp(" height=\"" + std::to_string(height) + '"');
         arr.append(tmp);
-        len += tmp.length();
     }
     static const std::string tmp(" xmlns=\"http://www.w3.org/2000/svg\">");
     arr.append(tmp);
-    len += tmp.length();
     for (auto elem : d_body) {
         arr.extend(elem->encode());
     }
     static const std::string suffix("</svg>");
     arr.append(suffix);
-    len += suffix.length();
     return arr;
 }
 
