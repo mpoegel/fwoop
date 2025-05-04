@@ -5,6 +5,7 @@
 #include <system_error>
 #include <unordered_map>
 #include <variant>
+#include <cstdint>
 
 namespace fwoop {
 

@@ -5,6 +5,8 @@
 
 namespace fwoop {
 
+class Duration;
+
 class DateTime {
   public:
     enum DayOfWeek : uint8_t {
@@ -66,6 +68,12 @@ class DateTime {
     std::string dayOfWeekShortString() const;
     const int8_t tzOffset() const;
     bool isDST() const;
+    bool isBefore(const DateTime &rhs) const;
+
+    void subtract(const Duration &dur);
+    void add(const Duration &dur);
+
+    Duration spans(const DateTime &rhs) const;
 };
 
 inline const uint16_t DateTime::year() const { return d_year; }
@@ -77,5 +85,26 @@ inline const uint8_t DateTime::second() const { return d_second; }
 inline const DateTime::DayOfWeek DateTime::dayOfWeek() const { return d_dow; }
 inline const int8_t DateTime::tzOffset() const { return d_tzOffset; }
 inline bool DateTime::isDST() const { return d_isDST; }
+inline bool DateTime::isBefore(const DateTime &rhs) const { return d_time < rhs.d_time; }
+
+class Duration {
+  private:
+    int64_t d_seconds;
+
+  public:
+    static Duration hours(int32_t hours);
+    static Duration minutes(int32_t minutes);
+    static Duration seconds(int64_t seconds);
+
+    Duration(int64_t seconds) : d_seconds(seconds) {}
+    ~Duration() = default;
+    Duration(const Duration &rhs) = default;
+    Duration &operator=(const Duration &rhs) = default;
+    Duration(Duration &&rhs) = default;
+
+    int32_t hours() const;
+    int32_t minutes() const;
+    int64_t seconds() const;
+};
 
 } // namespace fwoop

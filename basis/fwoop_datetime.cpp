@@ -172,4 +172,30 @@ std::string DateTime::dayOfWeekShortString() const
     }
 }
 
+void DateTime::subtract(const Duration &dur)
+{
+    d_time -= dur.seconds();
+    recalculate();
+}
+
+void DateTime::add(const Duration &dur)
+{
+    d_time += dur.seconds();
+    recalculate();
+}
+
+Duration DateTime::spans(const DateTime &rhs) const
+{
+    int64_t diff = d_time - rhs.d_time;
+    return Duration::seconds(diff);
+}
+
+Duration Duration::hours(int32_t hours) { return Duration(hours * SecondsInHour); }
+Duration Duration::minutes(int32_t minutes) { return Duration(minutes * SecondsInMinute); }
+Duration Duration::seconds(int64_t seconds) { return Duration(seconds); }
+
+int32_t Duration::hours() const { return d_seconds % SecondsInHour; }
+int32_t Duration::minutes() const { return d_seconds % SecondsInMinute; }
+int64_t Duration::seconds() const { return d_seconds; }
+
 } // namespace fwoop
